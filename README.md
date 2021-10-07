@@ -16,6 +16,8 @@ or
 npm install --save @lmc-eu/cookie-consent-manager
 ```
 
+TODO
+
 ## Usage
 
 TODO
@@ -24,6 +26,6 @@ TODO
 
 TODO
 
-[Spirit Design System]: https://github.com/lmc-eu/spirit-design-system
-[Cookie Consent]: https://github.com/orestbida/cookieconsent
-[Orest Bida]: https://github.com/orestbida
+- [spirit design system]: https://github.com/lmc-eu/spirit-design-system
+- [cookie consent]: https://github.com/orestbida/cookieconsent
+- [orest bida]: https://github.com/orestbida
