@@ -6,19 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../dist/cookieconsent.css">
 </head>
 <body>
 
-<h1>Cookie Consent Demo</h1>
+<h1>LMC Cookie Consent Manager Demo</h1>
 
-<!-- TODO remove once it's part of bundle. -->
-<script src="../node_modules/vanilla-cookieconsent/dist/cookieconsent.js"></script>
-
-<script src="../dist/cookieconsent.js"></script>
+<script defer src="../dist/bootstrap.js"></script>
 <script>
-  lmcCookieConsent({
-    current_lang : 'en',
-    theme_css : '../dist/cookieconsent.css', // relative to HTML
+  window.addEventListener('load', function(){
+    initLmcCookieConsentManager();
   });
 </script>
 

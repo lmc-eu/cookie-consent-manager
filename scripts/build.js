@@ -1,36 +1,32 @@
 const { build } = require('esbuild')
 
 build({
-  entryPoints: ['src/index.js'],
+  entryPoints: ['src/autoload.js'],
   bundle: true,
-  minify: true,
-  sourcemap: true,
   target: 'es2017',
-  outfile: 'dist/index.min.js',
+  outfile: 'dist/autoload.js',
 }).catch((error) => {
   console.error(error)
   process.exit(1)
 })
 
 build({
-  entryPoints: ['src/index.js'],
+  entryPoints: ['src/bootstrap.js'],
   bundle: true,
-  minify: false,
-  sourcemap: true,
   target: 'es2017',
-  outfile: 'dist/index.js',
+  outfile: 'dist/bootstrap.js',
 }).catch((error) => {
   console.error(error)
   process.exit(1)
 })
 
 build({
-  entryPoints: ['src/LmcCookieConsent.js'],
+  entryPoints: ['src/LmcCookieConsentManager.js'],
   bundle: true,
   minify: false,
   sourcemap: false,
   target: 'es2019',
-  outfile: 'dist/LmcCookieConsent.js',
+  outfile: 'dist/LmcCookieConsentManager.js',
 }).catch((error) => {
   console.error(error)
   process.exit(1)
