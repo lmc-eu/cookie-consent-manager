@@ -206,6 +206,11 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/browserslist-config/-/browserslist-config-1.0.0.tgz#2cb7416226417b4bcb26f776f4e48fd551a8bfb3"
   integrity sha512-kX33rF2/F66r19F8KwyU0/v63OO+qkdG7/hlG+rui1AH4DAHXto2s3xlEY/T4Qx9m1NkaLzyUUqUQWJvCraIUQ==
 
+"@lmc-eu/prettier-config@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.0.3.tgz#e38ca0aa59fab1b6a5c1e347362764a9583018c6"
+  integrity sha512-CoXws/7EQjg78X+0TUCpubaUlK76mzae52fsgsRhPtgf0KLCTvIKUzNnPDa+SzlAMG7c+yNi2YFbflgKeQso4A==
+
 "@lmc-eu/spirit-design-tokens@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.2.0.tgz#c8f98397bd3bfcaf045684899d49f76d2352063d"
@@ -1687,6 +1692,11 @@ postcss@^8.3.6:
     nanoid "^3.1.28"
     picocolors "^0.2.1"
     source-map-js "^0.6.2"
+
+prettier@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
+  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
 
 pretty-hrtime@^1.0.3:
   version "1.0.3"

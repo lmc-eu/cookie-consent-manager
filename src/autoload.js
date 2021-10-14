@@ -1,5 +1,5 @@
 import LmcCookieConsent from './LmcCookieConsentManager';
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
   LmcCookieConsentManager();
 });

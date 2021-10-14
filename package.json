@@ -14,7 +14,10 @@
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
     "test": "yarn css:lint",
     "build:js": "node scripts/build.js",
-    "build": "yarn build:js && yarn build:css"
+    "build": "yarn build:js && yarn build:css",
+    "format": "yarn format:check",
+    "format:check": "prettier --list-different 'src/**/*.{js,jsx,ts,tsx,scss}'",
+    "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}'"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.2.0",
@@ -22,12 +25,14 @@
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "^1.0.0",
+    "@lmc-eu/prettier-config": "^1.0.3",
     "@lmc-eu/stylelint-config": "^1.0.3",
     "autoprefixer": "^10.3.1",
     "clean-css-cli": "^5.3.3",
     "esbuild": "^0.13.6",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
+    "prettier": "^2.4.1",
     "sass": "^1.37.5",
     "stylelint": "^13.13.1",
     "stylelint-order": "^4.1.0"
