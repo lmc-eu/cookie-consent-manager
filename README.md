@@ -42,7 +42,7 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 Download (or use via [cdn](#download--cdn)) and include the script at the bottom of `body` tag.
 
 ```html
-<script src="<autoload.js>"></script>
+<script src="autoload.js"></script>
 ```
 
 Will display cookie consent with default configuration.
