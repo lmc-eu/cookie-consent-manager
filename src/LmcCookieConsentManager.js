@@ -22,8 +22,14 @@ const LmcCookieConsentManager = (options = defaultOptions) => {
         transition: 'slide', // zoom/slide
       },
     },
-    onAccept: () => {
-      alert('Cookie Consent Accepted');
+    onAccept: (cookie) => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'CookieConsent-update',
+        'CookieConsent.analytics': cookie.level.includes('analytics'),
+        'CookieConsent.ads': cookie.level.includes('targeting'),
+        'CookieConsent.revision': cookie.revision,
+      });
     },
     languages: {
       en: configEn,
