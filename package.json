@@ -22,19 +22,24 @@
     "dev": "node scripts/serve.js",
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
-    "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'"
+    "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
+    "prepare": "husky install",
+    "lint:commit:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.2.0",
     "vanilla-cookieconsent": "^2.6.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.2.1",
     "@lmc-eu/browserslist-config": "^1.0.0",
+    "@lmc-eu/commitlint-config": "^1.0.2",
     "@lmc-eu/prettier-config": "^1.0.3",
     "@lmc-eu/stylelint-config": "^1.0.3",
     "autoprefixer": "^10.3.1",
     "clean-css-cli": "^5.3.3",
     "esbuild": "^0.13.6",
+    "husky": "^7.0.2",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.4.1",
