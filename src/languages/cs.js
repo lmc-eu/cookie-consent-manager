@@ -18,7 +18,36 @@ export const config = {
     accept_all_btn: 'Přijmout vše',
     reject_all_btn: 'Odmítnout vše', // optional, [v.2.5.0 +]
     close_btn_label: 'Zavřít',
-    blocks: [],
+    blocks: [
+      {
+        toggle: {
+          value: 'necessary',
+          enabled: true,
+          readonly: true,
+        },
+      },
+      {
+        toggle: {
+          value: 'analytics',
+          enabled: false,
+          readonly: false,
+        },
+      },
+      {
+        toggle: {
+          value: 'functionality',
+          enabled: false,
+          readonly: false,
+        },
+      },
+      {
+        toggle: {
+          value: 'personalization',
+          enabled: false,
+          readonly: false,
+        },
+      },
+    ],
   },
 };
 
