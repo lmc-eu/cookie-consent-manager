@@ -19,23 +19,29 @@ export const config = {
     close_btn_label: 'Close',
     blocks: [
       {
-        title: 'Cookie usage',
-        description: 'Your cookie usage disclaimer',
-      },
-      {
-        title: 'Strictly necessary cookies',
-        description: 'Category description ... ',
         toggle: {
           value: 'necessary',
-          enabled: false,
+          enabled: true,
           readonly: true,
         },
       },
       {
-        title: 'Analytics cookies',
-        description: 'Category description ... ',
         toggle: {
           value: 'analytics',
+          enabled: false,
+          readonly: false,
+        },
+      },
+      {
+        toggle: {
+          value: 'functionality',
+          enabled: false,
+          readonly: false,
+        },
+      },
+      {
+        toggle: {
+          value: 'personalization',
           enabled: false,
           readonly: false,
         },

@@ -26,8 +26,11 @@ const LmcCookieConsentManager = (options = defaultOptions) => {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'CookieConsent-update',
+        'CookieConsent.necessary': cookie.level.includes('necessary'),
         'CookieConsent.analytics': cookie.level.includes('analytics'),
-        'CookieConsent.ads': cookie.level.includes('targeting'),
+        'CookieConsent.functionality': cookie.level.includes('functionality'),
+        'CookieConsent.personalization':
+          cookie.level.includes('personalization'),
         'CookieConsent.revision': cookie.revision,
       });
     },
