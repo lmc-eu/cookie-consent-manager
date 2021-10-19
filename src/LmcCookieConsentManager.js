@@ -1,7 +1,9 @@
 import 'vanilla-cookieconsent';
 
-import { config as configEn } from './languages/en';
 import { config as configCs } from './languages/cs';
+import { config as configEn } from './languages/en';
+import { config as configPl } from './languages/pl';
+import { config as configSk } from './languages/sk';
 
 const defaultOptions = { currentLang: 'cs', themeCss: '', config: {} };
 
@@ -41,8 +43,10 @@ const LmcCookieConsentManager = (options = defaultOptions) => {
       });
     },
     languages: {
-      en: configEn,
       cs: configCs,
+      en: configEn,
+      pl: configPl,
+      sk: configSk,
     },
     // override default config if necessary
     ...config,
