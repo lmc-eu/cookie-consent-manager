@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Cookie consent banner compatible with Spirit Design System",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "LmcCookieConsentManager.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir -p dist && cp package.json README.md dist/",
     "build:css": "yarn css",
