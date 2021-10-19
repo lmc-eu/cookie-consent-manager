@@ -12,9 +12,15 @@ const LmcCookieConsentManager = (options = defaultOptions) => {
 
   cookieconsent.run({
     current_lang: currentLang,
+    auto_language: true,
     theme_css: themeCss,
     cookie_name: 'lmc_ccm',
     cookie_expiration: 365,
+    use_rfc_cookie: true,
+    autorun: true,
+    delay: 0,
+    force_consent: false,
+    hide_from_bots: true, // To be hidden also from Selenium
     gui_options: {
       consent_modal: {
         layout: 'bar', // box/cloud/bar
