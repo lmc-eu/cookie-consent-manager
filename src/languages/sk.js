@@ -1,14 +1,14 @@
 export const config = {
   consent_modal: {
-    title: 'This website uses cookies',
-    description: `By clicking on "Accept all", you give your consent to LMC s.r.o. to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
-      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use of cookies</a>.`,
+    title: 'Tieto stránky používajú cookies',
+    description: `Kliknutím na „Prijať všetky“ dávate súhlas spoločnosti LMC s.r.o. k využívaniu súborov Cookies a ďalších identifikátorov vo vašom zariadení. Použitie týchto cookies a ďalších identifikátorov uľahčí navigáciu na stránkach, zobrazenie personalizovaného obsahu, cielený marketing, analýzu využívania našich produktov a služieb.
+      Viac informácií nájdete na stránke <a href="https://www.lmc.eu/sk/cookies" target="_blank">Používanie cookies</a>.`,
     primary_btn: {
-      text: 'Accept all',
+      text: 'Prijať všetky',
       role: 'accept_all',
     },
     secondary_btn: {
-      text: 'Accept necessary',
+      text: 'Prijať nevyhnutné',
       role: 'accept_necessary',
     },
   },
