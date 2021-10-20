@@ -54,13 +54,13 @@ You can download the [latest version](https://github.com/lmc-eu/cookie-consent-m
 javascript :
 
 ```html
-https://cdn.jsdelivr.net/npm/lmc-eu/cookie-consent-manager@v0.1.0/init.js
+https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js
 ```
 
 stylesheet :
 
 ```html
-https://cdn.jsdelivr.net/npm/lmc-eu/cookie-consent-managert@v0.1.0/LmcCookieConsentManager.css
+https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-managert@v0.1.0/LmcCookieConsentManager.css
 ```
 
 ### npm
@@ -91,7 +91,7 @@ LmcCookieConsentManager({
 @use '../node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
 
 :root {
-  // override default config
+    // override default config
 }
 ```
 
