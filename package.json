@@ -19,6 +19,7 @@
     "test": "yarn css:lint",
     "build:js": "node scripts/build.js",
     "build": "yarn build:js && yarn build:css",
+    "dev": "node scripts/serve.js",
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
     "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'"
