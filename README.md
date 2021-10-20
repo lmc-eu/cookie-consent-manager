@@ -60,7 +60,7 @@ https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js
 stylesheet :
 
 ```html
-https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-managert@v0.1.0/LmcCookieConsentManager.css
+https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/LmcCookieConsentManager.css
 ```
 
 ### npm
