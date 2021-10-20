@@ -25,7 +25,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Lint
-        run: yarn css:lint
+        run: yarn lint:css
 
       - name: Check format
         run: yarn format:check
