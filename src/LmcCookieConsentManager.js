@@ -5,17 +5,23 @@ import { config as configEn } from './languages/en';
 import { config as configPl } from './languages/pl';
 import { config as configSk } from './languages/sk';
 
-const defaultOptions = { currentLang: 'cs', themeCss: '', config: {} };
+const defaultOptions = {
+  currentLang: 'cs',
+  themeCss: '',
+  onAccept: (cookie) => {},
+  config: {},
+};
 
 /**
  * @param {Object} args - Options for cookie consent manager
  * @param {string} args.currentLang - Specify one of the languages you have defined
  * @param {string} args.themeCss - Specify file to the .css file
+ * @param {function} args.onAccept - Callback to be executed after any consent is detected (either given now or already saved previously)
  * @param {Object} args.config - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  */
 const LmcCookieConsentManager = (args) => {
   const options = { ...defaultOptions, ...args };
-  const { currentLang, themeCss, config } = options;
+  const { currentLang, themeCss, onAccept, config } = options;
 
   const cookieconsent = window.initCookieConsent();
 
@@ -48,6 +54,8 @@ const LmcCookieConsentManager = (args) => {
           cookie.level.includes('personalization'),
         'CookieConsent.revision': cookie.revision,
       });
+
+      onAccept(cookie);
     },
     languages: {
       cs: configCs,
