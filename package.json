@@ -35,7 +35,9 @@
     "prepare": "husky install",
     "changelog": "yarn changelog:from-tag",
     "changelog:from-tag": "conventional-changelog -p @lmc-eu/conventional-changelog-lmc-bitbucket -i CHANGELOG.md -s",
-    "changelog:from-beginning": "conventional-changelog -p @lmc-eu/conventional-changelog-lmc-bitbucket -i CHANGELOG.md -s -r 0"
+    "changelog:from-beginning": "conventional-changelog -p @lmc-eu/conventional-changelog-lmc-bitbucket -i CHANGELOG.md -s -r 0",
+    "version": "yarn build && git status && git add --all && git status",
+    "postversion": "git push --set-upstream origin main && git push --tags"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.2.0",
