@@ -1,0 +1,38 @@
+name: Publish
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    name: Publish package
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Bump version
+        run: yarn version --`./bin/ci/semver.sh`
+
+      - name: Authenticate npm
+        run: ./bin/ci/npm-auth.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        run: cd ./dist && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
