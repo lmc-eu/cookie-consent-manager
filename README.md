@@ -99,11 +99,12 @@ LmcCookieConsentManager({
 
 You can initialize cookie consent manager with following parameters:
 
-| Option        | Type   | Default | Description                                                                                                                                                     |
-| ------------- | ------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `currentLang` | string | 'cs'    | Specify one of the languages you have defined (can also be dynamic): 'en', 'cs' ...                                                                             |
-| `themeCss`    | string | ''      | Specify path to the .css file                                                                                                                                   |
-| `config`      | Object | {}      | Override default config. For all parameters consult [original library](https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options). |
+| Option        | Type     | Default        | Description                                                                                                                               |
+| ------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `currentLang` | string   | 'cs'           | Specify one of the languages you have defined (can also be dynamic): 'en', 'cs' ...                                                       |
+| `onAccept`    | function | (cookie) => {} | Callback to be executed after any consent is detected (either given now or already saved previously)                                     |
+| `themeCss`    | string   | ''             | Specify path to the .css file                                                                                                             |
+| `config`      | Object   | {}             | Override default config. For all parameters consult [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
 
 ## License
 
