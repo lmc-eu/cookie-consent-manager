@@ -7,7 +7,14 @@ import { config as configSk } from './languages/sk';
 
 const defaultOptions = { currentLang: 'cs', themeCss: '', config: {} };
 
-const LmcCookieConsentManager = (options = defaultOptions) => {
+/**
+ * @param {Object} args - Options for cookie consent manager
+ * @param {string} args.currentLang - Specify one of the languages you have defined
+ * @param {string} args.themeCss - Specify file to the .css file
+ * @param {Object} args.config - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
+ */
+const LmcCookieConsentManager = (args) => {
+  const options = { ...defaultOptions, ...args };
   const { currentLang, themeCss, config } = options;
 
   const cookieconsent = window.initCookieConsent();
