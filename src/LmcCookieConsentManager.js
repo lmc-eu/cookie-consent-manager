@@ -44,10 +44,10 @@ const LmcCookieConsentManager = (args) => {
   } = options;
   const cookieName = 'lmc_ccm';
 
-  const cookieconsent = window.initCookieConsent();
-  const isFirstTimeAccept = !cookieconsent.validCookie(cookieName);
+  const cookieConsent = window.initCookieConsent();
+  const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
 
-  cookieconsent.run({
+  cookieConsent.run({
     current_lang: currentLang,
     auto_language: true,
     theme_css: themeCss,
@@ -66,7 +66,7 @@ const LmcCookieConsentManager = (args) => {
       },
     },
     onAccept: (cookie) => {
-      const givenLevels = cookieconsent.get('level');
+      const givenLevels = cookieConsent.get('level');
       const acceptedOnlyNecessary =
         givenLevels.length === 1 && givenLevels[0] === 'necessary';
 
