@@ -8,12 +8,12 @@ import { config as configSk } from './languages/sk';
 const defaultOptions = {
   currentLang: 'cs',
   themeCss: '',
-  onFirstAccept: (cookie) => {},
-  onFirstAcceptOnlyNecessary: (cookie) => {},
-  onFirstAcceptAll: (cookie) => {},
-  onAccept: (cookie) => {},
-  onAcceptOnlyNecessary: (cookie) => {},
-  onAcceptAll: (cookie) => {},
+  onFirstAccept: (cookie, cookieConsent) => {},
+  onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
+  onFirstAcceptAll: (cookie, cookieConsent) => {},
+  onAccept: (cookie, cookieConsent) => {},
+  onAcceptOnlyNecessary: (cookie, cookieConsent) => {},
+  onAcceptAll: (cookie, cookieConsent) => {},
   config: {},
 };
 
@@ -81,16 +81,18 @@ const LmcCookieConsentManager = (args) => {
         'CookieConsent.revision': cookie.revision,
       });
 
-      onAccept(cookie);
+      onAccept(cookie, cookieConsent);
 
       if (isFirstTimeAccept) {
-        onFirstAccept(cookie);
+        onFirstAccept(cookie, cookieConsent);
         acceptedOnlyNecessary
-          ? onFirstAcceptOnlyNecessary(cookie)
-          : onFirstAcceptAll(cookie);
+          ? onFirstAcceptOnlyNecessary(cookie, cookieConsent)
+          : onFirstAcceptAll(cookie, cookieConsent);
       }
 
-      acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie) : onAcceptAll(cookie);
+      acceptedOnlyNecessary
+        ? onAcceptOnlyNecessary(cookie, cookieConsent)
+        : onAcceptAll(cookie, cookieConsent);
     },
     languages: {
       cs: configCs,
