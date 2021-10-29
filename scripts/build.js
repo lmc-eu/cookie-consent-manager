@@ -1,11 +1,7 @@
 const { build } = require('esbuild');
 
 build({
-  entryPoints: [
-    'src/autoload.js',
-    'src/init.js',
-    `src/LmcCookieConsentManager.js`,
-  ],
+  entryPoints: ['src/init.js', 'src/LmcCookieConsentManager.js'],
   bundle: true,
   target: 'es2017',
   outdir: 'dist',
