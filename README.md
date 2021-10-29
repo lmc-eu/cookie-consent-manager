@@ -159,6 +159,46 @@ Each configured callback receives two params:
 | `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
 | `onFirstAccept`             | Right after any consent is just accepted by the user |
 
+## Development and contributing
+
+### Local development
+
+Install package dependencies:
+
+```sh
+yarn install
+```
+
+Start local development server:
+
+```sh
+yarn start
+```
+
+This will make the development server accessible http://localhost:3000/ .
+
+* The library with init function is served on: http://localhost:3000/dist/init.js
+* Javascript module: http://localhost:3000/dist/LmcCookieConsentManager.js
+* CSS: http://localhost:3000/dist/LmcCookieConsentManager.css
+
+### Contributing
+
+For commit messages follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification with
+[LMC rules](https://github.com/lmc-eu/code-quality-tools/blob/main/packages/commitlint-config/index.js).
+The commit message will also be automatically checked as pre-commit hook.
+
+To ensure the code passes linting and code style test run:
+
+```sh
+yarn test
+```
+
+To fix code style according to Prettier rules run:
+
+```sh
+yarn format:fix
+```
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md) for more information.
