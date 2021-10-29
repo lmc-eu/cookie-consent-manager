@@ -4,107 +4,160 @@ Provide configurable cookie consent banner with predefined LMC defaults. The UI 
 
 The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
-## Usage
+## Basic usage
 
-1. Download (or use via [cdn](#download--cdn)) and include the script at the bottom of `body` tag.
-
-   ```html
-   <script src="init.js"></script>
-   ```
-
-2. Run the plugin with your configuration parameters.
-   <br>
-   <details><summary><b>Show basic example</b></summary>
-
-   ```html
-   <script defer src="init.js"></script>
-   <script>
-     window.addEventListener('load', function () {
-       initLmcCookieConsentManager({
-         currentLang: 'cs',
-         themeCss: './dist/LmcCookieConsentManager.css',
-         config: {
-           // override default config
-         },
-       });
-     });
-   </script>
-   ```
-
-   </summary>
-   </details>
-   <br>
-
-   For more details check out original [cookie consent] library.
-
-### Zero configuration setup
-
-Download (or use via [cdn](#download--cdn)) and include the script at the bottom of `body` tag.
+Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script src="autoload.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js"></script>
+<script>
+window.addEventListener('load', function () {
+  initLmcCookieConsentManager();
+});
+</script>
 ```
 
-Will display cookie consent with default configuration.
+This will load the plugin from CDN and initialize the plugin with default settings. See [examples/index.html](examples/index.html).
 
-### Download & CDN
+## Loading the plugin
 
-You can download the [latest version](https://github.com/lmc-eu/cookie-consent-manager/releases) or use it via cdn:
+### Via CDN or static file
 
-javascript :
+You can load the plugin from a CDN, as in the basic example above.
 
 ```html
-https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js"></script>
 ```
 
-stylesheet :
+Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).
 
-```html
-https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/LmcCookieConsentManager.css
-```
+Loading the plugin from CDN or static file is recommended mostly **for static sites without their own build process**.
 
-### npm
+Once the plugin is loaded, you need to initialize it using `initLmcCookieConsentManager()` method, optionally providing
+[configuration parameters](#configuration).
 
-```shell
-yarn add @lmc-eu/cookie-consent-manager
-```
+### Via npm
 
-or
+For projects with their own build process for javascript we recommend using the plugin
+via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager).
 
-```shell
-npm install --save @lmc-eu/cookie-consent-manager
-```
+1. Add the plugin to your dependencies:
+    ```sh
+    yarn add @lmc-eu/cookie-consent-manager
+    ```
+    or
+    ```sh
+    npm i @lmc-eu/cookie-consent-manager
+    ```
+
+2. Import the module in your javascript:
+    ```js
+    import LmcCookieConsentManager from '@lmc-eu/cookie-consent-manager';
+
+    window.addEventListener('load', function () {
+      LmcCookieConsentManager(/* plugin configuration */);
+    });
+    ```
+
+3. Include default styles:
+    ```scss
+    @use '../node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
+
+    :root {
+        // override default config
+    }
+    ```
+
+## Manage features depending on given consent
+
+For "necessary" cookies it is not needed to check whether a user has given any consent.
+
+However, for all other purposes, it must be explicitly checked whether user has given the appropriate
+consent category. This must be done *before* the respective cookie is set.
+
+### Consent categories
+
+* `necessary` - for cookies required by the website to work (for example login); for these cookies you **don't need to check** whether user actually has this level
+* `analytics` - for analysis and statistics
+* `functionality` - for extended functionality (not covered by `necessary` category)
+* `personalization` - for personalization based on user profiling (recommendation etc.)
+
+### GTM (Google Tag Manager) scripts
+
+GTM scripts are managed centrally, so after implementing the library you don't need to worry about them.
+The library sets all the required data to GTM dataLayer.
+
+### Custom methods
+
+To execute custom code which depends on cookie consent use callbacks:
 
 ```js
-import LmcCookieConsentManager from '@lmc-eu/cookie-consent-manager';
-
-LmcCookieConsentManager({
-  currentLang: 'cs',
-  themeCss: './dist/LmcCookieConsentManager.css',
-  config: {
-    // override default config
-  },
-});
+// ...
+initLmcCookieConsentManager(
+  {
+    'onAcceptAll': (cookie, cookieConsent) => {
+      if (cookieConsent.allowedCategory('functionality') {
+        startOptionalFeature();
+      }
+    },
+  }
+);
+// ...
 ```
 
-```scss
-@use '../node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
+### Third party scripts loaded via `<script>`
 
-:root {
-    // override default config
-}
+To automatically load external scripts after a specific consent category is given by the user, modify the `<script>` tag:
+set `type` to `type="text/plain"` and add `data-cookiecategory` attribute with required consent category.
+
+```html
+<script src="personalization.js" type="text/plain" data-cookiecategory="personalization" defer></script>
 ```
+
+See [full documentation](https://github.com/orestbida/cookieconsent#manage-third-party-scripts) for this feature.
 
 ## Configuration
 
-You can initialize cookie consent manager with following parameters:
+Optional config parameters could be provided on plugin initialization in the configuration object.
 
-| Option        | Type     | Default        | Description                                                                                                                               |
-| ------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `currentLang` | string   | 'cs'           | Specify one of the languages you have defined (can also be dynamic): 'en', 'cs' ...                                                       |
-| `onAccept`    | function | (cookie) => {} | Callback to be executed after any consent is detected (either given now or already saved previously)                                     |
-| `themeCss`    | string   | ''             | Specify path to the .css file                                                                                                             |
-| `config`      | Object   | {}             | Override default config. For all parameters consult [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
+```js
+initLmcCookieConsentManager(
+  {
+    'currentLang': 'cs',
+    'onAcceptAll': (cookie, cookieConsent) => {
+      // custom code
+    },
+  }
+);
+```
+
+## Configuration options
+
+| Option        | Type     | Default value                  | Description                                                                                                                               |
+|---------------|----------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentLang` | string   | 'cs'                           | Default language. One of `cs`, `en`, `sk`, `pl`. This language will be used when autodetect is disabled or when it fails.                 |
+| `themeCss`    | string   | ''                             | Specify path to the .css file                                                                                                             |
+| `config`      | Object   | {}                             | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
+| `on*` callbacks| function | (cookie, cookieConsent) => {} | See below for configurable callbacks. |
+
+### Callbacks
+
+The library can trigger configured callbacks in various events. They can be used to execute custom functionality,
+for example, to enable some feature after user has given consent.
+
+Each configured callback receives two params:
+
+* `cookie` - object with cookie contents
+* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods](https://github.com/orestbida/cookieconsent#apis--configuration-parameters)
+
+| Callback                    | Trigger event |
+|-----------------------------|---------------|
+| `onAcceptAll`               | Consent with all cookies is detected (either given now or after page load if it was already saved previously) |
+| `onAcceptOnlyNecessary`     | Consent with only necessary cookies is detected (either given now or after page load if it was already saved previously)* |
+| `onAccept`                  | Any consent is detected (either given now or after page load if it was already saved previously) |
+| `onFirstAcceptAll`          | Right after all cookies are accepted |
+| `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
+| `onFirstAccept`             | Right after any consent is just accepted by the user |
 
 ## License
 
