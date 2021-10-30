@@ -17,7 +17,8 @@
   window.addEventListener('load', function () {
     initLmcCookieConsentManager(
       {
-        'defaultLang': 'cs',
+        'defaultLang': 'en',
+        'autodetectLang': false,
         'onAcceptAll': (cookie, cookieConsent) => {
           console.log(cookie);
 

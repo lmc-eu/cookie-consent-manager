@@ -7,6 +7,7 @@ import { config as configSk } from './languages/sk';
 
 const defaultOptions = {
   defaultLang: 'cs',
+  autodetectLang: true,
   themeCss: '',
   onFirstAccept: (cookie, cookieConsent) => {},
   onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
@@ -20,6 +21,7 @@ const defaultOptions = {
 /**
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
+ * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
  * @param {string} [args.themeCss] - Specify file to the .css file
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
@@ -34,6 +36,7 @@ const LmcCookieConsentManager = (args) => {
   const options = { ...defaultOptions, ...args };
   const {
     defaultLang,
+    autodetectLang,
     themeCss,
     onFirstAccept,
     onFirstAcceptOnlyNecessary,
@@ -49,7 +52,7 @@ const LmcCookieConsentManager = (args) => {
 
   cookieConsent.run({
     current_lang: defaultLang,
-    auto_language: true,
+    auto_language: autodetectLang,
     theme_css: themeCss,
     cookie_name: cookieName,
     cookie_expiration: 365,
