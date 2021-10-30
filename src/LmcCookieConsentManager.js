@@ -59,6 +59,7 @@ const LmcCookieConsentManager = (args) => {
     delay: 0, // Show the modal immediately after init
     force_consent: false, // Do not force the consent before page could be used
     hide_from_bots: true, // To be hidden also from Selenium
+    page_scripts: true, // Manage third-party scripts loaded using <script>
     theme_css: themeCss, // Path to external CSS loaded by the component. Empty to disable.
     use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
