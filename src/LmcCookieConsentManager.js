@@ -51,16 +51,16 @@ const LmcCookieConsentManager = (args) => {
   const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
 
   cookieConsent.run({
-    current_lang: defaultLang,
-    auto_language: autodetectLang,
-    theme_css: themeCss,
-    cookie_name: cookieName,
-    cookie_expiration: 365,
-    use_rfc_cookie: true,
-    autorun: true,
-    delay: 0,
-    force_consent: false,
+    auto_language: autodetectLang, // Enable detection from navigator.language
+    autorun: true, // Show the cookie consent banner as soon as possible
+    cookie_expiration: 365, // 1 year
+    cookie_name: cookieName, // Predefined cookie name. Do not override.
+    current_lang: defaultLang, // Default language used when auto_language is false (or when autodetect failed)
+    delay: 0, // Show the modal immediately after init
+    force_consent: false, // Do not force the consent before page could be used
     hide_from_bots: true, // To be hidden also from Selenium
+    theme_css: themeCss, // Path to external CSS loaded by the component. Empty to disable.
+    use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
       consent_modal: {
         layout: 'bar', // box/cloud/bar
