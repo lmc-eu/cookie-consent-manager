@@ -120,6 +120,19 @@ set `type` to `type="text/plain"` and add `data-cookiecategory` attribute with r
 
 See [full documentation](https://github.com/orestbida/cookieconsent#manage-third-party-scripts) for this feature.
 
+This feature is enabled by default. If you'd like to disable it, you can do so by overriding `page_scripts` value in
+`config` option:
+
+```js
+initLmcCookieConsentManager(
+  {
+    'config': {
+      'page_scripts': false
+    }
+  }
+);
+```
+
 ## Configuration
 
 Optional config parameters could be provided on plugin initialization in the configuration object.
@@ -131,6 +144,9 @@ initLmcCookieConsentManager(
     'autodetectLang': false,
     'onAcceptAll': (cookie, cookieConsent) => {
       // custom code
+    },
+    'config': {
+      // overrides of default config, see https://github.com/orestbida/cookieconsent#all-available-options
     },
   }
 );
