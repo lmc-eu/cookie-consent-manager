@@ -1,12 +1,16 @@
 {
   "name": "@lmc-eu/cookie-consent-manager",
   "version": "0.1.0",
-  "description": "Cookie consent banner compatible with Spirit Design System",
+  "description": "LMC Cookie Consent Manager",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "main": "LmcCookieConsentManager.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
+  },
   "scripts": {
     "prebuild": "rm -rf dist && mkdir -p dist && cp package.json README.md dist/",
     "build:css": "yarn css",
