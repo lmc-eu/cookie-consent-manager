@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Consent Manager – callbacks example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <script src="./functions.js" defer></script>
+
+    <link rel="stylesheet" href="../dist/LmcCookieConsentManager.css"><!-- You will load this from CDN instead -->
+</head>
+<body>
+
+<header class="container mt-4">
+    <h1>LMC Cookie Consent Manager</h1>
+</header>
+
+<div class="container mt-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href=".">Basic example</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./configuration.html">Extended configuration</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="./callbacks.html">Callbacks</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./theming.html">Theming</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/lmc-eu/cookie-consent/" target="_blank">Documentation <i class="bi bi-box-arrow-up-right"></i></a>
+        </li>
+    </ul>
+</div>
+
+<main class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <p class="lead">
+                This is an example of configurable callbacks.
+            </p>
+
+            <p>
+                <a href="" class="btn btn-warning" onclick="removeCookieAndReload();">
+                    Remove <code>lmc_ccm</code> cookie and reload
+                </a>
+            </p>
+
+            <h3 class="mt-4">Callbacks</h3>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+
+                <ul class="list-group">
+                    <li class="list-group-item" id="callback-onAccept">onAccept</li>
+                    <li class="list-group-item" id="callback-onAcceptAll">onAcceptAll</li>
+                    <li class="list-group-item" id="callback-onAcceptOnlyNecessary">onAcceptOnlyNecessary</li>
+                    <li class="list-group-item" id="callback-onFirstAccept">onFirstAccept</li>
+                    <li class="list-group-item" id="callback-onFirstAcceptAll">onFirstAcceptAll</li>
+                    <li class="list-group-item" id="callback-onFirstAcceptOnlyNecessary">onFirstAcceptOnlyNecessary</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script defer src="../dist/init.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    window.ccm = initLmcCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
+      {
+        autodetectLang: false, // do not detect language from the browser
+        defaultLang: 'en', // use 'en' language by default
+        onAccept: (cookie, cookieConsent) => { // any type of consent detected
+          markCallbackCalled('onAccept');
+        },
+        onAcceptAll: (cookie, cookieConsent) => { // consent for all cookies detected
+          markCallbackCalled('onAcceptAll');
+
+          if (cookieConsent.allowedCategory('functionality')) { // check for specific consent category
+            console.log('Consent for extended functionality given');
+          }
+        },
+        onAcceptOnlyNecessary: () => { // consent only for necessary cookies detected
+          markCallbackCalled('onAcceptOnlyNecessary');
+          // Note: you don't need to check this consent category before using "necessary" cookies
+        },
+        onFirstAccept: () => { // any consent was just given by the user
+          markCallbackCalled('onFirstAccept');
+        },
+        onFirstAcceptAll: () => { // consent with all was just given by the user
+          markCallbackCalled('onFirstAcceptAll');
+        },
+        onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
+          markCallbackCalled('onFirstAcceptOnlyNecessary');
+        },
+      }
+    );
+  });
+
+  const markCallbackCalled = function (id) {
+    const element = document.getElementById(`callback-${id}`);
+    element.classList.add('list-group-item-success');
+    element.innerText += ' – called'
+  }
+</script>
+
+</body>
+</html>
