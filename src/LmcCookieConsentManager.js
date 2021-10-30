@@ -6,7 +6,7 @@ import { config as configPl } from './languages/pl';
 import { config as configSk } from './languages/sk';
 
 const defaultOptions = {
-  currentLang: 'cs',
+  defaultLang: 'cs',
   themeCss: '',
   onFirstAccept: (cookie, cookieConsent) => {},
   onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
@@ -19,7 +19,7 @@ const defaultOptions = {
 
 /**
  * @param {Object} [args] - Options for cookie consent manager
- * @param {string} [args.currentLang] - Specify one of the languages you have defined
+ * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {string} [args.themeCss] - Specify file to the .css file
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
@@ -33,7 +33,7 @@ const defaultOptions = {
 const LmcCookieConsentManager = (args) => {
   const options = { ...defaultOptions, ...args };
   const {
-    currentLang,
+    defaultLang,
     themeCss,
     onFirstAccept,
     onFirstAcceptOnlyNecessary,
@@ -44,12 +44,11 @@ const LmcCookieConsentManager = (args) => {
     config,
   } = options;
   const cookieName = 'lmc_ccm';
-
   const cookieConsent = window.initCookieConsent();
   const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
 
   cookieConsent.run({
-    current_lang: currentLang,
+    current_lang: defaultLang,
     auto_language: true,
     theme_css: themeCss,
     cookie_name: cookieName,
