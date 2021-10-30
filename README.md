@@ -27,12 +27,13 @@ window.addEventListener('load', function () {
 </script>
 ```
 
-This will load the plugin from CDN and initialize the plugin with default settings. See [examples/index.html](examples/index.html).
+This will load the plugin from CDN and initialize the plugin with default settings.
+[👀 See example](https://lmc-eu.github.io/cookie-consent-manager/examples/).
 
 ## Use default web font, or not?
 
-If you are going to use the plugin with the default theme, you may also want to
-load default Spirit web font which is used by the plugin:
+If you are going to use the plugin with the default theme, you may also want to load default Spirit web font
+which is used by the plugin:
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,12 +41,10 @@ load default Spirit web font which is used by the plugin:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 ```
 
-If Inter font is not provided (or installed in user's system), all texts in
-cookie consent UI default to whatever current `font-family` is set to. As you
-cannot predict what fonts are available on user's side, and because this
-behavior may change in future versions of Spirit Design Tokens, we encourage you
-either to load the default web font as shown above, or to explicitly specify
-the desired font yourself (head to [Theming](#theming) to see how).
+If Inter font is not provided (or installed in user's system), all texts in cookie consent UI default to whatever
+current `font-family` is set to. As you cannot predict what fonts are available on user's side, and because this
+behavior may change in future versions of Spirit Design Tokens, we encourage you either to load the default web font
+as shown above or to explicitly specify the desired font yourself (head to [Theming](#theming) to see how).
 
 ## Loading the plugin
 
@@ -183,6 +182,8 @@ initLmcCookieConsentManager(
 );
 ```
 
+[👀 See extended configuration example](https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html)
+
 ## Configuration options
 
 | Option        | Type     | Default value                  | Description                                                                                                                               |
@@ -212,6 +213,8 @@ Each configured callback receives two params:
 | `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
 | `onFirstAccept`             | Right after any consent is just accepted by the user |
 
+[👀 See callbacks example](https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html)
+
 ## Theming
 
 ### With Spirit Design System
@@ -223,15 +226,13 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline:
 ```scss
 // my-project.scss
 
-// Add this line anywhere you import other third-party CSS, possibly somewhere
-// close to the end of your stylesheet as it contains CSS selectors with high
-// specificity.
+// Add this line anywhere you import other third-party CSS, possibly somewhere close
+// to the end of your stylesheet as it contains CSS selectors with high specificity.
 @use '@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
 ```
 
-Now set up a [Sass load path] so the Sass compiler can find stylesheets located
-in the `node_modules` directory (you will already have a path to your design
-tokens there, as required by [Spirit Web]):
+Now set up a [Sass load path] so the Sass compiler can find stylesheets located in the `node_modules` directory
+(you will already have a path to your design tokens there, as required by [Spirit Web]):
 
 ```sh
 # CLI command (possibly used in your npm scripts)
@@ -260,13 +261,15 @@ Or with webpack:
 },
 ```
 
-**Note:** `sass` v1.23 or higher is required to be able to compile the new Sass
-modules syntax. You may need to migrate to [`sass`][sass] since all other Sass
-compilers (and the old `@import` rule) are now [deprecated][sass modules].
+**Note:** `sass` v1.23 or higher is required to be able to compile the new Sass modules syntax. You may need to migrate
+to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) are now [deprecated][sass modules].
 
 ### Without Spirit Design System
 
-Following CSS custom properties are available for you to customize the UI:
+
+<details>
+<summary>Following CSS custom properties are available for you to customize the UI:</summary>
+
 
 | CSS custom property                   | Description                                             |
 |---------------------------------------|---------------------------------------------------------|
@@ -290,24 +293,22 @@ Following CSS custom properties are available for you to customize the UI:
 | `--lmcccm-btn-secondary-active-bg`    | Secondary button background color in active state       |
 | `--lmcccm-btn-secondary-active-text`  | Secondary button text color in active state             |
 
-Change their values to adjust cookie consent UI to match the design of your
-site:
+Change their values to adjust cookie consent UI to match the design of your site:
 
 ```css
 :root {
   --lmcccm-font-family: 'Open Sans', arial, sans-serif;
 }
 ```
+</details>
 
 ### Dark mode
 
-Add `c_darkmode` CSS class to `<body>` to enable dark mode. It reuses [Spirit
-Design Tokens], so if your project is built with Spirit, applying the
-`c_darkmode` class is all you need to do and dark mode will work for you
-out-of-the-box.
+Add `c_darkmode` CSS class to `<body>` to enable dark mode. It reuses [Spirit Design Tokens], so if your project is
+built with Spirit, applying the `c_darkmode` class is all you need to do and dark mode will work for you out-of-the-box.
 
-If your project does _not_ use Spirit, you still may adjust exposed CSS custom
-properties as described above, this time scoped to the `.c_darkmode` class:
+If your project does _not_ use Spirit, you still may adjust exposed CSS custom properties as described above,
+this time scoped to the `.c_darkmode` class:
 
 ```css
 .c_darkmode {
@@ -357,7 +358,8 @@ yarn format:fix
 
 #### Publishing package
 
-Prepare release using `yarn release` on a local machine. Check the generated changelog and the bumped `package.json`. Then push to origin. Github [publish action](./github/worflows/publish.yaml) is then taking care of publishing package to [npmjs.com](https://npmjs.com/).
+Prepare release using `yarn release` on a local machine. Check the generated changelog and the bumped `package.json`.
+Then push to origin. Github [publish action](./github/worflows/publish.yaml) is then taking care of publishing package to [npmjs.com](https://npmjs.com/).
 
 ## License
 
