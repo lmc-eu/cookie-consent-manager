@@ -25,7 +25,7 @@
   "scripts": {
     "precss": "yarn css:lint",
     "css": "npm-run-all --serial css:compile css:prefix css:minify",
-    "css:compile": "sass --load-path=node_modules/@lmc-eu/spirit-design-tokens/dist/default/scss src/LmcCookieConsentManager.scss dist/LmcCookieConsentManager.css",
+    "css:compile": "sass --load-path=node_modules --load-path=node_modules/@lmc-eu/spirit-design-tokens/default/scss src/LmcCookieConsentManager.scss dist/LmcCookieConsentManager.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
     "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
@@ -36,7 +36,9 @@
     "lint": "npm-run-all --serial css:lint lint:commit",
     "lint:commit": "yarn commitlint --from $(git describe --always --first-parent) --verbose",
     "lint:commit:last": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
-    "prebuild": "rm -rf dist && mkdir -p dist && cp package.json README.md dist/",
+    "prebuild": "npm-run-all --serial build:clean build:copy",
+    "build:clean": "rm -rf dist && mkdir -p dist/scss",
+    "build:copy": "cp package.json README.md src/LmcCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
     "build": "npm-run-all --serial js:compile css",
     "start": "node scripts/serve.js",
     "format": "yarn format:check",
@@ -54,7 +56,7 @@
     "replace-version": "node scripts/readme-replace-version.js"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.2.0",
+    "@lmc-eu/spirit-design-tokens": "^0.4.0",
     "vanilla-cookieconsent": "^2.6.1"
   },
   "devDependencies": {

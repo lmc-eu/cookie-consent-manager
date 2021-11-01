@@ -9,6 +9,13 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
 ## Basic usage
 
+Load default CSS in your `<head>`:
+
+```html
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.3.1/LmcCookieConsentManager.min.css">
+```
+
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
@@ -22,6 +29,24 @@ window.addEventListener('load', function () {
 
 This will load the plugin from CDN and initialize the plugin with default settings. See [examples/index.html](examples/index.html).
 
+## Use default web font, or not?
+
+If you are going to use the plugin with the default theme, you may also want to
+load default Spirit web font which is used by the plugin:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+```
+
+If Inter font is not provided (or installed in user's system), all texts in
+cookie consent UI default to whatever current `font-family` is set to. As you
+cannot predict what fonts are available on user's side, and because this
+behavior may change in future versions of Spirit Design Tokens, we encourage you
+either to load the default web font as shown above, or to explicitly specify
+the desired font yourself (head to [Theming](#theming) to see how).
+
 ## Loading the plugin
 
 ### Via CDN or static file
@@ -29,6 +54,7 @@ This will load the plugin from CDN and initialize the plugin with default settin
 You can load the plugin from a CDN, as in the basic example above.
 
 ```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.3.1/LmcCookieConsentManager.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.3.1/init.js"></script>
 ```
 
@@ -50,7 +76,7 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
     ```
     or
     ```sh
-    npm i @lmc-eu/cookie-consent-manager
+    npm install --save @lmc-eu/cookie-consent-manager
     ```
 
 2. Import the module in your javascript:
@@ -62,14 +88,17 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
     });
     ```
 
-3. Include default styles:
-    ```scss
-    @use '../node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
-
-    :root {
-        // override default config
-    }
-    ```
+3. Include default CSS in your HTML:
+   ```html
+   <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
+   ```
+   or in your Sass stylesheet:
+   ```scss
+   @use 'node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css';
+   ```
+   Please mind the `.css` extension used in the Sass example. Using the provided
+   `.scss` stylesheet is only [recommended](#with-spirit-design-system) for
+   projects that are built with [Spirit Design System].
 
 ## Manage features depending on given consent
 
@@ -183,6 +212,109 @@ Each configured callback receives two params:
 | `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
 | `onFirstAccept`             | Right after any consent is just accepted by the user |
 
+## Theming
+
+### With Spirit Design System
+
+If your project uses [Spirit Design System], you are almost done!
+
+All you need to do is to add this plugin's SCSS to your Sass pipeline:
+
+```scss
+// my-project.scss
+
+// Add this line anywhere you import other third-party CSS, possibly somewhere
+// close to the end of your stylesheet as it contains CSS selectors with high
+// specificity.
+@use '@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
+```
+
+Now set up a [Sass load path] so the Sass compiler can find stylesheets located
+in the `node_modules` directory (you will already have a path to your design
+tokens there, as required by [Spirit Web]):
+
+```sh
+# CLI command (possibly used in your npm scripts)
+
+sass --load-path=node_modules --load-path=path/to/my/design-tokens my-project.scss my-project.css
+```
+
+Or with webpack:
+
+```js
+// webpack.config.js
+
+{
+  loader: 'sass-loader',
+  options: {
+    sassOptions: {
+      includePaths: [
+        path.resolve(
+          __dirname,
+          'node_modules',
+          'path/to/my/design-tokens',
+        ),
+      ],
+    },
+  },
+},
+```
+
+**Note:** `sass` v1.23 or higher is required to be able to compile the new Sass
+modules syntax. You may need to migrate to [`sass`][sass] since all other Sass
+compilers (and the old `@import` rule) are now [deprecated][sass modules].
+
+### Without Spirit Design System
+
+Following CSS custom properties are available for you to customize the UI:
+
+| CSS custom property                   | Description                                             |
+|---------------------------------------|---------------------------------------------------------|
+| `--lmcccm-base-font-size`             | Base font size                                          |
+| `--lmcccm-font-family`                | Base font family                                        |
+| `--lmcccm-bg`                         | Bar background color                                    |
+| `--lmcccm-text`                       | Text color                                              |
+| `--lmcccm-link-text`                  | Link text color                                         |
+| `--lmcccm-link-hover-text`            | Link text color on hover                                |
+| `--lmcccm-link-active-text`           | Link text color in active state                         |
+| `--lmcccm-btn-primary-bg`             | Primary button background color                         |
+| `--lmcccm-btn-primary-text`           | Primary button text color                               |
+| `--lmcccm-btn-primary-hover-bg`       | Primary button background color on hover                |
+| `--lmcccm-btn-primary-hover-text`     | Primary button text color on hover                      |
+| `--lmcccm-btn-primary-active-bg`      | Primary button background color in active state         |
+| `--lmcccm-btn-primary-active-text`    | Primary button text color in active state               |
+| `--lmcccm-btn-secondary-bg`           | Secondary button background color                       |
+| `--lmcccm-btn-secondary-text`         | Secondary button text color                             |
+| `--lmcccm-btn-secondary-hover-bg`     | Secondary button background color on hover              |
+| `--lmcccm-btn-secondary-hover-text`   | Secondary button text color on hover                    |
+| `--lmcccm-btn-secondary-active-bg`    | Secondary button background color in active state       |
+| `--lmcccm-btn-secondary-active-text`  | Secondary button text color in active state             |
+
+Change their values to adjust cookie consent UI to match the design of your
+site:
+
+```css
+:root {
+  --lmcccm-font-family: 'Open Sans', arial, sans-serif;
+}
+```
+
+### Dark mode
+
+Add `c_darkmode` CSS class to `<body>` to enable dark mode. It reuses [Spirit
+Design Tokens], so if your project is built with Spirit, applying the
+`c_darkmode` class is all you need to do and dark mode will work for you
+out-of-the-box.
+
+If your project does _not_ use Spirit, you still may adjust exposed CSS custom
+properties as described above, this time scoped to the `.c_darkmode` class:
+
+```css
+.c_darkmode {
+  --lmcccm-bg: #000;
+}
+```
+
 ## Development and contributing
 
 ### Local development
@@ -231,6 +363,11 @@ Prepare release using `yarn release` on a local machine. Check the generated cha
 
 Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md) for more information.
 
-[spirit design system]: https://github.com/lmc-eu/spirit-design-system
 [cookie consent]: https://github.com/orestbida/cookieconsent
 [orest bida]: https://github.com/orestbida
+[spirit design system]: https://github.com/lmc-eu/spirit-design-system
+[spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/packages/design-tokens
+[spirit web]: https://github.com/lmc-eu/spirit-design-system/packages/web
+[sass]: https://www.npmjs.com/package/sass
+[sass load path]: https://sass-lang.com/documentation/cli/dart-sass#load-path
+[sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
