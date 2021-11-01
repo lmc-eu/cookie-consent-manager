@@ -1,12 +1,11 @@
 name: Publish
 
 on:
-  release:
-    types:
-      - published
+  create:
 
 jobs:
   publish:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     name: Publish package
     runs-on: ubuntu-20.04
     steps:
@@ -23,9 +22,6 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Bump version
-        run: yarn version --`./bin/ci/semver.sh`
 
       - name: Authenticate npm
         run: ./bin/ci/npm-auth.sh
