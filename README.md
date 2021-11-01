@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/@lmc-eu/cookie-consent-manager.svg)](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager)
+![CI](https://github.com/lmc-eu/cookie-consent-manager/actions/workflows/lint.yaml/badge.svg)
+
 # Cookie Consent Manager
 
 Provide configurable cookie consent banner with predefined LMC defaults. The UI is based on [Spirit Design System].
