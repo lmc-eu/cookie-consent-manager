@@ -1,4 +1,54 @@
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.1.0&sourceBranch=refs%2Ftags%2F0.2.0) (2021-11-01)
+
+
+### Bug Fixes
+
+
+* Incomplete options passed by user overrides all defaults ([68f8dcb](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/68f8dcb))
+### Chores
+
+
+* Add repository URL to make it shown also on npmjs.com ([66947d6](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/66947d6))
+* Block fixup commit message using github action ([1a43014](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1a43014))
+* Generate changelog using conventional changelog ([dddacfc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/dddacfc))
+* Introduce commit linting ([d8238c3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d8238c3))
+* Introduce simple dev server for local development [#CCM-5](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-5) ([84c3245](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/84c3245))
+* Make package publishlable ([effcd7a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/effcd7a))
+* Rename `dev` script to more common `start` ([bb6bd54](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/bb6bd54))
+* Run all check with single npm script ([fee171a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/fee171a))
+* Use usernames instead of names for codeowners ([5cd5eba](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5cd5eba))
+### Code Refactoring
+
+
+* Unify variable casing to camelCase ([3f1367e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3f1367e))
+### Documentation
+
+
+* Add development and contributing section [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([4bc165d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4bc165d))
+* Extend and rearrange README [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([2260342](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/2260342))
+* Fix another typo in cdn path ([185d9f8](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/185d9f8))
+* Fix typo in cdn path ([33ea2ec](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/33ea2ec))
+* Introduce badges to make readme look more cool ([8e08301](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8e08301))
+* Mark config arguments optional in jsdoc ([10e48b2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/10e48b2))
+* Remove autoload script, extend default example [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([a85c7b3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a85c7b3))
+* Rename docs to examples [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([32a0c39](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/32a0c39))
+### Features
+
+
+* Add callbacks for all onAccept scenarios [#CCM-24](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-24) ([23314b5](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/23314b5))
+* Add custom onAccept callback to extend the default one [#CCM-19](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-19) ([8ed95ba](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8ed95ba))
+* Add translations for cs, en, sk and pl language [#CCM-10](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-10) ([1743866](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1743866))
+* Configure consent levels [#CCM-12](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-12) ([703cf98](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/703cf98))
+* Configure plugin defaults ([bd6309f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/bd6309f))
+* Make language autodetection easily configurable [#CCM-26](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-26) ([4404a9a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4404a9a))
+* Provide cookieConsent instance to callbacks [#CCM-24](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-24) ([9232b09](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/9232b09))
+* Push info to dataLayer on accept ([4203092](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4203092))
+* Rename default language settings to defaultLang to make it more understandable [#CCM-26](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-26) ([6635813](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6635813))
+* Return CookieConsent instance from the init function ([b217059](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b217059))
+* Save distribution files for instant usage and examples ([d9964f3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d9964f3))
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F19ff586&sourceBranch=refs%2Ftags%2F0.1.0) (2021-10-19)
 
