@@ -1,0 +1,29 @@
+//
+// Map LMC CCM **private** theming API to the original Cookie Consent custom properties.
+//
+// Assignment below is applied through `.cc_div` instead of `:root`, so it works for both light and
+// dark theme.
+
+.cc_div {
+    --cc-bg: var(--lmcccm-p-bg);
+    --cc-text: var(--lmcccm-p-text);
+    --cc-btn-primary-bg: var(--lmcccm-p-btn-primary-bg);
+    --cc-btn-primary-text: var(--lmcccm-p-btn-primary-text);
+    --cc-btn-primary-hover-bg: var(--lmcccm-p-btn-primary-hover-bg);
+    --cc-btn-secondary-bg: var(--lmcccm-p-btn-secondary-bg);
+    --cc-btn-secondary-text: var(--lmcccm-p-btn-secondary-text);
+    --cc-btn-secondary-hover-bg: var(--lmcccm-p-btn-secondary-hover-bg);
+    //--cc-toggle-bg-off: #919ea6;
+    //--cc-toggle-bg-on: var(--cc-btn-primary-bg);
+    //--cc-toggle-bg-readonly: #d5dee2;
+    //--cc-toggle-knob-bg: #fff;
+    //--cc-toggle-knob-icon-color: #ecf2fa;
+    --cc-block-text: var(--lmcccm-p-text);
+    //--cc-cookie-category-block-bg: #f0f4f7;
+    //--cc-cookie-category-block-bg-hover: #e9eff4;
+    //--cc-section-border: #f1f3f5;
+    //--cc-cookie-table-border: #e9edf2;
+    //--cc-overlay-bg: rgba(4, 6, 8, 0.85);
+    //--cc-webkit-scrollbar-bg: #cfd5db;
+    //--cc-webkit-scrollbar-bg-hover: #9199a0;
+}

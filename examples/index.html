@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <title>Cookie Consent Manager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../dist/LmcCookieConsentManager.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css">
 </head>
 <body>
 
 <h1>LMC Cookie Consent Manager Demo</h1>
+
+<button
+  type="button"
+  onclick="document.body.classList.toggle('c_darkmode')"
+>
+  Toggle dark mode
+</button>
 
 <script defer src="../dist/init.js"></script>
 <script>

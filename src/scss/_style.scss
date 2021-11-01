@@ -1,0 +1,204 @@
+//
+// LMC CCM theme.
+//
+// Necessary overrides for the original Cookie Consent CSS.
+
+@use '@tokens' as tokens;
+@use 'settings';
+@use 'tools';
+
+// Original CSS heavily relies on ID selectors.
+/* stylelint-disable selector-max-id */
+
+//
+// Shared Styles
+// =============
+
+.cc_div {
+    font-family: var(--lmcccm-p-font-family);
+    font-size: var(--lmcccm-p-base-font-size);
+    line-height: tokens.$line-height-default;
+}
+
+.cc_div *,
+.cc_div :after,
+.cc_div :before {
+    line-height: tokens.$line-height-default;
+}
+
+.cc_div a {
+    text-decoration: underline;
+    color: var(--lmcccm-p-link-text);
+    border-bottom: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--lmcccm-p-link-hover-text);
+    }
+
+    &:active {
+        color: var(--lmcccm-p-link-active-text);
+    }
+}
+
+//
+// Typography
+// ==========
+
+#c-ttl,
+#s-bl td:before,
+#s-ttl,
+.cc_div .b-tl,
+.cc_div .c-bn {
+    font-weight: 700;
+}
+
+#c-ttl {
+    // Stylelint and Prettier are clashing on the following line. Let's prefer Stylelint.
+    /* prettier-ignore */
+    margin-bottom: tools.rem2em(tokens.$space-6, tools.rem2em(tokens.$heading-small-desktop));
+    font-size: tools.rem2em(tokens.$heading-small-desktop);
+    line-height: tokens.$line-height-small;
+
+    @media screen and (max-width: settings.$breakpoint-desktop-down) {
+        font-size: tools.rem2em(tokens.$heading-small-tablet);
+    }
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        font-size: tools.rem2em(tokens.$heading-small-mobile);
+    }
+}
+
+#c-txt {
+    margin-bottom: 0;
+    font-size: tools.rem2em(tokens.$body-text-medium);
+    line-height: inherit;
+}
+
+#cm .c_link,
+#s-c-bn,
+#s-cnt button + button {
+    &:hover {
+        color: var(--lmcccm-p-btn-secondary-hover-text);
+    }
+
+    &:active {
+        color: var(--lmcccm-p-btn-secondary-active-text);
+    }
+}
+
+//
+// Bar
+// ===
+
+#cm {
+    box-shadow: tokens.$shadow-1;
+}
+
+#cm.bar {
+    padding: tools.rem2em(tokens.$space-9);
+}
+
+#cm.bar #c-inr {
+    display: flex;
+    align-items: flex-end;
+    max-width: none;
+}
+
+#cm.bar #c-inr-i {
+    margin-right: tools.rem2em(tokens.$space-10);
+}
+
+#cm.bar #c-bns {
+    display: flex;
+    flex-flow: row-reverse;
+    flex-shrink: 0;
+    align-items: baseline;
+    max-width: none;
+}
+
+@media screen and (max-width: settings.$breakpoint-desktop-down) {
+    #cm.bar #c-inr {
+        flex-flow: column;
+        align-items: stretch;
+    }
+
+    #cm.bar #c-inr-i {
+        margin-right: 0;
+        margin-bottom: tools.rem2em(tokens.$space-8);
+    }
+
+    #cm.bar #c-bns {
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: settings.$breakpoint-tablet-down) {
+    #cm.bar {
+        padding: tools.rem2em(tokens.$space-7);
+    }
+
+    #cm.bar #c-inr-i {
+        margin-bottom: tools.rem2em(tokens.$space-7);
+    }
+
+    #cm.bar #c-bns {
+        flex-flow: column-reverse;
+        align-self: stretch;
+    }
+
+    #cm.bar .c-bn:not(:last-child) {
+        margin-top: tools.rem2em(tokens.$space-5);
+    }
+}
+
+//
+// Buttons
+// =======
+
+.cc_div .c-bn {
+    padding: tools.rem2em(tokens.$space-4) tools.rem2em(tokens.$space-7);
+    border-radius: tools.rem2em(tokens.$radius-1);
+}
+
+#c-bns button:first-child,
+#s-bns button:first-child {
+    &:hover {
+        color: var(--lmcccm-p-btn-primary-hover-text);
+    }
+
+    &:active {
+        color: var(--lmcccm-p-btn-primary-active-text);
+        background: var(--lmcccm-p-btn-primary-active-bg);
+    }
+}
+
+#cm .c-bn {
+    width: auto;
+    font-size: inherit;
+}
+
+#cm .c-bn.c_link {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: tools.rem2em(tokens.$space-7);
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+
+    &:active {
+        background: var(--lmcccm-p-btn-secondary-active-bg);
+    }
+}
+
+@media screen and (max-width: settings.$breakpoint-tablet-down) {
+    #cm .c-bn,
+    .cc_div .c-bn {
+        width: 100%;
+    }
+
+    #c-bns button + button,
+    #s-cnt button + button {
+        margin-top: 0;
+    }
+}
