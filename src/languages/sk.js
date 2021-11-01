@@ -23,6 +23,13 @@ export const config = {
       },
       {
         toggle: {
+          value: 'ad',
+          enabled: false,
+          readonly: false,
+        },
+      },
+      {
+        toggle: {
           value: 'analytics',
           enabled: false,
           readonly: false,

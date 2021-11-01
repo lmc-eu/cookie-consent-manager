@@ -81,6 +81,7 @@ consent category. This must be done *before* the respective cookie is set.
 ### Consent categories
 
 * `necessary` - for cookies required by the website to work (for example login); for these cookies you **don't need to check** whether user actually has this level
+* `ad` - for cookies related to advertising
 * `analytics` - for analysis and statistics
 * `functionality` - for extended functionality (not covered by `necessary` category)
 * `personalization` - for personalization based on user profiling (recommendation etc.)
