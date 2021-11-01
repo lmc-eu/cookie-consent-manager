@@ -18,16 +18,16 @@ const defaultOptions = {
 };
 
 /**
- * @param {Object} args - Options for cookie consent manager
- * @param {string} args.currentLang - Specify one of the languages you have defined
- * @param {string} args.themeCss - Specify file to the .css file
- * @param {function} args.onFirstAccept - Callback to be executed right after any consent is just accepted
- * @param {function} args.onFirstAcceptOnlyNecessary - Callback to be executed right after only necessary cookies are accepted
- * @param {function} args.onFirstAcceptAll - Callback to be executed right after all cookies are accepted
- * @param {function} args.onAccept - Callback to be executed when any consent is detected (either given right now or already saved previously)
- * @param {function} args.onAcceptOnlyNecessary - Callback to be executed when consent with only necessary cookies is detected (either given right now or already saved previously)
- * @param {function} args.onAcceptAll - Callback to be executed when consent with all cookies is detected (either given right now or already saved previously)
- * @param {Object} args.config - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
+ * @param {Object} [args] - Options for cookie consent manager
+ * @param {string} [args.currentLang] - Specify one of the languages you have defined
+ * @param {string} [args.themeCss] - Specify file to the .css file
+ * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
+ * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
+ * @param {function} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
+ * @param {function} [args.onAccept] - Callback to be executed when any consent is detected (either given right now or already saved previously)
+ * @param {function} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies is detected (either given right now or already saved previously)
+ * @param {function} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected (either given right now or already saved previously)
+ * @param {Object} [args.config] - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  */
 const LmcCookieConsentManager = (args) => {
   const options = { ...defaultOptions, ...args };
