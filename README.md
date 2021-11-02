@@ -223,6 +223,10 @@ To fix code style according to Prettier rules run:
 yarn format:fix
 ```
 
+#### Publishing package
+
+Prepare release using `yarn release` on a local machine. Check the generated changelog and the bumped `package.json`. Then push to origin. Github [publish action](./github/worflows/publish.yaml) is then taking care of publishing package to [npmjs.com](https://npmjs.com/).
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md) for more information.
