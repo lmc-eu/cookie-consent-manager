@@ -12,7 +12,7 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.3.0/init.js"></script>
 <script>
 window.addEventListener('load', function () {
   initLmcCookieConsentManager();
@@ -29,7 +29,7 @@ This will load the plugin from CDN and initialize the plugin with default settin
 You can load the plugin from a CDN, as in the basic example above.
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.1.0/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@v0.3.0/init.js"></script>
 ```
 
 Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).
