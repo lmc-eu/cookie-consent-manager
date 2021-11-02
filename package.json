@@ -2,6 +2,12 @@
   "name": "@lmc-eu/cookie-consent-manager",
   "version": "0.3.0",
   "description": "LMC Cookie Consent Manager",
+  "keywords": [
+    "lmc-eu",
+    "cookie",
+    "consent",
+    "manager"
+  ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
