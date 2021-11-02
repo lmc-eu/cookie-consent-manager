@@ -17,6 +17,11 @@
     "type": "git",
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
   },
+  "contributors": [
+    "Ondřej Machulda <ondrej.machulda@lmc.eu>",
+    "Tomáš Litera <tomas.litera@lmc.eu>",
+    "Adam Kudrna <adam.kudrna@lmc.eu>"
+  ],
   "scripts": {
     "precss": "yarn css:lint",
     "css": "npm-run-all --serial css:compile css:prefix css:minify",
