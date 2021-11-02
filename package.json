@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.2.0",
-    "vanilla-cookieconsent": "^2.6.0"
+    "vanilla-cookieconsent": "^2.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
