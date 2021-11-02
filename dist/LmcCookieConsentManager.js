@@ -619,32 +619,35 @@
     typeof window.initCookieConsent !== "function" && (window.initCookieConsent = Wa);
   })();
 
-  // src/languages/en.js
+  // src/languages/cs.js
   var config = {
     consent_modal: {
-      title: "I use cookies",
-      description: "Your cookie consent message here",
+      title: "Tyto str\xE1nky vyu\u017E\xEDvaj\xED cookies",
+      description: `Kliknut\xEDm na \u201EP\u0159ijmout v\u0161e\u201C d\xE1v\xE1te souhlas spole\u010Dnosti LMC s.r.o. k\xA0vyu\u017E\xEDv\xE1n\xED soubor\u016F Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F ve\xA0va\u0161em za\u0159\xEDzen\xED. Pou\u017Eit\xED t\u011Bchto Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F usnadn\xED navigaci na str\xE1nk\xE1ch, zobrazen\xED personalizovan\xE9ho obsahu, c\xEDlen\xFD marketing, anal\xFDzu vyu\u017E\xEDv\xE1n\xED na\u0161ich produkt\u016F a\xA0slu\u017Eeb.
+      V\xEDce informac\xED naleznete na\xA0str\xE1nce\xA0<a href="https://www.lmc.eu/cs/cookies" target="_blank">Pou\u017E\xEDv\xE1n\xED\xA0cookies</a>.`,
       primary_btn: {
-        text: "Accept",
+        text: "P\u0159ijmout v\u0161e",
         role: "accept_all"
       },
       secondary_btn: {
-        text: "Reject",
+        text: "P\u0159ijmout nezbytn\xE9",
         role: "accept_necessary"
       }
     },
     settings_modal: {
-      title: "Cookie settings",
-      save_settings_btn: "Save settings",
-      accept_all_btn: "Accept all",
-      reject_all_btn: "Reject all",
-      close_btn_label: "Close",
       blocks: [
         {
           toggle: {
             value: "necessary",
             enabled: true,
             readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
           }
         },
         {
@@ -672,32 +675,147 @@
     }
   };
 
-  // src/languages/cs.js
+  // src/languages/en.js
   var config2 = {
     consent_modal: {
-      title: "Tyto str\xE1nky pou\u017E\xEDvaj\xED cookies",
-      description: 'Cookies pou\u017E\xEDv\xE1me, abychom zajistili spr\xE1vn\xE9 fungov\xE1n\xED a bezpe\u010Dnost na\u0161ich str\xE1nek, t\xEDm p\xE1dem co nejlep\u0161\xED zku\u0161enost p\u0159i n\xE1v\u0161t\u011Bv\u011B. Kliknut\xEDm na \u201EP\u0159ijmout v\u0161echny\u201C d\xE1v\xE1te sv\u016Fj souhlas s pou\u017Eit\xEDm cookies pro \xFA\u010Dely reklamy a analytik. Sv\xE1 nastaven\xED cookies m\u016F\u017Eete pozd\u011Bji kdykoliv zm\u011Bnit. V\xEDce informac\xED naleznete v <a href="#">Prohl\xE1\u0161en\xED o cookies.</a>',
+      title: "This website uses cookies",
+      description: `By clicking on "Accept all", you give your consent to LMC s.r.o. to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
+      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use\xA0of\xA0cookies</a>.`,
       primary_btn: {
-        text: "P\u0159ijmout",
+        text: "Accept all",
         role: "accept_all"
       },
       secondary_btn: {
-        text: "P\u0159ijmout nezbytn\xE9",
+        text: "Accept necessary",
         role: "accept_necessary"
       }
     },
     settings_modal: {
-      title: "Nastaven\xED cookies",
-      save_settings_btn: "Ulo\u017Eit nastaven\xE9",
-      accept_all_btn: "P\u0159ijmout v\u0161e",
-      reject_all_btn: "Odm\xEDtnout v\u0161e",
-      close_btn_label: "Zav\u0159\xEDt",
       blocks: [
         {
           toggle: {
             value: "necessary",
             enabled: true,
             readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+
+  // src/languages/pl.js
+  var config3 = {
+    consent_modal: {
+      title: "Ta strona u\u017Cywa cookies",
+      description: `Klikaj\u0105c \u201EAkceptuj\u0119 wszystkie\u201D, wyra\u017Casz zgod\u0119 aby LMC s.r.o. wykorzystywa\u0142o pliki cookie i\xA0inne identyfikatory na Twoim urz\u0105dzeniu. Korzystanie z\xA0tych plik\xF3w cookie i\xA0innych identyfikator\xF3w u\u0142atwi nawigacj\u0119 w\xA0serwisie, wy\u015Bwietlanie spersonalizowanych tre\u015Bci, marketing ukierunkowany, analiz\u0119 korzystania z\xA0naszych produkt\xF3w i\xA0us\u0142ug.
+      Wi\u0119cej informacji znajdziesz na stronie\xA0<a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w Cookies</a>.`,
+      primary_btn: {
+        text: "Akceptuj wszystkie",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "Akceptuj niezb\u0119dne",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+
+  // src/languages/sk.js
+  var config4 = {
+    consent_modal: {
+      title: "Tieto str\xE1nky pou\u017E\xEDvaj\xFA cookies",
+      description: `Kliknut\xEDm na \u201EPrija\u0165 v\u0161etky\u201C d\xE1vate s\xFAhlas spolo\u010Dnosti LMC s.r.o. k\xA0vyu\u017E\xEDvaniu s\xFAborov Cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov vo\xA0va\u0161om zariaden\xED. Pou\u017Eitie t\xFDchto cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov u\u013Eah\u010D\xED navig\xE1ciu na\xA0str\xE1nkach, zobrazenie personalizovan\xE9ho obsahu, cielen\xFD marketing, anal\xFDzu vyu\u017E\xEDvania na\u0161ich produktov a\xA0slu\u017Eieb.
+      Viac inform\xE1ci\xED n\xE1jdete na\xA0str\xE1nke\xA0<a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvanie\xA0cookies</a>.`,
+      primary_btn: {
+        text: "Prija\u0165 v\u0161etky",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "Prija\u0165 nevyhnutn\xE9",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
           }
         },
         {
@@ -726,21 +844,53 @@
   };
 
   // src/LmcCookieConsentManager.js
-  var defaultOptions = { currentLang: "cs", themeCss: "", config: {} };
-  var LmcCookieConsentManager = (options = defaultOptions) => {
-    const { currentLang, themeCss, config: config3 } = options;
-    const cookieconsent = window.initCookieConsent();
-    cookieconsent.run(__spreadValues({
-      current_lang: currentLang,
-      auto_language: true,
-      theme_css: themeCss,
-      cookie_name: "lmc_ccm",
-      cookie_expiration: 365,
-      use_rfc_cookie: true,
+  var defaultOptions = {
+    defaultLang: "cs",
+    autodetectLang: true,
+    themeCss: "",
+    onFirstAccept: (cookie, cookieConsent) => {
+    },
+    onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {
+    },
+    onFirstAcceptAll: (cookie, cookieConsent) => {
+    },
+    onAccept: (cookie, cookieConsent) => {
+    },
+    onAcceptOnlyNecessary: (cookie, cookieConsent) => {
+    },
+    onAcceptAll: (cookie, cookieConsent) => {
+    },
+    config: {}
+  };
+  var LmcCookieConsentManager = (args) => {
+    const options = __spreadValues(__spreadValues({}, defaultOptions), args);
+    const {
+      defaultLang,
+      autodetectLang,
+      themeCss,
+      onFirstAccept,
+      onFirstAcceptOnlyNecessary,
+      onFirstAcceptAll,
+      onAccept,
+      onAcceptOnlyNecessary,
+      onAcceptAll,
+      config: config5
+    } = options;
+    const cookieName = "lmc_ccm";
+    const cookieConsent = window.initCookieConsent();
+    const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
+    cookieConsent.run(__spreadValues({
+      auto_language: autodetectLang,
       autorun: true,
+      cookie_expiration: 365,
+      cookie_name: cookieName,
+      current_lang: defaultLang,
       delay: 0,
       force_consent: false,
       hide_from_bots: true,
+      page_scripts: true,
+      theme_css: themeCss,
+      use_rfc_cookie: true,
       gui_options: {
         consent_modal: {
           layout: "bar",
@@ -749,6 +899,8 @@
         }
       },
       onAccept: (cookie) => {
+        const givenLevels = cookieConsent.get("level");
+        const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === "necessary";
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "CookieConsent-update",
@@ -758,12 +910,21 @@
           "CookieConsent.personalization": cookie.level.includes("personalization"),
           "CookieConsent.revision": cookie.revision
         });
+        onAccept(cookie, cookieConsent);
+        if (isFirstTimeAccept) {
+          onFirstAccept(cookie, cookieConsent);
+          acceptedOnlyNecessary ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
+        }
+        acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
       },
       languages: {
-        en: config,
-        cs: config2
+        cs: config,
+        en: config2,
+        pl: config3,
+        sk: config4
       }
-    }, config3));
+    }, config5));
+    return cookieConsent;
   };
   var LmcCookieConsentManager_default = LmcCookieConsentManager;
 })();

@@ -1,4 +1,32 @@
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.2.0&sourceBranch=refs%2Ftags%2F0.3.0) (2021-11-02)
+
+
+### Chores
+
+
+* Create release on local machine and publish by ci pipeline [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([4ed90f9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4ed90f9))
+* Introduce publish package pipeline [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([ac0a5aa](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/ac0a5aa))
+### Code Refactoring
+
+
+* Rearrange and document internal defaults ([5b6c8e6](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5b6c8e6))
+### Dependencies
+
+
+* Bump all dependencies ([9b1b90c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/9b1b90c))
+### Documentation
+
+
+* Extend description of necessary consent ([a0ec0de](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a0ec0de))
+* How to publish this package [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([7672f5e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7672f5e))
+### Features
+
+
+* Add 'ad' consent category [#CCM-12](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-12) ([5777638](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5777638))
+* Enable management of third-party scripts ([0020661](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/0020661))
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.1.0&sourceBranch=refs%2Ftags%2F0.2.0) (2021-11-01)
 
