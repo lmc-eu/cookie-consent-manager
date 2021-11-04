@@ -21,7 +21,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Disable husky commit hooks
-        run: npm set-script prepare ""
+        run: yarn remove-prepare
 
       - name: Build
         run: yarn build
