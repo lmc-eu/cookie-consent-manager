@@ -1,4 +1,22 @@
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.0&sourceBranch=refs%2Ftags%2F0.3.1) (2021-11-04)
+
+
+### Chores
+
+
+* Automatically replace package version in readme file to current ([97454e1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/97454e1))
+* Disable commit message hook with CI env ([3b0e0b9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3b0e0b9))
+* Disable prepare script with commitlint on CI publish ([4886281](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4886281))
+* Introduce contributors array to display package authors ([e2c3c4f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e2c3c4f))
+* Introduce keywords to display on package page ([d8a3568](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d8a3568))
+* Introduce PR labelling ([4f8e67d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4f8e67d))
+* Introduce release action which is triggered manually ([97c00f0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/97c00f0))
+* Omit version prefix from replacing jsdelivr urls in readme ([704332b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/704332b))
+* Run publish only on tagged refs without any prefix ([534caf3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/534caf3))
+* Set git tag version to plain semver string without prefix ([6f7c069](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6f7c069))
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.2.0&sourceBranch=refs%2Ftags%2F0.3.0) (2021-11-02)
 
