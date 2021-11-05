@@ -15,13 +15,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Disable husky commit hooks
-        run: yarn remove-prepare
+        run: npm set-script prepare ""
 
       - name: Build
         run: yarn build
