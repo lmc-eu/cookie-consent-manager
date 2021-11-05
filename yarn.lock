@@ -378,9 +378,9 @@
     q "^1.5.1"
 
 "@lmc-eu/prettier-config@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.0.3.tgz#e38ca0aa59fab1b6a5c1e347362764a9583018c6"
-  integrity sha512-CoXws/7EQjg78X+0TUCpubaUlK76mzae52fsgsRhPtgf0KLCTvIKUzNnPDa+SzlAMG7c+yNi2YFbflgKeQso4A==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.1.0.tgz#b613cc69d9a918d959a51f6aeb1c57994cc48295"
+  integrity sha512-TylcLUs2X47nZjvNKO/HBmni3iAcl4JQkkeRbAF82+o/LfWbmVFXcZxbJUk62bJRkK6CKrvOE7Q3uOYkJK4d6Q==
 
 "@lmc-eu/spirit-design-tokens@^0.4.0":
   version "0.4.0"
