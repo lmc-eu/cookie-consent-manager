@@ -71,8 +71,7 @@ const LmcCookieConsentManager = (args) => {
     },
     onAccept: (cookie) => {
       const givenLevels = cookieConsent.get('level');
-      const acceptedOnlyNecessary =
-        givenLevels.length === 1 && givenLevels[0] === 'necessary';
+      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === 'necessary';
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -80,8 +79,7 @@ const LmcCookieConsentManager = (args) => {
         'CookieConsent.necessary': cookie.level.includes('necessary'),
         'CookieConsent.analytics': cookie.level.includes('analytics'),
         'CookieConsent.functionality': cookie.level.includes('functionality'),
-        'CookieConsent.personalization':
-          cookie.level.includes('personalization'),
+        'CookieConsent.personalization': cookie.level.includes('personalization'),
         'CookieConsent.revision': cookie.revision,
       });
 
