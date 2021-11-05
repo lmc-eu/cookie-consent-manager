@@ -1,4 +1,24 @@
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.1&sourceBranch=refs%2Ftags%2F0.4.0) (2021-11-05)
+
+
+### Chores
+
+
+* Introduce dependabot configuration for automated deps updates ([0cf893d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/0cf893d))
+* Remove prepare script before publishing package ([ac4b6a9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/ac4b6a9))
+* Rename pr-labeler config file to use yaml extension everywhere ([796bf2c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/796bf2c))
+* Use .yarnrc instead of .npmrc because we are using yarn ([66b2d5e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/66b2d5e))
+### Dependencies
+
+
+* Bump @lmc-eu/conventional-changelog-lmc-bitbucket ([2e17ebd](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/2e17ebd))
+### Features
+
+
+* Introduce new design connected to Spirit design tokens [#CCM-7](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-7) ([658c99f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/658c99f))
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.0&sourceBranch=refs%2Ftags%2F0.3.1) (2021-11-04)
 

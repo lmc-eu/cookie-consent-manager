@@ -1,0 +1,20 @@
+//
+// Internal functions and mixins.
+//
+
+@use 'sass:math';
+
+//
+// Re-calculate `rem` to `em`.
+//
+// We cannot rely on `rem` as it can vary from project to project. Re-calculation to `em` is
+// therefore needed for all `rem`-based design tokens. Output values are then relative to
+// `--lmcccm-base-font-size` (see `_theme.scss`).
+//
+// @param {length} $length — Original length in `rem`.
+// @param {length} $current-font-size — Font size of current context in `em`. Necessary when != 1em.
+// @returns {length} — New length in `em`, relative to the font size of current context.
+
+@function rem2em($length, $current-font-size: 1em) {
+    @return math.div($length, 1rem) * math.div(1em, $current-font-size) * 1em;
+}
