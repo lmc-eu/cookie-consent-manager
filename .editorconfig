@@ -1,5 +1,4 @@
-# EditorConfig helps developers define and maintain consistent coding styles
-# between different editors and IDEs.
+# EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs.
 # editorconfig.org
 
 root = true
@@ -12,5 +11,5 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.scss]
+[*.{scss,html}]
 indent_size = 4
