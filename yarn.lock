@@ -383,9 +383,9 @@
   integrity sha512-TylcLUs2X47nZjvNKO/HBmni3iAcl4JQkkeRbAF82+o/LfWbmVFXcZxbJUk62bJRkK6CKrvOE7Q3uOYkJK4d6Q==
 
 "@lmc-eu/spirit-design-tokens@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.4.0.tgz#eb76564854d101fff0de430bb70705ff216d2fe4"
-  integrity sha512-Ldfe1fXQp/bp5SuDk5Lff8n0tQdUdz4V/3jSBTf+taszW7d9V6zkzZc8xKs8AcXS5klU6Y+IUyS4wMkwlTad/Q==
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.4.2.tgz#126747022be42001367c1f95ec0346e6a9cc9355"
+  integrity sha512-TBjBNnoWKJRMnlCHLXk2uRLodpb16L3uZFy2+fRT9Eh2LyUoU42O0FoIvN1AlA4RJCxYN7652m9moHEvadmXNQ==
 
 "@lmc-eu/stylelint-config@^1.0.3":
   version "1.0.3"
