@@ -359,17 +359,19 @@ yarn format:fix
 #### Publishing package
 
 Prepare release using `yarn release` on a local machine. Check the generated changelog and the bumped `package.json`.
-Then push to origin. Github [publish action](./github/worflows/publish.yaml) is then taking care of publishing package to [npmjs.com](https://npmjs.com/).
+Then push to origin. Github [publish action](./.github/workflows/publish.yaml) is then taking care of publishing
+package to [npmjs.com](https://npmjs.com/).
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md)
+for more information.
 
 [cookie consent]: https://github.com/orestbida/cookieconsent
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
-[spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/packages/design-tokens
-[spirit web]: https://github.com/lmc-eu/spirit-design-system/packages/web
+[spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
+[spirit web]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
 [sass]: https://www.npmjs.com/package/sass
 [sass load path]: https://sass-lang.com/documentation/cli/dart-sass#load-path
 [sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
