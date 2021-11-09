@@ -87,6 +87,8 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
     });
     ```
 
+   See below for [configuration options](#configuration).
+
 3. Include default CSS in your HTML:
    ```html
    <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
@@ -95,9 +97,11 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
    ```scss
    @use 'node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css';
    ```
-   Please mind the `.css` extension used in the Sass example. Using the provided
-   `.scss` stylesheet is only [recommended](#with-spirit-design-system) for
-   projects that are built with [Spirit Design System].
+
+   Please mind the `.css` extension used in the Sass example. Using the provided `.scss` stylesheet is
+   recommended only for projects that are built [with Spirit Design System](#with-spirit-design-system).
+
+   See below for [theming customization options](#theming).
 
 ## Manage features depending on given consent
 
@@ -168,7 +172,7 @@ initLmcCookieConsentManager(
 Optional config parameters could be provided on plugin initialization in the configuration object.
 
 ```js
-initLmcCookieConsentManager(
+initLmcCookieConsentManager( // when loaded as a module, these options are passed to `LmcCookieConsentManager()` instead
   {
     'defaultLang': 'cs',
     'autodetectLang': false,
