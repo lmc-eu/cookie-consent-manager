@@ -133,8 +133,8 @@ To execute custom code which depends on cookie consent use callbacks:
 // ...
 initLmcCookieConsentManager(
   {
-    'onAcceptAll': (cookie, cookieConsent) => {
-      if (cookieConsent.allowedCategory('functionality') {
+    onAcceptAll: (cookie, cookieConsent) => {
+      if (cookieConsent.allowedCategory('functionality')) {
         startOptionalFeature();
       }
     },
@@ -160,8 +160,8 @@ This feature is enabled by default. If you'd like to disable it, you can do so b
 ```js
 initLmcCookieConsentManager(
   {
-    'config': {
-      'page_scripts': false
+    config: {
+      page_scripts: false
     }
   }
 );
@@ -174,12 +174,12 @@ Optional config parameters could be provided on plugin initialization in the con
 ```js
 initLmcCookieConsentManager( // when loaded as a module, these options are passed to `LmcCookieConsentManager()` instead
   {
-    'defaultLang': 'cs',
-    'autodetectLang': false,
-    'onAcceptAll': (cookie, cookieConsent) => {
+    defaultLang: 'cs',
+    autodetectLang: false,
+    onAcceptAll: (cookie, cookieConsent) => {
       // custom code
     },
-    'config': {
+    config: {
       // overrides of default config, see https://github.com/orestbida/cookieconsent#all-available-options
     },
   }
