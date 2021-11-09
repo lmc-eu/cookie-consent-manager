@@ -1,4 +1,35 @@
 
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.0&sourceBranch=refs%2Ftags%2F0.4.1) (2021-11-09)
+
+
+### Dependencies
+
+
+* Bump @commitlint/cli from 13.2.1 to 14.1.0 ([2e91e31](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/2e91e31))
+* Bump @lmc-eu/browserslist-config from 1.0.0 to 1.0.1 ([f9cd8b4](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/f9cd8b4))
+* Bump @lmc-eu/commitlint-config from 1.0.2 to 1.0.3 ([67febaa](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/67febaa))
+* Bump @lmc-eu/prettier-config from 1.0.3 to 1.1.0 ([eb174bc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/eb174bc))
+* Bump @lmc-eu/spirit-design-tokens from 0.2.0 to 0.4.2 ([18a78ec](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/18a78ec))
+* Bump @lmc-eu/stylelint-config from 1.0.3 to 1.0.4 ([bb04c6e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/bb04c6e))
+* Bump esbuild from 0.13.12 to 0.13.13 ([0c23f7c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/0c23f7c))
+* Bump postcss-cli from 8.3.1 to 9.0.2 ([4120c18](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4120c18))
+### Documentation
+
+
+* Extend examples to showcase more features [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([de1a0f2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/de1a0f2))
+### Chores
+
+
+* Fix path change in spirit-design-token@0.4.1 ([46f3b47](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/46f3b47))
+* Upgrade node.js version to v16 in pipelines ([e51afc9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e51afc9))
+* Use `npm set script` instead of node script ([7f788f1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7f788f1))
+### Styles
+
+
+* Adjust html indenting in .editorconfig ([4dad63c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4dad63c))
+* Fix formatting according to updated prettier-config ([a70979a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a70979a))
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.1&sourceBranch=refs%2Ftags%2F0.4.0) (2021-11-05)
 
