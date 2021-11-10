@@ -8,7 +8,6 @@ import { config as configSk } from './languages/sk';
 const defaultOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
-  themeCss: '',
   onFirstAccept: (cookie, cookieConsent) => {},
   onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
   onFirstAcceptAll: (cookie, cookieConsent) => {},
@@ -22,7 +21,6 @@ const defaultOptions = {
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
- * @param {string} [args.themeCss] - Specify file to the .css file
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
  * @param {function} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
@@ -37,7 +35,6 @@ const LmcCookieConsentManager = (args) => {
   const {
     defaultLang,
     autodetectLang,
-    themeCss,
     onFirstAccept,
     onFirstAcceptOnlyNecessary,
     onFirstAcceptAll,
@@ -60,7 +57,6 @@ const LmcCookieConsentManager = (args) => {
     force_consent: false, // Do not force the consent before page could be used
     hide_from_bots: true, // To be hidden also from Selenium
     page_scripts: true, // Manage third-party scripts loaded using <script>
-    theme_css: themeCss, // Path to external CSS loaded by the component. Empty to disable.
     use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
       consent_modal: {
