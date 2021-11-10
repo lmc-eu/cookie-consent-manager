@@ -12,7 +12,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "LmcCookieConsentManager.js",
+  "module": "LmcCookieConsentManager.esm.js",
+  "browser": {
+    "./LmcCookieConsentManager.js": "./LmcCookieConsentManager.js",
+    "./LmcCookieConsentManager.esm.js": "./LmcCookieConsentManager.esm.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
