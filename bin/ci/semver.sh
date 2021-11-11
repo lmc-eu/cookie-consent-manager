@@ -16,10 +16,15 @@ function grep_word_from_git_commits_since_last_tag() {
 }
 
 function get_version() {
-    if [ "$(grep_word_from_git_commits_since_last_tag "BREAKING CHANGE")" -gt 0 ]
-    then
-        echo "major"
-    elif [ "$(grep_word_from_git_commits_since_last_tag "Feat")" -gt 0 ]
+    ##
+    # TODO: Comment out this code when packages are stable
+    # if [ `grep_word_from_git_commits_since_last_tag "BREAKING CHANGE"` -gt 0 ]
+    # then
+    #    echo "major"
+    # elif [ `grep_word_from_git_commits_since_last_tag "Feat"` -gt 0 ]
+    # The packages are still unstable so we update only 0.x.x versions (minor and patch)
+    # however breaking changes are still documented in the changelog
+    if [ `grep_word_from_git_commits_since_last_tag "BREAKING CHANGE"` -gt 0 ] && [ `grep_word_from_git_commits_since_last_tag "Feat"` -gt 0 ]
     then
         echo "minor"
     else
