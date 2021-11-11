@@ -12,10 +12,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "module": "LmcCookieConsentManager.esm.js",
+  "main": "LmcCookieConsentManager.cjs",
+  "module": "LmcCookieConsentManager.mjs",
   "browser": {
     "./LmcCookieConsentManager.js": "./LmcCookieConsentManager.js",
-    "./LmcCookieConsentManager.esm.js": "./LmcCookieConsentManager.esm.js"
+    "./LmcCookieConsentManager.cjs": "./LmcCookieConsentManager.cjs",
+    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs"
   },
   "repository": {
     "type": "git",
