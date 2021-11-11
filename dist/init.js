@@ -854,7 +854,6 @@
   var defaultOptions = {
     defaultLang: "cs",
     autodetectLang: true,
-    themeCss: "",
     onFirstAccept: (cookie, cookieConsent) => {
     },
     onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {
@@ -874,7 +873,6 @@
     const {
       defaultLang,
       autodetectLang,
-      themeCss,
       onFirstAccept,
       onFirstAcceptOnlyNecessary,
       onFirstAcceptAll,
@@ -896,7 +894,6 @@
       force_consent: false,
       hide_from_bots: true,
       page_scripts: true,
-      theme_css: themeCss,
       use_rfc_cookie: true,
       gui_options: {
         consent_modal: {

@@ -1,4 +1,24 @@
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.1&sourceBranch=refs%2Ftags%2F0.5.0) (2021-11-11)
+
+
+### Chores
+
+
+* Skip breaking changes until package is stable ([7d8174d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7d8174d))
+### Documentation
+
+
+* Legacy import using CommonJS and problem with webpack ([e1fa6a7](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e1fa6a7))
+* Minor readme improvements ([3743330](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3743330))
+* Unify codestyle in examples ([c6ebfa0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/c6ebfa0))
+### Features
+
+
+* Introduce build for CommonJS and use more common extensions ([8c2c553](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8c2c553))
+* Introduce ES module entry point ([fad5730](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/fad5730))
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.0&sourceBranch=refs%2Ftags%2F0.4.1) (2021-11-09)
 
