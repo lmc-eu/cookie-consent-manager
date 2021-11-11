@@ -103,6 +103,18 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
    See below for [theming customization options](#theming).
 
+#### Legacy import
+
+You can also use module with CommonJS import syntax:
+
+```js
+    const LmcCookieConsentManager = require('@lmc-eu/cookie-consent-manager');
+```
+
+Note: We prefer to use modern ESM import syntax so this is marked as legacy.
+
+*With Webpack:* Webpack prioritises the ESM import syntax over CommonJS import syntax. So resolve the `main` field as first: `resolve: { mainFields: ["main", /* ... */ ] },`
+
 ## Manage features depending on given consent
 
 For "necessary" cookies it is not needed to check whether a user has given any consent.
