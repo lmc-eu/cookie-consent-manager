@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config cs should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Kliknutím na „Přijmout vše“ dáváte souhlas společnostem test1, test2 a test3 k využívání souborů Cookies a dalších identifikátorů ve vašem zařízení. Použití těchto Cookies a dalších identifikátorů usnadní navigaci na stránkách, zobrazení personalizovaného obsahu, cílený marketing, analýzu využívání našich produktů a služeb.
+      Více informací naleznete na stránce <a href=\\"https://www.lmc.eu/cs/cookies\\" target=\\"_blank\\">Používání cookies</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Přijmout vše",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Přijmout nezbytné",
+    },
+    "title": "Tyto stránky využívají cookies",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config de should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch test1, test2 und test3 zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+      Weitere Informationen finden Sie unter <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Alles akzeptieren",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Das Notwendigste akzeptieren",
+    },
+    "title": "Diese Website verwendet Cookies",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config en should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "By clicking on \\"Accept all\\", you give your consent to test1, test2 and test3 to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
+      For more information read page <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Use of cookies</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Accept all",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Accept necessary",
+    },
+    "title": "This website uses cookies",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config hu should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az test1, test2 és test3 süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+      Bővebb információkat a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Sütihasználat</a> oldalon talál.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Minden elfogadása",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "A legszükségesebbek elfogadása",
+    },
+    "title": "Az oldalak süti fájlokat használnak",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config pl should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Klikając „Akceptuję wszystkie”, wyrażasz zgodę dla test1, test2 i test3 do wykorzystywania plików i innych identyfikatorów na Twoim urządzeniu. Korzystanie z tych plików cookie i innych identyfikatorów ułatwi nawigację w serwisie, wyświetlanie spersonalizowanych treści, marketing ukierunkowany, analizę korzystania z naszych produktów i usług.
+      Więcej informacji znajdziesz na stronie <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Korzystanie z plików Cookies</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Akceptuj wszystkie",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Akceptuj niezbędne",
+    },
+    "title": "Ta strona używa cookies",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config ru should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Нажав «Принять все», Вы даете свое согласие компаниям test1, test2 и test3 на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
+      Для получения дополнительной информации см. раздел <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">использование файлов cookie</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Принять все",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Принятие необходимо",
+    },
+    "title": "Этот сайт использует файлы cookie",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config sk should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Kliknutím na „Prijať všetky“ dávate súhlas spoločnostiam test1, test2 a test3 k využívaniu súborov Cookies a ďalších identifikátorov vo vašom zariadení. Použitie týchto cookies a ďalších identifikátorov uľahčí navigáciu na stránkach, zobrazenie personalizovaného obsahu, cielený marketing, analýzu využívania našich produktov a služieb.
+      Viac informácií nájdete na stránke <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Používanie cookies</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Prijať všetky",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Prijať nevyhnutné",
+    },
+    "title": "Tieto stránky používajú cookies",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`config uk should return localization object 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "Натиснувши «Прийняти все», Ви даєте свою згоду компаніям test1, test2 i test3 на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+      Для отримання додаткової інформації див. розділ <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання файлів cookie</a>.",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Прийняти все",
+    },
+    "secondary_btn": Object {
+      "role": "accept_necessary",
+      "text": "Прийняття необхідно",
+    },
+    "title": "Цей сайт використовує файли cookie",
+  },
+  "settings_modal": Object {
+    "blocks": Array [
+      Object {
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+  },
+}
+`;
