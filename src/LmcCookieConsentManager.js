@@ -34,7 +34,7 @@ const defaultOptions = {
  * @param {function} [args.onAccept] - Callback to be executed when any consent is detected (either given right now or already saved previously)
  * @param {function} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies is detected (either given right now or already saved previously)
  * @param {function} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected (either given right now or already saved previously)
- * @param {array} [args.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs to be given to multiple companies.
  * @param {Object} [args.config] - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {Object} Instance of the underlying CookieConsent component. For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
