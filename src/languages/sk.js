@@ -1,4 +1,4 @@
-import { addSeparators, plural } from '../utils';
+import { addSeparators, pluralize } from '../utils';
 
 const extra = {
   and: 'a',
@@ -17,7 +17,7 @@ export const config = (messages) => {
   return {
     consent_modal: {
       title: 'Tieto stránky používajú cookies',
-      description: `Kliknutím na „Prijať všetky“ dávate súhlas ${plural(
+      description: `Kliknutím na „Prijať všetky“ dávate súhlas ${pluralize(
         lang.companyNames.length,
         lang.company,
         lang.companies,

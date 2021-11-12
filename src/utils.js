@@ -5,10 +5,10 @@ export const addSeparators = (strings, and) =>
     }
 
     if (i === strings.length - 1) {
-      return `${accumulator} ${and} ${string}`;
+      return `${accumulator} ${and} ${string}`;
     }
 
     return `${accumulator}, ${string}`;
   });
 
-export const plural = (count, singular, plural) => (count === 1 ? singular : plural);
+export const pluralize = (count, singular, plural) => (count === 1 ? singular : plural);
