@@ -204,10 +204,16 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 
 | Option        | Type     | Default value                  | Description                                                                                                                               |
 |---------------|----------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `defaultLang` | string   | 'cs'                           | Default language. One of `cs`, `en`, `sk`, `pl`. This language will be used when autodetect is disabled or when it fails.                 |
+| `defaultLang` | string   | 'cs'                           | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                 |
 | `autodetectLang`| string | true                           | Autodetect language from the browser. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
 | `config`      | Object   | {}                             | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
 | `on*` callbacks| function | (cookie, cookieConsent) => {} | See below for configurable callbacks. |
+
+### Supported languages
+
+Translation of the user interface is provided in the following languages:
+Czech (`cs`), German (`de`), English (`en`), Hungarian (`hu`), Polish (`pl`), Russian (`ru`), Slovak (`sk`)
+and Ukrainian (`uk`).
 
 ### Callbacks
 
