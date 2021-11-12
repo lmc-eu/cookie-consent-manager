@@ -8,7 +8,7 @@ const extra = {
 
 /**
  * @param {Object} [messages] - Object with extra messages
- * @param {array} [args.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
 export const config = (messages) => {
@@ -23,7 +23,7 @@ export const config = (messages) => {
         lang.companies,
       )} ${addSeparators(
         lang.companyNames,
-        extra.and,
+        lang.and,
       )} на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
       Для получения дополнительной информации см. раздел <a href="https://www.lmc.eu/en/cookies/" target="_blank">использование файлов cookie</a>.`,
       primary_btn: {

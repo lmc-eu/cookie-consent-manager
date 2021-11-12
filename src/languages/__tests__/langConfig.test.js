@@ -1,4 +1,3 @@
-import each from 'jest-each';
 import { config as configCs } from '../cs';
 import { config as configDe } from '../de';
 import { config as configEn } from '../en';
@@ -8,7 +7,7 @@ import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
 import { config as configUk } from '../uk';
 
-each([
+describe.each([
   ['cs', configCs],
   ['de', configDe],
   ['en', configEn],
@@ -17,7 +16,7 @@ each([
   ['ru', configRu],
   ['sk', configSk],
   ['uk', configUk],
-]).describe('config %s', (name, config) => {
+])('config %s', (name, config) => {
   it('should return localization object', () => {
     expect(config({ companyNames: ['test1', 'test2', 'test3'] })).toMatchSnapshot();
   });

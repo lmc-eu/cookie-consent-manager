@@ -6,7 +6,7 @@ const extra = {
 
 /**
  * @param {Object} [messages] - Object with extra messages
- * @param {array} [args.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
 export const config = (messages) => {
