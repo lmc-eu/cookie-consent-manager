@@ -370,9 +370,9 @@
     "@lmc-eu/conventional-changelog-lmc-bitbucket" "^1.3.2"
 
 "@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.1", "@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.2.tgz#4415c8073413996186a6e6ecbb4e659f0e0060ad"
-  integrity sha512-wBdNi9vHvx02DRGh4ONtD7mh2n/NU/kKjpGSR5bceaTTyYIqyW46RRYwF4UYZysantWkbZK6Y9ziikEtzGpyew==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.3.tgz#f5a540d4b44643d230666061f2d65364f7727b16"
+  integrity sha512-kJmYEKEw3DlcjIfB9TklWRiTweaDqosxkIpLrtyZdWuqxEBY6sU6TYvIz5VnR/of88PQq4KYNp4SBeXR0mdkCw==
   dependencies:
     compare-func "^2.0.0"
     q "^1.5.1"
