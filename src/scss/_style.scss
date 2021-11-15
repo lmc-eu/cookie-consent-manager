@@ -21,8 +21,8 @@
 }
 
 .cc_div *,
-.cc_div :after,
-.cc_div :before {
+.cc_div ::after,
+.cc_div ::before {
     line-height: tokens.$line-height-default;
 }
 
@@ -46,7 +46,7 @@
 // ==========
 
 #c-ttl,
-#s-bl td:before,
+#s-bl td::before,
 #s-ttl,
 .cc_div .b-tl,
 .cc_div .c-bn {
