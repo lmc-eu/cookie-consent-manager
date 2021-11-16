@@ -22,7 +22,7 @@ Load the script and initialize the plugin right before ending `</body>` tag:
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.5/init.js"></script>
 <script>
 window.addEventListener('load', function () {
-  initLmcCookieConsentManager();
+  initLmcCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
 });
 </script>
 ```
@@ -84,7 +84,7 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
     import LmcCookieConsentManager from '@lmc-eu/cookie-consent-manager';
 
     window.addEventListener('load', function () {
-      LmcCookieConsentManager(/* plugin configuration */);
+      LmcCookieConsentManager('demo.example'/* , optional plugin configuration */);
     });
     ```
 
@@ -145,6 +145,7 @@ To execute custom code which depends on cookie consent use callbacks:
 ```js
 // ...
 initLmcCookieConsentManager(
+  'demo.example',
   {
     onAcceptAll: (cookie, cookieConsent) => {
       if (cookieConsent.allowedCategory('functionality')) {
@@ -172,6 +173,7 @@ This feature is enabled by default. If you'd like to disable it, you can do so b
 
 ```js
 initLmcCookieConsentManager(
+  'demo.example',
   {
     config: {
       page_scripts: false
@@ -182,10 +184,12 @@ initLmcCookieConsentManager(
 
 ## Configuration
 
-Optional config parameters could be provided on plugin initialization in the configuration object.
+Optional config parameters could be provided on plugin initialization as the second parameter,
+encapsulated in the configuration object.
 
 ```js
 initLmcCookieConsentManager( // when loaded as a module, these options are passed to `LmcCookieConsentManager()` instead
+  'demo.example', // provide the name of your service, like jobs.cz, seduo.pl etc.
   {
     defaultLang: 'cs',
     autodetectLang: false,

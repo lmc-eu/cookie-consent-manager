@@ -22,6 +22,7 @@ const defaultOptions = {
 };
 
 /**
+ * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
@@ -34,7 +35,11 @@ const defaultOptions = {
  * @param {Object} [args.config] - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {Object} Instance of the underlying CookieConsent component. For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
-const LmcCookieConsentManager = (args) => {
+const LmcCookieConsentManager = (serviceName, args) => {
+  if (!serviceName || serviceName === '' || typeof serviceName !== 'string') {
+    throw new Error('serviceName is a required parameter and must be a string');
+  }
+
   const options = { ...defaultOptions, ...args };
   const {
     defaultLang,
