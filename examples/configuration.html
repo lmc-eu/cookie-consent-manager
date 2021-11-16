@@ -75,6 +75,7 @@
 <script>
   window.addEventListener('load', function () {
     window.ccm = initLmcCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
+      'github.example',
       {
         autodetectLang: false, // do not detect language from the browser
         defaultLang: 'en', // use 'en' language by default
