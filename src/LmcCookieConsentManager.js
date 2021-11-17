@@ -9,10 +9,12 @@ import { config as configPl } from './languages/pl';
 import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
+import submitConsent from './dataCollector/dataCollector';
 
 const defaultOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
+  enableConsentSubmit: false,
   onFirstAccept: (cookie, cookieConsent) => {},
   onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
   onFirstAcceptAll: (cookie, cookieConsent) => {},
@@ -28,6 +30,7 @@ const defaultOptions = {
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
+ * @param {boolean} [args.enableConsentSubmit] - Submit user consent information to the API
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
  * @param {function} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
@@ -47,6 +50,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
   const {
     defaultLang,
     autodetectLang,
+    enableConsentSubmit,
     onFirstAccept,
     onFirstAcceptOnlyNecessary,
     onFirstAcceptAll,
@@ -112,6 +116,10 @@ const LmcCookieConsentManager = (serviceName, args) => {
             value: { serviceName: serviceName, uid: nanoid() },
             mode: 'update',
           });
+        }
+
+        if (enableConsentSubmit) {
+          submitConsent(cookieConsent, acceptedOnlyNecessary);
         }
 
         onFirstAccept(cookie, cookieConsent);
