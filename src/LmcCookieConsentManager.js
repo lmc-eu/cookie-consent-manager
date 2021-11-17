@@ -1,4 +1,5 @@
 import 'vanilla-cookieconsent';
+import { nanoid } from 'nanoid';
 
 import { config as configCs } from './languages/cs';
 import { config as configDe } from './languages/de';
@@ -91,6 +92,14 @@ const LmcCookieConsentManager = (serviceName, args) => {
       onAccept(cookie, cookieConsent);
 
       if (isFirstTimeAccept) {
+        const cookieData = cookieConsent.get('data');
+        if (cookieData === null || !('uid' in cookieData)) {
+          cookieConsent.set('data', {
+            value: { serviceName: serviceName, uid: nanoid() },
+            mode: 'update',
+          });
+        }
+
         onFirstAccept(cookie, cookieConsent);
         acceptedOnlyNecessary
           ? onFirstAcceptOnlyNecessary(cookie, cookieConsent)
