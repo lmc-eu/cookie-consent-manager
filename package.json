@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.4.0",
+    "nanoid": "^3.1.30",
     "vanilla-cookieconsent": "^2.6.1"
   },
   "devDependencies": {
