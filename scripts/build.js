@@ -1,5 +1,5 @@
+/* eslint-disable no-console */
 const { build } = require('esbuild');
-const fs = require('fs');
 const replace = require('replace-in-file');
 
 // iife
@@ -43,7 +43,7 @@ build({
     const options = {
       files: './dist/LmcCookieConsentManager.cjs',
       from: /0 && \(module.exports = {}\);/gm,
-      to: `module.exports = LmcCookieConsentManager_default;`,
+      to: 'module.exports = LmcCookieConsentManager_default;',
     };
 
     replace(options)

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { serve } = require('esbuild');
 
 // Start esbuild's server on a random local port
