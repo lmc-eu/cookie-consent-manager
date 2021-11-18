@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const replace = require('replace-in-file');
 const packageJson = require('../package.json');
 // TODO: match just major version after 1.0 release

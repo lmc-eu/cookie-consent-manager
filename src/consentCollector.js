@@ -5,18 +5,18 @@
  * @param {Object} cookieConsent
  * @param {boolean} acceptedOnlyNecessary
  */
-export const submitConsent = (consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) => {
+function submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) {
   const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
 
   postDataToApi(consentCollectorApiUrl, payload);
-};
+}
 
 /**
  * @param {Object} cookieConsent
  * @param {boolean} acceptedOnlyNecessary
  * @returns {Object}
  */
-const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
+function buildPayload(cookieConsent, acceptedOnlyNecessary) {
   const cookieData = cookieConsent.get('data');
   const acceptedCategories = cookieConsent.get('level');
   // TODO: read actual categories once following is implemented in vanilla-cookieconsent:
@@ -38,14 +38,14 @@ const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
       },
     },
   };
-};
+}
 
 /**
  * @param {string} apiUrl
  * @param {Object} payload
  * @return {Promise<any>}
  */
-const postDataToApi = async (apiUrl, payload) => {
+async function postDataToApi(apiUrl, payload) {
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
@@ -56,6 +56,6 @@ const postDataToApi = async (apiUrl, payload) => {
   });
 
   return response.json();
-};
+}
 
 export default submitConsent;

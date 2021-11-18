@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import 'vanilla-cookieconsent';
 import { nanoid } from 'nanoid';
 
@@ -29,17 +30,25 @@ const defaultOptions = {
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
- * @param {boolean} [args.autodetectLang] - Autodetect language from the value of `<html lang="...">`
- * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent. Null to disable.
+ * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
+ * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent.
+ *   Null to disable.
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
- * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
+ * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies
+ *   are accepted
  * @param {function} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
- * @param {function} [args.onAccept] - Callback to be executed when any consent is detected (either given right now or already saved previously)
- * @param {function} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies is detected (either given right now or already saved previously)
- * @param {function} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected (either given right now or already saved previously)
- * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs to be given to multiple companies.
- * @param {Object} [args.config] - Override default config. See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {Object} Instance of the underlying CookieConsent component. For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
+ * @param {function} [args.onAccept] - Callback to be executed when any consent is detected (either given right now
+ *   or already saved previously)
+ * @param {function} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies.
+ *   is detected (either given right now or already saved previously)
+ * @param {function} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected
+ *   (either given right now or already saved previously)
+ * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
+ *   to be given to multiple companies.
+ * @param {Object} [args.config] - Override default config.
+ *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
+ * @returns {Object} Instance of the underlying CookieConsent component.
+ *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 const LmcCookieConsentManager = (serviceName, args) => {
   if (!serviceName || serviceName === '' || typeof serviceName !== 'string') {
@@ -113,7 +122,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
         const cookieData = cookieConsent.get('data');
         if (cookieData === null || !('uid' in cookieData)) {
           cookieConsent.set('data', {
-            value: { serviceName: serviceName, uid: nanoid() },
+            value: { serviceName, uid: nanoid() },
             mode: 'update',
           });
         }
