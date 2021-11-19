@@ -13,13 +13,13 @@ Load default CSS in your `<head>`:
 
 ```html
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.5/LmcCookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.6/LmcCookieConsentManager.min.css">
 ```
 
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.5/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.6/init.js"></script>
 <script>
 window.addEventListener('load', function () {
   initLmcCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
@@ -53,9 +53,9 @@ as shown above or to explicitly specify the desired font yourself (head to [Them
 You can load the plugin from a CDN, as in the basic example above.
 
 ```html
-<!-- Note we use version "cookie-consent-manager@0.5", which points the latest version of this series (including bugfix releases) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.5/LmcCookieConsentManager.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.5/init.js"></script>
+<!-- Note we use version "cookie-consent-manager@0.6", which points the latest version of this series (including bugfix releases) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.6/LmcCookieConsentManager.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.6/init.js"></script>
 ```
 
 Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).

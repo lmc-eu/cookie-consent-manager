@@ -1,4 +1,55 @@
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.5.0&sourceBranch=refs%2Ftags%2F0.6.0) (2021-11-19)
+
+
+### BREAKING CHANGES
+
+
+* Require service name to be passed as the first parameter #CCM-35 ([680165](https://github.com/lmc-eu/cookie-consent-manager/commit/680165670deafb93e913cc2a86ed615ba72130c8))
+
+### Chores
+
+
+* Add jest testing framework and unit testing workflow ([39468d1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/39468d1))
+* Check for broken links in markdown ([58a5a79](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/58a5a79))
+* Fix building when using crypto in nanoid ([82f5943](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/82f5943))
+### Dependencies
+
+
+* Bump @commitlint/cli from 14.1.0 to 15.0.0 ([85474f8](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/85474f8))
+* Bump @lmc-eu/commitlint-config from 1.0.3 to 1.0.4 ([10cf00e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/10cf00e))
+* Bump @lmc-eu/conventional-changelog-lmc-bitbucket ([d894fb2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d894fb2))
+* Bump @lmc-eu/prettier-config from 1.1.0 to 1.1.1 ([a3cd839](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a3cd839))
+* Bump @lmc-eu/stylelint-config from 1.0.4 to 2.0.0 ([a7fa50d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a7fa50d))
+* Bump esbuild from 0.13.13 to 0.13.14 ([a82527b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a82527b))
+* Bump vanilla-cookieconsent from 2.6.1 to 2.6.2 ([1729ddd](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1729ddd))
+### Documentation
+
+
+* Add example of specifying custom company names [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([131eb34](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/131eb34))
+* Do not use patch part in URL to allow using bugfix versions automatically [#CCM-29](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-29) ([b484c4e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b484c4e))
+* Fix broken links in readme ([cadeb72](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/cadeb72))
+* Fix wrong `autodetectLang` type in readme ([278a3b1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/278a3b1))
+* Introduce `companyNames` option in readme [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([06637bc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/06637bc))
+* Update list of supported languages ([84e99fd](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/84e99fd))
+### Features
+
+
+* Add translations for de, hu, ru and uk languages [#CCM-18](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-18) ([6e31d97](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6e31d97))
+* Generate and store consent UUID on accept [#CCM-35](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-35) ([519182d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/519182d))
+* Introduce `companyNames` option as i18n parameter [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([e271230](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e271230))
+* Unify company name amongst all translations [#CCM-18](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-18) ([928118d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/928118d))
+* Update polish translation [#CCM-31](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-31) ([3b6609b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3b6609b))
+### Styles
+
+
+* Fix pseudo-element notation according to stylelint-config ([f4a607f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/f4a607f))
+### Tests
+
+
+* Unit tests for i18n [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([d5bf67b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d5bf67b))
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.1&sourceBranch=refs%2Ftags%2F0.5.0) (2021-11-11)
 

@@ -667,7 +667,7 @@ CookieConsent settings modal
   box-sizing: content-box;
   background: #fff;
   background: var(--cc-toggle-knob-bg);
-  box-shadow: 0 1px 2px rgb(24 32 35/36%);
+  box-shadow: 0 1px 2px rgba(24, 32, 35, 0.36);
   transition: transform 0.25s ease;
   border-radius: 100%;
 }
@@ -1094,7 +1094,7 @@ html.force--consent.show--consent body {
 #cm.cloud,
 #cm.left,
 #cm.right {
-    width: 100%;
+    width: auto;
     max-width: 100%;
     margin: 0;
     padding: 1.4em !important;
@@ -1433,8 +1433,8 @@ html.force--consent.show--consent body {
 }
 
 .cc_div *,
-.cc_div :after,
-.cc_div :before {
+.cc_div ::after,
+.cc_div ::before {
   line-height: 1.5;
 }
 
@@ -1452,7 +1452,7 @@ html.force--consent.show--consent body {
 }
 
 #c-ttl,
-#s-bl td:before,
+#s-bl td::before,
 #s-ttl,
 .cc_div .b-tl,
 .cc_div .c-bn {

@@ -1,5 +1,9 @@
+var __create = Object.create;
 var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
@@ -19,6 +23,17 @@ var __export = (target, all) => {
   __markAsModule(target);
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __reExport = (target, module2, desc) => {
+  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
+    for (let key of __getOwnPropNames(module2))
+      if (!__hasOwnProp.call(target, key) && key !== "default")
+        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+  }
+  return target;
+};
+var __toModule = (module2) => {
+  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
 };
 
 // src/LmcCookieConsentManager.js
@@ -47,7 +62,7 @@ __export(exports, {
       }
     }
     function G(a, b, c, d) {
-      a.addEventListener ? d ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
+      a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
     }
     function Ha(a, b, c) {
       b = b ? b : "/";
@@ -77,8 +92,8 @@ __export(exports, {
       c.setTime(c.getTime() + 864e5 * Ia);
       a = a + "=" + (b || "") + ("; expires=" + c.toUTCString()) + "; Path=" + Ja + ";";
       a += " SameSite=" + Ka + ";";
-      -1 < location.hostname.indexOf(".") && (a += " Domain=" + T + ";");
-      location.protocol === "https:" && (a += " Secure;");
+      -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + T + ";");
+      window.location.protocol === "https:" && (a += " Secure;");
       document.cookie = a;
     }
     function La() {
@@ -147,19 +162,19 @@ __export(exports, {
     }
     function H(a, b) {
       for (var c = a.length, d = 0; d < c; d++)
-        if (a[d] == b)
+        if (a[d] === b)
           return d;
       return -1;
     }
     function $a(a, b) {
-      if (typeof a !== "string" || a == "" || document.getElementById("cc--style"))
+      if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
         b();
       else {
         var c = f("style");
         c.id = "cc--style";
         var d = new XMLHttpRequest();
         d.onreadystatechange = function() {
-          this.readyState == 4 && this.status == 200 && (c.setAttribute("type", "text/css"), c.styleSheet ? c.styleSheet.cssText = this.responseText : c.appendChild(document.createTextNode(this.responseText)), document.getElementsByTagName("head")[0].appendChild(c), b());
+          this.readyState === 4 && this.status === 200 && (c.setAttribute("type", "text/css"), c.styleSheet ? c.styleSheet.cssText = this.responseText : c.appendChild(document.createTextNode(this.responseText)), document.getElementsByTagName("head")[0].appendChild(c), b());
         };
         d.open("GET", a);
         d.send();
@@ -181,7 +196,7 @@ __export(exports, {
           }
           for (k = 0; k < b; k++) {
             var t = x[k];
-            if (t.hasOwnProperty("toggle") && !P[++e] && t.hasOwnProperty("cookie_table") && -1 < H(c, t.toggle.value)) {
+            if (Object.prototype.hasOwnProperty.call(t, "toggle") && !P[++e] && Object.prototype.hasOwnProperty.call(t, "cookie_table") && -1 < H(c, t.toggle.value)) {
               var m = t.cookie_table, p = ha(X[0])[0], W = m.length;
               t.toggle.reload === "on_disable" && (d = true);
               for (var J = 0; J < W; J++) {
@@ -199,12 +214,7 @@ __export(exports, {
           }
         }
       }
-      r = {
-        level: a,
-        revision: pa,
-        data: C,
-        rfc_cookie: ja
-      };
+      r = { level: a, revision: pa, data: C, rfc_cookie: ja };
       if (!V || 0 < c.length || !Y)
         Y = true, va(S, JSON.stringify(r)), La();
       if (typeof xa === "function" && !V)
@@ -256,12 +266,12 @@ __export(exports, {
           oa[e] = z.languages[d].consent_modal.primary_btn.text;
           da[e] = z.languages[d].consent_modal.secondary_btn.text;
           var Ra;
-          z.languages[d].consent_modal.primary_btn.role == "accept_all" && (Ra = "all");
+          z.languages[d].consent_modal.primary_btn.role === "accept_all" && (Ra = "all");
           G(oa, "click", function() {
             h.hide();
             h.accept(Ra);
           });
-          z.languages[d].consent_modal.secondary_btn.role == "accept_necessary" ? G(da, "click", function() {
+          z.languages[d].consent_modal.secondary_btn.role === "accept_necessary" ? G(da, "click", function() {
             h.hide();
             h.accept([]);
           }) : G(da, "click", function() {
@@ -307,7 +317,7 @@ __export(exports, {
       W.appendChild(p);
       G(g, "keydown", function(z) {
         z = z || window.event;
-        z.keyCode == 27 && h.hideSettings(0);
+        z.keyCode === 27 && h.hideSettings(0);
       }, true);
       G(p, "click", function() {
         h.hideSettings(0);
@@ -456,10 +466,10 @@ __export(exports, {
       U && a(w, Ea);
     }
     function Ua(a, b) {
-      if (b.hasOwnProperty(a))
+      if (Object.prototype.hasOwnProperty.call(b, a))
         return a;
       if (0 < ha(b).length)
-        return b.hasOwnProperty(L) ? L : ha(b)[0];
+        return Object.prototype.hasOwnProperty.call(b, L) ? L : ha(b)[0];
     }
     function cb() {
       for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
@@ -480,7 +490,7 @@ __export(exports, {
       typeof a.revision === "number" && (-1 < a.revision && (pa = a.revision), Ba = true);
       a.autoclear_cookies === true && (Pa = true);
       a.use_rfc_cookie === true && (ja = true);
-      a.hide_from_bots === true && (Wa = navigator && navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent));
+      a.hide_from_bots === true && (Wa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.g));
       Ma = a.page_scripts === true;
       Na = a.page_scripts_order !== false;
       if (a.auto_language === true) {
@@ -490,7 +500,7 @@ __export(exports, {
       } else
         typeof a.current_lang === "string" && (L = Ua(a.current_lang, a.languages));
     }
-    var L = "en", Va = true, S = "cc_cookie", Ia = 182, T = location.hostname, Ja = "/", Ka = "Lax", ja = false, Pa = true, pa = 0, Ma, Na, h = {}, r = {}, U = false, V = false, la = false, wa = false, ka = false, u, X, x, xa, ya, Y = true, Ba = false, C = null, Wa = false, ta, Fa, Ea = [], fa = [], P = [], N = [], Da = [], ca = document.documentElement, M, w, I, O, za, Aa, Qa = "", ma;
+    var L = "en", Va = true, S = "cc_cookie", Ia = 182, T = window.location.hostname, Ja = "/", Ka = "Lax", ja = false, Pa = true, pa = 0, Ma, Na, h = {}, r = {}, U = false, V = false, la = false, wa = false, ka = false, u, X, x, xa, ya, Y = true, Ba = false, C = null, Wa = false, ta, Fa, Ea = [], fa = [], P = [], N = [], Da = [], ca = document.documentElement, M, w, I, O, za, Aa, Qa = "", ma;
     h.allowedCategory = function(a) {
       return -1 < H(JSON.parse(ia(S, "one", true) || "{}").level || [], a);
     };
@@ -544,6 +554,8 @@ __export(exports, {
           return c;
         case "revision":
           return d = b.value, a = b.prompt_consent, b = b.message, M && typeof d === "number" && r.revision !== d ? (Ba = true, Qa = b, Y = false, pa = d, a === true ? (Aa(za), Oa(za.gui_options, true), Ta(), h.show()) : h.accept(), b = true) : b = false, b;
+        default:
+          return false;
       }
     };
     h.get = function(a) {
@@ -629,235 +641,557 @@ __export(exports, {
       Ha(d, b, c);
     };
     h.validCookie = function(a) {
-      return ia(a, "one", true) != "";
+      return ia(a, "one", true) !== "";
     };
     return h;
   }
   typeof window.initCookieConsent !== "function" && (window.initCookieConsent = Xa);
 })();
 
-// src/languages/cs.js
-var config = {
-  consent_modal: {
-    title: "Tyto str\xE1nky vyu\u017E\xEDvaj\xED cookies",
-    description: `Kliknut\xEDm na \u201EP\u0159ijmout v\u0161e\u201C d\xE1v\xE1te souhlas spole\u010Dnosti LMC s.r.o. k\xA0vyu\u017E\xEDv\xE1n\xED soubor\u016F Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F ve\xA0va\u0161em za\u0159\xEDzen\xED. Pou\u017Eit\xED t\u011Bchto Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F usnadn\xED navigaci na str\xE1nk\xE1ch, zobrazen\xED personalizovan\xE9ho obsahu, c\xEDlen\xFD marketing, anal\xFDzu vyu\u017E\xEDv\xE1n\xED na\u0161ich produkt\u016F a\xA0slu\u017Eeb.
-      V\xEDce informac\xED naleznete na\xA0str\xE1nce\xA0<a href="https://www.lmc.eu/cs/cookies" target="_blank">Pou\u017E\xEDv\xE1n\xED\xA0cookies</a>.`,
-    primary_btn: {
-      text: "P\u0159ijmout v\u0161e",
-      role: "accept_all"
-    },
-    secondary_btn: {
-      text: "P\u0159ijmout nezbytn\xE9",
-      role: "accept_necessary"
-    }
-  },
-  settings_modal: {
-    blocks: [
-      {
-        toggle: {
-          value: "necessary",
-          enabled: true,
-          readonly: true
-        }
-      },
-      {
-        toggle: {
-          value: "ad",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "analytics",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "functionality",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "personalization",
-          enabled: false,
-          readonly: false
-        }
-      }
-    ]
+// node_modules/nanoid/index.js
+var import_crypto = __toModule(require("crypto"));
+
+// node_modules/nanoid/url-alphabet/index.js
+var urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
+
+// node_modules/nanoid/index.js
+var POOL_SIZE_MULTIPLIER = 128;
+var pool;
+var poolOffset;
+var fillPool = (bytes) => {
+  if (!pool || pool.length < bytes) {
+    pool = Buffer.allocUnsafe(bytes * POOL_SIZE_MULTIPLIER);
+    import_crypto.default.randomFillSync(pool);
+    poolOffset = 0;
+  } else if (poolOffset + bytes > pool.length) {
+    import_crypto.default.randomFillSync(pool);
+    poolOffset = 0;
   }
+  poolOffset += bytes;
+};
+var nanoid = (size = 21) => {
+  fillPool(size);
+  let id = "";
+  for (let i = poolOffset - size; i < poolOffset; i++) {
+    id += urlAlphabet[pool[i] & 63];
+  }
+  return id;
+};
+
+// src/utils.js
+var addSeparators = (strings, and) => strings.reduce((accumulator, string, i) => {
+  if (i === 0) {
+    return `${accumulator}${string}`;
+  }
+  if (i === strings.length - 1) {
+    return `${accumulator} ${and}\xA0${string}`;
+  }
+  return `${accumulator}, ${string}`;
+});
+var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
+
+// src/languages/cs.js
+var extra = {
+  and: "a",
+  company: "spole\u010Dnosti",
+  companies: "spole\u010Dnostem"
+};
+var config = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra), messages);
+  return {
+    consent_modal: {
+      title: "Tyto str\xE1nky vyu\u017E\xEDvaj\xED cookies",
+      description: `Kliknut\xEDm na \u201EP\u0159ijmout v\u0161e\u201C d\xE1v\xE1te souhlas ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} k\xA0vyu\u017E\xEDv\xE1n\xED soubor\u016F Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F ve\xA0va\u0161em za\u0159\xEDzen\xED. Pou\u017Eit\xED t\u011Bchto Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F usnadn\xED navigaci na str\xE1nk\xE1ch, zobrazen\xED personalizovan\xE9ho obsahu, c\xEDlen\xFD marketing, anal\xFDzu vyu\u017E\xEDv\xE1n\xED na\u0161ich produkt\u016F a\xA0slu\u017Eeb.
+      V\xEDce informac\xED naleznete na\xA0str\xE1nce\xA0<a href="https://www.lmc.eu/cs/cookies" target="_blank">Pou\u017E\xEDv\xE1n\xED\xA0cookies</a>.`,
+      primary_btn: {
+        text: "P\u0159ijmout v\u0161e",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "P\u0159ijmout nezbytn\xE9",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
+// src/languages/de.js
+var extra2 = {
+  and: "und"
+};
+var config2 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra2), messages);
+  return {
+    consent_modal: {
+      title: "Diese Website verwendet Cookies",
+      description: `Indem Sie auf \u201EAlles\xA0akzeptieren\u201C klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Ger\xE4t durch ${addSeparators(lang.companyNames, extra2.and)} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+      Weitere Informationen finden Sie unter <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von\xA0Cookies</a>.`,
+      primary_btn: {
+        text: "Alles akzeptieren",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "Das Notwendigste akzeptieren",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
 };
 
 // src/languages/en.js
-var config2 = {
-  consent_modal: {
-    title: "This website uses cookies",
-    description: `By clicking on "Accept all", you give your consent to LMC s.r.o. to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
+var extra3 = {
+  and: "and"
+};
+var config3 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra3), messages);
+  return {
+    consent_modal: {
+      title: "This website uses cookies",
+      description: `By clicking on "Accept all", you give your consent to ${addSeparators(lang.companyNames, extra3.and)} to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
       For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use\xA0of\xA0cookies</a>.`,
-    primary_btn: {
-      text: "Accept all",
-      role: "accept_all"
-    },
-    secondary_btn: {
-      text: "Accept necessary",
-      role: "accept_necessary"
-    }
-  },
-  settings_modal: {
-    blocks: [
-      {
-        toggle: {
-          value: "necessary",
-          enabled: true,
-          readonly: true
-        }
+      primary_btn: {
+        text: "Accept all",
+        role: "accept_all"
       },
-      {
-        toggle: {
-          value: "ad",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "analytics",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "functionality",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "personalization",
-          enabled: false,
-          readonly: false
-        }
+      secondary_btn: {
+        text: "Accept necessary",
+        role: "accept_necessary"
       }
-    ]
-  }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
+// src/languages/hu.js
+var extra4 = {
+  and: "\xE9s"
+};
+var config4 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra4), messages);
+  return {
+    consent_modal: {
+      title: "Az oldalak s\xFCti f\xE1jlokat haszn\xE1lnak",
+      description: `A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az ${addSeparators(lang.companyNames, extra4.and)} s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
+      B\u0151vebb inform\xE1ci\xF3kat a <a href="https://www.lmc.eu/en/cookies/" target="_blank">S\xFCtihaszn\xE1lat</a> oldalon tal\xE1l.`,
+      primary_btn: {
+        text: "Minden elfogad\xE1sa",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
 };
 
 // src/languages/pl.js
-var config3 = {
-  consent_modal: {
-    title: "Ta strona u\u017Cywa cookies",
-    description: `Klikaj\u0105c \u201EAkceptuj\u0119 wszystkie\u201D, wyra\u017Casz zgod\u0119 aby LMC s.r.o. wykorzystywa\u0142o pliki cookie i\xA0inne identyfikatory na Twoim urz\u0105dzeniu. Korzystanie z\xA0tych plik\xF3w cookie i\xA0innych identyfikator\xF3w u\u0142atwi nawigacj\u0119 w\xA0serwisie, wy\u015Bwietlanie spersonalizowanych tre\u015Bci, marketing ukierunkowany, analiz\u0119 korzystania z\xA0naszych produkt\xF3w i\xA0us\u0142ug.
+var extra5 = {
+  and: "i"
+};
+var config5 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra5), messages);
+  return {
+    consent_modal: {
+      title: "Ta strona u\u017Cywa cookies",
+      description: `Klikaj\u0105c \u201EAkceptuj\u0119 wszystkie\u201D, wyra\u017Casz zgod\u0119 dla ${addSeparators(lang.companyNames, extra5.and)} do wykorzystywania plik\xF3w i\xA0innych identyfikator\xF3w na Twoim urz\u0105dzeniu. Korzystanie z\xA0tych plik\xF3w cookie i\xA0innych identyfikator\xF3w u\u0142atwi nawigacj\u0119 w\xA0serwisie, wy\u015Bwietlanie spersonalizowanych tre\u015Bci, marketing ukierunkowany, analiz\u0119 korzystania z\xA0naszych produkt\xF3w i\xA0us\u0142ug.
       Wi\u0119cej informacji znajdziesz na stronie\xA0<a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w Cookies</a>.`,
-    primary_btn: {
-      text: "Akceptuj wszystkie",
-      role: "accept_all"
-    },
-    secondary_btn: {
-      text: "Akceptuj niezb\u0119dne",
-      role: "accept_necessary"
-    }
-  },
-  settings_modal: {
-    blocks: [
-      {
-        toggle: {
-          value: "necessary",
-          enabled: true,
-          readonly: true
-        }
+      primary_btn: {
+        text: "Akceptuj wszystkie",
+        role: "accept_all"
       },
-      {
-        toggle: {
-          value: "ad",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "analytics",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "functionality",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "personalization",
-          enabled: false,
-          readonly: false
-        }
+      secondary_btn: {
+        text: "Akceptuj niezb\u0119dne",
+        role: "accept_necessary"
       }
-    ]
-  }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
+// src/languages/ru.js
+var extra6 = {
+  and: "\u0438",
+  company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
+  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C"
+};
+var config6 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra6), messages);
+  return {
+    consent_modal: {
+      title: "\u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442 \u0444\u0430\u0439\u043B\u044B cookie",
+      description: `\u041D\u0430\u0436\u0430\u0432 \xAB\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435\xBB, \u0412\u044B \u0434\u0430\u0435\u0442\u0435 \u0441\u0432\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435 ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043D\u0430 \u0412\u0430\u0448\u0435\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043E\u0431\u043B\u0435\u0433\u0447\u0438\u0442 \u043D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430, \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0438\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432 \u0438\xA0\u0443\u0441\u043B\u0443\u0433.
+      \u0414\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u0441\u043C. \u0440\u0430\u0437\u0434\u0435\u043B <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>.`,
+      primary_btn: {
+        text: "\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "\u041F\u0440\u0438\u043D\u044F\u0442\u0438\u0435\xA0\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
 };
 
 // src/languages/sk.js
-var config4 = {
-  consent_modal: {
-    title: "Tieto str\xE1nky pou\u017E\xEDvaj\xFA cookies",
-    description: `Kliknut\xEDm na \u201EPrija\u0165 v\u0161etky\u201C d\xE1vate s\xFAhlas spolo\u010Dnosti LMC s.r.o. k\xA0vyu\u017E\xEDvaniu s\xFAborov Cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov vo\xA0va\u0161om zariaden\xED. Pou\u017Eitie t\xFDchto cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov u\u013Eah\u010D\xED navig\xE1ciu na\xA0str\xE1nkach, zobrazenie personalizovan\xE9ho obsahu, cielen\xFD marketing, anal\xFDzu vyu\u017E\xEDvania na\u0161ich produktov a\xA0slu\u017Eieb.
+var extra7 = {
+  and: "a",
+  company: "spolo\u010Dnosti",
+  companies: "spolo\u010Dnostiam"
+};
+var config7 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra7), messages);
+  return {
+    consent_modal: {
+      title: "Tieto str\xE1nky pou\u017E\xEDvaj\xFA cookies",
+      description: `Kliknut\xEDm na \u201EPrija\u0165 v\u0161etky\u201C d\xE1vate s\xFAhlas ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} k\xA0vyu\u017E\xEDvaniu s\xFAborov Cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov vo\xA0va\u0161om zariaden\xED. Pou\u017Eitie t\xFDchto cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov u\u013Eah\u010D\xED navig\xE1ciu na\xA0str\xE1nkach, zobrazenie personalizovan\xE9ho obsahu, cielen\xFD marketing, anal\xFDzu vyu\u017E\xEDvania na\u0161ich produktov a\xA0slu\u017Eieb.
       Viac inform\xE1ci\xED n\xE1jdete na\xA0str\xE1nke\xA0<a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvanie\xA0cookies</a>.`,
-    primary_btn: {
-      text: "Prija\u0165 v\u0161etky",
-      role: "accept_all"
-    },
-    secondary_btn: {
-      text: "Prija\u0165 nevyhnutn\xE9",
-      role: "accept_necessary"
-    }
-  },
-  settings_modal: {
-    blocks: [
-      {
-        toggle: {
-          value: "necessary",
-          enabled: true,
-          readonly: true
-        }
+      primary_btn: {
+        text: "Prija\u0165 v\u0161etky",
+        role: "accept_all"
       },
-      {
-        toggle: {
-          value: "ad",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "analytics",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "functionality",
-          enabled: false,
-          readonly: false
-        }
-      },
-      {
-        toggle: {
-          value: "personalization",
-          enabled: false,
-          readonly: false
-        }
+      secondary_btn: {
+        text: "Prija\u0165 nevyhnutn\xE9",
+        role: "accept_necessary"
       }
-    ]
-  }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
+// src/languages/uk.js
+var extra8 = {
+  and: "i",
+  company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
+  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C"
+};
+var config8 = (messages) => {
+  const lang = __spreadValues(__spreadValues({}, extra8), messages);
+  return {
+    consent_modal: {
+      title: "\u0426\u0435\u0439 \u0441\u0430\u0439\u0442 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454 \u0444\u0430\u0439\u043B\u0438 cookie",
+      description: `\u041D\u0430\u0442\u0438\u0441\u043D\u0443\u0432\u0448\u0438 \xAB\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435\xBB, \u0412\u0438 \u0434\u0430\u0454\u0442\u0435 \u0441\u0432\u043E\u044E \u0437\u0433\u043E\u0434\u0443 ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} \u043D\u0430 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043D\u0430 \u0412\u0430\u0448\u043E\u043C\u0443 \u043F\u0440\u0438\u0441\u0442\u0440\u043E\u0457. \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043F\u043E\u043B\u0435\u0433\u0448\u0438\u0442\u044C \u043D\u0430\u0432\u0456\u0433\u0430\u0446\u0456\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0446\u0456\u043B\u044C\u043E\u0432\u0438\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0456\u0437 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0456\u0432 \u0456\xA0\u043F\u043E\u0441\u043B\u0443\u0433.
+      \u0414\u043B\u044F \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u043E\u0457 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457 \u0434\u0438\u0432. \u0440\u043E\u0437\u0434\u0456\u043B <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie</a>.`,
+      primary_btn: {
+        text: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435",
+        role: "accept_all"
+      },
+      secondary_btn: {
+        text: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0442\u044F\xA0\u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E",
+        role: "accept_necessary"
+      }
+    },
+    settings_modal: {
+      blocks: [
+        {
+          toggle: {
+            value: "necessary",
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          toggle: {
+            value: "ad",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "analytics",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "functionality",
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          toggle: {
+            value: "personalization",
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
 };
 
 // src/LmcCookieConsentManager.js
@@ -876,9 +1210,13 @@ var defaultOptions = {
   },
   onAcceptAll: (cookie, cookieConsent) => {
   },
+  companyNames: ["LMC"],
   config: {}
 };
-var LmcCookieConsentManager = (args) => {
+var LmcCookieConsentManager = (serviceName, args) => {
+  if (!serviceName || serviceName === "" || typeof serviceName !== "string") {
+    throw new Error("serviceName is a required parameter and must be a string");
+  }
   const options = __spreadValues(__spreadValues({}, defaultOptions), args);
   const {
     defaultLang,
@@ -889,11 +1227,22 @@ var LmcCookieConsentManager = (args) => {
     onAccept,
     onAcceptOnlyNecessary,
     onAcceptAll,
-    config: config5
+    companyNames,
+    config: config9
   } = options;
   const cookieName = "lmc_ccm";
   const cookieConsent = window.initCookieConsent();
   const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
+  const languages = {
+    cs: config({ companyNames }),
+    de: config2({ companyNames }),
+    en: config3({ companyNames }),
+    hu: config4({ companyNames }),
+    pl: config5({ companyNames }),
+    ru: config6({ companyNames }),
+    sk: config7({ companyNames }),
+    uk: config8({ companyNames })
+  };
   cookieConsent.run(__spreadValues({
     auto_language: autodetectLang,
     autorun: true,
@@ -926,18 +1275,20 @@ var LmcCookieConsentManager = (args) => {
       });
       onAccept(cookie, cookieConsent);
       if (isFirstTimeAccept) {
+        const cookieData = cookieConsent.get("data");
+        if (cookieData === null || !("uid" in cookieData)) {
+          cookieConsent.set("data", {
+            value: { serviceName, uid: nanoid() },
+            mode: "update"
+          });
+        }
         onFirstAccept(cookie, cookieConsent);
         acceptedOnlyNecessary ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
       }
       acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
     },
-    languages: {
-      cs: config,
-      en: config2,
-      pl: config3,
-      sk: config4
-    }
-  }, config5));
+    languages
+  }, config9));
   return cookieConsent;
 };
 var LmcCookieConsentManager_default = LmcCookieConsentManager;
