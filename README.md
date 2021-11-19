@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 ```
 
 This will load the plugin from CDN and initialize the plugin with default settings.
-[👀 See example](https://lmc-eu.github.io/cookie-consent-manager/examples/).
+[👀 See example][examples].
 
 ## Use default web font, or not?
 
@@ -203,7 +203,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 );
 ```
 
-[👀 See extended configuration example](https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html)
+[👀 See extended configuration example][examples-configuration]
 
 ## Configuration options
 
@@ -211,7 +211,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 |---------------|----------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `defaultLang` | string   | 'cs'                           | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                 |
 | `autodetectLang`| string | true                           | Autodetect language from the browser. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
-| `companyNames`| array | ['LMC']                           | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. |
+| `companyNames`| array    | ['LMC']                        | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration]. |
 | `config`      | Object   | {}                             | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
 | `on*` callbacks| function | (cookie, cookieConsent) => {} | See below for configurable callbacks. |
 
@@ -240,7 +240,7 @@ Each configured callback receives two params:
 | `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
 | `onFirstAccept`             | Right after any consent is just accepted by the user |
 
-[👀 See callbacks example](https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html)
+[👀 See callbacks example][examples-callbacks]
 
 ## Theming
 
@@ -402,3 +402,6 @@ for more information.
 [sass]: https://www.npmjs.com/package/sass
 [sass load path]: https://sass-lang.com/documentation/cli/dart-sass#load-path
 [sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
+[examples]: https://lmc-eu.github.io/cookie-consent-manager/examples/
+[examples-callbacks]: https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html
+[examples-configuration]: https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html
