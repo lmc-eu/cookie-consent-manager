@@ -9,7 +9,7 @@ import { config as configPl } from './languages/pl';
 import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
-import submitConsent from './dataCollector/dataCollector';
+import submitConsent from './dataCollector';
 
 const defaultOptions = {
   defaultLang: 'cs',
