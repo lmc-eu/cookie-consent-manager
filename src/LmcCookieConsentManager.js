@@ -75,7 +75,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
     uk: configUk({ companyNames }),
   };
 
-  cookieConsent.run({
+  const cookieConsentConfig = {
     auto_language: autodetectLang, // Enable detection from navigator.language
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
@@ -135,7 +135,9 @@ const LmcCookieConsentManager = (serviceName, args) => {
     languages,
     // override default config if necessary
     ...config,
-  });
+  };
+
+  cookieConsent.run(cookieConsentConfig);
 
   return cookieConsent;
 };
