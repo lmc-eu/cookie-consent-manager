@@ -28,7 +28,7 @@ const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
     data: {
       type: 'localDataAcceptationDataEntries',
       attributes: {
-        acceptation_id: cookieData.uuid,
+        acceptation_id: cookieData.uid,
         accept_type: acceptedOnlyNecessary ? 'accept_necessary' : 'accept_all',
         accepted_categories: acceptedCategories,
         rejected_categories: rejectedCategories,
