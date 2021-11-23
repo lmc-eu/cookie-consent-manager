@@ -1,13 +1,14 @@
 /**
  * Submit information about consent level given by the user.
  *
+ * @param {string} consentCollectorApiUrl
  * @param {Object} cookieConsent
  * @param {boolean} acceptedOnlyNecessary
  */
-export const submitConsent = (cookieConsent, acceptedOnlyNecessary) => {
+export const submitConsent = (consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) => {
   const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
 
-  postDataToApi(payload);
+  postDataToApi(consentCollectorApiUrl, payload);
 };
 
 /**
@@ -40,14 +41,12 @@ const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
 };
 
 /**
+ * @param {string} apiUrl
  * @param {Object} payload
  * @return {Promise<any>}
  */
-const postDataToApi = async (payload) => {
-  const dataCollectorUrl =
-    'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(arch,test)'; // TODO: remove test spot after beta
-
-  const response = await fetch(dataCollectorUrl, {
+const postDataToApi = async (apiUrl, payload) => {
+  const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/vnd.api+json',
