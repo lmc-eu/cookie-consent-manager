@@ -35,6 +35,8 @@ const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
         rejected_categories: rejectedCategories,
         revision: cookieConsent.get('revision'),
         source: cookieData.serviceName,
+        language: cookieConsent.getConfig('current_lang'),
+        days_of_acceptation: cookieConsent.getConfig('cookie_expiration'),
       },
     },
   };
