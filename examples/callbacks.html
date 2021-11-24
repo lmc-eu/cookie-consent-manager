@@ -78,8 +78,6 @@
     window.ccm = initLmcCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
       'github.example',
       {
-        autodetectLang: false, // do not detect language from the browser
-        defaultLang: 'en', // use 'en' language by default
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         onAccept: (cookie, cookieConsent) => { // any type of consent detected
           markCallbackCalled('onAccept');
