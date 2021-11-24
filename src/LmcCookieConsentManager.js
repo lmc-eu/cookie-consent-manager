@@ -29,7 +29,7 @@ const defaultOptions = {
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
  * @param {Object} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
- * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
+ * @param {boolean} [args.autodetectLang] - Autodetect language from the value of `<html lang="...">`
  * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent. Null to disable.
  * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies are accepted
@@ -76,7 +76,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
   };
 
   const cookieConsentConfig = {
-    auto_language: autodetectLang, // Enable detection from navigator.language
+    auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
     cookie_name: cookieName, // Predefined cookie name. Do not override.
