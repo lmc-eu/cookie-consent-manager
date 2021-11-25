@@ -85,6 +85,9 @@
           delay: 500, // show cookie consent banner after 500ms
           page_scripts: false, // disable third-party script management, see https://github.com/lmc-eu/cookie-consent-manager#third-party-scripts-loaded-via-script
         },
+        onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
+          window.localStorage.clear(); // clear everything in localStorage if it is not used for any 'necessary' data
+        },
       }
     );
   });
