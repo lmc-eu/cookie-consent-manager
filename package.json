@@ -37,7 +37,7 @@
     "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "prejs": "yarn js:lint",
     "js": "yarn js:compile",
-    "js:lint": "eslint ./src ./examples ./scripts",
+    "js:lint": "eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
     "js:compile": "node scripts/build.js",
     "lint": "npm-run-all --serial js:lint css:lint lint:commit",
