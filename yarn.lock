@@ -1285,9 +1285,9 @@
     "@lmc-eu/conventional-changelog-lmc-bitbucket" "^1.3.3"
 
 "@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.1", "@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.3.tgz#f5a540d4b44643d230666061f2d65364f7727b16"
-  integrity sha512-kJmYEKEw3DlcjIfB9TklWRiTweaDqosxkIpLrtyZdWuqxEBY6sU6TYvIz5VnR/of88PQq4KYNp4SBeXR0mdkCw==
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.4.tgz#0f87f00b1376f67a834e918ec1fad216521fdaeb"
+  integrity sha512-WLRTHYOjzUiqSN1njBxWg7tZ36vrie0I5+bdxBP/6L0hCV2zzq6pScE/o2HUfk+Q7AgLukKMfqAaX2omXbAXnQ==
   dependencies:
     compare-func "^2.0.0"
     q "^1.5.1"
@@ -1303,9 +1303,9 @@
   integrity sha512-TBjBNnoWKJRMnlCHLXk2uRLodpb16L3uZFy2+fRT9Eh2LyUoU42O0FoIvN1AlA4RJCxYN7652m9moHEvadmXNQ==
 
 "@lmc-eu/stylelint-config@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-2.0.0.tgz#543f4caaa2afe4c78e75f6e9ef9ccda8b8a64e11"
-  integrity sha512-KieM/lXffWAVR8d4B3jyrGkynAbe3q97BVLlQ+Ait5bYU6fdPAoex/aIBK9epJiJTbGQkZUOIyWLea8z6qSqFA==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-2.0.1.tgz#fe77e94e6050ee45c5f230bacf2467117a2fc10e"
+  integrity sha512-qnoXSFeWLvdJrOeQ5Cw35sqs2CcQ7hMr0JN6lO4RuPjorG/58CzGq+cInjIsurW5a/0mH2/h0lR4bZbRI2gt9w==
   dependencies:
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.1.0"
