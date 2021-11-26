@@ -185,10 +185,6 @@
     font-weight: inherit;
     font-size: inherit;
     text-decoration: underline;
-
-    &:active {
-        background: var(--lmcccm-p-btn-secondary-active-bg);
-    }
 }
 
 @media screen and (max-width: settings.$breakpoint-tablet-down) {
