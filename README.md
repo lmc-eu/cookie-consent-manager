@@ -322,8 +322,8 @@ anywhere in your stylesheet (the order of which is not important):
 
 | CSS custom property                   | Description                                             |
 |---------------------------------------|---------------------------------------------------------|
-| `--lmcccm-base-font-size`             | Base font size                                          |
 | `--lmcccm-font-family`                | Base font family                                        |
+| `--lmcccm-base-font-size`             | Base font size                                          |
 | `--lmcccm-bg`                         | Bar background color                                    |
 | `--lmcccm-text`                       | Text color                                              |
 | `--lmcccm-link-text`                  | Link text color                                         |
@@ -335,11 +335,8 @@ anywhere in your stylesheet (the order of which is not important):
 | `--lmcccm-btn-primary-hover-text`     | Primary button text color on hover                      |
 | `--lmcccm-btn-primary-active-bg`      | Primary button background color in active state         |
 | `--lmcccm-btn-primary-active-text`    | Primary button text color in active state               |
-| `--lmcccm-btn-secondary-bg`           | Secondary button background color                       |
 | `--lmcccm-btn-secondary-text`         | Secondary button text color                             |
-| `--lmcccm-btn-secondary-hover-bg`     | Secondary button background color on hover              |
 | `--lmcccm-btn-secondary-hover-text`   | Secondary button text color on hover                    |
-| `--lmcccm-btn-secondary-active-bg`    | Secondary button background color in active state       |
 | `--lmcccm-btn-secondary-active-text`  | Secondary button text color in active state             |
 
 </details>
