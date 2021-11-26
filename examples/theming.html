@@ -2,19 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <title>Cookie Consent Manager – theming example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@v1.25/themes/prism.css">
+    <!-- For the purpose of this demo, we are loading two typefaces: -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans:wght@400;700&display=swap">
     <script src="./functions.js" defer></script>
 
-    <link rel="stylesheet" href="../dist/LmcCookieConsentManager.css">
+    <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
+
+    <style type="text/css">
+        .custom-theme {
+            --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+            --lmcccm-base-font-size: 14px;
+            --lmcccm-bg: rgb(242, 203, 5);
+            --lmcccm-text: rgb(72, 72, 72);
+            --lmcccm-link-text: var(--lmcccm-text);
+            --lmcccm-link-hover-text: rgb(17, 17, 17);
+            --lmcccm-link-active-text: var(--lmcccm-link-hover-text);
+            --lmcccm-btn-border-radius: 1.25em;
+            --lmcccm-btn-primary-bg: rgb(17, 17, 17);
+            --lmcccm-btn-primary-text: rgb(255, 255, 255);
+            --lmcccm-btn-primary-hover-bg: rgb(51, 51, 51);
+            --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
+            --lmcccm-btn-primary-active-bg: rgb(0, 0, 0);
+            --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
+            --lmcccm-btn-secondary-text: var(--lmcccm-link-text);
+            --lmcccm-btn-secondary-hover-text: var(--lmcccm-link-hover-text);
+            --lmcccm-btn-secondary-active-text: var(--lmcccm-link-active-text);
+        }
+
+        .custom-theme .c_darkmode {
+            --lmcccm-bg: rgb(17, 17, 17);
+            --lmcccm-text: rgb(255, 255, 255);
+            --lmcccm-link-text: var(--lmcccm-text);
+            --lmcccm-link-hover-text: rgb(245, 245, 245);
+            --lmcccm-link-active-text: var(--lmcccm-link-hover-text);
+            --lmcccm-btn-primary-bg: rgb(255, 255, 255);
+            --lmcccm-btn-primary-text: rgb(17, 17, 17);
+            --lmcccm-btn-primary-hover-bg: rgb(245, 245, 245);
+            --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
+            --lmcccm-btn-primary-active-bg: rgb(255, 255, 255);
+            --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
+            --lmcccm-btn-secondary-text: var(--lmcccm-link-text);
+            --lmcccm-btn-secondary-hover-text: var(--lmcccm-link-hover-text);
+            --lmcccm-btn-secondary-active-text: var(--lmcccm-link-active-text);
+        }
+    </style>
 </head>
-<body>
+<body style="padding-bottom: 420px">
 
 <header class="container mt-4">
     <h1>LMC Cookie Consent Manager</h1>
@@ -52,18 +95,69 @@
                     Remove <code>lmc_ccm</code> cookie and reload
                 </a>
             </p>
+
+            <h3 class="mt-4">With Spirit Design System</h3>
             <p>
-                <button type="button" class="btn btn-dark" onclick="document.body.classList.toggle('c_darkmode')">
+                If your project uses <a href="https://github.com/lmc-eu/spirit-design-system">Spirit Design System</a>,
+                theming is done automatically. Just follow the steps in <a href="https://github.com/lmc-eu/cookie-consent-manager#with-spirit-design-system">README</a>
+                to compile Cookie Consent Manager styles with Spirit and you are done.
+            </p>
+
+            <h3 class="mt-4">Without Spirit Design System</h3>
+            <p>
+                If your project does not use <a href="https://github.com/lmc-eu/spirit-design-system">Spirit Design System</a>,
+                you can still manually customize the appearance of the Cookie Consent Manager UI.
+                Head over to <a href="https://github.com/lmc-eu/cookie-consent-manager#without-spirit-design-system">README</a>
+                to get the full list of available CSS custom properties.
+            </p>
+            <details class="mb-4">
+                <summary class="link-primary">Example theme:</summary>
+                <pre class="mt-4"><code class="language-css">:root {
+    --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+    --lmcccm-base-font-size: 14px;
+    --lmcccm-bg: rgb(242, 203, 5);
+    --lmcccm-text: rgb(72, 72, 72);
+    --lmcccm-link-text: var(--lmcccm-text);
+    --lmcccm-link-hover-text: rgb(17, 17, 17);
+    --lmcccm-link-active-text: var(--lmcccm-link-hover-text);
+    --lmcccm-btn-border-radius: 1.25em;
+    --lmcccm-btn-primary-bg: rgb(17, 17, 17);
+    --lmcccm-btn-primary-text: rgb(255, 255, 255);
+    --lmcccm-btn-primary-hover-bg: rgb(51, 51, 51);
+    --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
+    --lmcccm-btn-primary-active-bg: rgb(0, 0, 0);
+    --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
+    --lmcccm-btn-secondary-text: var(--lmcccm-link-text);
+    --lmcccm-btn-secondary-hover-text: var(--lmcccm-link-hover-text);
+    --lmcccm-btn-secondary-active-text: var(--lmcccm-link-active-text);
+}</code></pre>
+            </details>
+            <p>
+                <button type="button" class="btn btn-outline-primary" onclick="document.documentElement.classList.toggle('custom-theme')">
+                    Toggle custom theme
+                </button>
+            </p>
+
+            <h3 class="mt-4">Dark Mode</h3>
+            <p>
+                Default dark mode of Cookie Consent Manager is rather a dark version than a real dark mode
+                which is not yet supported by Spirit (if it was, it would apply less contrasting colors).
+                But it's available for you to have more design choices to choose from. You can
+                <a href="https://github.com/lmc-eu/cookie-consent-manager#dark-mode">customize</a>
+                dark mode colors the same way as the default light color scheme.
+            </p>
+            <p>
+                <button type="button" class="btn btn-outline-dark" onclick="document.body.classList.toggle('c_darkmode')">
                     Toggle dark mode
                 </button>
             </p>
 
-
-            <h3 class="mt-4">TODO</h3>
-
         </div>
     </div>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/plugins/autoloader/prism-autoloader.min.js"></script>
 
 <script defer src="../dist/init.js"></script>
 <script>
