@@ -294,8 +294,8 @@ to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) ar
 
 ### Without Spirit Design System
 
-Several CSS custom properties are available for you to customize the UI. Change
-their values to match the design of your site, for example:
+Handful of CSS custom properties are available for you to customize the UI.
+Change their values to match the design of your site, for example:
 
 ```css
 :root {
