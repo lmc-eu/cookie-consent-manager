@@ -65,7 +65,7 @@
     "replace-version": "node scripts/readme-replace-version.js"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.4.0",
+    "@lmc-eu/spirit-design-tokens": "^0.4.4",
     "nanoid": "^3.1.30",
     "vanilla-cookieconsent": "^2.7.0-rc3"
   },
