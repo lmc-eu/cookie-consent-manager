@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@v1.25/themes/prism.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <script src="./functions.js" defer></script>
 
@@ -19,83 +20,104 @@
     <!-- Following script will be loaded only after "personalization" consent is detected -->
     <script type="text/plain" data-cookiecategory="personalization" src="./personalization.js" defer></script>
 </head>
-<body style="padding-bottom: 420px">
+<body style="padding-bottom: 380px">
 
-<header class="container mt-4">
-    <h1>LMC Cookie Consent Manager</h1>
+<header class="container">
+    <div class="d-flex flex-column align-items-center flex-md-row py-3">
+        <a href="." class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="me-3" width="67" height="52" viewBox="0 0 67 52">
+                <path fill="#12bcca" d="M3.3 49.2c-1.8.3-5.4 2.1-1.6 2.7 3.9.7 44.4-3.6 63-1.5 2.9.4 2.3-.8-.6-1a472 472 0 00-60.8-.2" />
+                <path fill="#002d5c" d="M23 39.4c.7-.3 1.7.8 1 1.6a1.5 1.5 0 01-.4.2c-2.3.8-9.5 2.6-12.1-3.5-.9.9-1.7 1.4-2.6 2-6.3 4.5-6.4 2.5-6.4 2.4-.3-1.8 1.4-2 1.4-2s3.4-.7 6.8-4.1c-.7-3.3-1.6-10-.7-15.5C11.7 8.8 16 2.5 20.2.8c4.1-1.4 5.2 1.1 5.5 3.2 1 5-.3 15.3-12.5 31.8.6 2.1 1 3.6 2.7 4.6 3.4 2 6.8-.9 7.2-1m-10.3-5.2c1.8-2 7-10.3 8.3-13 4.2-9.5 3.9-17 2.2-18.2C18.8-.2 9.6 23.2 12.7 34.2M57.4 31.6c-3.4 5-8 6.5-8 6.5s-7 2.8-9 .1c-2.2-2.6.6-7 1.1-7.9.5-.7 2.6-2.8 2.6-1.4 0 1.2-.5 3.5 1 2.9.2-.2.7-.7 1-1.3.5-1 1-3-.8-4-2.8-1.7-5.7 1.7-6.5 4.3-.6 1.8-1.6 5.2.3 7.4 4.5 5 13.2 2.8 19.3-2 4.6-3.8 2.4-9.6-1-4.6" />
+                <path fill="#002d5c" d="M36.6 39.6a3 3 0 01-1.7-2.7c0-3.4 1.6-6.5 2-7.3.3-.8-1.3-2-3.1-1.5-1.9.4-3.3 2.8-3.6 3.2-.3.4-.8.6-.5-.5l.2-.6c0-.3.1-.6-.1-.9-.3-.5-2.4-.8-3.6 0-1.5.8-2.6 3.3-2.8 2.3 0 0 0-.5-.2-.6-.1-.3-1-.5-1.7-.1-.8.4-1.2 1.4-1.5 1.8l-.2.4-.5 1-1.2 2.2c-.2.4-.1.8.1 1.1.2.3 1 .7 1.2.1l.4-.7.6-1.4.7-1.6c.3-.4 1-.7.8.2 0 .5-.3 1.4-.5 2 0 .4.6 1.1 1-.1a13 13 0 012.4-3.7c.4-.4 1.2-.6 1 .2-.2 1.5-.2 3.6.2 5.5.4 1.8 2 2.1 2.7-.5.5-1.5 1.8-4.4 2.9-6 .8-1.2 2.2-1.5 1.6-.2l-.8 2.4c-.3 1.4-.7 3.7-.1 5 .7 1.7 3.8 2.9 4.4 2.2.4-.4.4-1 0-1.2" />
+            </svg>
+            <span class="fs-5">Cookie Consent Manager</span>
+        </a>
+        <div>
+            <a class="btn btn-outline-primary me-2" href="https://github.com/lmc-eu/cookie-consent/#readme" target="_blank">Documentation</a>
+            <a class="btn btn-primary" href="https://github.com/lmc-eu/cookie-consent/releases" target="_blank">Download</a>
+        </div>
+    </div>
 </header>
 
-<div class="container mt-4">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" href=".">Basic example</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./configuration.html">Extended configuration</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./callbacks.html">Callbacks</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./theming.html">Theming</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://github.com/lmc-eu/cookie-consent/" target="_blank">Documentation <i class="bi bi-box-arrow-up-right"></i></a>
-        </li>
-    </ul>
-</div>
+<main>
+    <div class="py-5 bg-light text-center">
+        <div class="container">
 
-<main class="container mt-4">
-    <div class="row">
-        <div class="col">
-            <p class="lead">
+            <h1 class="display-1 mt-md-3">Basic Example</h1>
+            <p class="lead mb-4 mb-md-5">
                 This example shows some basic usage of the LMC Cookie Consent Manager.
             </p>
-            <p>
-                <a href="" class="btn btn-warning" onclick="removeCookieAndReload();">
-                    Remove <code>lmc_ccm</code> cookie and reload
-                </a>
-            </p>
 
-            <h3 class="mt-4">Cookie content</h3>
-            <p id="onaccept-content">
-                (empty)
-            </p>
+            <ul class="nav nav-pills justify-content-center mb-3">
+                <li class="nav-item">
+                    <a class="nav-link active" href=".">Basic example</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./configuration.html">Extended configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./callbacks.html">Callbacks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./theming.html">Theming</a>
+                </li>
+            </ul>
 
-            <h3 class="mt-4">Content set from <code>onAcceptAll()</code> callback</h3>
-            <p id="onacceptall-content">
-                (empty)
-            </p>
 
-            <h3 class="mt-4">Content set by callback when <code>ad</code> consent detected</h3>
-            <p id="ad-content">
-                (empty)
-            </p>
+        </div>
+    </div>
+    <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1" hidden>
+        <a href="" class="btn btn-lg btn-warning shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
+            <i class="bi bi-arrow-clockwise"></i>
+            Reset cookie
+        </a>
+    </div>
+    <div class="container py-5">
+        <div class="row justify-content-lg-center">
+            <div class="col col-lg-10 col-xl-8">
 
-            <h3 class="mt-4">Content set by external script when <code>personalization</code> consent detected</h3>
-            <p id="personalization-content">
-                (empty)
-            </p>
+                <h2 class="mt-md-3 mb-3">Cookie content</h2>
+                <div id="onaccept-content">(empty)</div>
 
-            <h3 class="mt-4">Allowed consent categories</h3>
-            <div class="row">
-                <div class="col-md-6 col-xs-12">
+                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onAcceptAll()</code> callback</h2>
+                <p id="onacceptall-content">
+                    (empty)
+                </p>
 
-                    <ul class="list-group">
-                        <li class="list-group-item" id="consent-necessary">necessary</li>
-                        <li class="list-group-item" id="consent-ad">ad</li>
-                        <li class="list-group-item" id="consent-analytics">analytics</li>
-                        <li class="list-group-item" id="consent-functionality">functionality</li>
-                        <li class="list-group-item" id="consent-personalization">personalization</li>
-                    </ul>
-                </div>
+                <h2 class="mt-4 mt-md-5 mb-3">Content set by callback when <code>ad</code> consent detected</h2>
+                <p id="ad-content">
+                    (empty)
+                </p>
+
+                <h2 class="mt-4 mt-md-5 mb-3">Content set by external script when <code>personalization</code> consent detected</h2>
+                <p id="personalization-content">
+                    (empty)
+                </p>
+
+                <h2 class="mt-4 mt-md-5 mb-3">Allowed consent categories</h2>
+                <ul class="list-group">
+                    <li class="list-group-item" id="consent-necessary">necessary</li>
+                    <li class="list-group-item" id="consent-ad">ad</li>
+                    <li class="list-group-item" id="consent-analytics">analytics</li>
+                    <li class="list-group-item" id="consent-functionality">functionality</li>
+                    <li class="list-group-item" id="consent-personalization">personalization</li>
+                </ul>
+
             </div>
-
-            <!-- Spacer to make content scrollable -->
-            <div style="height: 300px;"></div>
         </div>
     </div>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/components/prism-core.min.js" data-manual></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+    // Bootstrap Tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 
 <script defer src="../dist/init.js"></script><!-- You will load this from CDN instead -->
 <script>
@@ -105,11 +127,13 @@
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         onAccept: (cookie, cookieConsent) => { // any type of consent (including "only necessary") detected
-          document.getElementById('onaccept-content').innerHTML = JSON.stringify(cookie)
+          document.getElementById('onaccept-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(cookie)}</code></pre>`;
+          window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
+          document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
 
           for (const category of ['necessary', 'ad', 'analytics', 'functionality', 'personalization']) {
             if (cookieConsent.allowedCategory(category)) {
-              markConsentCategoryAllowed(category)
+              markConsentCategoryAllowed(category);
             }
           }
         },
