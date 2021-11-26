@@ -158,18 +158,22 @@
 
 .cc_div .c-bn {
     padding: tools.rem2em(tokens.$space-4) tools.rem2em(tokens.$space-7);
-    border-radius: tools.rem2em(tokens.$radius-1);
+    border-radius: var(--lmcccm-p-btn-border-radius);
 }
 
 #c-bns button:first-child,
 #s-bns button:first-child {
+    border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
+
     &:hover {
         color: var(--lmcccm-p-btn-primary-hover-text);
+        border-color: var(--lmcccm-p-btn-primary-hover-border);
     }
 
     &:active {
         color: var(--lmcccm-p-btn-primary-active-text);
         background: var(--lmcccm-p-btn-primary-active-bg);
+        border-color: var(--lmcccm-p-btn-primary-active-border);
     }
 }
 
