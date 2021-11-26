@@ -21,9 +21,7 @@ const buildPayload = (cookieConsent, acceptedOnlyNecessary) => {
   const acceptedCategories = cookieConsent.get('level');
   // TODO: read actual categories once following is implemented in vanilla-cookieconsent:
   // https://github.com/orestbida/cookieconsent/discussions/90#discussioncomment-1466886
-  const rejectedCategories = acceptedOnlyNecessary
-    ? ['ad', 'analytics', 'functionality', 'personalization']
-    : [];
+  const rejectedCategories = acceptedOnlyNecessary ? ['ad', 'analytics', 'functionality', 'personalization'] : [];
 
   return {
     data: {
