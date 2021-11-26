@@ -244,7 +244,7 @@ Each configured callback receives two params:
 
 If your project uses [Spirit Design System], you are almost done!
 
-All you need to do is to add this plugin's SCSS to your Sass pipeline:
+All you need to do is to add this plugin's SCSS to your Sass pipeline and use it **instead** of the default CSS:
 
 ```scss
 // my-project.scss
@@ -330,19 +330,21 @@ their values to match the design of your site, for example:
 
 </details>
 
-#### Custom font
+### Custom font
 
-Default cookie consent design uses Inter font, loaded via Google Fonts (see [Basic usage](#basic-usage)).
-You can switch to any font of your choice:
+Default cookie consent design uses Inter font loaded via Google Fonts as shown in the [basic](#basic-usage) example.
+If you are not using cookie consent with the default design, additional steps may be necessary for you:
 
-```css
-:root {
-  --lmcccm-font-family: "Open Sans", arial, sans-serif;
-}
-```
+- If your project is built with Spirit Design System, you already have the correct font linked in your HTML or CSS.
+- If your project is _not_ built with Spirit Design System, you can switch to any font of your choice:
+  ```css
+  :root {
+    --lmcccm-font-family: "Open Sans", arial, sans-serif;
+  }
+  ```
 
-In such case, following tags are redundant and you can remove them from your `<head>`
-should you have placed them there before according to the [Basic usage](#basic-usage) instructions:
+In both cases, following tags may be redundant and you should consider removing them from your `<head>`, should you
+have initially followed the [basic](#basic-usage) instructions:
 
 ```html
 <!-- Remove `preconnect` headers only if you are NOT loading your custom font via Google Fonts: -->
