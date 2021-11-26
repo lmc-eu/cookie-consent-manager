@@ -303,6 +303,8 @@ Change their values to match the design of your site, for example:
 }
 ```
 
+[👀 See theming example][examples-theming]
+
 <details>
 <summary>Full list of available CSS custom properties:</summary>
 
@@ -428,3 +430,4 @@ for more information.
 [examples]: https://lmc-eu.github.io/cookie-consent-manager/examples/
 [examples-callbacks]: https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html
 [examples-configuration]: https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html
+[examples-theming]: https://lmc-eu.github.io/cookie-consent-manager/examples/theming.html
