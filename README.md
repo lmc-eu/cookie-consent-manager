@@ -9,10 +9,18 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
 ## Basic usage
 
-Load default CSS in your `<head>`:
+Make assets load faster by placing pre-connect headers right after `<meta charset>` in your `<head>`:
 
 ```html
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+```
+
+Load default CSS along with your styles in `<head>`:
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/LmcCookieConsentManager.min.css">
 ```
 
@@ -30,22 +38,6 @@ window.addEventListener('load', function () {
 This will load the plugin from CDN and initialize the plugin with default settings.
 [👀 See example][examples].
 
-## Use default web font, or not?
-
-If you are going to use the plugin with the default theme, you may also want to load default Spirit web font
-which is used by the plugin:
-
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-```
-
-If Inter font is not provided (or installed in user's system), all texts in cookie consent UI default to whatever
-current `font-family` is set to. As you cannot predict what fonts are available on user's side, and because this
-behavior may change in future versions of Spirit Design Tokens, we encourage you either to load the default web font
-as shown above or to explicitly specify the desired font yourself (head to [Theming](#theming) to see how).
-
 ## Loading the plugin
 
 ### Via CDN or static file
@@ -54,6 +46,7 @@ You can load the plugin from a CDN, as in the basic example above.
 
 ```html
 <!-- Note we use version "cookie-consent-manager@0.7", which points the latest version of this series (including bugfix releases) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/LmcCookieConsentManager.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/init.js"></script>
 ```
@@ -92,17 +85,19 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 3. Include default CSS in your HTML:
    ```html
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
    <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
    ```
    or in your Sass stylesheet:
    ```scss
-   @use 'node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css';
+   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+   @use "node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css";
    ```
 
    Please mind the `.css` extension used in the Sass example. Using the provided `.scss` stylesheet is
    recommended only for projects that are built [with Spirit Design System](#with-spirit-design-system).
 
-   See below for [theming customization options](#theming).
+   See below for [theme customization options](#theming).
 
 #### Legacy import
 
@@ -259,7 +254,10 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline:
 @use '@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
 ```
 
-Now set up a [Sass load path] so the Sass compiler can find stylesheets located in the `node_modules` directory
+<details>
+<summary>Make sure you have `node_modules` and path to your design tokens in your Sass include paths.</summary>
+
+Set up [Sass load path] so the Sass compiler can find stylesheets located in the `node_modules` directory
 (you will already have a path to your design tokens there, as required by [Spirit Web]):
 
 ```sh
@@ -289,15 +287,24 @@ Or with webpack:
 },
 ```
 
+</details>
+
 **Note:** `sass` v1.23 or higher is required to be able to compile the new Sass modules syntax. You may need to migrate
 to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) are now [deprecated][sass modules].
 
 ### Without Spirit Design System
 
+Several CSS custom properties are available for you to customize the UI. Change
+their values to match the design of your site, for example:
+
+```css
+:root {
+  --lmcccm-text: #333;
+}
+```
 
 <details>
-<summary>Following CSS custom properties are available for you to customize the UI:</summary>
-
+<summary>Full list of available CSS custom properties:</summary>
 
 | CSS custom property                   | Description                                             |
 |---------------------------------------|---------------------------------------------------------|
@@ -321,22 +328,37 @@ to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) ar
 | `--lmcccm-btn-secondary-active-bg`    | Secondary button background color in active state       |
 | `--lmcccm-btn-secondary-active-text`  | Secondary button text color in active state             |
 
-Change their values to adjust cookie consent UI to match the design of your site:
+</details>
+
+#### Custom font
+
+Default cookie consent design uses Inter font, loaded via Google Fonts (see [Basic usage](#basic-usage)).
+You can switch to any font of your choice:
 
 ```css
 :root {
-  --lmcccm-font-family: 'Open Sans', arial, sans-serif;
+  --lmcccm-font-family: "Open Sans", arial, sans-serif;
 }
 ```
-</details>
+
+In such case, following tags are redundant and you can remove them from your `<head>`
+should you have placed them there before according to the [Basic usage](#basic-usage) instructions:
+
+```html
+<!-- Remove `preconnect` headers only if you are NOT loading your custom font via Google Fonts: -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Remove Inter font link: -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+```
 
 ### Dark mode
 
 Add `c_darkmode` CSS class to `<body>` to enable dark mode. It reuses [Spirit Design Tokens], so if your project is
 built with Spirit, applying the `c_darkmode` class is all you need to do and dark mode will work for you out-of-the-box.
 
-If your project does _not_ use Spirit, you still may adjust exposed CSS custom properties as described above,
-this time scoped to the `.c_darkmode` class:
+If your project does _not_ use Spirit, you still may adjust exposed CSS custom properties as described
+[above](#without-spirit-design-system), this time scoped to the `.c_darkmode` class:
 
 ```css
 .c_darkmode {
