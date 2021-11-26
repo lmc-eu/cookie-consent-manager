@@ -315,6 +315,7 @@ Change their values to match the design of your site, for example:
 | `--lmcccm-link-text`                  | Link text color                                         |
 | `--lmcccm-link-hover-text`            | Link text color on hover                                |
 | `--lmcccm-link-active-text`           | Link text color in active state                         |
+| `--lmcccm-btn-border-radius`          | Button border radius                                    |
 | `--lmcccm-btn-primary-bg`             | Primary button background color                         |
 | `--lmcccm-btn-primary-text`           | Primary button text color                               |
 | `--lmcccm-btn-primary-hover-bg`       | Primary button background color on hover                |

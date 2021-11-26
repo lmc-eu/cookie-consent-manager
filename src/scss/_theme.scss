@@ -15,11 +15,12 @@
 
 :root {
     //
-    // Typography
-    // ==========
+    // Common Settings
+    // ===============
 
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
     --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
+    --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{tools.rem2em(tokens.$radius-1)});
 
     //
     // Light Mode

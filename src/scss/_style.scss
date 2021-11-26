@@ -158,7 +158,7 @@
 
 .cc_div .c-bn {
     padding: tools.rem2em(tokens.$space-4) tools.rem2em(tokens.$space-7);
-    border-radius: tools.rem2em(tokens.$radius-1);
+    border-radius: var(--lmcccm-p-btn-border-radius);
 }
 
 #c-bns button:first-child,
