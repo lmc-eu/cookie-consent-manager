@@ -1,4 +1,51 @@
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.6.0&sourceBranch=refs%2Ftags%2F0.7.0) (2021-11-26)
+
+
+### Bug Fixes
+
+
+* Make `font-family` fallback actually work as documented ([52e2656](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/52e2656))
+### Chores
+
+
+* Cache yarn dependencies to increase GH Actions jobs speed ([57becf7](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/57becf7))
+* Fix condition to generate `minor` on both cases ([4e2e180](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4e2e180))
+* Test if package is still buildable ([e7ce285](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e7ce285))
+### Code Refactoring
+
+
+* Extract assemble config into variable ([66f5e93](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/66f5e93))
+### Dependencies
+
+
+* Bump @babel/preset-env from 7.16.0 to 7.16.4 ([6912d80](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6912d80))
+* Bump @lmc-eu/commitlint-config from 1.0.4 to 1.0.5 ([d8c69f0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d8c69f0))
+* Bump @lmc-eu/prettier-config from 1.1.1 to 1.2.0 ([d51f2da](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d51f2da))
+* Bump @lmc-eu/stylelint-config from 2.0.0 to 2.0.1 ([a0bdba8](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a0bdba8))
+* Bump esbuild from 0.13.14 to 0.13.15 ([b9c3993](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b9c3993))
+* Bump postcss from 8.3.11 to 8.4.1 ([7ccc52c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7ccc52c))
+* Bump prettier from 2.4.1 to 2.5.0 ([9de88e9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/9de88e9))
+* Bump sass from 1.43.4 to 1.43.5 ([5679690](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5679690))
+### Documentation
+
+
+* Add example of localStorage clear ([c19a414](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/c19a414))
+### Features
+
+
+* Autodetect language based on the value of `<html lang=...>` [#CCM-43](https://jira.int.lmc.cz/browse/CCM-43) ([e389636](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e389636))
+* Submit consent to API [#CCM-39](https://jira.int.lmc.cz/browse/CCM-39) ([85c9c02](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/85c9c02))
+* Submit to API also current language and cookie expiration [#CCM-41](https://jira.int.lmc.cz/browse/CCM-41) ([be946f3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/be946f3))
+### Styles
+
+
+* Introduce codestyle linting usingESLint refs [#CCM-6](https://jira.int.lmc.cz/browse/CCM-6) ([5b4756d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5b4756d))
+* Lint entire codebase not few directories ([158eaa7](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/158eaa7))
+* Reformat code by prettier ([b13af7b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b13af7b))
+* Reformat code using ESLint ruleset refs [#CCM-6](https://jira.int.lmc.cz/browse/CCM-6) ([d9d96b9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d9d96b9))
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.5.0&sourceBranch=refs%2Ftags%2F0.6.0) (2021-11-19)
 
@@ -27,20 +74,20 @@
 ### Documentation
 
 
-* Add example of specifying custom company names [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([131eb34](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/131eb34))
-* Do not use patch part in URL to allow using bugfix versions automatically [#CCM-29](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-29) ([b484c4e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b484c4e))
+* Add example of specifying custom company names [#CCM-25](https://jira.int.lmc.cz/browse/CCM-25) ([131eb34](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/131eb34))
+* Do not use patch part in URL to allow using bugfix versions automatically [#CCM-29](https://jira.int.lmc.cz/browse/CCM-29) ([b484c4e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b484c4e))
 * Fix broken links in readme ([cadeb72](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/cadeb72))
 * Fix wrong `autodetectLang` type in readme ([278a3b1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/278a3b1))
-* Introduce `companyNames` option in readme [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([06637bc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/06637bc))
+* Introduce `companyNames` option in readme [#CCM-25](https://jira.int.lmc.cz/browse/CCM-25) ([06637bc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/06637bc))
 * Update list of supported languages ([84e99fd](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/84e99fd))
 ### Features
 
 
-* Add translations for de, hu, ru and uk languages [#CCM-18](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-18) ([6e31d97](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6e31d97))
-* Generate and store consent UUID on accept [#CCM-35](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-35) ([519182d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/519182d))
-* Introduce `companyNames` option as i18n parameter [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([e271230](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e271230))
-* Unify company name amongst all translations [#CCM-18](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-18) ([928118d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/928118d))
-* Update polish translation [#CCM-31](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-31) ([3b6609b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3b6609b))
+* Add translations for de, hu, ru and uk languages [#CCM-18](https://jira.int.lmc.cz/browse/CCM-18) ([6e31d97](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6e31d97))
+* Generate and store consent UUID on accept [#CCM-35](https://jira.int.lmc.cz/browse/CCM-35) ([519182d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/519182d))
+* Introduce `companyNames` option as i18n parameter [#CCM-25](https://jira.int.lmc.cz/browse/CCM-25) ([e271230](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/e271230))
+* Unify company name amongst all translations [#CCM-18](https://jira.int.lmc.cz/browse/CCM-18) ([928118d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/928118d))
+* Update polish translation [#CCM-31](https://jira.int.lmc.cz/browse/CCM-31) ([3b6609b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/3b6609b))
 ### Styles
 
 
@@ -48,7 +95,7 @@
 ### Tests
 
 
-* Unit tests for i18n [#CCM-25](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-25) ([d5bf67b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d5bf67b))
+* Unit tests for i18n [#CCM-25](https://jira.int.lmc.cz/browse/CCM-25) ([d5bf67b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d5bf67b))
 
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.1&sourceBranch=refs%2Ftags%2F0.5.0) (2021-11-11)
@@ -88,7 +135,7 @@
 ### Documentation
 
 
-* Extend examples to showcase more features [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([de1a0f2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/de1a0f2))
+* Extend examples to showcase more features [#CCM-20](https://jira.int.lmc.cz/browse/CCM-20) ([de1a0f2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/de1a0f2))
 ### Chores
 
 
@@ -119,7 +166,7 @@
 ### Features
 
 
-* Introduce new design connected to Spirit design tokens [#CCM-7](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-7) ([658c99f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/658c99f))
+* Introduce new design connected to Spirit design tokens [#CCM-7](https://jira.int.lmc.cz/browse/CCM-7) ([658c99f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/658c99f))
 
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.0&sourceBranch=refs%2Ftags%2F0.3.1) (2021-11-04)
@@ -146,8 +193,8 @@
 ### Chores
 
 
-* Create release on local machine and publish by ci pipeline [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([4ed90f9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4ed90f9))
-* Introduce publish package pipeline [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([ac0a5aa](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/ac0a5aa))
+* Create release on local machine and publish by ci pipeline [#CCM-8](https://jira.int.lmc.cz/browse/CCM-8) ([4ed90f9](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4ed90f9))
+* Introduce publish package pipeline [#CCM-8](https://jira.int.lmc.cz/browse/CCM-8) ([ac0a5aa](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/ac0a5aa))
 ### Code Refactoring
 
 
@@ -160,11 +207,11 @@
 
 
 * Extend description of necessary consent ([a0ec0de](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a0ec0de))
-* How to publish this package [#CCM-8](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-8) ([7672f5e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7672f5e))
+* How to publish this package [#CCM-8](https://jira.int.lmc.cz/browse/CCM-8) ([7672f5e](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/7672f5e))
 ### Features
 
 
-* Add 'ad' consent category [#CCM-12](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-12) ([5777638](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5777638))
+* Add 'ad' consent category [#CCM-12](https://jira.int.lmc.cz/browse/CCM-12) ([5777638](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/5777638))
 * Enable management of third-party scripts ([0020661](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/0020661))
 
 <a name="0.2.0"></a>
@@ -182,7 +229,7 @@
 * Block fixup commit message using github action ([1a43014](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1a43014))
 * Generate changelog using conventional changelog ([dddacfc](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/dddacfc))
 * Introduce commit linting ([d8238c3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d8238c3))
-* Introduce simple dev server for local development [#CCM-5](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-5) ([84c3245](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/84c3245))
+* Introduce simple dev server for local development [#CCM-5](https://jira.int.lmc.cz/browse/CCM-5) ([84c3245](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/84c3245))
 * Make package publishlable ([effcd7a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/effcd7a))
 * Rename `dev` script to more common `start` ([bb6bd54](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/bb6bd54))
 * Run all check with single npm script ([fee171a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/fee171a))
@@ -194,26 +241,26 @@
 ### Documentation
 
 
-* Add development and contributing section [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([4bc165d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4bc165d))
-* Extend and rearrange README [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([2260342](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/2260342))
+* Add development and contributing section [#CCM-20](https://jira.int.lmc.cz/browse/CCM-20) ([4bc165d](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4bc165d))
+* Extend and rearrange README [#CCM-20](https://jira.int.lmc.cz/browse/CCM-20) ([2260342](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/2260342))
 * Fix another typo in cdn path ([185d9f8](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/185d9f8))
 * Fix typo in cdn path ([33ea2ec](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/33ea2ec))
 * Introduce badges to make readme look more cool ([8e08301](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8e08301))
 * Mark config arguments optional in jsdoc ([10e48b2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/10e48b2))
-* Remove autoload script, extend default example [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([a85c7b3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a85c7b3))
-* Rename docs to examples [#CCM-20](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-20) ([32a0c39](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/32a0c39))
+* Remove autoload script, extend default example [#CCM-20](https://jira.int.lmc.cz/browse/CCM-20) ([a85c7b3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/a85c7b3))
+* Rename docs to examples [#CCM-20](https://jira.int.lmc.cz/browse/CCM-20) ([32a0c39](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/32a0c39))
 ### Features
 
 
-* Add callbacks for all onAccept scenarios [#CCM-24](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-24) ([23314b5](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/23314b5))
-* Add custom onAccept callback to extend the default one [#CCM-19](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-19) ([8ed95ba](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8ed95ba))
-* Add translations for cs, en, sk and pl language [#CCM-10](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-10) ([1743866](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1743866))
-* Configure consent levels [#CCM-12](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-12) ([703cf98](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/703cf98))
+* Add callbacks for all onAccept scenarios [#CCM-24](https://jira.int.lmc.cz/browse/CCM-24) ([23314b5](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/23314b5))
+* Add custom onAccept callback to extend the default one [#CCM-19](https://jira.int.lmc.cz/browse/CCM-19) ([8ed95ba](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/8ed95ba))
+* Add translations for cs, en, sk and pl language [#CCM-10](https://jira.int.lmc.cz/browse/CCM-10) ([1743866](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/1743866))
+* Configure consent levels [#CCM-12](https://jira.int.lmc.cz/browse/CCM-12) ([703cf98](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/703cf98))
 * Configure plugin defaults ([bd6309f](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/bd6309f))
-* Make language autodetection easily configurable [#CCM-26](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-26) ([4404a9a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4404a9a))
-* Provide cookieConsent instance to callbacks [#CCM-24](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-24) ([9232b09](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/9232b09))
+* Make language autodetection easily configurable [#CCM-26](https://jira.int.lmc.cz/browse/CCM-26) ([4404a9a](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4404a9a))
+* Provide cookieConsent instance to callbacks [#CCM-24](https://jira.int.lmc.cz/browse/CCM-24) ([9232b09](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/9232b09))
 * Push info to dataLayer on accept ([4203092](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/4203092))
-* Rename default language settings to defaultLang to make it more understandable [#CCM-26](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-26) ([6635813](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6635813))
+* Rename default language settings to defaultLang to make it more understandable [#CCM-26](https://jira.int.lmc.cz/browse/CCM-26) ([6635813](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/6635813))
 * Return CookieConsent instance from the init function ([b217059](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/b217059))
 * Save distribution files for instant usage and examples ([d9964f3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commits/d9964f3))
 

@@ -215,6 +215,11 @@
   line-height: initial;
 }
 
+/** fix https://github.com/orestbida/cookieconsent/issues/94 **/
+#cc_div #cm {
+  display: block !important;
+}
+
 #c-ttl {
   margin-bottom: 0.7em;
   font-size: 1.05em;
@@ -1372,7 +1377,7 @@ html.force--consent.show--consent body {
 /* prettier-ignore */
 :root {
   --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, 1rem);
-  --lmcccm-p-font-family: var(--lmcccm-font-family, Inter);
+  --lmcccm-p-font-family: var(--lmcccm-font-family, Inter), inherit;
   --lmcccm-p-bg: var(--lmcccm-bg, #fff);
   --lmcccm-p-text: var(--lmcccm-text, #132930);
   --lmcccm-p-link-text: var(--lmcccm-link-text, #132930);

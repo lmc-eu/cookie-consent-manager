@@ -17,134 +17,319 @@ var __spreadValues = (a, b) => {
 
 // node_modules/vanilla-cookieconsent/dist/cookieconsent.js
 (function() {
-  function Xa(Ya) {
-    function Ga(a, b) {
-      return a.classList ? a.classList.contains(b) : !!a.className.match(new RegExp("(\\s|^)" + b + "(\\s|$)"));
-    }
-    function ua(a, b) {
-      a.classList ? a.classList.remove(b) : a.className = a.className.replace(new RegExp("(\\s|^)" + b + "(\\s|$)"), " ");
-    }
-    function F(a, b) {
-      a.classList ? a.classList.add(b) : Ga(a, b) || (a.className += " " + b);
-    }
-    function ha(a) {
-      if (typeof a === "object") {
-        var b = [], c = 0;
-        for (b[c++] in a)
-          ;
-        return b;
-      }
-    }
-    function G(a, b, c, d) {
-      a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
-    }
-    function Ha(a, b, c) {
-      b = b ? b : "/";
-      for (var d = 0; d < a.length; d++)
-        for (var e = 0; e < c.length; e++)
-          document.cookie = a[d] + "=; path=" + b + (-1 < c[e].indexOf(".") ? "; domain=" + c[e] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-    }
-    function ia(a, b, c) {
-      var d;
-      if (b === "one") {
-        if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === S) {
-          try {
-            d = JSON.parse(d);
-          } catch (e) {
-            d = JSON.parse(decodeURIComponent(d));
-          }
-          d = JSON.stringify(d);
+  var Ta = function(Ma) {
+    var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, u = {}, S = false, T = false, ea = false, qa = false, fa = false, v, V, y, ra, sa, W = true, ta = false, E = null, Ea = false, ma, ua, va = [], aa = [], N = [], L = [], wa = [], ba = document.documentElement, M, x, H, O, Na = function(a) {
+      typeof a.cookie_expiration === "number" && (f.cookie_expiration = a.cookie_expiration);
+      typeof a.autorun === "boolean" && (f.autorun = a.autorun);
+      typeof a.cookie_domain === "string" && (f.cookie_domain = a.cookie_domain);
+      typeof a.cookie_same_site === "string" && (f.cookie_same_site = a.cookie_same_site);
+      typeof a.cookie_path === "string" && (f.cookie_path = a.cookie_path);
+      typeof a.cookie_name === "string" && (f.cookie_name = a.cookie_name);
+      typeof a.onAccept === "function" && (ra = a.onAccept);
+      typeof a.onChange === "function" && (sa = a.onChange);
+      typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), ta = true);
+      a.autoclear_cookies === true && (f.autoclear_cookies = true);
+      a.use_rfc_cookie === true && (f.use_rfc_cookie = true);
+      a.hide_from_bots === true && (Ea = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
+      f.page_scripts = a.page_scripts === true;
+      f.page_scripts_order = a.page_scripts_order !== false;
+      a.auto_language === "browser" || a.auto_language === true ? f.auto_language = "browser" : a.auto_language === "document" && (f.auto_language = "document");
+      var b = a.languages;
+      a = a.current_lang;
+      f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = xa(a, b)) : b = f.auto_language === "document" ? xa(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = xa(a, b) : f.current_lang;
+      f.current_lang = b;
+    }, Oa = function() {
+      for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
+        a[b].setAttribute("aria-haspopup", "dialog"), I(a[b], "click", function(c) {
+          k.showSettings(0);
+          c.preventDefault ? c.preventDefault() : c.returnValue = false;
+        });
+    }, xa = function(a, b) {
+      if (Object.prototype.hasOwnProperty.call(b, a))
+        return a;
+      if (0 < ha(b).length)
+        return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : ha(b)[0];
+    }, Fa = function() {
+      function a(c, d) {
+        var e = false, h = false;
+        try {
+          for (var l = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), m, n = l.length, p = 0; p < n; )
+            m = l[p].getAttribute("data-focus"), h || m !== "1" ? m === "0" && (e = l[p], h || l[p + 1].getAttribute("data-focus") === "0" || (h = l[p + 1])) : h = l[p], p++;
+        } catch (r) {
+          return c.querySelectorAll(b.join(", "));
         }
-      } else if (b === "all")
-        for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
-          d.push(a[b].split("=")[0]);
-      return d;
-    }
-    function va(a, b) {
-      b = ja ? encodeURIComponent(b) : b;
-      var c = new Date();
-      c.setTime(c.getTime() + 864e5 * Ia);
-      a = a + "=" + (b || "") + ("; expires=" + c.toUTCString()) + "; Path=" + Ja + ";";
-      a += " SameSite=" + Ka + ";";
-      -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + T + ";");
-      window.location.protocol === "https:" && (a += " Secure;");
-      document.cookie = a;
-    }
-    function La() {
-      if (Ma) {
-        var a = Na, b = r.level || [], c = function(d, e) {
-          if (e < d.length) {
-            var g = d[e], l = g.getAttribute("data-cookiecategory");
-            if (-1 < H(b, l)) {
-              g.type = "text/javascript";
-              g.removeAttribute("data-cookiecategory");
-              l = g.getAttribute("data-src");
-              var k = f("script");
-              k.textContent = g.innerHTML;
-              (function(t, m) {
-                for (var p = m.attributes, W = p.length, J = 0; J < W; J++)
-                  m = p[J], t.setAttribute(m.nodeName, m.nodeValue);
-              })(k, g);
-              l ? k.src = l : l = g.src;
-              l && (a ? k.readyState ? k.onreadystatechange = function() {
-                if (k.readyState === "loaded" || k.readyState === "complete")
-                  k.onreadystatechange = null, c(d, ++e);
-              } : k.onload = function() {
-                k.onload = null;
-                c(d, ++e);
-              } : l = false);
-              g.parentNode.replaceChild(k, g);
-              if (l)
-                return;
-            }
-            c(d, ++e);
-          }
-        };
-        c(document.querySelectorAll("script[data-cookiecategory]"), 0);
+        d[0] = l[0];
+        d[1] = l[l.length - 1];
+        d[2] = e;
+        d[3] = h;
       }
-    }
-    function Oa(a, b) {
-      function c(e, g, l, k, t, m, p) {
-        m = m && m.split(" ") || [];
-        if (-1 < H(g, t) && (F(e, t), (t !== "bar" || m[0] !== "middle") && -1 < H(l, m[0])))
-          for (g = 0; g < m.length; g++)
-            F(e, m[g]);
-        -1 < H(k, p) && F(e, p);
-      }
-      if (typeof a === "object") {
-        var d = a.consent_modal;
-        a = a.settings_modal;
-        U && d && c(w, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
-        !b && a && c(I, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
-      }
-    }
-    function Za() {
-      var a = false, b = false;
-      G(document, "keydown", function(c) {
-        c = c || window.event;
-        c.key === "Tab" && (u && (c.shiftKey ? document.activeElement === u[0] && (u[1].focus(), c.preventDefault()) : document.activeElement === u[1] && (u[0].focus(), c.preventDefault()), b || ka || (b = true, !a && c.preventDefault(), c.shiftKey ? u[3] ? u[2] ? u[2].focus() : u[0].focus() : u[1].focus() : u[3] ? u[3].focus() : u[0].focus())), !b && (a = true));
-      });
-      document.contains && G(M, "click", function(c) {
-        c = c || window.event;
-        wa ? O.contains(c.target) ? ka = true : (h.hideSettings(0), ka = false) : la && w.contains(c.target) && (ka = true);
+      var b = ["[href]", "button", "input", "details", '[tabindex="0"]'];
+      a(O, aa);
+      S && a(x, va);
+    }, ya, za, Ga = "", ia, Pa = function(a, b) {
+      M = g("div");
+      M.id = "cc--main";
+      M.style.position = "fixed";
+      M.style.zIndex = "1000000";
+      M.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
+      var c = M.children[0], d = f.current_lang, e = typeof ba.textContent === "string" ? "textContent" : "innerText";
+      ya = b;
+      za = function(z) {
+        z.force_consent === true && J(ba, "force--consent");
+        var P = z.languages[d].consent_modal.description;
+        ta && (P = W ? P.replace("{{revision_message}}", "") : P.replace("{{revision_message}}", Ga || z.languages[d].consent_modal.revision_message || ""));
+        if (x)
+          ia.innerHTML = P;
+        else {
+          x = g("div");
+          var X = g("div"), na = g("div"), ja = g("div");
+          ia = g("div");
+          var oa = g("div"), ka = g("button"), ca = g("button"), pa = g("div");
+          x.id = "cm";
+          X.id = "c-inr";
+          na.id = "c-inr-i";
+          ja.id = "c-ttl";
+          ia.id = "c-txt";
+          oa.id = "c-bns";
+          ka.id = "c-p-bn";
+          ca.id = "c-s-bn";
+          pa.id = "cm-ov";
+          ka.className = "c-bn";
+          ca.className = "c-bn c_link";
+          ja.setAttribute("role", "heading");
+          ja.setAttribute("aria-level", "2");
+          x.setAttribute("role", "dialog");
+          x.setAttribute("aria-modal", "true");
+          x.setAttribute("aria-hidden", "false");
+          x.setAttribute("aria-labelledby", "c-ttl");
+          x.setAttribute("aria-describedby", "c-txt");
+          x.style.visibility = pa.style.visibility = "hidden";
+          pa.style.opacity = 0;
+          ja.insertAdjacentHTML("beforeend", z.languages[d].consent_modal.title);
+          ia.insertAdjacentHTML("beforeend", P);
+          ka[e] = z.languages[d].consent_modal.primary_btn.text;
+          ca[e] = z.languages[d].consent_modal.secondary_btn.text;
+          var Ha;
+          z.languages[d].consent_modal.primary_btn.role === "accept_all" && (Ha = "all");
+          I(ka, "click", function() {
+            k.hide();
+            k.accept(Ha);
+          });
+          z.languages[d].consent_modal.secondary_btn.role === "accept_necessary" ? I(ca, "click", function() {
+            k.hide();
+            k.accept([]);
+          }) : I(ca, "click", function() {
+            k.showSettings(0);
+          });
+          na.appendChild(ja);
+          na.appendChild(ia);
+          oa.appendChild(ka);
+          oa.appendChild(ca);
+          X.appendChild(na);
+          X.appendChild(oa);
+          x.appendChild(X);
+          c.appendChild(x);
+          c.appendChild(pa);
+          S = true;
+        }
+      };
+      a || za(b);
+      H = g("div");
+      var h = g("div"), l = g("div"), m = g("div");
+      O = g("div");
+      var n = g("div"), p = g("div"), r = g("button"), U = g("div"), Q = g("div"), A = g("div");
+      H.id = "s-cnt";
+      h.id = "c-vln";
+      m.id = "c-s-in";
+      l.id = "cs";
+      n.id = "s-ttl";
+      O.id = "s-inr";
+      p.id = "s-hdr";
+      Q.id = "s-bl";
+      r.id = "s-c-bn";
+      A.id = "cs-ov";
+      U.id = "s-c-bnc";
+      r.className = "c-bn";
+      r.setAttribute("aria-label", b.languages[d].settings_modal.close_btn_label || "Close");
+      H.setAttribute("role", "dialog");
+      H.setAttribute("aria-modal", "true");
+      H.setAttribute("aria-hidden", "true");
+      H.setAttribute("aria-labelledby", "s-ttl");
+      n.setAttribute("role", "heading");
+      H.style.visibility = A.style.visibility = "hidden";
+      A.style.opacity = 0;
+      U.appendChild(r);
+      I(h, "keydown", function(z) {
+        z = z || window.event;
+        z.keyCode === 27 && k.hideSettings(0);
       }, true);
-    }
-    function f(a) {
-      var b = document.createElement(a);
-      a === "button" && b.setAttribute("type", a);
-      return b;
-    }
-    function H(a, b) {
-      for (var c = a.length, d = 0; d < c; d++)
-        if (a[d] === b)
-          return d;
-      return -1;
-    }
-    function $a(a, b) {
+      I(r, "click", function() {
+        k.hideSettings(0);
+      });
+      y = b.languages[f.current_lang].settings_modal.blocks;
+      V = b.languages[f.current_lang].settings_modal.cookie_table_headers;
+      r = y.length;
+      n.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.title);
+      for (var q = 0; q < r; ++q) {
+        var w = g("div"), B = g("div"), t = g("div"), F = g("div");
+        w.className = "c-bl";
+        B.className = "desc";
+        t.className = "p";
+        F.className = "title";
+        t.insertAdjacentHTML("beforeend", y[q].description);
+        if (typeof y[q].toggle !== "undefined") {
+          var C = "c-ac-" + q, Y = g("button"), G = g("label"), D = g("input"), R = g("span"), Z = g("span"), da = g("span"), Ia = g("span");
+          Y.className = "b-tl";
+          G.className = "b-tg";
+          D.className = "c-tgl";
+          da.className = "on-i";
+          Ia.className = "off-i";
+          R.className = "c-tg";
+          Z.className = "t-lb";
+          Y.setAttribute("aria-expanded", "false");
+          Y.setAttribute("aria-controls", C);
+          D.type = "checkbox";
+          R.setAttribute("aria-hidden", "true");
+          var Aa = y[q].toggle.value;
+          D.value = Aa;
+          Z[e] = y[q].title;
+          Y.insertAdjacentHTML("beforeend", y[q].title);
+          F.appendChild(Y);
+          R.appendChild(da);
+          R.appendChild(Ia);
+          a ? -1 < K(u.level, Aa) ? (D.checked = true, N.push(true)) : N.push(false) : y[q].toggle.enabled ? (D.checked = true, N.push(true)) : N.push(false);
+          L.push(Aa);
+          y[q].toggle.readonly ? (D.disabled = true, J(R, "c-ro"), wa.push(true)) : wa.push(false);
+          J(B, "b-acc");
+          J(F, "b-bn");
+          J(w, "b-ex");
+          B.id = C;
+          B.setAttribute("aria-hidden", "true");
+          G.appendChild(D);
+          G.appendChild(R);
+          G.appendChild(Z);
+          F.appendChild(G);
+          (function(z, P, X) {
+            I(Y, "click", function() {
+              Ja(P, "act") ? (Ba(P, "act"), X.setAttribute("aria-expanded", "false"), z.setAttribute("aria-hidden", "true")) : (J(P, "act"), X.setAttribute("aria-expanded", "true"), z.setAttribute("aria-hidden", "false"));
+            }, false);
+          })(B, w, Y);
+        } else
+          C = g("div"), C.className = "b-tl", C.setAttribute("role", "heading"), C.setAttribute("aria-level", "3"), C.insertAdjacentHTML("beforeend", y[q].title), F.appendChild(C);
+        w.appendChild(F);
+        B.appendChild(t);
+        if (b.remove_cookie_tables !== true && typeof y[q].cookie_table !== "undefined") {
+          C = document.createDocumentFragment();
+          for (G = 0; G < V.length; ++G)
+            D = g("th"), t = V[G], D.setAttribute("scope", "col"), t && (F = t && ha(t)[0], D[e] = V[G][F], C.appendChild(D));
+          t = g("tr");
+          t.appendChild(C);
+          F = g("thead");
+          F.appendChild(t);
+          C = g("table");
+          C.appendChild(F);
+          G = document.createDocumentFragment();
+          for (D = 0; D < y[q].cookie_table.length; D++) {
+            R = g("tr");
+            for (Z = 0; Z < V.length; ++Z)
+              if (t = V[Z])
+                F = ha(t)[0], da = g("td"), da.insertAdjacentHTML("beforeend", y[q].cookie_table[D][F]), da.setAttribute("data-column", t[F]), R.appendChild(da);
+            G.appendChild(R);
+          }
+          t = g("tbody");
+          t.appendChild(G);
+          C.appendChild(t);
+          B.appendChild(C);
+        }
+        w.appendChild(B);
+        Q.appendChild(w);
+      }
+      a = g("div");
+      r = g("button");
+      q = g("button");
+      a.id = "s-bns";
+      r.id = "s-sv-bn";
+      q.id = "s-all-bn";
+      r.className = "c-bn";
+      q.className = "c-bn";
+      r.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.save_settings_btn);
+      q.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.accept_all_btn);
+      a.appendChild(q);
+      if (b = b.languages[f.current_lang].settings_modal.reject_all_btn)
+        w = g("button"), w.id = "s-rall-bn", w.className = "c-bn", w.insertAdjacentHTML("beforeend", b), I(w, "click", function() {
+          k.hideSettings();
+          k.hide();
+          k.accept([]);
+        }), O.className = "bns-t", a.appendChild(w);
+      a.appendChild(r);
+      I(r, "click", function() {
+        k.hideSettings();
+        k.hide();
+        k.accept();
+      });
+      I(q, "click", function() {
+        k.hideSettings();
+        k.hide();
+        k.accept("all");
+      });
+      p.appendChild(n);
+      p.appendChild(U);
+      O.appendChild(p);
+      O.appendChild(Q);
+      O.appendChild(a);
+      m.appendChild(O);
+      l.appendChild(m);
+      h.appendChild(l);
+      H.appendChild(h);
+      c.appendChild(H);
+      c.appendChild(A);
+      (Ma || document.body).appendChild(M);
+    }, Qa = function(a) {
+      var b = document.querySelectorAll(".c-tgl") || [], c = [], d = false;
+      if (0 < b.length) {
+        for (var e = 0; e < b.length; e++)
+          K(a, L[e]) !== -1 ? (b[e].checked = true, N[e] || (c.push(L[e]), N[e] = true)) : (b[e].checked = false, N[e] && (c.push(L[e]), N[e] = false));
+        if (f.autoclear_cookies && T && 0 < c.length) {
+          b = y.length;
+          e = -1;
+          var h = la("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
+          if (f.cookie_domain.slice(0, 4) === "www.") {
+            var m = f.cookie_domain.substr(4);
+            l.push(m);
+            l.push("." + m);
+          }
+          for (m = 0; m < b; m++) {
+            var n = y[m];
+            if (Object.prototype.hasOwnProperty.call(n, "toggle") && !N[++e] && Object.prototype.hasOwnProperty.call(n, "cookie_table") && -1 < K(c, n.toggle.value)) {
+              var p = n.cookie_table, r = ha(V[0])[0], U = p.length;
+              n.toggle.reload === "on_disable" && (d = true);
+              for (var Q = 0; Q < U; Q++) {
+                var A = p[Q], q = [], w = A[r], B = A.is_regex || false, t = A.domain || null;
+                A = A.path || false;
+                t && (l = [t, "." + t]);
+                if (B)
+                  for (B = 0; B < h.length; B++)
+                    h[B].match(w) && q.push(h[B]);
+                else
+                  w = K(h, w), -1 < w && q.push(h[w]);
+                0 < q.length && (Ka(q, A, l), n.toggle.reload === "on_clear" && (d = true));
+              }
+            }
+          }
+        }
+      }
+      u = { level: a, revision: f.revision, data: E, rfc_cookie: f.use_rfc_cookie };
+      if (!T || 0 < c.length || !W)
+        W = true, Ca(f.cookie_name, JSON.stringify(u)), Da();
+      if (typeof ra === "function" && !T)
+        return T = true, ra(u);
+      typeof sa === "function" && 0 < c.length && sa(u, c);
+      d && window.location.reload();
+    }, Ra = function(a, b) {
       if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
         b();
       else {
-        var c = f("style");
+        var c = g("style");
         c.id = "cc--style";
         var d = new XMLHttpRequest();
         d.onreadystatechange = function() {
@@ -153,397 +338,145 @@ var __spreadValues = (a, b) => {
         d.open("GET", a);
         d.send();
       }
-    }
-    function ab(a) {
-      var b = document.querySelectorAll(".c-tgl") || [], c = [], d = false;
-      if (0 < b.length) {
-        for (var e = 0; e < b.length; e++)
-          H(a, N[e]) !== -1 ? (b[e].checked = true, P[e] || (c.push(N[e]), P[e] = true)) : (b[e].checked = false, P[e] && (c.push(N[e]), P[e] = false));
-        if (Pa && V && 0 < c.length) {
-          b = x.length;
-          e = -1;
-          var g = ia("", "all"), l = [T, "." + T];
-          if (T.slice(0, 4) === "www.") {
-            var k = T.substr(4);
-            l.push(k);
-            l.push("." + k);
-          }
-          for (k = 0; k < b; k++) {
-            var t = x[k];
-            if (Object.prototype.hasOwnProperty.call(t, "toggle") && !P[++e] && Object.prototype.hasOwnProperty.call(t, "cookie_table") && -1 < H(c, t.toggle.value)) {
-              var m = t.cookie_table, p = ha(X[0])[0], W = m.length;
-              t.toggle.reload === "on_disable" && (d = true);
-              for (var J = 0; J < W; J++) {
-                var K = m[J], n = [], v = K[p], y = K.is_regex || false, q = K.domain || null;
-                K = K.path || false;
-                q && (l = [q, "." + q]);
-                if (y)
-                  for (y = 0; y < g.length; y++)
-                    g[y].match(v) && n.push(g[y]);
-                else
-                  v = H(g, v), -1 < v && n.push(g[v]);
-                0 < n.length && (Ha(n, K, l), t.toggle.reload === "on_clear" && (d = true));
-              }
-            }
-          }
-        }
-      }
-      r = { level: a, revision: pa, data: C, rfc_cookie: ja };
-      if (!V || 0 < c.length || !Y)
-        Y = true, va(S, JSON.stringify(r)), La();
-      if (typeof xa === "function" && !V)
-        return V = true, xa(r);
-      typeof ya === "function" && 0 < c.length && ya(r, c);
-      d && window.location.reload();
-    }
-    function bb(a, b) {
-      M = f("div");
-      M.id = "cc--main";
-      M.style.position = "fixed";
-      M.style.zIndex = "1000000";
-      M.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
-      var c = M.children[0], d = L, e = typeof ca.textContent === "string" ? "textContent" : "innerText";
-      za = b;
-      Aa = function(z) {
-        z.force_consent === true && F(ca, "force--consent");
-        var Q = z.languages[d].consent_modal.description;
-        Ba && (Q = Y ? Q.replace("{{revision_message}}", "") : Q.replace("{{revision_message}}", Qa || z.languages[d].consent_modal.revision_message || ""));
-        if (w)
-          ma.innerHTML = Q;
-        else {
-          w = f("div");
-          var Z = f("div"), qa = f("div"), na = f("div");
-          ma = f("div");
-          var ra = f("div"), oa = f("button"), da = f("button"), sa = f("div");
-          w.id = "cm";
-          Z.id = "c-inr";
-          qa.id = "c-inr-i";
-          na.id = "c-ttl";
-          ma.id = "c-txt";
-          ra.id = "c-bns";
-          oa.id = "c-p-bn";
-          da.id = "c-s-bn";
-          sa.id = "cm-ov";
-          oa.className = "c-bn";
-          da.className = "c-bn c_link";
-          na.setAttribute("role", "heading");
-          na.setAttribute("aria-level", "2");
-          w.setAttribute("role", "dialog");
-          w.setAttribute("aria-modal", "true");
-          w.setAttribute("aria-hidden", "false");
-          w.setAttribute("aria-labelledby", "c-ttl");
-          w.setAttribute("aria-describedby", "c-txt");
-          w.style.visibility = sa.style.visibility = "hidden";
-          sa.style.opacity = 0;
-          na.insertAdjacentHTML("beforeend", z.languages[d].consent_modal.title);
-          ma.insertAdjacentHTML("beforeend", Q);
-          oa[e] = z.languages[d].consent_modal.primary_btn.text;
-          da[e] = z.languages[d].consent_modal.secondary_btn.text;
-          var Ra;
-          z.languages[d].consent_modal.primary_btn.role === "accept_all" && (Ra = "all");
-          G(oa, "click", function() {
-            h.hide();
-            h.accept(Ra);
-          });
-          z.languages[d].consent_modal.secondary_btn.role === "accept_necessary" ? G(da, "click", function() {
-            h.hide();
-            h.accept([]);
-          }) : G(da, "click", function() {
-            h.showSettings(0);
-          });
-          qa.appendChild(na);
-          qa.appendChild(ma);
-          ra.appendChild(oa);
-          ra.appendChild(da);
-          Z.appendChild(qa);
-          Z.appendChild(ra);
-          w.appendChild(Z);
-          c.appendChild(w);
-          c.appendChild(sa);
-          U = true;
-        }
-      };
-      a || Aa(b);
-      I = f("div");
-      var g = f("div"), l = f("div"), k = f("div");
-      O = f("div");
-      var t = f("div"), m = f("div"), p = f("button"), W = f("div"), J = f("div"), K = f("div");
-      I.id = "s-cnt";
-      g.id = "c-vln";
-      k.id = "c-s-in";
-      l.id = "cs";
-      t.id = "s-ttl";
-      O.id = "s-inr";
-      m.id = "s-hdr";
-      J.id = "s-bl";
-      p.id = "s-c-bn";
-      K.id = "cs-ov";
-      W.id = "s-c-bnc";
-      p.className = "c-bn";
-      p.setAttribute("aria-label", b.languages[d].settings_modal.close_btn_label || "Close");
-      I.setAttribute("role", "dialog");
-      I.setAttribute("aria-modal", "true");
-      I.setAttribute("aria-hidden", "true");
-      I.setAttribute("aria-labelledby", "s-ttl");
-      t.setAttribute("role", "heading");
-      I.style.visibility = K.style.visibility = "hidden";
-      K.style.opacity = 0;
-      W.appendChild(p);
-      G(g, "keydown", function(z) {
-        z = z || window.event;
-        z.keyCode === 27 && h.hideSettings(0);
+    }, K = function(a, b) {
+      for (var c = a.length, d = 0; d < c; d++)
+        if (a[d] === b)
+          return d;
+      return -1;
+    }, g = function(a) {
+      var b = document.createElement(a);
+      a === "button" && b.setAttribute("type", a);
+      return b;
+    }, Sa = function() {
+      var a = false, b = false;
+      I(document, "keydown", function(c) {
+        c = c || window.event;
+        c.key === "Tab" && (v && (c.shiftKey ? document.activeElement === v[0] && (v[1].focus(), c.preventDefault()) : document.activeElement === v[1] && (v[0].focus(), c.preventDefault()), b || fa || (b = true, !a && c.preventDefault(), c.shiftKey ? v[3] ? v[2] ? v[2].focus() : v[0].focus() : v[1].focus() : v[3] ? v[3].focus() : v[0].focus())), !b && (a = true));
+      });
+      document.contains && I(M, "click", function(c) {
+        c = c || window.event;
+        qa ? O.contains(c.target) ? fa = true : (k.hideSettings(0), fa = false) : ea && x.contains(c.target) && (fa = true);
       }, true);
-      G(p, "click", function() {
-        h.hideSettings(0);
-      });
-      x = b.languages[L].settings_modal.blocks;
-      X = b.languages[L].settings_modal.cookie_table_headers;
-      p = x.length;
-      t.insertAdjacentHTML("beforeend", b.languages[L].settings_modal.title);
-      for (var n = 0; n < p; ++n) {
-        var v = f("div"), y = f("div"), q = f("div"), D = f("div");
-        v.className = "c-bl";
-        y.className = "desc";
-        q.className = "p";
-        D.className = "title";
-        q.insertAdjacentHTML("beforeend", x[n].description);
-        if (typeof x[n].toggle !== "undefined") {
-          var A = "c-ac-" + n, aa = f("button"), E = f("label"), B = f("input"), R = f("span"), ba = f("span"), ea = f("span"), Sa = f("span");
-          aa.className = "b-tl";
-          E.className = "b-tg";
-          B.className = "c-tgl";
-          ea.className = "on-i";
-          Sa.className = "off-i";
-          R.className = "c-tg";
-          ba.className = "t-lb";
-          aa.setAttribute("aria-expanded", "false");
-          aa.setAttribute("aria-controls", A);
-          B.type = "checkbox";
-          R.setAttribute("aria-hidden", "true");
-          var Ca = x[n].toggle.value;
-          B.value = Ca;
-          ba[e] = x[n].title;
-          aa.insertAdjacentHTML("beforeend", x[n].title);
-          D.appendChild(aa);
-          R.appendChild(ea);
-          R.appendChild(Sa);
-          a ? -1 < H(r.level, Ca) ? (B.checked = true, P.push(true)) : P.push(false) : x[n].toggle.enabled ? (B.checked = true, P.push(true)) : P.push(false);
-          N.push(Ca);
-          x[n].toggle.readonly ? (B.disabled = true, F(R, "c-ro"), Da.push(true)) : Da.push(false);
-          F(y, "b-acc");
-          F(D, "b-bn");
-          F(v, "b-ex");
-          y.id = A;
-          y.setAttribute("aria-hidden", "true");
-          E.appendChild(B);
-          E.appendChild(R);
-          E.appendChild(ba);
-          D.appendChild(E);
-          (function(z, Q, Z) {
-            G(aa, "click", function() {
-              Ga(Q, "act") ? (ua(Q, "act"), Z.setAttribute("aria-expanded", "false"), z.setAttribute("aria-hidden", "true")) : (F(Q, "act"), Z.setAttribute("aria-expanded", "true"), z.setAttribute("aria-hidden", "false"));
-            }, false);
-          })(y, v, aa);
-        } else
-          A = f("div"), A.className = "b-tl", A.setAttribute("role", "heading"), A.setAttribute("aria-level", "3"), A.insertAdjacentHTML("beforeend", x[n].title), D.appendChild(A);
-        v.appendChild(D);
-        y.appendChild(q);
-        if (b.remove_cookie_tables !== true && typeof x[n].cookie_table !== "undefined") {
-          A = document.createDocumentFragment();
-          for (E = 0; E < X.length; ++E)
-            B = f("th"), q = X[E], B.setAttribute("scope", "col"), q && (D = q && ha(q)[0], B[e] = X[E][D], A.appendChild(B));
-          q = f("tr");
-          q.appendChild(A);
-          D = f("thead");
-          D.appendChild(q);
-          A = f("table");
-          A.appendChild(D);
-          E = document.createDocumentFragment();
-          for (B = 0; B < x[n].cookie_table.length; B++) {
-            R = f("tr");
-            for (ba = 0; ba < X.length; ++ba)
-              if (q = X[ba])
-                D = ha(q)[0], ea = f("td"), ea.insertAdjacentHTML("beforeend", x[n].cookie_table[B][D]), ea.setAttribute("data-column", q[D]), R.appendChild(ea);
-            E.appendChild(R);
-          }
-          q = f("tbody");
-          q.appendChild(E);
-          A.appendChild(q);
-          y.appendChild(A);
-        }
-        v.appendChild(y);
-        J.appendChild(v);
+    }, La = function(a, b) {
+      function c(e, h, l, m, n, p, r) {
+        p = p && p.split(" ") || [];
+        if (-1 < K(h, n) && (J(e, n), (n !== "bar" || p[0] !== "middle") && -1 < K(l, p[0])))
+          for (h = 0; h < p.length; h++)
+            J(e, p[h]);
+        -1 < K(m, r) && J(e, r);
       }
-      a = f("div");
-      p = f("button");
-      n = f("button");
-      a.id = "s-bns";
-      p.id = "s-sv-bn";
-      n.id = "s-all-bn";
-      p.className = "c-bn";
-      n.className = "c-bn";
-      p.insertAdjacentHTML("beforeend", b.languages[L].settings_modal.save_settings_btn);
-      n.insertAdjacentHTML("beforeend", b.languages[L].settings_modal.accept_all_btn);
-      a.appendChild(n);
-      if (b = b.languages[L].settings_modal.reject_all_btn)
-        v = f("button"), v.id = "s-rall-bn", v.className = "c-bn", v.insertAdjacentHTML("beforeend", b), G(v, "click", function() {
-          h.hideSettings();
-          h.hide();
-          h.accept([]);
-        }), O.className = "bns-t", a.appendChild(v);
-      a.appendChild(p);
-      G(p, "click", function() {
-        h.hideSettings();
-        h.hide();
-        h.accept();
-      });
-      G(n, "click", function() {
-        h.hideSettings();
-        h.hide();
-        h.accept("all");
-      });
-      m.appendChild(t);
-      m.appendChild(W);
-      O.appendChild(m);
-      O.appendChild(J);
-      O.appendChild(a);
-      k.appendChild(O);
-      l.appendChild(k);
-      g.appendChild(l);
-      I.appendChild(g);
-      c.appendChild(I);
-      c.appendChild(K);
-      (Ya || document.body).appendChild(M);
-    }
-    function Ta() {
-      function a(c, d) {
-        var e = false, g = false;
-        try {
-          for (var l = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), k, t = l.length, m = 0; m < t; )
-            k = l[m].getAttribute("data-focus"), g || k !== "1" ? k === "0" && (e = l[m], g || l[m + 1].getAttribute("data-focus") === "0" || (g = l[m + 1])) : g = l[m], m++;
-        } catch (p) {
-          return c.querySelectorAll(b.join(", "));
-        }
-        d[0] = l[0];
-        d[1] = l[l.length - 1];
-        d[2] = e;
-        d[3] = g;
+      if (typeof a === "object") {
+        var d = a.consent_modal;
+        a = a.settings_modal;
+        S && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
+        !b && a && c(H, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
       }
-      var b = [
-        "[href]",
-        "button",
-        "input",
-        "details",
-        '[tabindex="0"]'
-      ];
-      a(O, fa);
-      U && a(w, Ea);
-    }
-    function Ua(a, b) {
-      if (Object.prototype.hasOwnProperty.call(b, a))
-        return a;
-      if (0 < ha(b).length)
-        return Object.prototype.hasOwnProperty.call(b, L) ? L : ha(b)[0];
-    }
-    function cb() {
-      for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
-        a[b].setAttribute("aria-haspopup", "dialog"), G(a[b], "click", function(c) {
-          h.showSettings(0);
-          c.preventDefault ? c.preventDefault() : c.returnValue = false;
-        });
-    }
-    function db(a) {
-      typeof a.cookie_expiration === "number" && (Ia = a.cookie_expiration);
-      typeof a.autorun === "boolean" && (Va = a.autorun);
-      typeof a.cookie_domain === "string" && (T = a.cookie_domain);
-      typeof a.cookie_same_site === "string" && (Ka = a.cookie_same_site);
-      typeof a.cookie_path === "string" && (Ja = a.cookie_path);
-      typeof a.cookie_name === "string" && (S = a.cookie_name);
-      typeof a.onAccept === "function" && (xa = a.onAccept);
-      typeof a.onChange === "function" && (ya = a.onChange);
-      typeof a.revision === "number" && (-1 < a.revision && (pa = a.revision), Ba = true);
-      a.autoclear_cookies === true && (Pa = true);
-      a.use_rfc_cookie === true && (ja = true);
-      a.hide_from_bots === true && (Wa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.g));
-      Ma = a.page_scripts === true;
-      Na = a.page_scripts_order !== false;
-      if (a.auto_language === true) {
-        var b = navigator.language || navigator.browserLanguage;
-        2 < b.length && (b = b[0] + b[1]);
-        L = Ua(b.toLowerCase(), a.languages);
-      } else
-        typeof a.current_lang === "string" && (L = Ua(a.current_lang, a.languages));
-    }
-    var L = "en", Va = true, S = "cc_cookie", Ia = 182, T = window.location.hostname, Ja = "/", Ka = "Lax", ja = false, Pa = true, pa = 0, Ma, Na, h = {}, r = {}, U = false, V = false, la = false, wa = false, ka = false, u, X, x, xa, ya, Y = true, Ba = false, C = null, Wa = false, ta, Fa, Ea = [], fa = [], P = [], N = [], Da = [], ca = document.documentElement, M, w, I, O, za, Aa, Qa = "", ma;
-    h.allowedCategory = function(a) {
-      return -1 < H(JSON.parse(ia(S, "one", true) || "{}").level || [], a);
     };
-    h.run = function(a) {
-      if (!document.getElementById("cc_div") && (db(a), !Wa && (r = JSON.parse(ia(S, "one", true) || "{}"), V = r.level !== void 0, C = r.data !== void 0 ? r.data : null, Y = typeof a.revision === "number" ? V ? -1 < a.revision ? r.revision === pa : true : true : true, U = !V || !Y, bb(!U, a), $a(a.theme_css, function() {
-        Ta();
-        Oa(a.gui_options);
-        cb();
-        Va && U && h.show(a.delay || 0);
+    k.allowedCategory = function(a) {
+      return -1 < K(JSON.parse(la(f.cookie_name, "one", true) || "{}").level || [], a);
+    };
+    k.run = function(a) {
+      if (!document.getElementById("cc_div") && (Na(a), !Ea && (u = JSON.parse(la(f.cookie_name, "one", true) || "{}"), T = u.level !== void 0, E = u.data !== void 0 ? u.data : null, W = typeof a.revision === "number" ? T ? -1 < a.revision ? u.revision === f.revision : true : true : true, S = !T || !W, Pa(!S, a), Ra(a.theme_css, function() {
+        Fa();
+        La(a.gui_options);
+        Oa();
+        f.autorun && S && k.show(a.delay || 0);
         setTimeout(function() {
-          F(M, "c--anim");
+          J(M, "c--anim");
         }, 30);
         setTimeout(function() {
-          Za();
+          Sa();
         }, 100);
-      }), V && Y))) {
-        var b = typeof r.rfc_cookie === "boolean";
-        if (!b || b && r.rfc_cookie !== ja)
-          r.rfc_cookie = ja, va(S, JSON.stringify(r));
-        La();
+      }), T && W))) {
+        var b = typeof u.rfc_cookie === "boolean";
+        if (!b || b && u.rfc_cookie !== f.use_rfc_cookie)
+          u.rfc_cookie = f.use_rfc_cookie, Ca(f.cookie_name, JSON.stringify(u));
+        Da();
         if (typeof a.onAccept === "function")
-          a.onAccept(r);
+          a.onAccept(u);
       }
     };
-    h.showSettings = function(a) {
+    k.showSettings = function(a) {
       setTimeout(function() {
-        F(ca, "show--settings");
-        I.setAttribute("aria-hidden", "false");
-        wa = true;
+        J(ba, "show--settings");
+        H.setAttribute("aria-hidden", "false");
+        qa = true;
         setTimeout(function() {
-          la ? Fa = document.activeElement : ta = document.activeElement;
-          fa.length !== 0 && (fa[3] ? fa[3].focus() : fa[0].focus(), u = fa);
+          ea ? ua = document.activeElement : ma = document.activeElement;
+          aa.length !== 0 && (aa[3] ? aa[3].focus() : aa[0].focus(), v = aa);
         }, 200);
       }, 0 < a ? a : 0);
     };
-    h.set = function(a, b) {
+    var Da = function() {
+      if (f.page_scripts) {
+        var a = document.querySelectorAll("script[" + f.script_selector + "]"), b = f.page_scripts_order, c = u.level || [], d = function(e, h) {
+          if (h < e.length) {
+            var l = e[h], m = l.getAttribute(f.script_selector);
+            if (-1 < K(c, m)) {
+              l.type = "text/javascript";
+              l.removeAttribute(f.script_selector);
+              m = l.getAttribute("data-src");
+              var n = g("script");
+              n.textContent = l.innerHTML;
+              (function(p, r) {
+                for (var U = r.attributes, Q = U.length, A = 0; A < Q; A++)
+                  r = U[A], p.setAttribute(r.nodeName, r.nodeValue);
+              })(n, l);
+              m ? n.src = m : m = l.src;
+              m && (b ? n.readyState ? n.onreadystatechange = function() {
+                if (n.readyState === "loaded" || n.readyState === "complete")
+                  n.onreadystatechange = null, d(e, ++h);
+              } : n.onload = function() {
+                n.onload = null;
+                d(e, ++h);
+              } : m = false);
+              l.parentNode.replaceChild(n, l);
+              if (m)
+                return;
+            }
+            d(e, ++h);
+          }
+        };
+        d(a, 0);
+      }
+    };
+    k.set = function(a, b) {
       switch (a) {
         case "data":
           a = b.value;
           var c = false;
           if (b.mode === "update")
-            if (C = h.get("data"), (b = typeof C === typeof a) && typeof C === "object") {
-              !C && (C = {});
+            if (E = k.get("data"), (b = typeof E === typeof a) && typeof E === "object") {
+              !E && (E = {});
               for (var d in a)
-                C[d] !== a[d] && (C[d] = a[d], c = true);
+                E[d] !== a[d] && (E[d] = a[d], c = true);
             } else
-              !b && C || C === a || (C = a, c = true);
+              !b && E || E === a || (E = a, c = true);
           else
-            C = a, c = true;
-          c && (r.data = C, va(S, JSON.stringify(r)));
+            E = a, c = true;
+          c && (u.data = E, Ca(f.cookie_name, JSON.stringify(u)));
           return c;
         case "revision":
-          return d = b.value, a = b.prompt_consent, b = b.message, M && typeof d === "number" && r.revision !== d ? (Ba = true, Qa = b, Y = false, pa = d, a === true ? (Aa(za), Oa(za.gui_options, true), Ta(), h.show()) : h.accept(), b = true) : b = false, b;
+          return d = b.value, a = b.prompt_consent, b = b.message, M && typeof d === "number" && u.revision !== d ? (ta = true, Ga = b, W = false, f.revision = d, a === true ? (za(ya), La(ya.gui_options, true), Fa(), k.show()) : k.accept(), b = true) : b = false, b;
         default:
           return false;
       }
     };
-    h.get = function(a) {
-      return JSON.parse(ia(S, "one", true) || "{}")[a];
+    k.get = function(a, b) {
+      return JSON.parse(la(b || f.cookie_name, "one", true) || "{}")[a];
     };
-    h.loadScript = function(a, b, c) {
+    k.getConfig = function(a) {
+      return f[a];
+    };
+    k.loadScript = function(a, b, c) {
       var d = typeof b === "function";
       if (document.querySelector('script[src="' + a + '"]'))
         d && b();
       else {
-        var e = f("script");
+        var e = g("script");
         if (c && 0 < c.length)
-          for (var g = 0; g < c.length; ++g)
-            c[g] && e.setAttribute(c[g].name, c[g].value);
+          for (var h = 0; h < c.length; ++h)
+            c[h] && e.setAttribute(c[h].name, c[h].value);
         d && (e.readyState ? e.onreadystatechange = function() {
           if (e.readyState === "loaded" || e.readyState === "complete")
             e.onreadystatechange = null, b();
@@ -552,74 +485,128 @@ var __spreadValues = (a, b) => {
         (document.head ? document.head : document.getElementsByTagName("head")[0]).appendChild(e);
       }
     };
-    h.show = function(a) {
-      U && setTimeout(function() {
-        F(ca, "show--consent");
-        w.setAttribute("aria-hidden", "false");
-        la = true;
+    k.updateScripts = function() {
+      Da();
+    };
+    k.show = function(a) {
+      S && setTimeout(function() {
+        J(ba, "show--consent");
+        x.setAttribute("aria-hidden", "false");
+        ea = true;
         setTimeout(function() {
-          ta = document.activeElement;
-          u = Ea;
+          ma = document.activeElement;
+          v = va;
         }, 200);
       }, 0 < a ? a : 0);
     };
-    h.hide = function() {
-      U && (ua(ca, "show--consent"), w.setAttribute("aria-hidden", "true"), la = false, setTimeout(function() {
-        ta.focus();
-        u = null;
+    k.hide = function() {
+      S && (Ba(ba, "show--consent"), x.setAttribute("aria-hidden", "true"), ea = false, setTimeout(function() {
+        ma.focus();
+        v = null;
       }, 200));
     };
-    h.hideSettings = function() {
-      ua(ca, "show--settings");
-      wa = false;
-      I.setAttribute("aria-hidden", "true");
+    k.hideSettings = function() {
+      Ba(ba, "show--settings");
+      qa = false;
+      H.setAttribute("aria-hidden", "true");
       setTimeout(function() {
-        la ? (Fa && Fa.focus(), u = Ea) : (ta.focus(), u = null);
-        ka = false;
+        ea ? (ua && ua.focus(), v = va) : (ma.focus(), v = null);
+        fa = false;
       }, 200);
     };
-    h.accept = function(a, b) {
-      function c() {
-        for (var g = document.querySelectorAll(".c-tgl") || [], l = [], k = 0; k < g.length; k++)
-          g[k].checked && l.push(g[k].value);
-        return l;
-      }
+    k.accept = function(a, b) {
       a = a || void 0;
-      var d = b || [];
+      var c = b || [];
       b = [];
+      var d = function() {
+        for (var h = document.querySelectorAll(".c-tgl") || [], l = [], m = 0; m < h.length; m++)
+          h[m].checked && l.push(h[m].value);
+        return l;
+      };
       if (a)
         if (typeof a === "object" && typeof a.length === "number")
           for (var e = 0; e < a.length; e++)
-            H(N, a[e]) !== -1 && b.push(a[e]);
+            K(L, a[e]) !== -1 && b.push(a[e]);
         else
-          typeof a === "string" && (a === "all" ? b = N.slice() : H(N, a) !== -1 && b.push(a));
+          typeof a === "string" && (a === "all" ? b = L.slice() : K(L, a) !== -1 && b.push(a));
       else
-        b = c();
-      if (1 <= d.length)
-        for (e = 0; e < d.length; e++)
-          b = b.filter(function(g) {
-            return g !== d[e];
+        b = d();
+      if (1 <= c.length)
+        for (e = 0; e < c.length; e++)
+          b = b.filter(function(h) {
+            return h !== c[e];
           });
-      for (e = 0; e < N.length; e++)
-        Da[e] === true && H(b, N[e]) === -1 && b.push(N[e]);
-      ab(b);
+      for (e = 0; e < L.length; e++)
+        wa[e] === true && K(b, L[e]) === -1 && b.push(L[e]);
+      Qa(b);
     };
-    h.eraseCookies = function(a, b, c) {
+    k.eraseCookies = function(a, b, c) {
       var d = [];
-      c = c ? [c, "." + c] : [T, "." + T];
+      c = c ? [c, "." + c] : [f.cookie_domain, "." + f.cookie_domain];
       if (typeof a === "object" && 0 < a.length)
         for (var e = 0; e < a.length; e++)
           this.validCookie(a[e]) && d.push(a[e]);
       else
         this.validCookie(a) && d.push(a);
-      Ha(d, b, c);
+      Ka(d, b, c);
     };
-    h.validCookie = function(a) {
-      return ia(a, "one", true) !== "";
+    var Ca = function(a, b) {
+      b = f.use_rfc_cookie ? encodeURIComponent(b) : b;
+      var c = new Date();
+      c.setTime(c.getTime() + 864e5 * f.cookie_expiration);
+      c = "; expires=" + c.toUTCString();
+      a = a + "=" + (b || "") + c + "; Path=" + f.cookie_path + ";";
+      a += " SameSite=" + f.cookie_same_site + ";";
+      -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + f.cookie_domain + ";");
+      window.location.protocol === "https:" && (a += " Secure;");
+      document.cookie = a;
+    }, la = function(a, b, c) {
+      var d;
+      if (b === "one") {
+        if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === f.cookie_name) {
+          try {
+            d = JSON.parse(d);
+          } catch (e) {
+            try {
+              d = JSON.parse(decodeURIComponent(d));
+            } catch (h) {
+              d = {};
+            }
+          }
+          d = JSON.stringify(d);
+        }
+      } else if (b === "all")
+        for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
+          d.push(a[b].split("=")[0]);
+      return d;
+    }, Ka = function(a, b, c) {
+      b = b ? b : "/";
+      for (var d = 0; d < a.length; d++)
+        for (var e = 0; e < c.length; e++)
+          document.cookie = a[d] + "=; path=" + b + (-1 < c[e].indexOf(".") ? "; domain=" + c[e] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     };
-    return h;
-  }
-  typeof window.initCookieConsent !== "function" && (window.initCookieConsent = Xa);
+    k.validCookie = function(a) {
+      return la(a, "one", true) !== "";
+    };
+    var I = function(a, b, c, d) {
+      a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
+    }, ha = function(a) {
+      if (typeof a === "object") {
+        var b = [], c = 0;
+        for (b[c++] in a)
+          ;
+        return b;
+      }
+    }, J = function(a, b) {
+      a.classList ? a.classList.add(b) : Ja(a, b) || (a.className += " " + b);
+    }, Ba = function(a, b) {
+      a.classList ? a.classList.remove(b) : a.className = a.className.replace(new RegExp("(\\s|^)" + b + "(\\s|$)"), " ");
+    }, Ja = function(a, b) {
+      return a.classList ? a.classList.contains(b) : !!a.className.match(new RegExp("(\\s|^)" + b + "(\\s|$)"));
+    };
+    return k;
+  };
+  typeof window.initCookieConsent !== "function" && (window.initCookieConsent = Ta);
 })();
 
 // node_modules/nanoid/index.prod.js
@@ -1168,10 +1155,49 @@ var config8 = (messages) => {
   };
 };
 
+// src/consentCollector.js
+function submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) {
+  const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
+  postDataToApi(consentCollectorApiUrl, payload);
+}
+function buildPayload(cookieConsent, acceptedOnlyNecessary) {
+  const cookieData = cookieConsent.get("data");
+  const acceptedCategories = cookieConsent.get("level");
+  const rejectedCategories = acceptedOnlyNecessary ? ["ad", "analytics", "functionality", "personalization"] : [];
+  return {
+    data: {
+      type: "localDataAcceptationDataEntries",
+      attributes: {
+        acceptation_id: cookieData.uid,
+        accept_type: acceptedOnlyNecessary ? "accept_necessary" : "accept_all",
+        accepted_categories: acceptedCategories,
+        rejected_categories: rejectedCategories,
+        revision: cookieConsent.get("revision"),
+        source: cookieData.serviceName,
+        language: cookieConsent.getConfig("current_lang"),
+        days_of_acceptation: cookieConsent.getConfig("cookie_expiration")
+      }
+    }
+  };
+}
+async function postDataToApi(apiUrl, payload) {
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/vnd.api+json",
+      Accept: "application/vnd.api+json"
+    },
+    body: JSON.stringify(payload)
+  });
+  return response.json();
+}
+var consentCollector_default = submitConsent;
+
 // src/LmcCookieConsentManager.js
 var defaultOptions = {
   defaultLang: "cs",
   autodetectLang: true,
+  consentCollectorApiUrl: "https://ccm.lmc.cz/local-data-acceptation-data-entries",
   onFirstAccept: (cookie, cookieConsent) => {
   },
   onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {
@@ -1195,6 +1221,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
   const {
     defaultLang,
     autodetectLang,
+    consentCollectorApiUrl,
     onFirstAccept,
     onFirstAcceptOnlyNecessary,
     onFirstAcceptAll,
@@ -1217,8 +1244,8 @@ var LmcCookieConsentManager = (serviceName, args) => {
     sk: config7({ companyNames }),
     uk: config8({ companyNames })
   };
-  cookieConsent.run(__spreadValues({
-    auto_language: autodetectLang,
+  const cookieConsentConfig = __spreadValues({
+    auto_language: autodetectLang ? "document" : null,
     autorun: true,
     cookie_expiration: 365,
     cookie_name: cookieName,
@@ -1256,13 +1283,17 @@ var LmcCookieConsentManager = (serviceName, args) => {
             mode: "update"
           });
         }
+        if (consentCollectorApiUrl !== null) {
+          consentCollector_default(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary);
+        }
         onFirstAccept(cookie, cookieConsent);
         acceptedOnlyNecessary ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
       }
       acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
     },
     languages
-  }, config9));
+  }, config9);
+  cookieConsent.run(cookieConsentConfig);
   return cookieConsent;
 };
 var LmcCookieConsentManager_default = LmcCookieConsentManager;
