@@ -8,6 +8,7 @@
 // By using Spirit design tokens, all Spirit-based projects benefit from plug-and-play setup.
 
 @use '@tokens' as tokens;
+@use 'tools';
 
 // Stylelint and Prettier are clashing on long lines. Let's prefer Stylelint.
 /* prettier-ignore */
@@ -17,7 +18,7 @@
     // Typography
     // ==========
 
-    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tokens.$font-size-base});
+    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
 
     //
