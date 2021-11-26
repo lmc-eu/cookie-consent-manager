@@ -18,7 +18,7 @@
     // ==========
 
     --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tokens.$font-size-base});
-    --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default}), inherit;
+    --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
 
     //
     // Light Mode
