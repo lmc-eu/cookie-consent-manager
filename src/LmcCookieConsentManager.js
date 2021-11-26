@@ -128,9 +128,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
           : onFirstAcceptAll(cookie, cookieConsent);
       }
 
-      acceptedOnlyNecessary
-        ? onAcceptOnlyNecessary(cookie, cookieConsent)
-        : onAcceptAll(cookie, cookieConsent);
+      acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
     },
     languages,
     // override default config if necessary
