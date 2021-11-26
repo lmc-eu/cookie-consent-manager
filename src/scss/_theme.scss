@@ -18,8 +18,8 @@
     // Typography
     // ==========
 
-    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
+    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
 
     //
     // Light Mode
@@ -36,11 +36,8 @@
     --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #{tokens.$text-primary-inverted-default});
     --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
     --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$action-link-primary-default});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
     --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$action-link-primary-hover});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
     --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$action-link-primary-active});
 }
 
@@ -63,10 +60,7 @@
     --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #{tokens.$text-primary-inverted-default});
     --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
     --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
     --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
     --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$text-secondary-inverted-default});
 }
