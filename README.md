@@ -329,10 +329,16 @@ anywhere in your stylesheet (the order of which is not important):
 | `--lmcccm-link-text`                  | Link text color                                         |
 | `--lmcccm-link-hover-text`            | Link text color on hover                                |
 | `--lmcccm-link-active-text`           | Link text color in active state                         |
+| `--lmcccm-btn-border-width`           | Button border width                                     |
+| `--lmcccm-btn-border-style`           | Button border style                                     |
+| `--lmcccm-btn-border-radius`          | Button border radius                                    |
+| `--lmcccm-btn-primary-border`         | Primary button border color                             |
 | `--lmcccm-btn-primary-bg`             | Primary button background color                         |
 | `--lmcccm-btn-primary-text`           | Primary button text color                               |
+| `--lmcccm-btn-primary-hover-border`   | Primary button border color on hover                    |
 | `--lmcccm-btn-primary-hover-bg`       | Primary button background color on hover                |
 | `--lmcccm-btn-primary-hover-text`     | Primary button text color on hover                      |
+| `--lmcccm-btn-primary-active-border`  | Primary button border color in active state             |
 | `--lmcccm-btn-primary-active-bg`      | Primary button background color in active state         |
 | `--lmcccm-btn-primary-active-text`    | Primary button text color in active state               |
 | `--lmcccm-btn-secondary-text`         | Secondary button text color                             |
