@@ -2,11 +2,12 @@ name: Test
 
 on:
   push:
-    branches-ignore:
-      - main
+  schedule:
+    - cron: '0 9 * * *' # every day at 9:00
 
 jobs:
   test:
+    name: Tests and linting
     runs-on: ubuntu-20.04
     timeout-minutes: 5
 
@@ -25,9 +26,14 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Test
+      - name: Lint
+        run: yarn lint
+
+      - name: Check code-style format
+        run: yarn format
+
+      - name: Unit tests
         run: yarn test:unit
 
-      - name: Test Build
+      - name: Test build
         run: yarn build
-

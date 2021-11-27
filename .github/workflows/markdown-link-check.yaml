@@ -2,8 +2,6 @@ name: Markdown Link Check
 
 on:
   push:
-    branches-ignore:
-      - main
   schedule:
     - cron: '0 9 * * *' # every day at 9:00
 
