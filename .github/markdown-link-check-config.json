@@ -7,6 +7,9 @@
       "pattern": "^https://github.com/projects/lmc-eu/repos/cookie-consent-manager/"
     },
     {
+      "pattern": "^https://jira.int.lmc.cz/"
+    },
+    {
       "pattern": "^http://localhost"
     }
   ]
