@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/@lmc-eu/cookie-consent-manager.svg)](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager)
-![CI](https://github.com/lmc-eu/cookie-consent-manager/actions/workflows/lint.yaml/badge.svg)
+[![CI](https://github.com/lmc-eu/cookie-consent-manager/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/lmc-eu/cookie-consent-manager/actions)
 
 # Cookie Consent Manager
 
