@@ -2,5 +2,9 @@
   "rootDir": "../",
   "transform": {
     "\\.[j|t]s?$": "ts-jest"
-  }
+  },
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/dist/"
+  ]
 }
