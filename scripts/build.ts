@@ -9,7 +9,7 @@ build({
   target: 'es2017',
   outdir: 'dist',
   tsconfig: 'tsconfig.build.json',
-}).catch((error) => {
+}).catch((error: unknown) => {
   console.error(error);
   process.exit(1);
 });
@@ -22,7 +22,7 @@ build({
   outfile: 'dist/LmcCookieConsentManager.mjs',
   format: 'esm',
   tsconfig: 'tsconfig.build.json',
-}).catch((error) => {
+}).catch((error: unknown) => {
   console.error(error);
   process.exit(1);
 });
@@ -48,7 +48,7 @@ build({
     `// Annotate the CommonJS export names for ESM import in node:
 module.exports = LmcCookieConsentManager_default;
 `,
-    (error) => {
+    (error: unknown) => {
       if (error) {
         console.log(error);
         process.exit(1);
@@ -56,3 +56,5 @@ module.exports = LmcCookieConsentManager_default;
     },
   );
 });
+
+export {};

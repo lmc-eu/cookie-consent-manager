@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import 'vanilla-cookieconsent';
 import { nanoid } from 'nanoid';
-
 import { config as configCs } from './languages/cs';
 import { config as configDe } from './languages/de';
 import { config as configEn } from './languages/en';
@@ -11,46 +9,57 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
+import { Cookie, CookieConsent, CookieConsentLevel, OnAcceptCallback, CookieConsentOptions, CookieConsentManager } from './types';
 
-const defaultOptions = {
+declare global {
+  interface Window {
+    dataLayer: any[];
+    initCookieConsent: () => CookieConsent;
+  }
+}
+
+/* eslint-disable-next-line no-unused-vars */
+const noopAcceptCallback: OnAcceptCallback = (cookie, cookieConsent) => {};
+
+const defaultOptions: CookieConsentOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
   consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries',
-  onFirstAccept: (cookie, cookieConsent) => {},
-  onFirstAcceptOnlyNecessary: (cookie, cookieConsent) => {},
-  onFirstAcceptAll: (cookie, cookieConsent) => {},
-  onAccept: (cookie, cookieConsent) => {},
-  onAcceptOnlyNecessary: (cookie, cookieConsent) => {},
-  onAcceptAll: (cookie, cookieConsent) => {},
+  onFirstAccept: noopAcceptCallback,
+  onFirstAcceptOnlyNecessary: noopAcceptCallback,
+  onFirstAcceptAll: noopAcceptCallback,
+  onAccept: noopAcceptCallback,
+  onAcceptOnlyNecessary: noopAcceptCallback,
+  onAcceptAll: noopAcceptCallback,
   companyNames: ['LMC'],
   config: {},
 };
 
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
- * @param {Object} [args] - Options for cookie consent manager
+ * @param {CookieConsentOptions} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
  * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent.
  *   Null to disable.
- * @param {function} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
- * @param {function} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies
+ * @param {OnAcceptCallback} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
+ * @param {OnAcceptCallback} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies
  *   are accepted
- * @param {function} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
- * @param {function} [args.onAccept] - Callback to be executed when any consent is detected (either given right now
+ * @param {OnAcceptCallback} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
+ * @param {OnAcceptCallback} [args.onAccept] - Callback to be executed when any consent is detected (either given right now
  *   or already saved previously)
- * @param {function} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies.
+ * @param {OnAcceptCallback} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies.
  *   is detected (either given right now or already saved previously)
- * @param {function} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected
+ * @param {OnAcceptCallback} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected
  *   (either given right now or already saved previously)
  * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
  * @param {Object} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {Object} Instance of the underlying CookieConsent component.
+ * @returns {CookieConsent} Instance of the underlying CookieConsent component.
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
-const LmcCookieConsentManager = (serviceName, args) => {
+const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   if (!serviceName || serviceName === '' || typeof serviceName !== 'string') {
     throw new Error('serviceName is a required parameter and must be a string');
   }
@@ -102,7 +111,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
         transition: 'slide', // zoom/slide
       },
     },
-    onAccept: (cookie) => {
+    onAccept: (cookie: Cookie) => {
       const givenLevels = cookieConsent.get('level');
       const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === 'necessary';
 
@@ -141,18 +150,15 @@ const LmcCookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-/**
- * @param {Object} cookie
- */
-function pushToDataLayer(cookie) {
+function pushToDataLayer(cookie: Cookie) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',
-    'CookieConsent.necessary': cookie.level.includes('necessary'),
-    'CookieConsent.analytics': cookie.level.includes('analytics'),
-    'CookieConsent.ad': cookie.level.includes('ad'),
-    'CookieConsent.functionality': cookie.level.includes('functionality'),
-    'CookieConsent.personalization': cookie.level.includes('personalization'),
+    'CookieConsent.necessary': cookie.level.includes(CookieConsentLevel.NECESSARY),
+    'CookieConsent.analytics': cookie.level.includes(CookieConsentLevel.ANALYTICS),
+    'CookieConsent.ad': cookie.level.includes(CookieConsentLevel.AD),
+    'CookieConsent.functionality': cookie.level.includes(CookieConsentLevel.FUNCTIONALITY),
+    'CookieConsent.personalization': cookie.level.includes(CookieConsentLevel.PERSONALIZATION),
     'CookieConsent.revision': cookie.revision,
   });
 }

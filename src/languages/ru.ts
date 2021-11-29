@@ -1,4 +1,5 @@
 import { addSeparators, pluralize } from '../utils';
+import { Messages } from '../types/Messages';
 
 const extra = {
   and: 'и',
@@ -11,7 +12,7 @@ const extra = {
  * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
-export const config = (messages) => {
+export const config = (messages: Messages) => {
   const lang = { ...extra, ...messages };
 
   return {

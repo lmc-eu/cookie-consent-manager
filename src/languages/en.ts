@@ -1,9 +1,8 @@
-import { addSeparators, pluralize } from '../utils';
+import { addSeparators } from '../utils';
+import { Messages } from '../types/Messages';
 
 const extra = {
-  and: 'a',
-  company: 'společnosti',
-  companies: 'společnostem',
+  and: 'and',
 };
 
 /**
@@ -11,27 +10,23 @@ const extra = {
  * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
-export const config = (messages) => {
+export const config = (messages: Messages) => {
   const lang = { ...extra, ...messages };
 
   return {
     consent_modal: {
-      title: 'Tyto stránky využívají cookies',
-      description: `Kliknutím na „Přijmout vše“ dáváte souhlas ${pluralize(
-        lang.companyNames.length,
-        lang.company,
-        lang.companies,
-      )} ${addSeparators(
+      title: 'This website uses cookies',
+      description: `By clicking on "Accept all", you give your consent to ${addSeparators(
         lang.companyNames,
-        lang.and,
-      )} k využívání souborů Cookies a dalších identifikátorů ve vašem zařízení. Použití těchto Cookies a dalších identifikátorů usnadní navigaci na stránkách, zobrazení personalizovaného obsahu, cílený marketing, analýzu využívání našich produktů a služeb.
-      Více informací naleznete na stránce <a href="https://www.lmc.eu/cs/cookies" target="_blank">Používání cookies</a>.`,
+        extra.and,
+      )} to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
+      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use of cookies</a>.`,
       primary_btn: {
-        text: 'Přijmout vše',
+        text: 'Accept all',
         role: 'accept_all',
       },
       secondary_btn: {
-        text: 'Přijmout nezbytné',
+        text: 'Accept necessary',
         role: 'accept_necessary',
       },
     },

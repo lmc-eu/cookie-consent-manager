@@ -11,9 +11,11 @@ const options = {
 };
 
 replace(options)
-  .then((results) => {
+  .then((results: unknown) => {
     console.log('Replacement results:', results);
   })
-  .catch((error) => {
+  .catch((error: unknown) => {
     console.error('Error occurred:', error);
   });
+
+export {};
