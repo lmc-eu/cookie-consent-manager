@@ -1,27 +1,31 @@
+import { CookieConsent, CookieConsentLevel } from './types/CookieConsent';
+
 /**
  * Submit information about consent level given by the user.
- *
- * @param {string} consentCollectorApiUrl
- * @param {Object} cookieConsent
- * @param {boolean} acceptedOnlyNecessary
  */
-function submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) {
+function submitConsent(
+  consentCollectorApiUrl: string,
+  cookieConsent: CookieConsent,
+  acceptedOnlyNecessary: boolean,
+): void {
   const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
 
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-/**
- * @param {Object} cookieConsent
- * @param {boolean} acceptedOnlyNecessary
- * @returns {Object}
- */
-function buildPayload(cookieConsent, acceptedOnlyNecessary) {
+function buildPayload(cookieConsent: CookieConsent, acceptedOnlyNecessary: boolean): Object {
   const cookieData = cookieConsent.get('data');
   const acceptedCategories = cookieConsent.get('level');
   // TODO: read actual categories once following is implemented in vanilla-cookieconsent:
   // https://github.com/orestbida/cookieconsent/discussions/90#discussioncomment-1466886
-  const rejectedCategories = acceptedOnlyNecessary ? ['ad', 'analytics', 'functionality', 'personalization'] : [];
+  const rejectedCategories = acceptedOnlyNecessary
+    ? [
+        CookieConsentLevel.AD,
+        CookieConsentLevel.ANALYTICS,
+        CookieConsentLevel.FUNCTIONALITY,
+        CookieConsentLevel.PERSONALIZATION,
+      ]
+    : [];
 
   return {
     data: {
@@ -40,12 +44,7 @@ function buildPayload(cookieConsent, acceptedOnlyNecessary) {
   };
 }
 
-/**
- * @param {string} apiUrl
- * @param {Object} payload
- * @return {Promise<any>}
- */
-async function postDataToApi(apiUrl, payload) {
+async function postDataToApi(apiUrl: string, payload: any): Promise<any> {
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {

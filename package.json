@@ -40,7 +40,7 @@
     "js": "npm-run-all --serial js:compile js:compile:types",
     "js:lint": "eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
-    "js:compile": "node scripts/build.js",
+    "js:compile": "ts-node scripts/build.ts",
     "js:compile:types": "tsc -p ./tsconfig.build.json --outDir ./dist",
     "lint": "npm-run-all --serial js:lint css:lint lint:commit",
     "lint:commit": "yarn commitlint --from $(git describe --always --first-parent) --verbose",
@@ -49,7 +49,7 @@
     "build:clean": "rm -rf dist && mkdir -p dist/scss",
     "build:copy": "cp package.json README.md src/LmcCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
     "build": "npm-run-all --serial js css",
-    "start": "node scripts/serve.js",
+    "start": "ts-node scripts/serve.ts",
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
     "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
@@ -64,7 +64,7 @@
     "version": "yarn changelog && yarn replace-version && git status && git add CHANGELOG.md README.md package.json ./dist && git status",
     "postversion": "echo 'Check and push: `git push --set-upstream origin main && git push --tags`'",
     "release": "yarn version --`./bin/ci/semver.sh`",
-    "replace-version": "node scripts/readme-replace-version.js",
+    "replace-version": "ts-node scripts/readme-replace-version.ts",
     "types": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
@@ -104,6 +104,7 @@
     "stylelint": "13.13.1",
     "stylelint-order": "5.0.0",
     "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   }
 }

@@ -16,8 +16,10 @@ serve(
     tsconfig: 'tsconfig.build.json',
   },
 )
-  .then((result) => console.log(result))
-  .catch((error) => {
+  .then((result: unknown) => console.log(result))
+  .catch((error: unknown) => {
     console.error(error);
     process.exit(1);
   });
+
+export {};

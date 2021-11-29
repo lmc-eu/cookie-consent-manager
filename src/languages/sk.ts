@@ -1,7 +1,10 @@
-import { addSeparators } from '../utils';
+import { addSeparators, pluralize } from '../utils';
+import { Messages } from '../types/Messages';
 
 const extra = {
-  and: 'i',
+  and: 'a',
+  company: 'spoločnosti',
+  companies: 'spoločnostiam',
 };
 
 /**
@@ -9,23 +12,27 @@ const extra = {
  * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
-export const config = (messages) => {
+export const config = (messages: Messages) => {
   const lang = { ...extra, ...messages };
 
   return {
     consent_modal: {
-      title: 'Ta strona używa cookies',
-      description: `Klikając „Akceptuję wszystkie”, wyrażasz zgodę dla ${addSeparators(
+      title: 'Tieto stránky používajú cookies',
+      description: `Kliknutím na „Prijať všetky“ dávate súhlas ${pluralize(
+        lang.companyNames.length,
+        lang.company,
+        lang.companies,
+      )} ${addSeparators(
         lang.companyNames,
-        extra.and,
-      )} do wykorzystywania plików i innych identyfikatorów na Twoim urządzeniu. Korzystanie z tych plików cookie i innych identyfikatorów ułatwi nawigację w serwisie, wyświetlanie spersonalizowanych treści, marketing ukierunkowany, analizę korzystania z naszych produktów i usług.
-      Więcej informacji znajdziesz na stronie <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z plików Cookies</a>.`,
+        lang.and,
+      )} k využívaniu súborov Cookies a ďalších identifikátorov vo vašom zariadení. Použitie týchto cookies a ďalších identifikátorov uľahčí navigáciu na stránkach, zobrazenie personalizovaného obsahu, cielený marketing, analýzu využívania našich produktov a služieb.
+      Viac informácií nájdete na stránke <a href="https://www.lmc.eu/sk/cookies" target="_blank">Používanie cookies</a>.`,
       primary_btn: {
-        text: 'Akceptuj wszystkie',
+        text: 'Prijať všetky',
         role: 'accept_all',
       },
       secondary_btn: {
-        text: 'Akceptuj niezbędne',
+        text: 'Prijať nevyhnutné',
         role: 'accept_necessary',
       },
     },

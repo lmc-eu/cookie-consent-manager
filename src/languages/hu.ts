@@ -1,7 +1,8 @@
 import { addSeparators } from '../utils';
+import { Messages } from '../types/Messages';
 
 const extra = {
-  and: 'and',
+  and: 'és',
 };
 
 /**
@@ -9,23 +10,23 @@ const extra = {
  * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {Object} Object with translated messages
  */
-export const config = (messages) => {
+export const config = (messages: Messages) => {
   const lang = { ...extra, ...messages };
 
   return {
     consent_modal: {
-      title: 'This website uses cookies',
-      description: `By clicking on "Accept all", you give your consent to ${addSeparators(
+      title: 'Az oldalak süti fájlokat használnak',
+      description: `A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az ${addSeparators(
         lang.companyNames,
         extra.and,
-      )} to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
-      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use of cookies</a>.`,
+      )} süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+      Bővebb információkat a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Sütihasználat</a> oldalon talál.`,
       primary_btn: {
-        text: 'Accept all',
+        text: 'Minden elfogadása',
         role: 'accept_all',
       },
       secondary_btn: {
-        text: 'Accept necessary',
+        text: 'A legszükségesebbek elfogadása',
         role: 'accept_necessary',
       },
     },

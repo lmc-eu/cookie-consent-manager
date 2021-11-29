@@ -19,6 +19,15 @@
     "noEmit": true,
   },
   "include": [
-    "src"
+    "./"
   ],
+  "exclude": [
+    "./dist",
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "isolatedModules": false,
+    }
+  }
 }
