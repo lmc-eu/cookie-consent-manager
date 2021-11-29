@@ -19,6 +19,7 @@
     "./LmcCookieConsentManager.cjs": "./LmcCookieConsentManager.cjs",
     "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs"
   },
+  "types": "./LmcCookieConsentManager.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
@@ -36,10 +37,11 @@
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
     "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" \"examples/assets/*.css\" --cache --cache-location .cache/.stylelintcache",
     "prejs": "yarn js:lint",
-    "js": "yarn js:compile",
+    "js": "npm-run-all --serial js:compile js:compile:types",
     "js:lint": "eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
     "js:compile": "node scripts/build.js",
+    "js:compile:types": "tsc -p ./tsconfig.build.json --outDir ./dist",
     "lint": "npm-run-all --serial js:lint css:lint lint:commit",
     "lint:commit": "yarn commitlint --from $(git describe --always --first-parent) --verbose",
     "lint:commit:last": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
@@ -51,7 +53,7 @@
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
     "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
-    "test": "npm-run-all --serial lint test:unit format",
+    "test": "npm-run-all --serial lint test:unit format types",
     "test:unit": "jest --config ./config/jest.config.json",
     "test:unit:watch": "yarn test:unit --watchAll",
     "prepare": "husky install",
@@ -62,7 +64,8 @@
     "version": "yarn changelog && yarn replace-version && git status && git add CHANGELOG.md README.md package.json ./dist && git status",
     "postversion": "echo 'Check and push: `git push --set-upstream origin main && git push --tags`'",
     "release": "yarn version --`./bin/ci/semver.sh`",
-    "replace-version": "node scripts/readme-replace-version.js"
+    "replace-version": "node scripts/readme-replace-version.js",
+    "types": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.4.5",
@@ -78,6 +81,9 @@
     "@lmc-eu/eslint-config-base": "1.0.0",
     "@lmc-eu/prettier-config": "1.2.1",
     "@lmc-eu/stylelint-config": "2.0.2",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "autoprefixer": "10.4.0",
     "babel-jest": "27.4.4",
     "clean-css-cli": "5.5.0",
@@ -96,6 +102,8 @@
     "replace-in-file": "6.3.2",
     "sass": "1.45.0",
     "stylelint": "13.13.1",
-    "stylelint-order": "5.0.0"
+    "stylelint-order": "5.0.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
   }
 }

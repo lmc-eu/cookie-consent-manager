@@ -4,10 +4,11 @@ const fs = require('fs');
 
 // iife
 build({
-  entryPoints: ['src/init.js', 'src/LmcCookieConsentManager.js'],
+  entryPoints: ['src/init.ts', 'src/LmcCookieConsentManager.ts'],
   bundle: true,
   target: 'es2017',
   outdir: 'dist',
+  tsconfig: 'tsconfig.build.json',
 }).catch((error) => {
   console.error(error);
   process.exit(1);
@@ -15,11 +16,12 @@ build({
 
 // esm
 build({
-  entryPoints: ['src/LmcCookieConsentManager.js'],
+  entryPoints: ['src/LmcCookieConsentManager.ts'],
   bundle: true,
   target: 'es2017',
   outfile: 'dist/LmcCookieConsentManager.mjs',
   format: 'esm',
+  tsconfig: 'tsconfig.build.json',
 }).catch((error) => {
   console.error(error);
   process.exit(1);
@@ -27,7 +29,7 @@ build({
 
 // cjs
 build({
-  entryPoints: ['src/LmcCookieConsentManager.js'],
+  entryPoints: ['src/LmcCookieConsentManager.ts'],
   bundle: true,
   target: 'es6',
   outfile: 'dist/LmcCookieConsentManager.cjs',
@@ -38,6 +40,7 @@ build({
    * because vanilla-cookie-consent is set as `main` in package.json
    */
   mainFields: ['main'],
+  tsconfig: 'tsconfig.build.json',
 }).then(() => {
   // Annotate the CommonJS export names for ESM import in node
   fs.appendFile(

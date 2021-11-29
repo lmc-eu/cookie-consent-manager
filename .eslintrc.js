@@ -10,11 +10,21 @@ module.exports = {
     sourceType: 'module',
   },
 
+  parser: '@typescript-eslint/parser',
+
   ignorePatterns: ['node_modules', '!.*.js'],
 
   extends: ['@lmc-eu/eslint-config-base', 'prettier'],
 
-  plugins: ['prettier', 'jest'],
+  plugins: ['prettier', 'jest', '@typescript-eslint'],
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
+  },
 
   rules: {
     'no-use-before-define': ['error', 'nofunc'],
