@@ -82,7 +82,7 @@
     "babel-jest": "^27.3.1",
     "clean-css-cli": "^5.3.3",
     "conventional-changelog-cli": "^2.1.1",
-    "esbuild": "^0.13.6",
+    "esbuild": "^0.14.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^25.3.0",
