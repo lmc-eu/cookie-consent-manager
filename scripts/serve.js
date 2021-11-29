@@ -9,10 +9,11 @@ serve(
     servedir: './',
   },
   {
-    entryPoints: ['src/init.js', 'src/LmcCookieConsentManager.js'],
+    entryPoints: ['src/init.ts', 'src/LmcCookieConsentManager.ts'],
     bundle: true,
     target: 'es2017',
     outdir: 'dist',
+    tsconfig: 'tsconfig.build.json',
   },
 )
   .then((result) => console.log(result))
