@@ -85,12 +85,10 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 3. Include default CSS in your HTML:
    ```html
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
    <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
    ```
    or in your Sass stylesheet:
    ```scss
-   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
    @use "node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css";
    ```
 
@@ -98,6 +96,21 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
    recommended only for projects that are built [with Spirit Design System](#with-spirit-design-system).
 
    See below for [theme customization options](#theming).
+
+4. For projects that are **NOT** built with [Spirit Design System]:
+
+   1. Include default font in your HTML:
+      ```html
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+      ```
+      or in your Sass stylesheet:
+      ```scss
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+      ```
+
+   2. Or [switch to custom font](#custom-font) that matches the design of your project.
 
 #### Legacy import
 
@@ -255,7 +268,7 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline and use it
 ```
 
 <details>
-<summary>Make sure you have `node_modules` and path to your design tokens in your Sass include paths.</summary>
+<summary>Make sure you have <code>node_modules</code> and path to your design tokens in your Sass include paths.</summary>
 
 Set up [Sass load path] so the Sass compiler can find stylesheets located in the `node_modules` directory
 (you will already have a path to your design tokens there, as required by [Spirit Web]):
@@ -294,8 +307,9 @@ to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) ar
 
 ### Without Spirit Design System
 
-Handful of CSS custom properties are available for you to customize the UI.
-Change their values to match the design of your site, for example:
+Handful of CSS custom properties are available for you to customize the UI to make it match the design of your site.
+For example, to change text color of cookie consent UI, load the [default CSS](#basic-usage) and add the following code
+anywhere in your stylesheet (the order of which is not important):
 
 ```css
 :root {
