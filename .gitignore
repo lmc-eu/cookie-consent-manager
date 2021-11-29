@@ -3,3 +3,4 @@
 dist/package.json
 dist/README.md
 node_modules
+coverage

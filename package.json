@@ -56,6 +56,7 @@
     "test": "npm-run-all --serial lint test:unit format types",
     "test:unit": "jest --config ./config/jest.config.json",
     "test:unit:watch": "yarn test:unit --watchAll",
+    "test:unit:coverage": "yarn test:unit --coverage",
     "prepare": "husky install",
     "changelog": "yarn changelog:from-tag",
     "changelog:from-tag": "conventional-changelog -p @lmc-eu/conventional-changelog-lmc-bitbucket -i CHANGELOG.md -s",
