@@ -32,6 +32,9 @@ jobs:
       - name: Check code-style format
         run: yarn format
 
+      - name: Check types
+        run: yarn types
+
       - name: Unit tests
         run: yarn test:unit
 
