@@ -230,7 +230,7 @@ for example, to enable some feature after user has given consent.
 Each configured callback receives two params:
 
 * `cookie` - object with cookie contents
-* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods](https://github.com/orestbida/cookieconsent#apis--configuration-parameters)
+* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods](https://github.com/orestbida/cookieconsent#api--configuration-parameters)
 
 | Callback                    | Trigger event |
 |-----------------------------|---------------|
