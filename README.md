@@ -11,7 +11,7 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
 1. [Basic usage](#basic-usage)
 1. [Loading the plugin](#loading-the-plugin)
-1. [Manage features depending on given consent](#manage-features-depending-on-given-consent)
+1. [Manage features depending on the given consent](#manage-features-depending-on-the-given-consent)
 1. [Configuration](#configuration)
 1. [Configuration options](#configuration-options)
 1. [Theming](#theming)
@@ -70,7 +70,7 @@ Once the plugin is loaded, you need to initialize it using `initLmcCookieConsent
 
 ### Via npm
 
-For projects with their own build process for javascript we recommend using the plugin
+For projects with their own build process for JavaScript, it is recommended to use the plugin
 via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager).
 
 1. Add the plugin to your dependencies:
@@ -134,7 +134,7 @@ Note: We prefer to use modern ESM import syntax so this is marked as legacy.
 
 *With Webpack:* Webpack prioritises the ESM import syntax over CommonJS import syntax. So resolve the `main` field as first: `resolve: { mainFields: ["main", /* ... */ ] },`
 
-## Manage features depending on given consent
+## Manage features depending on the given consent
 
 For "necessary" cookies it is not needed to check whether a user has given any consent.
 
@@ -143,13 +143,13 @@ consent category. This must be done *before* the respective cookie is set.
 
 ### Consent categories
 
-| Category          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `necessary`       | Strictly necessary cookies are essential for user to browse the website and use its features, such as accessing secure areas of the site. These cookies are first-party cookies.<br>Some examples of strictly necessary cookies: Session cookies, Cookie banner cookies, Load balancing cookies, CSFR tokens, Language selection cookies, Region / country cookies, Performance cookies, Application firewall cookies and JavaScript check cookies.<br>For these cookies you **don't need to check** whether user actually has this level. |
-| `ad`              | For cookies related to advertising                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `analytics`       | For analysis and statistics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `functionality`   | For extended functionality (not covered by `necessary` category)                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `personalization` | For personalization based on user profiling (recommendation etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Category          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `necessary`       | Strictly necessary cookies are essential for user to browse the website and use its features, such as accessing secure areas of the site. These cookies are first-party cookies.<br>Some examples of strictly necessary cookies: Session cookies, Cookie banner cookies, Load balancing cookies, CSFR tokens, Language selection cookies, Region/country cookies, Performance cookies, Application firewall cookies and JavaScript check cookies.<br>For these cookies you **don't need to check** whether user actually has this level. |
+| `ad`              | For cookies related to advertising                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `analytics`       | For analysis and statistics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `functionality`   | For extended functionality (not covered by `necessary` category)                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `personalization` | For personalization based on user profiling (recommendation, etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### GTM (Google Tag Manager) scripts
 
@@ -317,8 +317,8 @@ to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) ar
 
 ### Without Spirit Design System
 
-Handful of CSS custom properties are available for you to customize the UI to make it match the design of your site.
-For example, to change text color of cookie consent UI, load the [default CSS](#basic-usage) and add the following code
+A handful of CSS custom properties are available for you to customize the UI to make it match the design of your site.
+For example, to change the text color of cookie consent UI, load the [default CSS](#basic-usage) and add the following code
 anywhere in your stylesheet (the order of which is not important):
 
 ```css
@@ -372,7 +372,7 @@ If you are not using cookie consent with the default design, additional steps ma
   }
   ```
 
-If you use custom font like this, make sure you don't load the default Inter font and that you use
+If you use a custom font like this, make sure you don't load the default Inter font and that you use
 `<link rel="preconnect" ...>` only to actually needed domains.
 
 ### Dark mode
