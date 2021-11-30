@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@v1.25/themes/prism.css">
     <!-- For the purpose of this demo, we are loading two typefaces: -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans:wght@400;700&display=swap">
-    <script src="./functions.js" defer></script>
+    <link rel="stylesheet" href="./assets/examples.css"><!-- This CSS is here for the purpose of this demo only, don't add it to your project -->
+    <script src="./assets/functions.js" defer></script>
 
     <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
 
-    <style type="text/css">
+    <style>
         .custom-theme {
             --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
             --lmcccm-base-font-size: 14px;
@@ -52,7 +53,7 @@
         }
     </style>
 </head>
-<body style="padding-bottom: 380px">
+<body>
 
 <header class="container">
     <div class="d-flex flex-column align-items-center flex-md-row py-3">
@@ -98,8 +99,8 @@
         </div>
     </div>
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1" hidden>
-        <a href="" class="btn btn-lg btn-warning shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
-            <i class="bi bi-arrow-clockwise"></i>
+        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
+            <i class="bi bi-arrow-clockwise me-1"></i>
             Reset cookie
         </a>
     </div>

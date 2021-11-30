@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-    <script src="./functions.js" defer></script>
+    <link rel="stylesheet" href="./assets/examples.css"><!-- This CSS is here for the purpose of this demo only, don't add it to your project -->
+    <script src="./assets/functions.js" defer></script>
 
     <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
 </head>
-<body style="padding-bottom: 380px">
+<body>
 
 <header class="container">
     <div class="d-flex flex-column align-items-center flex-md-row py-3">
@@ -62,8 +63,8 @@
         </div>
     </div>
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1" hidden>
-        <a href="" class="btn btn-lg btn-warning shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
-            <i class="bi bi-arrow-clockwise"></i>
+        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
+            <i class="bi bi-arrow-clockwise me-1"></i>
             Reset cookie
         </a>
     </div>
