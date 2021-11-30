@@ -55,18 +55,6 @@
             --lmcccm-btn-secondary-hover-text: var(--lmcccm-link-hover-text);
             --lmcccm-btn-secondary-active-text: var(--lmcccm-link-active-text);
         }
-
-        #darkmode-icon-moon {
-            display: none;
-        }
-
-        .c_darkmode #darkmode-icon-moon {
-            display: inline;
-        }
-
-        .c_darkmode #darkmode-icon-sun {
-            display: none;
-        }
     </style>
 </head>
 <body style="padding-bottom: 380px">
@@ -138,8 +126,17 @@
                     Head over to <a href="https://github.com/lmc-eu/cookie-consent-manager#without-spirit-design-system">README</a>
                     to get the full list of available CSS custom properties.
                 </p>
+                <div class="mb-4 p-3 border rounded d-flex">
+                    <label class="form-check-label flex-fill" for="f_custom-theme">
+                        <i class="bi bi-palette me-2"></i>
+                        Apply custom theme
+                    </label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="f_custom-theme" onchange="document.documentElement.classList.toggle('custom-theme')" autocomplete="off">
+                    </div>
+                </div>
                 <details class="mb-4">
-                    <summary class="link-primary">Example theme:</summary>
+                    <summary class="link-primary">Show source</summary>
                     <pre class="mt-4"><code class="language-css">:root {
     --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
     --lmcccm-base-font-size: 14px;
@@ -160,28 +157,24 @@
     --lmcccm-btn-secondary-active-text: var(--lmcccm-link-active-text);
 }</code></pre>
                 </details>
-                <p>
-                    <button type="button" class="btn btn-outline-primary" onclick="document.documentElement.classList.toggle('custom-theme')">
-                        <i class="bi bi-palette"></i>
-                        Toggle custom theme
-                    </button>
-                </p>
 
                 <h2 class="mt-4 mt-md-5 mb-3">Dark Mode</h2>
                 <p class="mb-4">
-                    Default dark mode of Cookie Consent Manager is rather a dark version than a real dark mode
+                    The default dark mode of Cookie Consent Manager is rather a dark version than a real dark mode,
                     which is not yet supported by Spirit (if it was, it would apply less contrasting colors).
                     But it's available for you to have more design choices to choose from. You can
                     <a href="https://github.com/lmc-eu/cookie-consent-manager#dark-mode">customize</a>
                     dark mode colors the same way as the default light color scheme.
                 </p>
-                <p>
-                    <button type="button" class="btn btn-outline-dark" onclick="document.body.classList.toggle('c_darkmode')">
-                        <i id="darkmode-icon-moon" class="bi bi-moon"></i>
-                        <i id="darkmode-icon-sun" class="bi bi-sun"></i>
-                        Toggle dark mode
-                    </button>
-                </p>
+                <div class="p-3 border rounded d-flex">
+                    <label class="form-check-label flex-fill" for="f_dark-mode">
+                        <i class="bi bi-moon me-2"></i>
+                        Turn on dark mode
+                    </label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="f_dark-mode" onchange="document.body.classList.toggle('c_darkmode');" autocomplete="off">
+                    </div>
+                </div>
 
             </div>
         </div>
