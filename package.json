@@ -34,7 +34,7 @@
     "css:compile": "sass --load-path=node_modules --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss src/LmcCookieConsentManager.scss dist/LmcCookieConsentManager.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
-    "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" \"examples/assets/*.css\" --cache --cache-location .cache/.stylelintcache",
     "prejs": "yarn js:lint",
     "js": "yarn js:compile",
     "js:lint": "eslint ./",
