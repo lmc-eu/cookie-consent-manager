@@ -78,12 +78,14 @@
 #cm .c_link,
 #s-c-bn,
 #s-cnt button + button {
+    color: var(--lmcccm-p-link-text);
+
     &:hover {
-        color: var(--lmcccm-p-btn-secondary-hover-text);
+        color: var(--lmcccm-p-link-hover-text);
     }
 
     &:active {
-        color: var(--lmcccm-p-btn-secondary-active-text);
+        color: var(--lmcccm-p-link-active-text);
     }
 }
 
@@ -163,6 +165,7 @@
 
 #c-bns button:first-child,
 #s-bns button:first-child {
+    font-weight: var(--lmcccm-p-btn-font-weight);
     border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
 
     &:hover {
