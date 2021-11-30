@@ -7,6 +7,16 @@ Provide configurable cookie consent banner with predefined LMC defaults. The UI 
 
 The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
+## Table of contents
+
+1. [Basic usage](#basic-usage)
+1. [Loading the plugin](#loading-the-plugin)
+1. [Manage features depending on given consent](#manage-features-depending-on-given-consent)
+1. [Configuration](#configuration)
+1. [Configuration options](#configuration-options)
+1. [Theming](#theming)
+1. [Development and contributing](#development-and-contributing)
+
 ## Basic usage
 
 Make assets load faster by placing pre-connect headers right after `<meta charset>` in your `<head>`:
@@ -378,6 +388,8 @@ If your project does _not_ use Spirit, you still may adjust exposed CSS custom p
   --lmcccm-bg: #000;
 }
 ```
+
+[👀 See dark mode example][examples-theming]
 
 ## Development and contributing
 
