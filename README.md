@@ -357,16 +357,8 @@ If you are not using cookie consent with the default design, additional steps ma
   }
   ```
 
-In both cases, following tags may be redundant and you should consider removing them from your `<head>`, should you
-have initially followed the [basic](#basic-usage) instructions:
-
-```html
-<!-- Remove `preconnect` headers only if you are NOT loading your custom font via Google Fonts: -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Remove Inter font link: -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-```
+If you use custom font like this, make sure you don't load the default Inter font and that you use
+`<link rel="preconnect" ...>` only to actually needed domains.
 
 ### Dark mode
 
