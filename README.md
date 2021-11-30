@@ -30,7 +30,7 @@ Make assets load faster by placing pre-connect headers right after `<meta charse
 Load default CSS along with your styles in `<head>`:
 
 ```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/LmcCookieConsentManager.min.css">
 ```
 
@@ -56,7 +56,7 @@ You can load the plugin from a CDN, as in the basic example above.
 
 ```html
 <!-- Note we use version "cookie-consent-manager@0.7", which points the latest version of this series (including bugfix releases) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/LmcCookieConsentManager.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@0.7/init.js"></script>
 ```
@@ -113,11 +113,11 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
       ```html
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
       ```
       or in your Sass stylesheet:
       ```scss
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
       ```
 
    2. Or [switch to custom font](#custom-font) that matches the design of your project.
@@ -341,6 +341,7 @@ anywhere in your stylesheet (the order of which is not important):
 | `--lmcccm-link-text`                  | Link text color                                         |
 | `--lmcccm-link-hover-text`            | Link text color on hover                                |
 | `--lmcccm-link-active-text`           | Link text color in active state                         |
+| `--lmcccm-btn-font-weight`            | Button font weight                                      |
 | `--lmcccm-btn-border-width`           | Button border width                                     |
 | `--lmcccm-btn-border-style`           | Button border style                                     |
 | `--lmcccm-btn-border-radius`          | Button border radius                                    |
@@ -353,9 +354,6 @@ anywhere in your stylesheet (the order of which is not important):
 | `--lmcccm-btn-primary-active-border`  | Primary button border color in active state             |
 | `--lmcccm-btn-primary-active-bg`      | Primary button background color in active state         |
 | `--lmcccm-btn-primary-active-text`    | Primary button text color in active state               |
-| `--lmcccm-btn-secondary-text`         | Secondary button text color                             |
-| `--lmcccm-btn-secondary-hover-text`   | Secondary button text color on hover                    |
-| `--lmcccm-btn-secondary-active-text`  | Secondary button text color in active state             |
 
 </details>
 
