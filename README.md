@@ -225,14 +225,14 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 
 ## Configuration options
 
-| Option          | Type        | Default value                   | Description                                                                                                                               |
-|-----------------|-------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `autodetectLang`| boolean     | true                            | Autodetect language based on the value of `<html lang="...">`. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
-| `defaultLang`   | string      | 'cs'                            | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails. |
-| `companyNames`  | array       | ['LMC']                         | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration]. |
-| `consentCollectorApiUrl`| ?string | 'https://ccm.lmc.cz/(...)'  | URL of the API where user consent information is sent. Null to disable sending data to the API. |
-| `config`        | Object      | {}                              | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
-| `on*` callbacks | function    | (cookie, cookieConsent) => {}   | See below for configurable callbacks. |
+| Option          | Type        | Default value                      | Description                                                                                                                               |
+|-----------------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `autodetectLang`| boolean     | `true`                             | Autodetect language based on the value of `<html lang="...">`. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
+| `defaultLang`   | string      | `'cs'`                             | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails. |
+| `companyNames`  | array       | `['LMC']`                          | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration]. |
+| `consentCollectorApiUrl`| ?string | `'https://ccm.lmc.cz/(...)'`   | URL of the API where user consent information is sent. Null to disable sending data to the API. |
+| `config`        | Object      | `{}`                               | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
+| `on*` callbacks | function    | `(cookie, cookieConsent) => {}`    | See below for configurable callbacks. |
 
 ### Supported languages
 
