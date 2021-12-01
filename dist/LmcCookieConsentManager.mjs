@@ -1265,15 +1265,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
     onAccept: (cookie) => {
       const givenLevels = cookieConsent.get("level");
       const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === "necessary";
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "CookieConsent-update",
-        "CookieConsent.necessary": cookie.level.includes("necessary"),
-        "CookieConsent.analytics": cookie.level.includes("analytics"),
-        "CookieConsent.functionality": cookie.level.includes("functionality"),
-        "CookieConsent.personalization": cookie.level.includes("personalization"),
-        "CookieConsent.revision": cookie.revision
-      });
+      pushToDataLayer(cookie);
       onAccept(cookie, cookieConsent);
       if (isFirstTimeAccept) {
         const cookieData = cookieConsent.get("data");
@@ -1296,6 +1288,17 @@ var LmcCookieConsentManager = (serviceName, args) => {
   cookieConsent.run(cookieConsentConfig);
   return cookieConsent;
 };
+function pushToDataLayer(cookie) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "CookieConsent-update",
+    "CookieConsent.necessary": cookie.level.includes("necessary"),
+    "CookieConsent.analytics": cookie.level.includes("analytics"),
+    "CookieConsent.functionality": cookie.level.includes("functionality"),
+    "CookieConsent.personalization": cookie.level.includes("personalization"),
+    "CookieConsent.revision": cookie.revision
+  });
+}
 var LmcCookieConsentManager_default = LmcCookieConsentManager;
 export {
   LmcCookieConsentManager_default as default

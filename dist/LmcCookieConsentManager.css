@@ -1376,46 +1376,44 @@ html.force--consent.show--consent body {
 /** END IE FIXES **/
 /* prettier-ignore */
 :root {
-  --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, 1rem);
-  --lmcccm-p-font-family: var(--lmcccm-font-family, Inter), inherit;
+  --lmcccm-p-font-family: var(--lmcccm-font-family, Inter, sans-serif);
+  --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, 1em);
+  --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, 600);
+  --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, 0);
+  --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, none);
+  --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, 0.25em);
   --lmcccm-p-bg: var(--lmcccm-bg, #fff);
   --lmcccm-p-text: var(--lmcccm-text, #132930);
-  --lmcccm-p-link-text: var(--lmcccm-link-text, #132930);
-  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #091417);
-  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #000);
+  --lmcccm-p-link-text: var(--lmcccm-link-text, #77a6c0);
+  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #678fa6);
+  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #57798c);
+  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #77a6c0);
   --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #77a6c0);
   --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #fff);
+  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #678fa6);
   --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #678fa6);
   --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #fff);
+  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #57798c);
   --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #57798c);
   --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #fff);
-  --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-  --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #77a6c0);
-  --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-  --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #678fa6);
-  --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-  --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #57798c);
 }
 
 /* prettier-ignore */
 .c_darkmode {
   --lmcccm-p-bg: var(--lmcccm-bg, #132930);
   --lmcccm-p-text: var(--lmcccm-text, #e9e9e9);
-  --lmcccm-p-link-text: var(--lmcccm-link-text, #e9e9e9);
-  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #e9e9e9);
-  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #e9e9e9);
+  --lmcccm-p-link-text: var(--lmcccm-link-text, #90a2a7);
+  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #849499);
+  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #6e7b80);
+  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #77a6c0);
   --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #77a6c0);
   --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #fff);
+  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #678fa6);
   --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #678fa6);
   --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #fff);
+  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #57798c);
   --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #57798c);
   --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #fff);
-  --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-  --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #e9e9e9);
-  --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-  --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #e9e9e9);
-  --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-  --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #e9e9e9);
 }
 
 .cc_div {
@@ -1424,9 +1422,9 @@ html.force--consent.show--consent body {
   --cc-btn-primary-bg: var(--lmcccm-p-btn-primary-bg);
   --cc-btn-primary-text: var(--lmcccm-p-btn-primary-text);
   --cc-btn-primary-hover-bg: var(--lmcccm-p-btn-primary-hover-bg);
-  --cc-btn-secondary-bg: var(--lmcccm-p-btn-secondary-bg);
-  --cc-btn-secondary-text: var(--lmcccm-p-btn-secondary-text);
-  --cc-btn-secondary-hover-bg: var(--lmcccm-p-btn-secondary-hover-bg);
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-text: var(--lmcccm-p-link-text);
+  --cc-btn-secondary-hover-bg: transparent;
   --cc-block-text: var(--lmcccm-p-text);
 }
 
@@ -1487,15 +1485,20 @@ html.force--consent.show--consent body {
   line-height: inherit;
 }
 
+#cm .c_link,
+#s-c-bn,
+#s-cnt button + button {
+  color: var(--lmcccm-p-link-text);
+}
 #cm .c_link:hover,
 #s-c-bn:hover,
 #s-cnt button + button:hover {
-  color: var(--lmcccm-p-btn-secondary-hover-text);
+  color: var(--lmcccm-p-link-hover-text);
 }
 #cm .c_link:active,
 #s-c-bn:active,
 #s-cnt button + button:active {
-  color: var(--lmcccm-p-btn-secondary-active-text);
+  color: var(--lmcccm-p-link-active-text);
 }
 
 #cm {
@@ -1559,17 +1562,24 @@ html.force--consent.show--consent body {
 }
 .cc_div .c-bn {
   padding: 0.5em 1.5em;
-  border-radius: 0.25em;
+  border-radius: var(--lmcccm-p-btn-border-radius);
 }
 
+#c-bns button:first-child,
+#s-bns button:first-child {
+  font-weight: var(--lmcccm-p-btn-font-weight);
+  border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
+}
 #c-bns button:first-child:hover,
 #s-bns button:first-child:hover {
   color: var(--lmcccm-p-btn-primary-hover-text);
+  border-color: var(--lmcccm-p-btn-primary-hover-border);
 }
 #c-bns button:first-child:active,
 #s-bns button:first-child:active {
   color: var(--lmcccm-p-btn-primary-active-text);
   background: var(--lmcccm-p-btn-primary-active-bg);
+  border-color: var(--lmcccm-p-btn-primary-active-border);
 }
 
 #cm .c-bn {
@@ -1584,9 +1594,6 @@ html.force--consent.show--consent body {
   font-weight: inherit;
   font-size: inherit;
   text-decoration: underline;
-}
-#cm .c-bn.c_link:active {
-  background: var(--lmcccm-p-btn-secondary-active-bg);
 }
 
 @media screen and (max-width: 688px) {

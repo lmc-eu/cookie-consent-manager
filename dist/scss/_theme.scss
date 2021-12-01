@@ -7,18 +7,24 @@
 //
 // By using Spirit design tokens, all Spirit-based projects benefit from plug-and-play setup.
 
+@use 'sass:list';
 @use '@tokens' as tokens;
+@use 'tools';
 
 // Stylelint and Prettier are clashing on long lines. Let's prefer Stylelint.
 /* prettier-ignore */
 
 :root {
     //
-    // Typography
-    // ==========
+    // Common Settings
+    // ===============
 
-    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tokens.$font-size-base});
-    --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default}), inherit;
+    --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
+    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
+    --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, 600); // TODO change to a Spirit token once available.
+    --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{list.nth(tokens.$border-1, 1)});
+    --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, none); // TODO change to `#{list.nth(tokens.$border-1, 2)}` once Spirit tokens are updated.
+    --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{tools.rem2em(tokens.$radius-1)});
 
     //
     // Light Mode
@@ -26,21 +32,18 @@
 
     --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-basic});
     --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-primary-default});
-    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-secondary-default});
-    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-secondary-hover});
-    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-secondary-active});
+    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-primary-default});
+    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-primary-hover});
+    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-primary-active});
+    --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #{tokens.$text-primary-inverted-default});
+    --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #{tokens.$action-primary-hover});
     --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #{tokens.$action-primary-hover});
     --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #{tokens.$text-primary-inverted-default});
+    --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-    --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$action-link-primary-default});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-    --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$action-link-primary-hover});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-    --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$action-link-primary-active});
 }
 
 //
@@ -53,19 +56,16 @@
 .c_darkmode {
     --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-inverted});
     --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$text-secondary-inverted-default});
+    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-secondary-default});
+    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-secondary-hover});
+    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-secondary-active});
+    --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #{tokens.$text-primary-inverted-default});
+    --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #{tokens.$action-primary-hover});
     --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #{tokens.$action-primary-hover});
     --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #{tokens.$text-primary-inverted-default});
+    --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-    --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-    --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-    --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$text-secondary-inverted-default});
 }
