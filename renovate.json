@@ -3,11 +3,14 @@
     "config:base",
     ":pinOnlyDevDependencies"
   ],
-  "ignorePresets": ["group:monorepos", "group:recommended", ":prHourlyLimit2"],
+  "ignorePresets": [
+    "group:monorepos",
+    "group:recommended",
+    ":prHourlyLimit2"
+  ],
   "enabledManagers": ["npm"],
   "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
-  "schedule": ["after 10pm and before 7am on monday"],
   "packageRules": [
     {
       "groupName": "all dev dependencies",
