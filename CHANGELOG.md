@@ -1,6 +1,20 @@
 
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.0...0.8.1) (2021-12-02)
+
+
+### Bug Fixes
+* Add missing 'ads' level to dataLayer ([ec6ed5b](https://github.com/lmc-eu/cookie-consent-manager/commit/ec6ed5b))
+
+### Dependencies
+* Bump babel-jest from 27.4.1 to 27.4.2 ([e3c499d](https://github.com/lmc-eu/cookie-consent-manager/commit/e3c499d))
+* Bump jest from 27.4.1 to 27.4.2 ([832f4ce](https://github.com/lmc-eu/cookie-consent-manager/commit/832f4ce))
+* Bump jest from 27.4.2 to 27.4.3 ([5320995](https://github.com/lmc-eu/cookie-consent-manager/commit/5320995))
+* Bump postcss from 8.4.1 to 8.4.4 ([3211c80](https://github.com/lmc-eu/cookie-consent-manager/commit/3211c80))
+* Bump sass from 1.43.5 to 1.44.0 ([078daa9](https://github.com/lmc-eu/cookie-consent-manager/commit/078daa9))
+
 <a name="0.8.0"></a>
-# [0.8.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.7.0&sourceBranch=refs%2Ftags%2F0.8.0) (2021-12-01)
+# [0.8.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.7.0...0.8.0) (2021-12-01)
 
 ### BREAKING CHANGES
 * Remove unwanted theming options for secondary buttons ([f36d299](https://github.com/lmc-eu/cookie-consent-manager/commit/f36d299))
@@ -42,7 +56,7 @@
 * Merge linting into test workflow ([c99e621](https://github.com/lmc-eu/cookie-consent-manager/commit/c99e621))
 
 <a name="0.7.0"></a>
-# [0.7.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.6.0&sourceBranch=refs%2Ftags%2F0.7.0) (2021-11-26)
+# [0.7.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.6.0...0.7.0) (2021-11-26)
 
 
 ### Bug Fixes
@@ -89,7 +103,7 @@
 * Reformat code using ESLint ruleset refs [#CCM-6](https://jira.int.lmc.cz/browse/CCM-6) ([d9d96b9](https://github.com/lmc-eu/cookie-consent-manager/commit/d9d96b9))
 
 <a name="0.6.0"></a>
-# [0.6.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.5.0&sourceBranch=refs%2Ftags%2F0.6.0) (2021-11-19)
+# [0.6.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.5.0...0.6.0) (2021-11-19)
 
 
 ### BREAKING CHANGES
@@ -140,7 +154,7 @@
 * Unit tests for i18n [#CCM-25](https://jira.int.lmc.cz/browse/CCM-25) ([d5bf67b](https://github.com/lmc-eu/cookie-consent-manager/commit/d5bf67b))
 
 <a name="0.5.0"></a>
-# [0.5.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.1&sourceBranch=refs%2Ftags%2F0.5.0) (2021-11-11)
+# [0.5.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.4.0...0.5.0) (2021-11-11)
 
 
 ### Chores
@@ -160,7 +174,7 @@
 * Introduce ES module entry point ([fad5730](https://github.com/lmc-eu/cookie-consent-manager/commit/fad5730))
 
 <a name="0.4.1"></a>
-## [0.4.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.4.0&sourceBranch=refs%2Ftags%2F0.4.1) (2021-11-09)
+## [0.4.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.4.0...0.4.1) (2021-11-09)
 
 
 ### Dependencies
@@ -191,7 +205,7 @@
 * Fix formatting according to updated prettier-config ([a70979a](https://github.com/lmc-eu/cookie-consent-manager/commit/a70979a))
 
 <a name="0.4.0"></a>
-# [0.4.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.1&sourceBranch=refs%2Ftags%2F0.4.0) (2021-11-05)
+# [0.4.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.3.1...0.4.0) (2021-11-05)
 
 
 ### Chores
@@ -211,7 +225,7 @@
 * Introduce new design connected to Spirit design tokens [#CCM-7](https://jira.int.lmc.cz/browse/CCM-7) ([658c99f](https://github.com/lmc-eu/cookie-consent-manager/commit/658c99f))
 
 <a name="0.3.1"></a>
-## [0.3.1](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.3.0&sourceBranch=refs%2Ftags%2F0.3.1) (2021-11-04)
+## [0.3.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.3.0...0.3.1) (2021-11-04)
 
 
 ### Chores
@@ -229,7 +243,7 @@
 * Set git tag version to plain semver string without prefix ([6f7c069](https://github.com/lmc-eu/cookie-consent-manager/commit/6f7c069))
 
 <a name="0.3.0"></a>
-# [0.3.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.2.0&sourceBranch=refs%2Ftags%2F0.3.0) (2021-11-02)
+# [0.3.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.2.0...0.3.0) (2021-11-02)
 
 
 ### Chores
@@ -257,7 +271,7 @@
 * Enable management of third-party scripts ([0020661](https://github.com/lmc-eu/cookie-consent-manager/commit/0020661))
 
 <a name="0.2.0"></a>
-# [0.2.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F0.1.0&sourceBranch=refs%2Ftags%2F0.2.0) (2021-11-01)
+# [0.2.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.1.0...0.2.0) (2021-11-01)
 
 
 ### Bug Fixes
@@ -307,7 +321,7 @@
 * Save distribution files for instant usage and examples ([d9964f3](https://github.com/lmc-eu/cookie-consent-manager/commit/d9964f3))
 
 <a name="0.1.0"></a>
-# [0.1.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/diff?targetBranch=refs%2Ftags%2F19ff586&sourceBranch=refs%2Ftags%2F0.1.0) (2021-10-19)
+# [0.1.0](https://github.com/lmc-eu/cookie-consent-manager/compare/5c71be3693c8cef3c0929ea85b31b9423667d0a6...0.1.0) (2021-10-19)
 
 
 ### Chores

@@ -1295,6 +1295,7 @@
       event: "CookieConsent-update",
       "CookieConsent.necessary": cookie.level.includes("necessary"),
       "CookieConsent.analytics": cookie.level.includes("analytics"),
+      "CookieConsent.ads": cookie.level.includes("ads"),
       "CookieConsent.functionality": cookie.level.includes("functionality"),
       "CookieConsent.personalization": cookie.level.includes("personalization"),
       "CookieConsent.revision": cookie.revision
