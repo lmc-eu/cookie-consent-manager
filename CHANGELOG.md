@@ -1,4 +1,12 @@
 
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.1...0.8.2) (2021-12-02)
+
+
+### Bug Fixes
+* Actually push to dataLayer only of first accept [#CCM-46](https://jira.int.lmc.cz/browse/CCM-46) ([507ae60](https://github.com/lmc-eu/cookie-consent-manager/commit/507ae60))
+* Use proper level name stored to dataLayer ([b133746](https://github.com/lmc-eu/cookie-consent-manager/commit/b133746))
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.0...0.8.1) (2021-12-02)
 

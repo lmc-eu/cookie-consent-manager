@@ -1265,7 +1265,6 @@ var LmcCookieConsentManager = (serviceName, args) => {
     onAccept: (cookie) => {
       const givenLevels = cookieConsent.get("level");
       const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === "necessary";
-      pushToDataLayer(cookie);
       onAccept(cookie, cookieConsent);
       if (isFirstTimeAccept) {
         const cookieData = cookieConsent.get("data");
@@ -1275,6 +1274,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
             mode: "update"
           });
         }
+        pushToDataLayer(cookie);
         if (consentCollectorApiUrl !== null) {
           consentCollector_default(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary);
         }
@@ -1294,7 +1294,7 @@ function pushToDataLayer(cookie) {
     event: "CookieConsent-update",
     "CookieConsent.necessary": cookie.level.includes("necessary"),
     "CookieConsent.analytics": cookie.level.includes("analytics"),
-    "CookieConsent.ads": cookie.level.includes("ads"),
+    "CookieConsent.ad": cookie.level.includes("ad"),
     "CookieConsent.functionality": cookie.level.includes("functionality"),
     "CookieConsent.personalization": cookie.level.includes("personalization"),
     "CookieConsent.revision": cookie.revision
