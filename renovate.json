@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "config:base",
+    ":pinOnlyDevDependencies"
+  ],
+  "ignorePresets": ["group:monorepos", "group:recommended", ":prHourlyLimit2"],
+  "enabledManagers": ["npm"],
+  "branchPrefix": "dependencies/",
+  "commitMessagePrefix": "Deps: ",
+  "schedule": ["after 10pm and before 7am on monday"],
+  "packageRules": [
+    {
+      "groupName": "all dev dependencies",
+      "groupSlug": "all-dev",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["*"],
+      "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "groupName": "major prod dependencies",
+      "groupSlug": "major-prod",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["major"],
+      "matchDepTypes": ["dependencies"]
+    },
+    {
+      "groupName": "non-major prod dependencies",
+      "groupSlug": "non-major-prod",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": ["dependencies"]
+    }
+  ]
+}
