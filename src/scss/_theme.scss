@@ -21,9 +21,9 @@
 
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
     --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{tools.rem2em(tokens.$font-size-base)});
-    --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, 600); // TODO change to a Spirit token once available.
+    --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, #{tokens.$font-weight-semibold});
     --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{list.nth(tokens.$border-1, 1)});
-    --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, none); // TODO change to `#{list.nth(tokens.$border-1, 2)}` once Spirit tokens are updated.
+    --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, #{list.nth(tokens.$border-1, 2)});
     --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{tools.rem2em(tokens.$radius-1)});
 
     //
