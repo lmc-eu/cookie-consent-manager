@@ -106,8 +106,6 @@ const LmcCookieConsentManager = (serviceName, args) => {
       const givenLevels = cookieConsent.get('level');
       const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === 'necessary';
 
-      pushToDataLayer(cookie);
-
       onAccept(cookie, cookieConsent);
 
       if (isFirstTimeAccept) {
@@ -118,6 +116,8 @@ const LmcCookieConsentManager = (serviceName, args) => {
             mode: 'update',
           });
         }
+
+        pushToDataLayer(cookie);
 
         if (consentCollectorApiUrl !== null) {
           submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary);
