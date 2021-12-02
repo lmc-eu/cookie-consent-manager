@@ -14,7 +14,7 @@ module.exports = {
 
   ignorePatterns: ['node_modules', '!.*.js'],
 
-  extends: ['@lmc-eu/eslint-config-base', 'prettier'],
+  extends: ['@lmc-eu/eslint-config-base', '@lmc-eu/eslint-config-base/optional', 'prettier'],
 
   plugins: ['prettier', 'jest', '@typescript-eslint'],
 
