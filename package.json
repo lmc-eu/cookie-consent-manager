@@ -17,7 +17,8 @@
   "browser": {
     "./LmcCookieConsentManager.js": "./LmcCookieConsentManager.js",
     "./LmcCookieConsentManager.cjs": "./LmcCookieConsentManager.cjs",
-    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs"
+    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs",
+    "crypto": false
   },
   "repository": {
     "type": "git",
