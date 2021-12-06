@@ -11,6 +11,7 @@
   "enabledManagers": ["npm"],
   "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "groupName": "major prod dependencies",
