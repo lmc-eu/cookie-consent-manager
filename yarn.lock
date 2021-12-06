@@ -1305,18 +1305,26 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/browserslist-config/-/browserslist-config-1.0.1.tgz#b38221b22fdfada54f354e275f5cf0edd8911600"
   integrity sha512-2hu4+QH5pqHUMXnSPkwNRsWRBLTvKUVWdUDnT0ceB32SPIH5ktgMWD5JqHmrff0e5Ai1PWfGw5quoxLQzgRqgA==
 
-"@lmc-eu/commitlint-config@^1.0.2":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/commitlint-config/-/commitlint-config-1.0.5.tgz#e12e1fbb327e66851726cb2ab7fdb952f569accd"
-  integrity sha512-pwElDJ4pGbKmEZCRALl/rLs5DAQsT5YtE+rPSDtnfgp2QcZIQ0BSvFCETfGdyH9HIK9r7hsfPdQc5+ymJWiBcQ==
+"@lmc-eu/commitlint-config@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/commitlint-config/-/commitlint-config-1.0.6.tgz#b77bb91f98c3059d80235dfe801c8873b8d866ff"
+  integrity sha512-nTWD3n8ICP0ZQDyf4dsaDn9xKJqw1V9DklK7WoCUmj3c3gKn4EoJEbuJHmiAK8codBIvn+E9c/5oGEohgUj4dA==
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"
-    "@lmc-eu/conventional-changelog-lmc-bitbucket" "^1.3.4"
+    "@lmc-eu/conventional-changelog-lmc-bitbucket" "^1.3.5"
 
-"@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.1", "@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.4":
+"@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.1":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.4.tgz#0f87f00b1376f67a834e918ec1fad216521fdaeb"
   integrity sha512-WLRTHYOjzUiqSN1njBxWg7tZ36vrie0I5+bdxBP/6L0hCV2zzq6pScE/o2HUfk+Q7AgLukKMfqAaX2omXbAXnQ==
+  dependencies:
+    compare-func "^2.0.0"
+    q "^1.5.1"
+
+"@lmc-eu/conventional-changelog-lmc-bitbucket@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-bitbucket/-/conventional-changelog-lmc-bitbucket-1.3.5.tgz#337630ea66651d942aa7bc44866e9e31300b0d1e"
+  integrity sha512-l9pFWy+slFo82bfJ/G+/uNrOpu5/nDIOgGkhveGLj63LjHm0cpDKTEf95K6ORybXnl+IBO92ZLz55ivtlpQNPA==
   dependencies:
     compare-func "^2.0.0"
     q "^1.5.1"
