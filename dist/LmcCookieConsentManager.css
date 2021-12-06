@@ -1384,35 +1384,35 @@ html.force--consent.show--consent body {
   --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, 0.25em);
   --lmcccm-p-bg: var(--lmcccm-bg, #fff);
   --lmcccm-p-text: var(--lmcccm-text, #132930);
-  --lmcccm-p-link-text: var(--lmcccm-link-text, #77a6c0);
-  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #678fa6);
-  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #57798c);
-  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #77a6c0);
-  --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #77a6c0);
+  --lmcccm-p-link-text: var(--lmcccm-link-text, #29616f);
+  --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #1b5260);
+  --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #0b3a46);
+  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #29616f);
+  --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #29616f);
   --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #fff);
-  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #678fa6);
-  --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #678fa6);
+  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #1b5260);
+  --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #1b5260);
   --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #fff);
-  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #57798c);
-  --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #57798c);
+  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #0b3a46);
+  --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #0b3a46);
   --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #fff);
 }
 
 /* prettier-ignore */
 .c_darkmode {
-  --lmcccm-p-bg: var(--lmcccm-bg, #132930);
+  --lmcccm-p-bg: var(--lmcccm-bg, #0b1c21);
   --lmcccm-p-text: var(--lmcccm-text, #e9e9e9);
   --lmcccm-p-link-text: var(--lmcccm-link-text, #90a2a7);
   --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #849499);
   --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #6e7b80);
-  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #77a6c0);
-  --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #77a6c0);
+  --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #29616f);
+  --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #29616f);
   --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #fff);
-  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #678fa6);
-  --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #678fa6);
+  --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #1b5260);
+  --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #1b5260);
   --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #fff);
-  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #57798c);
-  --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #57798c);
+  --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #0b3a46);
+  --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #0b3a46);
   --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #fff);
 }
 

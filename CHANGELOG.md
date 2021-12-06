@@ -1,4 +1,36 @@
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.2...1.0.0) (2021-12-06)
+
+
+### Bug Fixes
+* Tell bundlers not to bundle `crypto` dependency ([22ee445](https://github.com/lmc-eu/cookie-consent-manager/commit/22ee445))
+
+### Code Refactoring
+* Move browser example into browser directory ([f6893ee](https://github.com/lmc-eu/cookie-consent-manager/commit/f6893ee))
+
+### Dependencies
+* Ignore stylelint updates ([2a25de1](https://github.com/lmc-eu/cookie-consent-manager/commit/2a25de1))
+* Pin dependencies ([5c9feb7](https://github.com/lmc-eu/cookie-consent-manager/commit/5c9feb7))
+* Update all dev dependencies ([b7bb2de](https://github.com/lmc-eu/cookie-consent-manager/commit/b7bb2de))
+* Update Spirit Design Tokens ([fc2a281](https://github.com/lmc-eu/cookie-consent-manager/commit/fc2a281))
+
+### Documentation
+* Add readmes with basic instructions for examples ([03a8e3c](https://github.com/lmc-eu/cookie-consent-manager/commit/03a8e3c))
+* Extend examples for inline `<script>` usage ([287c69d](https://github.com/lmc-eu/cookie-consent-manager/commit/287c69d))
+* Introduce example for CommonJS require ([8a30904](https://github.com/lmc-eu/cookie-consent-manager/commit/8a30904))
+* Introduce module example using webpack ([9e3876d](https://github.com/lmc-eu/cookie-consent-manager/commit/9e3876d))
+* Link CJS and ESM examples to readme ([0c2f377](https://github.com/lmc-eu/cookie-consent-manager/commit/0c2f377))
+* Rename example directories for better orientation ([51913bc](https://github.com/lmc-eu/cookie-consent-manager/commit/51913bc))
+* Spiritify Bootstrap in examples ([e6aeae2](https://github.com/lmc-eu/cookie-consent-manager/commit/e6aeae2))
+
+### Chores
+* Add label for Renovate bot ([f59f11f](https://github.com/lmc-eu/cookie-consent-manager/commit/f59f11f))
+* Add renovate.json to configure automated deps updates ([adf893f](https://github.com/lmc-eu/cookie-consent-manager/commit/adf893f))
+* Disable dependabot because of doing lot of noise ([71ddd3d](https://github.com/lmc-eu/cookie-consent-manager/commit/71ddd3d))
+* Prepare for stable release ([a215c45](https://github.com/lmc-eu/cookie-consent-manager/commit/a215c45))
+* **renovate:** Set `separateMajorMinor` to false for devDependencies ([6020fe2](https://github.com/lmc-eu/cookie-consent-manager/commit/6020fe2))
+
 <a name="0.8.2"></a>
 ## [0.8.2](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.1...0.8.2) (2021-12-02)
 
