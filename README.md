@@ -94,6 +94,8 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
    See below for [configuration options](#configuration).
 
+   You can also look at the [example with EcmaScript module syntax][examples-integration-esm].
+
 3. Include default CSS in your HTML:
    ```html
    <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
@@ -130,6 +132,8 @@ You can also use module with CommonJS import syntax:
 ```js
     const LmcCookieConsentManager = require('@lmc-eu/cookie-consent-manager');
 ```
+
+You can also look at the [example with CommonJS syntax][examples-integration-cjs].
 
 Note: We prefer to use modern ESM import syntax so this is marked as legacy.
 
@@ -458,3 +462,5 @@ for more information.
 [examples-callbacks]: https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html
 [examples-configuration]: https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html
 [examples-theming]: https://lmc-eu.github.io/cookie-consent-manager/examples/theming.html
+[examples-integration-esm]: https://github.com/lmc-eu/cookie-consent-manager/tree/main/examples/webpack-with-esm/
+[examples-integration-cjs]: https://github.com/lmc-eu/cookie-consent-manager/tree/main/examples/webpack-with-cjs/
