@@ -1339,10 +1339,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.4.5.tgz#826c410f4ccc8799fdf609aeaed00b3925066c4d"
   integrity sha512-quOQB6pUl30wi7EmAjEtZYRfyKzvzZC4EPc9gdsheJghHgsY0/J4m8lfpm1ced5+b6n1HEpwB0haL0EXDj5o7w==
 
-"@lmc-eu/stylelint-config@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-2.0.1.tgz#fe77e94e6050ee45c5f230bacf2467117a2fc10e"
-  integrity sha512-qnoXSFeWLvdJrOeQ5Cw35sqs2CcQ7hMr0JN6lO4RuPjorG/58CzGq+cInjIsurW5a/0mH2/h0lR4bZbRI2gt9w==
+"@lmc-eu/stylelint-config@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-2.0.2.tgz#d68cf3e46f54dfa368d5827eb0f347a08805f50b"
+  integrity sha512-v8vIq4s1BwGr0PFVu9sxdmSdJ/c1gvAkIxAUWn0/eF1KorodlfE+bHj5eQ9VrGA3gVakUZiMWgM2glENLX1QBQ==
   dependencies:
     stylelint-config-standard "^20.0.0"
     stylelint-order "^4.1.0"
