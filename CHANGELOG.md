@@ -1,4 +1,10 @@
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.2...1.0.0) (2021-12-06)
+
+### Chores
+* Version bump for npm publish. No code change.
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.2...1.0.0) (2021-12-06)
 
