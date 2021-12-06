@@ -1329,10 +1329,10 @@
     eslint-config-airbnb-base "^14.2.1"
     eslint-plugin-import "^2.25.2"
 
-"@lmc-eu/prettier-config@^1.0.3":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.0.tgz#b72b292bd8797ac975ef363840592ca9b79f7772"
-  integrity sha512-KLx4OyBSO3Gs7U47D6zr//cNs2tM0rgJxyRPPvbSDdSM4YTCbzR6Yo6fEhFPZ7wxcskSWrOJKFwNnAxwK3jHVg==
+"@lmc-eu/prettier-config@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.1.tgz#b9564e9b9851263f0e2f5ef7ba6c26c834c91c68"
+  integrity sha512-cqqHB31pHHdkFi1GeGJrQvwp0r3alvqxZvfJmj28gwgc+ZNpqpKIo8B149TIovn6fHL/0WU+0eITmwTyuNGDmA==
 
 "@lmc-eu/spirit-design-tokens@^0.4.5":
   version "0.4.5"
