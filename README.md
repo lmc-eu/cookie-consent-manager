@@ -46,7 +46,8 @@ window.addEventListener('load', function () {
 ```
 
 This will load the plugin from CDN and initialize the plugin with default settings.
-[👀 See example][examples].
+
+[👀 See demo page with example][examples].
 
 ## Loading the plugin
 
@@ -182,9 +183,14 @@ set `type` to `type="text/plain"` and add `data-cookiecategory` attribute with r
 
 ```html
 <script src="personalization.js" type="text/plain" data-cookiecategory="personalization" defer></script>
+
+<script type="text/plain" data-cookiecategory="functionality">
+   console.log('functionality consent given');
+</script>
 ```
 
-See [full documentation](https://github.com/orestbida/cookieconsent#manage-third-party-scripts) for this feature.
+[👀 This feature is shown in examples][examples].
+See also [full documentation](https://github.com/orestbida/cookieconsent#manage-third-party-scripts) for this feature.
 
 This feature is enabled by default. If you'd like to disable it, you can do so by overriding `page_scripts` value in
 `config` option:
