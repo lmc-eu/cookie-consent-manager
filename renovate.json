@@ -12,6 +12,7 @@
   "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
   "labels": ["dependencies"],
+  "schedule": ["after 9am and before 5pm on Monday"],
   "packageRules": [
     {
       "groupName": "major prod dependencies",
