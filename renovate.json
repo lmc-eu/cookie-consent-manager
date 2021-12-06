@@ -13,13 +13,6 @@
   "commitMessagePrefix": "Deps: ",
   "packageRules": [
     {
-      "groupName": "all dev dependencies",
-      "groupSlug": "all-dev",
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["*"],
-      "matchDepTypes": ["devDependencies"]
-    },
-    {
       "groupName": "major prod dependencies",
       "groupSlug": "major-prod",
       "matchPackagePatterns": ["*"],
@@ -32,6 +25,13 @@
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "matchDepTypes": ["dependencies"]
+    },
+    {
+      "groupName": "all dev dependencies",
+      "groupSlug": "all-dev",
+      "separateMajorMinor": false,
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"]
     }
   ]
 }
