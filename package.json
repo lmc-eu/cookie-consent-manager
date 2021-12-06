@@ -80,7 +80,7 @@
     "@lmc-eu/prettier-config": "^1.0.3",
     "@lmc-eu/stylelint-config": "^2.0.0",
     "autoprefixer": "^10.3.1",
-    "babel-jest": "^27.3.1",
+    "babel-jest": "27.4.2",
     "clean-css-cli": "^5.3.3",
     "conventional-changelog-cli": "^2.1.1",
     "esbuild": "^0.14.1",
