@@ -12,7 +12,6 @@
     --spirit-action-primary-default: #29616f;
     --spirit-action-primary-hover: #1b5260;
     --spirit-action-primary-active: #0b3a46;
-    --spirit-emotion-success-active: #8fad3a;
     --spirit-emotion-success-background: #f2f5e7;
 
     /* Bootstrap */
@@ -55,7 +54,7 @@ h2 {
 }
 
 .list-group-item-success {
-    color: var(--spirit-emotion-success-active);
+    color: var(--spirit-text-primary-default);
     background-color: var(--spirit-emotion-success-background);
 }
 
