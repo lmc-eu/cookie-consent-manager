@@ -4,3 +4,4 @@ bugfix: ['fix/*', 'bugfix/*']
 refactoring: refactor/*
 documentation: ['docs/*', 'documentation/*']
 maintenance: ['maintenance/*', 'chore/*']
+dependencies: ['dependencies/*']
