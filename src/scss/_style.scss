@@ -93,6 +93,13 @@
 // Bar
 // ===
 
+#cc--main {
+    // Use maximum permissible value for `z-index` to overlap UI of other third-party plugins. Sorry!
+    // Allow !important to override inline style injected by the plugin.
+    // stylelint-disable-next-line declaration-no-important
+    z-index: 2147483647 !important;
+}
+
 #cm {
     box-shadow: tokens.$shadow-1;
 }
