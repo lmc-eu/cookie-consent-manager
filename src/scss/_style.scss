@@ -27,12 +27,12 @@
 }
 
 .cc_div a {
-    text-decoration: underline;
+    text-decoration: var(--lmcccm-p-link-text-decoration);
     color: var(--lmcccm-p-link-text);
     border-bottom: none;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: var(--lmcccm-p-link-hover-text-decoration);
         color: var(--lmcccm-p-link-hover-text);
     }
 
@@ -173,6 +173,7 @@
 #c-bns button:first-child,
 #s-bns button:first-child {
     font-weight: var(--lmcccm-p-btn-font-weight);
+    text-transform: var(--lmcccm-p-btn-text-transform);
     border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
 
     &:hover {
