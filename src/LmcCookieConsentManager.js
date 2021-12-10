@@ -100,6 +100,7 @@ const LmcCookieConsentManager = (serviceName, args) => {
         layout: 'bar', // box/cloud/bar
         position: 'bottom center', // bottom/middle/top + left/right/center
         transition: 'slide', // zoom/slide
+        swap_buttons: true,
       },
     },
     onAccept: (cookie) => {
