@@ -41,7 +41,4 @@ export type CookieConsentOptions = {
   config: any;
 };
 
-export type CookieConsentManager = (
-  serviceName: string,
-  args: CookieConsentOptions,
-) => CookieConsent;
+export type CookieConsentManager = (serviceName: string, args: CookieConsentOptions) => CookieConsent;

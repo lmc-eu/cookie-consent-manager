@@ -9,14 +9,7 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
-import { Cookie, CookieConsent, CookieConsentLevel, OnAcceptCallback, CookieConsentOptions, CookieConsentManager } from './types';
-
-declare global {
-  interface Window {
-    dataLayer: any[];
-    initCookieConsent: () => CookieConsent;
-  }
-}
+import { Cookie, CookieConsentLevel, OnAcceptCallback, CookieConsentOptions, CookieConsentManager } from './types';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookie, cookieConsent) => {};
