@@ -1,5 +1,5 @@
 import { addSeparators, pluralize } from '../utils';
-import { Messages } from '../types/Messages';
+import { ExtraMessages, LanguageConfig, PrimaryButtonRole, SecondaryButtonRole, CookieConsentLevel } from '../types';
 
 const extra = {
   and: 'a',
@@ -8,12 +8,12 @@ const extra = {
 };
 
 /**
- * @param {Object} [messages] - Object with extra messages
- * @param {array} [messages.companyNames] - Array of strings with company names used to parametrized translations
- * @returns {Object} Object with translated messages
+ * @param {ExtraMessages} [extraMessages] - Object with extra messages
+ * @param {array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @returns {LanguageConfig} Object with translated messages
  */
-export const config = (messages: Messages) => {
-  const lang = { ...extra, ...messages };
+export const config = (extraMessages: ExtraMessages): LanguageConfig => {
+  const lang = { ...extra, ...extraMessages };
 
   return {
     consent_modal: {
@@ -29,46 +29,46 @@ export const config = (messages: Messages) => {
       Viac informácií nájdete na stránke <a href="https://www.lmc.eu/sk/cookies" target="_blank">Používanie cookies</a>.`,
       primary_btn: {
         text: 'Prijať všetky',
-        role: 'accept_all',
+        role: PrimaryButtonRole.ACCEPT_ALL,
       },
       secondary_btn: {
         text: 'Prijať nevyhnutné',
-        role: 'accept_necessary',
+        role: SecondaryButtonRole.ACCEPT_NECESSARY,
       },
     },
     settings_modal: {
       blocks: [
         {
           toggle: {
-            value: 'necessary',
+            value: CookieConsentLevel.NECESSARY,
             enabled: true,
             readonly: true,
           },
         },
         {
           toggle: {
-            value: 'ad',
+            value: CookieConsentLevel.AD,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: 'analytics',
+            value: CookieConsentLevel.ANALYTICS,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: 'functionality',
+            value: CookieConsentLevel.FUNCTIONALITY,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: 'personalization',
+            value: CookieConsentLevel.PERSONALIZATION,
             enabled: false,
             readonly: false,
           },
