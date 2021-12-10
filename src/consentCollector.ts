@@ -1,11 +1,12 @@
-import { CookieConsent, CookieConsentLevel } from './types/CookieConsent';
+import { CookieConsentLevel } from './types';
+import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /**
  * Submit information about consent level given by the user.
  */
 function submitConsent(
   consentCollectorApiUrl: string,
-  cookieConsent: CookieConsent,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentLevel>,
   acceptedOnlyNecessary: boolean,
 ): void {
   const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
@@ -13,7 +14,10 @@ function submitConsent(
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-function buildPayload(cookieConsent: CookieConsent, acceptedOnlyNecessary: boolean): Object {
+function buildPayload(
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentLevel>,
+  acceptedOnlyNecessary: boolean,
+): Object {
   const cookieData = cookieConsent.get('data');
   const acceptedCategories = cookieConsent.get('level');
   // TODO: read actual categories once following is implemented in vanilla-cookieconsent:
@@ -32,7 +36,9 @@ function buildPayload(cookieConsent: CookieConsent, acceptedOnlyNecessary: boole
       type: 'localDataAcceptationDataEntries',
       attributes: {
         acceptation_id: cookieData.uid,
-        accept_type: acceptedOnlyNecessary ? 'accept_necessary' : 'accept_all',
+        accept_type: acceptedOnlyNecessary
+          ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
+          : VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
         accepted_categories: acceptedCategories,
         rejected_categories: rejectedCategories,
         revision: cookieConsent.get('revision'),
