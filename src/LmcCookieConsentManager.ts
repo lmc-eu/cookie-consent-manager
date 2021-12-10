@@ -9,12 +9,13 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
-import { Cookie, CookieConsentLevel, OnAcceptCallback, CookieConsentOptions, CookieConsentManager } from './types';
+import { CookieConsentLevel, OnAcceptCallback, CookieConsentManagerOptions, CookieConsentManager } from './types';
+import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookie, cookieConsent) => {};
 
-const defaultOptions: CookieConsentOptions = {
+const defaultOptions: CookieConsentManagerOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
   consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries',
@@ -30,7 +31,7 @@ const defaultOptions: CookieConsentOptions = {
 
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
- * @param {CookieConsentOptions} [args] - Options for cookie consent manager
+ * @param {CookieConsentManagerOptions} [args] - Options for cookie consent manager
  * @param {string} [args.defaultLang] - Default language. Must be one of predefined languages.
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
  * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent.
@@ -47,9 +48,9 @@ const defaultOptions: CookieConsentOptions = {
  *   (either given right now or already saved previously)
  * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
- * @param {Object} [args.config] - Override default config.
+ * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {CookieConsent} Instance of the underlying CookieConsent component.
+ * @returns {VanillaCookieConsent.CookieConsent<CookieConsentLevel>} Instance of the underlying CookieConsent component.
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
@@ -99,14 +100,14 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
       consent_modal: {
-        layout: 'bar', // box/cloud/bar
-        position: 'bottom center', // bottom/middle/top + left/right/center
-        transition: 'slide', // zoom/slide
+        layout: VanillaCookieConsent.GuiConsentLayout.BAR, // box/cloud/bar
+        position: VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER, // bottom/middle/top + left/right/center
+        transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
       },
     },
-    onAccept: (cookie: Cookie) => {
+    onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentLevel>) => {
       const givenLevels = cookieConsent.get('level');
-      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === 'necessary';
+      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === CookieConsentLevel.NECESSARY;
 
       onAccept(cookie, cookieConsent);
 
@@ -143,7 +144,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-function pushToDataLayer(cookie: Cookie) {
+function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentLevel>) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',

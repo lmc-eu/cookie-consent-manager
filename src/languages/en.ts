@@ -1,5 +1,6 @@
 import { addSeparators } from '../utils';
-import { ExtraMessages, LanguageConfig, PrimaryButtonRole, SecondaryButtonRole, CookieConsentLevel } from '../types';
+import { ExtraMessages, CookieConsentLevel } from '../types';
+import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
   and: 'and',
@@ -7,9 +8,9 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
- * @returns {LanguageConfig} Object with translated messages
+ * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): LanguageConfig => {
+export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -22,11 +23,11 @@ export const config = (extraMessages: ExtraMessages): LanguageConfig => {
       For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use of cookies</a>.`,
       primary_btn: {
         text: 'Accept all',
-        role: PrimaryButtonRole.ACCEPT_ALL,
+        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
       secondary_btn: {
         text: 'Accept necessary',
-        role: SecondaryButtonRole.ACCEPT_NECESSARY,
+        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
       },
     },
     settings_modal: {
