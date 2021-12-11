@@ -7,40 +7,24 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 function submitConsent(
   consentCollectorApiUrl: string,
   cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
-  acceptedOnlyNecessary: boolean,
 ): void {
-  const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
+  const payload = buildPayload(cookieConsent);
 
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-function buildPayload(
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
-  acceptedOnlyNecessary: boolean,
-): Object {
+function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>): Object {
   const cookieData = cookieConsent.get('data');
-  const acceptedCategories = cookieConsent.get('level');
-  // TODO: read actual categories once following is implemented in vanilla-cookieconsent:
-  // https://github.com/orestbida/cookieconsent/discussions/90#discussioncomment-1466886
-  const rejectedCategories = acceptedOnlyNecessary
-    ? [
-        CookieConsentCategory.AD,
-        CookieConsentCategory.ANALYTICS,
-        CookieConsentCategory.FUNCTIONALITY,
-        CookieConsentCategory.PERSONALIZATION,
-      ]
-    : [];
+  const userPreferences = cookieConsent.getUserPreferences();
 
   return {
     data: {
       type: 'localDataAcceptationDataEntries',
       attributes: {
         acceptation_id: cookieData.uid,
-        accept_type: acceptedOnlyNecessary
-          ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-          : VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-        accepted_categories: acceptedCategories,
-        rejected_categories: rejectedCategories,
+        accept_type: `accept_${userPreferences.accept_type}`,
+        accepted_categories: userPreferences.accepted_categories,
+        rejected_categories: userPreferences.rejected_categories,
         revision: cookieConsent.get('revision'),
         source: cookieData.serviceName,
         language: cookieConsent.getConfig('current_lang'),

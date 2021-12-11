@@ -123,7 +123,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
         pushToDataLayer(cookie);
 
         if (consentCollectorApiUrl !== null) {
-          submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary);
+          submitConsent(consentCollectorApiUrl, cookieConsent);
         }
 
         onFirstAccept(cookie, cookieConsent);
