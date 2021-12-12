@@ -15,3 +15,6 @@ dist
 
 # Some tools use this pattern for their configuration files. Lint them!
 !*.config.js
+
+# Do not lint build output in examples
+examples/*/bundle.js
