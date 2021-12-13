@@ -158,8 +158,10 @@ consent category. This must be done *before* the respective cookie is set.
 
 ### GTM (Google Tag Manager) scripts
 
-GTM scripts are managed centrally, so after implementing the library you don't need to worry about them.
-The library sets all the required data to GTM dataLayer.
+GTM scripts are managed centrally in LMC, so after implementing this library, you don't need to worry about conditions
+when to run them. The library sets all the required data to GTM dataLayer.
+
+However, keep in mind you still need to **take care of already existing cookies**, even of those created by GTM scripts.
 
 ### Custom methods
 
