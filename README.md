@@ -148,13 +148,13 @@ consent category. This must be done *before* the respective cookie is set.
 
 ### Consent categories
 
-| Category          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `necessary`       | Strictly necessary cookies are essential for user to browse the website and use its features, such as accessing secure areas of the site. These cookies are first-party cookies.<br>Some examples of strictly necessary cookies: Session cookies, Cookie banner cookies, Load balancing cookies, CSFR tokens, Language selection cookies, Region/country cookies, Performance cookies, Application firewall cookies and JavaScript check cookies.<br>For these cookies you **don't need to check** whether user actually has this level. |
-| `ad`              | For cookies related to advertising                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `analytics`       | For analysis and statistics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `functionality`   | For extended functionality (not covered by `necessary` category)                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `personalization` | For personalization based on user profiling (recommendation, etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Category          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `necessary`       | Strictly necessary cookies are essential for user to browse the website and use its features, such as accessing secure areas of the site. These cookies are first-party cookies.<br>Some examples of strictly necessary cookies: Session cookies, Cookie banner cookies, Load balancing cookies, CSFR tokens, Language selection cookies, Region/country cookies, Performance cookies, Application firewall cookies and JavaScript check cookies.<br>For these cookies you **don't need to check** whether user actually has this category. |
+| `ad`              | For cookies related to advertising                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `analytics`       | For analysis and statistics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `functionality`   | For extended functionality (not covered by `necessary` category)                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `personalization` | For personalization based on user profiling (recommendation, etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### GTM (Google Tag Manager) scripts
 
@@ -194,7 +194,7 @@ set `type` to `type="text/plain"` and add `data-cookiecategory` attribute with r
 ```
 
 [👀 This feature is shown in examples][examples].
-See also [full documentation](https://github.com/orestbida/cookieconsent#manage-third-party-scripts) for this feature.
+See also [full documentation][cookie consent third party] for this feature.
 
 This feature is enabled by default. If you'd like to disable it, you can do so by overriding `page_scripts` value in
 `config` option:
@@ -225,7 +225,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
       // custom code
     },
     config: {
-      // overrides of default config, see https://github.com/orestbida/cookieconsent#all-available-options
+      // overrides of default config, see https://github.com/orestbida/cookieconsent#all-configuration-options
     },
   }
 );
@@ -235,14 +235,14 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 
 ## Configuration options
 
-| Option          | Type        | Default value                      | Description                                                                                                                               |
-|-----------------|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| Option          | Type        | Default value                      | Description                                                                                                                                                                                              |
+|-----------------|-------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `autodetectLang`| boolean     | `true`                             | Autodetect language based on the value of `<html lang="...">`. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
-| `defaultLang`   | string      | `'cs'`                             | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails. |
-| `companyNames`  | array       | `['LMC']`                          | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration]. |
-| `consentCollectorApiUrl`| ?string | `'https://ccm.lmc.cz/(...)'`   | URL of the API where user consent information is sent. Null to disable sending data to the API. |
-| `config`        | Object      | `{}`                               | Override default config of the underlying library. For all parameters see [original library](https://github.com/orestbida/cookieconsent#all-available-options). |
-| `on*` callbacks | function    | `(cookie, cookieConsent) => {}`    | See below for configurable callbacks. |
+| `defaultLang`   | string      | `'cs'`                             | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                                                        |
+| `companyNames`  | array       | `['LMC']`                          | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration].                                                        |
+| `consentCollectorApiUrl`| ?string | `'https://ccm.lmc.cz/(...)'`   | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                          |
+| `config`        | Object      | `{}`                               | Override default config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                    |
+| `on*` callbacks | function    | `(cookie, cookieConsent) => {}`    | See below for configurable callbacks.                                                                                                                                                                    |
 
 ### Supported languages
 
@@ -258,16 +258,16 @@ for example, to enable some feature after user has given consent.
 Each configured callback receives two params:
 
 * `cookie` - object with cookie contents
-* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods](https://github.com/orestbida/cookieconsent#api--configuration-parameters)
+* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods][cookie consent api]
 
-| Callback                    | Trigger event |
-|-----------------------------|---------------|
-| `onAcceptAll`               | Consent with all cookies is detected (either given now or after page load if it was already saved previously) |
-| `onAcceptOnlyNecessary`     | Consent with only necessary cookies is detected (either given now or after page load if it was already saved previously)* |
-| `onAccept`                  | Any consent is detected (either given now or after page load if it was already saved previously) |
-| `onFirstAcceptAll`          | Right after all cookies are accepted |
-| `onFirstAcceptOnlyNecessary`| Right after only necessary cookies are just accepted by the user |
-| `onFirstAccept`             | Right after any consent is just accepted by the user |
+| Callback                     | Trigger event                                                                                                             |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| `onAcceptAll`                | Consent with all cookies is detected (either given now or after page load if it was already saved previously)             |
+| `onAcceptOnlyNecessary`      | Consent with only necessary cookies is detected (either given now or after page load if it was already saved previously)* |
+| `onAccept`                   | Any consent is detected (either given now or after page load if it was already saved previously)                          |
+| `onFirstAcceptAll`           | Right after all cookies are accepted                                                                                      |
+| `onFirstAcceptOnlyNecessary` | Right after only necessary cookies are just accepted by the user                                                          |
+| `onFirstAccept`              | Right after any consent is just accepted by the user                                                                      |
 
 [👀 See callbacks example][examples-callbacks]
 
@@ -451,6 +451,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cooki
 for more information.
 
 [cookie consent]: https://github.com/orestbida/cookieconsent
+[cookie consent api]: https://github.com/orestbida/cookieconsent#api-methods
+[cookie consent third party]: https://github.com/orestbida/cookieconsent#manage-third-party-scripts
+[cookie consent options]: https://github.com/orestbida/cookieconsent#all-configuration-options
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
 [spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
