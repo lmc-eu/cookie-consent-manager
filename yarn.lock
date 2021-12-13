@@ -1334,10 +1334,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.1.tgz#b9564e9b9851263f0e2f5ef7ba6c26c834c91c68"
   integrity sha512-cqqHB31pHHdkFi1GeGJrQvwp0r3alvqxZvfJmj28gwgc+ZNpqpKIo8B149TIovn6fHL/0WU+0eITmwTyuNGDmA==
 
-"@lmc-eu/spirit-design-tokens@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.4.5.tgz#826c410f4ccc8799fdf609aeaed00b3925066c4d"
-  integrity sha512-quOQB6pUl30wi7EmAjEtZYRfyKzvzZC4EPc9gdsheJghHgsY0/J4m8lfpm1ced5+b6n1HEpwB0haL0EXDj5o7w==
+"@lmc-eu/spirit-design-tokens@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.5.0.tgz#479949f25d1d7708fc87d82688a461d8cbb7fa14"
+  integrity sha512-+bQeAXhNkmM7rKzMZpl+zTyAc3XJ5hu6e+ff09InlGaXxU4n7540pEMaC5TC0OQgvNs+bHhLM+ugmeRraVMzGA==
 
 "@lmc-eu/stylelint-config@2.0.2":
   version "2.0.2"
