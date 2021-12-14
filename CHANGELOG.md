@@ -1,6 +1,26 @@
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/lmc-eu/cookie-consent-manager/compare/1.0.1...1.0.2) (2021-12-14)
+
+### Dependencies
+* Update all dev dependencies ([ba55e29](https://github.com/lmc-eu/cookie-consent-manager/commit/ba55e29))
+* Update all dev dependencies ([4a23611](https://github.com/lmc-eu/cookie-consent-manager/commit/4a23611))
+* Update dependency stylelint-order to v5 ([65db9eb](https://github.com/lmc-eu/cookie-consent-manager/commit/65db9eb))
+
+### Documentation
+* Fix links and formatting in readme ([41209fa](https://github.com/lmc-eu/cookie-consent-manager/commit/41209fa))
+* Change text color of success state to improve its contrast with background ([b444af2](https://github.com/lmc-eu/cookie-consent-manager/commit/b444af2))
+* **lighthouse:** Fix errors reported by Google Lighthouse in examples ([90905fb](https://github.com/lmc-eu/cookie-consent-manager/commit/90905fb))
+* Make it clear one need to take care of already existing cookies ([82f2f9a](https://github.com/lmc-eu/cookie-consent-manager/commit/82f2f9a))
+
+### Chores
+* Annotate the CommonJS export names for ESM import in Node ([09aa8e6](https://github.com/lmc-eu/cookie-consent-manager/commit/09aa8e6))
+* Do not lint build.js in examples ([e5e171b](https://github.com/lmc-eu/cookie-consent-manager/commit/e5e171b))
+* Label bugfix pull requests with "bug" label ([6f10f31](https://github.com/lmc-eu/cookie-consent-manager/commit/6f10f31))
+* **renovate:** Schedule dependency updates on weekly basis ([b08c018](https://github.com/lmc-eu/cookie-consent-manager/commit/b08c018))
+
 <a name="1.0.1"></a>
-## [1.0.1](https://github.com/lmc-eu/cookie-consent-manager/compare/0.8.2...1.0.0) (2021-12-06)
+## [1.0.1](https://github.com/lmc-eu/cookie-consent-manager/compare/1.0.0...1.0.1) (2021-12-06)
 
 ### Chores
 * Version bump for npm publish. No code change.
