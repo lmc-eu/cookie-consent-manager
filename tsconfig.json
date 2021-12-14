@@ -23,6 +23,7 @@
   ],
   "exclude": [
     "./dist",
+    "./examples",
   ],
   "ts-node": {
     "compilerOptions": {
