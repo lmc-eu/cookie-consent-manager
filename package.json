@@ -17,8 +17,7 @@
   "browser": {
     "./LmcCookieConsentManager.js": "./LmcCookieConsentManager.js",
     "./LmcCookieConsentManager.cjs": "./LmcCookieConsentManager.cjs",
-    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs",
-    "crypto": false
+    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs"
   },
   "repository": {
     "type": "git",
@@ -47,7 +46,7 @@
     "prebuild": "npm-run-all --serial build:clean build:copy",
     "build:clean": "rm -rf dist && mkdir -p dist/scss",
     "build:copy": "cp package.json README.md src/LmcCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
-    "build": "npm-run-all --serial js:compile css",
+    "build": "npm-run-all --serial js css",
     "start": "node scripts/serve.js",
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
