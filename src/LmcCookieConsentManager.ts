@@ -9,7 +9,7 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
-import { CookieConsentCategory, OnAcceptCallback, CookieConsentManagerOptions, CookieConsentManager } from './types';
+import { CookieConsentCategory, CookieConsentManager, CookieConsentManagerOptions, OnAcceptCallback } from './types';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
@@ -74,7 +74,6 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
-  const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
 
   const languages = {
     cs: configCs({ companyNames }),
@@ -106,33 +105,37 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
       },
     },
     onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) => {
-      const givenLevels = cookieConsent.get('level');
-      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === CookieConsentCategory.NECESSARY;
+      const userPreferences = cookieConsent.getUserPreferences();
 
       onAccept(cookie, cookieConsent);
 
-      if (isFirstTimeAccept) {
-        const cookieData = cookieConsent.get('data');
-        if (cookieData === null || !('uid' in cookieData)) {
-          cookieConsent.set('data', {
-            value: { serviceName, uid: nanoid() },
-            mode: 'update',
-          });
-        }
-
-        pushToDataLayer(cookie);
-
-        if (consentCollectorApiUrl !== null) {
-          submitConsent(consentCollectorApiUrl, cookieConsent);
-        }
-
-        onFirstAccept(cookie, cookieConsent);
-        acceptedOnlyNecessary
-          ? onFirstAcceptOnlyNecessary(cookie, cookieConsent)
-          : onFirstAcceptAll(cookie, cookieConsent);
+      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY
+        ? onAcceptOnlyNecessary(cookie, cookieConsent)
+        : onAcceptAll(cookie, cookieConsent);
+    },
+    onFirstAction: (
+      userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategory>,
+      cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+    ) => {
+      const cookieData = cookieConsent.get('data');
+      if (cookieData === null || !('uid' in cookieData)) {
+        cookieConsent.set('data', {
+          value: { serviceName, uid: nanoid() },
+          mode: 'update',
+        });
       }
 
-      acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
+      pushToDataLayer(cookie);
+
+      if (consentCollectorApiUrl !== null) {
+        submitConsent(consentCollectorApiUrl, cookieConsent);
+      }
+
+      onFirstAccept(cookie, cookieConsent);
+
+      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY
+        ? onFirstAcceptOnlyNecessary(cookie, cookieConsent)
+        : onFirstAcceptAll(cookie, cookieConsent);
     },
     languages,
     // override default config if necessary
