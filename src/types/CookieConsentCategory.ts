@@ -1,4 +1,4 @@
-export enum CookieConsentLevel {
+export enum CookieConsentCategory {
   NECESSARY = 'necessary',
   AD = 'ad',
   ANALYTICS = 'analytics',
