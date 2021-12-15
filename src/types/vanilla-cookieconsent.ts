@@ -1,7 +1,7 @@
 export namespace VanillaCookieConsent {
-  export interface Cookie<Level> {
+  export interface Cookie<Category> {
     data: any;
-    level: Array<Level>;
+    level: Array<Category>;
     revision: number;
     rfc_cookie: boolean;
   }
@@ -10,13 +10,13 @@ export namespace VanillaCookieConsent {
    * Instance of the underlying CookieConsent component.
    *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
    */
-  export type CookieConsent<Level> = {
+  export type CookieConsent<Category> = {
     get: (name: string) => any;
     set: (name: string, value: any) => void;
     run: (config: any) => void;
     validCookie: (name: string) => boolean;
     getConfig: (name: string) => any;
-    allowedCategory: (category: Level) => boolean;
+    allowedCategory: (category: Category) => boolean;
     eraseCookies: (cookies: string | string[], path?: string, domain?: string) => void;
   };
 

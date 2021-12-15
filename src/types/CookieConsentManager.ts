@@ -1,9 +1,9 @@
-import { CookieConsentLevel } from './CookieConsentLevel';
+import { CookieConsentCategory } from './CookieConsentCategory';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
 
 export type OnAcceptCallback = (
-  cookie: VanillaCookieConsent.Cookie<CookieConsentLevel>,
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentLevel>,
+  cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
 ) => void;
 
 export type CookieConsentManagerOptions = {
@@ -23,4 +23,4 @@ export type CookieConsentManagerOptions = {
 export type CookieConsentManager = (
   serviceName: string,
   args: CookieConsentManagerOptions,
-) => VanillaCookieConsent.CookieConsent<CookieConsentLevel>;
+) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;

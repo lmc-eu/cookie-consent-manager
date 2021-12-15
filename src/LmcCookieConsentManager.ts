@@ -9,7 +9,7 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
-import { CookieConsentLevel, OnAcceptCallback, CookieConsentManagerOptions, CookieConsentManager } from './types';
+import { CookieConsentCategory, OnAcceptCallback, CookieConsentManagerOptions, CookieConsentManager } from './types';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
@@ -50,7 +50,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  *   to be given to multiple companies.
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {VanillaCookieConsent.CookieConsent<CookieConsentLevel>} Instance of the underlying CookieConsent component.
+ * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
@@ -105,9 +105,9 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
         transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
       },
     },
-    onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentLevel>) => {
+    onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) => {
       const givenLevels = cookieConsent.get('level');
-      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === CookieConsentLevel.NECESSARY;
+      const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === CookieConsentCategory.NECESSARY;
 
       onAccept(cookie, cookieConsent);
 
@@ -144,15 +144,15 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentLevel>) {
+function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',
-    'CookieConsent.necessary': cookie.level.includes(CookieConsentLevel.NECESSARY),
-    'CookieConsent.analytics': cookie.level.includes(CookieConsentLevel.ANALYTICS),
-    'CookieConsent.ad': cookie.level.includes(CookieConsentLevel.AD),
-    'CookieConsent.functionality': cookie.level.includes(CookieConsentLevel.FUNCTIONALITY),
-    'CookieConsent.personalization': cookie.level.includes(CookieConsentLevel.PERSONALIZATION),
+    'CookieConsent.necessary': cookie.level.includes(CookieConsentCategory.NECESSARY),
+    'CookieConsent.analytics': cookie.level.includes(CookieConsentCategory.ANALYTICS),
+    'CookieConsent.ad': cookie.level.includes(CookieConsentCategory.AD),
+    'CookieConsent.functionality': cookie.level.includes(CookieConsentCategory.FUNCTIONALITY),
+    'CookieConsent.personalization': cookie.level.includes(CookieConsentCategory.PERSONALIZATION),
     'CookieConsent.revision': cookie.revision,
   });
 }

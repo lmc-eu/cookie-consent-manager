@@ -1,4 +1,4 @@
-import { CookieConsentLevel } from './types';
+import { CookieConsentCategory } from './types';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /**
@@ -6,7 +6,7 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
  */
 function submitConsent(
   consentCollectorApiUrl: string,
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentLevel>,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
   acceptedOnlyNecessary: boolean,
 ): void {
   const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
@@ -15,7 +15,7 @@ function submitConsent(
 }
 
 function buildPayload(
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentLevel>,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
   acceptedOnlyNecessary: boolean,
 ): Object {
   const cookieData = cookieConsent.get('data');
@@ -24,10 +24,10 @@ function buildPayload(
   // https://github.com/orestbida/cookieconsent/discussions/90#discussioncomment-1466886
   const rejectedCategories = acceptedOnlyNecessary
     ? [
-        CookieConsentLevel.AD,
-        CookieConsentLevel.ANALYTICS,
-        CookieConsentLevel.FUNCTIONALITY,
-        CookieConsentLevel.PERSONALIZATION,
+        CookieConsentCategory.AD,
+        CookieConsentCategory.ANALYTICS,
+        CookieConsentCategory.FUNCTIONALITY,
+        CookieConsentCategory.PERSONALIZATION,
       ]
     : [];
 

@@ -1,5 +1,5 @@
 import { addSeparators, pluralize } from '../utils';
-import { ExtraMessages, CookieConsentLevel } from '../types';
+import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
@@ -41,35 +41,35 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       blocks: [
         {
           toggle: {
-            value: CookieConsentLevel.NECESSARY,
+            value: CookieConsentCategory.NECESSARY,
             enabled: true,
             readonly: true,
           },
         },
         {
           toggle: {
-            value: CookieConsentLevel.AD,
+            value: CookieConsentCategory.AD,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: CookieConsentLevel.ANALYTICS,
+            value: CookieConsentCategory.ANALYTICS,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: CookieConsentLevel.FUNCTIONALITY,
+            value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
             readonly: false,
           },
         },
         {
           toggle: {
-            value: CookieConsentLevel.PERSONALIZATION,
+            value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,
             readonly: false,
           },
