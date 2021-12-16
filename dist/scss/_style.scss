@@ -27,12 +27,12 @@
 }
 
 .cc_div a {
-    text-decoration: underline;
+    text-decoration: var(--lmcccm-p-link-text-decoration);
     color: var(--lmcccm-p-link-text);
     border-bottom: none;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: var(--lmcccm-p-link-hover-text-decoration);
         color: var(--lmcccm-p-link-hover-text);
     }
 
@@ -92,6 +92,13 @@
 //
 // Bar
 // ===
+
+#cc--main {
+    // Use maximum permissible value for `z-index` to overlap UI of other third-party plugins. Sorry!
+    // Allow !important to override inline style injected by the plugin.
+    // stylelint-disable-next-line declaration-no-important
+    z-index: 2147483647 !important;
+}
 
 #cm {
     box-shadow: tokens.$shadow-1;
@@ -166,6 +173,7 @@
 #c-bns button:first-child,
 #s-bns button:first-child {
     font-weight: var(--lmcccm-p-btn-font-weight);
+    text-transform: var(--lmcccm-p-btn-text-transform);
     border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
 
     &:hover {

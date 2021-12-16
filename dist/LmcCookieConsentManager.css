@@ -1378,7 +1378,10 @@ html.force--consent.show--consent body {
 :root {
   --lmcccm-p-font-family: var(--lmcccm-font-family, Inter, sans-serif);
   --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, 1em);
+  --lmcccm-p-link-text-decoration: var(--lmcccm-link-text-decoration, underline);
+  --lmcccm-p-link-hover-text-decoration: var(--lmcccm-link-hover-text-decoration, underline);
   --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, 600);
+  --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
   --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, 0);
   --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, none);
   --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, 0.25em);
@@ -1442,12 +1445,14 @@ html.force--consent.show--consent body {
 }
 
 .cc_div a {
-  text-decoration: underline;
+  -webkit-text-decoration: var(--lmcccm-p-link-text-decoration);
+          text-decoration: var(--lmcccm-p-link-text-decoration);
   color: var(--lmcccm-p-link-text);
   border-bottom: none;
 }
 .cc_div a:hover {
-  text-decoration: underline;
+  -webkit-text-decoration: var(--lmcccm-p-link-hover-text-decoration);
+          text-decoration: var(--lmcccm-p-link-hover-text-decoration);
   color: var(--lmcccm-p-link-hover-text);
 }
 .cc_div a:active {
@@ -1499,6 +1504,10 @@ html.force--consent.show--consent body {
 #s-c-bn:active,
 #s-cnt button + button:active {
   color: var(--lmcccm-p-link-active-text);
+}
+
+#cc--main {
+  z-index: 2147483647 !important;
 }
 
 #cm {
@@ -1568,6 +1577,7 @@ html.force--consent.show--consent body {
 #c-bns button:first-child,
 #s-bns button:first-child {
   font-weight: var(--lmcccm-p-btn-font-weight);
+  text-transform: var(--lmcccm-p-btn-text-transform);
   border: var(--lmcccm-p-btn-border-width) var(--lmcccm-p-btn-border-style) var(--lmcccm-p-btn-primary-border);
 }
 #c-bns button:first-child:hover,

@@ -1,4 +1,42 @@
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.0.2...1.1.0) (2021-12-16)
+
+
+### Code Refactoring
+
+* **typescript:** Introduce support for Typescript language [#CCM-40](https://jira.int.lmc.cz/browse/CCM-40) ([3b34deb](https://github.com/lmc-eu/cookie-consent-manager/commit/3b34deb))
+* **typescript:** Migrate all source files to Typescript ([c74e5a8](https://github.com/lmc-eu/cookie-consent-manager/commit/c74e5a8))
+* **typescript:** Separate types for cookie consent manager ([cf0e933](https://github.com/lmc-eu/cookie-consent-manager/commit/cf0e933))
+* **languages:** Introduce types for language configuration ([4b20feb](https://github.com/lmc-eu/cookie-consent-manager/commit/4b20feb))
+* Use category instead of level in type names ([d348f59](https://github.com/lmc-eu/cookie-consent-manager/commit/d348f59))
+
+### Dependencies
+
+* Pin dependencies ([5bd9f67](https://github.com/lmc-eu/cookie-consent-manager/commit/5bd9f67))
+* Update dependency @lmc-eu/spirit-design-tokens to ^0.5.0 ([1778c57](https://github.com/lmc-eu/cookie-consent-manager/commit/1778c57))
+* Upgrade @lmc-eu/esling-config-base to 1.1.0 ([9e3a217](https://github.com/lmc-eu/cookie-consent-manager/commit/9e3a217))
+
+### Features
+
+* Add more theming options for links and buttons (`link-text-decoration`, `link-hover-text-decoration`, `btn-text-transform`) ([8ee958b](https://github.com/lmc-eu/cookie-consent-manager/commit/8ee958b))
+* Attempt to overlap UI of other third-party plugins ([693fe02](https://github.com/lmc-eu/cookie-consent-manager/commit/693fe02))
+
+### Chores
+
+* Add script for code coverage by tests ([86220c8](https://github.com/lmc-eu/cookie-consent-manager/commit/86220c8))
+* **typescript:** Remove unused babel because we use tyescript [#CCM-40](https://jira.int.lmc.cz/browse/CCM-40) ([45b9e6c](https://github.com/lmc-eu/cookie-consent-manager/commit/45b9e6c))
+* **typescript:** Run type check on ci pipeline [#CCM-40](https://jira.int.lmc.cz/browse/CCM-40) ([652d367](https://github.com/lmc-eu/cookie-consent-manager/commit/652d367))
+
+### Styles
+
+* Use additional insights of eslint's base config as recommended ([2bd3398](https://github.com/lmc-eu/cookie-consent-manager/commit/2bd3398))
+
+### Tests
+
+
+* Fix module naming collision by ignoring `./dist` directory ([a933611](https://github.com/lmc-eu/cookie-consent-manager/commit/a933611))
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/lmc-eu/cookie-consent-manager/compare/1.0.1...1.0.2) (2021-12-14)
 
