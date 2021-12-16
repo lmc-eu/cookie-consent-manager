@@ -1603,7 +1603,12 @@ html.force--consent.show--consent body {
   margin-right: 1.5em;
   font-weight: inherit;
   font-size: inherit;
-  text-decoration: underline;
+  -webkit-text-decoration: var(--lmcccm-p-link-text-decoration);
+          text-decoration: var(--lmcccm-p-link-text-decoration);
+}
+#cm .c-bn.c_link:hover {
+  -webkit-text-decoration: var(--lmcccm-p-link-hover-text-decoration);
+          text-decoration: var(--lmcccm-p-link-hover-text-decoration);
 }
 
 @media screen and (max-width: 688px) {

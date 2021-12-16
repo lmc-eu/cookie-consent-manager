@@ -199,7 +199,11 @@
     margin-right: tools.rem2em(tokens.$space-7);
     font-weight: inherit;
     font-size: inherit;
-    text-decoration: underline;
+    text-decoration: var(--lmcccm-p-link-text-decoration);
+
+    &:hover {
+        text-decoration: var(--lmcccm-p-link-hover-text-decoration);
+    }
 }
 
 @media screen and (max-width: settings.$breakpoint-tablet-down) {
