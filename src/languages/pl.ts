@@ -1,9 +1,11 @@
-import { addSeparators } from '../utils';
+import { addSeparators, pluralize } from '../utils';
 import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
   and: 'i',
+  company: 'firmę',
+  companies: 'firmy',
 };
 
 /**
@@ -16,12 +18,14 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Ta strona używa cookies',
-      description: `Klikając „Akceptuję wszystkie”, wyrażasz zgodę dla ${addSeparators(
+      title: 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
+      description: `Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
+      Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
+      ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(
         lang.companyNames,
         extra.and,
-      )} do wykorzystywania plików i innych identyfikatorów na Twoim urządzeniu. Korzystanie z tych plików cookie i innych identyfikatorów ułatwi nawigację w serwisie, wyświetlanie spersonalizowanych treści, marketing ukierunkowany, analizę korzystania z naszych produktów i usług.
-      Więcej informacji znajdziesz na stronie <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z plików Cookies</a>.`,
+      )} do personalizacji, analizy i ukierunkowanego marketingu.
+      <a href="https://www.lmc.eu/pl/cookies" target="_blank">Co to są pliki cookie i jak je wykorzystujemy?</a>`,
       primary_btn: {
         text: 'Akceptuj wszystkie',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
