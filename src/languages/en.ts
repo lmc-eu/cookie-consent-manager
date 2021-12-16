@@ -15,12 +15,13 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'This website uses cookies',
-      description: `By clicking on "Accept all", you give your consent to ${addSeparators(
+      title: 'Cookies make our site even better',
+      description: `By better understanding what you're interested in, we'll show you more relevant content.
+      By clicking the "Accept all" button, you give ${addSeparators(
         lang.companyNames,
         extra.and,
-      )} to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
-      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use of cookies</a>.`,
+      )} your consent to use cookies for personalisation, analytics and targeted marketing.
+      <a href="https://www.lmc.eu/en/cookies/" target="_blank">What are cookies and how do we use them?</a>`,
       primary_btn: {
         text: 'Accept all',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

@@ -1,5 +1,5 @@
 import { addSeparators, pluralize } from '../utils';
-import { ExtraMessages, CookieConsentCategory } from '../types';
+import { CookieConsentCategory, ExtraMessages } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
@@ -18,18 +18,19 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Tyto stránky využívají cookies',
-      description: `Kliknutím na „Přijmout vše“ dáváte souhlas ${pluralize(
+      title: 'Díky Cookies budou naše stránky ještě lepší',
+      description: `Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
+      Kliknutím na tlačítko „Přijmout všechny“ dáte ${pluralize(
         lang.companyNames.length,
         lang.company,
         lang.companies,
       )} ${addSeparators(
         lang.companyNames,
         lang.and,
-      )} k využívání souborů Cookies a dalších identifikátorů ve vašem zařízení. Použití těchto Cookies a dalších identifikátorů usnadní navigaci na stránkách, zobrazení personalizovaného obsahu, cílený marketing, analýzu využívání našich produktů a služeb.
-      Více informací naleznete na stránce <a href="https://www.lmc.eu/cs/cookies" target="_blank">Používání cookies</a>.`,
+      )} souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
+      <a href="https://www.lmc.eu/cs/cookies" target="_blank">Co jsou to Cookies a jak je používáme?</a>`,
       primary_btn: {
-        text: 'Přijmout vše',
+        text: 'Přijmout všechny',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
       secondary_btn: {
