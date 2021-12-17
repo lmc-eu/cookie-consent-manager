@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-branch = $1
+$branch = $1
 
 function has_code_changes() {
   git diff --quiet HEAD origin/main -- src examples
