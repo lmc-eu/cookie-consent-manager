@@ -22,5 +22,5 @@ export type CookieConsentManagerOptions = {
 
 export type CookieConsentManager = (
   serviceName: string,
-  args: CookieConsentManagerOptions,
+  args?: Partial<CookieConsentManagerOptions>,
 ) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;
