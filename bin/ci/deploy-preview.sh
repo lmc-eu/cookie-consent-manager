@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 function has_code_changes() {
+  git fetch --no-tags --depth=50 origin main
   git diff --quiet HEAD origin/main -- src examples
 
   if [ $? -eq 0 ]; then
