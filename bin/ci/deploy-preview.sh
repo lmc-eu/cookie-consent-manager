@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-$branch = $1
-
 function has_code_changes() {
   git diff --quiet HEAD origin/main -- src examples
 
@@ -13,7 +11,7 @@ function has_code_changes() {
 }
 
 function trigger_build() {
-  curl -X POST -d '{}' https://api.netlify.com/build_hooks/61bca39f3b89823193476ecd?trigger_branch=${branch}
+  curl -X POST -d '{}' https://api.netlify.com/build_hooks/61bca39f3b89823193476ecd?trigger_branch=$1
 }
 
 has_code_changes && trigger_build
