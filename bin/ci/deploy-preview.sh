@@ -3,7 +3,7 @@
 branch = $1
 
 function has_code_changes() {
-  git diff --quiet HEAD main -- src examples
+  git diff --quiet HEAD origin/main -- src examples
 
   if [ $? -eq 0 ]; then
     return 0
