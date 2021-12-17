@@ -1,0 +1,19 @@
+name: Deploy Preview
+
+on:
+  push
+
+jobs:
+  preview:
+    name: Trigger deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5
+
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Trigger deploy
+        run: ./bin/ci/deploy-preview.sh ${{ steps.branch-name.outputs.current_branch }}
