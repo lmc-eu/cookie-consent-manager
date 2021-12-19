@@ -1,4 +1,14 @@
 
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/1.1.1...1.1.2) (2021-12-19)
+
+### Bug Fixes
+
+* **types:** Make options to be optional ([73af5a3](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/73af5a3))
+### Chores
+
+* Improve jest tests performance ([a994b3c](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/a994b3c))
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/lmc-eu/cookie-consent-manager/compare/1.1.0...1.1.1) (2021-12-16)
 

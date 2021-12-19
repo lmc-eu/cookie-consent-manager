@@ -14,4 +14,4 @@ export declare type CookieConsentManagerOptions = {
     companyNames: string[];
     config: VanillaCookieConsent.Options;
 };
-export declare type CookieConsentManager = (serviceName: string, args: CookieConsentManagerOptions) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;
+export declare type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;
