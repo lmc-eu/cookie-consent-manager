@@ -102,6 +102,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
         layout: VanillaCookieConsent.GuiConsentLayout.BAR, // box/cloud/bar
         position: VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER, // bottom/middle/top + left/right/center
         transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
+        swap_buttons: true,
       },
     },
     onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) => {
