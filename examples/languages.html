@@ -6,9 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>Cookie Consent Manager – callbacks example</title>
+    <title>Cookie Consent Manager – languages example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cookie Consent Manager – callbacks example">
+    <meta name="description" content="Cookie Consent Manager – languages configuration example">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
@@ -41,9 +41,9 @@
     <div class="py-5 bg-light text-center">
         <div class="container">
 
-            <h1 class="display-1 mt-md-3">Callbacks</h1>
+            <h1 class="display-1 mt-md-3">Languages</h1>
             <p class="lead mb-4 mb-md-5">
-                This is an example of configurable callbacks.
+                This is an example of supported languages.
             </p>
 
             <ul class="nav nav-pills justify-content-center mb-3">
@@ -54,19 +54,19 @@
                     <a class="nav-link" href="./configuration.html">Extended configuration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./callbacks.html">Callbacks</a>
+                    <a class="nav-link" href="./callbacks.html">Callbacks</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./theming.html">Theming</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./languages.html">Languages</a>
+                    <a class="nav-link active" href="./theming.html">Languages</a>
                 </li>
             </ul>
 
         </div>
     </div>
-    <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1" hidden>
+    <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
         <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
             <i class="bi bi-arrow-clockwise me-1"></i>
             Reset cookie
@@ -75,17 +75,40 @@
     <div class="container py-5">
         <div class="row justify-content-lg-center">
             <div class="col col-lg-10 col-xl-8">
-
-                <h2 class="mt-md-3 mb-3">Callbacks</h2>
-                <ul class="list-group">
-                    <li class="list-group-item" id="callback-onAccept">onAccept</li>
-                    <li class="list-group-item" id="callback-onAcceptAll">onAcceptAll</li>
-                    <li class="list-group-item" id="callback-onAcceptOnlyNecessary">onAcceptOnlyNecessary</li>
-                    <li class="list-group-item" id="callback-onFirstAccept">onFirstAccept</li>
-                    <li class="list-group-item" id="callback-onFirstAcceptAll">onFirstAcceptAll</li>
-                    <li class="list-group-item" id="callback-onFirstAcceptOnlyNecessary">onFirstAcceptOnlyNecessary</li>
-                </ul>
-
+                <h2 class="mt-md-3 mb-3">Select language</h2>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-cs" value="cs" checked
+                           name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-cs">Czech</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-de" value="de" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-de">German</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-en" value="en" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-en">English</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-hu" value="hu" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-hu">Hungarian</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-pl" value="pl" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-pl">Polish</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-ru" value="ru" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-ru">Russian</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-sk" value="sk" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-sk">Slovak</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lang-select-uk" value="uk" name="lang-select" onclick="toggleLanguage();">
+                    <label class="form-check-label" for="lang-select-uk">Ukrainian</label>
+                </div>
             </div>
         </div>
     </div>
@@ -103,43 +126,8 @@
 <script defer src="../dist/init.js"></script>
 <script>
   window.addEventListener('load', function () {
-    window.ccm = initLmcCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
-      'github.example',
-      {
-        consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
-        onAccept: (cookie, cookieConsent) => { // any type of consent detected
-          markCallbackCalled('onAccept');
-          document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
-        },
-        onAcceptAll: (cookie, cookieConsent) => { // consent for all cookies detected
-          markCallbackCalled('onAcceptAll');
-
-          if (cookieConsent.allowedCategory('functionality')) { // check for specific consent category
-            console.log('Consent for extended functionality given');
-          }
-        },
-        onAcceptOnlyNecessary: () => { // consent only for necessary cookies detected
-          markCallbackCalled('onAcceptOnlyNecessary');
-          // Note: you don't need to check this consent category before using "necessary" cookies
-        },
-        onFirstAccept: () => { // any consent was just given by the user
-          markCallbackCalled('onFirstAccept');
-        },
-        onFirstAcceptAll: () => { // consent with all was just given by the user
-          markCallbackCalled('onFirstAcceptAll');
-        },
-        onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
-          markCallbackCalled('onFirstAcceptOnlyNecessary');
-        },
-      }
-    );
+    createCookieConsentWithLanguage('cs');
   });
-
-  const markCallbackCalled = function (id) {
-    const element = document.getElementById(`callback-${id}`);
-    element.classList.add('list-group-item-success');
-    element.innerText += ' – called'
-  }
 </script>
 
 </body>
