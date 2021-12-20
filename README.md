@@ -252,6 +252,8 @@ Translation of the user interface is provided in the following languages:
 Czech (`cs`), German (`de`), English (`en`), Hungarian (`hu`), Polish (`pl`), Russian (`ru`), Slovak (`sk`)
 and Ukrainian (`uk`).
 
+[👀 See example of each language version][examples-languages]
+
 ### Callbacks
 
 The library can trigger configured callbacks in various events. They can be used to execute custom functionality,
@@ -470,5 +472,6 @@ for more information.
 [examples-callbacks]: https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html
 [examples-configuration]: https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html
 [examples-theming]: https://lmc-eu.github.io/cookie-consent-manager/examples/theming.html
+[examples-languages]: https://lmc-eu.github.io/cookie-consent-manager/examples/languages.html
 [examples-integration-esm]: https://github.com/lmc-eu/cookie-consent-manager/tree/main/examples/webpack-with-esm/
 [examples-integration-cjs]: https://github.com/lmc-eu/cookie-consent-manager/tree/main/examples/webpack-with-cjs/
