@@ -142,6 +142,7 @@ export namespace VanillaCookieConsent {
     cookie_necessary_only_expiration?: number;
     cookie_path?: string;
     cookie_domain?: string;
+    cookie_name?: string;
     cookie_same_site?: string;
     use_rfc_cookie?: boolean;
     theme_css?: string;
@@ -150,7 +151,7 @@ export namespace VanillaCookieConsent {
     revision?: number;
     auto_language?: string | null;
     autoclear_cookies?: boolean;
-    page_scritps?: boolean;
+    page_scripts?: boolean;
     remove_cookie_tables?: boolean;
     hide_from_bots?: boolean;
     gui_options?: GuiOptions;
