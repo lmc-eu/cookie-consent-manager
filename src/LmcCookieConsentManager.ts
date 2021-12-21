@@ -26,6 +26,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   onAcceptOnlyNecessary: noopAcceptCallback,
   onAcceptAll: noopAcceptCallback,
   companyNames: ['LMC'],
+  cookieName: 'lmc_ccm',
   config: {},
 };
 
@@ -46,8 +47,9 @@ const defaultOptions: CookieConsentManagerOptions = {
  *   is detected (either given right now or already saved previously)
  * @param {OnAcceptCallback} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected
  *   (either given right now or already saved previously)
- * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
+ * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
+ * @param {string} [args.cookieName] - Name of the cookie.
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
@@ -70,9 +72,9 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onAcceptOnlyNecessary,
     onAcceptAll,
     companyNames,
+    cookieName,
     config,
   } = options;
-  const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
   const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
 
@@ -144,6 +146,9 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
+/**
+ * @param cookie
+ */
 function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({

@@ -17,6 +17,7 @@ export type CookieConsentManagerOptions = {
   onAcceptOnlyNecessary: OnAcceptCallback;
   onAcceptAll: OnAcceptCallback;
   companyNames: string[];
+  cookieName: string;
   config: VanillaCookieConsent.Options;
 };
 
