@@ -17,7 +17,18 @@ export declare namespace VanillaCookieConsent {
         getConfig: (name: string) => any;
         allowedCategory: (category: Category) => boolean;
         eraseCookies: (cookies: string | string[], path?: string, domain?: string) => void;
+        getUserPreferences: () => UserPreferences<Category>;
     };
+    export interface UserPreferences<Category> {
+        accept_type: AcceptType;
+        accepted_categories: Array<Category>;
+        rejected_categories: Array<Category>;
+    }
+    export enum AcceptType {
+        'ALL' = "all",
+        'NECESSARY' = "necessary",
+        'CUSTOM' = "custom"
+    }
     export enum PrimaryButtonRole {
         ACCEPT_ALL = "accept_all",
         ACCEPT_SELECTED = "accept_selected"

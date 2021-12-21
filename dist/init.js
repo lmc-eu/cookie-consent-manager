@@ -18,45 +18,47 @@
 
   // node_modules/vanilla-cookieconsent/dist/cookieconsent.js
   (function() {
-    var Ta = function(Ma) {
-      var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, u = {}, S = false, T = false, ea = false, qa = false, fa = false, v, V, y, ra, sa, W = true, ta = false, E = null, Ea = false, ma, ua, va = [], aa = [], N = [], L = [], wa = [], ba = document.documentElement, M, x, H, O, Na = function(a) {
+    var db = function(Xa) {
+      var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, r = {}, U = false, V = false, na = false, ya = false, oa = false, u, aa, W, za, Aa, Ba, ba = true, Ca = false, A = null, Da, pa = [], Ea = [], Oa = false, ua, Fa, Ga = [], ja = [], Q = [], F = [], va = [], ka = document.documentElement, L, x, G, R, Ya = function(a) {
         typeof a.cookie_expiration === "number" && (f.cookie_expiration = a.cookie_expiration);
+        typeof a.cookie_necessary_only_expiration === "number" && (f.cookie_necessary_only_expiration = a.cookie_necessary_only_expiration);
         typeof a.autorun === "boolean" && (f.autorun = a.autorun);
         typeof a.cookie_domain === "string" && (f.cookie_domain = a.cookie_domain);
         typeof a.cookie_same_site === "string" && (f.cookie_same_site = a.cookie_same_site);
         typeof a.cookie_path === "string" && (f.cookie_path = a.cookie_path);
         typeof a.cookie_name === "string" && (f.cookie_name = a.cookie_name);
-        typeof a.onAccept === "function" && (ra = a.onAccept);
-        typeof a.onChange === "function" && (sa = a.onChange);
-        typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), ta = true);
+        typeof a.onAccept === "function" && (za = a.onAccept);
+        typeof a.onFirstAction === "function" && (Ba = a.onFirstAction);
+        typeof a.onChange === "function" && (Aa = a.onChange);
+        typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), Ca = true);
         a.autoclear_cookies === true && (f.autoclear_cookies = true);
         a.use_rfc_cookie === true && (f.use_rfc_cookie = true);
-        a.hide_from_bots === true && (Ea = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
+        a.hide_from_bots === true && (Oa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
         f.page_scripts = a.page_scripts === true;
         f.page_scripts_order = a.page_scripts_order !== false;
         a.auto_language === "browser" || a.auto_language === true ? f.auto_language = "browser" : a.auto_language === "document" && (f.auto_language = "document");
         var b = a.languages;
         a = a.current_lang;
-        f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = xa(a, b)) : b = f.auto_language === "document" ? xa(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = xa(a, b) : f.current_lang;
+        f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = Ha(a, b)) : b = f.auto_language === "document" ? Ha(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = Ha(a, b) : f.current_lang;
         f.current_lang = b;
-      }, Oa = function() {
+      }, Za = function() {
         for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
-          a[b].setAttribute("aria-haspopup", "dialog"), I(a[b], "click", function(c) {
+          a[b].setAttribute("aria-haspopup", "dialog"), H(a[b], "click", function(c) {
             k.showSettings(0);
             c.preventDefault ? c.preventDefault() : c.returnValue = false;
           });
-      }, xa = function(a, b) {
+      }, Ha = function(a, b) {
         if (Object.prototype.hasOwnProperty.call(b, a))
           return a;
-        if (0 < ha(b).length)
-          return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : ha(b)[0];
-      }, Fa = function() {
+        if (0 < qa(b).length)
+          return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : qa(b)[0];
+      }, Pa = function() {
         function a(c, d) {
           var e = false, h = false;
           try {
             for (var l = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), m, n = l.length, p = 0; p < n; )
               m = l[p].getAttribute("data-focus"), h || m !== "1" ? m === "0" && (e = l[p], h || l[p + 1].getAttribute("data-focus") === "0" || (h = l[p + 1])) : h = l[p], p++;
-          } catch (r) {
+          } catch (q) {
             return c.querySelectorAll(b.join(", "));
           }
           d[0] = l[0];
@@ -65,268 +67,279 @@
           d[3] = h;
         }
         var b = ["[href]", "button", "input", "details", '[tabindex="0"]'];
-        a(O, aa);
-        S && a(x, va);
-      }, ya, za, Ga = "", ia, Pa = function(a, b) {
-        M = g("div");
-        M.id = "cc--main";
-        M.style.position = "fixed";
-        M.style.zIndex = "1000000";
-        M.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
-        var c = M.children[0], d = f.current_lang, e = typeof ba.textContent === "string" ? "textContent" : "innerText";
-        ya = b;
-        za = function(z) {
-          z.force_consent === true && J(ba, "force--consent");
-          var P = z.languages[d].consent_modal.description;
-          ta && (P = W ? P.replace("{{revision_message}}", "") : P.replace("{{revision_message}}", Ga || z.languages[d].consent_modal.revision_message || ""));
+        a(R, ja);
+        U && a(x, Ga);
+      }, Ia, Ja, Qa = "", ra, $a = function(a, b) {
+        L = g("div");
+        L.id = "cc--main";
+        L.style.position = "fixed";
+        L.style.zIndex = "1000000";
+        L.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
+        var c = L.children[0], d = f.current_lang, e = typeof ka.textContent === "string" ? "textContent" : "innerText";
+        Ia = b;
+        Ja = function(t) {
+          t.force_consent === true && I(ka, "force--consent");
+          var y = t.languages[d].consent_modal.description;
+          Ca && (y = ba ? y.replace("{{revision_message}}", "") : y.replace("{{revision_message}}", Qa || t.languages[d].consent_modal.revision_message || ""));
           if (x)
-            ia.innerHTML = P;
+            ra.innerHTML = y;
           else {
             x = g("div");
-            var X = g("div"), na = g("div"), ja = g("div");
-            ia = g("div");
-            var oa = g("div"), ka = g("button"), ca = g("button"), pa = g("div");
+            var ca = g("div"), wa = g("div");
+            ra = g("div");
+            var da = g("div"), xa = g("div");
             x.id = "cm";
-            X.id = "c-inr";
-            na.id = "c-inr-i";
-            ja.id = "c-ttl";
-            ia.id = "c-txt";
-            oa.id = "c-bns";
-            ka.id = "c-p-bn";
-            ca.id = "c-s-bn";
-            pa.id = "cm-ov";
-            ka.className = "c-bn";
-            ca.className = "c-bn c_link";
-            ja.setAttribute("role", "heading");
-            ja.setAttribute("aria-level", "2");
+            ca.id = "c-inr";
+            wa.id = "c-inr-i";
+            ra.id = "c-txt";
+            da.id = "c-bns";
+            xa.id = "cm-ov";
             x.setAttribute("role", "dialog");
             x.setAttribute("aria-modal", "true");
             x.setAttribute("aria-hidden", "false");
             x.setAttribute("aria-labelledby", "c-ttl");
             x.setAttribute("aria-describedby", "c-txt");
-            x.style.visibility = pa.style.visibility = "hidden";
-            pa.style.opacity = 0;
-            ja.insertAdjacentHTML("beforeend", z.languages[d].consent_modal.title);
-            ia.insertAdjacentHTML("beforeend", P);
-            ka[e] = z.languages[d].consent_modal.primary_btn.text;
-            ca[e] = z.languages[d].consent_modal.secondary_btn.text;
-            var Ha;
-            z.languages[d].consent_modal.primary_btn.role === "accept_all" && (Ha = "all");
-            I(ka, "click", function() {
-              k.hide();
-              k.accept(Ha);
-            });
-            z.languages[d].consent_modal.secondary_btn.role === "accept_necessary" ? I(ca, "click", function() {
-              k.hide();
-              k.accept([]);
-            }) : I(ca, "click", function() {
-              k.showSettings(0);
-            });
-            na.appendChild(ja);
-            na.appendChild(ia);
-            oa.appendChild(ka);
-            oa.appendChild(ca);
-            X.appendChild(na);
-            X.appendChild(oa);
-            x.appendChild(X);
+            x.style.visibility = xa.style.visibility = "hidden";
+            xa.style.opacity = 0;
+            var X = t.languages[d].consent_modal.title;
+            if (X) {
+              var sa = g("div");
+              sa.id = "c-ttl";
+              sa.setAttribute("role", "heading");
+              sa.setAttribute("aria-level", "2");
+              sa.insertAdjacentHTML("beforeend", X);
+              wa.appendChild(sa);
+            }
+            ra.insertAdjacentHTML("beforeend", y);
+            wa.appendChild(ra);
+            y = t.languages[d].consent_modal.primary_btn;
+            X = t.languages[d].consent_modal.secondary_btn;
+            if (y) {
+              var la = g("button");
+              la.id = "c-p-bn";
+              la.className = "c-bn";
+              la[e] = t.languages[d].consent_modal.primary_btn.text;
+              var Ra;
+              y.role === "accept_all" && (Ra = "all");
+              H(la, "click", function() {
+                k.hide();
+                k.accept(Ra);
+              });
+            }
+            if (X) {
+              var ea = g("button");
+              ea.id = "c-s-bn";
+              ea.className = "c-bn c_link";
+              ea[e] = t.languages[d].consent_modal.secondary_btn.text;
+              X.role === "accept_necessary" ? H(ea, "click", function() {
+                k.hide();
+                k.accept([]);
+              }) : H(ea, "click", function() {
+                k.showSettings(0);
+              });
+            }
+            (t = t.gui_options) && t.consent_modal && t.consent_modal.swap_buttons === true ? (X && da.appendChild(ea), y && da.appendChild(la), da.className = "swap") : (y && da.appendChild(la), X && da.appendChild(ea));
+            ca.appendChild(wa);
+            (y || X) && ca.appendChild(da);
+            x.appendChild(ca);
             c.appendChild(x);
-            c.appendChild(pa);
-            S = true;
+            c.appendChild(xa);
+            U = true;
           }
         };
-        a || za(b);
-        H = g("div");
+        a || Ja(b);
+        G = g("div");
         var h = g("div"), l = g("div"), m = g("div");
-        O = g("div");
-        var n = g("div"), p = g("div"), r = g("button"), U = g("div"), Q = g("div"), A = g("div");
-        H.id = "s-cnt";
+        R = g("div");
+        var n = g("div"), p = g("div"), q = g("button"), Y = g("div"), S = g("div"), z = g("div");
+        G.id = "s-cnt";
         h.id = "c-vln";
         m.id = "c-s-in";
         l.id = "cs";
         n.id = "s-ttl";
-        O.id = "s-inr";
+        R.id = "s-inr";
         p.id = "s-hdr";
-        Q.id = "s-bl";
-        r.id = "s-c-bn";
-        A.id = "cs-ov";
-        U.id = "s-c-bnc";
-        r.className = "c-bn";
-        r.setAttribute("aria-label", b.languages[d].settings_modal.close_btn_label || "Close");
-        H.setAttribute("role", "dialog");
-        H.setAttribute("aria-modal", "true");
-        H.setAttribute("aria-hidden", "true");
-        H.setAttribute("aria-labelledby", "s-ttl");
+        S.id = "s-bl";
+        q.id = "s-c-bn";
+        z.id = "cs-ov";
+        Y.id = "s-c-bnc";
+        q.className = "c-bn";
+        q.setAttribute("aria-label", b.languages[d].settings_modal.close_btn_label || "Close");
+        G.setAttribute("role", "dialog");
+        G.setAttribute("aria-modal", "true");
+        G.setAttribute("aria-hidden", "true");
+        G.setAttribute("aria-labelledby", "s-ttl");
         n.setAttribute("role", "heading");
-        H.style.visibility = A.style.visibility = "hidden";
-        A.style.opacity = 0;
-        U.appendChild(r);
-        I(h, "keydown", function(z) {
-          z = z || window.event;
-          z.keyCode === 27 && k.hideSettings(0);
+        G.style.visibility = z.style.visibility = "hidden";
+        z.style.opacity = 0;
+        Y.appendChild(q);
+        H(h, "keydown", function(t) {
+          t = t || window.event;
+          t.keyCode === 27 && k.hideSettings(0);
         }, true);
-        I(r, "click", function() {
+        H(q, "click", function() {
           k.hideSettings(0);
         });
-        y = b.languages[f.current_lang].settings_modal.blocks;
-        V = b.languages[f.current_lang].settings_modal.cookie_table_headers;
-        r = y.length;
+        W = b.languages[f.current_lang].settings_modal.blocks;
+        aa = b.languages[f.current_lang].settings_modal.cookie_table_headers;
+        q = W.length;
         n.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.title);
-        for (var q = 0; q < r; ++q) {
-          var w = g("div"), B = g("div"), t = g("div"), F = g("div");
-          w.className = "c-bl";
-          B.className = "desc";
-          t.className = "p";
-          F.className = "title";
-          t.insertAdjacentHTML("beforeend", y[q].description);
-          if (typeof y[q].toggle !== "undefined") {
-            var C = "c-ac-" + q, Y = g("button"), G = g("label"), D = g("input"), R = g("span"), Z = g("span"), da = g("span"), Ia = g("span");
-            Y.className = "b-tl";
-            G.className = "b-tg";
-            D.className = "c-tgl";
-            da.className = "on-i";
-            Ia.className = "off-i";
-            R.className = "c-tg";
-            Z.className = "t-lb";
-            Y.setAttribute("aria-expanded", "false");
-            Y.setAttribute("aria-controls", C);
-            D.type = "checkbox";
-            R.setAttribute("aria-hidden", "true");
-            var Aa = y[q].toggle.value;
-            D.value = Aa;
-            Z[e] = y[q].title;
-            Y.insertAdjacentHTML("beforeend", y[q].title);
-            F.appendChild(Y);
-            R.appendChild(da);
-            R.appendChild(Ia);
-            a ? -1 < K(u.level, Aa) ? (D.checked = true, N.push(true)) : N.push(false) : y[q].toggle.enabled ? (D.checked = true, N.push(true)) : N.push(false);
-            L.push(Aa);
-            y[q].toggle.readonly ? (D.disabled = true, J(R, "c-ro"), wa.push(true)) : wa.push(false);
-            J(B, "b-acc");
-            J(F, "b-bn");
-            J(w, "b-ex");
-            B.id = C;
-            B.setAttribute("aria-hidden", "true");
-            G.appendChild(D);
-            G.appendChild(R);
-            G.appendChild(Z);
-            F.appendChild(G);
-            (function(z, P, X) {
-              I(Y, "click", function() {
-                Ja(P, "act") ? (Ba(P, "act"), X.setAttribute("aria-expanded", "false"), z.setAttribute("aria-hidden", "true")) : (J(P, "act"), X.setAttribute("aria-expanded", "true"), z.setAttribute("aria-hidden", "false"));
-              }, false);
-            })(B, w, Y);
-          } else
-            C = g("div"), C.className = "b-tl", C.setAttribute("role", "heading"), C.setAttribute("aria-level", "3"), C.insertAdjacentHTML("beforeend", y[q].title), F.appendChild(C);
-          w.appendChild(F);
-          B.appendChild(t);
-          if (b.remove_cookie_tables !== true && typeof y[q].cookie_table !== "undefined") {
-            C = document.createDocumentFragment();
-            for (G = 0; G < V.length; ++G)
-              D = g("th"), t = V[G], D.setAttribute("scope", "col"), t && (F = t && ha(t)[0], D[e] = V[G][F], C.appendChild(D));
-            t = g("tr");
-            t.appendChild(C);
-            F = g("thead");
-            F.appendChild(t);
-            C = g("table");
-            C.appendChild(F);
-            G = document.createDocumentFragment();
-            for (D = 0; D < y[q].cookie_table.length; D++) {
-              R = g("tr");
-              for (Z = 0; Z < V.length; ++Z)
-                if (t = V[Z])
-                  F = ha(t)[0], da = g("td"), da.insertAdjacentHTML("beforeend", y[q].cookie_table[D][F]), da.setAttribute("data-column", t[F]), R.appendChild(da);
-              G.appendChild(R);
-            }
-            t = g("tbody");
-            t.appendChild(G);
-            C.appendChild(t);
-            B.appendChild(C);
+        for (var v = 0; v < q; ++v) {
+          var C = W[v].title, J = W[v].description, M = W[v].toggle, fa = W[v].cookie_table, K = b.remove_cookie_tables === true, w = J && "truthy" || !K && fa && "truthy", ma = g("div"), Z = g("div");
+          if (J) {
+            var T = g("div");
+            T.className = "p";
+            T.insertAdjacentHTML("beforeend", J);
           }
-          w.appendChild(B);
-          Q.appendChild(w);
+          var B = g("div");
+          B.className = "title";
+          ma.className = "c-bl";
+          Z.className = "desc";
+          if (typeof M !== "undefined") {
+            var N = "c-ac-" + v, ha = w ? g("button") : g("div"), D = g("label"), O = g("input"), P = g("span"), ia = g("span"), Sa = g("span"), Ta = g("span");
+            ha.className = w ? "b-tl exp" : "b-tl";
+            D.className = "b-tg";
+            O.className = "c-tgl";
+            Sa.className = "on-i";
+            Ta.className = "off-i";
+            P.className = "c-tg";
+            ia.className = "t-lb";
+            w && (ha.setAttribute("aria-expanded", "false"), ha.setAttribute("aria-controls", N));
+            O.type = "checkbox";
+            P.setAttribute("aria-hidden", "true");
+            var Ka = M.value;
+            O.value = Ka;
+            ia[e] = C;
+            ha.insertAdjacentHTML("beforeend", C);
+            B.appendChild(ha);
+            P.appendChild(Sa);
+            P.appendChild(Ta);
+            a ? -1 < E(r.level, Ka) ? (O.checked = true, Q.push(true)) : Q.push(false) : M.enabled ? (O.checked = true, Q.push(true)) : Q.push(false);
+            F.push(Ka);
+            M.readonly ? (O.disabled = true, I(P, "c-ro"), va.push(true)) : va.push(false);
+            I(Z, "b-acc");
+            I(B, "b-bn");
+            I(ma, "b-ex");
+            Z.id = N;
+            Z.setAttribute("aria-hidden", "true");
+            D.appendChild(O);
+            D.appendChild(P);
+            D.appendChild(ia);
+            B.appendChild(D);
+            w && function(t, y, ca) {
+              H(ha, "click", function() {
+                Ua(y, "act") ? (La(y, "act"), ca.setAttribute("aria-expanded", "false"), t.setAttribute("aria-hidden", "true")) : (I(y, "act"), ca.setAttribute("aria-expanded", "true"), t.setAttribute("aria-hidden", "false"));
+              }, false);
+            }(Z, ma, ha);
+          } else
+            C && (w = g("div"), w.className = "b-tl", w.setAttribute("role", "heading"), w.setAttribute("aria-level", "3"), w.insertAdjacentHTML("beforeend", C), B.appendChild(w));
+          C && ma.appendChild(B);
+          J && Z.appendChild(T);
+          if (!K && typeof fa !== "undefined") {
+            w = document.createDocumentFragment();
+            for (N = 0; N < aa.length; ++N)
+              D = g("th"), K = aa[N], D.setAttribute("scope", "col"), K && (B = K && qa(K)[0], D[e] = aa[N][B], w.appendChild(D));
+            K = g("tr");
+            K.appendChild(w);
+            B = g("thead");
+            B.appendChild(K);
+            w = g("table");
+            w.appendChild(B);
+            N = document.createDocumentFragment();
+            for (D = 0; D < fa.length; D++) {
+              O = g("tr");
+              for (P = 0; P < aa.length; ++P)
+                if (K = aa[P])
+                  B = qa(K)[0], ia = g("td"), ia.insertAdjacentHTML("beforeend", fa[D][B]), ia.setAttribute("data-column", K[B]), O.appendChild(ia);
+              N.appendChild(O);
+            }
+            fa = g("tbody");
+            fa.appendChild(N);
+            w.appendChild(fa);
+            Z.appendChild(w);
+          }
+          if (M && C || !M && (C || J))
+            ma.appendChild(Z), S.appendChild(ma);
         }
         a = g("div");
-        r = g("button");
+        T = g("button");
         q = g("button");
         a.id = "s-bns";
-        r.id = "s-sv-bn";
+        T.id = "s-sv-bn";
         q.id = "s-all-bn";
-        r.className = "c-bn";
+        T.className = "c-bn";
         q.className = "c-bn";
-        r.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.save_settings_btn);
+        T.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.save_settings_btn);
         q.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.accept_all_btn);
         a.appendChild(q);
         if (b = b.languages[f.current_lang].settings_modal.reject_all_btn)
-          w = g("button"), w.id = "s-rall-bn", w.className = "c-bn", w.insertAdjacentHTML("beforeend", b), I(w, "click", function() {
+          v = g("button"), v.id = "s-rall-bn", v.className = "c-bn", v.insertAdjacentHTML("beforeend", b), H(v, "click", function() {
             k.hideSettings();
             k.hide();
             k.accept([]);
-          }), O.className = "bns-t", a.appendChild(w);
-        a.appendChild(r);
-        I(r, "click", function() {
+          }), R.className = "bns-t", a.appendChild(v);
+        a.appendChild(T);
+        H(T, "click", function() {
           k.hideSettings();
           k.hide();
           k.accept();
         });
-        I(q, "click", function() {
+        H(q, "click", function() {
           k.hideSettings();
           k.hide();
           k.accept("all");
         });
         p.appendChild(n);
-        p.appendChild(U);
-        O.appendChild(p);
-        O.appendChild(Q);
-        O.appendChild(a);
-        m.appendChild(O);
+        p.appendChild(Y);
+        R.appendChild(p);
+        R.appendChild(S);
+        R.appendChild(a);
+        m.appendChild(R);
         l.appendChild(m);
         h.appendChild(l);
-        H.appendChild(h);
-        c.appendChild(H);
-        c.appendChild(A);
-        (Ma || document.body).appendChild(M);
-      }, Qa = function(a) {
+        G.appendChild(h);
+        c.appendChild(G);
+        c.appendChild(z);
+        (Xa || document.body).appendChild(L);
+      }, ab = function(a) {
         var b = document.querySelectorAll(".c-tgl") || [], c = [], d = false;
         if (0 < b.length) {
           for (var e = 0; e < b.length; e++)
-            K(a, L[e]) !== -1 ? (b[e].checked = true, N[e] || (c.push(L[e]), N[e] = true)) : (b[e].checked = false, N[e] && (c.push(L[e]), N[e] = false));
-          if (f.autoclear_cookies && T && 0 < c.length) {
-            b = y.length;
+            E(a, F[e]) !== -1 ? (b[e].checked = true, Q[e] || (c.push(F[e]), Q[e] = true)) : (b[e].checked = false, Q[e] && (c.push(F[e]), Q[e] = false));
+          if (f.autoclear_cookies && V && 0 < c.length) {
+            b = W.length;
             e = -1;
-            var h = la("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
+            var h = ta("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
             if (f.cookie_domain.slice(0, 4) === "www.") {
               var m = f.cookie_domain.substr(4);
               l.push(m);
               l.push("." + m);
             }
             for (m = 0; m < b; m++) {
-              var n = y[m];
-              if (Object.prototype.hasOwnProperty.call(n, "toggle") && !N[++e] && Object.prototype.hasOwnProperty.call(n, "cookie_table") && -1 < K(c, n.toggle.value)) {
-                var p = n.cookie_table, r = ha(V[0])[0], U = p.length;
+              var n = W[m];
+              if (Object.prototype.hasOwnProperty.call(n, "toggle") && !Q[++e] && Object.prototype.hasOwnProperty.call(n, "cookie_table") && -1 < E(c, n.toggle.value)) {
+                var p = n.cookie_table, q = qa(aa[0])[0], Y = p.length;
                 n.toggle.reload === "on_disable" && (d = true);
-                for (var Q = 0; Q < U; Q++) {
-                  var A = p[Q], q = [], w = A[r], B = A.is_regex || false, t = A.domain || null;
-                  A = A.path || false;
-                  t && (l = [t, "." + t]);
-                  if (B)
-                    for (B = 0; B < h.length; B++)
-                      h[B].match(w) && q.push(h[B]);
+                for (var S = 0; S < Y; S++) {
+                  var z = p[S], v = [], C = z[q], J = z.is_regex || false, M = z.domain || null;
+                  z = z.path || false;
+                  M && (l = [M, "." + M]);
+                  if (J)
+                    for (J = 0; J < h.length; J++)
+                      h[J].match(C) && v.push(h[J]);
                   else
-                    w = K(h, w), -1 < w && q.push(h[w]);
-                  0 < q.length && (Ka(q, A, l), n.toggle.reload === "on_clear" && (d = true));
+                    C = E(h, C), -1 < C && v.push(h[C]);
+                  0 < v.length && (Va(v, z, l), n.toggle.reload === "on_clear" && (d = true));
                 }
               }
             }
           }
         }
-        u = { level: a, revision: f.revision, data: E, rfc_cookie: f.use_rfc_cookie };
-        if (!T || 0 < c.length || !W)
-          W = true, Ca(f.cookie_name, JSON.stringify(u)), Da();
-        if (typeof ra === "function" && !T)
-          return T = true, ra(u);
-        typeof sa === "function" && 0 < c.length && sa(u, c);
-        d && window.location.reload();
-      }, Ra = function(a, b) {
+        r = { level: a, revision: f.revision, data: A, rfc_cookie: f.use_rfc_cookie };
+        if (!V || 0 < c.length || !ba)
+          ba = true, Ma(f.cookie_name, JSON.stringify(r)), Na();
+        V ? (typeof Aa === "function" && 0 < c.length && Aa(r, c), d && window.location.reload()) : (typeof Ba === "function" && Ba(k.getUserPreferences(), r), typeof za === "function" && za(r), V = true);
+      }, bb = function(a, b) {
         if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
           b();
         else {
@@ -339,7 +352,7 @@
           d.open("GET", a);
           d.send();
         }
-      }, K = function(a, b) {
+      }, E = function(a, b) {
         for (var c = a.length, d = 0; d < c; d++)
           if (a[d] === b)
             return d;
@@ -348,80 +361,80 @@
         var b = document.createElement(a);
         a === "button" && b.setAttribute("type", a);
         return b;
-      }, Sa = function() {
+      }, cb = function() {
         var a = false, b = false;
-        I(document, "keydown", function(c) {
+        H(document, "keydown", function(c) {
           c = c || window.event;
-          c.key === "Tab" && (v && (c.shiftKey ? document.activeElement === v[0] && (v[1].focus(), c.preventDefault()) : document.activeElement === v[1] && (v[0].focus(), c.preventDefault()), b || fa || (b = true, !a && c.preventDefault(), c.shiftKey ? v[3] ? v[2] ? v[2].focus() : v[0].focus() : v[1].focus() : v[3] ? v[3].focus() : v[0].focus())), !b && (a = true));
+          c.key === "Tab" && (u && (c.shiftKey ? document.activeElement === u[0] && (u[1].focus(), c.preventDefault()) : document.activeElement === u[1] && (u[0].focus(), c.preventDefault()), b || oa || (b = true, !a && c.preventDefault(), c.shiftKey ? u[3] ? u[2] ? u[2].focus() : u[0].focus() : u[1].focus() : u[3] ? u[3].focus() : u[0].focus())), !b && (a = true));
         });
-        document.contains && I(M, "click", function(c) {
+        document.contains && H(L, "click", function(c) {
           c = c || window.event;
-          qa ? O.contains(c.target) ? fa = true : (k.hideSettings(0), fa = false) : ea && x.contains(c.target) && (fa = true);
+          ya ? R.contains(c.target) ? oa = true : (k.hideSettings(0), oa = false) : na && x.contains(c.target) && (oa = true);
         }, true);
-      }, La = function(a, b) {
-        function c(e, h, l, m, n, p, r) {
+      }, Wa = function(a, b) {
+        function c(e, h, l, m, n, p, q) {
           p = p && p.split(" ") || [];
-          if (-1 < K(h, n) && (J(e, n), (n !== "bar" || p[0] !== "middle") && -1 < K(l, p[0])))
+          if (-1 < E(h, n) && (I(e, n), (n !== "bar" || p[0] !== "middle") && -1 < E(l, p[0])))
             for (h = 0; h < p.length; h++)
-              J(e, p[h]);
-          -1 < K(m, r) && J(e, r);
+              I(e, p[h]);
+          -1 < E(m, q) && I(e, q);
         }
         if (typeof a === "object") {
           var d = a.consent_modal;
           a = a.settings_modal;
-          S && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
-          !b && a && c(H, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
+          U && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
+          !b && a && c(G, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
         }
       };
       k.allowedCategory = function(a) {
-        return -1 < K(JSON.parse(la(f.cookie_name, "one", true) || "{}").level || [], a);
+        return -1 < E(JSON.parse(ta(f.cookie_name, "one", true) || "{}").level || [], a);
       };
       k.run = function(a) {
-        if (!document.getElementById("cc_div") && (Na(a), !Ea && (u = JSON.parse(la(f.cookie_name, "one", true) || "{}"), T = u.level !== void 0, E = u.data !== void 0 ? u.data : null, W = typeof a.revision === "number" ? T ? -1 < a.revision ? u.revision === f.revision : true : true : true, S = !T || !W, Pa(!S, a), Ra(a.theme_css, function() {
-          Fa();
-          La(a.gui_options);
-          Oa();
-          f.autorun && S && k.show(a.delay || 0);
+        if (!document.getElementById("cc_div") && (Ya(a), !Oa && (r = JSON.parse(ta(f.cookie_name, "one", true) || "{}"), V = r.level !== void 0, A = r.data !== void 0 ? r.data : null, ba = typeof a.revision === "number" ? V ? -1 < a.revision ? r.revision === f.revision : true : true : true, U = !V || !ba, $a(!U, a), bb(a.theme_css, function() {
+          Pa();
+          Wa(a.gui_options);
+          Za();
+          f.autorun && U && k.show(a.delay || 0);
           setTimeout(function() {
-            J(M, "c--anim");
+            I(L, "c--anim");
           }, 30);
           setTimeout(function() {
-            Sa();
+            cb();
           }, 100);
-        }), T && W))) {
-          var b = typeof u.rfc_cookie === "boolean";
-          if (!b || b && u.rfc_cookie !== f.use_rfc_cookie)
-            u.rfc_cookie = f.use_rfc_cookie, Ca(f.cookie_name, JSON.stringify(u));
-          Da();
+        }), V && ba))) {
+          var b = typeof r.rfc_cookie === "boolean";
+          if (!b || b && r.rfc_cookie !== f.use_rfc_cookie)
+            r.rfc_cookie = f.use_rfc_cookie, Ma(f.cookie_name, JSON.stringify(r));
+          Na();
           if (typeof a.onAccept === "function")
-            a.onAccept(u);
+            a.onAccept(r);
         }
       };
       k.showSettings = function(a) {
         setTimeout(function() {
-          J(ba, "show--settings");
-          H.setAttribute("aria-hidden", "false");
-          qa = true;
+          I(ka, "show--settings");
+          G.setAttribute("aria-hidden", "false");
+          ya = true;
           setTimeout(function() {
-            ea ? ua = document.activeElement : ma = document.activeElement;
-            aa.length !== 0 && (aa[3] ? aa[3].focus() : aa[0].focus(), v = aa);
+            na ? Fa = document.activeElement : ua = document.activeElement;
+            ja.length !== 0 && (ja[3] ? ja[3].focus() : ja[0].focus(), u = ja);
           }, 200);
         }, 0 < a ? a : 0);
       };
-      var Da = function() {
+      var Na = function() {
         if (f.page_scripts) {
-          var a = document.querySelectorAll("script[" + f.script_selector + "]"), b = f.page_scripts_order, c = u.level || [], d = function(e, h) {
+          var a = document.querySelectorAll("script[" + f.script_selector + "]"), b = f.page_scripts_order, c = r.level || [], d = function(e, h) {
             if (h < e.length) {
               var l = e[h], m = l.getAttribute(f.script_selector);
-              if (-1 < K(c, m)) {
+              if (-1 < E(c, m)) {
                 l.type = "text/javascript";
                 l.removeAttribute(f.script_selector);
                 m = l.getAttribute("data-src");
                 var n = g("script");
                 n.textContent = l.innerHTML;
-                (function(p, r) {
-                  for (var U = r.attributes, Q = U.length, A = 0; A < Q; A++)
-                    r = U[A], p.setAttribute(r.nodeName, r.nodeValue);
+                (function(p, q) {
+                  for (var Y = q.attributes, S = Y.length, z = 0; z < S; z++)
+                    q = Y[z], p.setAttribute(q.nodeName, q.nodeValue);
                 })(n, l);
                 m ? n.src = m : m = l.src;
                 m && (b ? n.readyState ? n.onreadystatechange = function() {
@@ -447,27 +460,38 @@
             a = b.value;
             var c = false;
             if (b.mode === "update")
-              if (E = k.get("data"), (b = typeof E === typeof a) && typeof E === "object") {
-                !E && (E = {});
+              if (A = k.get("data"), (b = typeof A === typeof a) && typeof A === "object") {
+                !A && (A = {});
                 for (var d in a)
-                  E[d] !== a[d] && (E[d] = a[d], c = true);
+                  A[d] !== a[d] && (A[d] = a[d], c = true);
               } else
-                !b && E || E === a || (E = a, c = true);
+                !b && A || A === a || (A = a, c = true);
             else
-              E = a, c = true;
-            c && (u.data = E, Ca(f.cookie_name, JSON.stringify(u)));
+              A = a, c = true;
+            c && (r.data = A, Ma(f.cookie_name, JSON.stringify(r)));
             return c;
           case "revision":
-            return d = b.value, a = b.prompt_consent, b = b.message, M && typeof d === "number" && u.revision !== d ? (ta = true, Ga = b, W = false, f.revision = d, a === true ? (za(ya), La(ya.gui_options, true), Fa(), k.show()) : k.accept(), b = true) : b = false, b;
+            return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && r.revision !== d ? (Ca = true, Qa = b, ba = false, f.revision = d, a === true ? (Ja(Ia), Wa(Ia.gui_options, true), Pa(), k.show()) : k.accept(), b = true) : b = false, b;
           default:
             return false;
         }
       };
       k.get = function(a, b) {
-        return JSON.parse(la(b || f.cookie_name, "one", true) || "{}")[a];
+        return JSON.parse(ta(b || f.cookie_name, "one", true) || "{}")[a];
       };
       k.getConfig = function(a) {
         return f[a];
+      };
+      k.getUserPreferences = function() {
+        pa = r.level || [];
+        var a = va.filter(function(b) {
+          return b === true;
+        }).length;
+        Ea = F.filter(function(b) {
+          return E(pa, b) === -1;
+        });
+        Da = pa.length === F.length ? "all" : 0 <= Ea.length && pa.length === a ? "necessary" : "custom";
+        return { accept_type: Da, accepted_categories: pa, rejected_categories: Ea };
       };
       k.loadScript = function(a, b, c) {
         var d = typeof b === "function";
@@ -487,32 +511,32 @@
         }
       };
       k.updateScripts = function() {
-        Da();
+        Na();
       };
       k.show = function(a) {
-        S && setTimeout(function() {
-          J(ba, "show--consent");
+        U && setTimeout(function() {
+          I(ka, "show--consent");
           x.setAttribute("aria-hidden", "false");
-          ea = true;
+          na = true;
           setTimeout(function() {
-            ma = document.activeElement;
-            v = va;
+            ua = document.activeElement;
+            u = Ga;
           }, 200);
         }, 0 < a ? a : 0);
       };
       k.hide = function() {
-        S && (Ba(ba, "show--consent"), x.setAttribute("aria-hidden", "true"), ea = false, setTimeout(function() {
-          ma.focus();
-          v = null;
+        U && (La(ka, "show--consent"), x.setAttribute("aria-hidden", "true"), na = false, setTimeout(function() {
+          ua.focus();
+          u = null;
         }, 200));
       };
       k.hideSettings = function() {
-        Ba(ba, "show--settings");
-        qa = false;
-        H.setAttribute("aria-hidden", "true");
+        La(ka, "show--settings");
+        ya = false;
+        G.setAttribute("aria-hidden", "true");
         setTimeout(function() {
-          ea ? (ua && ua.focus(), v = va) : (ma.focus(), v = null);
-          fa = false;
+          na ? (Fa && Fa.focus(), u = Ga) : (ua.focus(), u = null);
+          oa = false;
         }, 200);
       };
       k.accept = function(a, b) {
@@ -527,9 +551,9 @@
         if (a)
           if (typeof a === "object" && typeof a.length === "number")
             for (var e = 0; e < a.length; e++)
-              K(L, a[e]) !== -1 && b.push(a[e]);
+              E(F, a[e]) !== -1 && b.push(a[e]);
           else
-            typeof a === "string" && (a === "all" ? b = L.slice() : K(L, a) !== -1 && b.push(a));
+            typeof a === "string" && (a === "all" ? b = F.slice() : E(F, a) !== -1 && b.push(a));
         else
           b = d();
         if (1 <= c.length)
@@ -537,9 +561,9 @@
             b = b.filter(function(h) {
               return h !== c[e];
             });
-        for (e = 0; e < L.length; e++)
-          wa[e] === true && K(b, L[e]) === -1 && b.push(L[e]);
-        Qa(b);
+        for (e = 0; e < F.length; e++)
+          va[e] === true && E(b, F[e]) === -1 && b.push(F[e]);
+        ab(b);
       };
       k.eraseCookies = function(a, b, c) {
         var d = [];
@@ -549,19 +573,21 @@
             this.validCookie(a[e]) && d.push(a[e]);
         else
           this.validCookie(a) && d.push(a);
-        Ka(d, b, c);
+        Va(d, b, c);
       };
-      var Ca = function(a, b) {
+      var Ma = function(a, b) {
+        var c = f.cookie_expiration;
+        typeof f.cookie_necessary_only_expiration === "number" && Da === "necessary" && (c = f.cookie_necessary_only_expiration);
         b = f.use_rfc_cookie ? encodeURIComponent(b) : b;
-        var c = new Date();
-        c.setTime(c.getTime() + 864e5 * f.cookie_expiration);
-        c = "; expires=" + c.toUTCString();
+        var d = new Date();
+        d.setTime(d.getTime() + 864e5 * c);
+        c = "; expires=" + d.toUTCString();
         a = a + "=" + (b || "") + c + "; Path=" + f.cookie_path + ";";
         a += " SameSite=" + f.cookie_same_site + ";";
         -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + f.cookie_domain + ";");
         window.location.protocol === "https:" && (a += " Secure;");
         document.cookie = a;
-      }, la = function(a, b, c) {
+      }, ta = function(a, b, c) {
         var d;
         if (b === "one") {
           if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === f.cookie_name) {
@@ -580,34 +606,34 @@
           for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
             d.push(a[b].split("=")[0]);
         return d;
-      }, Ka = function(a, b, c) {
+      }, Va = function(a, b, c) {
         b = b ? b : "/";
         for (var d = 0; d < a.length; d++)
           for (var e = 0; e < c.length; e++)
             document.cookie = a[d] + "=; path=" + b + (-1 < c[e].indexOf(".") ? "; domain=" + c[e] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
       };
       k.validCookie = function(a) {
-        return la(a, "one", true) !== "";
+        return ta(a, "one", true) !== "";
       };
-      var I = function(a, b, c, d) {
+      var H = function(a, b, c, d) {
         a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
-      }, ha = function(a) {
+      }, qa = function(a) {
         if (typeof a === "object") {
           var b = [], c = 0;
           for (b[c++] in a)
             ;
           return b;
         }
-      }, J = function(a, b) {
-        a.classList ? a.classList.add(b) : Ja(a, b) || (a.className += " " + b);
-      }, Ba = function(a, b) {
+      }, I = function(a, b) {
+        a.classList ? a.classList.add(b) : Ua(a, b) || (a.className += " " + b);
+      }, La = function(a, b) {
         a.classList ? a.classList.remove(b) : a.className = a.className.replace(new RegExp("(\\s|^)" + b + "(\\s|$)"), " ");
-      }, Ja = function(a, b) {
+      }, Ua = function(a, b) {
         return a.classList ? a.classList.contains(b) : !!a.className.match(new RegExp("(\\s|^)" + b + "(\\s|$)"));
       };
       return k;
     };
-    typeof window.initCookieConsent !== "function" && (window.initCookieConsent = Ta);
+    typeof window.initCookieConsent !== "function" && (window.initCookieConsent = db);
   })();
 
   // node_modules/nanoid/index.prod.js
@@ -665,6 +691,12 @@
   // src/types/vanilla-cookieconsent.ts
   var VanillaCookieConsent;
   ((VanillaCookieConsent2) => {
+    let AcceptType;
+    ((AcceptType2) => {
+      AcceptType2["ALL"] = "all";
+      AcceptType2["NECESSARY"] = "necessary";
+      AcceptType2["CUSTOM"] = "custom";
+    })(AcceptType = VanillaCookieConsent2.AcceptType || (VanillaCookieConsent2.AcceptType = {}));
     let PrimaryButtonRole;
     ((PrimaryButtonRole2) => {
       PrimaryButtonRole2["ACCEPT_ALL"] = "accept_all";
@@ -720,11 +752,12 @@
     const lang = __spreadValues(__spreadValues({}, extra), extraMessages);
     return {
       consent_modal: {
-        title: "Tyto str\xE1nky vyu\u017E\xEDvaj\xED cookies",
-        description: `Kliknut\xEDm na \u201EP\u0159ijmout v\u0161e\u201C d\xE1v\xE1te souhlas ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} k\xA0vyu\u017E\xEDv\xE1n\xED soubor\u016F Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F ve\xA0va\u0161em za\u0159\xEDzen\xED. Pou\u017Eit\xED t\u011Bchto Cookies a\xA0dal\u0161\xEDch identifik\xE1tor\u016F usnadn\xED navigaci na str\xE1nk\xE1ch, zobrazen\xED personalizovan\xE9ho obsahu, c\xEDlen\xFD marketing, anal\xFDzu vyu\u017E\xEDv\xE1n\xED na\u0161ich produkt\u016F a\xA0slu\u017Eeb.
-      V\xEDce informac\xED naleznete na\xA0str\xE1nce\xA0<a href="https://www.lmc.eu/cs/cookies" target="_blank">Pou\u017E\xEDv\xE1n\xED\xA0cookies</a>.`,
+        title: "D\xEDky Cookies budou na\u0161e str\xE1nky je\u0161t\u011B lep\u0161\xED",
+        description: `Kdy\u017E l\xE9pe pochop\xEDme, co v\xE1s zaj\xEDm\xE1, budeme v\xE1m zobrazovat p\u0159esn\u011Bj\u0161\xED obsah na\xA0m\xEDru.
+      Kliknut\xEDm na\xA0tla\u010D\xEDtko \u201EP\u0159ijmout v\u0161echny\u201C d\xE1te ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} souhlas s\xA0vyu\u017E\xEDv\xE1n\xEDm soubor\u016F Cookies na\xA0\xFA\u010Dely personalizace, anal\xFDzy a\xA0c\xEDlen\xE9ho marketingu.
+      <a href="https://www.lmc.eu/cs/cookies" target="_blank">Co\xA0jsou\xA0to\xA0Cookies a\xA0jak je\xA0pou\u017E\xEDv\xE1me?</a>`,
         primary_btn: {
-          text: "P\u0159ijmout v\u0161e",
+          text: "P\u0159ijmout v\u0161echny",
           role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
         },
         secondary_btn: {
@@ -844,9 +877,10 @@
     const lang = __spreadValues(__spreadValues({}, extra3), extraMessages);
     return {
       consent_modal: {
-        title: "This website uses cookies",
-        description: `By clicking on "Accept all", you give your consent to ${addSeparators(lang.companyNames, extra3.and)} to use cookies and other identifiers on your device. The use of these cookies and other identifiers will simplify navigation on the site, enable personalized content, targeted marketing, analysis of the usage of our products and services.
-      For more information read page <a href="https://www.lmc.eu/en/cookies/" target="_blank">Use\xA0of\xA0cookies</a>.`,
+        title: "Cookies make our site even better",
+        description: `By better understanding what you're interested\xA0in, we'll show you more relevant content.
+      By clicking the "Accept all" button, you give ${addSeparators(lang.companyNames, extra3.and)} your consent to\xA0use cookies for\xA0personalisation, analytics and\xA0targeted marketing.
+      <a href="https://www.lmc.eu/en/cookies/" target="_blank">What\xA0are\xA0cookies and\xA0how do we use\xA0them?</a>`,
         primary_btn: {
           text: "Accept all",
           role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -962,15 +996,19 @@
 
   // src/languages/pl.ts
   var extra5 = {
-    and: "i"
+    and: "i",
+    company: "firm\u0119",
+    companies: "firmy"
   };
   var config5 = (extraMessages) => {
     const lang = __spreadValues(__spreadValues({}, extra5), extraMessages);
     return {
       consent_modal: {
-        title: "Ta strona u\u017Cywa cookies",
-        description: `Klikaj\u0105c \u201EAkceptuj\u0119 wszystkie\u201D, wyra\u017Casz zgod\u0119 dla ${addSeparators(lang.companyNames, extra5.and)} do wykorzystywania plik\xF3w i\xA0innych identyfikator\xF3w na Twoim urz\u0105dzeniu. Korzystanie z\xA0tych plik\xF3w cookie i\xA0innych identyfikator\xF3w u\u0142atwi nawigacj\u0119 w\xA0serwisie, wy\u015Bwietlanie spersonalizowanych tre\u015Bci, marketing ukierunkowany, analiz\u0119 korzystania z\xA0naszych produkt\xF3w i\xA0us\u0142ug.
-      Wi\u0119cej informacji znajdziesz na stronie\xA0<a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w Cookies</a>.`,
+        title: "Dzi\u0119ki plikom Cookies nasza strona b\u0119dzie jeszcze lepsza",
+        description: `Gdy lepiej zrozumiemy, co\xA0Ci\u0119 interesuje, poka\u017Cemy dok\u0142adniejsze tre\u015Bci dopasowane do\xA0Twoich preferencji.
+      Kliknij w\xA0przycisk \u201EAkceptuj wszystkie\u201D, aby wyrazi\u0107 zgod\u0119 na\xA0wykorzystanie plik\xF3w cookie przez
+      ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, extra5.and)} do personalizacji, analizy i\xA0ukierunkowanego marketingu.
+      <a href="https://www.lmc.eu/pl/cookies" target="_blank">Co\xA0to\xA0s\u0105\xA0pliki cookie i\xA0jak je\xA0wykorzystujemy?</a>`,
         primary_btn: {
           text: "Akceptuj wszystkie",
           role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1096,9 +1134,10 @@
     const lang = __spreadValues(__spreadValues({}, extra7), extraMessages);
     return {
       consent_modal: {
-        title: "Tieto str\xE1nky pou\u017E\xEDvaj\xFA cookies",
-        description: `Kliknut\xEDm na \u201EPrija\u0165 v\u0161etky\u201C d\xE1vate s\xFAhlas ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} k\xA0vyu\u017E\xEDvaniu s\xFAborov Cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov vo\xA0va\u0161om zariaden\xED. Pou\u017Eitie t\xFDchto cookies a\xA0\u010Fal\u0161\xEDch identifik\xE1torov u\u013Eah\u010D\xED navig\xE1ciu na\xA0str\xE1nkach, zobrazenie personalizovan\xE9ho obsahu, cielen\xFD marketing, anal\xFDzu vyu\u017E\xEDvania na\u0161ich produktov a\xA0slu\u017Eieb.
-      Viac inform\xE1ci\xED n\xE1jdete na\xA0str\xE1nke\xA0<a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvanie\xA0cookies</a>.`,
+        title: "V\u010Faka Cookies bud\xFA na\u0161e str\xE1nky e\u0161te lep\u0161ie",
+        description: `Presnej\u0161\xED obsah\xA0na\xA0mieru v\xE1m budeme zobrazova\u0165, ke\u010F\xA0lep\u0161ie pochop\xEDme, \u010Do\xA0v\xE1s\xA0zauj\xEDma.
+      Kliknut\xEDm na\xA0tla\u010Didlo \u201EPrija\u0165 v\u0161etky\u201C, \u010D\xEDm d\xE1te ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} s\xFAhlas s\xA0vyu\u017E\xEDvan\xEDm s\xFAborov Cookies za\xA0\xFA\u010Delom personaliz\xE1cie, anal\xFDzy a\xA0cielen\xE9ho marketingu.
+      <a href="https://www.lmc.eu/sk/cookies" target="_blank">\u010Co\xA0s\xFA\xA0to\xA0Cookies a\xA0ako\xA0ich\xA0pou\u017E\xEDvame?</a>`,
         primary_btn: {
           text: "Prija\u0165 v\u0161etky",
           role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1215,27 +1254,21 @@
   };
 
   // src/consentCollector.ts
-  function submitConsent(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary) {
-    const payload = buildPayload(cookieConsent, acceptedOnlyNecessary);
+  function submitConsent(consentCollectorApiUrl, cookieConsent) {
+    const payload = buildPayload(cookieConsent);
     postDataToApi(consentCollectorApiUrl, payload);
   }
-  function buildPayload(cookieConsent, acceptedOnlyNecessary) {
+  function buildPayload(cookieConsent) {
     const cookieData = cookieConsent.get("data");
-    const acceptedCategories = cookieConsent.get("level");
-    const rejectedCategories = acceptedOnlyNecessary ? [
-      CookieConsentCategory.AD,
-      CookieConsentCategory.ANALYTICS,
-      CookieConsentCategory.FUNCTIONALITY,
-      CookieConsentCategory.PERSONALIZATION
-    ] : [];
+    const userPreferences = cookieConsent.getUserPreferences();
     return {
       data: {
         type: "localDataAcceptationDataEntries",
         attributes: {
           acceptation_id: cookieData.uid,
-          accept_type: acceptedOnlyNecessary ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY : VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-          accepted_categories: acceptedCategories,
-          rejected_categories: rejectedCategories,
+          accept_type: `accept_${userPreferences.accept_type}`,
+          accepted_categories: userPreferences.accepted_categories,
+          rejected_categories: userPreferences.rejected_categories,
           revision: cookieConsent.get("revision"),
           source: cookieData.serviceName,
           language: cookieConsent.getConfig("current_lang"),
@@ -1293,7 +1326,6 @@
     } = options;
     const cookieName = "lmc_ccm";
     const cookieConsent = window.initCookieConsent();
-    const isFirstTimeAccept = !cookieConsent.validCookie(cookieName);
     const languages = {
       cs: config({ companyNames }),
       de: config2({ companyNames }),
@@ -1319,29 +1351,29 @@
         consent_modal: {
           layout: VanillaCookieConsent.GuiConsentLayout.BAR,
           position: VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
-          transition: VanillaCookieConsent.Transition.SLIDE
+          transition: VanillaCookieConsent.Transition.SLIDE,
+          swap_buttons: true
         }
       },
       onAccept: (cookie) => {
-        const givenLevels = cookieConsent.get("level");
-        const acceptedOnlyNecessary = givenLevels.length === 1 && givenLevels[0] === CookieConsentCategory.NECESSARY;
+        const userPreferences = cookieConsent.getUserPreferences();
         onAccept(cookie, cookieConsent);
-        if (isFirstTimeAccept) {
-          const cookieData = cookieConsent.get("data");
-          if (cookieData === null || !("uid" in cookieData)) {
-            cookieConsent.set("data", {
-              value: { serviceName, uid: nanoid() },
-              mode: "update"
-            });
-          }
-          pushToDataLayer(cookie);
-          if (consentCollectorApiUrl !== null) {
-            consentCollector_default(consentCollectorApiUrl, cookieConsent, acceptedOnlyNecessary);
-          }
-          onFirstAccept(cookie, cookieConsent);
-          acceptedOnlyNecessary ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
+        userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
+      },
+      onFirstAction: (userPreferences, cookie) => {
+        const cookieData = cookieConsent.get("data");
+        if (cookieData === null || !("uid" in cookieData)) {
+          cookieConsent.set("data", {
+            value: { serviceName, uid: nanoid() },
+            mode: "update"
+          });
         }
-        acceptedOnlyNecessary ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
+        pushToDataLayer(cookie);
+        if (consentCollectorApiUrl !== null) {
+          consentCollector_default(consentCollectorApiUrl, cookieConsent);
+        }
+        onFirstAccept(cookie, cookieConsent);
+        userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
       },
       languages
     }, config9);

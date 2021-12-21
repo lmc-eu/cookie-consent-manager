@@ -1,4 +1,26 @@
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/1.1.2...1.2.0) (2021-12-21)
+
+### Code Refactoring
+* Enable new swap_buttons feature to proper button order by default [#CCM-51](https://jira.int.lmc.cz/browse/CCM-51) ([cf2d3c4](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/cf2d3c4))
+* Use new getUserPreferences to retrieve actual user preferences [#CCM-51](https://jira.int.lmc.cz/browse/CCM-51) ([d873a22](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/d873a22))
+* Use new onFirstAction and simplify conditions [#CCM-51](https://jira.int.lmc.cz/browse/CCM-51) ([96958d5](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/96958d5))
+
+### Dependencies
+
+* Update all dev dependencies ([38b46ca](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/38b46ca))
+* Update and pin to `vanilla-cookieconsent` 2.7 [#CCM-51](https://jira.int.lmc.cz/browse/CCM-51) ([0469d9b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/0469d9b))
+
+### Documentation
+
+* Add example to show all supported languages ([d142f3b](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/d142f3b))
+* Fix stylelint violation in examples ([b547900](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/b547900))
+
+### Features
+
+* Make texts for cs, en, sk and pl less formal [#CCM-50](https://jira.int.lmc.cz/browse/CCM-50) ([7941d64](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/commit/7941d64))
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/1.1.1...1.1.2) (2021-12-19)
 
