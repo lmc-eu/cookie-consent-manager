@@ -1,6 +1,6 @@
 
 <a name="1.2.0"></a>
-# [1.2.0](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/1.1.2...1.2.0) (2021-12-21)
+# [1.2.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.1.2...1.2.0) (2021-12-21)
 
 ### Code Refactoring
 * Enable new swap_buttons feature to proper button order by default [#CCM-51](https://jira.int.lmc.cz/browse/CCM-51) ([cf2d3c4](https://github.com/lmc-eu/cookie-consent-manager/commit/cf2d3c4))
@@ -22,7 +22,7 @@
 * Make texts for cs, en, sk and pl less formal [#CCM-50](https://jira.int.lmc.cz/browse/CCM-50) ([7941d64](https://github.com/lmc-eu/cookie-consent-manager/commit/7941d64))
 
 <a name="1.1.2"></a>
-## [1.1.2](https://github.com/projects/lmc-eu/repos/cookie-consent-manager/compare/1.1.1...1.1.2) (2021-12-19)
+## [1.1.2](https://github.com/lmc-eu/cookie-consent-manager/compare/1.1.1...1.1.2) (2021-12-19)
 
 ### Bug Fixes
 
