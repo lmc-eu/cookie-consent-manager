@@ -1,4 +1,15 @@
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/lmc-eu/cookie-consent-manager/compare/1.2.0...1.2.1) (2021-12-21)
+
+### Bug Fixes
+
+* Add missing cookie_name type in vanilla-cookieconsent declaration ([81396b3](https://github.com/lmc-eu/cookie-consent-manager/commit/81396b3))
+
+### Documentation
+
+* Fix links to previous version in changelog ([783a997](https://github.com/lmc-eu/cookie-consent-manager/commit/783a997))
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.1.2...1.2.0) (2021-12-21)
 
