@@ -123,6 +123,7 @@
     flex-shrink: 0;
     align-items: baseline;
     max-width: none;
+    margin-top: 0;
 }
 
 @media screen and (max-width: settings.$breakpoint-desktop-down) {
