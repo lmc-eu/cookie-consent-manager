@@ -90,6 +90,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
+    cookie_necessary_only_expiration: 60, // 2 months
     cookie_name: cookieName, // Predefined cookie name. Do not override.
     current_lang: defaultLang, // Default language used when auto_language is false (or when autodetect failed)
     delay: 0, // Show the modal immediately after init

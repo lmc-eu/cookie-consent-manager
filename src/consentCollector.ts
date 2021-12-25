@@ -16,6 +16,10 @@ function submitConsent(
 function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>): Object {
   const cookieData = cookieConsent.get('data');
   const userPreferences = cookieConsent.getUserPreferences();
+  const daysOfAcceptation =
+    userPreferences.accept_type === VanillaCookieConsent.AcceptType.NECESSARY
+      ? cookieConsent.getConfig('cookie_necessary_only_expiration')
+      : cookieConsent.getConfig('cookie_expiration');
 
   return {
     data: {
@@ -28,7 +32,7 @@ function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieCo
         revision: cookieConsent.get('revision'),
         source: cookieData.serviceName,
         language: cookieConsent.getConfig('current_lang'),
-        days_of_acceptation: cookieConsent.getConfig('cookie_expiration'),
+        days_of_acceptation: daysOfAcceptation,
       },
     },
   };
