@@ -134,6 +134,7 @@
         config: { // override default config of the underlying library, see https://github.com/orestbida/cookieconsent#all-available-options
           delay: 500, // show cookie consent banner after 500ms
           page_scripts: false, // disable third-party script management, see https://github.com/lmc-eu/cookie-consent-manager#third-party-scripts-loaded-via-script
+          cookie_necessary_only_expiration: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
         onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
