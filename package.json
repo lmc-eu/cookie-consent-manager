@@ -78,7 +78,7 @@
     "@commitlint/cli": "16.0.1",
     "@lmc-eu/browserslist-config": "1.0.1",
     "@lmc-eu/commitlint-config": "1.0.9",
-    "@lmc-eu/conventional-changelog-lmc-bitbucket": "1.3.7",
+    "@lmc-eu/conventional-changelog-lmc-github": "1.0.1",
     "@lmc-eu/eslint-config-base": "1.1.1",
     "@lmc-eu/prettier-config": "1.2.1",
     "@lmc-eu/stylelint-config": "2.0.2",
