@@ -1,3 +1,32 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.2.1...1.3.0) (2022-01-05)
+
+### Bug Fixes
+
+* Fix spacing too big after core library upgrade ([7f7fd5d](https://github.com/lmc-eu/cookie-consent-manager/commit/7f7fd5d))
+
+### Dependencies
+
+* Update all dev dependencies ([612ddd9](https://github.com/lmc-eu/cookie-consent-manager/commit/612ddd9))
+* Update dependency vanilla-cookieconsent to 2.7.2 ([10920c4](https://github.com/lmc-eu/cookie-consent-manager/commit/10920c4))
+
+### Documentation
+
+* Add `cookie_necessary_only_expiration` to configuration example ([68230d6](https://github.com/lmc-eu/cookie-consent-manager/commit/68230d6))
+
+### Features
+
+* Set shorter cookie expiration when only necessary category accepted [#CCM-53](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-53) ([929d8f3](https://github.com/lmc-eu/cookie-consent-manager/commit/929d8f3))
+
+### Chores
+
+* **commitlint:** Remove ignore sections cause it is not used ([b421b19](https://github.com/lmc-eu/cookie-consent-manager/commit/b421b19))
+* Define codeowners using company e-mail rather than nickname ([9f5c973](https://github.com/lmc-eu/cookie-consent-manager/commit/9f5c973))
+* **changelog:** Add missing dependency on @lmc-eu/conventional-changelog-lmc-github ([90cadbb](https://github.com/lmc-eu/cookie-consent-manager/commit/90cadbb))
+* **changelog:** Switch from bitbucket preset to Github preset ([6bf904a](https://github.com/lmc-eu/cookie-consent-manager/commit/6bf904a))
+* Rename commitlint config to be dot notated ([c9aadcb](https://github.com/lmc-eu/cookie-consent-manager/commit/c9aadcb))
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/lmc-eu/cookie-consent-manager/compare/1.2.0...1.2.1) (2021-12-21)
 

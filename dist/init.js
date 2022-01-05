@@ -18,8 +18,8 @@
 
   // node_modules/vanilla-cookieconsent/dist/cookieconsent.js
   (function() {
-    var db = function(Xa) {
-      var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, r = {}, U = false, V = false, na = false, ya = false, oa = false, u, aa, W, za, Aa, Ba, ba = true, Ca = false, A = null, Da, pa = [], Ea = [], Oa = false, ua, Fa, Ga = [], ja = [], Q = [], F = [], va = [], ka = document.documentElement, L, x, G, R, Ya = function(a) {
+    var fb = function(Za) {
+      var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, r = {}, U = false, V = false, na = false, xa = false, oa = false, u, aa, W, ya, za, Aa, ba = true, Ba = false, A = null, Ca, Da = [], Pa = [], Qa = false, ta, Ea, Fa = [], ja = [], Q = [], F = [], ua = [], ka = document.documentElement, L, x, G, R, $a = function(a) {
         typeof a.cookie_expiration === "number" && (f.cookie_expiration = a.cookie_expiration);
         typeof a.cookie_necessary_only_expiration === "number" && (f.cookie_necessary_only_expiration = a.cookie_necessary_only_expiration);
         typeof a.autorun === "boolean" && (f.autorun = a.autorun);
@@ -27,32 +27,32 @@
         typeof a.cookie_same_site === "string" && (f.cookie_same_site = a.cookie_same_site);
         typeof a.cookie_path === "string" && (f.cookie_path = a.cookie_path);
         typeof a.cookie_name === "string" && (f.cookie_name = a.cookie_name);
-        typeof a.onAccept === "function" && (za = a.onAccept);
-        typeof a.onFirstAction === "function" && (Ba = a.onFirstAction);
-        typeof a.onChange === "function" && (Aa = a.onChange);
-        typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), Ca = true);
+        typeof a.onAccept === "function" && (ya = a.onAccept);
+        typeof a.onFirstAction === "function" && (Aa = a.onFirstAction);
+        typeof a.onChange === "function" && (za = a.onChange);
+        typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), Ba = true);
         a.autoclear_cookies === true && (f.autoclear_cookies = true);
         a.use_rfc_cookie === true && (f.use_rfc_cookie = true);
-        a.hide_from_bots === true && (Oa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
+        a.hide_from_bots === true && (Qa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
         f.page_scripts = a.page_scripts === true;
         f.page_scripts_order = a.page_scripts_order !== false;
         a.auto_language === "browser" || a.auto_language === true ? f.auto_language = "browser" : a.auto_language === "document" && (f.auto_language = "document");
         var b = a.languages;
         a = a.current_lang;
-        f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = Ha(a, b)) : b = f.auto_language === "document" ? Ha(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = Ha(a, b) : f.current_lang;
+        f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = Ga(a, b)) : b = f.auto_language === "document" ? Ga(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = Ga(a, b) : f.current_lang;
         f.current_lang = b;
-      }, Za = function() {
+      }, ab = function() {
         for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
           a[b].setAttribute("aria-haspopup", "dialog"), H(a[b], "click", function(c) {
             k.showSettings(0);
             c.preventDefault ? c.preventDefault() : c.returnValue = false;
           });
-      }, Ha = function(a, b) {
+      }, Ga = function(a, b) {
         if (Object.prototype.hasOwnProperty.call(b, a))
           return a;
-        if (0 < qa(b).length)
-          return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : qa(b)[0];
-      }, Pa = function() {
+        if (0 < pa(b).length)
+          return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : pa(b)[0];
+      }, Ra = function() {
         function a(c, d) {
           var e = false, h = false;
           try {
@@ -68,50 +68,50 @@
         }
         var b = ["[href]", "button", "input", "details", '[tabindex="0"]'];
         a(R, ja);
-        U && a(x, Ga);
-      }, Ia, Ja, Qa = "", ra, $a = function(a, b) {
+        U && a(x, Fa);
+      }, Ha, Ia, Sa = "", qa, bb = function(a, b) {
         L = g("div");
         L.id = "cc--main";
         L.style.position = "fixed";
         L.style.zIndex = "1000000";
         L.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
         var c = L.children[0], d = f.current_lang, e = typeof ka.textContent === "string" ? "textContent" : "innerText";
-        Ia = b;
-        Ja = function(t) {
+        Ha = b;
+        Ia = function(t) {
           t.force_consent === true && I(ka, "force--consent");
           var y = t.languages[d].consent_modal.description;
-          Ca && (y = ba ? y.replace("{{revision_message}}", "") : y.replace("{{revision_message}}", Qa || t.languages[d].consent_modal.revision_message || ""));
+          Ba && (y = ba ? y.replace("{{revision_message}}", "") : y.replace("{{revision_message}}", Sa || t.languages[d].consent_modal.revision_message || ""));
           if (x)
-            ra.innerHTML = y;
+            qa.innerHTML = y;
           else {
             x = g("div");
-            var ca = g("div"), wa = g("div");
-            ra = g("div");
-            var da = g("div"), xa = g("div");
+            var ca = g("div"), va = g("div");
+            qa = g("div");
+            var da = g("div"), wa = g("div");
             x.id = "cm";
             ca.id = "c-inr";
-            wa.id = "c-inr-i";
-            ra.id = "c-txt";
+            va.id = "c-inr-i";
+            qa.id = "c-txt";
             da.id = "c-bns";
-            xa.id = "cm-ov";
+            wa.id = "cm-ov";
             x.setAttribute("role", "dialog");
             x.setAttribute("aria-modal", "true");
             x.setAttribute("aria-hidden", "false");
             x.setAttribute("aria-labelledby", "c-ttl");
             x.setAttribute("aria-describedby", "c-txt");
-            x.style.visibility = xa.style.visibility = "hidden";
-            xa.style.opacity = 0;
+            x.style.visibility = wa.style.visibility = "hidden";
+            wa.style.opacity = 0;
             var X = t.languages[d].consent_modal.title;
             if (X) {
-              var sa = g("div");
-              sa.id = "c-ttl";
-              sa.setAttribute("role", "heading");
-              sa.setAttribute("aria-level", "2");
-              sa.insertAdjacentHTML("beforeend", X);
-              wa.appendChild(sa);
+              var ra = g("div");
+              ra.id = "c-ttl";
+              ra.setAttribute("role", "heading");
+              ra.setAttribute("aria-level", "2");
+              ra.insertAdjacentHTML("beforeend", X);
+              va.appendChild(ra);
             }
-            ra.insertAdjacentHTML("beforeend", y);
-            wa.appendChild(ra);
+            qa.insertAdjacentHTML("beforeend", y);
+            va.appendChild(qa);
             y = t.languages[d].consent_modal.primary_btn;
             X = t.languages[d].consent_modal.secondary_btn;
             if (y) {
@@ -119,11 +119,11 @@
               la.id = "c-p-bn";
               la.className = "c-bn";
               la[e] = t.languages[d].consent_modal.primary_btn.text;
-              var Ra;
-              y.role === "accept_all" && (Ra = "all");
+              var Ta;
+              y.role === "accept_all" && (Ta = "all");
               H(la, "click", function() {
                 k.hide();
-                k.accept(Ra);
+                k.accept(Ta);
               });
             }
             if (X) {
@@ -139,15 +139,15 @@
               });
             }
             (t = t.gui_options) && t.consent_modal && t.consent_modal.swap_buttons === true ? (X && da.appendChild(ea), y && da.appendChild(la), da.className = "swap") : (y && da.appendChild(la), X && da.appendChild(ea));
-            ca.appendChild(wa);
+            ca.appendChild(va);
             (y || X) && ca.appendChild(da);
             x.appendChild(ca);
             c.appendChild(x);
-            c.appendChild(xa);
+            c.appendChild(wa);
             U = true;
           }
         };
-        a || Ja(b);
+        a || Ia(b);
         G = g("div");
         var h = g("div"), l = g("div"), m = g("div");
         R = g("div");
@@ -196,27 +196,27 @@
           ma.className = "c-bl";
           Z.className = "desc";
           if (typeof M !== "undefined") {
-            var N = "c-ac-" + v, ha = w ? g("button") : g("div"), D = g("label"), O = g("input"), P = g("span"), ia = g("span"), Sa = g("span"), Ta = g("span");
+            var N = "c-ac-" + v, ha = w ? g("button") : g("div"), D = g("label"), O = g("input"), P = g("span"), ia = g("span"), Ua = g("span"), Va = g("span");
             ha.className = w ? "b-tl exp" : "b-tl";
             D.className = "b-tg";
             O.className = "c-tgl";
-            Sa.className = "on-i";
-            Ta.className = "off-i";
+            Ua.className = "on-i";
+            Va.className = "off-i";
             P.className = "c-tg";
             ia.className = "t-lb";
             w && (ha.setAttribute("aria-expanded", "false"), ha.setAttribute("aria-controls", N));
             O.type = "checkbox";
             P.setAttribute("aria-hidden", "true");
-            var Ka = M.value;
-            O.value = Ka;
+            var Ja = M.value;
+            O.value = Ja;
             ia[e] = C;
             ha.insertAdjacentHTML("beforeend", C);
             B.appendChild(ha);
-            P.appendChild(Sa);
-            P.appendChild(Ta);
-            a ? -1 < E(r.level, Ka) ? (O.checked = true, Q.push(true)) : Q.push(false) : M.enabled ? (O.checked = true, Q.push(true)) : Q.push(false);
-            F.push(Ka);
-            M.readonly ? (O.disabled = true, I(P, "c-ro"), va.push(true)) : va.push(false);
+            P.appendChild(Ua);
+            P.appendChild(Va);
+            a ? -1 < E(r.level, Ja) ? (O.checked = true, Q.push(true)) : Q.push(false) : M.enabled ? (O.checked = true, Q.push(true)) : Q.push(false);
+            F.push(Ja);
+            M.readonly ? (O.disabled = true, I(P, "c-ro"), ua.push(true)) : ua.push(false);
             I(Z, "b-acc");
             I(B, "b-bn");
             I(ma, "b-ex");
@@ -228,7 +228,7 @@
             B.appendChild(D);
             w && function(t, y, ca) {
               H(ha, "click", function() {
-                Ua(y, "act") ? (La(y, "act"), ca.setAttribute("aria-expanded", "false"), t.setAttribute("aria-hidden", "true")) : (I(y, "act"), ca.setAttribute("aria-expanded", "true"), t.setAttribute("aria-hidden", "false"));
+                Wa(y, "act") ? (Ka(y, "act"), ca.setAttribute("aria-expanded", "false"), t.setAttribute("aria-hidden", "true")) : (I(y, "act"), ca.setAttribute("aria-expanded", "true"), t.setAttribute("aria-hidden", "false"));
               }, false);
             }(Z, ma, ha);
           } else
@@ -238,7 +238,7 @@
           if (!K && typeof fa !== "undefined") {
             w = document.createDocumentFragment();
             for (N = 0; N < aa.length; ++N)
-              D = g("th"), K = aa[N], D.setAttribute("scope", "col"), K && (B = K && qa(K)[0], D[e] = aa[N][B], w.appendChild(D));
+              D = g("th"), K = aa[N], D.setAttribute("scope", "col"), K && (B = K && pa(K)[0], D[e] = aa[N][B], w.appendChild(D));
             K = g("tr");
             K.appendChild(w);
             B = g("thead");
@@ -250,7 +250,7 @@
               O = g("tr");
               for (P = 0; P < aa.length; ++P)
                 if (K = aa[P])
-                  B = qa(K)[0], ia = g("td"), ia.insertAdjacentHTML("beforeend", fa[D][B]), ia.setAttribute("data-column", K[B]), O.appendChild(ia);
+                  B = pa(K)[0], ia = g("td"), ia.insertAdjacentHTML("beforeend", fa[D][B]), ia.setAttribute("data-column", K[B]), O.appendChild(ia);
               N.appendChild(O);
             }
             fa = g("tbody");
@@ -300,8 +300,8 @@
         G.appendChild(h);
         c.appendChild(G);
         c.appendChild(z);
-        (Xa || document.body).appendChild(L);
-      }, ab = function(a) {
+        (Za || document.body).appendChild(L);
+      }, cb = function(a) {
         var b = document.querySelectorAll(".c-tgl") || [], c = [], d = false;
         if (0 < b.length) {
           for (var e = 0; e < b.length; e++)
@@ -309,7 +309,7 @@
           if (f.autoclear_cookies && V && 0 < c.length) {
             b = W.length;
             e = -1;
-            var h = ta("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
+            var h = sa("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
             if (f.cookie_domain.slice(0, 4) === "www.") {
               var m = f.cookie_domain.substr(4);
               l.push(m);
@@ -318,7 +318,7 @@
             for (m = 0; m < b; m++) {
               var n = W[m];
               if (Object.prototype.hasOwnProperty.call(n, "toggle") && !Q[++e] && Object.prototype.hasOwnProperty.call(n, "cookie_table") && -1 < E(c, n.toggle.value)) {
-                var p = n.cookie_table, q = qa(aa[0])[0], Y = p.length;
+                var p = n.cookie_table, q = pa(aa[0])[0], Y = p.length;
                 n.toggle.reload === "on_disable" && (d = true);
                 for (var S = 0; S < Y; S++) {
                   var z = p[S], v = [], C = z[q], J = z.is_regex || false, M = z.domain || null;
@@ -329,7 +329,7 @@
                       h[J].match(C) && v.push(h[J]);
                   else
                     C = E(h, C), -1 < C && v.push(h[C]);
-                  0 < v.length && (Va(v, z, l), n.toggle.reload === "on_clear" && (d = true));
+                  0 < v.length && (Xa(v, z, l), n.toggle.reload === "on_clear" && (d = true));
                 }
               }
             }
@@ -337,9 +337,9 @@
         }
         r = { level: a, revision: f.revision, data: A, rfc_cookie: f.use_rfc_cookie };
         if (!V || 0 < c.length || !ba)
-          ba = true, Ma(f.cookie_name, JSON.stringify(r)), Na();
-        V ? (typeof Aa === "function" && 0 < c.length && Aa(r, c), d && window.location.reload()) : (typeof Ba === "function" && Ba(k.getUserPreferences(), r), typeof za === "function" && za(r), V = true);
-      }, bb = function(a, b) {
+          ba = true, Ca = La(Ma()), Na(f.cookie_name, JSON.stringify(r)), Oa();
+        V ? (typeof za === "function" && 0 < c.length && za(r, c), d && window.location.reload()) : (typeof Aa === "function" && Aa(k.getUserPreferences(), r), typeof ya === "function" && ya(r), V = true);
+      }, db = function(a, b) {
         if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
           b();
         else {
@@ -361,7 +361,7 @@
         var b = document.createElement(a);
         a === "button" && b.setAttribute("type", a);
         return b;
-      }, cb = function() {
+      }, eb = function() {
         var a = false, b = false;
         H(document, "keydown", function(c) {
           c = c || window.event;
@@ -369,9 +369,9 @@
         });
         document.contains && H(L, "click", function(c) {
           c = c || window.event;
-          ya ? R.contains(c.target) ? oa = true : (k.hideSettings(0), oa = false) : na && x.contains(c.target) && (oa = true);
+          xa ? R.contains(c.target) ? oa = true : (k.hideSettings(0), oa = false) : na && x.contains(c.target) && (oa = true);
         }, true);
-      }, Wa = function(a, b) {
+      }, Ya = function(a, b) {
         function c(e, h, l, m, n, p, q) {
           p = p && p.split(" ") || [];
           if (-1 < E(h, n) && (I(e, n), (n !== "bar" || p[0] !== "middle") && -1 < E(l, p[0])))
@@ -387,25 +387,26 @@
         }
       };
       k.allowedCategory = function(a) {
-        return -1 < E(JSON.parse(ta(f.cookie_name, "one", true) || "{}").level || [], a);
+        return -1 < E(JSON.parse(sa(f.cookie_name, "one", true) || "{}").level || [], a);
       };
       k.run = function(a) {
-        if (!document.getElementById("cc_div") && (Ya(a), !Oa && (r = JSON.parse(ta(f.cookie_name, "one", true) || "{}"), V = r.level !== void 0, A = r.data !== void 0 ? r.data : null, ba = typeof a.revision === "number" ? V ? -1 < a.revision ? r.revision === f.revision : true : true : true, U = !V || !ba, $a(!U, a), bb(a.theme_css, function() {
-          Pa();
-          Wa(a.gui_options);
-          Za();
+        if (!document.getElementById("cc_div") && ($a(a), !Qa && (r = JSON.parse(sa(f.cookie_name, "one", true) || "{}"), V = r.level !== void 0, A = r.data !== void 0 ? r.data : null, ba = typeof a.revision === "number" ? V ? -1 < a.revision ? r.revision === f.revision : true : true : true, U = !V || !ba, bb(!U, a), db(a.theme_css, function() {
+          Ra();
+          Ya(a.gui_options);
+          ab();
           f.autorun && U && k.show(a.delay || 0);
           setTimeout(function() {
             I(L, "c--anim");
           }, 30);
           setTimeout(function() {
-            cb();
+            eb();
           }, 100);
         }), V && ba))) {
           var b = typeof r.rfc_cookie === "boolean";
           if (!b || b && r.rfc_cookie !== f.use_rfc_cookie)
-            r.rfc_cookie = f.use_rfc_cookie, Ma(f.cookie_name, JSON.stringify(r));
-          Na();
+            r.rfc_cookie = f.use_rfc_cookie, Na(f.cookie_name, JSON.stringify(r));
+          Ca = La(Ma());
+          Oa();
           if (typeof a.onAccept === "function")
             a.onAccept(r);
         }
@@ -414,14 +415,14 @@
         setTimeout(function() {
           I(ka, "show--settings");
           G.setAttribute("aria-hidden", "false");
-          ya = true;
+          xa = true;
           setTimeout(function() {
-            na ? Fa = document.activeElement : ua = document.activeElement;
+            na ? Ea = document.activeElement : ta = document.activeElement;
             ja.length !== 0 && (ja[3] ? ja[3].focus() : ja[0].focus(), u = ja);
           }, 200);
         }, 0 < a ? a : 0);
       };
-      var Na = function() {
+      var Oa = function() {
         if (f.page_scripts) {
           var a = document.querySelectorAll("script[" + f.script_selector + "]"), b = f.page_scripts_order, c = r.level || [], d = function(e, h) {
             if (h < e.length) {
@@ -468,30 +469,36 @@
                 !b && A || A === a || (A = a, c = true);
             else
               A = a, c = true;
-            c && (r.data = A, Ma(f.cookie_name, JSON.stringify(r)));
+            c && (r.data = A, Na(f.cookie_name, JSON.stringify(r)));
             return c;
           case "revision":
-            return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && r.revision !== d ? (Ca = true, Qa = b, ba = false, f.revision = d, a === true ? (Ja(Ia), Wa(Ia.gui_options, true), Pa(), k.show()) : k.accept(), b = true) : b = false, b;
+            return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && r.revision !== d ? (Ba = true, Sa = b, ba = false, f.revision = d, a === true ? (Ia(Ha), Ya(Ha.gui_options, true), Ra(), k.show()) : k.accept(), b = true) : b = false, b;
           default:
             return false;
         }
       };
       k.get = function(a, b) {
-        return JSON.parse(ta(b || f.cookie_name, "one", true) || "{}")[a];
+        return JSON.parse(sa(b || f.cookie_name, "one", true) || "{}")[a];
       };
       k.getConfig = function(a) {
         return f[a];
       };
-      k.getUserPreferences = function() {
-        pa = r.level || [];
-        var a = va.filter(function(b) {
-          return b === true;
-        }).length;
-        Ea = F.filter(function(b) {
-          return E(pa, b) === -1;
+      var Ma = function() {
+        Da = r.level || [];
+        Pa = F.filter(function(a) {
+          return E(Da, a) === -1;
         });
-        Da = pa.length === F.length ? "all" : 0 <= Ea.length && pa.length === a ? "necessary" : "custom";
-        return { accept_type: Da, accepted_categories: pa, rejected_categories: Ea };
+        return { accepted: Da, rejected: Pa };
+      }, La = function(a) {
+        var b = "custom", c = ua.filter(function(d) {
+          return d === true;
+        }).length;
+        a.accepted.length === F.length ? b = "all" : 0 <= a.rejected.length && a.accepted.length === c && (b = "necessary");
+        return b;
+      };
+      k.getUserPreferences = function() {
+        var a = Ma();
+        return { accept_type: La(a), accepted_categories: a.accepted, rejected_categories: a.rejected };
       };
       k.loadScript = function(a, b, c) {
         var d = typeof b === "function";
@@ -511,7 +518,7 @@
         }
       };
       k.updateScripts = function() {
-        Na();
+        Oa();
       };
       k.show = function(a) {
         U && setTimeout(function() {
@@ -519,23 +526,23 @@
           x.setAttribute("aria-hidden", "false");
           na = true;
           setTimeout(function() {
-            ua = document.activeElement;
-            u = Ga;
+            ta = document.activeElement;
+            u = Fa;
           }, 200);
         }, 0 < a ? a : 0);
       };
       k.hide = function() {
-        U && (La(ka, "show--consent"), x.setAttribute("aria-hidden", "true"), na = false, setTimeout(function() {
-          ua.focus();
+        U && (Ka(ka, "show--consent"), x.setAttribute("aria-hidden", "true"), na = false, setTimeout(function() {
+          ta.focus();
           u = null;
         }, 200));
       };
       k.hideSettings = function() {
-        La(ka, "show--settings");
-        ya = false;
+        Ka(ka, "show--settings");
+        xa = false;
         G.setAttribute("aria-hidden", "true");
         setTimeout(function() {
-          na ? (Fa && Fa.focus(), u = Ga) : (ua.focus(), u = null);
+          na ? (Ea && Ea.focus(), u = Fa) : (ta.focus(), u = null);
           oa = false;
         }, 200);
       };
@@ -562,8 +569,8 @@
               return h !== c[e];
             });
         for (e = 0; e < F.length; e++)
-          va[e] === true && E(b, F[e]) === -1 && b.push(F[e]);
-        ab(b);
+          ua[e] === true && E(b, F[e]) === -1 && b.push(F[e]);
+        cb(b);
       };
       k.eraseCookies = function(a, b, c) {
         var d = [];
@@ -573,11 +580,11 @@
             this.validCookie(a[e]) && d.push(a[e]);
         else
           this.validCookie(a) && d.push(a);
-        Va(d, b, c);
+        Xa(d, b, c);
       };
-      var Ma = function(a, b) {
+      var Na = function(a, b) {
         var c = f.cookie_expiration;
-        typeof f.cookie_necessary_only_expiration === "number" && Da === "necessary" && (c = f.cookie_necessary_only_expiration);
+        typeof f.cookie_necessary_only_expiration === "number" && Ca === "necessary" && (c = f.cookie_necessary_only_expiration);
         b = f.use_rfc_cookie ? encodeURIComponent(b) : b;
         var d = new Date();
         d.setTime(d.getTime() + 864e5 * c);
@@ -587,7 +594,7 @@
         -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + f.cookie_domain + ";");
         window.location.protocol === "https:" && (a += " Secure;");
         document.cookie = a;
-      }, ta = function(a, b, c) {
+      }, sa = function(a, b, c) {
         var d;
         if (b === "one") {
           if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === f.cookie_name) {
@@ -606,18 +613,18 @@
           for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
             d.push(a[b].split("=")[0]);
         return d;
-      }, Va = function(a, b, c) {
+      }, Xa = function(a, b, c) {
         b = b ? b : "/";
         for (var d = 0; d < a.length; d++)
           for (var e = 0; e < c.length; e++)
             document.cookie = a[d] + "=; path=" + b + (-1 < c[e].indexOf(".") ? "; domain=" + c[e] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
       };
       k.validCookie = function(a) {
-        return ta(a, "one", true) !== "";
+        return sa(a, "one", true) !== "";
       };
       var H = function(a, b, c, d) {
         a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
-      }, qa = function(a) {
+      }, pa = function(a) {
         if (typeof a === "object") {
           var b = [], c = 0;
           for (b[c++] in a)
@@ -625,15 +632,15 @@
           return b;
         }
       }, I = function(a, b) {
-        a.classList ? a.classList.add(b) : Ua(a, b) || (a.className += " " + b);
-      }, La = function(a, b) {
+        a.classList ? a.classList.add(b) : Wa(a, b) || (a.className += " " + b);
+      }, Ka = function(a, b) {
         a.classList ? a.classList.remove(b) : a.className = a.className.replace(new RegExp("(\\s|^)" + b + "(\\s|$)"), " ");
-      }, Ua = function(a, b) {
+      }, Wa = function(a, b) {
         return a.classList ? a.classList.contains(b) : !!a.className.match(new RegExp("(\\s|^)" + b + "(\\s|$)"));
       };
       return k;
     };
-    typeof window.initCookieConsent !== "function" && (window.initCookieConsent = db);
+    typeof window.initCookieConsent !== "function" && (window.initCookieConsent = fb);
   })();
 
   // node_modules/nanoid/index.prod.js
@@ -677,16 +684,6 @@
     return `${accumulator}, ${string}`;
   });
   var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
-
-  // src/types/CookieConsentCategory.ts
-  var CookieConsentCategory = /* @__PURE__ */ ((CookieConsentCategory2) => {
-    CookieConsentCategory2["NECESSARY"] = "necessary";
-    CookieConsentCategory2["AD"] = "ad";
-    CookieConsentCategory2["ANALYTICS"] = "analytics";
-    CookieConsentCategory2["FUNCTIONALITY"] = "functionality";
-    CookieConsentCategory2["PERSONALIZATION"] = "personalization";
-    return CookieConsentCategory2;
-  })(CookieConsentCategory || {});
 
   // src/types/vanilla-cookieconsent.ts
   var VanillaCookieConsent;
@@ -769,35 +766,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -831,35 +828,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -894,35 +891,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -956,35 +953,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -1022,35 +1019,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -1086,35 +1083,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -1151,35 +1148,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -1215,35 +1212,35 @@
         blocks: [
           {
             toggle: {
-              value: CookieConsentCategory.NECESSARY,
+              value: "necessary" /* NECESSARY */,
               enabled: true,
               readonly: true
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.AD,
+              value: "ad" /* AD */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.ANALYTICS,
+              value: "analytics" /* ANALYTICS */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.FUNCTIONALITY,
+              value: "functionality" /* FUNCTIONALITY */,
               enabled: false,
               readonly: false
             }
           },
           {
             toggle: {
-              value: CookieConsentCategory.PERSONALIZATION,
+              value: "personalization" /* PERSONALIZATION */,
               enabled: false,
               readonly: false
             }
@@ -1261,6 +1258,7 @@
   function buildPayload(cookieConsent) {
     const cookieData = cookieConsent.get("data");
     const userPreferences = cookieConsent.getUserPreferences();
+    const daysOfAcceptation = userPreferences.accept_type === VanillaCookieConsent.AcceptType.NECESSARY ? cookieConsent.getConfig("cookie_necessary_only_expiration") : cookieConsent.getConfig("cookie_expiration");
     return {
       data: {
         type: "localDataAcceptationDataEntries",
@@ -1272,7 +1270,7 @@
           revision: cookieConsent.get("revision"),
           source: cookieData.serviceName,
           language: cookieConsent.getConfig("current_lang"),
-          days_of_acceptation: cookieConsent.getConfig("cookie_expiration")
+          days_of_acceptation: daysOfAcceptation
         }
       }
     };
@@ -1340,6 +1338,7 @@
       auto_language: autodetectLang ? "document" : null,
       autorun: true,
       cookie_expiration: 365,
+      cookie_necessary_only_expiration: 60,
       cookie_name: cookieName,
       current_lang: defaultLang,
       delay: 0,
@@ -1384,11 +1383,11 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "CookieConsent-update",
-      "CookieConsent.necessary": cookie.level.includes(CookieConsentCategory.NECESSARY),
-      "CookieConsent.analytics": cookie.level.includes(CookieConsentCategory.ANALYTICS),
-      "CookieConsent.ad": cookie.level.includes(CookieConsentCategory.AD),
-      "CookieConsent.functionality": cookie.level.includes(CookieConsentCategory.FUNCTIONALITY),
-      "CookieConsent.personalization": cookie.level.includes(CookieConsentCategory.PERSONALIZATION),
+      "CookieConsent.necessary": cookie.level.includes("necessary" /* NECESSARY */),
+      "CookieConsent.analytics": cookie.level.includes("analytics" /* ANALYTICS */),
+      "CookieConsent.ad": cookie.level.includes("ad" /* AD */),
+      "CookieConsent.functionality": cookie.level.includes("functionality" /* FUNCTIONALITY */),
+      "CookieConsent.personalization": cookie.level.includes("personalization" /* PERSONALIZATION */),
       "CookieConsent.revision": cookie.revision
     });
   }
