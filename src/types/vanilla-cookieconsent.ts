@@ -74,8 +74,9 @@ export namespace VanillaCookieConsent {
 
   interface SettingsModal {
     title?: string;
-    save_settings_btn?: string;
     accept_all_btn?: string;
+    reject_all_btn?: string;
+    save_settings_btn?: string;
     blocks?: ModalBlock[];
   }
 
