@@ -88,6 +88,7 @@ exports[`config de should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch test1, test2 und test3 zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       Weitere Informationen finden Sie unter <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -100,8 +101,14 @@ Object {
     "title": "Diese Website verwendet Cookies",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Alles akzeptieren",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -109,13 +116,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -123,6 +125,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -130,6 +134,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -137,6 +152,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Das Notwendigste akzeptieren",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -146,6 +164,7 @@ Object {
   "consent_modal": Object {
     "description": "By better understanding what you're interested in, we'll show you more relevant content.
       By clicking the \\"Accept all\\" button, you give test1, test2 and test3 your consent to use cookies for personalisation, analytics and targeted marketing.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">What are cookies and how do we use them?</a>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -158,8 +177,14 @@ Object {
     "title": "Cookies make our site even better",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Accept all",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -167,13 +192,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -181,6 +201,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -188,6 +210,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -195,6 +228,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Accept necessary",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -203,6 +239,7 @@ exports[`config hu should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az test1, test2 és test3 süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       Bővebb információkat a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Sütihasználat</a> oldalon talál.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -215,8 +252,14 @@ Object {
     "title": "Az oldalak süti fájlokat használnak",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Minden elfogadása",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -224,13 +267,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -238,6 +276,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -245,6 +285,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -252,6 +303,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "A legszükségesebbek elfogadása",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -262,6 +316,7 @@ Object {
     "description": "Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
       Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
       firmy test1, test2 i test3 do personalizacji, analizy i ukierunkowanego marketingu.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Co to są pliki cookie i jak je wykorzystujemy?</a>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -274,8 +329,14 @@ Object {
     "title": "Dzięki plikom Cookies nasza strona będzie jeszcze lepsza",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Akceptuj wszystkie",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -283,13 +344,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -297,6 +353,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -304,6 +362,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -311,6 +380,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Akceptuj niezbędne",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -319,6 +391,7 @@ exports[`config ru should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Нажав «Принять все», Вы даете свое согласие компаниям test1, test2 и test3 на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       Для получения дополнительной информации см. раздел <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">использование файлов cookie</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -331,8 +404,14 @@ Object {
     "title": "Этот сайт использует файлы cookie",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Принять все",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -340,13 +419,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -354,6 +428,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -361,6 +437,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -368,6 +455,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Принятие необходимо",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -377,6 +467,7 @@ Object {
   "consent_modal": Object {
     "description": "Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.
       Kliknutím na tlačidlo „Prijať všetky“, čím dáte spoločnostiam test1, test2 a test3 súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Čo sú to Cookies a ako ich používame?</a>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -389,8 +480,14 @@ Object {
     "title": "Vďaka Cookies budú naše stránky ešte lepšie",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Prijať všetky",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -398,13 +495,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -412,6 +504,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -419,6 +513,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -426,6 +531,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Prijať nevyhnutné",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
@@ -434,6 +542,7 @@ exports[`config uk should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Натиснувши «Прийняти все», Ви даєте свою згоду компаніям test1, test2 i test3 на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
       Для отримання додаткової інформації див. розділ <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання файлів cookie</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -446,8 +555,14 @@ Object {
     "title": "Цей сайт використовує файли cookie",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Прийняти все",
     "blocks": Array [
       Object {
+        "description": "Lorem ipsum",
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "NECESSARY TODO",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -455,13 +570,8 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Lorem ipsum",
+        "title": "ANALYTICS TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -469,6 +579,8 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "FUNCTIONALITY TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -476,6 +588,17 @@ Object {
         },
       },
       Object {
+        "description": "Lorem ipsum",
+        "title": "AD TODO",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Lorem ipsum",
+        "title": "PERSONALIZATION TODO",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -483,6 +606,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Прийняття необхідно",
+    "save_settings_btn": "save_settings_btn TODO",
+    "title": "title TODO",
   },
 }
 `;
