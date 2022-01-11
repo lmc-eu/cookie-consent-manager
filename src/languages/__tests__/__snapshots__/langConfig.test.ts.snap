@@ -5,7 +5,8 @@ Object {
   "consent_modal": Object {
     "description": "Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
       Kliknutím na tlačítko „Přijmout všechny“ dáte společnostem test1, test2 a test3 souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      <a href=\\"https://www.lmc.eu/cs/cookies\\" target=\\"_blank\\">Co jsou to Cookies a jak je používáme?</a>",
+      Používání Cookies si můžete upravit ve <a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a>.
+      Můžete si také přečíst, <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">co jsou to Cookies a jak je používáme?</a>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Přijmout všechny",
@@ -17,8 +18,18 @@ Object {
     "title": "Díky Cookies budou naše stránky ještě lepší",
   },
   "settings_modal": Object {
+    "accept_all_btn": "Přijmout všechny",
     "blocks": Array [
       Object {
+        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.
+          Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
+          <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">Používání Cookies</a>
+          a <a href=\\"https://www.lmc.eu/cs/zasady-ochrany-soukromi\\" target=\\"_blank\\">Zásady ochrany soukromí</a>.",
+      },
+      Object {
+        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
+          Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
+        "title": "Technicky nezbytné Cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -26,13 +37,9 @@ Object {
         },
       },
       Object {
-        "toggle": Object {
-          "enabled": false,
-          "readonly": false,
-          "value": "ad",
-        },
-      },
-      Object {
+        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají.
+          Díky tomu můžeme stránky a další služby neustále vylepšovat.",
+        "title": "Analytické Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -40,6 +47,9 @@ Object {
         },
       },
       Object {
+        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe.
+          Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
+        "title": "Funkční Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -47,6 +57,19 @@ Object {
         },
       },
       Object {
+        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb.
+          Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
+        "title": "Marketingové Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli.
+          Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
+        "title": "Personalizační Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -54,6 +77,9 @@ Object {
         },
       },
     ],
+    "reject_all_btn": "Přijmout nezbytné",
+    "save_settings_btn": "Uložit nastavení",
+    "title": "Vlastní nastavení souborů Cookies",
   },
 }
 `;
