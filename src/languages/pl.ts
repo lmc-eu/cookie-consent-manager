@@ -25,6 +25,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} do personalizacji, analizy i ukierunkowanego marketingu.
+      <a href="" data-cc="c-settings">TODO show settings</a>.
       <a href="https://www.lmc.eu/pl/cookies" target="_blank">Co to są pliki cookie i jak je wykorzystujemy?</a>`,
       primary_btn: {
         text: 'Akceptuj wszystkie',
@@ -36,8 +37,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
+      title: 'title TODO',
+      accept_all_btn: 'Akceptuj wszystkie',
+      reject_all_btn: 'Akceptuj niezbędne',
+      save_settings_btn: 'save_settings_btn TODO',
       blocks: [
         {
+          description: `Lorem ipsum`,
+        },
+        {
+          title: 'NECESSARY TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -45,13 +55,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
+          title: 'ANALYTICS TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -59,6 +64,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
+          title: 'FUNCTIONALITY TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -66,6 +73,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
+          title: 'AD TODO',
+          description: `Lorem ipsum`,
+          toggle: {
+            value: CookieConsentCategory.AD,
+            enabled: false,
+            readonly: false,
+          },
+        },
+        {
+          title: 'PERSONALIZATION TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,

@@ -108,7 +108,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
       settings_modal: {
         layout: VanillaCookieConsent.GuiSettingsLayout.BOX,
         transition: VanillaCookieConsent.Transition.SLIDE,
-      }
+      },
     },
     onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) => {
       const userPreferences = cookieConsent.getUserPreferences();
