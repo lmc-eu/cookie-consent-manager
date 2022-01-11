@@ -21,6 +21,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+      <a href="" data-cc="c-settings">TODO show settings</a>.
       Weitere Informationen finden Sie unter <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>.`,
       primary_btn: {
         text: 'Alles akzeptieren',
@@ -32,8 +33,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
+      title: 'title TODO',
+      accept_all_btn: 'Alles akzeptieren',
+      reject_all_btn: 'Das Notwendigste akzeptieren',
+      save_settings_btn: 'save_settings_btn TODO',
       blocks: [
         {
+          description: `Lorem ipsum`,
+        },
+        {
+          title: 'NECESSARY TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -41,13 +51,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
+          title: 'ANALYTICS TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -55,6 +60,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
+          title: 'FUNCTIONALITY TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -62,6 +69,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
+          title: 'AD TODO',
+          description: `Lorem ipsum`,
+          toggle: {
+            value: CookieConsentCategory.AD,
+            enabled: false,
+            readonly: false,
+          },
+        },
+        {
+          title: 'PERSONALIZATION TODO',
+          description: `Lorem ipsum`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,
