@@ -21,7 +21,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
+      Sie können die Verwendung von Cookies in Ihren <a href="" data-cc="c-settings">eigenen Einstellungen</a> anpassen.
       Weitere Informationen finden Sie unter <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>.`,
       primary_btn: {
         text: 'Alles akzeptieren',
@@ -33,17 +33,21 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Benutzerdefinierte Cookie-Einstellungen',
       accept_all_btn: 'Alles akzeptieren',
       reject_all_btn: 'Das Notwendigste akzeptieren',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Einstellungen speichern',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
+          Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
+          finden Sie in unseren Richtlinien
+          zur <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
+          und zum <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Technisch notwendige Cookies',
+          description: `Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -51,8 +55,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Analytische Cookies',
+          description: `Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -60,8 +64,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Funktionale Cookies',
+          description: `Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -69,8 +73,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Marketing Cookies',
+          description: `Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -78,8 +82,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Personalisierung Cookies',
+          description: `Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,

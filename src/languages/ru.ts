@@ -27,7 +27,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         lang.and,
       )} на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
+      Вы можете настроить использование файлов cookie в <a href="" data-cc="c-settings">собственных настройках</a>.
       Для получения дополнительной информации см. раздел <a href="https://www.lmc.eu/en/cookies/" target="_blank">использование файлов cookie</a>.`,
       primary_btn: {
         text: 'Принять все',
@@ -39,17 +39,21 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Индивидуальные настройки файлов cookies',
       accept_all_btn: 'Принять все',
       reject_all_btn: 'Принятие необходимо',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Сохранить настройки',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
+          разрешить просматривать и сохранять все типы файлов cookie.
+          Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
+          на страницах <a href="https://www.lmc.eu/en/cookies/" target="_blank">Использование файлов cookie</a>
+          и <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Политика конфиденциальности персональных данных</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Технически необходимые файлы cookie',
+          description: `Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -57,8 +61,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Аналитические файлы cookie',
+          description: `Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -66,8 +70,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Функциональные файлы cookie',
+          description: `Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -75,8 +79,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Маркетинговые файлы cookie',
+          description: `С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -84,8 +88,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Файлы cookie для персонализации',
+          description: `Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,

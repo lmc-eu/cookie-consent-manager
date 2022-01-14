@@ -25,8 +25,9 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} do personalizacji, analizy i ukierunkowanego marketingu.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
-      <a href="https://www.lmc.eu/pl/cookies" target="_blank">Co to są pliki cookie i jak je wykorzystujemy?</a>`,
+      Korzystanie z plików cookies możesz dostosować we <a href="" data-cc="c-settings">własnych ustawieniach</a>.
+      Ty też możesz czytać
+      <a href="https://www.lmc.eu/pl/cookies" target="_blank">co to są pliki cookie i jak je wykorzystujemy?</a>`,
       primary_btn: {
         text: 'Akceptuj wszystkie',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
@@ -37,17 +38,21 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Własne ustawienia plików cookies',
       accept_all_btn: 'Akceptuj wszystkie',
       reject_all_btn: 'Akceptuj niezbędne',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Zapisz ustawienia',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie
+          rodzaje plików cookies. Aby uzyskać więcej informacji na temat tego, czym są pliki cookies
+          i jak z nimi pracujemy, odwiedź na naszej stronie
+          <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z plików cookies</a>
+          i <a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Politykę prywatności</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Technicznie niezbędne pliki cookies',
+          description: `Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -55,8 +60,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Analityczne pliki cookies',
+          description: `Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -64,8 +69,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Funkcjonalne pliki cookies',
+          description: `Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -73,8 +78,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Marketingowe pliki cookies',
+          description: `Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -82,8 +87,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Personalizacyjne pliki cookies',
+          description: `Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,
