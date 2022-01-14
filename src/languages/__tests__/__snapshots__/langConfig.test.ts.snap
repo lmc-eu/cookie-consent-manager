@@ -88,7 +88,7 @@ exports[`config de should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch test1, test2 und test3 zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
+      Sie können die Verwendung von Cookies in Ihren <a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a> anpassen.
       Weitere Informationen finden Sie unter <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -104,11 +104,15 @@ Object {
     "accept_all_btn": "Alles akzeptieren",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
+          Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
+          finden Sie in unseren Richtlinien
+          zur <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>
+          und zum <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Datenschutz</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
+        "title": "Technisch notwendige Cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -116,8 +120,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.",
+        "title": "Analytische Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -125,8 +129,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.",
+        "title": "Funktionale Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -134,8 +138,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.",
+        "title": "Marketing Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -143,8 +147,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.",
+        "title": "Personalisierung Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -153,8 +157,8 @@ Object {
       },
     ],
     "reject_all_btn": "Das Notwendigste akzeptieren",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Einstellungen speichern",
+    "title": "Benutzerdefinierte Cookie-Einstellungen",
   },
 }
 `;
@@ -164,8 +168,9 @@ Object {
   "consent_modal": Object {
     "description": "By better understanding what you're interested in, we'll show you more relevant content.
       By clicking the \\"Accept all\\" button, you give test1, test2 and test3 your consent to use cookies for personalisation, analytics and targeted marketing.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
-      <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">What are cookies and how do we use them?</a>",
+      You can set the use of cookies in your <a href=\\"\\" data-cc=\\"c-settings\\">own settings</a>.
+      Additional information is available
+      in <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">What are cookies and how do we use them?</a>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Accept all",
@@ -180,11 +185,14 @@ Object {
     "accept_all_btn": "Accept all",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "If you want to get the most out of our website it is best to allow all types of cookies.
+          You can find more information about what cookies are and how we work with them via the links
+          to <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">The use of cookies</a>
+          and <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Privacy policy</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
+        "title": "Technically necessary cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -192,8 +200,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.",
+        "title": "Analytical cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -201,8 +209,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.",
+        "title": "Functional cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -210,8 +218,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.",
+        "title": "Marketing cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -219,8 +227,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.",
+        "title": "Personalisation cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -229,8 +237,8 @@ Object {
       },
     ],
     "reject_all_btn": "Accept necessary",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Save settings",
+    "title": "Custom Cookie settings",
   },
 }
 `;
@@ -239,7 +247,7 @@ exports[`config hu should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az test1, test2 és test3 süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
+      A cookie-k használatát testre szabhatja <a href=\\"\\" data-cc=\\"c-settings\\">saját beállításaiban</a>.
       Bővebb információkat a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Sütihasználat</a> oldalon talál.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -255,11 +263,14 @@ Object {
     "accept_all_btn": "Minden elfogadása",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes
+          cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
+          a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Cookie-k használata</a>
+          és az <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Adatvédelmi szabályzat honlapjain talál</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
+        "title": "Technikailag szükséges cookie-k",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -267,8 +278,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.",
+        "title": "Analitikai cookie-k",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -276,8 +287,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.",
+        "title": "Funkcionális cookie-k",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -285,8 +296,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m",
+        "title": "Marketing cookie-k",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -294,8 +305,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.",
+        "title": "Személyre szabott cookie-k",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -304,8 +315,8 @@ Object {
       },
     ],
     "reject_all_btn": "A legszükségesebbek elfogadása",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Beállítások mentése",
+    "title": "Egyedi cookie-fájl beállítások",
   },
 }
 `;
@@ -316,8 +327,9 @@ Object {
     "description": "Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
       Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
       firmy test1, test2 i test3 do personalizacji, analizy i ukierunkowanego marketingu.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
-      <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Co to są pliki cookie i jak je wykorzystujemy?</a>",
+      Korzystanie z plików cookies możesz dostosować we <a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a>.
+      Ty też możesz czytać
+      <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">co to są pliki cookie i jak je wykorzystujemy?</a>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Akceptuj wszystkie",
@@ -332,11 +344,15 @@ Object {
     "accept_all_btn": "Akceptuj wszystkie",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie
+          rodzaje plików cookies. Aby uzyskać więcej informacji na temat tego, czym są pliki cookies
+          i jak z nimi pracujemy, odwiedź na naszej stronie
+          <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Korzystanie z plików cookies</a>
+          i <a href=\\"https://www.lmc.eu/pl/polityka-prywatnosci\\" target=\\"_blank\\">Politykę prywatności</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
+        "title": "Technicznie niezbędne pliki cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -344,8 +360,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.",
+        "title": "Analityczne pliki cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -353,8 +369,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.",
+        "title": "Funkcjonalne pliki cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -362,8 +378,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.",
+        "title": "Marketingowe pliki cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -371,8 +387,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.",
+        "title": "Personalizacyjne pliki cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -381,8 +397,8 @@ Object {
       },
     ],
     "reject_all_btn": "Akceptuj niezbędne",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Zapisz ustawienia",
+    "title": "Własne ustawienia plików cookies",
   },
 }
 `;
@@ -391,7 +407,7 @@ exports[`config ru should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Нажав «Принять все», Вы даете свое согласие компаниям test1, test2 и test3 на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
+      Вы можете настроить использование файлов cookie в <a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a>.
       Для получения дополнительной информации см. раздел <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">использование файлов cookie</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -407,11 +423,15 @@ Object {
     "accept_all_btn": "Принять все",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
+          разрешить просматривать и сохранять все типы файлов cookie.
+          Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
+          на страницах <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Использование файлов cookie</a>
+          и <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Политика конфиденциальности персональных данных</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
+        "title": "Технически необходимые файлы cookie",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -419,8 +439,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.",
+        "title": "Аналитические файлы cookie",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -428,8 +448,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.",
+        "title": "Функциональные файлы cookie",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -437,8 +457,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.",
+        "title": "Маркетинговые файлы cookie",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -446,8 +466,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.",
+        "title": "Файлы cookie для персонализации",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -456,8 +476,8 @@ Object {
       },
     ],
     "reject_all_btn": "Принятие необходимо",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Сохранить настройки",
+    "title": "Индивидуальные настройки файлов cookies",
   },
 }
 `;
@@ -467,8 +487,9 @@ Object {
   "consent_modal": Object {
     "description": "Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.
       Kliknutím na tlačidlo „Prijať všetky“, čím dáte spoločnostiam test1, test2 a test3 súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
-      <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Čo sú to Cookies a ako ich používame?</a>",
+      Používanie cookies si môžete <a href=\\"\\" data-cc=\\"c-settings\\">prispôsobiť v nastavení</a>.
+      Môžete si tiež prečítať
+      <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">čo sú to Cookies a ako ich používame?</a>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Prijať všetky",
@@ -483,11 +504,14 @@ Object {
     "accept_all_btn": "Prijať všetky",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+          Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránkach
+          <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Používania cookies</a>
+          a v <a href=\\"https://www.lmc.eu/sk/zasady-ochrany-sukromia\\" target=\\"_blank\\">Zásadách ochrany súkromia</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
+        "title": "Technicky nevyhnutné cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -495,8 +519,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.",
+        "title": "Analytické cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -504,8 +528,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.",
+        "title": "Funkčné cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -513,8 +537,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.",
+        "title": "Marketingové cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -522,8 +546,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.",
+        "title": "Personalizačné cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -532,8 +556,8 @@ Object {
       },
     ],
     "reject_all_btn": "Prijať nevyhnutné",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Uložiť nastavenia",
+    "title": "Prispôsobiť nastavenia cookies",
   },
 }
 `;
@@ -542,7 +566,7 @@ exports[`config uk should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Натиснувши «Прийняти все», Ви даєте свою згоду компаніям test1, test2 i test3 на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-      <a href=\\"\\" data-cc=\\"c-settings\\">TODO show settings</a>.
+      Використання файлів Cookies Ви можете змінити в своїх <a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a>.
       Для отримання додаткової інформації див. розділ <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання файлів cookie</a>.",
     "primary_btn": Object {
       "role": "accept_all",
@@ -558,11 +582,14 @@ Object {
     "accept_all_btn": "Прийняти все",
     "blocks": Array [
       Object {
-        "description": "Lorem ipsum",
+        "description": "Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
+          Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
+          <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання Cookies</a>
+          і <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Політика конфіденційності</a>.",
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "NECESSARY TODO",
+        "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
+        "title": "Технічно необхідні файли Cookies",
         "toggle": Object {
           "enabled": true,
           "readonly": true,
@@ -570,8 +597,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "ANALYTICS TODO",
+        "description": "Ми використовуємо їх для відстеження того, скільки людей відвідують наш веб-сайт і як вони ним користуються. Завдяки цьому ми можемо постійно покращувати сайт та інші сервіси.",
+        "title": "Аналітичні файли Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -579,8 +606,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "FUNCTIONALITY TODO",
+        "description": "Ці файли Cookies роблять наш сайт ще більш ефективним і покращують його роботу. Наприклад, вони дозволяють нам використовувати чат, щоб швидко і легко відповідати на ваші запитання.",
+        "title": "Функціональні файли Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -588,8 +615,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "AD TODO",
+        "description": "За допомогою цих файлів Cookies ми можемо оцінити, наскільки ефективна наша реклама і цільові пропозиції наших послуг. Маркетингові файли Cookies дозволяють нам інформувати Вас в Інтернеті про новини, які можуть вас зацікавити.",
+        "title": "Маркетингові файли Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -597,8 +624,8 @@ Object {
         },
       },
       Object {
-        "description": "Lorem ipsum",
-        "title": "PERSONALIZATION TODO",
+        "description": "Наші сервіси працюють краще, коли ми можемо адаптувати їх до конкретного користувача. Дозволивши персоналізовані файли Cookies, ви збільшуєте ймовірність того, що знайдете потрібний контент.",
+        "title": "Персоналізовані файли Cookies",
         "toggle": Object {
           "enabled": false,
           "readonly": false,
@@ -607,8 +634,8 @@ Object {
       },
     ],
     "reject_all_btn": "Прийняття необхідно",
-    "save_settings_btn": "save_settings_btn TODO",
-    "title": "title TODO",
+    "save_settings_btn": "Зберегти налаштування",
+    "title": "Користувацькі налаштування файлів Cookies",
   },
 }
 `;

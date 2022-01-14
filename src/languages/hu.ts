@@ -21,7 +21,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
+      A cookie-k használatát testre szabhatja <a href="" data-cc="c-settings">saját beállításaiban</a>.
       Bővebb információkat a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Sütihasználat</a> oldalon talál.`,
       primary_btn: {
         text: 'Minden elfogadása',
@@ -33,17 +33,20 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Egyedi cookie-fájl beállítások',
       accept_all_btn: 'Minden elfogadása',
       reject_all_btn: 'A legszükségesebbek elfogadása',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Beállítások mentése',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes
+          cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
+          a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k használata</a>
+          és az <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatvédelmi szabályzat honlapjain talál</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Technikailag szükséges cookie-k',
+          description: `Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -51,8 +54,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Analitikai cookie-k',
+          description: `Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -60,8 +63,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Funkcionális cookie-k',
+          description: `Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -69,8 +72,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Marketing cookie-k',
+          description: `Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -78,8 +81,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Személyre szabott cookie-k',
+          description: `Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,

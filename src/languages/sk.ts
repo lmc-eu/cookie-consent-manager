@@ -28,8 +28,9 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         lang.and,
       )} súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
-      <a href="https://www.lmc.eu/sk/cookies" target="_blank">Čo sú to Cookies a ako ich používame?</a>`,
+      Používanie cookies si môžete <a href="" data-cc="c-settings">prispôsobiť v nastavení</a>.
+      Môžete si tiež prečítať
+      <a href="https://www.lmc.eu/sk/cookies" target="_blank">čo sú to Cookies a ako ich používame?</a>`,
       primary_btn: {
         text: 'Prijať všetky',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
@@ -40,17 +41,20 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Prispôsobiť nastavenia cookies',
       accept_all_btn: 'Prijať všetky',
       reject_all_btn: 'Prijať nevyhnutné',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Uložiť nastavenia',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+          Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránkach
+          <a href="https://www.lmc.eu/sk/cookies" target="_blank">Používania cookies</a>
+          a v <a href="https://www.lmc.eu/sk/zasady-ochrany-sukromia" target="_blank">Zásadách ochrany súkromia</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Technicky nevyhnutné cookies',
+          description: `Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -58,8 +62,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Analytické cookies',
+          description: `Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -67,8 +71,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Funkčné cookies',
+          description: `Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -76,8 +80,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Marketingové cookies',
+          description: `S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -85,8 +89,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Personalizačné cookies',
+          description: `Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,
