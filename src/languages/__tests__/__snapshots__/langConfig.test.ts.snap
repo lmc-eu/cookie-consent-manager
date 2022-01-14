@@ -5,8 +5,8 @@ Object {
   "consent_modal": Object {
     "description": "Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
       Kliknutím na tlačítko „Přijmout všechny“ dáte společnostem test1, test2 a test3 souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      Používání Cookies si můžete upravit ve <a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a>.
-      Můžete si také přečíst, <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">co jsou to Cookies a jak je používáme?</a>",
+      Používání Cookies si můžete <a href=\\"\\" data-cc=\\"c-settings\\">přizpůsobit v nastavení</a>.
+      Můžete si také přečíst, <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">co jsou Cookies a jak je používáme?</a>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Přijmout všechny",
@@ -79,7 +79,7 @@ Object {
     ],
     "reject_all_btn": "Přijmout nezbytné",
     "save_settings_btn": "Uložit nastavení",
-    "title": "Vlastní nastavení souborů Cookies",
+    "title": "Přizpůsobit nastavení Cookies",
   },
 }
 `;
