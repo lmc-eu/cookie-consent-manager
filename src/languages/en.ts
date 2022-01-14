@@ -21,8 +21,9 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} your consent to use cookies for personalisation, analytics and targeted marketing.
-      <a href="" data-cc="c-settings">TODO show settings</a>.
-      <a href="https://www.lmc.eu/en/cookies/" target="_blank">What are cookies and how do we use them?</a>`,
+      You can set the use of cookies in your <a href="" data-cc="c-settings">own settings</a>.
+      Additional information is available
+      in <a href="https://www.lmc.eu/en/cookies/" target="_blank">What are cookies and how do we use them?</a>`,
       primary_btn: {
         text: 'Accept all',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
@@ -33,17 +34,20 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
       },
     },
     settings_modal: {
-      title: 'title TODO',
+      title: 'Custom Cookie settings',
       accept_all_btn: 'Accept all',
       reject_all_btn: 'Accept necessary',
-      save_settings_btn: 'save_settings_btn TODO',
+      save_settings_btn: 'Save settings',
       blocks: [
         {
-          description: `Lorem ipsum`,
+          description: `If you want to get the most out of our website it is best to allow all types of cookies.
+          You can find more information about what cookies are and how we work with them via the links
+          to <a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
+          and <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`,
         },
         {
-          title: 'NECESSARY TODO',
-          description: `Lorem ipsum`,
+          title: 'Technically necessary cookies',
+          description: `These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -51,8 +55,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'ANALYTICS TODO',
-          description: `Lorem ipsum`,
+          title: 'Analytical cookies',
+          description: `These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.`,
           toggle: {
             value: CookieConsentCategory.ANALYTICS,
             enabled: false,
@@ -60,8 +64,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'FUNCTIONALITY TODO',
-          description: `Lorem ipsum`,
+          title: 'Functional cookies',
+          description: `Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.`,
           toggle: {
             value: CookieConsentCategory.FUNCTIONALITY,
             enabled: false,
@@ -69,8 +73,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'AD TODO',
-          description: `Lorem ipsum`,
+          title: 'Marketing cookies',
+          description: `These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.`,
           toggle: {
             value: CookieConsentCategory.AD,
             enabled: false,
@@ -78,8 +82,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
           },
         },
         {
-          title: 'PERSONALIZATION TODO',
-          description: `Lorem ipsum`,
+          title: 'Personalisation cookies',
+          description: `Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.`,
           toggle: {
             value: CookieConsentCategory.PERSONALIZATION,
             enabled: false,
