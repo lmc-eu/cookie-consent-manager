@@ -11,9 +11,6 @@
 @use '@tokens' as tokens;
 @use 'tools';
 
-// Stylelint and Prettier are clashing on long lines. Let's prefer Stylelint.
-/* prettier-ignore */
-
 :root {
     //
     // Common Settings
@@ -52,9 +49,6 @@
 //
 // Dark Mode
 // =========
-
-// Stylelint and Prettier are clashing on long lines. Let's prefer Stylelint.
-/* prettier-ignore */
 
 .c_darkmode {
     --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-inverted});

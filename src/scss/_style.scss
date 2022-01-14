@@ -7,8 +7,7 @@
 @use 'settings';
 @use 'tools';
 
-// Original CSS heavily relies on ID selectors.
-/* stylelint-disable selector-max-id */
+// stylelint-disable selector-max-id -- Original CSS heavily relies on ID selectors.
 
 //
 // Shared Styles
@@ -54,8 +53,6 @@
 }
 
 #c-ttl {
-    // Stylelint and Prettier are clashing on the following line. Let's prefer Stylelint.
-    /* prettier-ignore */
     margin-bottom: tools.rem2em(tokens.$space-6, tools.rem2em(tokens.$heading-small-desktop));
     font-size: tools.rem2em(tokens.$heading-small-desktop);
     line-height: tokens.$line-height-small;
@@ -96,8 +93,7 @@
 
 #cc--main {
     // Use maximum permissible value for `z-index` to overlap UI of other third-party plugins. Sorry!
-    // Allow !important to override inline style injected by the plugin.
-    // stylelint-disable-next-line declaration-no-important
+    // stylelint-disable-next-line declaration-no-important -- Override inline style injected by original library.
     z-index: 2147483647 !important;
 }
 
