@@ -9,22 +9,27 @@ import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
-import { CookieConsentCategory, CookieConsentManager, CookieConsentManagerOptions, OnAcceptCallback } from './types';
+import {
+  CookieConsentCategory,
+  CookieConsentManager,
+  CookieConsentManagerOptions,
+  OnAcceptCallback,
+  OnChangeCallback,
+} from './types';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
-const noopAcceptCallback: OnAcceptCallback = (cookie, cookieConsent) => {};
+const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
+/* eslint-disable-next-line no-unused-vars */
+const noopChangeCallback: OnChangeCallback = (cookieConsent, categories) => {};
 
 const defaultOptions: CookieConsentManagerOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
   consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries',
   onFirstAccept: noopAcceptCallback,
-  onFirstAcceptOnlyNecessary: noopAcceptCallback,
-  onFirstAcceptAll: noopAcceptCallback,
   onAccept: noopAcceptCallback,
-  onAcceptOnlyNecessary: noopAcceptCallback,
-  onAcceptAll: noopAcceptCallback,
+  onChange: noopChangeCallback,
   companyNames: ['LMC'],
   config: {},
 };
@@ -36,17 +41,11 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
  * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent.
  *   Null to disable.
- * @param {OnAcceptCallback} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
- * @param {OnAcceptCallback} [args.onFirstAcceptOnlyNecessary] - Callback to be executed right after only necessary cookies
- *   are accepted
- * @param {OnAcceptCallback} [args.onFirstAcceptAll] - Callback to be executed right after all cookies are accepted
+ * @param {OnFirstAcceptCallback} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
  * @param {OnAcceptCallback} [args.onAccept] - Callback to be executed when any consent is detected (either given right now
  *   or already saved previously)
- * @param {OnAcceptCallback} [args.onAcceptOnlyNecessary] - Callback to be executed when consent with only necessary cookies.
- *   is detected (either given right now or already saved previously)
- * @param {OnAcceptCallback} [args.onAcceptAll] - Callback to be executed when consent with all cookies is detected
- *   (either given right now or already saved previously)
- * @param {array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
+ * @param {OnChangeCallback} [args.onChange] - Callback to be executed right after user change his/her preferences
+ * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
@@ -64,11 +63,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     autodetectLang,
     consentCollectorApiUrl,
     onFirstAccept,
-    onFirstAcceptOnlyNecessary,
-    onFirstAcceptAll,
     onAccept,
-    onAcceptOnlyNecessary,
-    onAcceptAll,
+    onChange,
     companyNames,
     config,
   } = options;
@@ -84,6 +80,45 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     ru: configRu({ companyNames }),
     sk: configSk({ companyNames }),
     uk: configUk({ companyNames }),
+  };
+
+  const onFirstAcceptHandler = (
+    userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategory>,
+    cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+  ) => {
+    const cookieData = cookieConsent.get('data');
+    if (cookieData === null || !('uid' in cookieData)) {
+      cookieConsent.set('data', {
+        value: { serviceName, uid: nanoid() },
+        mode: 'update',
+      });
+    }
+
+    pushToDataLayer(cookie);
+
+    if (consentCollectorApiUrl !== null) {
+      submitConsent(consentCollectorApiUrl, cookieConsent);
+    }
+
+    onFirstAccept(cookieConsent);
+  };
+
+  const onAcceptHandler = () => {
+    onAccept(cookieConsent);
+  };
+
+  const onChangeHandler = (
+    cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+    changedCategories: Array<CookieConsentCategory>,
+  ) => {
+    const userPreferences = cookieConsent.getUserPreferences();
+    const categories = {
+      accepted: userPreferences.accepted_categories,
+      rejected: userPreferences.rejected_categories,
+      changed: changedCategories,
+    };
+
+    onChange(cookieConsent, categories);
   };
 
   const cookieConsentConfig = {
@@ -110,42 +145,9 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
         transition: VanillaCookieConsent.Transition.SLIDE,
       },
     },
-    onAccept: (cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) => {
-      const userPreferences = cookieConsent.getUserPreferences();
-
-      onAccept(cookie, cookieConsent);
-
-      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY
-        ? onAcceptOnlyNecessary(cookie, cookieConsent)
-        : onAcceptAll(cookie, cookieConsent);
-    },
-    onFirstAction: (
-      userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategory>,
-      cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
-    ) => {
-      const cookieData = cookieConsent.get('data');
-      if (cookieData === null || !('uid' in cookieData)) {
-        cookieConsent.set('data', {
-          value: { serviceName, uid: nanoid() },
-          mode: 'update',
-        });
-      }
-
-      pushToDataLayer(cookie);
-
-      if (consentCollectorApiUrl !== null) {
-        submitConsent(consentCollectorApiUrl, cookieConsent);
-      }
-
-      onFirstAccept(cookie, cookieConsent);
-
-      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY
-        ? onFirstAcceptOnlyNecessary(cookie, cookieConsent)
-        : onFirstAcceptAll(cookie, cookieConsent);
-    },
-    onChange: () => {
-      submitConsent(consentCollectorApiUrl, cookieConsent);
-    },
+    onAccept: onAcceptHandler,
+    onFirstAction: onFirstAcceptHandler,
+    onChange: onChangeHandler,
     languages,
     // override default config if necessary
     ...config,

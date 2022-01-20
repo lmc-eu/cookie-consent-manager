@@ -1,21 +1,26 @@
 import { CookieConsentCategory } from './CookieConsentCategory';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
 
-export type OnAcceptCallback = (
-  cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+export type CategoriesChangeset = {
+  accepted: CookieConsentCategory[];
+  rejected: CookieConsentCategory[];
+  changed: CookieConsentCategory[];
+};
+
+export type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
+export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
+export type OnChangeCallback = (
   cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
+  categories: CategoriesChangeset,
 ) => void;
 
 export type CookieConsentManagerOptions = {
   defaultLang: string;
   autodetectLang: boolean;
   consentCollectorApiUrl: string;
-  onFirstAccept: OnAcceptCallback;
-  onFirstAcceptOnlyNecessary: OnAcceptCallback;
-  onFirstAcceptAll: OnAcceptCallback;
+  onFirstAccept: OnFirstAcceptCallback;
   onAccept: OnAcceptCallback;
-  onAcceptOnlyNecessary: OnAcceptCallback;
-  onAcceptAll: OnAcceptCallback;
+  onChange: OnChangeCallback;
   companyNames: string[];
   config: VanillaCookieConsent.Options;
 };
