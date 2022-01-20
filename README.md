@@ -172,7 +172,7 @@ To execute custom code which depends on cookie consent use callbacks:
 initLmcCookieConsentManager(
   'demo.example',
   {
-    onAcceptAll: (cookie, cookieConsent) => {
+    onAccept: (cookieConsent) => {
       if (cookieConsent.allowedCategory('functionality')) {
         startOptionalFeature();
       }
@@ -223,7 +223,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
   {
     defaultLang: 'cs',
     autodetectLang: false,
-    onAcceptAll: (cookie, cookieConsent) => {
+    onAccept: (cookieConsent) => {
       // custom code
     },
     config: {
@@ -244,7 +244,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 | `companyNames`  | array       | `['LMC']`                          | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration].                                                        |
 | `consentCollectorApiUrl`| ?string | `'https://ccm.lmc.cz/(...)'`   | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                          |
 | `config`        | Object      | `{}`                               | Override default config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                    |
-| `on*` callbacks | function    | `(cookie, cookieConsent) => {}`    | See below for configurable callbacks.                                                                                                                                                                    |
+| `on*` callbacks | function    | `(cookieConsent) => {}`    | See below for configurable callbacks.                                                                                                                                                                    |
 
 ### Supported languages
 
@@ -261,17 +261,14 @@ for example, to enable some feature after user has given consent.
 
 Each configured callback receives two params:
 
-* `cookie` - object with cookie contents
 * `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods][cookie consent api]
 
 | Callback                     | Trigger event                                                                                                             |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `onAcceptAll`                | Consent with all cookies is detected (either given now or after page load if it was already saved previously)             |
-| `onAcceptOnlyNecessary`      | Consent with only necessary cookies is detected (either given now or after page load if it was already saved previously)* |
+| `onFirstAccept`           | This function will be executed only once, when the user takes the first action (accept/reject).                                                                                      |
 | `onAccept`                   | Any consent is detected (either given now or after page load if it was already saved previously)                          |
-| `onFirstAcceptAll`           | Right after all cookies are accepted                                                                                      |
-| `onFirstAcceptOnlyNecessary` | Right after only necessary cookies are just accepted by the user                                                          |
-| `onFirstAccept`              | Right after any consent is just accepted by the user                                                                      |
+| `onChange` | Right after user changes cookie settings                                                          |
+
 
 [👀 See callbacks example][examples-callbacks]
 
