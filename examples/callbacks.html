@@ -82,12 +82,9 @@
 
                 <h2 class="mt-md-3 mb-3">Callbacks</h2>
                 <ul class="list-group">
+                    <li class="list-group-item" id="callback-onFirstAction">onFirstAction</li>
                     <li class="list-group-item" id="callback-onAccept">onAccept</li>
-                    <li class="list-group-item" id="callback-onAcceptAll">onAcceptAll</li>
-                    <li class="list-group-item" id="callback-onAcceptOnlyNecessary">onAcceptOnlyNecessary</li>
-                    <li class="list-group-item" id="callback-onFirstAccept">onFirstAccept</li>
-                    <li class="list-group-item" id="callback-onFirstAcceptAll">onFirstAcceptAll</li>
-                    <li class="list-group-item" id="callback-onFirstAcceptOnlyNecessary">onFirstAcceptOnlyNecessary</li>
+                    <li class="list-group-item" id="callback-onChange">onChange</li>
                 </ul>
 
             </div>
@@ -111,29 +108,24 @@
       'github.example',
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
-        onAccept: (cookie, cookieConsent) => { // any type of consent detected
+        onAccept: (cookieConsent) => { // any type of consent detected
           markCallbackCalled('onAccept');
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
-        onAcceptAll: (cookie, cookieConsent) => { // consent for all cookies detected
-          markCallbackCalled('onAcceptAll');
+        onFirstAction: (cookieConsent) => { // consent for first time detected
+          markCallbackCalled('onFirstAction');
 
           if (cookieConsent.allowedCategory('functionality')) { // check for specific consent category
             console.log('Consent for extended functionality given');
           }
         },
-        onAcceptOnlyNecessary: () => { // consent only for necessary cookies detected
-          markCallbackCalled('onAcceptOnlyNecessary');
-          // Note: you don't need to check this consent category before using "necessary" cookies
-        },
-        onFirstAccept: () => { // any consent was just given by the user
-          markCallbackCalled('onFirstAccept');
-        },
-        onFirstAcceptAll: () => { // consent with all was just given by the user
-          markCallbackCalled('onFirstAcceptAll');
-        },
-        onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
-          markCallbackCalled('onFirstAcceptOnlyNecessary');
+        onChange: (cookieConsent, categories) => { // consent change detected
+          markCallbackCalled('onChange');
+          // check for changed categories
+
+          console.log('Categories accepted:', categories.accepted);
+          console.log('Categories rejected:', categories.rejected);
+          console.log('Categories changed:', categories.changed);
         },
       }
     );

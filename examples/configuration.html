@@ -141,8 +141,10 @@
           cookie_necessary_only_expiration: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
-        onFirstAcceptOnlyNecessary: () => { // consent with only necessary cookies was just given by the user
-          window.localStorage.clear(); // clear everything in localStorage if it is not used for any 'necessary' data
+        onFirstAction: (cookieConsent) => { // the user takes the first action (accept/reject)
+            if (!cookieConsent.isAllowed('functionality')) {
+                window.localStorage.clear(); // if we use localStorage for some extended "functionality", remove its contents if we don't have consent
+            }
         },
       }
     );

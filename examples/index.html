@@ -88,8 +88,8 @@
                 <h2 class="mt-md-3 mb-3">Cookie content</h2>
                 <div id="onaccept-content">(empty)</div>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onAcceptAll()</code> callback</h2>
-                <p id="onacceptall-content">
+                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onFirstAction()</code> callback</h2>
+                <p id="onfirstacction-content">
                     (empty)
                 </p>
 
@@ -143,8 +143,8 @@
       'github.example',
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
-        onAccept: (cookie, cookieConsent) => { // any type of consent (including "only necessary") detected
-          document.getElementById('onaccept-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(cookie)}</code></pre>`;
+        onAccept: (cookieConsent) => { // any type of consent (including "only necessary") detected
+          document.getElementById('onaccept-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(cookieConsent.getUserPreferences())}</code></pre>`;
           window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
 
@@ -154,8 +154,8 @@
             }
           }
         },
-        onAcceptAll: (cookie, cookieConsent) => { // consent with all categories detected
-          document.getElementById('onacceptall-content').innerHTML = '<code>onAcceptAll()</code> called';
+        onFirstAction: (cookieConsent) => { // first consent detected
+          document.getElementById('onfirstaction-content').innerHTML = '<code>onFirstAction()</code> called';
           if (cookieConsent.allowedCategory('ad')) {
             document.getElementById('ad-content').innerHTML = 'Ad consent detected';
           }
