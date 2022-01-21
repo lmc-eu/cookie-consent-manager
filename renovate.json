@@ -33,7 +33,6 @@
       "groupSlug": "all-dev",
       "separateMajorMinor": false,
       "matchPackagePatterns": ["*"],
-      "excludePackagePatterns": ["^stylelint"],
       "matchDepTypes": ["devDependencies"]
     }
   ]
