@@ -346,31 +346,56 @@ anywhere in your stylesheet (the order of which is not important):
 <details>
 <summary>Full list of available CSS custom properties:</summary>
 
-| CSS custom property                   | Description                                     |
-|---------------------------------------|-------------------------------------------------|
-| `--lmcccm-font-family`                | Base font family                                |
-| `--lmcccm-base-font-size`             | Base font size                                  |
-| `--lmcccm-bg`                         | Bar background color                            |
-| `--lmcccm-text`                       | Text color                                      |
-| `--lmcccm-link-text`                  | Link text color                                 |
-| `--lmcccm-link-text-decoration`       | Link text decoration                            |
-| `--lmcccm-link-hover-text`            | Link text color on hover                        |
-| `--lmcccm-link-hover-text-decoration` | Link text decoration on hover                   |
-| `--lmcccm-link-active-text`           | Link text color in active state                 |
-| `--lmcccm-btn-font-weight`            | Button font weight                              |
-| `--lmcccm-btn-text-transform`         | Button text transform                           |
-| `--lmcccm-btn-border-width`           | Button border width                             |
-| `--lmcccm-btn-border-style`           | Button border style                             |
-| `--lmcccm-btn-border-radius`          | Button border radius                            |
-| `--lmcccm-btn-primary-border`         | Primary button border color                     |
-| `--lmcccm-btn-primary-bg`             | Primary button background color                 |
-| `--lmcccm-btn-primary-text`           | Primary button text color                       |
-| `--lmcccm-btn-primary-hover-border`   | Primary button border color on hover            |
-| `--lmcccm-btn-primary-hover-bg`       | Primary button background color on hover        |
-| `--lmcccm-btn-primary-hover-text`     | Primary button text color on hover              |
-| `--lmcccm-btn-primary-active-border`  | Primary button border color in active state     |
-| `--lmcccm-btn-primary-active-bg`      | Primary button background color in active state |
-| `--lmcccm-btn-primary-active-text`    | Primary button text color in active state       |
+| CSS custom property                      | Description                                       |
+|------------------------------------------|---------------------------------------------------|
+| `--lmcccm-font-family`                   | Base font family                                  |
+| `--lmcccm-base-font-size`                | Base font size                                    |
+| `--lmcccm-bg`                            | Bar background color                              |
+| `--lmcccm-text`                          | Text color                                        |
+| `--lmcccm-link-text`                     | Link text color                                   |
+| `--lmcccm-link-text-decoration`          | Link text decoration                              |
+| `--lmcccm-link-hover-text`               | Link text color on hover                          |
+| `--lmcccm-link-hover-text-decoration`    | Link text decoration on hover                     |
+| `--lmcccm-link-active-text`              | Link text color in active state                   |
+| `--lmcccm-btn-font-weight`               | Button font weight                                |
+| `--lmcccm-btn-text-transform`            | Button text transform                             |
+| `--lmcccm-btn-border-width`              | Button border width                               |
+| `--lmcccm-btn-border-style`              | Button border style                               |
+| `--lmcccm-btn-border-radius`             | Button border radius                              |
+| `--lmcccm-btn-primary-border`            | Primary button border color                       |
+| `--lmcccm-btn-primary-bg`                | Primary button background color                   |
+| `--lmcccm-btn-primary-text`              | Primary button text color                         |
+| `--lmcccm-btn-primary-hover-border`      | Primary button border color on hover              |
+| `--lmcccm-btn-primary-hover-bg`          | Primary button background color on hover          |
+| `--lmcccm-btn-primary-hover-text`        | Primary button text color on hover                |
+| `--lmcccm-btn-primary-active-border`     | Primary button border color in active state       |
+| `--lmcccm-btn-primary-active-bg`         | Primary button background color in active state   |
+| `--lmcccm-btn-primary-active-text`       | Primary button text color in active state         |
+| `--lmcccm-btn-secondary-border`          | Secondary button border color                     |
+| `--lmcccm-btn-secondary-bg`              | Secondary button background color                 |
+| `--lmcccm-btn-secondary-text`            | Secondary button text color                       |
+| `--lmcccm-btn-secondary-hover-border`    | Secondary button border color on hover            |
+| `--lmcccm-btn-secondary-hover-bg`        | Secondary button background color on hover        |
+| `--lmcccm-btn-secondary-hover-text`      | Secondary button text color on hover              |
+| `--lmcccm-btn-secondary-active-border`   | Secondary button border color in active state     |
+| `--lmcccm-btn-secondary-active-bg`       | Secondary button background color in active state |
+| `--lmcccm-btn-secondary-active-text`     | Secondary button text color in active state       |
+| `--lmcccm-toggle-bg-off`                 | Toggle background in unselected state             |
+| `--lmcccm-toggle-bg-on`                  | Toggle background in selected state               |
+| `--lmcccm-toggle-bg-readonly`            | Toggle background in readonly state               |
+| `--lmcccm-toggle-knob-bg`                | Toggle knob color                                 |
+| `--lmcccm-toggle-knob-icon-color`        | Toggle knob icon color                            |
+| `--lmcccm-backdrop-color`                | Backdrop color                                    |
+| `--lmcccm-modal-max-width`               | Maximum width of settings modal                   |
+| `--lmcccm-modal-max-height`              | Maximum height of settings modal                  |
+| `--lmcccm-modal-border-radius`           | Settings modal border radius                      |
+| `--lmcccm-modal-bg`                      | Settings modal background color                   |
+| `--lmcccm-modal-text`                    | Settings modal text color                         |
+| `--lmcccm-modal-section-border`          | Border color of settings modal sections           |
+| `--lmcccm-cookie-category-border-radius` | Cookie category block border radius               |
+| `--lmcccm-cookie-category-bg`            | Cookie category block background color            |
+| `--lmcccm-cookie-category-hover-bg`      | Cookie category block background color on hover   |
+| `--lmcccm-cookie-table-border`           | Cookie table border color                         |
 
 </details>
 

@@ -1,3 +1,11 @@
-@forward 'theme';
-@forward 'cc-theme';
-@forward 'style';
+// Order matters, do not alter.
+
+@forward 'theme/default';
+@forward 'theme/vanilla';
+@forward 'style/typography';
+@forward 'style/links';
+@forward 'style/buttons';
+@forward 'style/toggles';
+@forward 'style/main';
+@forward 'style/consent-modal';
+@forward 'style/settings-modal';
