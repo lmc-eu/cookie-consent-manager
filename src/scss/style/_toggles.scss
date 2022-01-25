@@ -1,0 +1,10 @@
+.cc_div .b-tg,
+.cc_div .b-tg .c-tg,
+.cc_div .b-tg .c-tgl,
+.cc_div span.t-lb {
+    width: 3em;
+}
+
+.cc_div .b-tg .c-tgl:checked ~ .c-tg::after {
+    transform: translateX(1.5em);
+}
