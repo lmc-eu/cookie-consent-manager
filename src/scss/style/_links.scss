@@ -1,0 +1,14 @@
+.cc_div a {
+    text-decoration: var(--lmcccm-p-link-text-decoration);
+    color: var(--lmcccm-p-link-text);
+    border-bottom: none;
+
+    &:hover {
+        text-decoration: var(--lmcccm-p-link-hover-text-decoration);
+        color: var(--lmcccm-p-link-hover-text);
+    }
+
+    &:active {
+        color: var(--lmcccm-p-link-active-text);
+    }
+}

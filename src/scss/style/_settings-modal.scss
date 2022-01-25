@@ -1,0 +1,157 @@
+@use '@tokens' as tokens;
+@use '../settings/settings';
+@use '../tools/units';
+
+#s-hdr,
+#s-inr,
+#s-bns {
+    color: var(--lmcccm-p-modal-text);
+    background-color: var(--lmcccm-p-modal-bg);
+}
+
+#cs,
+#s-bl,
+#s-bns {
+    padding: settings.$modal-padding-desktop;
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        padding: settings.$modal-padding-tablet;
+    }
+}
+
+#s-hdr {
+    height: calc(#{settings.$modal-header-height-desktop} + #{settings.$modal-section-border-width});
+    padding: 0 settings.$modal-padding-desktop;
+    border-bottom-width: settings.$modal-section-border-width;
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        height: calc(#{settings.$modal-header-height-tablet} + #{settings.$modal-section-border-width});
+        padding: 0 settings.$modal-padding-tablet;
+    }
+}
+
+#s-inr {
+    max-width: var(--lmcccm-p-modal-max-width);
+    padding-top: settings.$modal-header-height-desktop;
+    padding-bottom: settings.$modal-footer-height-desktop;
+    border-radius: var(--lmcccm-p-modal-border-radius);
+    box-shadow: tokens.$shadow-2;
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        padding-top: settings.$modal-header-height-tablet;
+        padding-bottom: settings.$modal-footer-height-tablet-2-buttons;
+    }
+}
+
+#s-bns {
+    display: flex;
+    height: calc(#{settings.$modal-footer-height-desktop} + #{settings.$modal-section-border-width});
+    border-top-width: settings.$modal-section-border-width;
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        display: block;
+        height: calc(#{settings.$modal-footer-height-tablet-2-buttons} + #{settings.$modal-section-border-width});
+    }
+}
+
+#s-bns .c-bn {
+    flex-grow: 0;
+    flex-basis: auto;
+
+    &:nth-last-child(2) {
+        margin-right: settings.$button-spacing-x;
+    }
+
+    &:last-child {
+        margin-left: auto;
+    }
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        &:nth-last-child(2) {
+            margin-right: 0;
+        }
+    }
+}
+
+// Layout variants
+#c-s-in {
+    height: 100%;
+    max-height: var(--lmcccm-p-modal-max-height);
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        max-height: none;
+    }
+}
+
+.cc_div .bar #s-inr {
+    max-width: var(--lmcccm-p-modal-max-width);
+}
+
+// Three buttons in footer
+#s-inr.bns-t {
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        padding-bottom: settings.$modal-footer-height-tablet-3-buttons;
+    }
+}
+
+.bns-t #s-bns {
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        height: calc(#{settings.$modal-footer-height-tablet-3-buttons} + #{settings.$modal-section-border-width});
+    }
+}
+
+// Close button
+#s-c-bn {
+    margin-right: -0.4em;
+    font-size: 1.8em;
+    color: inherit;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+        width: 2.5px;
+        background-color: currentColor;
+    }
+}
+
+// Modal content
+#s-cnt .p {
+    margin-top: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+#s-bl .act .b-acc,
+.cc_div .b-tl,
+.cc_div .c-bl {
+    border-radius: var(--lmcccm-p-cookie-category-border-radius);
+}
+
+#s-bl .c-bl {
+    margin-bottom: units.rem2em(tokens.$space-4);
+
+    &:first-child {
+        margin-bottom: units.rem2em(tokens.$space-6);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+#s-bl .b-acc .p {
+    padding: units.rem2em(tokens.$space-6);
+}
+
+#s-cnt .b-bn .b-tl {
+    padding: units.rem2em(tokens.$space-6) 5em units.rem2em(tokens.$space-6) 3.25em;
+    font-size: units.rem2em(tokens.$body-text-medium);
+    font-weight: tokens.$font-weight-regular;
+    line-height: tokens.$line-height-small;
+}
+
+.cc_div .act .b-bn .exp::before,
+.cc_div .b-bn .exp::before {
+    top: 48%;
+    border-color: inherit;
+}
