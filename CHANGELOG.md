@@ -16,7 +16,7 @@
 
 ### Features
 
-* Set shorter cookie expiration when only necessary category accepted [#CCM-53](https://github.com/lmc-eu/cookie-consent-manager/issues/CCM-53) ([929d8f3](https://github.com/lmc-eu/cookie-consent-manager/commit/929d8f3))
+* Set shorter cookie expiration when only necessary category accepted [#CCM-53](https://jira.int.lmc.cz/browse/CCM-53) ([929d8f3](https://github.com/lmc-eu/cookie-consent-manager/commit/929d8f3))
 
 ### Chores
 
