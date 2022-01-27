@@ -24,6 +24,9 @@
     "type": "git",
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
   },
+  "bugs": {
+    "url": "https://jira.int.lmc.cz/browse"
+  },
   "contributors": [
     "Ondřej Machulda <ondrej.machulda@lmc.eu>",
     "Tomáš Litera <tomas.litera@lmc.eu>",
