@@ -11,39 +11,20 @@
 @use '../tools/units';
 
 :root {
-    //
-    // Common Settings
-    // ===============
-
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
     --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{units.rem2em(tokens.$font-size-base)});
+    --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-basic});
+    --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-primary-default});
+    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-primary-default});
     --lmcccm-p-link-text-decoration: var(--lmcccm-link-text-decoration, underline);
+    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-primary-hover});
     --lmcccm-p-link-hover-text-decoration: var(--lmcccm-link-hover-text-decoration, underline);
+    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-primary-active});
     --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, #{tokens.$font-weight-semibold});
     --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
     --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{tokens.$border-width-1});
     --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, #{tokens.$border-style-1});
     --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{units.rem2em(tokens.$radius-1)});
-    --lmcccm-p-modal-max-width: var(
-        --lmcccm-modal-max-width,
-        min(50em, calc(100vw - #{units.rem2em(tokens.$space-8)}))
-    );
-    --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 37em);
-    --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.rem2em(tokens.$radius-2)});
-    --lmcccm-p-cookie-category-border-radius: var(
-        --lmcccm-cookie-category-border-radius,
-        #{units.rem2em(tokens.$radius-1)}
-    );
-
-    //
-    // Light Theme (Default)
-    // =====================
-
-    --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-basic});
-    --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-primary-default});
-    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-primary-default});
-    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-primary-hover});
-    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-primary-active});
     --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #{tokens.$text-primary-inverted-default});
@@ -68,40 +49,20 @@
     --lmcccm-p-toggle-knob-bg: var(--lmcccm-toggle-knob-bg, #{tokens.$background-basic});
     --lmcccm-p-toggle-knob-icon-color: var(--lmcccm-toggle-knob-icon-color, #{tokens.$background-basic});
     --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, #{tokens.$background-backdrop});
+    --lmcccm-p-modal-max-width: var(
+        --lmcccm-modal-max-width,
+        min(50em, calc(100vw - #{units.rem2em(tokens.$space-8)}))
+    );
+    --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 37em);
+    --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.rem2em(tokens.$radius-2)});
     --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, #{tokens.$background-basic});
     --lmcccm-p-modal-text: var(--lmcccm-modal-text, #{tokens.$text-primary-default});
     --lmcccm-p-modal-section-border: var(--lmcccm-modal-section-border, #{tokens.$border-main-default});
+    --lmcccm-p-cookie-category-border-radius: var(
+        --lmcccm-cookie-category-border-radius,
+        #{units.rem2em(tokens.$radius-1)}
+    );
     --lmcccm-p-cookie-category-bg: var(--lmcccm-cookie-category-bg, #{tokens.$background-cover});
     --lmcccm-p-cookie-category-hover-bg: var(--lmcccm-cookie-category-hover-bg, #{tokens.$background-cover});
     --lmcccm-p-cookie-table-border: var(--lmcccm-cookie-table-border, #{tokens.$border-main-default});
-}
-
-//
-// Dark Theme (Consent Modal Only)
-// ===============================
-
-.c_darkmode {
-    --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-inverted});
-    --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-secondary-inverted-default});
-    --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-secondary-default});
-    --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-secondary-hover});
-    --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-secondary-active});
-    --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-primary-hover-border: var(--lmcccm-btn-primary-hover-border, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-primary-hover-bg: var(--lmcccm-btn-primary-hover-bg, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-primary-hover-text: var(--lmcccm-btn-primary-hover-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #{tokens.$action-primary-active});
-    --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
-    --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-border: var(--lmcccm-btn-secondary-border, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-    --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-secondary-hover-border: var(--lmcccm-btn-secondary-hover-border, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-    --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-secondary-active-border: var(--lmcccm-btn-secondary-active-border, #{tokens.$action-primary-active});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-    --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$action-primary-active});
 }
