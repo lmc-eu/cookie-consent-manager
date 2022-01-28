@@ -11,15 +11,21 @@
 @use '../tools/units';
 
 :root {
+    // Common
     --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
     --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{units.rem2em(tokens.$font-size-base)});
     --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-basic});
     --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-primary-default});
+    --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, #{tokens.$background-backdrop});
+
+    // Links
     --lmcccm-p-link-text: var(--lmcccm-link-text, #{tokens.$action-link-primary-default});
     --lmcccm-p-link-text-decoration: var(--lmcccm-link-text-decoration, underline);
     --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #{tokens.$action-link-primary-hover});
     --lmcccm-p-link-hover-text-decoration: var(--lmcccm-link-hover-text-decoration, underline);
     --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-primary-active});
+
+    // Buttons
     --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, #{tokens.$font-weight-semibold});
     --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
     --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{tokens.$border-width-1});
@@ -43,21 +49,26 @@
     --lmcccm-p-btn-secondary-active-border: var(--lmcccm-btn-secondary-active-border, #{tokens.$action-primary-active});
     --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
     --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$action-primary-active});
+
+    // Toggle
     --lmcccm-p-toggle-bg-off: var(--lmcccm-toggle-bg-off, #{tokens.$action-unselected-default});
     --lmcccm-p-toggle-bg-on: var(--lmcccm-toggle-bg-on, #{tokens.$action-selected-default});
-    --lmcccm-p-toggle-bg-readonly: var(--lmcccm-toggle-bg-readonly, #c4c4c4);
+    --lmcccm-p-toggle-bg-readonly: var(--lmcccm-toggle-bg-readonly, #{tokens.$gray-500});
     --lmcccm-p-toggle-knob-bg: var(--lmcccm-toggle-knob-bg, #{tokens.$background-basic});
     --lmcccm-p-toggle-knob-icon-color: var(--lmcccm-toggle-knob-icon-color, #{tokens.$background-basic});
-    --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, #{tokens.$background-backdrop});
+
+    // Modal
     --lmcccm-p-modal-max-width: var(
         --lmcccm-modal-max-width,
         min(50em, calc(100vw - #{units.rem2em(tokens.$space-8)}))
     );
     --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 37em);
     --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.rem2em(tokens.$radius-2)});
-    --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, #{tokens.$background-basic});
-    --lmcccm-p-modal-text: var(--lmcccm-modal-text, #{tokens.$text-primary-default});
+    --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, var(--lmcccm-p-bg));
+    --lmcccm-p-modal-text: var(--lmcccm-modal-text, var(--lmcccm-p-text));
     --lmcccm-p-modal-section-border: var(--lmcccm-modal-section-border, #{tokens.$border-main-default});
+
+    // Cookies
     --lmcccm-p-cookie-category-border-radius: var(
         --lmcccm-cookie-category-border-radius,
         #{units.rem2em(tokens.$radius-1)}
