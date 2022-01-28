@@ -415,22 +415,6 @@ If you are not using cookie consent with the default design, additional steps ma
 If you use a custom font like this, make sure you don't load the default Inter font and that you use
 `<link rel="preconnect" ...>` only to actually needed domains.
 
-### Dark mode
-
-Add `c_darkmode` CSS class to `<body>` to enable dark mode. It reuses [Spirit Design Tokens], so if your project is
-built with Spirit, applying the `c_darkmode` class is all you need to do and dark mode will work for you out-of-the-box.
-
-If your project does _not_ use Spirit, you still may adjust exposed CSS custom properties as described
-[above](#without-spirit-design-system), this time scoped to the `.c_darkmode` class:
-
-```css
-.c_darkmode {
-  --lmcccm-bg: #000;
-}
-```
-
-[👀 See dark mode example][examples-theming]
-
 ## Development and contributing
 
 ### Local development
