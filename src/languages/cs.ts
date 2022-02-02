@@ -28,8 +28,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         lang.and,
       )} souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      Používání Cookies si můžete <a href="" data-cc="c-settings">přizpůsobit v nastavení</a>.
-      Můžete si také přečíst, <a href="https://www.lmc.eu/cs/cookies/" target="_blank">co jsou Cookies a jak je používáme?</a>`,
+      Další informace o Cookies a úpravu jejich používání naleznete
+      ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.`,
       primary_btn: {
         text: 'Přijmout všechny',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

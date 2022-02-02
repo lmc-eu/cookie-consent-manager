@@ -21,9 +21,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} your consent to use cookies for personalisation, analytics and targeted marketing.
-      You can set the use of cookies in your <a href="" data-cc="c-settings">own settings</a>.
-      Additional information is available
-      in <a href="https://www.lmc.eu/en/cookies/" target="_blank">What are cookies and how do we use them?</a>`,
+      You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.`,
       primary_btn: {
         text: 'Accept all',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

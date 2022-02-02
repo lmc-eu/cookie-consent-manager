@@ -25,9 +25,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} do personalizacji, analizy i ukierunkowanego marketingu.
-      Korzystanie z plików cookies możesz dostosować we <a href="" data-cc="c-settings">własnych ustawieniach</a>.
-      Ty też możesz czytać
-      <a href="https://www.lmc.eu/pl/cookies" target="_blank">co to są pliki cookie i jak je wykorzystujemy?</a>`,
+      Korzystanie z plików cookies możesz dostosować
+      we <strong><a href="" data-cc="c-settings">własnych ustawieniach</a></strong>.`,
       primary_btn: {
         text: 'Akceptuj wszystkie',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

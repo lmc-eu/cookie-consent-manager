@@ -5,8 +5,8 @@ Object {
   "consent_modal": Object {
     "description": "Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
       Kliknutím na tlačítko „Přijmout všechny“ dáte společnostem test1, test2 a test3 souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      Používání Cookies si můžete <a href=\\"\\" data-cc=\\"c-settings\\">přizpůsobit v nastavení</a>.
-      Můžete si také přečíst, <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">co jsou Cookies a jak je používáme?</a>",
+      Další informace o Cookies a úpravu jejich používání naleznete
+      ve <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Přijmout všechny",
@@ -88,8 +88,8 @@ exports[`config de should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch test1, test2 und test3 zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      Sie können die Verwendung von Cookies in Ihren <a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a> anpassen.
-      Weitere Informationen finden Sie unter <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>.",
+      Sie können die Verwendung von Cookies in Ihren
+      <strong><a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a></strong> anpassen.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Alles akzeptieren",
@@ -168,9 +168,7 @@ Object {
   "consent_modal": Object {
     "description": "By better understanding what you're interested in, we'll show you more relevant content.
       By clicking the \\"Accept all\\" button, you give test1, test2 and test3 your consent to use cookies for personalisation, analytics and targeted marketing.
-      You can set the use of cookies in your <a href=\\"\\" data-cc=\\"c-settings\\">own settings</a>.
-      Additional information is available
-      in <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">What are cookies and how do we use them?</a>",
+      You can customize use of cookies in your <strong><a href=\\"\\" data-cc=\\"c-settings\\">own settings</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Accept all",
@@ -247,8 +245,7 @@ exports[`config hu should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az test1, test2 és test3 süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      A cookie-k használatát testre szabhatja <a href=\\"\\" data-cc=\\"c-settings\\">saját beállításaiban</a>.
-      Bővebb információkat a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Sütihasználat</a> oldalon talál.",
+      A cookie-k használatát testre szabhatja <strong><a href=\\"\\" data-cc=\\"c-settings\\">saját beállításaiban</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Minden elfogadása",
@@ -327,9 +324,8 @@ Object {
     "description": "Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
       Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
       firmy test1, test2 i test3 do personalizacji, analizy i ukierunkowanego marketingu.
-      Korzystanie z plików cookies możesz dostosować we <a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a>.
-      Ty też możesz czytać
-      <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">co to są pliki cookie i jak je wykorzystujemy?</a>",
+      Korzystanie z plików cookies możesz dostosować
+      we <strong><a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Akceptuj wszystkie",
@@ -407,8 +403,8 @@ exports[`config ru should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Нажав «Принять все», Вы даете свое согласие компаниям test1, test2 и test3 на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-      Вы можете настроить использование файлов cookie в <a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a>.
-      Для получения дополнительной информации см. раздел <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">использование файлов cookie</a>.",
+      Вы можете настроить использование файлов cookie
+      в <strong><a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Принять все",
@@ -487,9 +483,8 @@ Object {
   "consent_modal": Object {
     "description": "Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.
       Kliknutím na tlačidlo „Prijať všetky“, čím dáte spoločnostiam test1, test2 a test3 súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-      Používanie cookies si môžete <a href=\\"\\" data-cc=\\"c-settings\\">prispôsobiť v nastavení</a>.
-      Môžete si tiež prečítať
-      <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">čo sú to Cookies a ako ich používame?</a>",
+      Viac informácií o Cookies a úpravu ich používania nájdete
+      vo <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastnom nastavení</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Prijať všetky",
@@ -566,8 +561,8 @@ exports[`config uk should return localization object 1`] = `
 Object {
   "consent_modal": Object {
     "description": "Натиснувши «Прийняти все», Ви даєте свою згоду компаніям test1, test2 i test3 на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-      Використання файлів Cookies Ви можете змінити в своїх <a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a>.
-      Для отримання додаткової інформації див. розділ <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання файлів cookie</a>.",
+      Використання файлів Cookies Ви можете змінити в своїх
+      <strong><a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a></strong>.",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Прийняти все",

@@ -21,8 +21,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      Sie können die Verwendung von Cookies in Ihren <a href="" data-cc="c-settings">eigenen Einstellungen</a> anpassen.
-      Weitere Informationen finden Sie unter <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>.`,
+      Sie können die Verwendung von Cookies in Ihren
+      <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.`,
       primary_btn: {
         text: 'Alles akzeptieren',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

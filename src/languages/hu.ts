@@ -21,8 +21,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         extra.and,
       )} süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      A cookie-k használatát testre szabhatja <a href="" data-cc="c-settings">saját beállításaiban</a>.
-      Bővebb információkat a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Sütihasználat</a> oldalon talál.`,
+      A cookie-k használatát testre szabhatja <strong><a href="" data-cc="c-settings">saját beállításaiban</a></strong>.`,
       primary_btn: {
         text: 'Minden elfogadása',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
