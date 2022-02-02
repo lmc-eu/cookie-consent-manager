@@ -27,8 +27,8 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         lang.companyNames,
         lang.and,
       )} на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-      Вы можете настроить использование файлов cookie в <a href="" data-cc="c-settings">собственных настройках</a>.
-      Для получения дополнительной информации см. раздел <a href="https://www.lmc.eu/en/cookies/" target="_blank">использование файлов cookie</a>.`,
+      Вы можете настроить использование файлов cookie
+      в <strong><a href="" data-cc="c-settings">собственных настройках</a></strong>.`,
       primary_btn: {
         text: 'Принять все',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
