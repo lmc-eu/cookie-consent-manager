@@ -12,6 +12,10 @@
     &::before {
         line-height: tokens.$line-height-default;
     }
+
+    strong {
+        font-weight: tokens.$font-weight-bold;
+    }
 }
 
 #c-ttl,
