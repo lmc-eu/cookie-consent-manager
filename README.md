@@ -39,7 +39,7 @@ Load the script and initialize the plugin right before ending `</body>` tag:
 ```html
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@1/init.js"></script>
 <script>
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
   initLmcCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
 });
 </script>
@@ -87,7 +87,7 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
     ```js
     import LmcCookieConsentManager from '@lmc-eu/cookie-consent-manager';
 
-    window.addEventListener('load', function () {
+    window.addEventListener('DOMContentLoaded', function () {
       LmcCookieConsentManager('demo.example'/* , optional plugin configuration */);
     });
     ```
