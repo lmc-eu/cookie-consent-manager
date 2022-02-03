@@ -8,6 +8,7 @@
     box-shadow: tokens.$shadow-1;
 }
 
+#cm.box,
 #cm.bar {
     padding: units.rem2em(tokens.$space-9);
 }
@@ -29,6 +30,11 @@
     margin-top: 0;
 }
 
+#cm.box #c-bns {
+    justify-content: flex-end;
+}
+
+#cm.box #c-bns .c-bn,
 #cm.bar #c-bns .c-bn {
     width: auto;
     flex: none;
