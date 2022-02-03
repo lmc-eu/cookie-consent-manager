@@ -10,7 +10,7 @@ $button-padding: calc(#{units.rem2em(tokens.$space-4)} - var(--lmcccm-p-btn-bord
 $button-spacing-x: units.rem2em(tokens.$space-6);
 $button-spacing-y: units.rem2em(tokens.$space-6);
 
-$consent-box-max-width: 30em;
+$consent-box-max-width: 40em;
 $consent-cloud-max-width: 68em;
 
 $modal-padding-desktop: units.rem2em(tokens.$space-7);
