@@ -9,6 +9,27 @@ This guide will help you upgrade your codebase.
 
 TBD
 
+## Use `DOMContentLoaded` event instead of `load`
+
+It is highly recommended changing the event where plugin initialization is placed to `DOMContentLoaded`:
+
+```diff
+<script>
+-window.addEventListener('load', function () {
++window.addEventListener('DOMContentLoaded', function () {
+  initLmcCookieConsentManager('demo.example');
+});
+</script>
+```
+
+This will lead to a faster start and rendering of the cookie consent, because unlike `load`, the `DOMContentLoaded`
+event (see [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)) does not wait
+for loading of other page resources (like images).
+
+When loading the plugin from a standalone file or CDN, you should keep using the `defer` attribute of `<script>`.
+Scripts with `defer` are also loaded before `DOMContentLoaded` event
+(see [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer)).
+
 ## Adjust design of the new Settings Modal
 
 While the new Settings Modal inherits many design choices from the existing theme, you may still need to adjust it
