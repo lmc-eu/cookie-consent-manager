@@ -136,9 +136,7 @@
           defaultLang: 'cs',
           companyNames: ['LMC', 'Some Other Company', 'ACME'],
           consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)',
-          onAccept: () => {
-            document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
-          }
+          onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
         }
     );
   });
