@@ -47,6 +47,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 This will load the plugin from CDN and initialize the plugin with default settings.
 
+As a next step, add a link to open cookie settings after the consent was previously given. This link should be placed
+somewhere in the page footer, usually near "Terms of use" and "Privacy policy" links.
+
+```html
+<a href="" data-cc="c-settings">Open cookie settings</a>
+```
+
 [👀 See demo page with example][examples].
 
 ## Loading the plugin

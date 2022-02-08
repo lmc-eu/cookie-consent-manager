@@ -84,6 +84,17 @@ Keep in mind there is no universal solution and there will be different things t
 You must analyze used cookies/local storage and features which depend on consent for each category and test all
 possible scenarios. With version 2.0 this especially means the `onChange` event.
 
+## Add a link to open cookie consent settings
+
+There MUST be a link for the user to open and update cookie settings after the consent was previously given.
+
+It should be placed preferably in the page footer, somewhere near your current "Terms of use" / "Privacy policy" links.
+To add it, use a link with `data-cc="c-settings"` attribute:
+
+```html
+<a href="" data-cc="c-settings">Nastavení Cookies</a>
+```
+
 ## Use `DOMContentLoaded` event instead of `load`
 
 It is highly recommended changing the event where plugin initialization is placed to `DOMContentLoaded`:
