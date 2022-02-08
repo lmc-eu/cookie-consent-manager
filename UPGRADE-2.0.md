@@ -7,7 +7,82 @@ This guide will help you upgrade your codebase.
 
 ## Rearranged callbacks
 
-TBD
+The main change in version 2.0 is the possibility to change the previously given consent category using "settings dialog".
+Because of that, callbacks must be handled differently, on a per-category basis, and also the update event must now
+be taken care of.
+
+At first, none of the callbacks now receives `cookie` object as a parameter anymore. Use `cookieConsent` instance to
+access the required data if needed:
+
+```diff
+initLmcCookieConsentManager(
+    'demo.example',
+    // ...
+-    onFirstAccept: (cookie) => {
++    onFirstAccept: (cookieConsent) => {
+-      submitAcceptedCategoriesToMyApi(cookie.level);
++      submitAcceptedCategoriesToMyApi(cookieConsent.get('level'));
+    }
+)
+```
+
+The next major change is that **only the following three callbacks are now available**:
+
+- `onFirstAccept(cookieConsent)` – executed only once, when the user takes the first action. Don't forget that unlike in the previous version, user now can allow **only some** categories. `onFirstAcceptAll` and `onFirstAcceptOnlyNecessary` callbacks were removed and their logic should be handled inside this callback.
+- `onAccept(cookieConsent)` – any consent was detected (either given now or after page load if it was already saved previously). Don't forget that unlike in the previous version, **only some** categories could be allowed. `onAcceptAll` and `onAcceptOnlyNecessary` callbacks were removed and their logic should be handled inside this callback.
+- `onChange(cookieConsent, categories)` – new callback which is triggered right after the user changes cookie settings; it receives also `categories` object, which contains arrays of `accepted`, `rejected`, and `changed` categories.
+
+#### Before
+
+```js
+initLmcCookieConsentManager(
+    'demo.example',
+    // ...
+    onFirstAcceptOnlyNecessary: () => {
+      deleteAllCookies();
+      window.localStorage.clear();
+    },
+    onAcceptAll: (cookie, cookieConsent) => {
+      if (cookieConsent.allowedCategory('personalization')) {
+        startOptionalPersonalizationFeature();
+      }
+    },
+)
+```
+
+#### After
+
+```js
+initLmcCookieConsentManager(
+    'demo.example',
+    // ...
+    onFirstAccept: (cookieConsent) => {
+      if (!cookieConsent.allowedCategory('personalization')) {
+        deleteCookiesForPersonalization();
+        clearLocalStorageItemsForPersonalization();
+      }
+      // ... you may need to handle also other categories
+    },
+    onAccept: (cookieConsent) => {
+      if (cookieConsent.allowedCategory('personalization')) {
+        startOptionalPersonalizationFeature();
+      }
+    },
+    onChange: (cookieConsent, categories) => {
+      // When user changes settings while on page, the now-rejected categories must be respected
+      if (categories.changed.includes('personalization') && !cookieConsent.allowedCategory('personalization')) {
+        disablePersonalizationFeature();
+        deleteCookiesForPersonalization();
+        clearLocalStorageItemsForPersonalization();
+      },
+      // ... you may need to handle also other categories
+    }
+)
+```
+
+Keep in mind there is no universal solution and there will be different things to handle for each product.
+You must analyze used cookies/local storage and features which depend on consent for each category and test all
+possible scenarios. With version 2.0 this especially means the `onChange` event.
 
 ## Use `DOMContentLoaded` event instead of `load`
 
