@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@v1.25/themes/prism.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="./assets/examples.css"><!-- This CSS is here for the purpose of this demo only, don't add it to your project -->
     <script src="./assets/functions.js" defer></script>
@@ -21,6 +20,13 @@
 
     <!-- Following script will be loaded only after "personalization" consent is detected -->
     <script type="text/plain" data-cookiecategory="personalization" src="./assets/personalization.js" defer></script>
+
+    <!-- This is only for purposes of this example page -->
+    <style>
+        .list-group-item-success:after {
+            content: ' – allowed';
+        }
+    </style>
 </head>
 <body>
 
@@ -85,17 +91,23 @@
         <div class="row justify-content-lg-center">
             <div class="col col-lg-10 col-xl-8">
 
-                <h2 class="mt-md-3 mb-3">Cookie content</h2>
-                <div id="onaccept-content">(empty)</div>
+                <h2 class="mt-4 mt-md-5 mb-3">Allowed consent categories</h2>
+                <ul class="list-group">
+                    <li class="list-group-item" id="consent-necessary">necessary</li>
+                    <li class="list-group-item" id="consent-ad">ad</li>
+                    <li class="list-group-item" id="consent-analytics">analytics</li>
+                    <li class="list-group-item" id="consent-functionality">functionality</li>
+                    <li class="list-group-item" id="consent-personalization">personalization</li>
+                </ul>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onFirstAction()</code> callback</h2>
-                <p id="onfirstacction-content">
+                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onFirstAccept()</code> callback</h2>
+                <p id="onFirstAccept-content">
                     (empty)
                 </p>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Content set by callback when <code>ad</code> consent detected</h2>
+                <h2 class="mt-4 mt-md-5 mb-3">Content shown depending on <code>ad</code> ("marketing") consent</h2>
                 <p id="ad-content">
-                    (empty)
+                    Ad consent not allowed
                 </p>
 
                 <h2 class="mt-4 mt-md-5 mb-3">Content set by external script when <code>personalization</code> consent detected</h2>
@@ -111,22 +123,11 @@
                     (empty)
                 </p>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Allowed consent categories</h2>
-                <ul class="list-group">
-                    <li class="list-group-item" id="consent-necessary">necessary</li>
-                    <li class="list-group-item" id="consent-ad">ad</li>
-                    <li class="list-group-item" id="consent-analytics">analytics</li>
-                    <li class="list-group-item" id="consent-functionality">functionality</li>
-                    <li class="list-group-item" id="consent-personalization">personalization</li>
-                </ul>
-
             </div>
         </div>
     </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/components/prism-core.min.js" data-manual></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.25/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
     // Bootstrap Tooltips
@@ -143,31 +144,39 @@
       'github.example',
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
-        onAccept: (cookieConsent) => { // any type of consent (including "only necessary") detected
-          document.getElementById('onaccept-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(cookieConsent.getUserPreferences())}</code></pre>`;
-          window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
-          document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
-
-          for (const category of ['necessary', 'ad', 'analytics', 'functionality', 'personalization']) {
-            if (cookieConsent.allowedCategory(category)) {
-              markConsentCategoryAllowed(category);
-            }
-          }
-        },
-        onFirstAction: (cookieConsent) => { // first consent detected
-          document.getElementById('onfirstaction-content').innerHTML = '<code>onFirstAction()</code> called';
+        onAccept: (cookieConsent) => { // any type of consent detected (including only necessary, custom selection or all categories)
           if (cookieConsent.allowedCategory('ad')) {
-            document.getElementById('ad-content').innerHTML = 'Ad consent detected';
+            document.getElementById('ad-content').innerHTML = 'Ad consent allowed';
           }
+          updateAllowedCategories(cookieConsent);
+          document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
+        onFirstAccept: (cookieConsent) => {  // user just clicked and gave consent to selected or all categories
+          document.getElementById('onFirstAccept-content').innerHTML = '<code>onFirstAccept()</code> called';
+        },
+        onChange: (cookieConsent, categories) => { // user previously gave consent but now change its preferences
+          console.log(categories);
+          if (categories.changed.includes('ad')) {
+            document.getElementById('ad-content').innerHTML = cookieConsent.allowedCategory('ad') ? 'Ad consent was just changed and allowed' : 'Ad consent was just changed and rejected';
+          }
+
+          updateAllowedCategories(cookieConsent);
+        }
       }
     );
   });
 
+  const updateAllowedCategories= function (cookieConsent) {
+    for (const category of ['necessary', 'ad', 'analytics', 'functionality', 'personalization']) {
+      if (cookieConsent.allowedCategory(category)) {
+        markConsentCategoryAllowed(category);
+      }
+    }
+  }
+
   const markConsentCategoryAllowed = function (category) {
     const element = document.getElementById(`consent-${category}`);
     element.classList.add('list-group-item-success');
-    element.innerText += ' – allowed'
   }
 </script>
 

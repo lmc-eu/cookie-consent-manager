@@ -141,7 +141,7 @@
           cookie_necessary_only_expiration: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
-        onFirstAction: (cookieConsent) => { // the user takes the first action (accept/reject)
+        onFirstAccept: (cookieConsent) => { // user just clicked and gave consent to selected or all categories
             if (!cookieConsent.isAllowed('functionality')) {
                 window.localStorage.clear(); // if we use localStorage for some extended "functionality", remove its contents if we don't have consent
             }
