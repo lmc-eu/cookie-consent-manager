@@ -9,6 +9,7 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
 ## Table of contents
 
+1. [Upgrade from version 1.x](#upgrade-from-version-1x)
 1. [Basic usage](#basic-usage)
 1. [Loading the plugin](#loading-the-plugin)
 1. [Manage features depending on the given consent](#manage-features-depending-on-the-given-consent)
@@ -16,6 +17,11 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 1. [Configuration options](#configuration-options)
 1. [Theming](#theming)
 1. [Development and contributing](#development-and-contributing)
+
+## Upgrade from version 1.x
+
+See [upgrade guide](UPGRADE-2.0.md) for upgrade guidance to version 2.0.
+For complete list of changes see [changelog](CHANGELOG.md).
 
 ## Basic usage
 
@@ -244,14 +250,14 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 
 ## Configuration options
 
-| Option          | Type        | Default value                      | Description                                                                                                                                                                                              |
-|-----------------|-------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `autodetectLang`| boolean     | `true`                             | Autodetect language based on the value of `<html lang="...">`. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
-| `defaultLang`   | string      | `'cs'`                             | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                                                        |
-| `companyNames`  | array       | `['LMC']`                          | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration].                                                        |
-| `consentCollectorApiUrl`| ?string | `'https://ccm.lmc.cz/(...)'`   | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                          |
-| `config`        | Object      | `{}`                               | Override default config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                    |
-| `on*` callbacks | function    | `(cookieConsent) => {}`    | See below for configurable callbacks.                                                                                                                                                                    |
+| Option                   | Type     | Default value                | Description                                                                                                                                                                                              |
+|--------------------------|----------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `autodetectLang`         | boolean  | `true`                       | Autodetect language based on the value of `<html lang="...">`. If autodetect fails or if unsupported language is detected, fallback to `defaultLang`.<br>When disabled, force language to `defaultLang`. |
+| `defaultLang`            | string   | `'cs'`                       | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                                                        |
+| `companyNames`           | array    | `['LMC']`                    | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. [See example][examples-configuration].                                                        |
+| `consentCollectorApiUrl` | ?string  | `'https://ccm.lmc.cz/(...)'` | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                          |
+| `config`                 | Object   | `{}`                         | Override default config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                    |
+| `on*` callbacks          | function | `(cookieConsent) => {}`      | See below for configurable callbacks.                                                                                                                                                                    |
 
 ### Supported languages
 
@@ -266,16 +272,14 @@ and Ukrainian (`uk`).
 The library can trigger configured callbacks in various events. They can be used to execute custom functionality,
 for example, to enable some feature after user has given consent.
 
-Each configured callback receives two params:
+Each configured callback receives `cookieConsent` parameter - instance of the underlying [cookie consent] library,
+which can be used to call [its methods][cookie consent api] or retrieve data from the cookie.
 
-* `cookieConsent` - instance of the underlying [cookie consent] library, can be used to call [its methods][cookie consent api]
-
-| Callback                     | Trigger event                                                                                                             |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `onFirstAccept`           | This function will be executed only once, when the user takes the first action (accept/reject).                                                                                      |
-| `onAccept`                   | Any consent is detected (either given now or after page load if it was already saved previously)                          |
-| `onChange` | Right after user changes cookie settings                                                          |
-
+| Callback                              | Trigger event                                                                                                                                                       |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onFirstAccept(cookieConsent)`        | This function will be executed only once, when the user takes the first action (accept all/only selected/only necessary categories).                                |
+| `onAccept(cookieConsent)`             | Any consent is detected (either given now or after page load if it was already saved previously)                                                                    |
+| `onChange(cookieConsent, categories)` | Right after the user changes cookie settings. The callback receives also `categories` object containing arrays of `accepted`, `rejected`, and `changed` categories. |
 
 [👀 See callbacks example][examples-callbacks]
 
@@ -472,7 +476,7 @@ for more information.
 
 [cookie consent]: https://github.com/orestbida/cookieconsent
 [cookie consent api]: https://github.com/orestbida/cookieconsent#api-methods
-[cookie consent third party]: https://github.com/orestbida/cookieconsent#manage-third-party-scripts
+[cookie consent third party]: https://github.com/orestbida/cookieconsent#how-to-blockmanage-scripts
 [cookie consent options]: https://github.com/orestbida/cookieconsent#all-configuration-options
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
