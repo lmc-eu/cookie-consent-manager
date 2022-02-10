@@ -13,6 +13,7 @@ import {
   CookieConsentCategory,
   CookieConsentManager,
   CookieConsentManagerOptions,
+  DisplayMode,
   OnAcceptCallback,
   OnChangeCallback,
 } from './types';
@@ -31,6 +32,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   onAccept: noopAcceptCallback,
   onChange: noopChangeCallback,
   companyNames: ['LMC'],
+  displayMode: DisplayMode.FORCE,
   config: {},
 };
 
@@ -47,6 +49,8 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {OnChangeCallback} [args.onChange] - Callback to be executed right after user change his/her preferences
  * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
+ * @param {DisplayMode} [args.displayMode] - `force` to show consent in a centered modal box and to block page until
+ *   user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
@@ -66,6 +70,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onAccept,
     onChange,
     companyNames,
+    displayMode,
     config,
   } = options;
   const cookieName = 'lmc_ccm';
@@ -129,14 +134,20 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cookie_name: cookieName, // Predefined cookie name. Do not override.
     current_lang: defaultLang, // Default language used when auto_language is false (or when autodetect failed)
     delay: 0, // Show the modal immediately after init
-    force_consent: false, // Do not force the consent before page could be used
+    force_consent: displayMode == DisplayMode.FORCE,
     hide_from_bots: true, // To be hidden also from Selenium
     page_scripts: true, // Manage third-party scripts loaded using <script>
     use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
       consent_modal: {
-        layout: VanillaCookieConsent.GuiConsentLayout.BAR, // box/cloud/bar
-        position: VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER, // bottom/middle/top + left/right/center
+        layout:
+          displayMode == DisplayMode.FORCE
+            ? VanillaCookieConsent.GuiConsentLayout.BOX
+            : VanillaCookieConsent.GuiConsentLayout.BAR,
+        position:
+          displayMode == DisplayMode.FORCE
+            ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER
+            : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
         transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
         swap_buttons: true,
       },

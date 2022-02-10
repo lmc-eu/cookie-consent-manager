@@ -134,6 +134,7 @@
         {
           autodetectLang: false,
           defaultLang: 'cs',
+          displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
           companyNames: ['LMC', 'Some Other Company', 'ACME'],
           consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)',
           onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
