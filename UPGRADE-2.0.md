@@ -116,6 +116,28 @@ When loading the plugin from a standalone file or CDN, you should keep using the
 Scripts with `defer` are also loaded before `DOMContentLoaded` event
 (see [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer)).
 
+## Use `displayMode` instead of `force_consent`
+
+In version 2.0, you should not set `force_consent` or `gui_options` in your configuration. Use `displayMode` instead.
+
+The new `displayMode` option allows choosing between two modes. Under the hood, the mode adjust both GUI layout
+and `force_consent` to make consistent user experience.
+
+- `force` (this) – show consent in a centered modal pop-up (this layout was not available until version 2.0) and block page until user action (this replaces `force_consent: true`)
+- `soft` – show consent banner on the bottom of the page and do not block the page before user action (this is the same as previous default)
+
+```diff
+initLmcCookieConsentManager(
+    'demo.example',
+    // ...
+-    config: {
+-      force_consent: true
+-    }
++    displayMode: 'force'
+    }
+)
+```
+
 ## Adjust design of the new Settings Modal
 
 While the new Settings Modal inherits many design choices from the existing theme, you may still need to adjust it
