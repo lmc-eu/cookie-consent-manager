@@ -90,7 +90,8 @@
                         Overwriting raw configuration of the underlying cookie-consent component (via <code>config</code> option),
                         to modify some advanced features.
                     </li>
-                    <li>Clearing localStorage if user gives consent to only necessary data (<code>onFirstAcceptOnlyNecessary</code>)</li>
+                    <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstAccept</code>)</li>
+                    <li>Clearing localStorage when user updates consent and rejects some consent category (<code>onChange</code>)</li>
                     <li>Etc.</li>
                 </ul>
 
@@ -144,10 +145,15 @@
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
         onFirstAccept: (cookieConsent) => { // user just clicked and gave consent to selected or all categories
-            if (!cookieConsent.isAllowed('functionality')) {
-                window.localStorage.clear(); // if we use localStorage for some extended "functionality", remove its contents if we don't have consent
+            if (!cookieConsent.allowedCategory('functionality')) {
+              window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
             }
         },
+        onChange: (cookieConsent, categories) => { // when user changes settings while on page, the now-rejected categories must be respected
+          if (categories.changed.includes('functionality') && !cookieConsent.allowedCategory('functionality')) {
+            window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
+          }
+        }
       }
     );
   });
