@@ -14,6 +14,11 @@ export type OnChangeCallback = (
   categories: CategoriesChangeset,
 ) => void;
 
+export enum DisplayMode {
+  FORCE = 'force',
+  SOFT = 'soft',
+}
+
 export type CookieConsentManagerOptions = {
   defaultLang: string;
   autodetectLang: boolean;
@@ -22,6 +27,7 @@ export type CookieConsentManagerOptions = {
   onAccept: OnAcceptCallback;
   onChange: OnChangeCallback;
   companyNames: string[];
+  displayMode: DisplayMode;
   config: VanillaCookieConsent.Options;
 };
 
