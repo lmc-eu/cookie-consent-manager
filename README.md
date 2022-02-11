@@ -38,13 +38,13 @@ Load default CSS along with your styles in `<head>`:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@1/LmcCookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/LmcCookieConsentManager.min.css">
 ```
 
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@1/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
   initLmcCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
@@ -70,10 +70,10 @@ somewhere in the page footer, usually near "Terms of use" and "Privacy policy" l
 You can load the plugin from a CDN, as in the basic example above.
 
 ```html
-<!-- Note we use version "cookie-consent-manager@1", which points to the latest version of this series (including feature and bugfix releases) -->
+<!-- Note we use version "cookie-consent-manager@2", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@1/LmcCookieConsentManager.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@1/init.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/LmcCookieConsentManager.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
 ```
 
 Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).

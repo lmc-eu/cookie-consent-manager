@@ -1,0 +1,94 @@
+@use '@tokens' as tokens;
+@use '../settings/settings';
+@use '../tools/units';
+
+#cm {
+    max-width: settings.$consent-box-max-width;
+    padding: units.rem2em(tokens.$space-8);
+    box-shadow: tokens.$shadow-1;
+}
+
+#cm.box,
+#cm.bar {
+    padding: units.rem2em(tokens.$space-9);
+}
+
+#cm.bar #c-inr {
+    display: flex;
+    align-items: flex-end;
+    max-width: none;
+}
+
+#cm.bar #c-inr-i {
+    margin-right: units.rem2em(tokens.$space-10);
+}
+
+#cm.bar #c-bns {
+    flex-shrink: 0;
+    align-items: baseline;
+    max-width: none;
+    margin-top: 0;
+}
+
+#cm.box #c-bns {
+    justify-content: flex-end;
+}
+
+#cm.box #c-bns .c-bn,
+#cm.bar #c-bns .c-bn {
+    width: auto;
+    flex: none;
+}
+
+#cm.cloud {
+    max-width: settings.$consent-cloud-max-width;
+    padding: units.rem2em(tokens.$space-9) units.rem2em(tokens.$space-10);
+}
+
+.cc_div #c-bns {
+    margin-top: units.rem2em(tokens.$space-8);
+}
+
+@media screen and (max-width: settings.$breakpoint-desktop-down) {
+    #cm.bar #c-inr {
+        flex-flow: column;
+        align-items: stretch;
+    }
+
+    #cm.bar #c-inr-i {
+        margin-right: 0;
+        margin-bottom: units.rem2em(tokens.$space-8);
+    }
+
+    #cm.bar #c-bns {
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: settings.$breakpoint-tablet-down) {
+    #cm,
+    #cm.cloud,
+    #cm.left,
+    #cm.right {
+        // stylelint-disable-next-line declaration-no-important -- Override original styles.
+        padding: units.rem2em(tokens.$space-7) !important;
+    }
+
+    .cc_div #c-bns {
+        margin-top: units.rem2em(tokens.$space-7);
+    }
+
+    #cm.bar #c-inr-i {
+        margin-bottom: units.rem2em(tokens.$space-7);
+    }
+
+    #cm.bar #c-bns {
+        align-self: stretch;
+    }
+
+    .cc_div .c-bn,
+    #cm .c-bn,
+    #cm.bar #c-bns .c-bn {
+        width: 100%;
+    }
+}

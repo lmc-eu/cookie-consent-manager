@@ -1,0 +1,42 @@
+@use '@tokens' as tokens;
+@use '../settings/settings';
+@use '../tools/units';
+
+.cc_div {
+    font-family: var(--lmcccm-p-font-family);
+    font-size: var(--lmcccm-p-base-font-size);
+    line-height: tokens.$line-height-default;
+
+    & *,
+    &::after,
+    &::before {
+        line-height: tokens.$line-height-default;
+    }
+
+    strong {
+        font-weight: tokens.$font-weight-bold;
+    }
+}
+
+#c-ttl,
+#s-ttl {
+    margin-bottom: units.rem2em(tokens.$space-6, units.rem2em(tokens.$heading-small-desktop));
+    font-weight: tokens.$font-weight-bold;
+    font-size: units.rem2em(tokens.$heading-small-desktop);
+    line-height: tokens.$line-height-small;
+
+    @media screen and (max-width: settings.$breakpoint-desktop-down) {
+        font-size: units.rem2em(tokens.$heading-small-tablet);
+    }
+
+    @media screen and (max-width: settings.$breakpoint-tablet-down) {
+        font-size: units.rem2em(tokens.$heading-small-mobile);
+    }
+}
+
+#c-txt,
+.cc_div .cloud #c-txt {
+    margin-bottom: 0;
+    font-size: units.rem2em(tokens.$body-text-medium);
+    line-height: inherit;
+}

@@ -1,3 +1,70 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.3.0...2.0.0) (2022-02-11)
+
+See [upgrade guide](UPGRADE-2.0.md) for upgrade guidance to version 2.0.
+
+### BREAKING CHANGES
+
+- Callbacks for handling settings modal [#CCM-48](https://jira.int.lmc.cz/browse/CCM-48) ([04a4da5](https://github.com/lmc-eu/cookie-consent-manager/commit/04a4da5))
+- Style settings modal according to graphic design [#CCM-56](https://jira.int.lmc.cz/browse/CCM-56) ([75d1194](https://github.com/lmc-eu/cookie-consent-manager/commit/75d1194))
+- Remove default dark theme [#CCM-56](https://jira.int.lmc.cz/browse/CCM-56) ([8f33481](https://github.com/lmc-eu/cookie-consent-manager/commit/8f33481))
+
+### Dependencies
+
+- Pin dependencies ([9d1e67b](https://github.com/lmc-eu/cookie-consent-manager/commit/9d1e67b))
+- Update all dev dependencies ([e52565a](https://github.com/lmc-eu/cookie-consent-manager/commit/e52565a), [a4c7d40](https://github.com/lmc-eu/cookie-consent-manager/commit/a4c7d40), [8d9bee7](https://github.com/lmc-eu/cookie-consent-manager/commit/8d9bee7), [78f88b6](https://github.com/lmc-eu/cookie-consent-manager/commit/78f88b6), [7a08f42](https://github.com/lmc-eu/cookie-consent-manager/commit/7a08f42))
+- Update dependency nanoid to v3.1.31 [SECURITY] ([32b2fb9](https://github.com/lmc-eu/cookie-consent-manager/commit/32b2fb9))
+- Update dependency stylelint to v14 ([b1699d0](https://github.com/lmc-eu/cookie-consent-manager/commit/b1699d0))
+- Update dependency vanilla-cookieconsent to 2.8.0 [#CCM-58](https://jira.int.lmc.cz/browse/CCM-58) ([b214dc0](https://github.com/lmc-eu/cookie-consent-manager/commit/b214dc0))
+- Update Spirit Design Tokens ([af696cb](https://github.com/lmc-eu/cookie-consent-manager/commit/af696cb))
+
+### Documentation
+
+- Add button to open cookie settings modal [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([8acb0cd](https://github.com/lmc-eu/cookie-consent-manager/commit/8acb0cd))
+- Add new onFirstAction and onChange callbacks [#CCM-48](https://jira.int.lmc.cz/browse/CCM-48) ([fb6590e](https://github.com/lmc-eu/cookie-consent-manager/commit/fb6590e))
+- Update examples with new callbacks [#CCM-48](https://jira.int.lmc.cz/browse/CCM-48) ([b38c59e](https://github.com/lmc-eu/cookie-consent-manager/commit/b38c59e))
+- Adjust changelog lists formatting to new LMC preset ([5c69666](https://github.com/lmc-eu/cookie-consent-manager/commit/5c69666))
+- Avoid inconsistent states in language selection example ([532fcd8](https://github.com/lmc-eu/cookie-consent-manager/commit/532fcd8))
+- Clearly state the plugin is mainly for LMC products ([885c04e](https://github.com/lmc-eu/cookie-consent-manager/commit/885c04e))
+- Extend configuration example page to showcase onChange event ([e2ba3c1](https://github.com/lmc-eu/cookie-consent-manager/commit/e2ba3c1))
+- Extend readme to reflect changes in version 2.0 ([ec6329b](https://github.com/lmc-eu/cookie-consent-manager/commit/ec6329b))
+- List allowed categories on callbacks example page ([a417b8d](https://github.com/lmc-eu/cookie-consent-manager/commit/a417b8d))
+- Organise CSS custom properties table ([98eed8e](https://github.com/lmc-eu/cookie-consent-manager/commit/98eed8e))
+- Prefer `DOMContentLoaded` over `load` event to render cookie consent modal earlier ([edbd9bc](https://github.com/lmc-eu/cookie-consent-manager/commit/edbd9bc))
+- Remove yarn.lock from examples ([f5cf132](https://github.com/lmc-eu/cookie-consent-manager/commit/f5cf132))
+- Rework callback examples [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([e2a1347](https://github.com/lmc-eu/cookie-consent-manager/commit/e2a1347))
+- Simplify changing of component language by using `updateLanguage()` method ([0acb434](https://github.com/lmc-eu/cookie-consent-manager/commit/0acb434))
+- **upgrade:**
+  - Add `DOMContentLoaded` recommendation [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([d98b306](https://github.com/lmc-eu/cookie-consent-manager/commit/d98b306))
+  - Add guide for adding link to open cookie settings [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([98e77b5](https://github.com/lmc-eu/cookie-consent-manager/commit/98e77b5))
+  - Add guide for displayMode ([a67f0a4](https://github.com/lmc-eu/cookie-consent-manager/commit/a67f0a4))
+  - Add upgrade guide for rearranged callbacks [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([20779f4](https://github.com/lmc-eu/cookie-consent-manager/commit/20779f4))
+  - Add upgrade guide for version 2.0 with CSS related changes [#CCM-57](https://jira.int.lmc.cz/browse/CCM-57) ([d949bc0](https://github.com/lmc-eu/cookie-consent-manager/commit/d949bc0))
+- Use version aliases for external resources to keep them up-to-date ([75d1194](https://github.com/lmc-eu/cookie-consent-manager/commit/75d1194))
+
+### Features
+
+- Add Czech translations for settings modal [#CCM-54](https://jira.int.lmc.cz/browse/CCM-54) ([3560405](https://github.com/lmc-eu/cookie-consent-manager/commit/3560405))
+- Add displayMode (default `force`) to choose between blocking pop-up and banner [#CCM-61](https://jira.int.lmc.cz/browse/CCM-61) ([6fdca25](https://github.com/lmc-eu/cookie-consent-manager/commit/6fdca25))
+- Add settings modal translations for all remaining languages [#CCM-55](https://jira.int.lmc.cz/browse/CCM-55) ([3e67294](https://github.com/lmc-eu/cookie-consent-manager/commit/3e67294))
+- Add temporary placeholder for other translations of settings modal ([bf99467](https://github.com/lmc-eu/cookie-consent-manager/commit/bf99467))
+- Make contents of `<strong>` actually appear strong ([e9a6759](https://github.com/lmc-eu/cookie-consent-manager/commit/e9a6759))
+- Simplify translations and make settings link strong [#CCM-60](https://jira.int.lmc.cz/browse/CCM-60) ([78cd4c7](https://github.com/lmc-eu/cookie-consent-manager/commit/78cd4c7))
+- Submit consent to API also on settings change [#CCM-59](https://jira.int.lmc.cz/browse/CCM-59) ([ffe4963](https://github.com/lmc-eu/cookie-consent-manager/commit/ffe4963))
+- Submit consent to API and dataLayer also on settings change [#CCM-59](https://jira.int.lmc.cz/browse/CCM-59) ([1daca26](https://github.com/lmc-eu/cookie-consent-manager/commit/1daca26))
+- Tweak box mode of consent modal according to graphic design [#CCM-47](https://jira.int.lmc.cz/browse/CCM-47) ([18adcf3](https://github.com/lmc-eu/cookie-consent-manager/commit/18adcf3))
+- Update czech translation [#CCM-54](https://jira.int.lmc.cz/browse/CCM-54) ([8e7e2b3](https://github.com/lmc-eu/cookie-consent-manager/commit/8e7e2b3))
+
+### Chores
+
+- Configure package url for bug tracker ([5c03f7d](https://github.com/lmc-eu/cookie-consent-manager/commit/5c03f7d))
+- Do not exclude stylelint from automated updates anymore ([dd53241](https://github.com/lmc-eu/cookie-consent-manager/commit/dd53241))
+- **stylelint:**
+  - Conform to updated stylelint rules ([df8be8d](https://github.com/lmc-eu/cookie-consent-manager/commit/df8be8d))
+  - Use the latest shared Stylelint config to resolve compatibility with Stylelint 14 ([ab0080a](https://github.com/lmc-eu/cookie-consent-manager/commit/ab0080a))
+- Watch and build SCSS during development ([340fd91](https://github.com/lmc-eu/cookie-consent-manager/commit/340fd91))
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.2.1...1.3.0) (2022-01-05)
 

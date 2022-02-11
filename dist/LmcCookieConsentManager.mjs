@@ -17,332 +17,314 @@ var __spreadValues = (a, b) => {
 
 // node_modules/vanilla-cookieconsent/dist/cookieconsent.js
 (function() {
-  var fb = function(Za) {
-    var f = { current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, k = {}, r = {}, U = false, V = false, na = false, xa = false, oa = false, u, aa, W, ya, za, Aa, ba = true, Ba = false, A = null, Ca, Da = [], Pa = [], Qa = false, ta, Ea, Fa = [], ja = [], Q = [], F = [], ua = [], ka = document.documentElement, L, x, G, R, $a = function(a) {
-      typeof a.cookie_expiration === "number" && (f.cookie_expiration = a.cookie_expiration);
-      typeof a.cookie_necessary_only_expiration === "number" && (f.cookie_necessary_only_expiration = a.cookie_necessary_only_expiration);
-      typeof a.autorun === "boolean" && (f.autorun = a.autorun);
-      typeof a.cookie_domain === "string" && (f.cookie_domain = a.cookie_domain);
-      typeof a.cookie_same_site === "string" && (f.cookie_same_site = a.cookie_same_site);
-      typeof a.cookie_path === "string" && (f.cookie_path = a.cookie_path);
-      typeof a.cookie_name === "string" && (f.cookie_name = a.cookie_name);
-      typeof a.onAccept === "function" && (ya = a.onAccept);
-      typeof a.onFirstAction === "function" && (Aa = a.onFirstAction);
-      typeof a.onChange === "function" && (za = a.onChange);
-      typeof a.revision === "number" && (-1 < a.revision && (f.revision = a.revision), Ba = true);
-      a.autoclear_cookies === true && (f.autoclear_cookies = true);
-      a.use_rfc_cookie === true && (f.use_rfc_cookie = true);
-      a.hide_from_bots === true && (Qa = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver));
-      f.page_scripts = a.page_scripts === true;
-      f.page_scripts_order = a.page_scripts_order !== false;
-      a.auto_language === "browser" || a.auto_language === true ? f.auto_language = "browser" : a.auto_language === "document" && (f.auto_language = "document");
-      var b = a.languages;
-      a = a.current_lang;
-      f.auto_language === "browser" ? (a = navigator.language || navigator.browserLanguage, 2 < a.length && (a = a[0] + a[1]), a = a.toLowerCase(), b = Ga(a, b)) : b = f.auto_language === "document" ? Ga(document.documentElement.lang, b) : typeof a === "string" ? f.current_lang = Ga(a, b) : f.current_lang;
-      f.current_lang = b;
-    }, ab = function() {
-      for (var a = document.querySelectorAll('a[data-cc="c-settings"], button[data-cc="c-settings"]'), b = 0; b < a.length; b++)
-        a[b].setAttribute("aria-haspopup", "dialog"), H(a[b], "click", function(c) {
-          k.showSettings(0);
-          c.preventDefault ? c.preventDefault() : c.returnValue = false;
+  var kb = function(eb) {
+    var e = { mode: "opt-in", current_lang: "en", auto_language: null, autorun: true, cookie_name: "cc_cookie", cookie_expiration: 182, cookie_domain: window.location.hostname, cookie_path: "/", cookie_same_site: "Lax", use_rfc_cookie: false, autoclear_cookies: true, revision: 0, script_selector: "data-cookiecategory" }, m = {}, g, t = {}, C = null, K = false, Q = false, na = false, Ca = false, oa = false, v, Y, U, pa, Da, Ea, Fa = false, Z = true, Sa = "", V = [], xa = false, Ga, Ha = [], Ta = [], Ia = [], Ua = false, qa, Ja, Ka = [], ja = [], R = [], I = [], ya = [], ra = document.documentElement, L, sa, x, aa, ta, W, S, T, ba, E, M, ua, ka, la, y, ca, da, ea, fa, Va = function(a) {
+      function b(n) {
+        return (a || document).querySelectorAll('a[data-cc="' + n + '"], button[data-cc="' + n + '"]');
+      }
+      function c(n, p) {
+        n.preventDefault ? n.preventDefault() : n.returnValue = false;
+        m.accept(p);
+        m.hideSettings();
+        m.hide();
+      }
+      for (var d = b("c-settings"), f = b("accept-all"), l = b("accept-necessary"), q = b("accept-selection"), h = 0; h < d.length; h++)
+        d[h].setAttribute("aria-haspopup", "dialog"), z(d[h], "click", function(n) {
+          n.preventDefault ? n.preventDefault() : n.returnValue = false;
+          m.showSettings(0);
         });
-    }, Ga = function(a, b) {
+      for (h = 0; h < f.length; h++)
+        z(f[h], "click", function(n) {
+          c(n, "all");
+        });
+      for (h = 0; h < q.length; h++)
+        z(q[h], "click", function(n) {
+          c(n);
+        });
+      for (h = 0; h < l.length; h++)
+        z(l[h], "click", function(n) {
+          c(n, []);
+        });
+    }, za = function(a, b) {
       if (Object.prototype.hasOwnProperty.call(b, a))
         return a;
-      if (0 < pa(b).length)
-        return Object.prototype.hasOwnProperty.call(b, f.current_lang) ? f.current_lang : pa(b)[0];
-    }, Ra = function() {
+      if (0 < va(b).length)
+        return Object.prototype.hasOwnProperty.call(b, e.current_lang) ? e.current_lang : va(b)[0];
+    }, Wa = function() {
       function a(c, d) {
-        var e = false, h = false;
+        var f = false, l = false;
         try {
-          for (var l = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), m, n = l.length, p = 0; p < n; )
-            m = l[p].getAttribute("data-focus"), h || m !== "1" ? m === "0" && (e = l[p], h || l[p + 1].getAttribute("data-focus") === "0" || (h = l[p + 1])) : h = l[p], p++;
-        } catch (q) {
+          for (var q = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), h, n = q.length, p = 0; p < n; )
+            h = q[p].getAttribute("data-focus"), l || h !== "1" ? h === "0" && (f = q[p], l || q[p + 1].getAttribute("data-focus") === "0" || (l = q[p + 1])) : l = q[p], p++;
+        } catch (F) {
           return c.querySelectorAll(b.join(", "));
         }
-        d[0] = l[0];
-        d[1] = l[l.length - 1];
-        d[2] = e;
-        d[3] = h;
+        d[0] = q[0];
+        d[1] = q[q.length - 1];
+        d[2] = f;
+        d[3] = l;
       }
       var b = ["[href]", "button", "input", "details", '[tabindex="0"]'];
-      a(R, ja);
-      U && a(x, Fa);
-    }, Ha, Ia, Sa = "", qa, bb = function(a, b) {
-      L = g("div");
+      a(M, ja);
+      Q && a(x, Ka);
+    }, La = function(a) {
+      g.force_consent === true && J(ra, "force--consent");
+      if (!x) {
+        x = k("div");
+        var b = k("div"), c = k("div");
+        x.id = "cm";
+        b.id = "c-inr-i";
+        c.id = "cm-ov";
+        x.setAttribute("role", "dialog");
+        x.setAttribute("aria-modal", "true");
+        x.setAttribute("aria-hidden", "false");
+        x.setAttribute("aria-labelledby", "c-ttl");
+        x.setAttribute("aria-describedby", "c-txt");
+        sa.appendChild(x);
+        sa.appendChild(c);
+        x.style.visibility = c.style.visibility = "hidden";
+        c.style.opacity = 0;
+      }
+      if (c = g.languages[a].consent_modal.title)
+        aa || (aa = k("div"), aa.id = "c-ttl", aa.setAttribute("role", "heading"), aa.setAttribute("aria-level", "2"), b.appendChild(aa)), aa.innerHTML = c;
+      c = g.languages[a].consent_modal.description;
+      Fa && (c = Z ? c.replace("{{revision_message}}", "") : c.replace("{{revision_message}}", Sa || g.languages[a].consent_modal.revision_message || ""));
+      ta || (ta = k("div"), ta.id = "c-txt", b.appendChild(ta));
+      ta.innerHTML = c;
+      c = g.languages[a].consent_modal.primary_btn;
+      var d = g.languages[a].consent_modal.secondary_btn;
+      if (c) {
+        if (!W) {
+          W = k("button");
+          W.id = "c-p-bn";
+          W.className = "c-bn";
+          var f;
+          c.role === "accept_all" && (f = "all");
+          z(W, "click", function() {
+            m.hide();
+            m.accept(f);
+          });
+        }
+        W.textContent = g.languages[a].consent_modal.primary_btn.text;
+      }
+      d && (S || (S = k("button"), S.id = "c-s-bn", S.className = "c-bn c_link", d.role === "accept_necessary" ? z(S, "click", function() {
+        m.hide();
+        m.accept([]);
+      }) : z(S, "click", function() {
+        m.showSettings(0);
+      })), S.textContent = g.languages[a].consent_modal.secondary_btn.text);
+      a = g.gui_options;
+      ba || (ba = k("div"), ba.id = "c-inr", ba.appendChild(b));
+      T || (T = k("div"), T.id = "c-bns", a && a.consent_modal && a.consent_modal.swap_buttons === true ? (d && T.appendChild(S), c && T.appendChild(W), T.className = "swap") : (c && T.appendChild(W), d && T.appendChild(S)), (c || d) && ba.appendChild(T), x.appendChild(ba));
+      Q = true;
+    }, ab = function(a) {
+      if (E)
+        y = k("div"), y.id = "s-bl";
+      else {
+        E = k("div");
+        var b = k("div"), c = k("div"), d = k("div");
+        M = k("div");
+        ua = k("div");
+        var f = k("div");
+        ka = k("button");
+        var l = k("div");
+        la = k("div");
+        var q = k("div");
+        E.id = "s-cnt";
+        b.id = "c-vln";
+        d.id = "c-s-in";
+        c.id = "cs";
+        ua.id = "s-ttl";
+        M.id = "s-inr";
+        f.id = "s-hdr";
+        la.id = "s-bl";
+        ka.id = "s-c-bn";
+        q.id = "cs-ov";
+        l.id = "s-c-bnc";
+        ka.className = "c-bn";
+        E.setAttribute("role", "dialog");
+        E.setAttribute("aria-modal", "true");
+        E.setAttribute("aria-hidden", "true");
+        E.setAttribute("aria-labelledby", "s-ttl");
+        ua.setAttribute("role", "heading");
+        E.style.visibility = q.style.visibility = "hidden";
+        q.style.opacity = 0;
+        l.appendChild(ka);
+        z(b, "keydown", function(ma) {
+          ma = ma || window.event;
+          ma.keyCode === 27 && m.hideSettings(0);
+        }, true);
+        z(ka, "click", function() {
+          m.hideSettings(0);
+        });
+      }
+      ka.setAttribute("aria-label", g.languages[a].settings_modal.close_btn_label || "Close");
+      U = g.languages[a].settings_modal.blocks;
+      Y = g.languages[a].settings_modal.cookie_table_headers;
+      var h = U.length;
+      ua.innerHTML = g.languages[a].settings_modal.title;
+      for (var n = 0; n < h; ++n) {
+        var p = U[n].title, F = U[n].description, w = U[n].toggle, A = U[n].cookie_table, u = g.remove_cookie_tables === true, r = F && "truthy" || !u && A && "truthy", B = k("div"), X = k("div");
+        if (F) {
+          var Ma = k("div");
+          Ma.className = "p";
+          Ma.insertAdjacentHTML("beforeend", F);
+        }
+        var D = k("div");
+        D.className = "title";
+        B.className = "c-bl";
+        X.className = "desc";
+        if (typeof w !== "undefined") {
+          var N = "c-ac-" + n, ha = r ? k("button") : k("div"), G = k("label"), O = k("input"), P = k("span"), ia = k("span"), Xa = k("span"), Ya = k("span");
+          ha.className = r ? "b-tl exp" : "b-tl";
+          G.className = "b-tg";
+          O.className = "c-tgl";
+          Xa.className = "on-i";
+          Ya.className = "off-i";
+          P.className = "c-tg";
+          ia.className = "t-lb";
+          r && (ha.setAttribute("aria-expanded", "false"), ha.setAttribute("aria-controls", N));
+          O.type = "checkbox";
+          P.setAttribute("aria-hidden", "true");
+          var Aa = w.value;
+          O.value = Aa;
+          ia.textContent = p;
+          ha.insertAdjacentHTML("beforeend", p);
+          D.appendChild(ha);
+          P.appendChild(Xa);
+          P.appendChild(Ya);
+          K ? -1 < H(t.level, Aa) ? (O.checked = true, !y && R.push(true)) : !y && R.push(false) : w.enabled ? (O.checked = true, !y && R.push(true), w.enabled && !y && Ia.push(Aa)) : !y && R.push(false);
+          !y && I.push(Aa);
+          w.readonly ? (O.disabled = true, J(P, "c-ro"), !y && ya.push(true)) : !y && ya.push(false);
+          J(X, "b-acc");
+          J(D, "b-bn");
+          J(B, "b-ex");
+          X.id = N;
+          X.setAttribute("aria-hidden", "true");
+          G.appendChild(O);
+          G.appendChild(P);
+          G.appendChild(ia);
+          D.appendChild(G);
+          r && function(ma, Na, Za) {
+            z(ha, "click", function() {
+              $a(Na, "act") ? (Oa(Na, "act"), Za.setAttribute("aria-expanded", "false"), ma.setAttribute("aria-hidden", "true")) : (J(Na, "act"), Za.setAttribute("aria-expanded", "true"), ma.setAttribute("aria-hidden", "false"));
+            }, false);
+          }(X, B, ha);
+        } else
+          p && (r = k("div"), r.className = "b-tl", r.setAttribute("role", "heading"), r.setAttribute("aria-level", "3"), r.insertAdjacentHTML("beforeend", p), D.appendChild(r));
+        p && B.appendChild(D);
+        F && X.appendChild(Ma);
+        if (!u && typeof A !== "undefined") {
+          r = document.createDocumentFragment();
+          for (N = 0; N < Y.length; ++N)
+            G = k("th"), u = Y[N], G.setAttribute("scope", "col"), u && (D = u && va(u)[0], G.textContent = Y[N][D], r.appendChild(G));
+          u = k("tr");
+          u.appendChild(r);
+          D = k("thead");
+          D.appendChild(u);
+          r = k("table");
+          r.appendChild(D);
+          N = document.createDocumentFragment();
+          for (G = 0; G < A.length; G++) {
+            O = k("tr");
+            for (P = 0; P < Y.length; ++P)
+              if (u = Y[P])
+                D = va(u)[0], ia = k("td"), ia.insertAdjacentHTML("beforeend", A[G][D]), ia.setAttribute("data-column", u[D]), O.appendChild(ia);
+            N.appendChild(O);
+          }
+          A = k("tbody");
+          A.appendChild(N);
+          r.appendChild(A);
+          X.appendChild(r);
+        }
+        if (w && p || !w && (p || F))
+          B.appendChild(X), y ? y.appendChild(B) : la.appendChild(B);
+      }
+      ca || (ca = k("div"), ca.id = "s-bns");
+      ea || (ea = k("button"), ea.id = "s-all-bn", ea.className = "c-bn", ca.appendChild(ea), z(ea, "click", function() {
+        m.hideSettings();
+        m.hide();
+        m.accept("all");
+      }));
+      ea.textContent = g.languages[a].settings_modal.accept_all_btn;
+      if (h = g.languages[a].settings_modal.reject_all_btn)
+        fa || (fa = k("button"), fa.id = "s-rall-bn", fa.className = "c-bn", z(fa, "click", function() {
+          m.hideSettings();
+          m.hide();
+          m.accept([]);
+        }), M.className = "bns-t", ca.appendChild(fa)), fa.textContent = h;
+      da || (da = k("button"), da.id = "s-sv-bn", da.className = "c-bn", ca.appendChild(da), z(da, "click", function() {
+        m.hideSettings();
+        m.hide();
+        m.accept();
+      }));
+      da.textContent = g.languages[a].settings_modal.save_settings_btn;
+      y ? (M.replaceChild(y, la), la = y) : (f.appendChild(ua), f.appendChild(l), M.appendChild(f), M.appendChild(la), M.appendChild(ca), d.appendChild(M), c.appendChild(d), b.appendChild(c), E.appendChild(b), sa.appendChild(E), sa.appendChild(q));
+    }, fb = function() {
+      L = k("div");
       L.id = "cc--main";
       L.style.position = "fixed";
       L.style.zIndex = "1000000";
       L.innerHTML = '<!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"></div><!--<![endif]-->';
-      var c = L.children[0], d = f.current_lang, e = typeof ka.textContent === "string" ? "textContent" : "innerText";
-      Ha = b;
-      Ia = function(t) {
-        t.force_consent === true && I(ka, "force--consent");
-        var y = t.languages[d].consent_modal.description;
-        Ba && (y = ba ? y.replace("{{revision_message}}", "") : y.replace("{{revision_message}}", Sa || t.languages[d].consent_modal.revision_message || ""));
-        if (x)
-          qa.innerHTML = y;
-        else {
-          x = g("div");
-          var ca = g("div"), va = g("div");
-          qa = g("div");
-          var da = g("div"), wa = g("div");
-          x.id = "cm";
-          ca.id = "c-inr";
-          va.id = "c-inr-i";
-          qa.id = "c-txt";
-          da.id = "c-bns";
-          wa.id = "cm-ov";
-          x.setAttribute("role", "dialog");
-          x.setAttribute("aria-modal", "true");
-          x.setAttribute("aria-hidden", "false");
-          x.setAttribute("aria-labelledby", "c-ttl");
-          x.setAttribute("aria-describedby", "c-txt");
-          x.style.visibility = wa.style.visibility = "hidden";
-          wa.style.opacity = 0;
-          var X = t.languages[d].consent_modal.title;
-          if (X) {
-            var ra = g("div");
-            ra.id = "c-ttl";
-            ra.setAttribute("role", "heading");
-            ra.setAttribute("aria-level", "2");
-            ra.insertAdjacentHTML("beforeend", X);
-            va.appendChild(ra);
-          }
-          qa.insertAdjacentHTML("beforeend", y);
-          va.appendChild(qa);
-          y = t.languages[d].consent_modal.primary_btn;
-          X = t.languages[d].consent_modal.secondary_btn;
-          if (y) {
-            var la = g("button");
-            la.id = "c-p-bn";
-            la.className = "c-bn";
-            la[e] = t.languages[d].consent_modal.primary_btn.text;
-            var Ta;
-            y.role === "accept_all" && (Ta = "all");
-            H(la, "click", function() {
-              k.hide();
-              k.accept(Ta);
-            });
-          }
-          if (X) {
-            var ea = g("button");
-            ea.id = "c-s-bn";
-            ea.className = "c-bn c_link";
-            ea[e] = t.languages[d].consent_modal.secondary_btn.text;
-            X.role === "accept_necessary" ? H(ea, "click", function() {
-              k.hide();
-              k.accept([]);
-            }) : H(ea, "click", function() {
-              k.showSettings(0);
-            });
-          }
-          (t = t.gui_options) && t.consent_modal && t.consent_modal.swap_buttons === true ? (X && da.appendChild(ea), y && da.appendChild(la), da.className = "swap") : (y && da.appendChild(la), X && da.appendChild(ea));
-          ca.appendChild(va);
-          (y || X) && ca.appendChild(da);
-          x.appendChild(ca);
-          c.appendChild(x);
-          c.appendChild(wa);
-          U = true;
-        }
-      };
-      a || Ia(b);
-      G = g("div");
-      var h = g("div"), l = g("div"), m = g("div");
-      R = g("div");
-      var n = g("div"), p = g("div"), q = g("button"), Y = g("div"), S = g("div"), z = g("div");
-      G.id = "s-cnt";
-      h.id = "c-vln";
-      m.id = "c-s-in";
-      l.id = "cs";
-      n.id = "s-ttl";
-      R.id = "s-inr";
-      p.id = "s-hdr";
-      S.id = "s-bl";
-      q.id = "s-c-bn";
-      z.id = "cs-ov";
-      Y.id = "s-c-bnc";
-      q.className = "c-bn";
-      q.setAttribute("aria-label", b.languages[d].settings_modal.close_btn_label || "Close");
-      G.setAttribute("role", "dialog");
-      G.setAttribute("aria-modal", "true");
-      G.setAttribute("aria-hidden", "true");
-      G.setAttribute("aria-labelledby", "s-ttl");
-      n.setAttribute("role", "heading");
-      G.style.visibility = z.style.visibility = "hidden";
-      z.style.opacity = 0;
-      Y.appendChild(q);
-      H(h, "keydown", function(t) {
-        t = t || window.event;
-        t.keyCode === 27 && k.hideSettings(0);
-      }, true);
-      H(q, "click", function() {
-        k.hideSettings(0);
-      });
-      W = b.languages[f.current_lang].settings_modal.blocks;
-      aa = b.languages[f.current_lang].settings_modal.cookie_table_headers;
-      q = W.length;
-      n.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.title);
-      for (var v = 0; v < q; ++v) {
-        var C = W[v].title, J = W[v].description, M = W[v].toggle, fa = W[v].cookie_table, K = b.remove_cookie_tables === true, w = J && "truthy" || !K && fa && "truthy", ma = g("div"), Z = g("div");
-        if (J) {
-          var T = g("div");
-          T.className = "p";
-          T.insertAdjacentHTML("beforeend", J);
-        }
-        var B = g("div");
-        B.className = "title";
-        ma.className = "c-bl";
-        Z.className = "desc";
-        if (typeof M !== "undefined") {
-          var N = "c-ac-" + v, ha = w ? g("button") : g("div"), D = g("label"), O = g("input"), P = g("span"), ia = g("span"), Ua = g("span"), Va = g("span");
-          ha.className = w ? "b-tl exp" : "b-tl";
-          D.className = "b-tg";
-          O.className = "c-tgl";
-          Ua.className = "on-i";
-          Va.className = "off-i";
-          P.className = "c-tg";
-          ia.className = "t-lb";
-          w && (ha.setAttribute("aria-expanded", "false"), ha.setAttribute("aria-controls", N));
-          O.type = "checkbox";
-          P.setAttribute("aria-hidden", "true");
-          var Ja = M.value;
-          O.value = Ja;
-          ia[e] = C;
-          ha.insertAdjacentHTML("beforeend", C);
-          B.appendChild(ha);
-          P.appendChild(Ua);
-          P.appendChild(Va);
-          a ? -1 < E(r.level, Ja) ? (O.checked = true, Q.push(true)) : Q.push(false) : M.enabled ? (O.checked = true, Q.push(true)) : Q.push(false);
-          F.push(Ja);
-          M.readonly ? (O.disabled = true, I(P, "c-ro"), ua.push(true)) : ua.push(false);
-          I(Z, "b-acc");
-          I(B, "b-bn");
-          I(ma, "b-ex");
-          Z.id = N;
-          Z.setAttribute("aria-hidden", "true");
-          D.appendChild(O);
-          D.appendChild(P);
-          D.appendChild(ia);
-          B.appendChild(D);
-          w && function(t, y, ca) {
-            H(ha, "click", function() {
-              Wa(y, "act") ? (Ka(y, "act"), ca.setAttribute("aria-expanded", "false"), t.setAttribute("aria-hidden", "true")) : (I(y, "act"), ca.setAttribute("aria-expanded", "true"), t.setAttribute("aria-hidden", "false"));
-            }, false);
-          }(Z, ma, ha);
-        } else
-          C && (w = g("div"), w.className = "b-tl", w.setAttribute("role", "heading"), w.setAttribute("aria-level", "3"), w.insertAdjacentHTML("beforeend", C), B.appendChild(w));
-        C && ma.appendChild(B);
-        J && Z.appendChild(T);
-        if (!K && typeof fa !== "undefined") {
-          w = document.createDocumentFragment();
-          for (N = 0; N < aa.length; ++N)
-            D = g("th"), K = aa[N], D.setAttribute("scope", "col"), K && (B = K && pa(K)[0], D[e] = aa[N][B], w.appendChild(D));
-          K = g("tr");
-          K.appendChild(w);
-          B = g("thead");
-          B.appendChild(K);
-          w = g("table");
-          w.appendChild(B);
-          N = document.createDocumentFragment();
-          for (D = 0; D < fa.length; D++) {
-            O = g("tr");
-            for (P = 0; P < aa.length; ++P)
-              if (K = aa[P])
-                B = pa(K)[0], ia = g("td"), ia.insertAdjacentHTML("beforeend", fa[D][B]), ia.setAttribute("data-column", K[B]), O.appendChild(ia);
-            N.appendChild(O);
-          }
-          fa = g("tbody");
-          fa.appendChild(N);
-          w.appendChild(fa);
-          Z.appendChild(w);
-        }
-        if (M && C || !M && (C || J))
-          ma.appendChild(Z), S.appendChild(ma);
+      sa = L.children[0];
+      var a = e.current_lang;
+      Q && La(a);
+      ab(a);
+      (eb || document.body).appendChild(L);
+    };
+    m.updateLanguage = function(a, b) {
+      if (typeof a === "string")
+        return a = za(a, g.languages), a !== e.current_lang || b === true ? (e.current_lang = a, Q && (La(a), Va(ba)), ab(a), true) : false;
+    };
+    var cb = function(a) {
+      var b = U.length, c = -1;
+      xa = false;
+      var d = wa("", "all"), f = [e.cookie_domain, "." + e.cookie_domain];
+      if (e.cookie_domain.slice(0, 4) === "www.") {
+        var l = e.cookie_domain.substr(4);
+        f.push(l);
+        f.push("." + l);
       }
-      a = g("div");
-      T = g("button");
-      q = g("button");
-      a.id = "s-bns";
-      T.id = "s-sv-bn";
-      q.id = "s-all-bn";
-      T.className = "c-bn";
-      q.className = "c-bn";
-      T.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.save_settings_btn);
-      q.insertAdjacentHTML("beforeend", b.languages[f.current_lang].settings_modal.accept_all_btn);
-      a.appendChild(q);
-      if (b = b.languages[f.current_lang].settings_modal.reject_all_btn)
-        v = g("button"), v.id = "s-rall-bn", v.className = "c-bn", v.insertAdjacentHTML("beforeend", b), H(v, "click", function() {
-          k.hideSettings();
-          k.hide();
-          k.accept([]);
-        }), R.className = "bns-t", a.appendChild(v);
-      a.appendChild(T);
-      H(T, "click", function() {
-        k.hideSettings();
-        k.hide();
-        k.accept();
-      });
-      H(q, "click", function() {
-        k.hideSettings();
-        k.hide();
-        k.accept("all");
-      });
-      p.appendChild(n);
-      p.appendChild(Y);
-      R.appendChild(p);
-      R.appendChild(S);
-      R.appendChild(a);
-      m.appendChild(R);
-      l.appendChild(m);
-      h.appendChild(l);
-      G.appendChild(h);
-      c.appendChild(G);
-      c.appendChild(z);
-      (Za || document.body).appendChild(L);
-    }, cb = function(a) {
-      var b = document.querySelectorAll(".c-tgl") || [], c = [], d = false;
-      if (0 < b.length) {
-        for (var e = 0; e < b.length; e++)
-          E(a, F[e]) !== -1 ? (b[e].checked = true, Q[e] || (c.push(F[e]), Q[e] = true)) : (b[e].checked = false, Q[e] && (c.push(F[e]), Q[e] = false));
-        if (f.autoclear_cookies && V && 0 < c.length) {
-          b = W.length;
-          e = -1;
-          var h = sa("", "all"), l = [f.cookie_domain, "." + f.cookie_domain];
-          if (f.cookie_domain.slice(0, 4) === "www.") {
-            var m = f.cookie_domain.substr(4);
-            l.push(m);
-            l.push("." + m);
-          }
-          for (m = 0; m < b; m++) {
-            var n = W[m];
-            if (Object.prototype.hasOwnProperty.call(n, "toggle") && !Q[++e] && Object.prototype.hasOwnProperty.call(n, "cookie_table") && -1 < E(c, n.toggle.value)) {
-              var p = n.cookie_table, q = pa(aa[0])[0], Y = p.length;
-              n.toggle.reload === "on_disable" && (d = true);
-              for (var S = 0; S < Y; S++) {
-                var z = p[S], v = [], C = z[q], J = z.is_regex || false, M = z.domain || null;
-                z = z.path || false;
-                M && (l = [M, "." + M]);
-                if (J)
-                  for (J = 0; J < h.length; J++)
-                    h[J].match(C) && v.push(h[J]);
-                else
-                  C = E(h, C), -1 < C && v.push(h[C]);
-                0 < v.length && (Xa(v, z, l), n.toggle.reload === "on_clear" && (d = true));
-              }
+      for (l = 0; l < b; l++) {
+        var q = U[l];
+        if (Object.prototype.hasOwnProperty.call(q, "toggle")) {
+          var h = -1 < H(V, q.toggle.value);
+          if (!R[++c] && Object.prototype.hasOwnProperty.call(q, "cookie_table") && (a || h)) {
+            var n = q.cookie_table, p = va(Y[0])[0], F = n.length;
+            q.toggle.reload === "on_disable" && h && (xa = true);
+            for (h = 0; h < F; h++) {
+              var w = n[h], A = [], u = w[p], r = w.is_regex || false, B = w.domain || null;
+              w = w.path || false;
+              B && (f = [B, "." + B]);
+              if (r)
+                for (r = 0; r < d.length; r++)
+                  d[r].match(u) && A.push(d[r]);
+              else
+                u = H(d, u), -1 < u && A.push(d[u]);
+              0 < A.length && (bb(A, w, f), q.toggle.reload === "on_clear" && (xa = true));
             }
           }
         }
       }
-      r = { level: a, revision: f.revision, data: A, rfc_cookie: f.use_rfc_cookie };
-      if (!V || 0 < c.length || !ba)
-        ba = true, Ca = La(Ma()), Na(f.cookie_name, JSON.stringify(r)), Oa();
-      V ? (typeof za === "function" && 0 < c.length && za(r, c), d && window.location.reload()) : (typeof Aa === "function" && Aa(k.getUserPreferences(), r), typeof ya === "function" && ya(r), V = true);
-    }, db = function(a, b) {
+    }, gb = function(a) {
+      V = [];
+      var b = document.querySelectorAll(".c-tgl") || [];
+      if (0 < b.length)
+        for (var c = 0; c < b.length; c++)
+          H(a, I[c]) !== -1 ? (b[c].checked = true, R[c] || (V.push(I[c]), R[c] = true)) : (b[c].checked = false, R[c] && (V.push(I[c]), R[c] = false));
+      K && e.autoclear_cookies && 0 < V.length && cb();
+      t = { level: a, revision: e.revision, data: C, rfc_cookie: e.use_rfc_cookie };
+      if (!K || 0 < V.length || !Z)
+        Z = true, Ga = Pa(Qa()), Ra(e.cookie_name, JSON.stringify(t)), Ba();
+      if (!K && (e.autoclear_cookies && cb(true), typeof Ea === "function" && Ea(m.getUserPreferences(), t), typeof pa === "function" && pa(t), K = true, e.mode === "opt-in"))
+        return;
+      typeof Da === "function" && 0 < V.length && Da(t, V);
+      xa && window.location.reload();
+    }, hb = function(a, b) {
       if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
         b();
       else {
-        var c = g("style");
+        var c = k("style");
         c.id = "cc--style";
         var d = new XMLHttpRequest();
         d.onreadystatechange = function() {
@@ -351,258 +333,264 @@ var __spreadValues = (a, b) => {
         d.open("GET", a);
         d.send();
       }
-    }, E = function(a, b) {
+    }, H = function(a, b) {
       for (var c = a.length, d = 0; d < c; d++)
         if (a[d] === b)
           return d;
       return -1;
-    }, g = function(a) {
+    }, k = function(a) {
       var b = document.createElement(a);
       a === "button" && b.setAttribute("type", a);
       return b;
-    }, eb = function() {
+    }, ib = function(a, b) {
+      return e.auto_language === "browser" ? (b = navigator.language || navigator.browserLanguage, 2 < b.length && (b = b[0] + b[1]), b = b.toLowerCase(), za(b, a)) : e.auto_language === "document" ? za(document.documentElement.lang, a) : typeof b === "string" ? e.current_lang = za(b, a) : e.current_lang;
+    }, jb = function() {
       var a = false, b = false;
-      H(document, "keydown", function(c) {
+      z(document, "keydown", function(c) {
         c = c || window.event;
-        c.key === "Tab" && (u && (c.shiftKey ? document.activeElement === u[0] && (u[1].focus(), c.preventDefault()) : document.activeElement === u[1] && (u[0].focus(), c.preventDefault()), b || oa || (b = true, !a && c.preventDefault(), c.shiftKey ? u[3] ? u[2] ? u[2].focus() : u[0].focus() : u[1].focus() : u[3] ? u[3].focus() : u[0].focus())), !b && (a = true));
+        c.key === "Tab" && (v && (c.shiftKey ? document.activeElement === v[0] && (v[1].focus(), c.preventDefault()) : document.activeElement === v[1] && (v[0].focus(), c.preventDefault()), b || oa || (b = true, !a && c.preventDefault(), c.shiftKey ? v[3] ? v[2] ? v[2].focus() : v[0].focus() : v[1].focus() : v[3] ? v[3].focus() : v[0].focus())), !b && (a = true));
       });
-      document.contains && H(L, "click", function(c) {
+      document.contains && z(L, "click", function(c) {
         c = c || window.event;
-        xa ? R.contains(c.target) ? oa = true : (k.hideSettings(0), oa = false) : na && x.contains(c.target) && (oa = true);
+        Ca ? M.contains(c.target) ? oa = true : (m.hideSettings(0), oa = false) : na && x.contains(c.target) && (oa = true);
       }, true);
-    }, Ya = function(a, b) {
-      function c(e, h, l, m, n, p, q) {
+    }, db = function(a, b) {
+      function c(f, l, q, h, n, p, F) {
         p = p && p.split(" ") || [];
-        if (-1 < E(h, n) && (I(e, n), (n !== "bar" || p[0] !== "middle") && -1 < E(l, p[0])))
-          for (h = 0; h < p.length; h++)
-            I(e, p[h]);
-        -1 < E(m, q) && I(e, q);
+        if (-1 < H(l, n) && (J(f, n), (n !== "bar" || p[0] !== "middle") && -1 < H(q, p[0])))
+          for (l = 0; l < p.length; l++)
+            J(f, p[l]);
+        -1 < H(h, F) && J(f, F);
       }
       if (typeof a === "object") {
         var d = a.consent_modal;
         a = a.settings_modal;
-        U && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
-        !b && a && c(G, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
+        Q && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
+        !b && a && c(E, ["bar"], ["left", "right"], ["zoom", "slide"], a.layout, a.position, a.transition);
       }
     };
-    k.allowedCategory = function(a) {
-      return -1 < E(JSON.parse(sa(f.cookie_name, "one", true) || "{}").level || [], a);
+    m.allowedCategory = function(a) {
+      var b = K || e.mode === "opt-in" ? JSON.parse(wa(e.cookie_name, "one", true) || "{}").level || [] : Ia;
+      return -1 < H(b, a);
     };
-    k.run = function(a) {
-      if (!document.getElementById("cc_div") && ($a(a), !Qa && (r = JSON.parse(sa(f.cookie_name, "one", true) || "{}"), V = r.level !== void 0, A = r.data !== void 0 ? r.data : null, ba = typeof a.revision === "number" ? V ? -1 < a.revision ? r.revision === f.revision : true : true : true, U = !V || !ba, bb(!U, a), db(a.theme_css, function() {
-        Ra();
-        Ya(a.gui_options);
-        ab();
-        f.autorun && U && k.show(a.delay || 0);
-        setTimeout(function() {
-          I(L, "c--anim");
-        }, 30);
-        setTimeout(function() {
-          eb();
-        }, 100);
-      }), V && ba))) {
-        var b = typeof r.rfc_cookie === "boolean";
-        if (!b || b && r.rfc_cookie !== f.use_rfc_cookie)
-          r.rfc_cookie = f.use_rfc_cookie, Na(f.cookie_name, JSON.stringify(r));
-        Ca = La(Ma());
-        Oa();
-        if (typeof a.onAccept === "function")
-          a.onAccept(r);
-      }
+    m.run = function(a) {
+      if (!document.getElementById("cc_div") && (g = a, typeof g.cookie_expiration === "number" && (e.cookie_expiration = g.cookie_expiration), typeof g.cookie_necessary_only_expiration === "number" && (e.cookie_necessary_only_expiration = g.cookie_necessary_only_expiration), typeof g.autorun === "boolean" && (e.autorun = g.autorun), typeof g.cookie_domain === "string" && (e.cookie_domain = g.cookie_domain), typeof g.cookie_same_site === "string" && (e.cookie_same_site = g.cookie_same_site), typeof g.cookie_path === "string" && (e.cookie_path = g.cookie_path), typeof g.cookie_name === "string" && (e.cookie_name = g.cookie_name), typeof g.onAccept === "function" && (pa = g.onAccept), typeof g.onFirstAction === "function" && (Ea = g.onFirstAction), typeof g.onChange === "function" && (Da = g.onChange), g.mode === "opt-out" && (e.mode = "opt-out"), typeof g.revision === "number" && (-1 < g.revision && (e.revision = g.revision), Fa = true), typeof g.autoclear_cookies === "boolean" && (e.autoclear_cookies = g.autoclear_cookies), g.use_rfc_cookie === true && (e.use_rfc_cookie = true), g.hide_from_bots === true && (Ua = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver)), e.page_scripts = g.page_scripts === true, e.page_scripts_order = g.page_scripts_order !== false, g.auto_language === "browser" || g.auto_language === true ? e.auto_language = "browser" : g.auto_language === "document" && (e.auto_language = "document"), e.current_lang = ib(g.languages, g.current_lang), !Ua))
+        if (t = JSON.parse(wa(e.cookie_name, "one", true) || "{}"), K = t.level !== void 0, C = t.data !== void 0 ? t.data : null, Z = typeof a.revision === "number" ? K ? -1 < a.revision ? t.revision === e.revision : true : true : true, Q = !K || !Z, fb(), hb(a.theme_css, function() {
+          Wa();
+          db(a.gui_options);
+          Va();
+          e.autorun && Q && m.show(a.delay || 0);
+          setTimeout(function() {
+            J(L, "c--anim");
+          }, 30);
+          setTimeout(function() {
+            jb();
+          }, 100);
+        }), K && Z) {
+          var b = typeof t.rfc_cookie === "boolean";
+          if (!b || b && t.rfc_cookie !== e.use_rfc_cookie)
+            t.rfc_cookie = e.use_rfc_cookie, Ra(e.cookie_name, JSON.stringify(t));
+          Ga = Pa(Qa());
+          Ba();
+          typeof pa === "function" && pa(t);
+        } else
+          e.mode === "opt-out" && Ba(Ia);
     };
-    k.showSettings = function(a) {
+    m.showSettings = function(a) {
       setTimeout(function() {
-        I(ka, "show--settings");
-        G.setAttribute("aria-hidden", "false");
-        xa = true;
+        J(ra, "show--settings");
+        E.setAttribute("aria-hidden", "false");
+        Ca = true;
         setTimeout(function() {
-          na ? Ea = document.activeElement : ta = document.activeElement;
-          ja.length !== 0 && (ja[3] ? ja[3].focus() : ja[0].focus(), u = ja);
+          na ? Ja = document.activeElement : qa = document.activeElement;
+          ja.length !== 0 && (ja[3] ? ja[3].focus() : ja[0].focus(), v = ja);
         }, 200);
       }, 0 < a ? a : 0);
     };
-    var Oa = function() {
-      if (f.page_scripts) {
-        var a = document.querySelectorAll("script[" + f.script_selector + "]"), b = f.page_scripts_order, c = r.level || [], d = function(e, h) {
-          if (h < e.length) {
-            var l = e[h], m = l.getAttribute(f.script_selector);
-            if (-1 < E(c, m)) {
-              l.type = "text/javascript";
-              l.removeAttribute(f.script_selector);
-              m = l.getAttribute("data-src");
-              var n = g("script");
-              n.textContent = l.innerHTML;
-              (function(p, q) {
-                for (var Y = q.attributes, S = Y.length, z = 0; z < S; z++)
-                  q = Y[z], p.setAttribute(q.nodeName, q.nodeValue);
-              })(n, l);
-              m ? n.src = m : m = l.src;
-              m && (b ? n.readyState ? n.onreadystatechange = function() {
-                if (n.readyState === "loaded" || n.readyState === "complete")
-                  n.onreadystatechange = null, d(e, ++h);
-              } : n.onload = function() {
-                n.onload = null;
-                d(e, ++h);
-              } : m = false);
-              l.parentNode.replaceChild(n, l);
-              if (m)
+    var Ba = function(a) {
+      if (e.page_scripts) {
+        var b = document.querySelectorAll("script[" + e.script_selector + "]"), c = e.page_scripts_order, d = a || t.level || [], f = function(l, q) {
+          if (q < l.length) {
+            var h = l[q], n = h.getAttribute(e.script_selector);
+            if (-1 < H(d, n)) {
+              h.type = "text/javascript";
+              h.removeAttribute(e.script_selector);
+              (n = h.getAttribute("data-src")) && h.removeAttribute("data-src");
+              var p = k("script");
+              p.textContent = h.innerHTML;
+              (function(F, w) {
+                for (var A = w.attributes, u = A.length, r = 0; r < u; r++) {
+                  var B = A[r].nodeName;
+                  F.setAttribute(B, w[B] || w.getAttribute(B));
+                }
+              })(p, h);
+              n ? p.src = n : n = h.src;
+              n && (c ? p.readyState ? p.onreadystatechange = function() {
+                if (p.readyState === "loaded" || p.readyState === "complete")
+                  p.onreadystatechange = null, f(l, ++q);
+              } : p.onload = function() {
+                p.onload = null;
+                f(l, ++q);
+              } : n = false);
+              h.parentNode.replaceChild(p, h);
+              if (n)
                 return;
             }
-            d(e, ++h);
+            f(l, ++q);
           }
         };
-        d(a, 0);
+        f(b, 0);
       }
     };
-    k.set = function(a, b) {
+    m.set = function(a, b) {
       switch (a) {
         case "data":
           a = b.value;
           var c = false;
           if (b.mode === "update")
-            if (A = k.get("data"), (b = typeof A === typeof a) && typeof A === "object") {
-              !A && (A = {});
+            if (C = m.get("data"), (b = typeof C === typeof a) && typeof C === "object") {
+              !C && (C = {});
               for (var d in a)
-                A[d] !== a[d] && (A[d] = a[d], c = true);
+                C[d] !== a[d] && (C[d] = a[d], c = true);
             } else
-              !b && A || A === a || (A = a, c = true);
+              !b && C || C === a || (C = a, c = true);
           else
-            A = a, c = true;
-          c && (r.data = A, Na(f.cookie_name, JSON.stringify(r)));
+            C = a, c = true;
+          c && (t.data = C, Ra(e.cookie_name, JSON.stringify(t)));
           return c;
         case "revision":
-          return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && r.revision !== d ? (Ba = true, Sa = b, ba = false, f.revision = d, a === true ? (Ia(Ha), Ya(Ha.gui_options, true), Ra(), k.show()) : k.accept(), b = true) : b = false, b;
+          return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && t.revision !== d ? (Fa = true, Sa = b, Z = false, e.revision = d, a === true ? (La(g), db(g.gui_options, true), Wa(), m.show()) : m.accept(), b = true) : b = false, b;
         default:
           return false;
       }
     };
-    k.get = function(a, b) {
-      return JSON.parse(sa(b || f.cookie_name, "one", true) || "{}")[a];
+    m.get = function(a, b) {
+      return JSON.parse(wa(b || e.cookie_name, "one", true) || "{}")[a];
     };
-    k.getConfig = function(a) {
-      return f[a];
+    m.getConfig = function(a) {
+      return e[a] || g[a];
     };
-    var Ma = function() {
-      Da = r.level || [];
-      Pa = F.filter(function(a) {
-        return E(Da, a) === -1;
+    var Qa = function() {
+      Ha = t.level || [];
+      Ta = I.filter(function(a) {
+        return H(Ha, a) === -1;
       });
-      return { accepted: Da, rejected: Pa };
-    }, La = function(a) {
-      var b = "custom", c = ua.filter(function(d) {
+      return { accepted: Ha, rejected: Ta };
+    }, Pa = function(a) {
+      var b = "custom", c = ya.filter(function(d) {
         return d === true;
       }).length;
-      a.accepted.length === F.length ? b = "all" : 0 <= a.rejected.length && a.accepted.length === c && (b = "necessary");
+      a.accepted.length === I.length ? b = "all" : a.accepted.length === c && (b = "necessary");
       return b;
     };
-    k.getUserPreferences = function() {
-      var a = Ma();
-      return { accept_type: La(a), accepted_categories: a.accepted, rejected_categories: a.rejected };
+    m.getUserPreferences = function() {
+      var a = Qa();
+      return { accept_type: Pa(a), accepted_categories: a.accepted, rejected_categories: a.rejected };
     };
-    k.loadScript = function(a, b, c) {
+    m.loadScript = function(a, b, c) {
       var d = typeof b === "function";
       if (document.querySelector('script[src="' + a + '"]'))
         d && b();
       else {
-        var e = g("script");
+        var f = k("script");
         if (c && 0 < c.length)
-          for (var h = 0; h < c.length; ++h)
-            c[h] && e.setAttribute(c[h].name, c[h].value);
-        d && (e.readyState ? e.onreadystatechange = function() {
-          if (e.readyState === "loaded" || e.readyState === "complete")
-            e.onreadystatechange = null, b();
-        } : e.onload = b);
-        e.src = a;
-        (document.head ? document.head : document.getElementsByTagName("head")[0]).appendChild(e);
+          for (var l = 0; l < c.length; ++l)
+            c[l] && f.setAttribute(c[l].name, c[l].value);
+        d && (f.readyState ? f.onreadystatechange = function() {
+          if (f.readyState === "loaded" || f.readyState === "complete")
+            f.onreadystatechange = null, b();
+        } : f.onload = b);
+        f.src = a;
+        (document.head ? document.head : document.getElementsByTagName("head")[0]).appendChild(f);
       }
     };
-    k.updateScripts = function() {
-      Oa();
+    m.updateScripts = function() {
+      Ba();
     };
-    k.show = function(a) {
-      U && setTimeout(function() {
-        I(ka, "show--consent");
+    m.show = function(a) {
+      Q && setTimeout(function() {
+        J(ra, "show--consent");
         x.setAttribute("aria-hidden", "false");
         na = true;
         setTimeout(function() {
-          ta = document.activeElement;
-          u = Fa;
+          qa = document.activeElement;
+          v = Ka;
         }, 200);
       }, 0 < a ? a : 0);
     };
-    k.hide = function() {
-      U && (Ka(ka, "show--consent"), x.setAttribute("aria-hidden", "true"), na = false, setTimeout(function() {
-        ta.focus();
-        u = null;
+    m.hide = function() {
+      Q && (Oa(ra, "show--consent"), x.setAttribute("aria-hidden", "true"), na = false, setTimeout(function() {
+        qa.focus();
+        v = null;
       }, 200));
     };
-    k.hideSettings = function() {
-      Ka(ka, "show--settings");
-      xa = false;
-      G.setAttribute("aria-hidden", "true");
+    m.hideSettings = function() {
+      Oa(ra, "show--settings");
+      Ca = false;
+      E.setAttribute("aria-hidden", "true");
       setTimeout(function() {
-        na ? (Ea && Ea.focus(), u = Fa) : (ta.focus(), u = null);
+        na ? (Ja && Ja.focus(), v = Ka) : (qa && qa.focus(), v = null);
         oa = false;
       }, 200);
     };
-    k.accept = function(a, b) {
+    m.accept = function(a, b) {
       a = a || void 0;
       var c = b || [];
       b = [];
       var d = function() {
-        for (var h = document.querySelectorAll(".c-tgl") || [], l = [], m = 0; m < h.length; m++)
-          h[m].checked && l.push(h[m].value);
-        return l;
+        for (var l = document.querySelectorAll(".c-tgl") || [], q = [], h = 0; h < l.length; h++)
+          l[h].checked && q.push(l[h].value);
+        return q;
       };
       if (a)
         if (typeof a === "object" && typeof a.length === "number")
-          for (var e = 0; e < a.length; e++)
-            E(F, a[e]) !== -1 && b.push(a[e]);
+          for (var f = 0; f < a.length; f++)
+            H(I, a[f]) !== -1 && b.push(a[f]);
         else
-          typeof a === "string" && (a === "all" ? b = F.slice() : E(F, a) !== -1 && b.push(a));
+          typeof a === "string" && (a === "all" ? b = I.slice() : H(I, a) !== -1 && b.push(a));
       else
         b = d();
       if (1 <= c.length)
-        for (e = 0; e < c.length; e++)
-          b = b.filter(function(h) {
-            return h !== c[e];
+        for (f = 0; f < c.length; f++)
+          b = b.filter(function(l) {
+            return l !== c[f];
           });
-      for (e = 0; e < F.length; e++)
-        ua[e] === true && E(b, F[e]) === -1 && b.push(F[e]);
-      cb(b);
+      for (f = 0; f < I.length; f++)
+        ya[f] === true && H(b, I[f]) === -1 && b.push(I[f]);
+      gb(b);
     };
-    k.eraseCookies = function(a, b, c) {
+    m.eraseCookies = function(a, b, c) {
       var d = [];
-      c = c ? [c, "." + c] : [f.cookie_domain, "." + f.cookie_domain];
+      c = c ? [c, "." + c] : [e.cookie_domain, "." + e.cookie_domain];
       if (typeof a === "object" && 0 < a.length)
-        for (var e = 0; e < a.length; e++)
-          this.validCookie(a[e]) && d.push(a[e]);
+        for (var f = 0; f < a.length; f++)
+          this.validCookie(a[f]) && d.push(a[f]);
       else
         this.validCookie(a) && d.push(a);
-      Xa(d, b, c);
+      bb(d, b, c);
     };
-    var Na = function(a, b) {
-      var c = f.cookie_expiration;
-      typeof f.cookie_necessary_only_expiration === "number" && Ca === "necessary" && (c = f.cookie_necessary_only_expiration);
-      b = f.use_rfc_cookie ? encodeURIComponent(b) : b;
+    var Ra = function(a, b) {
+      var c = e.cookie_expiration;
+      typeof e.cookie_necessary_only_expiration === "number" && Ga === "necessary" && (c = e.cookie_necessary_only_expiration);
+      b = e.use_rfc_cookie ? encodeURIComponent(b) : b;
       var d = new Date();
       d.setTime(d.getTime() + 864e5 * c);
       c = "; expires=" + d.toUTCString();
-      a = a + "=" + (b || "") + c + "; Path=" + f.cookie_path + ";";
-      a += " SameSite=" + f.cookie_same_site + ";";
-      -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + f.cookie_domain + ";");
+      a = a + "=" + (b || "") + c + "; Path=" + e.cookie_path + ";";
+      a += " SameSite=" + e.cookie_same_site + ";";
+      -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + e.cookie_domain + ";");
       window.location.protocol === "https:" && (a += " Secure;");
       document.cookie = a;
-    }, sa = function(a, b, c) {
+    }, wa = function(a, b, c) {
       var d;
       if (b === "one") {
-        if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === f.cookie_name) {
+        if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === e.cookie_name) {
           try {
             d = JSON.parse(d);
-          } catch (e) {
+          } catch (f) {
             try {
               d = JSON.parse(decodeURIComponent(d));
-            } catch (h) {
+            } catch (l) {
               d = {};
             }
           }
@@ -612,34 +600,34 @@ var __spreadValues = (a, b) => {
         for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
           d.push(a[b].split("=")[0]);
       return d;
-    }, Xa = function(a, b, c) {
+    }, bb = function(a, b, c) {
       b = b ? b : "/";
       for (var d = 0; d < a.length; d++)
-        for (var e = 0; e < c.length; e++)
-          document.cookie = a[d] + "=; path=" + b + (-1 < c[e].indexOf(".") ? "; domain=" + c[e] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        for (var f = 0; f < c.length; f++)
+          document.cookie = a[d] + "=; path=" + b + (-1 < c[f].indexOf(".") ? "; domain=" + c[f] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     };
-    k.validCookie = function(a) {
-      return sa(a, "one", true) !== "";
+    m.validCookie = function(a) {
+      return wa(a, "one", true) !== "";
     };
-    var H = function(a, b, c, d) {
+    var z = function(a, b, c, d) {
       a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
-    }, pa = function(a) {
+    }, va = function(a) {
       if (typeof a === "object") {
         var b = [], c = 0;
         for (b[c++] in a)
           ;
         return b;
       }
-    }, I = function(a, b) {
-      a.classList ? a.classList.add(b) : Wa(a, b) || (a.className += " " + b);
-    }, Ka = function(a, b) {
+    }, J = function(a, b) {
+      a.classList ? a.classList.add(b) : $a(a, b) || (a.className += " " + b);
+    }, Oa = function(a, b) {
       a.classList ? a.classList.remove(b) : a.className = a.className.replace(new RegExp("(\\s|^)" + b + "(\\s|$)"), " ");
-    }, Wa = function(a, b) {
+    }, $a = function(a, b) {
       return a.classList ? a.classList.contains(b) : !!a.className.match(new RegExp("(\\s|^)" + b + "(\\s|$)"));
     };
-    return k;
+    return m;
   };
-  typeof window.initCookieConsent !== "function" && (window.initCookieConsent = fb);
+  typeof window.initCookieConsent !== "function" && (window.initCookieConsent = kb);
 })();
 
 // node_modules/nanoid/index.prod.js
@@ -751,7 +739,8 @@ var config = (extraMessages) => {
       title: "D\xEDky Cookies budou na\u0161e str\xE1nky je\u0161t\u011B lep\u0161\xED",
       description: `Kdy\u017E l\xE9pe pochop\xEDme, co v\xE1s zaj\xEDm\xE1, budeme v\xE1m zobrazovat p\u0159esn\u011Bj\u0161\xED obsah na\xA0m\xEDru.
       Kliknut\xEDm na\xA0tla\u010D\xEDtko \u201EP\u0159ijmout v\u0161echny\u201C d\xE1te ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} souhlas s\xA0vyu\u017E\xEDv\xE1n\xEDm soubor\u016F Cookies na\xA0\xFA\u010Dely personalizace, anal\xFDzy a\xA0c\xEDlen\xE9ho marketingu.
-      <a href="https://www.lmc.eu/cs/cookies" target="_blank">Co\xA0jsou\xA0to\xA0Cookies a\xA0jak je\xA0pou\u017E\xEDv\xE1me?</a>`,
+      Dal\u0161\xED informace o\xA0Cookies a\xA0\xFApravu jejich pou\u017E\xEDv\xE1n\xED naleznete
+      ve\xA0<strong><a href="" data-cc="c-settings">vlastn\xEDm nastaven\xED</a></strong>.`,
       primary_btn: {
         text: "P\u0159ijmout v\u0161echny",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -762,8 +751,21 @@ var config = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "P\u0159izp\u016Fsobit nastaven\xED Cookies",
+      accept_all_btn: "P\u0159ijmout v\u0161echny",
+      reject_all_btn: "P\u0159ijmout nezbytn\xE9",
+      save_settings_btn: "Ulo\u017Eit nastaven\xED",
       blocks: [
         {
+          description: `Abyste z na\u0161ich str\xE1nek z\xEDskali maximum, je nejlep\u0161\xED povolit v\u0161echny typy Cookies.
+          Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nk\xE1ch
+          <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Pou\u017E\xEDv\xE1n\xED Cookies</a>
+          a\xA0<a href="https://www.lmc.eu/cs/zasady-ochrany-soukromi" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`
+        },
+        {
+          title: "Technicky nezbytn\xE9 Cookies",
+          description: `Tyto Cookies jsou pro spr\xE1vn\xE9 fungov\xE1n\xED na\u0161eho webu nezbytn\xE9, proto nen\xED mo\u017En\xE9 je vypnout.
+          Bez nich by na\xA0na\u0161ich str\xE1nk\xE1ch nap\u0159.\xA0ne\u0161el zobrazit \u017E\xE1dn\xFD obsah nebo by nefungovalo p\u0159ihl\xE1\u0161en\xED.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -771,13 +773,9 @@ var config = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analytick\xE9 Cookies",
+          description: `Pomoc\xED nich sledujeme, kolik lid\xED n\xE1\u0161 web nav\u0161t\u011Bvuje a\xA0jak ho pou\u017E\xEDvaj\xED.
+          D\xEDky tomu m\u016F\u017Eeme str\xE1nky a\xA0dal\u0161\xED slu\u017Eby neust\xE1le vylep\u0161ovat.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -785,6 +783,9 @@ var config = (extraMessages) => {
           }
         },
         {
+          title: "Funk\u010Dn\xED Cookies",
+          description: `D\xEDky t\u011Bmto Cookies jsou na\u0161e str\xE1nky je\u0161t\u011B v\xFDkonn\u011Bj\u0161\xED a\xA0funguj\xED l\xE9pe.
+          Nap\u0159\xEDklad n\xE1m umo\u017E\u0148uj\xED pou\u017E\xEDvat chat, abychom na va\u0161e ot\xE1zky mohli odpov\xEDdat rychle a\xA0jednodu\u0161e.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -792,6 +793,19 @@ var config = (extraMessages) => {
           }
         },
         {
+          title: "Marketingov\xE9 Cookies",
+          description: `S\xA0t\u011Bmito Cookies m\u016F\u017Eeme m\u011B\u0159it, jak efektivn\xED je na\u0161e reklama a\xA0c\xEDlen\xE9 nab\xEDdky na\u0161ich slu\u017Eeb.
+          Marketingov\xE9 Cookies n\xE1m umo\u017En\xED v\xE1s na Internetu upozornit na novinky, kter\xE9 v\xE1s m\u016F\u017Eou zaj\xEDmat.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personaliza\u010Dn\xED Cookies",
+          description: `Na\u0161e slu\u017Eby funguj\xED l\xE9pe, kdy\u017E je m\u016F\u017Eeme p\u0159izp\u016Fsobit na\xA0m\xEDru konkr\xE9tn\xEDmu u\u017Eivateli.
+          Povolen\xEDm Personaliza\u010Dn\xEDch cookies zv\xFD\u0161\xEDte \u0161anci, \u017Ee najdete pr\xE1v\u011B takov\xFD obsah, jak\xFD hled\xE1te.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -813,7 +827,8 @@ var config2 = (extraMessages) => {
     consent_modal: {
       title: "Diese Website verwendet Cookies",
       description: `Indem Sie auf \u201EAlles\xA0akzeptieren\u201C klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Ger\xE4t durch ${addSeparators(lang.companyNames, extra2.and)} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      Weitere Informationen finden Sie unter <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von\xA0Cookies</a>.`,
+      Sie\xA0k\xF6nnen die\xA0Verwendung von\xA0Cookies in\xA0Ihren
+      <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.`,
       primary_btn: {
         text: "Alles akzeptieren",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -824,8 +839,21 @@ var config2 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "Benutzerdefinierte Cookie-Einstellungen",
+      accept_all_btn: "Alles akzeptieren",
+      reject_all_btn: "Das Notwendigste akzeptieren",
+      save_settings_btn: "Einstellungen speichern",
       blocks: [
         {
+          description: `Um unsere Website optimal nutzen zu k\xF6nnen, sollten Sie alle Arten von Cookies aktivieren.
+          Weitere Informationen dar\xFCber, was Cookies sind und wie wir mit ihnen arbeiten,
+          finden Sie in unseren Richtlinien
+          zur\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
+          und\xA0zum\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`
+        },
+        {
+          title: "Technisch notwendige Cookies",
+          description: `Diese\xA0Cookies sind f\xFCr das reibungslose Funktionieren unserer Website unerl\xE4sslich und k\xF6nnen daher nicht deaktiviert werden. Ohne\xA0sie k\xF6nnten z.\xA0B.\xA0keine Inhalte auf unserer Seite angezeigt werden oder das Login w\xFCrde nicht funktionieren.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -833,13 +861,8 @@ var config2 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analytische Cookies",
+          description: `Wir\xA0verwenden diese Cookies, um\xA0zu\xA0verfolgen, wie viele Personen unsere Website besuchen und wie sie sie\xA0nutzen. Auf\xA0diese Weise k\xF6nnen wir die Website und andere Dienste kontinuierlich verbessern.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -847,6 +870,8 @@ var config2 = (extraMessages) => {
           }
         },
         {
+          title: "Funktionale Cookies",
+          description: `Diese\xA0Cookies machen unsere Website leistungsf\xE4higer und funktionieren besser. Sie\xA0erm\xF6glichen uns zum\xA0Beispiel die\xA0Nutzung des\xA0Chats, damit wir Ihre Fragen schnell und einfach beantworten k\xF6nnen.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -854,6 +879,17 @@ var config2 = (extraMessages) => {
           }
         },
         {
+          title: "Marketing Cookies",
+          description: `Mit\xA0diesen Cookies k\xF6nnen wir messen, wie effektiv unsere Werbung und gezielte Angebote\xA0unserer Dienste sind. Marketing Cookies erm\xF6glichen es uns, Sie online auf\xA0Nachrichten hinzuweisen, die f\xFCr Sie von\xA0Interesse sein k\xF6nnten.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personalisierung Cookies",
+          description: `Unsere\xA0Dienste funktionieren besser, wenn wir sie auf\xA0den einzelnen Nutzer zuschneiden k\xF6nnen. Durch die Aktivierung von\xA0Personalisierungs-Cookies erh\xF6hen Sie die Wahrscheinlichkeit, dass\xA0Sie genau die Inhalte finden, nach denen Sie\xA0suchen.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -876,7 +912,7 @@ var config3 = (extraMessages) => {
       title: "Cookies make our site even better",
       description: `By better understanding what you're interested\xA0in, we'll show you more relevant content.
       By clicking the "Accept all" button, you give ${addSeparators(lang.companyNames, extra3.and)} your consent to\xA0use cookies for\xA0personalisation, analytics and\xA0targeted marketing.
-      <a href="https://www.lmc.eu/en/cookies/" target="_blank">What\xA0are\xA0cookies and\xA0how do we use\xA0them?</a>`,
+      You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.`,
       primary_btn: {
         text: "Accept all",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -887,8 +923,20 @@ var config3 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "Custom Cookie settings",
+      accept_all_btn: "Accept all",
+      reject_all_btn: "Accept necessary",
+      save_settings_btn: "Save settings",
       blocks: [
         {
+          description: `If you want to get the most out of our website it is best to allow all types of cookies.
+          You can find more information about what cookies are and how we work with them via the links
+          to\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
+          and\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`
+        },
+        {
+          title: "Technically necessary cookies",
+          description: `These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g.\xA0to display any content or to\xA0log\xA0in on our website.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -896,13 +944,8 @@ var config3 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analytical cookies",
+          description: `These help us monitor how many people visit our website and how they use\xA0it. This\xA0information then enables us to\xA0continuously improve the website and other services.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -910,6 +953,8 @@ var config3 = (extraMessages) => {
           }
         },
         {
+          title: "Functional cookies",
+          description: `Our website is even more efficient and works better thanks to\xA0these cookies. For\xA0example, they enable us to use the chat service and answer your questions quickly and easily.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -917,6 +962,17 @@ var config3 = (extraMessages) => {
           }
         },
         {
+          title: "Marketing cookies",
+          description: `These cookies help us to\xA0measure the effectiveness of\xA0our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personalisation cookies",
+          description: `Our services work better if\xA0we can tailor them to specific users. By\xA0allowing personalisation cookies you increase your chances of\xA0finding the content you want.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -938,7 +994,7 @@ var config4 = (extraMessages) => {
     consent_modal: {
       title: "Az oldalak s\xFCti f\xE1jlokat haszn\xE1lnak",
       description: `A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az ${addSeparators(lang.companyNames, extra4.and)} s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
-      B\u0151vebb inform\xE1ci\xF3kat a <a href="https://www.lmc.eu/en/cookies/" target="_blank">S\xFCtihaszn\xE1lat</a> oldalon tal\xE1l.`,
+      A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.`,
       primary_btn: {
         text: "Minden elfogad\xE1sa",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -949,8 +1005,20 @@ var config4 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "Egyedi cookie-f\xE1jl be\xE1ll\xEDt\xE1sok",
+      accept_all_btn: "Minden elfogad\xE1sa",
+      reject_all_btn: "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa",
+      save_settings_btn: "Be\xE1ll\xEDt\xE1sok ment\xE9se",
       blocks: [
         {
+          description: `Ahhoz, hogy a maximumot hozhassa ki webhely\xFCnkb\u0151l, a\xA0legjobb, ha\xA0enged\xE9lyezi az \xF6sszes
+          cookie t\xEDpust. Tov\xE1bbi inform\xE1ci\xF3kat arr\xF3l, hogy mik azok a cookie-k \xE9s hogyan dolgozunk vel\xFCk
+          a\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k haszn\xE1lata</a>
+          \xE9s\xA0az\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatv\xE9delmi szab\xE1lyzat honlapjain tal\xE1l</a>.`
+        },
+        {
+          title: "Technikailag sz\xFCks\xE9ges cookie-k",
+          description: `Ezek a\xA0cookie-k weboldalunk megfelel\u0151 m\u0171k\xF6d\xE9s\xE9hez sz\xFCks\xE9gesek, ez\xE9rt kikapcsol\xE1suk nem lehets\xE9ges. N\xE9lk\xFCl\xFCk p\xE9ld\xE1ul semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem m\u0171k\xF6dne a\xA0bejelentkez\xE9s.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -958,13 +1026,8 @@ var config4 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analitikai cookie-k",
+          description: `Seg\xEDts\xE9g\xFCkkel nyomon k\xF6vetj\xFCk, hogy h\xE1nyan l\xE1togatj\xE1k oldalunkat, \xE9s\xA0hogyan haszn\xE1lj\xE1k. Ennek k\xF6sz\xF6nhet\u0151en tehetj\xFCk meg webhely\xFCnk \xE9s egy\xE9b szolg\xE1ltat\xE1saink folyamatos fejleszt\xE9s\xE9t.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -972,6 +1035,8 @@ var config4 = (extraMessages) => {
           }
         },
         {
+          title: "Funkcion\xE1lis cookie-k",
+          description: `Ezeknek a\xA0cookie-knak k\xF6sz\xF6nhet\u0151en weboldalunk m\xE9g hat\xE9konyabban \xE9s\xA0jobban m\u0171k\xF6dik. P\xE9ld\xE1ul lehet\u0151v\xE9 teszik sz\xE1munkra a\xA0chat haszn\xE1lat\xE1t, hogy gyorsan \xE9s\xA0egyszer\u0171en v\xE1laszolhassunk k\xE9rd\xE9seire.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -979,6 +1044,17 @@ var config4 = (extraMessages) => {
           }
         },
         {
+          title: "Marketing cookie-k",
+          description: `Ezekkel a\xA0cookie-kkel m\xE9rhetj\xFCk le, mennyire hat\xE9konyak a\xA0hirdet\xE9seink \xE9s\xA0szolg\xE1ltat\xE1saink c\xE9lzott aj\xE1nlatai. A\xA0marketing cookie-k lehet\u0151v\xE9 teszik, hogy figyelmeztess\xFCk az interneten megjelen\u0151 olyan h\xEDrekre, amelyek \xE9rdekesek lehetnek az\xA0\xD6n sz\xE1m\xE1ra.m`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Szem\xE9lyre szabott cookie-k",
+          description: `Szolg\xE1ltat\xE1saink jobban m\u0171k\xF6dnek, ha egy adott felhaszn\xE1l\xF3ra tudjuk szabni \u0151ket. A\xA0szem\xE9lyre szabott cookie-k enged\xE9lyez\xE9s\xE9vel n\xF6veli annak es\xE9ly\xE9t, hogy \xE9ppen a\xA0keresett tartalmat tal\xE1lja meg.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -1004,7 +1080,8 @@ var config5 = (extraMessages) => {
       description: `Gdy lepiej zrozumiemy, co\xA0Ci\u0119 interesuje, poka\u017Cemy dok\u0142adniejsze tre\u015Bci dopasowane do\xA0Twoich preferencji.
       Kliknij w\xA0przycisk \u201EAkceptuj wszystkie\u201D, aby wyrazi\u0107 zgod\u0119 na\xA0wykorzystanie plik\xF3w cookie przez
       ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, extra5.and)} do personalizacji, analizy i\xA0ukierunkowanego marketingu.
-      <a href="https://www.lmc.eu/pl/cookies" target="_blank">Co\xA0to\xA0s\u0105\xA0pliki cookie i\xA0jak je\xA0wykorzystujemy?</a>`,
+      Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107
+      we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.`,
       primary_btn: {
         text: "Akceptuj wszystkie",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1015,8 +1092,21 @@ var config5 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "W\u0142asne ustawienia plik\xF3w cookies",
+      accept_all_btn: "Akceptuj wszystkie",
+      reject_all_btn: "Akceptuj niezb\u0119dne",
+      save_settings_btn: "Zapisz ustawienia",
       blocks: [
         {
+          description: `Aby w\xA0pe\u0142ni wykorzysta\u0107 mo\u017Cliwo\u015Bci naszej strony, najlepiej jest zezwoli\u0107 na\xA0wszystkie
+          rodzaje plik\xF3w cookies. Aby uzyska\u0107 wi\u0119cej informacji na\xA0temat tego, czym s\u0105 pliki cookies
+          i\xA0jak z\xA0nimi pracujemy, odwied\u017A na naszej stronie
+          <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w cookies</a>
+          i\xA0<a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Polityk\u0119 prywatno\u015Bci</a>.`
+        },
+        {
+          title: "Technicznie niezb\u0119dne pliki cookies",
+          description: `Te\xA0pliki cookies s\u0105 niezb\u0119dne do prawid\u0142owego funkcjonowania naszej strony internetowej, dlatego nie ma mo\u017Cliwo\u015Bci ich wy\u0142\u0105czenia. Bez nich na naszej stronie na\xA0przyk\u0142ad nie mo\u017Cna by\u0142oby wy\u015Bwietli\u0107 \u017Cadnej tre\u015Bci lub nie dzia\u0142a\u0142oby logowanie.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -1024,13 +1114,8 @@ var config5 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analityczne pliki cookies",
+          description: `U\u017Cywamy ich do \u015Bledzenia, ile os\xF3b odwiedza nasz\u0105 stron\u0119 internetow\u0105 i\xA0jak z\xA0niej korzysta. Dzi\u0119ki temu mo\u017Cemy stale ulepsza\u0107 stron\u0119 i\xA0inne us\u0142ugi.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -1038,6 +1123,8 @@ var config5 = (extraMessages) => {
           }
         },
         {
+          title: "Funkcjonalne pliki cookies",
+          description: `Te\xA0pliki cookies sprawiaj\u0105, \u017Ce nasza strona internetowa jest jeszcze bardziej wydajna i\xA0dzia\u0142a lepiej. Pozwalaj\u0105 nam na\xA0przyk\u0142ad korzysta\u0107 z\xA0czatu, dzi\u0119ki temu mo\u017Cemy szybko i\xA0\u0142atwo odpowiada\u0107 na\xA0Twoje pytania.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -1045,6 +1132,17 @@ var config5 = (extraMessages) => {
           }
         },
         {
+          title: "Marketingowe pliki cookies",
+          description: `Za\xA0pomoc\u0105 tych plik\xF3w cookies mo\u017Cemy mierzy\u0107, jak skuteczne s\u0105 nasze reklamy i\xA0ukierunkowane oferty naszych us\u0142ug. Marketingowe pliki cookies pozwalaj\u0105 nam powiadamia\u0107 Ci\u0119 w\xA0Internecie o\xA0nowo\u015Bciach, kt\xF3re mog\u0105 Ci\u0119\xA0zainteresowa\u0107.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personalizacyjne pliki cookies",
+          description: `Nasze us\u0142ugi dzia\u0142aj\u0105 lepiej, gdy mo\u017Cemy je dostosowa\u0107 do\xA0konkretnego u\u017Cytkownika. W\u0142\u0105czeniem personalizacyjnych plik\xF3w cookies zwi\u0119kszasz szans\u0119 na\xA0znalezienie w\u0142a\u015Bnie tych tre\u015Bci, kt\xF3rych poszukujesz.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -1068,7 +1166,8 @@ var config6 = (extraMessages) => {
     consent_modal: {
       title: "\u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442 \u0444\u0430\u0439\u043B\u044B cookie",
       description: `\u041D\u0430\u0436\u0430\u0432 \xAB\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435\xBB, \u0412\u044B \u0434\u0430\u0435\u0442\u0435 \u0441\u0432\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435 ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043D\u0430 \u0412\u0430\u0448\u0435\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043E\u0431\u043B\u0435\u0433\u0447\u0438\u0442 \u043D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430, \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0438\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432 \u0438\xA0\u0443\u0441\u043B\u0443\u0433.
-      \u0414\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u0441\u043C. \u0440\u0430\u0437\u0434\u0435\u043B <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>.`,
+      \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie
+      \u0432\xA0<strong><a href="" data-cc="c-settings">\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445</a></strong>.`,
       primary_btn: {
         text: "\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1079,8 +1178,21 @@ var config6 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "\u0418\u043D\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u044B\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0444\u0430\u0439\u043B\u043E\u0432 cookies",
+      accept_all_btn: "\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435",
+      reject_all_btn: "\u041F\u0440\u0438\u043D\u044F\u0442\u0438\u0435\xA0\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E",
+      save_settings_btn: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438",
       blocks: [
         {
+          description: `\u0427\u0442\u043E\u0431\u044B \u0412\u044B \u043C\u043E\u0433\u043B\u0438 \u0432 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0439 \u043C\u0435\u0440\u0435 \u0438 \u0431\u0435\u0437 \u043F\u0440\u043E\u0431\u043B\u0435\u043C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F \u043D\u0430\u0448\u0438\u043C \u0441\u0430\u0439\u0442\u043E\u043C, \u043C\u044B \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C
+          \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C \u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0442\u044C \u0432\u0441\u0435 \u0442\u0438\u043F\u044B \u0444\u0430\u0439\u043B\u043E\u0432 cookie.
+          \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0439\u0442\u0438 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u043C, \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0444\u0430\u0439\u043B\u044B cookies, \u0438 \u043A\u0430\u043A \u043C\u044B \u0441 \u043D\u0438\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u043C,
+          \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445 <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>
+          \u0438\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a>.`
+        },
+        {
+          title: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
+          description: `\u042D\u0442\u0438 \u0444\u0430\u0439\u043B\u044B cookie \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B \u0434\u043B\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0439 \u0440\u0430\u0431\u043E\u0442\u044B \u043D\u0430\u0448\u0435\u0433\u043E \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0430, \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u0438\u0445 \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u044C. \u0411\u0435\u0437 \u043D\u0438\u0445, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u043D\u0430 \u043D\u0430\u0448\u0435\u043C \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0435 \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u0431\u044B \u0438\u0437\u043E\u0431\u0440\u0430\u0437\u0438\u0442\u044C \u043A\u0430\u043A\u043E\u0435-\u043B\u0438\u0431\u043E \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 \u0438\u043B\u0438 \u0431\u044B\u043B\u043E \u0431\u044B \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0432\u043E\u0439\u0442\u0438 \u0432\xA0\u0441\u0438\u0441\u0442\u0435\u043C\u0443.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -1088,13 +1200,8 @@ var config6 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "\u0410\u043D\u0430\u043B\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
+          description: `\u041C\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C \u0438\u0445, \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u0442\u044C, \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043B\u044E\u0434\u0435\u0439 \u043F\u043E\u0441\u0435\u0449\u0430\u044E\u0442 \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0438\xA0\u043A\u0430\u043A \u043E\u043D\u0438 \u0435\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442. \u042D\u0442\u043E \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442 \u043D\u0430\u043C \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u043E \u0443\u043B\u0443\u0447\u0448\u0430\u0442\u044C \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0435 \u0443\u0441\u043B\u0443\u0433\u0438.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -1102,6 +1209,8 @@ var config6 = (extraMessages) => {
           }
         },
         {
+          title: "\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
+          description: `\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u044D\u0442\u0438\u043C \u0444\u0430\u0439\u043B\u0430\u043C cookie \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0441\u0442\u0430\u043B \u0435\u0449\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438\u0432\u043D\u0435\u0435 \u0438\xA0\u0443\u043B\u0443\u0447\u0448\u0438\u043B \u0440\u0430\u0431\u043E\u0442\u0443. \u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u043E\u043D\u0438 \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442 \u043D\u0430\u043C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0447\u0430\u0442, \u0447\u0442\u043E\u0431\u044B \u043C\u044B \u043C\u043E\u0433\u043B\u0438 \u0431\u044B\u0441\u0442\u0440\u043E \u0438 \u043F\u0440\u043E\u0441\u0442\u043E \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u0432\u043E\u043F\u0440\u043E\u0441\u044B.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -1109,6 +1218,17 @@ var config6 = (extraMessages) => {
           }
         },
         {
+          title: "\u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
+          description: `\u0421 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u043C\u044B \u043C\u043E\u0436\u0435\u043C \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u044C, \u043D\u0430\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u044B \u043D\u0430\u0448\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0430 \u0438\xA0\u0446\u0435\u043B\u0435\u0432\u044B\u0435 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u0443\u0441\u043B\u0443\u0433. \u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442 \u043D\u0430\u043C \u043F\u043E \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0443 \u0438\u043D\u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0412\u0430\u0441 \u043E\xA0\u043D\u043E\u0432\u043E\u0441\u0442\u044F\u0445, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043C\u043E\u0433\u0443\u0442 \u0432\u0430\u0441 \u0437\u0430\u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043E\u0432\u0430\u0442\u044C.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "\u0424\u0430\u0439\u043B\u044B cookie \u0434\u043B\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438",
+          description: `\u041D\u0430\u0448\u0438 \u0443\u0441\u043B\u0443\u0433\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043B\u0443\u0447\u0448\u0435, \u043A\u043E\u0433\u0434\u0430 \u043C\u044B \u043C\u043E\u0436\u0435\u043C \u043F\u0440\u0438\u0441\u043F\u043E\u0441\u043E\u0431\u0438\u0442\u044C \u0438\u0445 \u043A\xA0\u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u043E\u043C\u0443 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044E. \u0412\u043A\u043B\u044E\u0447\u0438\u0432 \u0444\u0430\u0439\u043B\u044B cookie \u0434\u043B\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438, \u0432\u044B \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u0435 \u0432\u0435\u0440\u043E\u044F\u0442\u043D\u043E\u0441\u0442\u044C \u0442\u043E\u0433\u043E, \u0447\u0442\u043E \u043D\u0430\u0439\u0434\u0435\u0442\u0435 \u0438\u043C\u0435\u043D\u043D\u043E \u0442\u043E \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0438\u0449\u0435\u0442\u0435.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -1133,7 +1253,8 @@ var config7 = (extraMessages) => {
       title: "V\u010Faka Cookies bud\xFA na\u0161e str\xE1nky e\u0161te lep\u0161ie",
       description: `Presnej\u0161\xED obsah\xA0na\xA0mieru v\xE1m budeme zobrazova\u0165, ke\u010F\xA0lep\u0161ie pochop\xEDme, \u010Do\xA0v\xE1s\xA0zauj\xEDma.
       Kliknut\xEDm na\xA0tla\u010Didlo \u201EPrija\u0165 v\u0161etky\u201C, \u010D\xEDm d\xE1te ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} s\xFAhlas s\xA0vyu\u017E\xEDvan\xEDm s\xFAborov Cookies za\xA0\xFA\u010Delom personaliz\xE1cie, anal\xFDzy a\xA0cielen\xE9ho marketingu.
-      <a href="https://www.lmc.eu/sk/cookies" target="_blank">\u010Co\xA0s\xFA\xA0to\xA0Cookies a\xA0ako\xA0ich\xA0pou\u017E\xEDvame?</a>`,
+      Viac inform\xE1ci\xED o\xA0Cookies a\xA0\xFApravu ich pou\u017E\xEDvania n\xE1jdete
+      vo\xA0<strong><a href="" data-cc="c-settings">vlastnom nastaven\xED</a></strong>.`,
       primary_btn: {
         text: "Prija\u0165 v\u0161etky",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1144,8 +1265,20 @@ var config7 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "Prisp\xF4sobi\u0165 nastavenia cookies",
+      accept_all_btn: "Prija\u0165 v\u0161etky",
+      reject_all_btn: "Prija\u0165 nevyhnutn\xE9",
+      save_settings_btn: "Ulo\u017Ei\u0165 nastavenia",
       blocks: [
         {
+          description: `Aby ste z na\u0161ich str\xE1nok z\xEDskali maximum, je najlep\u0161ie povoli\u0165 v\u0161etky typy cookies.
+          \u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nkach
+          <a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvania cookies</a>
+          a\xA0v\xA0<a href="https://www.lmc.eu/sk/zasady-ochrany-sukromia" target="_blank">Z\xE1sad\xE1ch ochrany s\xFAkromia</a>.`
+        },
+        {
+          title: "Technicky nevyhnutn\xE9 cookies",
+          description: `Tieto cookies s\xFA pre\xA0spr\xE1vne fungovanie n\xE1\u0161ho webu nevyhnutn\xE9, preto nie je mo\u017En\xE9 ich vypn\xFA\u0165. Bez nich by sa na\xA0na\u0161ich str\xE1nkach napr.\xA0nedal zobrazi\u0165 \u017Eiadny obsah alebo by\xA0nefungovalo prihl\xE1senie.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -1153,13 +1286,8 @@ var config7 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "Analytick\xE9 cookies",
+          description: `Pomocou nich sledujeme, ko\u013Eko \u013Eud\xED n\xE1\u0161 web nav\u0161tevuje a\xA0ako ho pou\u017E\xEDvaj\xFA. V\u010Faka tomu m\xF4\u017Eeme str\xE1nky a\xA0\u010Fal\u0161ie slu\u017Eby neust\xE1le vylep\u0161ova\u0165.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -1167,6 +1295,8 @@ var config7 = (extraMessages) => {
           }
         },
         {
+          title: "Funk\u010Dn\xE9 cookies",
+          description: `V\u010Faka t\xFDmto cookies s\xFA na\u0161e str\xE1nky e\u0161te v\xFDkonnej\u0161ie a\xA0funguj\xFA lep\u0161ie. Napr\xEDklad n\xE1m umo\u017E\u0148uj\xFA pou\u017E\xEDva\u0165 chat, aby sme na va\u0161e ot\xE1zky mohli odpoveda\u0165 r\xFDchlo a\xA0jednoducho.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -1174,6 +1304,17 @@ var config7 = (extraMessages) => {
           }
         },
         {
+          title: "Marketingov\xE9 cookies",
+          description: `S\xA0t\xFDmito cookies m\xF4\u017Eeme mera\u0165, ak\xE1 efekt\xEDvna je na\u0161a reklama a\xA0cielen\xE9 ponuky na\u0161ich slu\u017Eieb. Marketingov\xE9 cookies n\xE1m umo\u017Enia v\xE1s na\xA0internete upozorni\u0165 na novinky, ktor\xE9 v\xE1s m\xF4\u017Eu zauj\xEDma\u0165.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personaliza\u010Dn\xE9 cookies",
+          description: `Na\u0161e slu\u017Eby funguj\xFA lep\u0161ie, ke\u010F ich m\xF4\u017Eeme prisp\xF4sobi\u0165 na\xA0mieru konkr\xE9tnemu pou\u017E\xEDvate\u013Eovi. Povolen\xEDm personaliza\u010Dn\xFDch cookies zv\xFD\u0161ite \u0161ancu, \u017Ee\xA0n\xE1jdete pr\xE1ve tak\xFD obsah, ak\xFD\xA0h\u013Ead\xE1te.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -1197,7 +1338,8 @@ var config8 = (extraMessages) => {
     consent_modal: {
       title: "\u0426\u0435\u0439 \u0441\u0430\u0439\u0442 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454 \u0444\u0430\u0439\u043B\u0438 cookie",
       description: `\u041D\u0430\u0442\u0438\u0441\u043D\u0443\u0432\u0448\u0438 \xAB\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435\xBB, \u0412\u0438 \u0434\u0430\u0454\u0442\u0435 \u0441\u0432\u043E\u044E \u0437\u0433\u043E\u0434\u0443 ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(lang.companyNames, lang.and)} \u043D\u0430 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043D\u0430 \u0412\u0430\u0448\u043E\u043C\u0443 \u043F\u0440\u0438\u0441\u0442\u0440\u043E\u0457. \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043F\u043E\u043B\u0435\u0433\u0448\u0438\u0442\u044C \u043D\u0430\u0432\u0456\u0433\u0430\u0446\u0456\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0446\u0456\u043B\u044C\u043E\u0432\u0438\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0456\u0437 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0456\u0432 \u0456\xA0\u043F\u043E\u0441\u043B\u0443\u0433.
-      \u0414\u043B\u044F \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u043E\u0457 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457 \u0434\u0438\u0432. \u0440\u043E\u0437\u0434\u0456\u043B <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie</a>.`,
+      \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u0437\u043C\u0456\u043D\u0438\u0442\u0438 \u0432\xA0\u0441\u0432\u043E\u0457\u0445
+      <strong><a href="" data-cc="c-settings">\u0432\u043B\u0430\u0441\u043D\u0438\u0445 \u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u0445</a></strong>.`,
       primary_btn: {
         text: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
@@ -1208,8 +1350,20 @@ var config8 = (extraMessages) => {
       }
     },
     settings_modal: {
+      title: "\u041A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0446\u044C\u043A\u0456 \u043D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies",
+      accept_all_btn: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435",
+      reject_all_btn: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0442\u044F\xA0\u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E",
+      save_settings_btn: "\u0417\u0431\u0435\u0440\u0435\u0433\u0442\u0438 \u043D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F",
       blocks: [
         {
+          description: `\u0429\u043E\u0431 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0443 \u0432\u0456\u0434\u0434\u0430\u0447\u0443 \u0432\u0456\u0434 \u043D\u0430\u0448\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0443, \u043D\u0430\u0439\u043A\u0440\u0430\u0449\u0435 \u0434\u043E\u0437\u0432\u043E\u043B\u0438\u0442\u0438 \u0432\u0441\u0456 \u0442\u0438\u043F\u0438 \u0444\u0430\u0439\u043B\u0456\u0432 Cookies.
+          \u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044E \u043F\u0440\u043E \u0442\u0435, \u0449\u043E \u0442\u0430\u043A\u0435 \u0444\u0430\u0439\u043B\u0438 Cookies \u0456 \u044F\u043A \u043C\u0438 \u0437 \u043D\u0438\u043C\u0438 \u043F\u0440\u0430\u0446\u044E\u0454\u043C\u043E, \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430 \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u0445
+          <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F Cookies</a>
+          \u0456\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456</a>.`
+        },
+        {
+          title: "\u0422\u0435\u0445\u043D\u0456\u0447\u043D\u043E \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
+          description: `\u0426\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0434\u043B\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0433\u043E \u0444\u0443\u043D\u043A\u0446\u0456\u043E\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0443, \u0442\u043E\u043C\u0443 \u0432\u0438\u043C\u043A\u043D\u0443\u0442\u0438 \u0457\u0445 \u043D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E. \u0411\u0435\u0437 \u043D\u0438\u0445 \u0431\u0443\u043B\u043E \u0431 \u043D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0430\u0442\u0438 \u043D\u0430 \u043D\u0430\u0448\u043E\u043C\u0443 \u0441\u0430\u0439\u0442\u0456 \u0439\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442, \u0430\u0431\u043E \u043D\u0435 \u043F\u0440\u0430\u0446\u044E\u0432\u0430\u0432 \u0431\u0438 \u0432\u0445\u0456\u0434 \u043D\u0430 \u0441\u0430\u0439\u0442.`,
           toggle: {
             value: "necessary" /* NECESSARY */,
             enabled: true,
@@ -1217,13 +1371,8 @@ var config8 = (extraMessages) => {
           }
         },
         {
-          toggle: {
-            value: "ad" /* AD */,
-            enabled: false,
-            readonly: false
-          }
-        },
-        {
+          title: "\u0410\u043D\u0430\u043B\u0456\u0442\u0438\u0447\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
+          description: `\u041C\u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u043C\u043E \u0457\u0445 \u0434\u043B\u044F \u0432\u0456\u0434\u0441\u0442\u0435\u0436\u0435\u043D\u043D\u044F \u0442\u043E\u0433\u043E, \u0441\u043A\u0456\u043B\u044C\u043A\u0438 \u043B\u044E\u0434\u0435\u0439 \u0432\u0456\u0434\u0432\u0456\u0434\u0443\u044E\u0442\u044C \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0456\xA0\u044F\u043A \u0432\u043E\u043D\u0438 \u043D\u0438\u043C \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u044E\u0442\u044C\u0441\u044F. \u0417\u0430\u0432\u0434\u044F\u043A\u0438 \u0446\u044C\u043E\u043C\u0443 \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u043F\u043E\u0441\u0442\u0456\u0439\u043D\u043E \u043F\u043E\u043A\u0440\u0430\u0449\u0443\u0432\u0430\u0442\u0438 \u0441\u0430\u0439\u0442 \u0442\u0430 \u0456\u043D\u0448\u0456 \u0441\u0435\u0440\u0432\u0456\u0441\u0438.`,
           toggle: {
             value: "analytics" /* ANALYTICS */,
             enabled: false,
@@ -1231,6 +1380,8 @@ var config8 = (extraMessages) => {
           }
         },
         {
+          title: "\u0424\u0443\u043D\u043A\u0446\u0456\u043E\u043D\u0430\u043B\u044C\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
+          description: `\u0426\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u0440\u043E\u0431\u043B\u044F\u0442\u044C \u043D\u0430\u0448 \u0441\u0430\u0439\u0442 \u0449\u0435 \u0431\u0456\u043B\u044C\u0448 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0438\u043C \u0456\xA0\u043F\u043E\u043A\u0440\u0430\u0449\u0443\u044E\u0442\u044C \u0439\u043E\u0433\u043E \u0440\u043E\u0431\u043E\u0442\u0443. \u041D\u0430\u043F\u0440\u0438\u043A\u043B\u0430\u0434, \u0432\u043E\u043D\u0438 \u0434\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442\u044C \u043D\u0430\u043C \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0432\u0430\u0442\u0438 \u0447\u0430\u0442, \u0449\u043E\u0431 \u0448\u0432\u0438\u0434\u043A\u043E \u0456\xA0\u043B\u0435\u0433\u043A\u043E \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u0430\u0442\u0438 \u043D\u0430 \u0432\u0430\u0448\u0456 \u0437\u0430\u043F\u0438\u0442\u0430\u043D\u043D\u044F.`,
           toggle: {
             value: "functionality" /* FUNCTIONALITY */,
             enabled: false,
@@ -1238,6 +1389,17 @@ var config8 = (extraMessages) => {
           }
         },
         {
+          title: "\u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
+          description: `\u0417\u0430 \u0434\u043E\u043F\u043E\u043C\u043E\u0433\u043E\u044E \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u043E\u0446\u0456\u043D\u0438\u0442\u0438, \u043D\u0430\u0441\u043A\u0456\u043B\u044C\u043A\u0438 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0430 \u043D\u0430\u0448\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0430 \u0456\xA0\u0446\u0456\u043B\u044C\u043E\u0432\u0456 \u043F\u0440\u043E\u043F\u043E\u0437\u0438\u0446\u0456\u0457 \u043D\u0430\u0448\u0438\u0445 \u043F\u043E\u0441\u043B\u0443\u0433. \u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u0434\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442\u044C \u043D\u0430\u043C \u0456\u043D\u0444\u043E\u0440\u043C\u0443\u0432\u0430\u0442\u0438 \u0412\u0430\u0441 \u0432\xA0\u0406\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0456 \u043F\u0440\u043E \u043D\u043E\u0432\u0438\u043D\u0438, \u044F\u043A\u0456 \u043C\u043E\u0436\u0443\u0442\u044C \u0432\u0430\u0441 \u0437\u0430\u0446\u0456\u043A\u0430\u0432\u0438\u0442\u0438.`,
+          toggle: {
+            value: "ad" /* AD */,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "\u041F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
+          description: `\u041D\u0430\u0448\u0456 \u0441\u0435\u0440\u0432\u0456\u0441\u0438 \u043F\u0440\u0430\u0446\u044E\u044E\u0442\u044C \u043A\u0440\u0430\u0449\u0435, \u043A\u043E\u043B\u0438 \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u0430\u0434\u0430\u043F\u0442\u0443\u0432\u0430\u0442\u0438 \u0457\u0445 \u0434\u043E \u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u043E\u0433\u043E \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447\u0430. \u0414\u043E\u0437\u0432\u043E\u043B\u0438\u0432\u0448\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies, \u0432\u0438 \u0437\u0431\u0456\u043B\u044C\u0448\u0443\u0454\u0442\u0435 \u0439\u043C\u043E\u0432\u0456\u0440\u043D\u0456\u0441\u0442\u044C \u0442\u043E\u0433\u043E, \u0449\u043E \u0437\u043D\u0430\u0439\u0434\u0435\u0442\u0435 \u043F\u043E\u0442\u0440\u0456\u0431\u043D\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.`,
           toggle: {
             value: "personalization" /* PERSONALIZATION */,
             enabled: false,
@@ -1288,19 +1450,19 @@ async function postDataToApi(apiUrl, payload) {
 var consentCollector_default = submitConsent;
 
 // src/LmcCookieConsentManager.ts
-var noopAcceptCallback = (cookie, cookieConsent) => {
+var noopAcceptCallback = (cookieConsent) => {
+};
+var noopChangeCallback = (cookieConsent, categories) => {
 };
 var defaultOptions = {
   defaultLang: "cs",
   autodetectLang: true,
   consentCollectorApiUrl: "https://ccm.lmc.cz/local-data-acceptation-data-entries",
   onFirstAccept: noopAcceptCallback,
-  onFirstAcceptOnlyNecessary: noopAcceptCallback,
-  onFirstAcceptAll: noopAcceptCallback,
   onAccept: noopAcceptCallback,
-  onAcceptOnlyNecessary: noopAcceptCallback,
-  onAcceptAll: noopAcceptCallback,
+  onChange: noopChangeCallback,
   companyNames: ["LMC"],
+  displayMode: "force" /* FORCE */,
   config: {}
 };
 var LmcCookieConsentManager = (serviceName, args) => {
@@ -1313,12 +1475,10 @@ var LmcCookieConsentManager = (serviceName, args) => {
     autodetectLang,
     consentCollectorApiUrl,
     onFirstAccept,
-    onFirstAcceptOnlyNecessary,
-    onFirstAcceptAll,
     onAccept,
-    onAcceptOnlyNecessary,
-    onAcceptAll,
+    onChange,
     companyNames,
+    displayMode,
     config: config9
   } = options;
   const cookieName = "lmc_ccm";
@@ -1333,6 +1493,36 @@ var LmcCookieConsentManager = (serviceName, args) => {
     sk: config7({ companyNames }),
     uk: config8({ companyNames })
   };
+  const onFirstAcceptHandler = (userPreferences, cookie) => {
+    const cookieData = cookieConsent.get("data");
+    if (cookieData === null || !("uid" in cookieData)) {
+      cookieConsent.set("data", {
+        value: { serviceName, uid: nanoid() },
+        mode: "update"
+      });
+    }
+    pushToDataLayer(cookie);
+    if (consentCollectorApiUrl !== null) {
+      consentCollector_default(consentCollectorApiUrl, cookieConsent);
+    }
+    onFirstAccept(cookieConsent);
+  };
+  const onAcceptHandler = () => {
+    onAccept(cookieConsent);
+  };
+  const onChangeHandler = (cookie, changedCategories) => {
+    const userPreferences = cookieConsent.getUserPreferences();
+    const categories = {
+      accepted: userPreferences.accepted_categories,
+      rejected: userPreferences.rejected_categories,
+      changed: changedCategories
+    };
+    pushToDataLayer(cookie);
+    if (consentCollectorApiUrl !== null) {
+      consentCollector_default(consentCollectorApiUrl, cookieConsent);
+    }
+    onChange(cookieConsent, categories);
+  };
   const cookieConsentConfig = __spreadValues({
     auto_language: autodetectLang ? "document" : null,
     autorun: true,
@@ -1341,38 +1531,25 @@ var LmcCookieConsentManager = (serviceName, args) => {
     cookie_name: cookieName,
     current_lang: defaultLang,
     delay: 0,
-    force_consent: false,
+    force_consent: displayMode == "force" /* FORCE */,
     hide_from_bots: true,
     page_scripts: true,
     use_rfc_cookie: true,
     gui_options: {
       consent_modal: {
-        layout: VanillaCookieConsent.GuiConsentLayout.BAR,
-        position: VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
+        layout: displayMode == "force" /* FORCE */ ? VanillaCookieConsent.GuiConsentLayout.BOX : VanillaCookieConsent.GuiConsentLayout.BAR,
+        position: displayMode == "force" /* FORCE */ ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
         transition: VanillaCookieConsent.Transition.SLIDE,
         swap_buttons: true
+      },
+      settings_modal: {
+        layout: VanillaCookieConsent.GuiSettingsLayout.BOX,
+        transition: VanillaCookieConsent.Transition.SLIDE
       }
     },
-    onAccept: (cookie) => {
-      const userPreferences = cookieConsent.getUserPreferences();
-      onAccept(cookie, cookieConsent);
-      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY ? onAcceptOnlyNecessary(cookie, cookieConsent) : onAcceptAll(cookie, cookieConsent);
-    },
-    onFirstAction: (userPreferences, cookie) => {
-      const cookieData = cookieConsent.get("data");
-      if (cookieData === null || !("uid" in cookieData)) {
-        cookieConsent.set("data", {
-          value: { serviceName, uid: nanoid() },
-          mode: "update"
-        });
-      }
-      pushToDataLayer(cookie);
-      if (consentCollectorApiUrl !== null) {
-        consentCollector_default(consentCollectorApiUrl, cookieConsent);
-      }
-      onFirstAccept(cookie, cookieConsent);
-      userPreferences.accept_type == VanillaCookieConsent.AcceptType.NECESSARY ? onFirstAcceptOnlyNecessary(cookie, cookieConsent) : onFirstAcceptAll(cookie, cookieConsent);
-    },
+    onAccept: onAcceptHandler,
+    onFirstAction: onFirstAcceptHandler,
+    onChange: onChangeHandler,
     languages
   }, config9);
   cookieConsent.run(cookieConsentConfig);
