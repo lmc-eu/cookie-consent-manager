@@ -123,6 +123,12 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
       changed: changedCategories,
     };
 
+    pushToDataLayer(cookie);
+
+    if (consentCollectorApiUrl !== null) {
+      submitConsent(consentCollectorApiUrl, cookieConsent);
+    }
+
     onChange(cookieConsent, categories);
   };
 
