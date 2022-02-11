@@ -21,8 +21,11 @@
 
     <!-- This is only for purposes of this example page -->
     <style>
-        .list-group-item-success:after {
+        .list-callbacks .list-group-item-success:after {
             content: ' – called';
+        }
+        .list-categories .list-group-item-success:after {
+            content: ' – allowed';
         }
     </style>
 </head>
@@ -89,10 +92,19 @@
             <div class="col col-lg-10 col-xl-8">
 
                 <h2 class="mt-md-3 mb-3">Callbacks</h2>
-                <ul class="list-group">
+                <ul class="list-group list-callbacks">
                     <li class="list-group-item" id="callback-onFirstAccept">onFirstAccept</li>
                     <li class="list-group-item" id="callback-onAccept">onAccept</li>
                     <li class="list-group-item" id="callback-onChange">onChange</li>
+                </ul>
+
+                <h2 class="mt-4 mt-md-5 mb-3">Consent categories</h2>
+                <ul class="list-group list-categories">
+                    <li class="list-group-item" id="consent-necessary">necessary</li>
+                    <li class="list-group-item" id="consent-ad">ad</li>
+                    <li class="list-group-item" id="consent-analytics">analytics</li>
+                    <li class="list-group-item" id="consent-functionality">functionality</li>
+                    <li class="list-group-item" id="consent-personalization">personalization</li>
                 </ul>
 
                 <h2 class="mt-md-3 mb-3">onChange callback – dump of <code>categories</code> parameter</h2>
@@ -123,6 +135,7 @@
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
         onAccept: (cookieConsent) => { // any type of consent detected (including only necessary, custom selection or all categories)
           markCallbackCalled('onAccept');
+          updateAllowedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
         onFirstAccept: (cookieConsent) => { // user just clicked and gave consent to selected or all categories
@@ -135,6 +148,8 @@
         onChange: (cookieConsent, categories) => { // user previously gave consent but now change its preferences
           resetCallbackMarks();
           markCallbackCalled('onChange');
+          updateAllowedCategories(cookieConsent);
+
           document.getElementById('onchange-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(categories)}</code></pre>`;
           window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
         },
@@ -148,7 +163,7 @@
   }
 
   const resetCallbackMarks = function (callbackName) {
-    for (const element of document.getElementsByClassName('list-group-item-success')) {
+    for (const element of document.querySelectorAll('.list-callbacks .list-group-item-success')) {
       element.classList.remove('list-group-item-success');
     }
   }

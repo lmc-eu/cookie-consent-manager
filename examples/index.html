@@ -92,7 +92,7 @@
             <div class="col col-lg-10 col-xl-8">
 
                 <h2 class="mt-4 mt-md-5 mb-3">Allowed consent categories</h2>
-                <ul class="list-group">
+                <ul class="list-group list-categories">
                     <li class="list-group-item" id="consent-necessary">necessary</li>
                     <li class="list-group-item" id="consent-ad">ad</li>
                     <li class="list-group-item" id="consent-analytics">analytics</li>
@@ -167,18 +167,6 @@
     );
   });
 
-  const updateAllowedCategories= function (cookieConsent) {
-    for (const category of ['necessary', 'ad', 'analytics', 'functionality', 'personalization']) {
-      if (cookieConsent.allowedCategory(category)) {
-        markConsentCategoryAllowed(category);
-      }
-    }
-  }
-
-  const markConsentCategoryAllowed = function (category) {
-    const element = document.getElementById(`consent-${category}`);
-    element.classList.add('list-group-item-success');
-  }
 </script>
 
 </body>
