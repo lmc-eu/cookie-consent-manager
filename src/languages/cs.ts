@@ -18,7 +18,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Díky Cookies budou naše stránky ještě lepší',
+      title: extraMessages.consentTitle ?? 'Díky Cookies budou naše stránky ještě lepší',
       description: `Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
       Kliknutím na tlačítko „Přijmout všechny“ dáte ${pluralize(
         lang.companyNames.length,
