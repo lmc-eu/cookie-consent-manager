@@ -16,7 +16,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Az oldalak süti fájlokat használnak',
+      title: extraMessages.consentTitle ?? 'Az oldalak süti fájlokat használnak',
       description: `A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az ${addSeparators(
         lang.companyNames,
         extra.and,

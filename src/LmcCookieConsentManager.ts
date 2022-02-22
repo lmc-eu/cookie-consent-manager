@@ -33,6 +33,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   onChange: noopChangeCallback,
   companyNames: ['LMC'],
   displayMode: DisplayMode.FORCE,
+  translationOverrides: {},
   config: {},
 };
 
@@ -51,6 +52,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  *   to be given to multiple companies.
  * @param {DisplayMode} [args.displayMode] - `force` to show consent in a centered modal box and to block page until
  *   user action. `soft` to show consent in a banner on the bottom of the page.
+ * @param {Record<String, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
@@ -71,20 +73,21 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange,
     companyNames,
     displayMode,
+    translationOverrides,
     config,
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
 
   const languages = {
-    cs: configCs({ companyNames }),
-    de: configDe({ companyNames }),
-    en: configEn({ companyNames }),
-    hu: configHu({ companyNames }),
-    pl: configPl({ companyNames }),
-    ru: configRu({ companyNames }),
-    sk: configSk({ companyNames }),
-    uk: configUk({ companyNames }),
+    cs: configCs({ companyNames, consentTitle: translationOverrides.cs?.consentTitle }),
+    de: configDe({ companyNames, consentTitle: translationOverrides.de?.consentTitle }),
+    en: configEn({ companyNames, consentTitle: translationOverrides.en?.consentTitle }),
+    hu: configHu({ companyNames, consentTitle: translationOverrides.hu?.consentTitle }),
+    pl: configPl({ companyNames, consentTitle: translationOverrides.pl?.consentTitle }),
+    ru: configRu({ companyNames, consentTitle: translationOverrides.ru?.consentTitle }),
+    sk: configSk({ companyNames, consentTitle: translationOverrides.sk?.consentTitle }),
+    uk: configUk({ companyNames, consentTitle: translationOverrides.uk?.consentTitle }),
   };
 
   const onFirstAcceptHandler = (

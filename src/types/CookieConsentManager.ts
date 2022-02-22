@@ -28,7 +28,12 @@ export type CookieConsentManagerOptions = {
   onChange: OnChangeCallback;
   companyNames: string[];
   displayMode: DisplayMode;
+  translationOverrides: Record<string, TranslationOverride>;
   config: VanillaCookieConsent.Options;
+};
+
+export type TranslationOverride = {
+  consentTitle: string;
 };
 
 export type CookieConsentManager = (

@@ -18,7 +18,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
+      title: extraMessages.consentTitle ?? 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
       description: `Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
       Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
       ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(

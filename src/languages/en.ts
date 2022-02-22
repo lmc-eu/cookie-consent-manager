@@ -15,7 +15,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: 'Cookies make our site even better',
+      title: extraMessages.consentTitle ?? 'Cookies make our site even better',
       description: `By better understanding what you're interested in, we'll show you more relevant content.
       By clicking the "Accept all" button, you give ${addSeparators(
         lang.companyNames,

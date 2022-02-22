@@ -92,6 +92,7 @@
                     </li>
                     <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstAccept</code>)</li>
                     <li>Clearing localStorage when user updates consent and rejects some consent category (<code>onChange</code>)</li>
+                    <li>Overriding default translation (<code>translationOverrides</code>) for consent modal title</li>
                     <li>Etc.</li>
                 </ul>
 
@@ -152,6 +153,11 @@
         onChange: (cookieConsent, categories) => { // when user changes settings while on page, the now-rejected categories must be respected
           if (categories.changed.includes('functionality') && !cookieConsent.allowedCategory('functionality')) {
             window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
+          }
+        },
+        translationOverrides: {
+          sk: {
+            consentTitle: 'Prispôsobený titulok'
           }
         }
       }
