@@ -1,4 +1,4 @@
-import { addSeparators } from '../utils';
+import { addSeparators, assembleDescriptionIntro } from '../utils';
 import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
@@ -17,7 +17,10 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
     consent_modal: {
       title: lang.consentTitle ?? 'Cookies make our site even better',
       description: `
-      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
+      ${assembleDescriptionIntro(
+        "By better understanding what you're interested in, we'll show you more relevant content.",
+        lang.descriptionIntro,
+      )}
       <p>
         By clicking the "Accept all" button, you give
         ${addSeparators(lang.companyNames, extra.and)}

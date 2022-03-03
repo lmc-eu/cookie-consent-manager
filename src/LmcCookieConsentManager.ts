@@ -80,14 +80,14 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   const cookieConsent = window.initCookieConsent();
 
   const languages = {
-    cs: configCs({ companyNames, consentTitle: translationOverrides.cs?.consentTitle }),
-    de: configDe({ companyNames, consentTitle: translationOverrides.de?.consentTitle }),
-    en: configEn({ companyNames, consentTitle: translationOverrides.en?.consentTitle }),
-    hu: configHu({ companyNames, consentTitle: translationOverrides.hu?.consentTitle }),
-    pl: configPl({ companyNames, consentTitle: translationOverrides.pl?.consentTitle }),
-    ru: configRu({ companyNames, consentTitle: translationOverrides.ru?.consentTitle }),
-    sk: configSk({ companyNames, consentTitle: translationOverrides.sk?.consentTitle }),
-    uk: configUk({ companyNames, consentTitle: translationOverrides.uk?.consentTitle }),
+    cs: configCs({ companyNames, ...translationOverrides.cs }),
+    de: configDe({ companyNames, ...translationOverrides.de }),
+    en: configEn({ companyNames, ...translationOverrides.en }),
+    hu: configHu({ companyNames, ...translationOverrides.hu }),
+    pl: configPl({ companyNames, ...translationOverrides.pl }),
+    ru: configRu({ companyNames, ...translationOverrides.ru }),
+    sk: configSk({ companyNames, ...translationOverrides.sk }),
+    uk: configUk({ companyNames, ...translationOverrides.uk }),
   };
 
   const onFirstAcceptHandler = (
