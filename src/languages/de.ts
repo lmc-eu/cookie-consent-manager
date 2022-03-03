@@ -16,7 +16,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: extraMessages.consentTitle ?? 'Diese Website verwendet Cookies',
+      title: lang.consentTitle ?? 'Diese Website verwendet Cookies',
       description: `
       <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
       <p>
