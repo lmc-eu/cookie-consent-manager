@@ -159,6 +159,6 @@ export namespace VanillaCookieConsent {
     onAccept?: () => void;
     onChange?: () => void;
     onFirstAction?: () => void;
-    languages?: Languages;
+    languages?: Record<string, Languages>;
   }
 }
