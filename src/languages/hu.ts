@@ -1,4 +1,4 @@
-import { addSeparators } from '../utils';
+import { addSeparators, assembleDescriptionIntro } from '../utils';
 import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
@@ -18,7 +18,10 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
     consent_modal: {
       title: lang.consentTitle ?? 'Az oldalak süti fájlokat használnak',
       description: `
-      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
+      ${assembleDescriptionIntro(
+        'Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.',
+        lang.descriptionIntro,
+      )}
       <p>
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
         ${addSeparators(lang.companyNames, extra.and)}

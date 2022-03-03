@@ -1,4 +1,4 @@
-import { addSeparators } from '../utils';
+import { addSeparators, assembleDescriptionIntro } from '../utils';
 import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
@@ -18,7 +18,10 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
     consent_modal: {
       title: lang.consentTitle ?? 'Diese Website verwendet Cookies',
       description: `
-      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
+      ${assembleDescriptionIntro(
+        'Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.',
+        lang.descriptionIntro,
+      )}
       <p>
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
         ${addSeparators(lang.companyNames, extra.and)}

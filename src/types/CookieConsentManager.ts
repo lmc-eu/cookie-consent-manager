@@ -34,6 +34,7 @@ export type CookieConsentManagerOptions = {
 
 export type TranslationOverride = {
   consentTitle: string;
+  descriptionIntro: string;
 };
 
 export type CookieConsentManager = (

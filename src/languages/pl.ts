@@ -1,4 +1,4 @@
-import { addSeparators, pluralize } from '../utils';
+import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
 import { ExtraMessages, CookieConsentCategory } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
@@ -20,7 +20,10 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
     consent_modal: {
       title: lang.consentTitle ?? 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
       description: `
-      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
+      ${assembleDescriptionIntro(
+        'Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.',
+        lang.descriptionIntro,
+      )}
       <p>
         Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
