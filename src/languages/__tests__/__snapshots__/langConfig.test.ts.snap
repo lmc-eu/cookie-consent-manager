@@ -3,10 +3,16 @@
 exports[`config cs should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
-      Kliknutím na tlačítko „Přijmout všechny“ dáte společnostem test1, test2 a test3 souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      Další informace o Cookies a úpravu jejich používání naleznete
-      ve <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a></strong>.",
+    "description": "
+      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
+      <p>
+        Kliknutím na tlačítko „Přijmout všechny“ dáte
+        společnostem
+        test1, test2 a test3
+        souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
+        Další informace o Cookies a úpravu jejich používání naleznete
+        ve <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Přijmout všechny",
@@ -87,9 +93,15 @@ Object {
 exports[`config de should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch test1, test2 und test3 zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      Sie können die Verwendung von Cookies in Ihren
-      <strong><a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a></strong> anpassen.",
+    "description": "
+      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
+      <p>
+        Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
+        test1, test2 und test3
+        zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+        Sie können die Verwendung von Cookies in Ihren
+        <strong><a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a></strong> anpassen.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Alles akzeptieren",
@@ -166,9 +178,14 @@ Object {
 exports[`config en should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "By better understanding what you're interested in, we'll show you more relevant content.
-      By clicking the \\"Accept all\\" button, you give test1, test2 and test3 your consent to use cookies for personalisation, analytics and targeted marketing.
-      You can customize use of cookies in your <strong><a href=\\"\\" data-cc=\\"c-settings\\">own settings</a></strong>.",
+    "description": "
+      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
+      <p>
+        By clicking the \\"Accept all\\" button, you give
+        test1, test2 and test3
+        your consent to use cookies for personalisation, analytics and targeted marketing.
+        You can customize use of cookies in your <strong><a href=\\"\\" data-cc=\\"c-settings\\">own settings</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Accept all",
@@ -244,8 +261,14 @@ Object {
 exports[`config hu should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az test1, test2 és test3 süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      A cookie-k használatát testre szabhatja <strong><a href=\\"\\" data-cc=\\"c-settings\\">saját beállításaiban</a></strong>.",
+    "description": "
+      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
+      <p>
+        A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
+        test1, test2 és test3
+        süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+        A cookie-k használatát testre szabhatja <strong><a href=\\"\\" data-cc=\\"c-settings\\">saját beállításaiban</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Minden elfogadása",
@@ -321,11 +344,16 @@ Object {
 exports[`config pl should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
-      Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
-      firmy test1, test2 i test3 do personalizacji, analizy i ukierunkowanego marketingu.
-      Korzystanie z plików cookies możesz dostosować
-      we <strong><a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a></strong>.",
+    "description": "
+      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
+      <p>
+        Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
+        firmy
+        test1, test2 i test3
+        do personalizacji, analizy i ukierunkowanego marketingu.
+        Korzystanie z plików cookies możesz dostosować
+        we <strong><a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Akceptuj wszystkie",
@@ -402,9 +430,16 @@ Object {
 exports[`config ru should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Нажав «Принять все», Вы даете свое согласие компаниям test1, test2 и test3 на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-      Вы можете настроить использование файлов cookie
-      в <strong><a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a></strong>.",
+    "description": "
+      <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
+      <p>
+        Нажав «Принять все», Вы даете свое согласие
+        компаниям
+        test1, test2 и test3
+        на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
+        Вы можете настроить использование файлов cookie
+        в <strong><a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Принять все",
@@ -481,10 +516,16 @@ Object {
 exports[`config sk should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.
-      Kliknutím na tlačidlo „Prijať všetky“, čím dáte spoločnostiam test1, test2 a test3 súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-      Viac informácií o Cookies a úpravu ich používania nájdete
-      vo <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastnom nastavení</a></strong>.",
+    "description": "
+      <p>Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.</p>
+      <p>
+        Kliknutím na tlačidlo „Prijať všetky“, čím dáte
+        spoločnostiam
+        test1, test2 a test3
+        súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
+        Viac informácií o Cookies a úpravu ich používania nájdete
+        vo <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastnom nastavení</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Prijať všetky",
@@ -560,9 +601,16 @@ Object {
 exports[`config uk should return localization object 1`] = `
 Object {
   "consent_modal": Object {
-    "description": "Натиснувши «Прийняти все», Ви даєте свою згоду компаніям test1, test2 i test3 на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-      Використання файлів Cookies Ви можете змінити в своїх
-      <strong><a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a></strong>.",
+    "description": "
+      <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
+      <p>
+        Натиснувши «Прийняти все», Ви даєте свою згоду
+        компаніям
+        test1, test2 i test3
+        на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+        Використання файлів Cookies Ви можете змінити в своїх
+        <strong><a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a></strong>.
+      </p>",
     "primary_btn": Object {
       "role": "accept_all",
       "text": "Прийняти все",
