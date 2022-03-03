@@ -18,7 +18,7 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
 
   return {
     consent_modal: {
-      title: extraMessages.consentTitle ?? 'Этот сайт использует файлы cookie',
+      title: lang.consentTitle ?? 'Этот сайт использует файлы cookie',
       description: `
       <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
       <p>
