@@ -16,12 +16,14 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Cookies make our site even better',
-      description: `By better understanding what you're interested in, we'll show you more relevant content.
-      By clicking the "Accept all" button, you give ${addSeparators(
-        lang.companyNames,
-        extra.and,
-      )} your consent to use cookies for personalisation, analytics and targeted marketing.
-      You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.`,
+      description: `
+      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
+      <p>
+        By clicking the "Accept all" button, you give
+        ${addSeparators(lang.companyNames, extra.and)}
+        your consent to use cookies for personalisation, analytics and targeted marketing.
+        You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.
+      </p>`,
       primary_btn: {
         text: 'Accept all',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

@@ -19,14 +19,16 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
-      description: `Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.
-      Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
-      ${pluralize(lang.companyNames.length, lang.company, lang.companies)} ${addSeparators(
-        lang.companyNames,
-        extra.and,
-      )} do personalizacji, analizy i ukierunkowanego marketingu.
-      Korzystanie z plików cookies możesz dostosować
-      we <strong><a href="" data-cc="c-settings">własnych ustawieniach</a></strong>.`,
+      description: `
+      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
+      <p>
+        Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
+        ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
+        ${addSeparators(lang.companyNames, extra.and)}
+        do personalizacji, analizy i ukierunkowanego marketingu.
+        Korzystanie z plików cookies możesz dostosować
+        we <strong><a href="" data-cc="c-settings">własnych ustawieniach</a></strong>.
+      </p>`,
       primary_btn: {
         text: 'Akceptuj wszystkie',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

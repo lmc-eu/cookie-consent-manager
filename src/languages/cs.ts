@@ -19,17 +19,16 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Díky Cookies budou naše stránky ještě lepší',
-      description: `Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.
-      Kliknutím na tlačítko „Přijmout všechny“ dáte ${pluralize(
-        lang.companyNames.length,
-        lang.company,
-        lang.companies,
-      )} ${addSeparators(
-        lang.companyNames,
-        lang.and,
-      )} souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-      Další informace o Cookies a úpravu jejich používání naleznete
-      ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.`,
+      description: `
+      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
+      <p>
+        Kliknutím na tlačítko „Přijmout všechny“ dáte
+        ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
+        ${addSeparators(lang.companyNames, lang.and)}
+        souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
+        Další informace o Cookies a úpravu jejich používání naleznete
+        ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.
+      </p>`,
       primary_btn: {
         text: 'Přijmout všechny',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
