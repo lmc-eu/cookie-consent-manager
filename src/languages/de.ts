@@ -17,12 +17,15 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Diese Website verwendet Cookies',
-      description: `Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch ${addSeparators(
-        lang.companyNames,
-        extra.and,
-      )} zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-      Sie können die Verwendung von Cookies in Ihren
-      <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.`,
+      description: `
+      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
+      <p>
+        Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
+        ${addSeparators(lang.companyNames, extra.and)}
+        zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+        Sie können die Verwendung von Cookies in Ihren
+        <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.
+      </p>`,
       primary_btn: {
         text: 'Alles akzeptieren',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

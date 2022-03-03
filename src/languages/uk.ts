@@ -19,16 +19,16 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Цей сайт використовує файли cookie',
-      description: `Натиснувши «Прийняти все», Ви даєте свою згоду ${pluralize(
-        lang.companyNames.length,
-        lang.company,
-        lang.companies,
-      )} ${addSeparators(
-        lang.companyNames,
-        lang.and,
-      )} на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-      Використання файлів Cookies Ви можете змінити в своїх
-      <strong><a href="" data-cc="c-settings">власних Налаштуваннях</a></strong>.`,
+      description: `
+      <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
+      <p>
+        Натиснувши «Прийняти все», Ви даєте свою згоду
+        ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
+        ${addSeparators(lang.companyNames, lang.and)}
+        на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+        Використання файлів Cookies Ви можете змінити в своїх
+        <strong><a href="" data-cc="c-settings">власних Налаштуваннях</a></strong>.
+      </p>`,
       primary_btn: {
         text: 'Прийняти все',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,

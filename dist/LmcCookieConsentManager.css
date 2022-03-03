@@ -1502,6 +1502,10 @@ html.force--consent.show--consent body {
   font-weight: 700;
 }
 
+#c-txt p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
 #c-ttl,
 #s-ttl {
   margin-bottom: 0.6666666667em;

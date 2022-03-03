@@ -17,11 +17,14 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
   return {
     consent_modal: {
       title: extraMessages.consentTitle ?? 'Az oldalak süti fájlokat használnak',
-      description: `A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az ${addSeparators(
-        lang.companyNames,
-        extra.and,
-      )} süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-      A cookie-k használatát testre szabhatja <strong><a href="" data-cc="c-settings">saját beállításaiban</a></strong>.`,
+      description: `
+      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
+      <p>
+        A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
+        ${addSeparators(lang.companyNames, extra.and)}
+        süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+        A cookie-k használatát testre szabhatja <strong><a href="" data-cc="c-settings">saját beállításaiban</a></strong>.
+      </p>`,
       primary_btn: {
         text: 'Minden elfogadása',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
