@@ -14,7 +14,7 @@ export type OnChangeCallback = (
   categories: CategoriesChangeset,
 ) => void;
 
-export enum DisplayMode {
+export const enum DisplayMode {
   FORCE = 'force',
   SOFT = 'soft',
 }

@@ -1,4 +1,4 @@
-export enum CookieConsentCategory {
+export const enum CookieConsentCategory {
   NECESSARY = 'necessary',
   AD = 'ad',
   ANALYTICS = 'analytics',
