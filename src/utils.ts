@@ -12,3 +12,9 @@ export const addSeparators = (strings: string[], and: string = ''): string =>
   });
 
 export const pluralize = (count: number, singular: string, plural: string): string => (count === 1 ? singular : plural);
+
+export const assembleDescriptionIntro = (defaultValue: string, overrideValue?: string): string => {
+  const descriptionIntro = overrideValue ?? defaultValue;
+
+  return descriptionIntro !== '' ? `<p>${descriptionIntro}</p>` : '';
+};

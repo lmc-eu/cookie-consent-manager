@@ -1,4 +1,4 @@
-import { addSeparators, pluralize } from '../utils';
+import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
 import { CookieConsentCategory, ExtraMessages } from '../types';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
@@ -20,7 +20,10 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
     consent_modal: {
       title: lang.consentTitle ?? 'Díky Cookies budou naše stránky ještě lepší',
       description: `
-      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
+      ${assembleDescriptionIntro(
+        'Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.',
+        lang.descriptionIntro,
+      )}
       <p>
         Kliknutím na tlačítko „Přijmout všechny“ dáte
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}

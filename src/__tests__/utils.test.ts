@@ -1,4 +1,4 @@
-import { addSeparators, pluralize } from '../utils';
+import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
 
 describe('utils', () => {
   describe('addSeparators', () => {
@@ -28,6 +28,20 @@ describe('utils', () => {
 
     it('should return plural', () => {
       expect(pluralize(2, 'test', 'tests')).toBe('tests');
+    });
+  });
+
+  describe('assembleDescriptionIntro', () => {
+    it('should use default value as description when no override was provided', () => {
+      expect(assembleDescriptionIntro('Default value')).toBe('<p>Default value</p>');
+    });
+
+    it('should use override value as description when provided', () => {
+      expect(assembleDescriptionIntro('Default value', 'Override value')).toBe('<p>Override value</p>');
+    });
+
+    it('should return empty string when empty override value given', () => {
+      expect(assembleDescriptionIntro('Default value', '')).toBe('');
     });
   });
 });

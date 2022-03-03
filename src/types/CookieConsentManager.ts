@@ -19,6 +19,11 @@ export const enum DisplayMode {
   SOFT = 'soft',
 }
 
+export type TranslationOverride = {
+  consentTitle: string;
+  descriptionIntro: string;
+};
+
 export type CookieConsentManagerOptions = {
   defaultLang: string;
   autodetectLang: boolean;
@@ -30,10 +35,6 @@ export type CookieConsentManagerOptions = {
   displayMode: DisplayMode;
   translationOverrides: Record<string, TranslationOverride>;
   config: VanillaCookieConsent.Options;
-};
-
-export type TranslationOverride = {
-  consentTitle: string;
 };
 
 export type CookieConsentManager = (
