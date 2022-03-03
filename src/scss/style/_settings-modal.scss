@@ -106,11 +106,18 @@
     font-size: 1.8em;
     color: inherit;
     background-color: transparent;
+    border: none;
+    border-radius: 0;
 
     &::before,
     &::after {
         width: 2.5px;
         background-color: currentcolor;
+    }
+
+    &:hover,
+    &:active {
+        background-color: transparent;
     }
 }
 
