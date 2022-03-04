@@ -20,6 +20,7 @@
 }
 
 #cm.bar #c-inr-i {
+    flex-grow: 1;
     margin-right: units.rem2em(tokens.$space-10);
 }
 
