@@ -34,7 +34,7 @@ export type CookieConsentManagerOptions = {
   companyNames: string[];
   displayMode: DisplayMode;
   translationOverrides: Record<string, TranslationOverride>;
-  config: VanillaCookieConsent.Options;
+  config: VanillaCookieConsent.Options<CookieConsentCategory>;
 };
 
 export type CookieConsentManager = (
