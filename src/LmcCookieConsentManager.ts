@@ -52,7 +52,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  *   to be given to multiple companies.
  * @param {DisplayMode} [args.displayMode] - `force` to show consent in a centered modal box and to block page until
  *   user action. `soft` to show consent in a banner on the bottom of the page.
- * @param {Record<String, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
+ * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
@@ -135,7 +135,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange(cookieConsent, categories);
   };
 
-  const cookieConsentConfig = {
+  const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategory> = {
     auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
