@@ -20,8 +20,8 @@ export const enum DisplayMode {
 }
 
 export type TranslationOverride = {
-  consentTitle: string;
-  descriptionIntro: string;
+  consentTitle?: string;
+  descriptionIntro?: string;
 };
 
 export type CookieConsentManagerOptions = {
