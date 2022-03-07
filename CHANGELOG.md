@@ -1,3 +1,37 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.0.0...2.1.0) (2022-03-07)
+
+### Bug Fixes
+
+- Disconnect settings modal close button from button styles ([71d2463](https://github.com/lmc-eu/cookie-consent-manager/commit/71d2463))
+- Export enums as const for correct transpile into usable object ([24d394a](https://github.com/lmc-eu/cookie-consent-manager/commit/24d394a))
+- Export missing types in main module ([7c27935](https://github.com/lmc-eu/cookie-consent-manager/commit/7c27935))
+- Incompatible type definition of languages ([8fabfb3](https://github.com/lmc-eu/cookie-consent-manager/commit/8fabfb3))
+- Provide type for vanilla cookie consent options ([67d78ba](https://github.com/lmc-eu/cookie-consent-manager/commit/67d78ba))
+
+### Code Refactoring
+
+- Unify access to language variables ([4f28840](https://github.com/lmc-eu/cookie-consent-manager/commit/4f28840))
+
+### Dependencies
+
+- Update all dev dependencies ([17ba9ba](https://github.com/lmc-eu/cookie-consent-manager/commit/17ba9ba), [c5a0ba0](https://github.com/lmc-eu/cookie-consent-manager/commit/c5a0ba0), [c2f7ebc](https://github.com/lmc-eu/cookie-consent-manager/commit/c2f7ebc))
+- Update dependency @lmc-eu/spirit-design-tokens to ^0.7.0 ([ae8410b](https://github.com/lmc-eu/cookie-consent-manager/commit/ae8410b))
+
+### Documentation
+
+- **upgrade:** Fix typo ([7b645c2](https://github.com/lmc-eu/cookie-consent-manager/commit/7b645c2))
+- Use consent configuration in examples ([52ae52b](https://github.com/lmc-eu/cookie-consent-manager/commit/52ae52b))
+
+### Features
+
+- Allow overriding consent description intro [#CCM-63](https://jira.int.lmc.cz/browse/CCM-63) ([1f6c31a](https://github.com/lmc-eu/cookie-consent-manager/commit/1f6c31a))
+- Allow overriding default translation for consent modal title [#CCM-62](https://jira.int.lmc.cz/browse/CCM-62) ([32cd2ec](https://github.com/lmc-eu/cookie-consent-manager/commit/32cd2ec))
+- Force content to spread over the whole row ([90161f0](https://github.com/lmc-eu/cookie-consent-manager/commit/90161f0))
+- Link background color of disabled `Toggle` to corresponding design token ([841b320](https://github.com/lmc-eu/cookie-consent-manager/commit/841b320))
+- Split consent description in two paragraphs [#CCM-63](https://jira.int.lmc.cz/browse/CCM-63) ([ae2575f](https://github.com/lmc-eu/cookie-consent-manager/commit/ae2575f))
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/lmc-eu/cookie-consent-manager/compare/1.3.0...2.0.0) (2022-02-11)
 

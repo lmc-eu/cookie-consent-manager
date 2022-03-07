@@ -1670,6 +1670,7 @@ html.force--consent.show--consent body {
 }
 
 #cm.bar #c-inr-i {
+  flex-grow: 1;
   margin-right: 3em;
 }
 
@@ -1845,10 +1846,15 @@ html.force--consent.show--consent body {
   font-size: 1.8em;
   color: inherit;
   background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 #s-c-bn::before, #s-c-bn::after {
   width: 2.5px;
   background-color: currentcolor;
+}
+#s-c-bn:hover, #s-c-bn:active {
+  background-color: transparent;
 }
 
 #s-cnt .p {

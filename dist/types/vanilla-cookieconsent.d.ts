@@ -108,14 +108,14 @@ export declare namespace VanillaCookieConsent {
     }
     interface GuiSettingsModal {
         layout: GuiSettingsLayout;
-        position: GuiSettingsPosition;
+        position?: GuiSettingsPosition;
         transition?: Transition;
     }
     interface GuiOptions {
         consent_modal?: GuiConsentModal;
         settings_modal?: GuiSettingsModal;
     }
-    export interface Options {
+    export interface Options<Category> {
         autorun?: boolean;
         delay?: number;
         cookie_expiration?: number;
@@ -135,10 +135,10 @@ export declare namespace VanillaCookieConsent {
         remove_cookie_tables?: boolean;
         hide_from_bots?: boolean;
         gui_options?: GuiOptions;
-        onAccept?: () => void;
-        onChange?: () => void;
-        onFirstAction?: () => void;
-        languages?: Languages;
+        onAccept?: (cookie: Cookie<Category>) => void;
+        onChange?: (cookie: Cookie<Category>, changed_categories: Array<Category>) => void;
+        onFirstAction?: (user_preferences: UserPreferences<Category>, cookie: Cookie<Category>) => void;
+        languages?: Record<string, Languages>;
     }
     export {};
 }

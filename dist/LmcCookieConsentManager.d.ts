@@ -1,5 +1,6 @@
 import 'vanilla-cookieconsent';
-import { CookieConsentManager } from './types';
+import { CookieConsentCategory, CookieConsentManager, DisplayMode } from './types';
+import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
  * @param {CookieConsentManagerOptions} [args] - Options for cookie consent manager
@@ -15,6 +16,7 @@ import { CookieConsentManager } from './types';
  *   to be given to multiple companies.
  * @param {DisplayMode} [args.displayMode] - `force` to show consent in a centered modal box and to block page until
  *   user action. `soft` to show consent in a banner on the bottom of the page.
+ * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
@@ -22,3 +24,4 @@ import { CookieConsentManager } from './types';
  */
 declare const LmcCookieConsentManager: CookieConsentManager;
 export default LmcCookieConsentManager;
+export { CookieConsentCategory, DisplayMode, VanillaCookieConsent };

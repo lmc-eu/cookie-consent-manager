@@ -8,10 +8,14 @@ export declare type CategoriesChangeset = {
 export declare type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
 export declare type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
 export declare type OnChangeCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>, categories: CategoriesChangeset) => void;
-export declare enum DisplayMode {
+export declare const enum DisplayMode {
     FORCE = "force",
     SOFT = "soft"
 }
+export declare type TranslationOverride = {
+    consentTitle: string;
+    descriptionIntro: string;
+};
 export declare type CookieConsentManagerOptions = {
     defaultLang: string;
     autodetectLang: boolean;
@@ -21,6 +25,7 @@ export declare type CookieConsentManagerOptions = {
     onChange: OnChangeCallback;
     companyNames: string[];
     displayMode: DisplayMode;
-    config: VanillaCookieConsent.Options;
+    translationOverrides: Record<string, TranslationOverride>;
+    config: VanillaCookieConsent.Options<CookieConsentCategory>;
 };
 export declare type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;

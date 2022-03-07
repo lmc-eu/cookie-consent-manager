@@ -18,6 +18,10 @@
     }
 }
 
+#c-txt p:not(:last-child) {
+    margin-bottom: units.rem2em(tokens.$space-6);
+}
+
 #c-ttl,
 #s-ttl {
     margin-bottom: units.rem2em(tokens.$space-6, units.rem2em(tokens.$heading-small-desktop));

@@ -53,7 +53,7 @@
     // Toggle
     --lmcccm-p-toggle-bg-off: var(--lmcccm-toggle-bg-off, #{tokens.$action-unselected-default});
     --lmcccm-p-toggle-bg-on: var(--lmcccm-toggle-bg-on, #{tokens.$action-selected-default});
-    --lmcccm-p-toggle-bg-readonly: var(--lmcccm-toggle-bg-readonly, #{tokens.$gray-500});
+    --lmcccm-p-toggle-bg-readonly: var(--lmcccm-toggle-bg-readonly, #{tokens.$action-primary-disabled});
     --lmcccm-p-toggle-knob-bg: var(--lmcccm-toggle-knob-bg, #{tokens.$background-basic});
     --lmcccm-p-toggle-knob-icon-color: var(--lmcccm-toggle-knob-icon-color, #{tokens.$background-basic});
 
