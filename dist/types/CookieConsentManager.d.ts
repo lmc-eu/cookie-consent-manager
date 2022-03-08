@@ -13,8 +13,8 @@ export declare const enum DisplayMode {
     SOFT = "soft"
 }
 export declare type TranslationOverride = {
-    consentTitle: string;
-    descriptionIntro: string;
+    consentTitle?: string;
+    descriptionIntro?: string;
 };
 export declare type CookieConsentManagerOptions = {
     defaultLang: string;

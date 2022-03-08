@@ -1,3 +1,15 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.0...2.1.1) (2022-03-08)
+
+### Bug Fixes
+
+- Make all properties of TranslationOverride type optional ([2bb8bdd](https://github.com/lmc-eu/cookie-consent-manager/commit/2bb8bdd))
+
+### Dependencies
+
+- Update all dev dependencies ([14c942f](https://github.com/lmc-eu/cookie-consent-manager/commit/14c942f))
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.0.0...2.1.0) (2022-03-07)
 
