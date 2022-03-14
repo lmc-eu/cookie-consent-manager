@@ -83,8 +83,8 @@ $_consent-modal-button-selector: '#cm .c-bn' !default;
     #cm .c-bn.c_link,
     #c-bns.swap .c_link:first-child,
     #c-bns:not(.swap) .c_link:last-child {
-        padding-right: units.rem2em(tokens.$space-4);
-        padding-left: units.rem2em(tokens.$space-4);
+        padding-right: units.convert2em(tokens.$space-400);
+        padding-left: units.convert2em(tokens.$space-400);
         font-weight: inherit;
         font-size: inherit;
         text-decoration: var(--lmcccm-p-link-text-decoration);
