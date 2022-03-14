@@ -4,13 +4,13 @@
 
 #cm {
     max-width: settings.$consent-box-max-width;
-    padding: units.rem2em(tokens.$space-8);
-    box-shadow: tokens.$shadow-1;
+    padding: units.convert2em(tokens.$space-800);
+    box-shadow: tokens.$shadow-100;
 }
 
 #cm.box,
 #cm.bar {
-    padding: units.rem2em(tokens.$space-9);
+    padding: units.convert2em(tokens.$space-900);
 }
 
 #cm.bar #c-inr {
@@ -21,7 +21,7 @@
 
 #cm.bar #c-inr-i {
     flex-grow: 1;
-    margin-right: units.rem2em(tokens.$space-10);
+    margin-right: units.convert2em(tokens.$space-1000);
 }
 
 #cm.bar #c-bns {
@@ -43,11 +43,11 @@
 
 #cm.cloud {
     max-width: settings.$consent-cloud-max-width;
-    padding: units.rem2em(tokens.$space-9) units.rem2em(tokens.$space-10);
+    padding: units.convert2em(tokens.$space-900) units.convert2em(tokens.$space-1000);
 }
 
 .cc_div #c-bns {
-    margin-top: units.rem2em(tokens.$space-8);
+    margin-top: units.convert2em(tokens.$space-800);
 }
 
 @media screen and (max-width: settings.$breakpoint-desktop-down) {
@@ -58,7 +58,7 @@
 
     #cm.bar #c-inr-i {
         margin-right: 0;
-        margin-bottom: units.rem2em(tokens.$space-8);
+        margin-bottom: units.convert2em(tokens.$space-800);
     }
 
     #cm.bar #c-bns {
@@ -72,15 +72,15 @@
     #cm.left,
     #cm.right {
         // stylelint-disable-next-line declaration-no-important -- Override original styles.
-        padding: units.rem2em(tokens.$space-7) !important;
+        padding: units.convert2em(tokens.$space-700) !important;
     }
 
     .cc_div #c-bns {
-        margin-top: units.rem2em(tokens.$space-7);
+        margin-top: units.convert2em(tokens.$space-700);
     }
 
     #cm.bar #c-inr-i {
-        margin-bottom: units.rem2em(tokens.$space-7);
+        margin-bottom: units.convert2em(tokens.$space-700);
     }
 
     #cm.bar #c-bns {
