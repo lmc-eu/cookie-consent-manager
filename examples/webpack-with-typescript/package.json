@@ -1,0 +1,18 @@
+{
+  "name": "@lmc-eu/cookie-consent-manager-example-typescript",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@lmc-eu/cookie-consent-manager": "../../dist"
+  },
+  "scripts": {
+    "build": "webpack build --config ./webpack.config.js",
+    "types": "tsc -p ./tsconfig.json"
+  }
+}
