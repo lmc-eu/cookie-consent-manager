@@ -10,13 +10,13 @@ import { config as configSk } from './languages/sk';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
 import {
-  CookieConsentCategory,
   CookieConsentManager,
   CookieConsentManagerOptions,
-  DisplayMode,
   OnAcceptCallback,
   OnChangeCallback,
+  CookieConsentCategoryValues,
 } from './types';
+import { CookieConsentCategory, DisplayMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
@@ -55,7 +55,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
+ * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>} Instance of the underlying CookieConsent component.
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
@@ -91,8 +91,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   };
 
   const onFirstAcceptHandler = (
-    userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategory>,
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
+    userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategoryValues>,
+    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
   ) => {
     const cookieData = cookieConsent.get('data');
     if (cookieData === null || !('uid' in cookieData)) {
@@ -116,8 +116,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   };
 
   const onChangeHandler = (
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>,
-    changedCategories: Array<CookieConsentCategory>,
+    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
+    changedCategories: Array<CookieConsentCategoryValues>,
   ) => {
     const userPreferences = cookieConsent.getUserPreferences();
     const categories = {
@@ -135,7 +135,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange(cookieConsent, categories);
   };
 
-  const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategory> = {
+  const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategoryValues> = {
     auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
@@ -178,7 +178,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategory>) {
+function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',
