@@ -1,23 +1,24 @@
-import { CookieConsentCategory } from './CookieConsentCategory';
+import { CookieConsentCategory, DisplayMode } from '../constants';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
 
+export type Values<T> = T[keyof T];
+
+export type CookieConsentCategoryValues = Values<typeof CookieConsentCategory>;
+
 export type CategoriesChangeset = {
-  accepted: CookieConsentCategory[];
-  rejected: CookieConsentCategory[];
-  changed: CookieConsentCategory[];
+  accepted: CookieConsentCategoryValues[];
+  rejected: CookieConsentCategoryValues[];
+  changed: CookieConsentCategoryValues[];
 };
 
-export type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
-export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>) => void;
+export type OnFirstAcceptCallback = (
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
+) => void;
+export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
 export type OnChangeCallback = (
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
   categories: CategoriesChangeset,
 ) => void;
-
-export const enum DisplayMode {
-  FORCE = 'force',
-  SOFT = 'soft',
-}
 
 export type TranslationOverride = {
   consentTitle?: string;
@@ -32,12 +33,12 @@ export type CookieConsentManagerOptions = {
   onAccept: OnAcceptCallback;
   onChange: OnChangeCallback;
   companyNames: string[];
-  displayMode: DisplayMode;
+  displayMode: Values<typeof DisplayMode>;
   translationOverrides: Record<string, TranslationOverride>;
-  config: VanillaCookieConsent.Options<CookieConsentCategory>;
+  config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
 };
 
 export type CookieConsentManager = (
   serviceName: string,
   args?: Partial<CookieConsentManagerOptions>,
-) => VanillaCookieConsent.CookieConsent<CookieConsentCategory>;
+) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;

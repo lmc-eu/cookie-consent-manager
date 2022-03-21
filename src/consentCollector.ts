@@ -1,4 +1,4 @@
-import { CookieConsentCategory } from './types';
+import { CookieConsentCategoryValues } from './types';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /**
@@ -6,14 +6,14 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
  */
 function submitConsent(
   consentCollectorApiUrl: string,
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>,
+  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
 ): void {
   const payload = buildPayload(cookieConsent);
 
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategory>): Object {
+function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>): Object {
   const cookieData = cookieConsent.get('data');
   const userPreferences = cookieConsent.getUserPreferences();
   const daysOfAcceptation =

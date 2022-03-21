@@ -1,5 +1,6 @@
 import { addSeparators, assembleDescriptionIntro } from '../utils';
-import { ExtraMessages, CookieConsentCategory } from '../types';
+import { ExtraMessages } from '../types';
+import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
@@ -7,7 +8,7 @@ const extra = {
 };
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
 export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
