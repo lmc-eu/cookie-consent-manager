@@ -1,5 +1,6 @@
 import 'vanilla-cookieconsent';
-import { CookieConsentCategory, CookieConsentManager, DisplayMode } from './types';
+import { CookieConsentManager } from './types';
+import { CookieConsentCategory, DisplayMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
@@ -19,7 +20,7 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategory>} Instance of the underlying CookieConsent component.
+ * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>} Instance of the underlying CookieConsent component.
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 declare const LmcCookieConsentManager: CookieConsentManager;

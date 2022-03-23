@@ -1851,7 +1851,7 @@ html.force--consent.show--consent body {
 }
 #s-c-bn::before, #s-c-bn::after {
   width: 2.5px;
-  background-color: currentcolor;
+  background-color: currentColor;
 }
 #s-c-bn:hover, #s-c-bn:active {
   background-color: transparent;

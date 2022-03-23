@@ -677,6 +677,21 @@
     return descriptionIntro !== "" ? `<p>${descriptionIntro}</p>` : "";
   };
 
+  // src/constants/CookieConsentCategory.ts
+  var CookieConsentCategory = {
+    NECESSARY: "necessary",
+    AD: "ad",
+    ANALYTICS: "analytics",
+    FUNCTIONALITY: "functionality",
+    PERSONALIZATION: "personalization"
+  };
+
+  // src/constants/DisplayMode.ts
+  var DisplayMode = {
+    FORCE: "force",
+    SOFT: "soft"
+  };
+
   // src/types/vanilla-cookieconsent.ts
   var VanillaCookieConsent;
   ((VanillaCookieConsent2) => {
@@ -779,7 +794,7 @@
             description: `Tyto Cookies jsou pro spr\xE1vn\xE9 fungov\xE1n\xED na\u0161eho webu nezbytn\xE9, proto nen\xED mo\u017En\xE9 je vypnout.
           Bez nich by na\xA0na\u0161ich str\xE1nk\xE1ch nap\u0159.\xA0ne\u0161el zobrazit \u017E\xE1dn\xFD obsah nebo by nefungovalo p\u0159ihl\xE1\u0161en\xED.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -789,7 +804,7 @@
             description: `Pomoc\xED nich sledujeme, kolik lid\xED n\xE1\u0161 web nav\u0161t\u011Bvuje a\xA0jak ho pou\u017E\xEDvaj\xED.
           D\xEDky tomu m\u016F\u017Eeme str\xE1nky a\xA0dal\u0161\xED slu\u017Eby neust\xE1le vylep\u0161ovat.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -799,7 +814,7 @@
             description: `D\xEDky t\u011Bmto Cookies jsou na\u0161e str\xE1nky je\u0161t\u011B v\xFDkonn\u011Bj\u0161\xED a\xA0funguj\xED l\xE9pe.
           Nap\u0159\xEDklad n\xE1m umo\u017E\u0148uj\xED pou\u017E\xEDvat chat, abychom na va\u0161e ot\xE1zky mohli odpov\xEDdat rychle a\xA0jednodu\u0161e.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -809,7 +824,7 @@
             description: `S\xA0t\u011Bmito Cookies m\u016F\u017Eeme m\u011B\u0159it, jak efektivn\xED je na\u0161e reklama a\xA0c\xEDlen\xE9 nab\xEDdky na\u0161ich slu\u017Eeb.
           Marketingov\xE9 Cookies n\xE1m umo\u017En\xED v\xE1s na Internetu upozornit na novinky, kter\xE9 v\xE1s m\u016F\u017Eou zaj\xEDmat.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -819,7 +834,7 @@
             description: `Na\u0161e slu\u017Eby funguj\xED l\xE9pe, kdy\u017E je m\u016F\u017Eeme p\u0159izp\u016Fsobit na\xA0m\xEDru konkr\xE9tn\xEDmu u\u017Eivateli.
           Povolen\xEDm Personaliza\u010Dn\xEDch cookies zv\xFD\u0161\xEDte \u0161anci, \u017Ee najdete pr\xE1v\u011B takov\xFD obsah, jak\xFD hled\xE1te.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -874,7 +889,7 @@
             title: "Technisch notwendige Cookies",
             description: `Diese\xA0Cookies sind f\xFCr das reibungslose Funktionieren unserer Website unerl\xE4sslich und k\xF6nnen daher nicht deaktiviert werden. Ohne\xA0sie k\xF6nnten z.\xA0B.\xA0keine Inhalte auf unserer Seite angezeigt werden oder das Login w\xFCrde nicht funktionieren.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -883,7 +898,7 @@
             title: "Analytische Cookies",
             description: `Wir\xA0verwenden diese Cookies, um\xA0zu\xA0verfolgen, wie viele Personen unsere Website besuchen und wie sie sie\xA0nutzen. Auf\xA0diese Weise k\xF6nnen wir die Website und andere Dienste kontinuierlich verbessern.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -892,7 +907,7 @@
             title: "Funktionale Cookies",
             description: `Diese\xA0Cookies machen unsere Website leistungsf\xE4higer und funktionieren besser. Sie\xA0erm\xF6glichen uns zum\xA0Beispiel die\xA0Nutzung des\xA0Chats, damit wir Ihre Fragen schnell und einfach beantworten k\xF6nnen.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -901,7 +916,7 @@
             title: "Marketing Cookies",
             description: `Mit\xA0diesen Cookies k\xF6nnen wir messen, wie effektiv unsere Werbung und gezielte Angebote\xA0unserer Dienste sind. Marketing Cookies erm\xF6glichen es uns, Sie online auf\xA0Nachrichten hinzuweisen, die f\xFCr Sie von\xA0Interesse sein k\xF6nnten.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -910,7 +925,7 @@
             title: "Personalisierung Cookies",
             description: `Unsere\xA0Dienste funktionieren besser, wenn wir sie auf\xA0den einzelnen Nutzer zuschneiden k\xF6nnen. Durch die Aktivierung von\xA0Personalisierungs-Cookies erh\xF6hen Sie die Wahrscheinlichkeit, dass\xA0Sie genau die Inhalte finden, nach denen Sie\xA0suchen.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -963,7 +978,7 @@
             title: "Technically necessary cookies",
             description: `These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g.\xA0to display any content or to\xA0log\xA0in on our website.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -972,7 +987,7 @@
             title: "Analytical cookies",
             description: `These help us monitor how many people visit our website and how they use\xA0it. This\xA0information then enables us to\xA0continuously improve the website and other services.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -981,7 +996,7 @@
             title: "Functional cookies",
             description: `Our website is even more efficient and works better thanks to\xA0these cookies. For\xA0example, they enable us to use the chat service and answer your questions quickly and easily.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -990,7 +1005,7 @@
             title: "Marketing cookies",
             description: `These cookies help us to\xA0measure the effectiveness of\xA0our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -999,7 +1014,7 @@
             title: "Personalisation cookies",
             description: `Our services work better if\xA0we can tailor them to specific users. By\xA0allowing personalisation cookies you increase your chances of\xA0finding the content you want.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1052,7 +1067,7 @@
             title: "Technikailag sz\xFCks\xE9ges cookie-k",
             description: `Ezek a\xA0cookie-k weboldalunk megfelel\u0151 m\u0171k\xF6d\xE9s\xE9hez sz\xFCks\xE9gesek, ez\xE9rt kikapcsol\xE1suk nem lehets\xE9ges. N\xE9lk\xFCl\xFCk p\xE9ld\xE1ul semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem m\u0171k\xF6dne a\xA0bejelentkez\xE9s.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -1061,7 +1076,7 @@
             title: "Analitikai cookie-k",
             description: `Seg\xEDts\xE9g\xFCkkel nyomon k\xF6vetj\xFCk, hogy h\xE1nyan l\xE1togatj\xE1k oldalunkat, \xE9s\xA0hogyan haszn\xE1lj\xE1k. Ennek k\xF6sz\xF6nhet\u0151en tehetj\xFCk meg webhely\xFCnk \xE9s egy\xE9b szolg\xE1ltat\xE1saink folyamatos fejleszt\xE9s\xE9t.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -1070,7 +1085,7 @@
             title: "Funkcion\xE1lis cookie-k",
             description: `Ezeknek a\xA0cookie-knak k\xF6sz\xF6nhet\u0151en weboldalunk m\xE9g hat\xE9konyabban \xE9s\xA0jobban m\u0171k\xF6dik. P\xE9ld\xE1ul lehet\u0151v\xE9 teszik sz\xE1munkra a\xA0chat haszn\xE1lat\xE1t, hogy gyorsan \xE9s\xA0egyszer\u0171en v\xE1laszolhassunk k\xE9rd\xE9seire.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -1079,7 +1094,7 @@
             title: "Marketing cookie-k",
             description: `Ezekkel a\xA0cookie-kkel m\xE9rhetj\xFCk le, mennyire hat\xE9konyak a\xA0hirdet\xE9seink \xE9s\xA0szolg\xE1ltat\xE1saink c\xE9lzott aj\xE1nlatai. A\xA0marketing cookie-k lehet\u0151v\xE9 teszik, hogy figyelmeztess\xFCk az interneten megjelen\u0151 olyan h\xEDrekre, amelyek \xE9rdekesek lehetnek az\xA0\xD6n sz\xE1m\xE1ra.m`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -1088,7 +1103,7 @@
             title: "Szem\xE9lyre szabott cookie-k",
             description: `Szolg\xE1ltat\xE1saink jobban m\u0171k\xF6dnek, ha egy adott felhaszn\xE1l\xF3ra tudjuk szabni \u0151ket. A\xA0szem\xE9lyre szabott cookie-k enged\xE9lyez\xE9s\xE9vel n\xF6veli annak es\xE9ly\xE9t, hogy \xE9ppen a\xA0keresett tartalmat tal\xE1lja meg.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1146,7 +1161,7 @@
             title: "Technicznie niezb\u0119dne pliki cookies",
             description: `Te\xA0pliki cookies s\u0105 niezb\u0119dne do prawid\u0142owego funkcjonowania naszej strony internetowej, dlatego nie ma mo\u017Cliwo\u015Bci ich wy\u0142\u0105czenia. Bez nich na naszej stronie na\xA0przyk\u0142ad nie mo\u017Cna by\u0142oby wy\u015Bwietli\u0107 \u017Cadnej tre\u015Bci lub nie dzia\u0142a\u0142oby logowanie.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -1155,7 +1170,7 @@
             title: "Analityczne pliki cookies",
             description: `U\u017Cywamy ich do \u015Bledzenia, ile os\xF3b odwiedza nasz\u0105 stron\u0119 internetow\u0105 i\xA0jak z\xA0niej korzysta. Dzi\u0119ki temu mo\u017Cemy stale ulepsza\u0107 stron\u0119 i\xA0inne us\u0142ugi.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -1164,7 +1179,7 @@
             title: "Funkcjonalne pliki cookies",
             description: `Te\xA0pliki cookies sprawiaj\u0105, \u017Ce nasza strona internetowa jest jeszcze bardziej wydajna i\xA0dzia\u0142a lepiej. Pozwalaj\u0105 nam na\xA0przyk\u0142ad korzysta\u0107 z\xA0czatu, dzi\u0119ki temu mo\u017Cemy szybko i\xA0\u0142atwo odpowiada\u0107 na\xA0Twoje pytania.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -1173,7 +1188,7 @@
             title: "Marketingowe pliki cookies",
             description: `Za\xA0pomoc\u0105 tych plik\xF3w cookies mo\u017Cemy mierzy\u0107, jak skuteczne s\u0105 nasze reklamy i\xA0ukierunkowane oferty naszych us\u0142ug. Marketingowe pliki cookies pozwalaj\u0105 nam powiadamia\u0107 Ci\u0119 w\xA0Internecie o\xA0nowo\u015Bciach, kt\xF3re mog\u0105 Ci\u0119\xA0zainteresowa\u0107.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -1182,7 +1197,7 @@
             title: "Personalizacyjne pliki cookies",
             description: `Nasze us\u0142ugi dzia\u0142aj\u0105 lepiej, gdy mo\u017Cemy je dostosowa\u0107 do\xA0konkretnego u\u017Cytkownika. W\u0142\u0105czeniem personalizacyjnych plik\xF3w cookies zwi\u0119kszasz szans\u0119 na\xA0znalezienie w\u0142a\u015Bnie tych tre\u015Bci, kt\xF3rych poszukujesz.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1240,7 +1255,7 @@
             title: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
             description: `\u042D\u0442\u0438 \u0444\u0430\u0439\u043B\u044B cookie \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B \u0434\u043B\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0439 \u0440\u0430\u0431\u043E\u0442\u044B \u043D\u0430\u0448\u0435\u0433\u043E \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0430, \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u0438\u0445 \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u044C. \u0411\u0435\u0437 \u043D\u0438\u0445, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u043D\u0430 \u043D\u0430\u0448\u0435\u043C \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0435 \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u0431\u044B \u0438\u0437\u043E\u0431\u0440\u0430\u0437\u0438\u0442\u044C \u043A\u0430\u043A\u043E\u0435-\u043B\u0438\u0431\u043E \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 \u0438\u043B\u0438 \u0431\u044B\u043B\u043E \u0431\u044B \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0432\u043E\u0439\u0442\u0438 \u0432\xA0\u0441\u0438\u0441\u0442\u0435\u043C\u0443.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -1249,7 +1264,7 @@
             title: "\u0410\u043D\u0430\u043B\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
             description: `\u041C\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C \u0438\u0445, \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u0442\u044C, \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043B\u044E\u0434\u0435\u0439 \u043F\u043E\u0441\u0435\u0449\u0430\u044E\u0442 \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0438\xA0\u043A\u0430\u043A \u043E\u043D\u0438 \u0435\u0433\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442. \u042D\u0442\u043E \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442 \u043D\u0430\u043C \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u043E \u0443\u043B\u0443\u0447\u0448\u0430\u0442\u044C \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0435 \u0443\u0441\u043B\u0443\u0433\u0438.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -1258,7 +1273,7 @@
             title: "\u0424\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
             description: `\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u044D\u0442\u0438\u043C \u0444\u0430\u0439\u043B\u0430\u043C cookie \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0441\u0442\u0430\u043B \u0435\u0449\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0438\u0432\u043D\u0435\u0435 \u0438\xA0\u0443\u043B\u0443\u0447\u0448\u0438\u043B \u0440\u0430\u0431\u043E\u0442\u0443. \u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u043E\u043D\u0438 \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442 \u043D\u0430\u043C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0447\u0430\u0442, \u0447\u0442\u043E\u0431\u044B \u043C\u044B \u043C\u043E\u0433\u043B\u0438 \u0431\u044B\u0441\u0442\u0440\u043E \u0438 \u043F\u0440\u043E\u0441\u0442\u043E \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u0432\u043E\u043F\u0440\u043E\u0441\u044B.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -1267,7 +1282,7 @@
             title: "\u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
             description: `\u0421 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u044D\u0442\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u043C\u044B \u043C\u043E\u0436\u0435\u043C \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u044C, \u043D\u0430\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u044B \u043D\u0430\u0448\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0430 \u0438\xA0\u0446\u0435\u043B\u0435\u0432\u044B\u0435 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u0443\u0441\u043B\u0443\u0433. \u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442 \u043D\u0430\u043C \u043F\u043E \u0418\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0443 \u0438\u043D\u0444\u043E\u0440\u043C\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0412\u0430\u0441 \u043E\xA0\u043D\u043E\u0432\u043E\u0441\u0442\u044F\u0445, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043C\u043E\u0433\u0443\u0442 \u0432\u0430\u0441 \u0437\u0430\u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043E\u0432\u0430\u0442\u044C.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -1276,7 +1291,7 @@
             title: "\u0424\u0430\u0439\u043B\u044B cookie \u0434\u043B\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438",
             description: `\u041D\u0430\u0448\u0438 \u0443\u0441\u043B\u0443\u0433\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043B\u0443\u0447\u0448\u0435, \u043A\u043E\u0433\u0434\u0430 \u043C\u044B \u043C\u043E\u0436\u0435\u043C \u043F\u0440\u0438\u0441\u043F\u043E\u0441\u043E\u0431\u0438\u0442\u044C \u0438\u0445 \u043A\xA0\u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u043E\u043C\u0443 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044E. \u0412\u043A\u043B\u044E\u0447\u0438\u0432 \u0444\u0430\u0439\u043B\u044B cookie \u0434\u043B\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438, \u0432\u044B \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u0435 \u0432\u0435\u0440\u043E\u044F\u0442\u043D\u043E\u0441\u0442\u044C \u0442\u043E\u0433\u043E, \u0447\u0442\u043E \u043D\u0430\u0439\u0434\u0435\u0442\u0435 \u0438\u043C\u0435\u043D\u043D\u043E \u0442\u043E \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0438\u0449\u0435\u0442\u0435.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1333,7 +1348,7 @@
             title: "Technicky nevyhnutn\xE9 cookies",
             description: `Tieto cookies s\xFA pre\xA0spr\xE1vne fungovanie n\xE1\u0161ho webu nevyhnutn\xE9, preto nie je mo\u017En\xE9 ich vypn\xFA\u0165. Bez nich by sa na\xA0na\u0161ich str\xE1nkach napr.\xA0nedal zobrazi\u0165 \u017Eiadny obsah alebo by\xA0nefungovalo prihl\xE1senie.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -1342,7 +1357,7 @@
             title: "Analytick\xE9 cookies",
             description: `Pomocou nich sledujeme, ko\u013Eko \u013Eud\xED n\xE1\u0161 web nav\u0161tevuje a\xA0ako ho pou\u017E\xEDvaj\xFA. V\u010Faka tomu m\xF4\u017Eeme str\xE1nky a\xA0\u010Fal\u0161ie slu\u017Eby neust\xE1le vylep\u0161ova\u0165.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -1351,7 +1366,7 @@
             title: "Funk\u010Dn\xE9 cookies",
             description: `V\u010Faka t\xFDmto cookies s\xFA na\u0161e str\xE1nky e\u0161te v\xFDkonnej\u0161ie a\xA0funguj\xFA lep\u0161ie. Napr\xEDklad n\xE1m umo\u017E\u0148uj\xFA pou\u017E\xEDva\u0165 chat, aby sme na va\u0161e ot\xE1zky mohli odpoveda\u0165 r\xFDchlo a\xA0jednoducho.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -1360,7 +1375,7 @@
             title: "Marketingov\xE9 cookies",
             description: `S\xA0t\xFDmito cookies m\xF4\u017Eeme mera\u0165, ak\xE1 efekt\xEDvna je na\u0161a reklama a\xA0cielen\xE9 ponuky na\u0161ich slu\u017Eieb. Marketingov\xE9 cookies n\xE1m umo\u017Enia v\xE1s na\xA0internete upozorni\u0165 na novinky, ktor\xE9 v\xE1s m\xF4\u017Eu zauj\xEDma\u0165.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -1369,7 +1384,7 @@
             title: "Personaliza\u010Dn\xE9 cookies",
             description: `Na\u0161e slu\u017Eby funguj\xFA lep\u0161ie, ke\u010F ich m\xF4\u017Eeme prisp\xF4sobi\u0165 na\xA0mieru konkr\xE9tnemu pou\u017E\xEDvate\u013Eovi. Povolen\xEDm personaliza\u010Dn\xFDch cookies zv\xFD\u0161ite \u0161ancu, \u017Ee\xA0n\xE1jdete pr\xE1ve tak\xFD obsah, ak\xFD\xA0h\u013Ead\xE1te.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1426,7 +1441,7 @@
             title: "\u0422\u0435\u0445\u043D\u0456\u0447\u043D\u043E \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
             description: `\u0426\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0434\u043B\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0433\u043E \u0444\u0443\u043D\u043A\u0446\u0456\u043E\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0443, \u0442\u043E\u043C\u0443 \u0432\u0438\u043C\u043A\u043D\u0443\u0442\u0438 \u0457\u0445 \u043D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E. \u0411\u0435\u0437 \u043D\u0438\u0445 \u0431\u0443\u043B\u043E \u0431 \u043D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0430\u0442\u0438 \u043D\u0430 \u043D\u0430\u0448\u043E\u043C\u0443 \u0441\u0430\u0439\u0442\u0456 \u0439\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442, \u0430\u0431\u043E \u043D\u0435 \u043F\u0440\u0430\u0446\u044E\u0432\u0430\u0432 \u0431\u0438 \u0432\u0445\u0456\u0434 \u043D\u0430 \u0441\u0430\u0439\u0442.`,
             toggle: {
-              value: "necessary" /* NECESSARY */,
+              value: CookieConsentCategory.NECESSARY,
               enabled: true,
               readonly: true
             }
@@ -1435,7 +1450,7 @@
             title: "\u0410\u043D\u0430\u043B\u0456\u0442\u0438\u0447\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
             description: `\u041C\u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u043C\u043E \u0457\u0445 \u0434\u043B\u044F \u0432\u0456\u0434\u0441\u0442\u0435\u0436\u0435\u043D\u043D\u044F \u0442\u043E\u0433\u043E, \u0441\u043A\u0456\u043B\u044C\u043A\u0438 \u043B\u044E\u0434\u0435\u0439 \u0432\u0456\u0434\u0432\u0456\u0434\u0443\u044E\u0442\u044C \u043D\u0430\u0448 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0456\xA0\u044F\u043A \u0432\u043E\u043D\u0438 \u043D\u0438\u043C \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u044E\u0442\u044C\u0441\u044F. \u0417\u0430\u0432\u0434\u044F\u043A\u0438 \u0446\u044C\u043E\u043C\u0443 \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u043F\u043E\u0441\u0442\u0456\u0439\u043D\u043E \u043F\u043E\u043A\u0440\u0430\u0449\u0443\u0432\u0430\u0442\u0438 \u0441\u0430\u0439\u0442 \u0442\u0430 \u0456\u043D\u0448\u0456 \u0441\u0435\u0440\u0432\u0456\u0441\u0438.`,
             toggle: {
-              value: "analytics" /* ANALYTICS */,
+              value: CookieConsentCategory.ANALYTICS,
               enabled: false,
               readonly: false
             }
@@ -1444,7 +1459,7 @@
             title: "\u0424\u0443\u043D\u043A\u0446\u0456\u043E\u043D\u0430\u043B\u044C\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
             description: `\u0426\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u0440\u043E\u0431\u043B\u044F\u0442\u044C \u043D\u0430\u0448 \u0441\u0430\u0439\u0442 \u0449\u0435 \u0431\u0456\u043B\u044C\u0448 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0438\u043C \u0456\xA0\u043F\u043E\u043A\u0440\u0430\u0449\u0443\u044E\u0442\u044C \u0439\u043E\u0433\u043E \u0440\u043E\u0431\u043E\u0442\u0443. \u041D\u0430\u043F\u0440\u0438\u043A\u043B\u0430\u0434, \u0432\u043E\u043D\u0438 \u0434\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442\u044C \u043D\u0430\u043C \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0432\u0430\u0442\u0438 \u0447\u0430\u0442, \u0449\u043E\u0431 \u0448\u0432\u0438\u0434\u043A\u043E \u0456\xA0\u043B\u0435\u0433\u043A\u043E \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u0430\u0442\u0438 \u043D\u0430 \u0432\u0430\u0448\u0456 \u0437\u0430\u043F\u0438\u0442\u0430\u043D\u043D\u044F.`,
             toggle: {
-              value: "functionality" /* FUNCTIONALITY */,
+              value: CookieConsentCategory.FUNCTIONALITY,
               enabled: false,
               readonly: false
             }
@@ -1453,7 +1468,7 @@
             title: "\u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
             description: `\u0417\u0430 \u0434\u043E\u043F\u043E\u043C\u043E\u0433\u043E\u044E \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u043E\u0446\u0456\u043D\u0438\u0442\u0438, \u043D\u0430\u0441\u043A\u0456\u043B\u044C\u043A\u0438 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0430 \u043D\u0430\u0448\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0430 \u0456\xA0\u0446\u0456\u043B\u044C\u043E\u0432\u0456 \u043F\u0440\u043E\u043F\u043E\u0437\u0438\u0446\u0456\u0457 \u043D\u0430\u0448\u0438\u0445 \u043F\u043E\u0441\u043B\u0443\u0433. \u041C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433\u043E\u0432\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies \u0434\u043E\u0437\u0432\u043E\u043B\u044F\u044E\u0442\u044C \u043D\u0430\u043C \u0456\u043D\u0444\u043E\u0440\u043C\u0443\u0432\u0430\u0442\u0438 \u0412\u0430\u0441 \u0432\xA0\u0406\u043D\u0442\u0435\u0440\u043D\u0435\u0442\u0456 \u043F\u0440\u043E \u043D\u043E\u0432\u0438\u043D\u0438, \u044F\u043A\u0456 \u043C\u043E\u0436\u0443\u0442\u044C \u0432\u0430\u0441 \u0437\u0430\u0446\u0456\u043A\u0430\u0432\u0438\u0442\u0438.`,
             toggle: {
-              value: "ad" /* AD */,
+              value: CookieConsentCategory.AD,
               enabled: false,
               readonly: false
             }
@@ -1462,7 +1477,7 @@
             title: "\u041F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
             description: `\u041D\u0430\u0448\u0456 \u0441\u0435\u0440\u0432\u0456\u0441\u0438 \u043F\u0440\u0430\u0446\u044E\u044E\u0442\u044C \u043A\u0440\u0430\u0449\u0435, \u043A\u043E\u043B\u0438 \u043C\u0438 \u043C\u043E\u0436\u0435\u043C\u043E \u0430\u0434\u0430\u043F\u0442\u0443\u0432\u0430\u0442\u0438 \u0457\u0445 \u0434\u043E \u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u043E\u0433\u043E \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447\u0430. \u0414\u043E\u0437\u0432\u043E\u043B\u0438\u0432\u0448\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies, \u0432\u0438 \u0437\u0431\u0456\u043B\u044C\u0448\u0443\u0454\u0442\u0435 \u0439\u043C\u043E\u0432\u0456\u0440\u043D\u0456\u0441\u0442\u044C \u0442\u043E\u0433\u043E, \u0449\u043E \u0437\u043D\u0430\u0439\u0434\u0435\u0442\u0435 \u043F\u043E\u0442\u0440\u0456\u0431\u043D\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.`,
             toggle: {
-              value: "personalization" /* PERSONALIZATION */,
+              value: CookieConsentCategory.PERSONALIZATION,
               enabled: false,
               readonly: false
             }
@@ -1523,7 +1538,7 @@
     onAccept: noopAcceptCallback,
     onChange: noopChangeCallback,
     companyNames: ["LMC"],
-    displayMode: "force" /* FORCE */,
+    displayMode: DisplayMode.FORCE,
     translationOverrides: {},
     config: {}
   };
@@ -1594,14 +1609,14 @@
       cookie_name: cookieName,
       current_lang: defaultLang,
       delay: 0,
-      force_consent: displayMode == "force" /* FORCE */,
+      force_consent: displayMode == DisplayMode.FORCE,
       hide_from_bots: true,
       page_scripts: true,
       use_rfc_cookie: true,
       gui_options: {
         consent_modal: {
-          layout: displayMode == "force" /* FORCE */ ? VanillaCookieConsent.GuiConsentLayout.BOX : VanillaCookieConsent.GuiConsentLayout.BAR,
-          position: displayMode == "force" /* FORCE */ ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
+          layout: displayMode == DisplayMode.FORCE ? VanillaCookieConsent.GuiConsentLayout.BOX : VanillaCookieConsent.GuiConsentLayout.BAR,
+          position: displayMode == DisplayMode.FORCE ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
           transition: VanillaCookieConsent.Transition.SLIDE,
           swap_buttons: true
         },
@@ -1622,11 +1637,11 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "CookieConsent-update",
-      "CookieConsent.necessary": cookie.level.includes("necessary" /* NECESSARY */),
-      "CookieConsent.analytics": cookie.level.includes("analytics" /* ANALYTICS */),
-      "CookieConsent.ad": cookie.level.includes("ad" /* AD */),
-      "CookieConsent.functionality": cookie.level.includes("functionality" /* FUNCTIONALITY */),
-      "CookieConsent.personalization": cookie.level.includes("personalization" /* PERSONALIZATION */),
+      "CookieConsent.necessary": cookie.level.includes(CookieConsentCategory.NECESSARY),
+      "CookieConsent.analytics": cookie.level.includes(CookieConsentCategory.ANALYTICS),
+      "CookieConsent.ad": cookie.level.includes(CookieConsentCategory.AD),
+      "CookieConsent.functionality": cookie.level.includes(CookieConsentCategory.FUNCTIONALITY),
+      "CookieConsent.personalization": cookie.level.includes(CookieConsentCategory.PERSONALIZATION),
       "CookieConsent.revision": cookie.revision
     });
   }

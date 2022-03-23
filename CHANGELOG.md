@@ -1,3 +1,28 @@
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.1...2.1.2) (2022-03-23)
+
+### Bug Fixes
+
+- Do not export const enums when using `isolatedModules` ([6992c94](https://github.com/lmc-eu/cookie-consent-manager/commit/6992c94))
+
+### Chores
+
+- Introduce action for test builds ([b5bd866](https://github.com/lmc-eu/cookie-consent-manager/commit/b5bd866))
+
+### Dependencies
+
+- Update all dev dependencies ([c85c75f](https://github.com/lmc-eu/cookie-consent-manager/commit/c85c75f))
+- Update all dev dependencies ([fea704e](https://github.com/lmc-eu/cookie-consent-manager/commit/fea704e))
+
+### Documentation
+
+- Using this library as typescript module ([02cdd2c](https://github.com/lmc-eu/cookie-consent-manager/commit/02cdd2c))
+
+### Styles
+
+- Switch from `currentcolor` to `currentColor` ([72dd624](https://github.com/lmc-eu/cookie-consent-manager/commit/72dd624))
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.0...2.1.1) (2022-03-08)
 
