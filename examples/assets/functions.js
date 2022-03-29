@@ -18,7 +18,7 @@ function toggleLanguage() {
 }
 
 /**
- * @param {Object} cookieConsent
+ * @param {object} cookieConsent
  * @returns {void}
  */
 function updateAllowedCategories(cookieConsent) {
