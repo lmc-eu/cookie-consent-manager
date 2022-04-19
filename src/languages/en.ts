@@ -1,17 +1,21 @@
-import { addSeparators, assembleDescriptionIntro } from '../utils';
-import { ExtraMessages } from '../types';
+import { addSeparators, assembleDescriptionIntro, assembleSecondaryButton, isSettingsButtonNotShown } from '../utils';
+import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'and',
 };
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
+export const config = (
+  extraMessages: ExtraMessages,
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -26,16 +30,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         By clicking the "Accept all" button, you give
         ${addSeparators(lang.companyNames, extra.and)}
         your consent to use cookies for personalisation, analytics and targeted marketing.
-        You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.
+        ${
+          isSettingsButtonNotShown(secondaryButtonMode)
+            ? `You can customize use of cookies in your <strong><a href="" data-cc="c-settings">custom settings</a></strong>.`
+            : ''
+        }
       </p>`,
       primary_btn: {
         text: 'Accept all',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
-      secondary_btn: {
-        text: 'Accept necessary',
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
-      },
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Accept necessary', 'Custom settings'),
     },
     settings_modal: {
       title: 'Custom Cookie settings',

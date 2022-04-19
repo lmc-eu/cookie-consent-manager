@@ -1,7 +1,14 @@
-import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
-import { ExtraMessages } from '../types';
+import {
+  addSeparators,
+  assembleDescriptionIntro,
+  assembleSecondaryButton,
+  isSettingsButtonNotShown,
+  pluralize,
+} from '../utils';
+import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'a',
@@ -11,10 +18,13 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
+export const config = (
+  extraMessages: ExtraMessages,
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -30,17 +40,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-        Další informace o Cookies a úpravu jejich používání naleznete
-        ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.
+        ${
+          isSettingsButtonNotShown(secondaryButtonMode)
+            ? `Další informace o Cookies a úpravu jejich používání naleznete ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.`
+            : ''
+        }
       </p>`,
       primary_btn: {
         text: 'Přijmout všechny',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
-      secondary_btn: {
-        text: 'Přijmout nezbytné',
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
-      },
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Přijmout nezbytné', 'Vlastní nastavení'),
     },
     settings_modal: {
       title: 'Přizpůsobit nastavení Cookies',

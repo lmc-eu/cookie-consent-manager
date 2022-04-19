@@ -6,6 +6,7 @@ import { config as configPl } from '../pl';
 import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
 import { config as configUk } from '../uk';
+import { SecondaryButtonMode } from '../../constants/SecondaryButtonMode';
 
 describe.each([
   ['cs', configCs],
@@ -17,7 +18,13 @@ describe.each([
   ['sk', configSk],
   ['uk', configUk],
 ])('config %s', (name, config) => {
-  it('should return localization object', () => {
-    expect(config({ companyNames: ['test1', 'test2', 'test3'] })).toMatchSnapshot();
+  it('should return localization object for acceptNecessary button mode', () => {
+    expect(
+      config({ companyNames: ['test1', 'test2', 'test3'] }, SecondaryButtonMode.ACCEPT_NECESSARY),
+    ).toMatchSnapshot();
+  });
+
+  it('should return localization object for showSettings button mode', () => {
+    expect(config({ companyNames: ['test1', 'test2', 'test3'] }, SecondaryButtonMode.SHOW_SETTINGS)).toMatchSnapshot();
   });
 });

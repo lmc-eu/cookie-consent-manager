@@ -1,7 +1,14 @@
-import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
-import { ExtraMessages } from '../types';
+import {
+  addSeparators,
+  assembleDescriptionIntro,
+  assembleSecondaryButton,
+  isSettingsButtonNotShown,
+  pluralize,
+} from '../utils';
+import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'i',
@@ -11,10 +18,13 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
+export const config = (
+  extraMessages: ExtraMessages,
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -30,17 +40,17 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-        Використання файлів Cookies Ви можете змінити в своїх
-        <strong><a href="" data-cc="c-settings">власних Налаштуваннях</a></strong>.
+        ${
+          isSettingsButtonNotShown(secondaryButtonMode)
+            ? `Використання файлів Cookies Ви можете змінити в своїх <strong><a href="" data-cc="c-settings">власних Налаштуваннях</a></strong>.`
+            : ''
+        }
       </p>`,
       primary_btn: {
         text: 'Прийняти все',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
-      secondary_btn: {
-        text: 'Прийняття необхідно',
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
-      },
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Прийняття необхідно', 'Власнйe налаштуваннйe'),
     },
     settings_modal: {
       title: 'Користувацькі налаштування файлів Cookies',

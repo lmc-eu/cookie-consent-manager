@@ -18,6 +18,7 @@ import {
 } from './types';
 import { CookieConsentCategory, DisplayMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from './constants/SecondaryButtonMode';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
@@ -33,6 +34,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   onChange: noopChangeCallback,
   companyNames: ['LMC'],
   displayMode: DisplayMode.FORCE,
+  secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
   translationOverrides: {},
   config: {},
 };
@@ -50,8 +52,10 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {OnChangeCallback} [args.onChange] - Callback to be executed right after user change his/her preferences
  * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
- * @param {DisplayMode} [args.displayMode] - `force` to show consent in a centered modal box and to block page until
- *   user action. `soft` to show consent in a banner on the bottom of the page.
+ * @param {DisplayMode} [args.displayMode] - Which button should be displayed next to "Accept all" button. Either
+ *   `acceptNecessary` (default) or `showSettings`.
+ * @param {SecondaryButtonMode} [args.secondaryButtonMode] - `force` (default) to show consent in a centered modal box
+ *    and to block page until user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
@@ -73,6 +77,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange,
     companyNames,
     displayMode,
+    secondaryButtonMode,
     translationOverrides,
     config,
   } = options;
@@ -80,14 +85,14 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   const cookieConsent = window.initCookieConsent();
 
   const languages = {
-    cs: configCs({ companyNames, ...translationOverrides.cs }),
-    de: configDe({ companyNames, ...translationOverrides.de }),
-    en: configEn({ companyNames, ...translationOverrides.en }),
-    hu: configHu({ companyNames, ...translationOverrides.hu }),
-    pl: configPl({ companyNames, ...translationOverrides.pl }),
-    ru: configRu({ companyNames, ...translationOverrides.ru }),
-    sk: configSk({ companyNames, ...translationOverrides.sk }),
-    uk: configUk({ companyNames, ...translationOverrides.uk }),
+    cs: configCs({ companyNames, ...translationOverrides.cs }, secondaryButtonMode),
+    de: configDe({ companyNames, ...translationOverrides.de }, secondaryButtonMode),
+    en: configEn({ companyNames, ...translationOverrides.en }, secondaryButtonMode),
+    hu: configHu({ companyNames, ...translationOverrides.hu }, secondaryButtonMode),
+    pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode),
+    ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode),
+    sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode),
+    uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode),
   };
 
   const onFirstAcceptHandler = (
