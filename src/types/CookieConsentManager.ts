@@ -1,5 +1,6 @@
 import { CookieConsentCategory, DisplayMode } from '../constants';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 export type Values<T> = T[keyof T];
 
@@ -34,6 +35,7 @@ export type CookieConsentManagerOptions = {
   onChange: OnChangeCallback;
   companyNames: string[];
   displayMode: Values<typeof DisplayMode>;
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>;
   translationOverrides: Record<string, TranslationOverride>;
   config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
 };

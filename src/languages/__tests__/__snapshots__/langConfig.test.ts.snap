@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`config cs should return localization object 1`] = `
+exports[`config cs should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -10,8 +10,7 @@ Object {
         společnostem
         test1, test2 a test3
         souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-        Další informace o Cookies a úpravu jejich používání naleznete
-        ve <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a></strong>.
+        Další informace o Cookies a úpravu jejich používání naleznete ve <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastním nastavení</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -90,7 +89,96 @@ Object {
 }
 `;
 
-exports[`config de should return localization object 1`] = `
+exports[`config cs should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
+      <p>
+        Kliknutím na tlačítko „Přijmout všechny“ dáte
+        společnostem
+        test1, test2 a test3
+        souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Přijmout všechny",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Vlastní nastavení",
+    },
+    "title": "Díky Cookies budou naše stránky ještě lepší",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Přijmout všechny",
+    "blocks": Array [
+      Object {
+        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.
+          Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
+          <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">Používání Cookies</a>
+          a <a href=\\"https://www.lmc.eu/cs/zasady-ochrany-soukromi\\" target=\\"_blank\\">Zásady ochrany soukromí</a>.",
+      },
+      Object {
+        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
+          Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
+        "title": "Technicky nezbytné Cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají.
+          Díky tomu můžeme stránky a další služby neustále vylepšovat.",
+        "title": "Analytické Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe.
+          Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
+        "title": "Funkční Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb.
+          Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
+        "title": "Marketingové Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli.
+          Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
+        "title": "Personalizační Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Přijmout nezbytné",
+    "save_settings_btn": "Uložit nastavení",
+    "title": "Přizpůsobit nastavení Cookies",
+  },
+}
+`;
+
+exports[`config de should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -99,8 +187,7 @@ Object {
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
         test1, test2 und test3
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        Sie können die Verwendung von Cookies in Ihren
-        <strong><a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a></strong> anpassen.
+        Sie können die Verwendung von Cookies in Ihren <strong><a href=\\"\\" data-cc=\\"c-settings\\">eigenen Einstellungen</a></strong> anpassen.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -175,7 +262,91 @@ Object {
 }
 `;
 
-exports[`config en should return localization object 1`] = `
+exports[`config de should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
+      <p>
+        Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
+        test1, test2 und test3
+        zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Alles akzeptieren",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Eigene Einstellungen",
+    },
+    "title": "Diese Website verwendet Cookies",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Alles akzeptieren",
+    "blocks": Array [
+      Object {
+        "description": "Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
+          Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
+          finden Sie in unseren Richtlinien
+          zur <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>
+          und zum <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Datenschutz</a>.",
+      },
+      Object {
+        "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
+        "title": "Technisch notwendige Cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.",
+        "title": "Analytische Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.",
+        "title": "Funktionale Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.",
+        "title": "Marketing Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.",
+        "title": "Personalisierung Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Das Notwendigste akzeptieren",
+    "save_settings_btn": "Einstellungen speichern",
+    "title": "Benutzerdefinierte Cookie-Einstellungen",
+  },
+}
+`;
+
+exports[`config en should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -184,7 +355,7 @@ Object {
         By clicking the \\"Accept all\\" button, you give
         test1, test2 and test3
         your consent to use cookies for personalisation, analytics and targeted marketing.
-        You can customize use of cookies in your <strong><a href=\\"\\" data-cc=\\"c-settings\\">own settings</a></strong>.
+        You can customize use of cookies in your <strong><a href=\\"\\" data-cc=\\"c-settings\\">custom settings</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -258,7 +429,90 @@ Object {
 }
 `;
 
-exports[`config hu should return localization object 1`] = `
+exports[`config en should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
+      <p>
+        By clicking the \\"Accept all\\" button, you give
+        test1, test2 and test3
+        your consent to use cookies for personalisation, analytics and targeted marketing.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Accept all",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Custom settings",
+    },
+    "title": "Cookies make our site even better",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Accept all",
+    "blocks": Array [
+      Object {
+        "description": "If you want to get the most out of our website it is best to allow all types of cookies.
+          You can find more information about what cookies are and how we work with them via the links
+          to <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">The use of cookies</a>
+          and <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Privacy policy</a>.",
+      },
+      Object {
+        "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
+        "title": "Technically necessary cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.",
+        "title": "Analytical cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.",
+        "title": "Functional cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.",
+        "title": "Marketing cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.",
+        "title": "Personalisation cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Accept necessary",
+    "save_settings_btn": "Save settings",
+    "title": "Custom Cookie settings",
+  },
+}
+`;
+
+exports[`config hu should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -341,7 +595,90 @@ Object {
 }
 `;
 
-exports[`config pl should return localization object 1`] = `
+exports[`config hu should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
+      <p>
+        A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
+        test1, test2 és test3
+        süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Minden elfogadása",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Egyéni beállítások",
+    },
+    "title": "Az oldalak süti fájlokat használnak",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Minden elfogadása",
+    "blocks": Array [
+      Object {
+        "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes
+          cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
+          a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Cookie-k használata</a>
+          és az <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Adatvédelmi szabályzat honlapjain talál</a>.",
+      },
+      Object {
+        "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
+        "title": "Technikailag szükséges cookie-k",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.",
+        "title": "Analitikai cookie-k",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.",
+        "title": "Funkcionális cookie-k",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m",
+        "title": "Marketing cookie-k",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.",
+        "title": "Személyre szabott cookie-k",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "A legszükségesebbek elfogadása",
+    "save_settings_btn": "Beállítások mentése",
+    "title": "Egyedi cookie-fájl beállítások",
+  },
+}
+`;
+
+exports[`config pl should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -351,8 +688,7 @@ Object {
         firmy
         test1, test2 i test3
         do personalizacji, analizy i ukierunkowanego marketingu.
-        Korzystanie z plików cookies możesz dostosować
-        we <strong><a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a></strong>.
+        Korzystanie z plików cookies możesz dostosować we <strong><a href=\\"\\" data-cc=\\"c-settings\\">własnych ustawieniach</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -427,7 +763,92 @@ Object {
 }
 `;
 
-exports[`config ru should return localization object 1`] = `
+exports[`config pl should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
+      <p>
+        Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
+        firmy
+        test1, test2 i test3
+        do personalizacji, analizy i ukierunkowanego marketingu.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Akceptuj wszystkie",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Własne ustawienia",
+    },
+    "title": "Dzięki plikom Cookies nasza strona będzie jeszcze lepsza",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Akceptuj wszystkie",
+    "blocks": Array [
+      Object {
+        "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie
+          rodzaje plików cookies. Aby uzyskać więcej informacji na temat tego, czym są pliki cookies
+          i jak z nimi pracujemy, odwiedź na naszej stronie
+          <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Korzystanie z plików cookies</a>
+          i <a href=\\"https://www.lmc.eu/pl/polityka-prywatnosci\\" target=\\"_blank\\">Politykę prywatności</a>.",
+      },
+      Object {
+        "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
+        "title": "Technicznie niezbędne pliki cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.",
+        "title": "Analityczne pliki cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.",
+        "title": "Funkcjonalne pliki cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.",
+        "title": "Marketingowe pliki cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.",
+        "title": "Personalizacyjne pliki cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Akceptuj niezbędne",
+    "save_settings_btn": "Zapisz ustawienia",
+    "title": "Własne ustawienia plików cookies",
+  },
+}
+`;
+
+exports[`config ru should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -437,8 +858,7 @@ Object {
         компаниям
         test1, test2 и test3
         на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-        Вы можете настроить использование файлов cookie
-        в <strong><a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a></strong>.
+        Вы можете настроить использование файлов cookie в <strong><a href=\\"\\" data-cc=\\"c-settings\\">собственных настройках</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -513,7 +933,92 @@ Object {
 }
 `;
 
-exports[`config sk should return localization object 1`] = `
+exports[`config ru should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
+      <p>
+        Нажав «Принять все», Вы даете свое согласие
+        компаниям
+        test1, test2 и test3
+        на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Принять все",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Cобственные настройкй",
+    },
+    "title": "Этот сайт использует файлы cookie",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Принять все",
+    "blocks": Array [
+      Object {
+        "description": "Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
+          разрешить просматривать и сохранять все типы файлов cookie.
+          Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
+          на страницах <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Использование файлов cookie</a>
+          и <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Политика конфиденциальности персональных данных</a>.",
+      },
+      Object {
+        "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
+        "title": "Технически необходимые файлы cookie",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.",
+        "title": "Аналитические файлы cookie",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.",
+        "title": "Функциональные файлы cookie",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.",
+        "title": "Маркетинговые файлы cookie",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.",
+        "title": "Файлы cookie для персонализации",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Принятие необходимо",
+    "save_settings_btn": "Сохранить настройки",
+    "title": "Индивидуальные настройки файлов cookies",
+  },
+}
+`;
+
+exports[`config sk should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -523,8 +1028,7 @@ Object {
         spoločnostiam
         test1, test2 a test3
         súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-        Viac informácií o Cookies a úpravu ich používania nájdete
-        vo <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastnom nastavení</a></strong>.
+        Viac informácií o Cookies a úpravu ich používania nájdete vo <strong><a href=\\"\\" data-cc=\\"c-settings\\">vlastnom nastavení</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -598,7 +1102,91 @@ Object {
 }
 `;
 
-exports[`config uk should return localization object 1`] = `
+exports[`config sk should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.</p>
+      <p>
+        Kliknutím na tlačidlo „Prijať všetky“, čím dáte
+        spoločnostiam
+        test1, test2 a test3
+        súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Prijať všetky",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Vlastné nastavenia",
+    },
+    "title": "Vďaka Cookies budú naše stránky ešte lepšie",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Prijať všetky",
+    "blocks": Array [
+      Object {
+        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+          Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránkach
+          <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Používania cookies</a>
+          a v <a href=\\"https://www.lmc.eu/sk/zasady-ochrany-sukromia\\" target=\\"_blank\\">Zásadách ochrany súkromia</a>.",
+      },
+      Object {
+        "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
+        "title": "Technicky nevyhnutné cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.",
+        "title": "Analytické cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.",
+        "title": "Funkčné cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.",
+        "title": "Marketingové cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.",
+        "title": "Personalizačné cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Prijať nevyhnutné",
+    "save_settings_btn": "Uložiť nastavenia",
+    "title": "Prispôsobiť nastavenia cookies",
+  },
+}
+`;
+
+exports[`config uk should return localization object for acceptNecessary button mode 1`] = `
 Object {
   "consent_modal": Object {
     "description": "
@@ -608,8 +1196,7 @@ Object {
         компаніям
         test1, test2 i test3
         на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-        Використання файлів Cookies Ви можете змінити в своїх
-        <strong><a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a></strong>.
+        Використання файлів Cookies Ви можете змінити в своїх <strong><a href=\\"\\" data-cc=\\"c-settings\\">власних Налаштуваннях</a></strong>.
       </p>",
     "primary_btn": Object {
       "role": "accept_all",
@@ -618,6 +1205,90 @@ Object {
     "secondary_btn": Object {
       "role": "accept_necessary",
       "text": "Прийняття необхідно",
+    },
+    "title": "Цей сайт використовує файли cookie",
+  },
+  "settings_modal": Object {
+    "accept_all_btn": "Прийняти все",
+    "blocks": Array [
+      Object {
+        "description": "Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
+          Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
+          <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання Cookies</a>
+          і <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Політика конфіденційності</a>.",
+      },
+      Object {
+        "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
+        "title": "Технічно необхідні файли Cookies",
+        "toggle": Object {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      Object {
+        "description": "Ми використовуємо їх для відстеження того, скільки людей відвідують наш веб-сайт і як вони ним користуються. Завдяки цьому ми можемо постійно покращувати сайт та інші сервіси.",
+        "title": "Аналітичні файли Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      Object {
+        "description": "Ці файли Cookies роблять наш сайт ще більш ефективним і покращують його роботу. Наприклад, вони дозволяють нам використовувати чат, щоб швидко і легко відповідати на ваші запитання.",
+        "title": "Функціональні файли Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      Object {
+        "description": "За допомогою цих файлів Cookies ми можемо оцінити, наскільки ефективна наша реклама і цільові пропозиції наших послуг. Маркетингові файли Cookies дозволяють нам інформувати Вас в Інтернеті про новини, які можуть вас зацікавити.",
+        "title": "Маркетингові файли Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      Object {
+        "description": "Наші сервіси працюють краще, коли ми можемо адаптувати їх до конкретного користувача. Дозволивши персоналізовані файли Cookies, ви збільшуєте ймовірність того, що знайдете потрібний контент.",
+        "title": "Персоналізовані файли Cookies",
+        "toggle": Object {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Прийняття необхідно",
+    "save_settings_btn": "Зберегти налаштування",
+    "title": "Користувацькі налаштування файлів Cookies",
+  },
+}
+`;
+
+exports[`config uk should return localization object for showSettings button mode 1`] = `
+Object {
+  "consent_modal": Object {
+    "description": "
+      <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
+      <p>
+        Натиснувши «Прийняти все», Ви даєте свою згоду
+        компаніям
+        test1, test2 i test3
+        на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+        
+      </p>",
+    "primary_btn": Object {
+      "role": "accept_all",
+      "text": "Прийняти все",
+    },
+    "secondary_btn": Object {
+      "role": "settings",
+      "text": "Власнйe налаштуваннйe",
     },
     "title": "Цей сайт використовує файли cookie",
   },

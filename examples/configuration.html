@@ -86,6 +86,7 @@
                     <li>Forcing specific language – Slovak (using <code>defaultLang</code>), ie. disabling auto-detection (<code>autodetectLang</code>)</li>
                     <li>Setting multiple company names in the consent text (<code>companyNames</code>)</li>
                     <li>Using <code>force</code> as a <code>displayMode</code> instead of <code>soft</code> (which is used in other examples)</li>
+                    <li>Using <code>showSettings</code> as a <code>secondaryButtonMode</code> instead of default <code>acceptNecessary</code></li>
                     <li>
                         Overwriting raw configuration of the underlying cookie-consent component (via <code>config</code> option),
                         to modify some advanced features.
@@ -137,6 +138,7 @@
         autodetectLang: false, // do not detect language from the `<html lang="...">` value
         defaultLang: 'sk', // force use of 'sk' language instead
         displayMode: 'force', // show consent in a blocking modal window (this is also default)
+        secondaryButtonMode: 'showSettings', // use "Show settings" as the secondary button instead of default "Accept only necessary"
         companyNames: ['LMC', 'Some Other Company', 'ACME'], // define custom company names to be shown in the consent text
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         config: { // override default config of the underlying library, see https://github.com/orestbida/cookieconsent#all-available-options

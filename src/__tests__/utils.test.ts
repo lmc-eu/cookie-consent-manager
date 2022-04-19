@@ -1,4 +1,11 @@
-import { addSeparators, assembleDescriptionIntro, pluralize } from '../utils';
+import {
+  addSeparators,
+  assembleDescriptionIntro,
+  assembleSecondaryButton,
+  isSettingsButtonNotShown,
+  pluralize,
+} from '../utils';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 describe('utils', () => {
   describe('addSeparators', () => {
@@ -42,6 +49,34 @@ describe('utils', () => {
 
     it('should return empty string when empty override value given', () => {
       expect(assembleDescriptionIntro('Default value', '')).toBe('');
+    });
+  });
+
+  describe('assembleSecondaryButton', () => {
+    it('should assemble button values for acceptNecessary mode', () => {
+      expect(
+        assembleSecondaryButton(SecondaryButtonMode.ACCEPT_NECESSARY, 'accept necessary', 'show settings'),
+      ).toEqual({
+        role: 'accept_necessary',
+        text: 'accept necessary',
+      });
+    });
+
+    it('should assemble button values for showSettings mode', () => {
+      expect(assembleSecondaryButton(SecondaryButtonMode.SHOW_SETTINGS, 'accept necessary', 'show settings')).toEqual({
+        role: 'settings',
+        text: 'show settings',
+      });
+    });
+  });
+
+  describe('isSettingsButtonNotShown', () => {
+    it('should be true for ACCEPT_NECESSARY mode', () => {
+      expect(isSettingsButtonNotShown(SecondaryButtonMode.ACCEPT_NECESSARY)).toBe(true);
+    });
+
+    it('should be false for SHOW_SETTINGS mode', () => {
+      expect(isSettingsButtonNotShown(SecondaryButtonMode.SHOW_SETTINGS)).toBe(false);
     });
   });
 });

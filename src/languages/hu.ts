@@ -1,7 +1,8 @@
-import { addSeparators, assembleDescriptionIntro } from '../utils';
-import { ExtraMessages } from '../types';
+import { addSeparators, assembleDescriptionIntro, assembleSecondaryButton, isSettingsButtonNotShown } from '../utils';
+import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'és',
@@ -9,10 +10,13 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
+export const config = (
+  extraMessages: ExtraMessages,
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -27,16 +31,21 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
         ${addSeparators(lang.companyNames, extra.and)}
         süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-        A cookie-k használatát testre szabhatja <strong><a href="" data-cc="c-settings">saját beállításaiban</a></strong>.
+        ${
+          isSettingsButtonNotShown(secondaryButtonMode)
+            ? `A cookie-k használatát testre szabhatja <strong><a href="" data-cc="c-settings">saját beállításaiban</a></strong>.`
+            : ''
+        }
       </p>`,
       primary_btn: {
         text: 'Minden elfogadása',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
-      secondary_btn: {
-        text: 'A legszükségesebbek elfogadása',
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
-      },
+      secondary_btn: assembleSecondaryButton(
+        secondaryButtonMode,
+        'A legszükségesebbek elfogadása',
+        'Egyéni beállítások',
+      ),
     },
     settings_modal: {
       title: 'Egyedi cookie-fájl beállítások',

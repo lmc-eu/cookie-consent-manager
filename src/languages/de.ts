@@ -1,7 +1,8 @@
-import { addSeparators, assembleDescriptionIntro } from '../utils';
-import { ExtraMessages } from '../types';
+import { addSeparators, assembleDescriptionIntro, assembleSecondaryButton, isSettingsButtonNotShown } from '../utils';
+import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
+import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'und',
@@ -9,10 +10,13 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {Array} [extraMessages.companyNames] - Array of strings with company names used to parametrized translations
+ * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
-export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Languages => {
+export const config = (
+  extraMessages: ExtraMessages,
+  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -27,17 +31,21 @@ export const config = (extraMessages: ExtraMessages): VanillaCookieConsent.Langu
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
         ${addSeparators(lang.companyNames, extra.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        Sie können die Verwendung von Cookies in Ihren
-        <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.
+        ${
+          isSettingsButtonNotShown(secondaryButtonMode)
+            ? `Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.`
+            : ''
+        }
       </p>`,
       primary_btn: {
         text: 'Alles akzeptieren',
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
       },
-      secondary_btn: {
-        text: 'Das Notwendigste akzeptieren',
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY,
-      },
+      secondary_btn: assembleSecondaryButton(
+        secondaryButtonMode,
+        'Das Notwendigste akzeptieren',
+        'Eigene Einstellungen',
+      ),
     },
     settings_modal: {
       title: 'Benutzerdefinierte Cookie-Einstellungen',
