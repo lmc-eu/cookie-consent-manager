@@ -3,7 +3,10 @@
 @use '../tools/units';
 
 #cm {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     max-width: settings.$consent-box-max-width;
+    max-height: calc(100vh - #{units.convert2em(tokens.$space-800)});
     padding: units.convert2em(tokens.$space-800);
     box-shadow: tokens.$shadow-100;
 }
@@ -11,6 +14,10 @@
 #cm.box,
 #cm.bar {
     padding: units.convert2em(tokens.$space-900);
+}
+
+#cm.bar {
+    max-height: 100vh;
 }
 
 #cm.bar #c-inr {
@@ -42,6 +49,7 @@
 }
 
 #cm.cloud {
+    overflow-y: auto;
     max-width: settings.$consent-cloud-max-width;
     padding: units.convert2em(tokens.$space-900) units.convert2em(tokens.$space-1000);
 }
