@@ -660,35 +660,10 @@ var nanoid = (size = 21) => {
   return id;
 };
 
-// src/utils.ts
-var addSeparators = (strings, and = "") => strings.reduce((accumulator, string, i) => {
-  if (i === 0) {
-    return `${accumulator}${string}`;
-  }
-  if (i === strings.length - 1) {
-    return `${accumulator} ${and}\xA0${string}`;
-  }
-  return `${accumulator}, ${string}`;
-});
-var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
-var assembleDescriptionIntro = (defaultValue, overrideValue) => {
-  const descriptionIntro = overrideValue != null ? overrideValue : defaultValue;
-  return descriptionIntro !== "" ? `<p>${descriptionIntro}</p>` : "";
-};
-
-// src/constants/CookieConsentCategory.ts
-var CookieConsentCategory = {
-  NECESSARY: "necessary",
-  AD: "ad",
-  ANALYTICS: "analytics",
-  FUNCTIONALITY: "functionality",
-  PERSONALIZATION: "personalization"
-};
-
-// src/constants/DisplayMode.ts
-var DisplayMode = {
-  FORCE: "force",
-  SOFT: "soft"
+// src/constants/SecondaryButtonMode.ts
+var SecondaryButtonMode = {
+  ACCEPT_NECESSARY: "acceptNecessary",
+  SHOW_SETTINGS: "showSettings"
 };
 
 // src/types/vanilla-cookieconsent.ts
@@ -745,13 +720,53 @@ var VanillaCookieConsent;
   })(Transition = VanillaCookieConsent2.Transition || (VanillaCookieConsent2.Transition = {}));
 })(VanillaCookieConsent || (VanillaCookieConsent = {}));
 
+// src/utils.ts
+var addSeparators = (strings, and = "") => strings.reduce((accumulator, string, i) => {
+  if (i === 0) {
+    return `${accumulator}${string}`;
+  }
+  if (i === strings.length - 1) {
+    return `${accumulator} ${and}\xA0${string}`;
+  }
+  return `${accumulator}, ${string}`;
+});
+var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
+var assembleDescriptionIntro = (defaultValue, overrideValue) => {
+  const descriptionIntro = overrideValue != null ? overrideValue : defaultValue;
+  return descriptionIntro !== "" ? `<p>${descriptionIntro}</p>` : "";
+};
+var assembleSecondaryButton = (secondaryButtonMode, textAcceptNecessary, textShowSettings) => {
+  return {
+    text: secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY ? textAcceptNecessary : textShowSettings,
+    role: secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY : VanillaCookieConsent.SecondaryButtonRole.SETTINGS
+  };
+};
+var isSettingsButtonNotShown = (secondaryButtonMode) => {
+  return secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
+};
+
+// src/constants/CookieConsentCategory.ts
+var CookieConsentCategory = {
+  NECESSARY: "necessary",
+  AD: "ad",
+  ANALYTICS: "analytics",
+  FUNCTIONALITY: "functionality",
+  PERSONALIZATION: "personalization"
+};
+
+// src/constants/DisplayMode.ts
+var DisplayMode = {
+  FORCE: "force",
+  SOFT: "soft"
+};
+
 // src/languages/cs.ts
 var extra = {
   and: "a",
   company: "spole\u010Dnosti",
   companies: "spole\u010Dnostem"
 };
-var config = (extraMessages) => {
+var config = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra), extraMessages);
   return {
@@ -764,17 +779,13 @@ var config = (extraMessages) => {
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         souhlas s\xA0vyu\u017E\xEDv\xE1n\xEDm soubor\u016F Cookies na\xA0\xFA\u010Dely personalizace, anal\xFDzy a\xA0c\xEDlen\xE9ho marketingu.
-        Dal\u0161\xED informace o\xA0Cookies a\xA0\xFApravu jejich pou\u017E\xEDv\xE1n\xED naleznete
-        ve\xA0<strong><a href="" data-cc="c-settings">vlastn\xEDm nastaven\xED</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Dal\u0161\xED informace o\xA0Cookies a\xA0\xFApravu jejich pou\u017E\xEDv\xE1n\xED naleznete ve\xA0<strong><a href="" data-cc="c-settings">vlastn\xEDm nastaven\xED</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "P\u0159ijmout v\u0161echny",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "P\u0159ijmout nezbytn\xE9",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "P\u0159ijmout nezbytn\xE9", "Vlastn\xED nastaven\xED")
     },
     settings_modal: {
       title: "P\u0159izp\u016Fsobit nastaven\xED Cookies",
@@ -847,7 +858,7 @@ var config = (extraMessages) => {
 var extra2 = {
   and: "und"
 };
-var config2 = (extraMessages) => {
+var config2 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra2), extraMessages);
   return {
@@ -859,17 +870,13 @@ var config2 = (extraMessages) => {
         Indem Sie auf \u201EAlles\xA0akzeptieren\u201C klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Ger\xE4t durch
         ${addSeparators(lang.companyNames, extra2.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        Sie\xA0k\xF6nnen die\xA0Verwendung von\xA0Cookies in\xA0Ihren
-        <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Sie\xA0k\xF6nnen die\xA0Verwendung von\xA0Cookies in\xA0Ihren <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.` : ""}
       </p>`,
       primary_btn: {
         text: "Alles akzeptieren",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "Das Notwendigste akzeptieren",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Das Notwendigste akzeptieren", "Eigene Einstellungen")
     },
     settings_modal: {
       title: "Benutzerdefinierte Cookie-Einstellungen",
@@ -938,7 +945,7 @@ var config2 = (extraMessages) => {
 var extra3 = {
   and: "and"
 };
-var config3 = (extraMessages) => {
+var config3 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra3), extraMessages);
   return {
@@ -950,16 +957,13 @@ var config3 = (extraMessages) => {
         By clicking the "Accept all" button, you give
         ${addSeparators(lang.companyNames, extra3.and)}
         your consent to\xA0use cookies for\xA0personalisation, analytics and\xA0targeted marketing.
-        You can customize use of cookies in your <strong><a href="" data-cc="c-settings">own settings</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `You can customize use of cookies in your <strong><a href="" data-cc="c-settings">custom settings</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "Accept all",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "Accept necessary",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Accept necessary", "Custom settings")
     },
     settings_modal: {
       title: "Custom Cookie settings",
@@ -1027,7 +1031,7 @@ var config3 = (extraMessages) => {
 var extra4 = {
   and: "\xE9s"
 };
-var config4 = (extraMessages) => {
+var config4 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra4), extraMessages);
   return {
@@ -1039,16 +1043,13 @@ var config4 = (extraMessages) => {
         A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az
         ${addSeparators(lang.companyNames, extra4.and)}
         s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
-        A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "Minden elfogad\xE1sa",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa", "Egy\xE9ni be\xE1ll\xEDt\xE1sok")
     },
     settings_modal: {
       title: "Egyedi cookie-f\xE1jl be\xE1ll\xEDt\xE1sok",
@@ -1118,7 +1119,7 @@ var extra5 = {
   company: "firm\u0119",
   companies: "firmy"
 };
-var config5 = (extraMessages) => {
+var config5 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra5), extraMessages);
   return {
@@ -1131,17 +1132,13 @@ var config5 = (extraMessages) => {
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, extra5.and)}
         do personalizacji, analizy i\xA0ukierunkowanego marketingu.
-        Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107
-        we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107 we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "Akceptuj wszystkie",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "Akceptuj niezb\u0119dne",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Akceptuj niezb\u0119dne", "W\u0142asne ustawienia")
     },
     settings_modal: {
       title: "W\u0142asne ustawienia plik\xF3w cookies",
@@ -1212,7 +1209,7 @@ var extra6 = {
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
   companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C"
 };
-var config6 = (extraMessages) => {
+var config6 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra6), extraMessages);
   return {
@@ -1225,17 +1222,13 @@ var config6 = (extraMessages) => {
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043D\u0430 \u0412\u0430\u0448\u0435\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043E\u0431\u043B\u0435\u0433\u0447\u0438\u0442 \u043D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430, \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0438\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432 \u0438\xA0\u0443\u0441\u043B\u0443\u0433.
-        \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie
-        \u0432\xA0<strong><a href="" data-cc="c-settings">\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0432\xA0<strong><a href="" data-cc="c-settings">\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "\u041F\u0440\u0438\u043D\u044F\u0442\u0438\u0435\xA0\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "\u041F\u0440\u0438\u043D\u044F\u0442\u0438\u0435\xA0\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E", "C\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0439")
     },
     settings_modal: {
       title: "\u0418\u043D\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u044B\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0444\u0430\u0439\u043B\u043E\u0432 cookies",
@@ -1306,7 +1299,7 @@ var extra7 = {
   company: "spolo\u010Dnosti",
   companies: "spolo\u010Dnostiam"
 };
-var config7 = (extraMessages) => {
+var config7 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra7), extraMessages);
   return {
@@ -1319,17 +1312,13 @@ var config7 = (extraMessages) => {
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         s\xFAhlas s\xA0vyu\u017E\xEDvan\xEDm s\xFAborov Cookies za\xA0\xFA\u010Delom personaliz\xE1cie, anal\xFDzy a\xA0cielen\xE9ho marketingu.
-        Viac inform\xE1ci\xED o\xA0Cookies a\xA0\xFApravu ich pou\u017E\xEDvania n\xE1jdete
-        vo\xA0<strong><a href="" data-cc="c-settings">vlastnom nastaven\xED</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Viac inform\xE1ci\xED o\xA0Cookies a\xA0\xFApravu ich pou\u017E\xEDvania n\xE1jdete vo\xA0<strong><a href="" data-cc="c-settings">vlastnom nastaven\xED</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "Prija\u0165 v\u0161etky",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "Prija\u0165 nevyhnutn\xE9",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Prija\u0165 nevyhnutn\xE9", "Vlastn\xE9 nastavenia")
     },
     settings_modal: {
       title: "Prisp\xF4sobi\u0165 nastavenia cookies",
@@ -1399,7 +1388,7 @@ var extra8 = {
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
   companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C"
 };
-var config8 = (extraMessages) => {
+var config8 = (extraMessages, secondaryButtonMode) => {
   var _a;
   const lang = __spreadValues(__spreadValues({}, extra8), extraMessages);
   return {
@@ -1412,17 +1401,13 @@ var config8 = (extraMessages) => {
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         \u043D\u0430 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043D\u0430 \u0412\u0430\u0448\u043E\u043C\u0443 \u043F\u0440\u0438\u0441\u0442\u0440\u043E\u0457. \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043F\u043E\u043B\u0435\u0433\u0448\u0438\u0442\u044C \u043D\u0430\u0432\u0456\u0433\u0430\u0446\u0456\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0446\u0456\u043B\u044C\u043E\u0432\u0438\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0456\u0437 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0456\u0432 \u0456\xA0\u043F\u043E\u0441\u043B\u0443\u0433.
-        \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u0437\u043C\u0456\u043D\u0438\u0442\u0438 \u0432\xA0\u0441\u0432\u043E\u0457\u0445
-        <strong><a href="" data-cc="c-settings">\u0432\u043B\u0430\u0441\u043D\u0438\u0445 \u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u0445</a></strong>.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u0437\u043C\u0456\u043D\u0438\u0442\u0438 \u0432\xA0\u0441\u0432\u043E\u0457\u0445 <strong><a href="" data-cc="c-settings">\u0432\u043B\u0430\u0441\u043D\u0438\u0445 \u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u0445</a></strong>.` : ""}
       </p>`,
       primary_btn: {
         text: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: {
-        text: "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0442\u044F\xA0\u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E",
-        role: VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      }
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0442\u044F\xA0\u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u043E", "\u0412\u043B\u0430\u0441\u043D\u0439e \u043D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u0439e")
     },
     settings_modal: {
       title: "\u041A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0446\u044C\u043A\u0456 \u043D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies",
@@ -1538,6 +1523,7 @@ var defaultOptions = {
   onChange: noopChangeCallback,
   companyNames: ["LMC"],
   displayMode: DisplayMode.FORCE,
+  secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
   translationOverrides: {},
   config: {}
 };
@@ -1555,20 +1541,21 @@ var LmcCookieConsentManager = (serviceName, args) => {
     onChange,
     companyNames,
     displayMode,
+    secondaryButtonMode,
     translationOverrides,
     config: config9
   } = options;
   const cookieName = "lmc_ccm";
   const cookieConsent = window.initCookieConsent();
   const languages = {
-    cs: config(__spreadValues({ companyNames }, translationOverrides.cs)),
-    de: config2(__spreadValues({ companyNames }, translationOverrides.de)),
-    en: config3(__spreadValues({ companyNames }, translationOverrides.en)),
-    hu: config4(__spreadValues({ companyNames }, translationOverrides.hu)),
-    pl: config5(__spreadValues({ companyNames }, translationOverrides.pl)),
-    ru: config6(__spreadValues({ companyNames }, translationOverrides.ru)),
-    sk: config7(__spreadValues({ companyNames }, translationOverrides.sk)),
-    uk: config8(__spreadValues({ companyNames }, translationOverrides.uk))
+    cs: config(__spreadValues({ companyNames }, translationOverrides.cs), secondaryButtonMode),
+    de: config2(__spreadValues({ companyNames }, translationOverrides.de), secondaryButtonMode),
+    en: config3(__spreadValues({ companyNames }, translationOverrides.en), secondaryButtonMode),
+    hu: config4(__spreadValues({ companyNames }, translationOverrides.hu), secondaryButtonMode),
+    pl: config5(__spreadValues({ companyNames }, translationOverrides.pl), secondaryButtonMode),
+    ru: config6(__spreadValues({ companyNames }, translationOverrides.ru), secondaryButtonMode),
+    sk: config7(__spreadValues({ companyNames }, translationOverrides.sk), secondaryButtonMode),
+    uk: config8(__spreadValues({ companyNames }, translationOverrides.uk), secondaryButtonMode)
   };
   const onFirstAcceptHandler = (userPreferences, cookie) => {
     const cookieData = cookieConsent.get("data");

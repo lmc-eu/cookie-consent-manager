@@ -1,3 +1,31 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.2...2.2.0) (2022-04-28)
+
+### Bug Fixes
+
+- Prevent content from being unreachable on short viewports ([3a843e7](https://github.com/lmc-eu/cookie-consent-manager/commit/3a843e7))
+
+### Dependencies
+
+- Force dependency update of vulnerable minimist ([9d75378](https://github.com/lmc-eu/cookie-consent-manager/commit/9d75378))
+- Update all dev dependencies ([55afece](https://github.com/lmc-eu/cookie-consent-manager/commit/55afece), [79893f5](https://github.com/lmc-eu/cookie-consent-manager/commit/79893f5),   [8b06890](https://github.com/lmc-eu/cookie-consent-manager/commit/8b06890), [c879760](https://github.com/lmc-eu/cookie-consent-manager/commit/c879760), [e616579](https://github.com/lmc-eu/cookie-consent-manager/commit/e616579))
+- Update dependency @lmc-eu/spirit-design-tokens to ^0.9.0 ([8d45d29](https://github.com/lmc-eu/cookie-consent-manager/commit/8d45d29))
+
+### Documentation
+
+- Improve text flow in table ([3728df7](https://github.com/lmc-eu/cookie-consent-manager/commit/3728df7))
+
+### Features
+
+- Add secondaryButtonMode to choose secondary button behavior [#CCM-64](https://jira.int.lmc.cz/browse/CCM-64) ([e480b2d](https://github.com/lmc-eu/cookie-consent-manager/commit/e480b2d))
+
+### Styles
+
+- Conform to updated stylelint rules ([15e3fef](https://github.com/lmc-eu/cookie-consent-manager/commit/15e3fef))
+- Decapitalize '{object}' as per eslint recommendation ([bf49a10](https://github.com/lmc-eu/cookie-consent-manager/commit/bf49a10))
+- Remap tokens ([f350cf6](https://github.com/lmc-eu/cookie-consent-manager/commit/f350cf6))
+
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.1...2.1.2) (2022-03-23)
 

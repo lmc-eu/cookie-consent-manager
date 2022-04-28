@@ -7,13 +7,20 @@
 //
 // By using Spirit design tokens, all Spirit-based projects benefit from plug-and-play setup.
 
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use '../tools/units';
 
 :root {
     // Common
-    --lmcccm-p-font-family: var(--lmcccm-font-family, #{tokens.$font-family-default});
-    --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, #{units.rem2em(tokens.$font-size-base)});
+    --lmcccm-p-font-family: var(
+        --lmcccm-font-family,
+        #{map.get(tokens.$body-medium-text-regular, 'mobile', 'font-family')}
+    );
+    --lmcccm-p-base-font-size: var(
+        --lmcccm-base-font-size,
+        #{units.convert2em(map.get(tokens.$body-medium-text-regular, 'mobile', 'font-size'))}
+    );
     --lmcccm-p-bg: var(--lmcccm-bg, #{tokens.$background-basic});
     --lmcccm-p-text: var(--lmcccm-text, #{tokens.$text-primary-default});
     --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, #{tokens.$background-backdrop});
@@ -26,11 +33,14 @@
     --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #{tokens.$action-link-primary-active});
 
     // Buttons
-    --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, #{tokens.$font-weight-semibold});
+    --lmcccm-p-btn-font-weight: var(
+        --lmcccm-btn-font-weight,
+        #{map.get(tokens.$body-medium-button, 'mobile', 'font-weight')}
+    );
     --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
-    --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{tokens.$border-width-1});
-    --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, #{tokens.$border-style-1});
-    --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{units.rem2em(tokens.$radius-1)});
+    --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{tokens.$border-width-100});
+    --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, #{tokens.$border-style-100});
+    --lmcccm-p-btn-border-radius: var(--lmcccm-btn-border-radius, #{units.convert2em(tokens.$radius-100)});
     --lmcccm-p-btn-primary-border: var(--lmcccm-btn-primary-border, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-bg: var(--lmcccm-btn-primary-bg, #{tokens.$action-primary-default});
     --lmcccm-p-btn-primary-text: var(--lmcccm-btn-primary-text, #{tokens.$text-primary-inverted-default});
@@ -60,10 +70,10 @@
     // Modal
     --lmcccm-p-modal-max-width: var(
         --lmcccm-modal-max-width,
-        min(50em, calc(100vw - #{units.rem2em(tokens.$space-8)}))
+        min(50em, calc(100vw - #{units.convert2em(tokens.$space-800)}))
     );
-    --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 37em);
-    --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.rem2em(tokens.$radius-2)});
+    --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 38.5em);
+    --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.convert2em(tokens.$radius-200)});
     --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, var(--lmcccm-p-bg));
     --lmcccm-p-modal-text: var(--lmcccm-modal-text, var(--lmcccm-p-text));
     --lmcccm-p-modal-section-border: var(--lmcccm-modal-section-border, #{tokens.$border-main-default});
@@ -71,7 +81,7 @@
     // Cookies
     --lmcccm-p-cookie-category-border-radius: var(
         --lmcccm-cookie-category-border-radius,
-        #{units.rem2em(tokens.$radius-1)}
+        #{units.convert2em(tokens.$radius-100)}
     );
     --lmcccm-p-cookie-category-bg: var(--lmcccm-cookie-category-bg, #{tokens.$background-cover});
     --lmcccm-p-cookie-category-hover-bg: var(--lmcccm-cookie-category-hover-bg, #{tokens.$background-cover});

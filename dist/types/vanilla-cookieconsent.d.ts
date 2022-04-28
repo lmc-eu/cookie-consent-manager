@@ -41,7 +41,7 @@ export declare namespace VanillaCookieConsent {
         text?: string;
         role?: PrimaryButtonRole;
     }
-    interface ModalSecondaryButton {
+    export interface ModalSecondaryButton {
         text?: string;
         role?: SecondaryButtonRole;
     }

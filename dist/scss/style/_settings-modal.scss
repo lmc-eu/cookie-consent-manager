@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use '../settings/settings';
 @use '../tools/units';
@@ -35,7 +36,7 @@
     padding-top: settings.$modal-header-height-desktop;
     padding-bottom: settings.$modal-footer-height-desktop;
     border-radius: var(--lmcccm-p-modal-border-radius);
-    box-shadow: tokens.$shadow-2;
+    box-shadow: tokens.$shadow-200;
 
     @media screen and (max-width: settings.$breakpoint-tablet-down) {
         padding-top: settings.$modal-header-height-tablet;
@@ -112,7 +113,7 @@
     &::before,
     &::after {
         width: 2.5px;
-        background-color: currentColor;
+        background-color: currentcolor;
     }
 
     &:hover,
@@ -135,10 +136,10 @@
 }
 
 #s-bl .c-bl {
-    margin-bottom: units.rem2em(tokens.$space-4);
+    margin-bottom: units.convert2em(tokens.$space-400);
 
     &:first-child {
-        margin-bottom: units.rem2em(tokens.$space-6);
+        margin-bottom: units.convert2em(tokens.$space-600);
     }
 
     &:last-child {
@@ -147,14 +148,14 @@
 }
 
 #s-bl .b-acc .p {
-    padding: units.rem2em(tokens.$space-6);
+    padding: units.convert2em(tokens.$space-600);
 }
 
 #s-cnt .b-bn .b-tl {
-    padding: units.rem2em(tokens.$space-6) 5em units.rem2em(tokens.$space-6) 3.25em;
-    font-size: units.rem2em(tokens.$body-text-medium);
-    font-weight: tokens.$font-weight-regular;
-    line-height: tokens.$line-height-small;
+    padding: units.convert2em(tokens.$space-600) 5em units.convert2em(tokens.$space-600) 3.25em;
+    font-size: units.convert2em(map.get(tokens.$body-medium-text-regular, 'mobile', 'font-size'));
+    font-weight: map.get(tokens.$body-medium-text-regular, 'mobile', 'font-weight');
+    line-height: map.get(tokens.$body-medium-text-regular, 'mobile', 'line-height');
 }
 
 .cc_div .act .b-bn .exp::before,

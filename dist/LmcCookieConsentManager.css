@@ -1412,17 +1412,26 @@ html.force--consent.show--consent body {
 
 /** END IE FIXES **/
 :root {
-  --lmcccm-p-font-family: var(--lmcccm-font-family, Inter, sans-serif);
-  --lmcccm-p-base-font-size: var(--lmcccm-base-font-size, 1em);
+  --lmcccm-p-font-family: var(
+      --lmcccm-font-family,
+      'Inter', sans-serif
+  );
+  --lmcccm-p-base-font-size: var(
+      --lmcccm-base-font-size,
+      1em
+  );
   --lmcccm-p-bg: var(--lmcccm-bg, #fff);
   --lmcccm-p-text: var(--lmcccm-text, #132930);
-  --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, #0b1c2160);
+  --lmcccm-p-backdrop-color: var(--lmcccm-backdrop-color, rgba(11, 28, 33, 0.6));
   --lmcccm-p-link-text: var(--lmcccm-link-text, #29616f);
   --lmcccm-p-link-text-decoration: var(--lmcccm-link-text-decoration, underline);
   --lmcccm-p-link-hover-text: var(--lmcccm-link-hover-text, #1b5260);
   --lmcccm-p-link-hover-text-decoration: var(--lmcccm-link-hover-text-decoration, underline);
   --lmcccm-p-link-active-text: var(--lmcccm-link-active-text, #0b3a46);
-  --lmcccm-p-btn-font-weight: var(--lmcccm-btn-font-weight, 600);
+  --lmcccm-p-btn-font-weight: var(
+      --lmcccm-btn-font-weight,
+      600
+  );
   --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
   --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, 1px);
   --lmcccm-p-btn-border-style: var(--lmcccm-btn-border-style, solid);
@@ -1454,7 +1463,7 @@ html.force--consent.show--consent body {
       --lmcccm-modal-max-width,
       min(50em, calc(100vw - 2em))
   );
-  --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 37em);
+  --lmcccm-p-modal-max-height: var(--lmcccm-modal-max-height, 38.5em);
   --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, 0.5em);
   --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, var(--lmcccm-p-bg));
   --lmcccm-p-modal-text: var(--lmcccm-modal-text, var(--lmcccm-p-text));
@@ -1499,7 +1508,7 @@ html.force--consent.show--consent body {
   line-height: 1.5;
 }
 .cc_div strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 #c-txt p:not(:last-child) {
@@ -1653,14 +1662,21 @@ html.force--consent.show--consent body {
 }
 
 #cm {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   max-width: 40em;
+  max-height: calc(100vh - 2em);
   padding: 2em;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1490196078);
 }
 
 #cm.box,
 #cm.bar {
   padding: 2.5em;
+}
+
+#cm.bar {
+  max-height: 100vh;
 }
 
 #cm.bar #c-inr {
@@ -1692,6 +1708,7 @@ html.force--consent.show--consent body {
 }
 
 #cm.cloud {
+  overflow-y: auto;
   max-width: 68em;
   padding: 2.5em 3em;
 }
@@ -1778,7 +1795,7 @@ html.force--consent.show--consent body {
   padding-top: 4.8125em;
   padding-bottom: 5.5em;
   border-radius: var(--lmcccm-p-modal-border-radius);
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 688px) {
   #s-inr {
@@ -1851,7 +1868,7 @@ html.force--consent.show--consent body {
 }
 #s-c-bn::before, #s-c-bn::after {
   width: 2.5px;
-  background-color: currentColor;
+  background-color: currentcolor;
 }
 #s-c-bn:hover, #s-c-bn:active {
   background-color: transparent;
@@ -1887,7 +1904,7 @@ html.force--consent.show--consent body {
   padding: 1em 5em 1em 3.25em;
   font-size: 1em;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .cc_div .act .b-bn .exp::before,
