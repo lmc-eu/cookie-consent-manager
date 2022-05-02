@@ -76,7 +76,7 @@
     --lmcccm-p-modal-border-radius: var(--lmcccm-modal-border-radius, #{units.convert2em(tokens.$radius-200)});
     --lmcccm-p-modal-bg: var(--lmcccm-modal-bg, var(--lmcccm-p-bg));
     --lmcccm-p-modal-text: var(--lmcccm-modal-text, var(--lmcccm-p-text));
-    --lmcccm-p-modal-section-border: var(--lmcccm-modal-section-border, #{tokens.$border-main-default});
+    --lmcccm-p-modal-section-border: var(--lmcccm-modal-section-border, #{tokens.$border-primary-default});
 
     // Cookies
     --lmcccm-p-cookie-category-border-radius: var(
@@ -85,5 +85,5 @@
     );
     --lmcccm-p-cookie-category-bg: var(--lmcccm-cookie-category-bg, #{tokens.$background-cover});
     --lmcccm-p-cookie-category-hover-bg: var(--lmcccm-cookie-category-hover-bg, #{tokens.$background-cover});
-    --lmcccm-p-cookie-table-border: var(--lmcccm-cookie-table-border, #{tokens.$border-main-default});
+    --lmcccm-p-cookie-table-border: var(--lmcccm-cookie-table-border, #{tokens.$border-primary-default});
 }
