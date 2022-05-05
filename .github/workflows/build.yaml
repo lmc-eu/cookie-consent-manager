@@ -7,12 +7,13 @@ on:
 
 jobs:
   test-build:
-    name: Build example
+    name: Build example (${{ matrix.example }}, node ${{ matrix.node-version }})
     runs-on: ubuntu-20.04
     timeout-minutes: 5
     strategy:
       matrix:
         example: [webpack-with-cjs, webpack-with-esm, webpack-with-typescript]
+        node-version: [16, 18]
 
     steps:
       - name: Checkout
@@ -21,7 +22,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
 
       - name: Fetch Git history
         run: git fetch --no-tags --depth=50 origin main
