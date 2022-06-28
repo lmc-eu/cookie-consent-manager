@@ -16,9 +16,8 @@ import {
   OnChangeCallback,
   CookieConsentCategoryValues,
 } from './types';
-import { CookieConsentCategory, DisplayMode } from './constants';
+import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
-import { SecondaryButtonMode } from './constants/SecondaryButtonMode';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
@@ -197,4 +196,4 @@ function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCatego
 }
 
 export default LmcCookieConsentManager;
-export { CookieConsentCategory, DisplayMode, VanillaCookieConsent };
+export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent };
