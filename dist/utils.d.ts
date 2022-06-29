@@ -6,7 +6,7 @@ export declare const pluralize: (count: number, singular: string, plural: string
 /**
  * Assemble description intro based on default value and optional override value.
  */
-export declare const assembleDescriptionIntro: (defaultValue: string, overrideValue?: string | undefined) => string;
+export declare const assembleDescriptionIntro: (defaultValue: string, overrideValue?: string) => string;
 /**
  * Assemble secondary button based on secondary button mode
  */

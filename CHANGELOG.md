@@ -1,3 +1,20 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.2.0...2.2.1) (2022-06-29)
+
+### Bug Fixes
+
+- Add missing SecondaryButtonMode export ([e2d5f6b](https://github.com/lmc-eu/cookie-consent-manager/commit/e2d5f6b))
+
+### Dependencies
+
+- Update all dev dependencies ([b96f653](https://github.com/lmc-eu/cookie-csent-manager/commit/b96f653), [9176c98](https://github.com/lmc-eu/cookie-consent-manager/commit/9176c98), [a79c078](https://github.com/lmc-eu/cookie-consent-manager/commit/a79c078), [0c9337b](https://github.com/lmc-eu/cookie-consent-manager/commit/0c9337b), [88f6706](https://github.com/lmc-eu/cookie-consent-manager/commit/88f6706), [2e93c24](https://github.com/lmc-eu/cookie-consent-manager/commit/2e93c24), [d55c0b8](https://github.com/lmc-eu/cookie-consent-manager/commit/d55c0b8), [addb38e](https://github.com/lmc-eu/cookie-consent-manager/commit/addb38e))
+- Update dependency @lmc-eu/spirit-design-tokens to ^0.17.0 ([f78a255](https://github.com/lmc-eu/cookie-consent-manager/commit/f78a255), [2d7d6e9](https://github.com/lmc-eu/cookie-consent-manager/commit/2d7d6e9), [23b1bfa](https://github.com/lmc-eu/cookie-consent-manager/commit/23b1bfa))
+
+### Tests
+
+- Add SecondaryButtonMode to typescript example ([5c517f2](https://github.com/lmc-eu/cookie-consent-manager/commit/5c517f2))
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.1.2...2.2.0) (2022-04-28)
 

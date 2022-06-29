@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -55,6 +56,7 @@ var LmcCookieConsentManager_exports = {};
 __export(LmcCookieConsentManager_exports, {
   CookieConsentCategory: () => CookieConsentCategory,
   DisplayMode: () => DisplayMode,
+  SecondaryButtonMode: () => SecondaryButtonMode,
   VanillaCookieConsent: () => VanillaCookieConsent,
   default: () => LmcCookieConsentManager_default
 });

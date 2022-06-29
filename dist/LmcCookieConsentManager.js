@@ -1,3 +1,4 @@
+"use strict";
 (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropSymbols = Object.getOwnPropertySymbols;

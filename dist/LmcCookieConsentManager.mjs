@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -1635,6 +1636,7 @@ var LmcCookieConsentManager_default = LmcCookieConsentManager;
 export {
   CookieConsentCategory,
   DisplayMode,
+  SecondaryButtonMode,
   VanillaCookieConsent,
   LmcCookieConsentManager_default as default
 };

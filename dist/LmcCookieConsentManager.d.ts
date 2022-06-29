@@ -1,6 +1,6 @@
 import 'vanilla-cookieconsent';
 import { CookieConsentManager } from './types';
-import { CookieConsentCategory, DisplayMode } from './constants';
+import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
@@ -27,4 +27,4 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
  */
 declare const LmcCookieConsentManager: CookieConsentManager;
 export default LmcCookieConsentManager;
-export { CookieConsentCategory, DisplayMode, VanillaCookieConsent };
+export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent };

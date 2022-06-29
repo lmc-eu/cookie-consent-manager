@@ -616,19 +616,16 @@ CookieConsent settings modal
     background: transparent;
     border-radius: 0 0.25em 0.25em 0;
   }
-
   #s-bl::-webkit-scrollbar-thumb {
     border: 0.25em solid var(--cc-bg);
     background: #cfd5db;
     background: var(--cc-webkit-scrollbar-bg);
     border-radius: 100em;
   }
-
   #s-bl::-webkit-scrollbar-thumb:hover {
     background: #9199a0;
     background: var(--cc-webkit-scrollbar-bg-hover);
   }
-
   #s-bl::-webkit-scrollbar-button {
     width: 10px;
     height: 5px;
@@ -1140,105 +1137,84 @@ html.force--consent.show--consent body {
     bottom: 1em;
     display: block;
   }
-
   .force--consent #cm,
 .force--consent #cm.cloud {
     width: auto;
     max-width: 100vw;
   }
-
   #cm.top {
     top: 1em;
     bottom: auto;
   }
-
   #cm.bottom {
     bottom: 1em;
     top: auto;
   }
-
   #cm.bar.bottom {
     bottom: 0;
   }
-
   #cm.cloud .c-bn {
     font-size: 0.85em;
   }
-
   #s-bns,
 .cc_div .bar #s-bns {
     padding: 1em 1.3em;
   }
-
   .cc_div .bar #s-inr {
     max-width: 100%;
     width: 100%;
   }
-
   .cc_div .cloud #c-inr-i {
     padding-right: 0;
   }
-
   #cs {
     border-radius: 0;
     padding: 0;
   }
-
   #c-s-in {
     max-height: 100%;
     height: 100%;
     top: 0;
     transform: none;
   }
-
   .cc_div .b-tg {
     transform: scale(1.1);
     right: 1.1em;
   }
-
   #s-inr {
     margin: 0;
     padding-bottom: 7.9em;
     border-radius: 0;
   }
-
   #s-bns {
     height: 7.9em;
   }
-
   #s-bl,
 .cc_div .bar #s-bl {
     padding: 1.3em;
   }
-
   #s-hdr,
 .cc_div .bar #s-hdr {
     padding: 0 1.3em;
   }
-
   /** dynamic table layout **/
   #s-bl table {
     width: 100%;
   }
-
   #s-inr.bns-t {
     padding-bottom: 10.5em;
   }
-
   .bns-t #s-bns {
     height: 10.5em;
   }
-
   .cc_div .bns-t .c-bn {
     font-size: 0.83em;
     padding: 0.9em 1.6em;
   }
-
   #s-cnt .b-bn .b-tl {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
   }
-
   /* Force table to not be like tables anymore */
   #s-bl table,
 #s-bl thead,
@@ -1249,26 +1225,22 @@ html.force--consent.show--consent body {
 #s-cnt {
     display: block;
   }
-
   /* Hide table headers (but not display: none;, for accessibility) */
   #s-bl thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-
   #s-bl tr {
     border-top: 1px solid #e3e7ed;
     border-color: var(--cc-cookie-table-border);
   }
-
   #s-bl td {
     /* Behave  like a "row" */
     border: none;
     position: relative;
     padding-left: 35%;
   }
-
   #s-bl td:before {
     position: absolute;
     left: 1em;
@@ -1280,40 +1252,33 @@ html.force--consent.show--consent body {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   #cm .c-bn,
 .cc_div .c-bn {
     width: 100%;
     margin-right: 0;
   }
-
   #s-cnt #s-rall-bn {
     margin-left: 0;
   }
-
   .cc_div #c-bns {
     flex-direction: column;
   }
-
   #c-bns button + button,
 #s-cnt button + button {
     margin-top: 0.625em;
     margin-left: 0;
     float: unset;
   }
-
   #cm.cloud,
 #cm.box {
     left: 1em;
     right: 1em;
     width: auto;
   }
-
   #cm.cloud.right,
 #cm.cloud.left {
     margin: 0;
   }
-
   .cc_div .cloud #c-bns,
 .cc_div .cloud #c-inr,
 .cc_div .cloud #c-inr-i {
@@ -1321,11 +1286,9 @@ html.force--consent.show--consent body {
     width: auto;
     min-width: unset;
   }
-
   .cc_div .cloud #c-txt {
     font-size: 0.9em;
   }
-
   .cc_div .cloud #c-bns {
     margin-top: 1.625em;
   }
@@ -1722,12 +1685,10 @@ html.force--consent.show--consent body {
     flex-flow: column;
     align-items: stretch;
   }
-
   #cm.bar #c-inr-i {
     margin-right: 0;
     margin-bottom: 2em;
   }
-
   #cm.bar #c-bns {
     align-self: flex-end;
   }
@@ -1739,19 +1700,15 @@ html.force--consent.show--consent body {
 #cm.right {
     padding: 1.5em !important;
   }
-
   .cc_div #c-bns {
     margin-top: 1.5em;
   }
-
   #cm.bar #c-inr-i {
     margin-bottom: 1.5em;
   }
-
   #cm.bar #c-bns {
     align-self: stretch;
   }
-
   .cc_div .c-bn,
 #cm .c-bn,
 #cm.bar #c-bns .c-bn {
