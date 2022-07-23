@@ -2134,10 +2134,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.3.tgz#1d3cc3f06da55992bd04a492b22ff913684b9a67"
   integrity sha512-XOBMJeFpJyy9siRtyEzGS2U37B2Sikr6xUJ9d4JYFH7IOESs9/awIdcPrEqj8x5KnUrWeei8EyAnj3yKH/k68w==
 
-"@lmc-eu/spirit-design-tokens@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.17.0.tgz#6b671a228e4e54e95d2c4f6b8672bf6600ff9eee"
-  integrity sha512-ASYYKxolE2jXnWT7ZNEDRGRLWWaQZ6GVcp2XbmsX6CJQfN9sfn4a4EhZ/eadZMMFQL49CJcR/r+pXS6f9K76qw==
+"@lmc-eu/spirit-design-tokens@^0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.18.0.tgz#45f2e9ec0449675e138d91b2c734541879dbcff7"
+  integrity sha512-vo6o69XWrLqbYp8Fm/+eW8NTmqVgZpsElrYxOrmJV7fYK/LyYWOgF8TIv/FWDLrsYnNEM/gtFB2rbHfruEMIkA==
 
 "@lmc-eu/stylelint-config@4.0.1":
   version "4.0.1"
@@ -6895,10 +6895,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-cookieconsent@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/vanilla-cookieconsent/-/vanilla-cookieconsent-2.8.0.tgz#651bc9de2517571afb4ef72075d0200ec30ce343"
-  integrity sha512-ouffZlaEkrGBvYJtYt1p4tB4IQ9gdw1dZR+yJmlTjpA14PUKCWpx9gblWeujpwD5OjXI0/aWHb0M0wdYd2uJ2g==
+vanilla-cookieconsent@2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/vanilla-cookieconsent/-/vanilla-cookieconsent-2.8.5.tgz#adb2f5764a44d3b07d4eeb4a4f6718141b99d4ea"
+  integrity sha512-GZeAjOnvpQXTXQ99F/4lmB+DZkwSQU7aSRazcwlVPx8GZHG/ieKc+hh8nbBoWQYq+SCz5LkbXdB3IUWKgHZBqA==
 
 walker@^1.0.8:
   version "1.0.8"
