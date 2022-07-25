@@ -34,6 +34,11 @@
       "separateMajorMinor": false,
       "matchPackagePatterns": ["*"],
       "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "groupName": "NanoID with CJS support",
+      "matchPackageNames": ["nanoid"],
+      "allowedVersions": "<4"
     }
   ]
 }
