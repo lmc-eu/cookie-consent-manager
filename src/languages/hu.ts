@@ -4,6 +4,7 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeLmc,
+  getCookieTableHeaders,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -17,12 +18,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -58,8 +59,10 @@ export const config = (
       accept_all_btn: 'Minden elfogadása',
       reject_all_btn: 'A legszükségesebbek elfogadása',
       save_settings_btn: 'Beállítások mentése',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description:
             `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.\n` +
             (lang.settingsModalMoreInfo ??

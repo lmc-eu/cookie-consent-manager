@@ -94,10 +94,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode),
   };
 
-  const onFirstAcceptHandler = (
-    userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategoryValues>,
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
-  ) => {
+  const onFirstAcceptHandler = (userPreferences: UserPreferences, cookie: SavedCookieContent): void => {
     const cookieData = cookieConsent.get('data');
     if (cookieData == null || !('uid' in cookieData)) {
       cookieConsent.set('data', {
@@ -115,19 +112,16 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onFirstAccept(cookieConsent);
   };
 
-  const onAcceptHandler = () => {
+  const onAcceptHandler = (savedCookieContent: SavedCookieContent): void => {
     onAccept(cookieConsent);
   };
 
-  const onChangeHandler = (
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
-    changedCategories: Array<CookieConsentCategoryValues>,
-  ) => {
+  const onChangeHandler = (cookie: SavedCookieContent, changedCookieCategories: string[]): void => {
     const userPreferences = cookieConsent.getUserPreferences();
     const categories = {
       accepted: userPreferences.accepted_categories,
       rejected: userPreferences.rejected_categories,
-      changed: changedCategories,
+      changed: changedCookieCategories,
     };
 
     pushToDataLayer(cookie);
@@ -139,8 +133,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange(cookieConsent, categories);
   };
 
-  const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategoryValues> = {
-    auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
+  const cookieConsentConfig: UserConfig = {
+    auto_language: autodetectLang ? 'document' : 'browser', // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
     cookie_expiration: 365, // 1 year
     cookie_necessary_only_expiration: 60, // 2 months
@@ -182,7 +176,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>) {
+function pushToDataLayer(cookie: SavedCookieContent) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',

@@ -4,6 +4,7 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeLmc,
+  getCookieTableHeaders,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -16,12 +17,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -53,8 +54,10 @@ export const config = (
       accept_all_btn: 'Accept all',
       reject_all_btn: 'Accept necessary',
       save_settings_btn: 'Save settings',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description:
             `If you want to get the most out of our website it is best to allow all types of cookies.\n` +
             (lang.settingsModalMoreInfo ??
