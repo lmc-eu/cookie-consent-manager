@@ -12,14 +12,9 @@ export type CategoriesChangeset = {
   changed: CookieConsentCategoryValues[];
 };
 
-export type OnFirstAcceptCallback = (
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-) => void;
-export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export type OnChangeCallback = (
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-  categories: CategoriesChangeset,
-) => void;
+export type OnFirstAcceptCallback = (cookieConsent: CookieConsent) => void;
+export type OnAcceptCallback = (cookieConsent: CookieConsent) => void;
+export type OnChangeCallback = (cookieConsent: CookieConsent, categories: CategoriesChangeset) => void;
 
 export type TranslationOverride = {
   consentTitle?: string;
@@ -37,10 +32,7 @@ export type CookieConsentManagerOptions = {
   displayMode: Values<typeof DisplayMode>;
   secondaryButtonMode: Values<typeof SecondaryButtonMode>;
   translationOverrides: Record<string, TranslationOverride>;
-  config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
+  config: UserConfig;
 };
 
-export type CookieConsentManager = (
-  serviceName: string,
-  args?: Partial<CookieConsentManagerOptions>,
-) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
+export type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => CookieConsent;

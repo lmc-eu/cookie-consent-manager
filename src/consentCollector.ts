@@ -4,16 +4,13 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 /**
  * Submit information about consent level given by the user.
  */
-function submitConsent(
-  consentCollectorApiUrl: string,
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-): void {
+function submitConsent(consentCollectorApiUrl: string, cookieConsent: CookieConsent): void {
   const payload = buildPayload(cookieConsent);
 
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>): Object {
+function buildPayload(cookieConsent: CookieConsent): Object {
   const cookieData = cookieConsent.get('data');
   const userPreferences = cookieConsent.getUserPreferences();
   const daysOfAcceptation =

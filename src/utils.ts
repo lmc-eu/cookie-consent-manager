@@ -25,6 +25,9 @@ export const legalizeLmc = (companyNames: string[], legalName: string): string[]
 
 /**
  * Assemble description intro based on default value and optional override value.
+ *
+ * @param defaultValue
+ * @param overrideValue
  */
 export const assembleDescriptionIntro = (defaultValue: string, overrideValue?: string): string => {
   const descriptionIntro = overrideValue ?? defaultValue;
@@ -34,21 +37,29 @@ export const assembleDescriptionIntro = (defaultValue: string, overrideValue?: s
 
 /**
  * Assemble secondary button based on secondary button mode
+ *
+ * @param secondaryButtonMode
+ * @param textAcceptNecessary
+ * @param textShowSettings
  */
 export const assembleSecondaryButton = (
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   textAcceptNecessary: string,
   textShowSettings: string,
-): VanillaCookieConsent.ModalSecondaryButton => {
-  return {
-    text: secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY ? textAcceptNecessary : textShowSettings,
-    role:
-      secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY
-        ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-        : VanillaCookieConsent.SecondaryButtonRole.SETTINGS,
-  };
-};
+): ButtonSetting<SecondaryButtonRole> => ({
+  text: secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY ? textAcceptNecessary : textShowSettings,
+  role:
+    secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY
+      ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
+      : VanillaCookieConsent.SecondaryButtonRole.SETTINGS,
+});
 
-export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof SecondaryButtonMode>): boolean => {
-  return secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
-};
+export const getCookieTableHeaders = (): Record<string, string>[] => [
+  { col1: 'Name' },
+  { col2: 'Domain' },
+  { col3: 'Expiration' },
+  { col4: 'Description' },
+];
+
+export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof SecondaryButtonMode>): boolean =>
+  secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;

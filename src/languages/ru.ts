@@ -5,6 +5,7 @@ import {
   isSettingsButtonNotShown,
   legalizeLmc,
   pluralize,
+  getCookieTableHeaders,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -20,12 +21,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -58,8 +59,10 @@ export const config = (
       accept_all_btn: 'Принять все',
       reject_all_btn: 'Принятие необходимо',
       save_settings_btn: 'Сохранить настройки',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description: `Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
           разрешить просматривать и сохранять все типы файлов cookie.
           Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
