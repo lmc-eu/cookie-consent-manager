@@ -4,6 +4,7 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   pluralize,
+  getCookieTableHeaders,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
@@ -19,12 +20,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -57,8 +58,10 @@ export const config = (
       accept_all_btn: 'Přijmout všechny',
       reject_all_btn: 'Přijmout nezbytné',
       save_settings_btn: 'Uložit nastavení',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description: `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.
           Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
           <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Používání Cookies</a>

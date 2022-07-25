@@ -2,6 +2,7 @@ import {
   addSeparators,
   assembleDescriptionIntro,
   assembleSecondaryButton,
+  getCookieTableHeaders,
   isSettingsButtonNotShown,
   pluralize,
 } from '../utils';
@@ -19,12 +20,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -57,8 +58,10 @@ export const config = (
       accept_all_btn: 'Прийняти все',
       reject_all_btn: 'Прийняття необхідно',
       save_settings_btn: 'Зберегти налаштування',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description: `Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
           Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
           <a href="https://www.lmc.eu/en/cookies/" target="_blank">Використання Cookies</a>

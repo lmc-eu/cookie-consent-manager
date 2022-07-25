@@ -4,6 +4,7 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   pluralize,
+  getCookieTableHeaders,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
@@ -19,12 +20,12 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {LanguageSetting} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-): VanillaCookieConsent.Languages => {
+): LanguageSetting => {
   const lang = { ...extra, ...extraMessages };
 
   return {
@@ -57,8 +58,10 @@ export const config = (
       accept_all_btn: 'Akceptuj wszystkie',
       reject_all_btn: 'Akceptuj niezbędne',
       save_settings_btn: 'Zapisz ustawienia',
+      cookie_table_headers: getCookieTableHeaders(),
       blocks: [
         {
+          title: '',
           description: `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie
           rodzaje plików cookies. Aby uzyskać więcej informacji na temat tego, czym są pliki cookies
           i jak z nimi pracujemy, odwiedź na naszej stronie
