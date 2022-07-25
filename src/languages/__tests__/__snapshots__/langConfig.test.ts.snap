@@ -30,6 +30,7 @@ Object {
           Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
           <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">Používání Cookies</a>
           a <a href=\\"https://www.lmc.eu/cs/zasady-ochrany-soukromi\\" target=\\"_blank\\">Zásady ochrany soukromí</a>.",
+        "title": "",
       },
       Object {
         "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
@@ -80,6 +81,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Přijmout nezbytné",
@@ -119,6 +134,7 @@ Object {
           Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
           <a href=\\"https://www.lmc.eu/cs/cookies/\\" target=\\"_blank\\">Používání Cookies</a>
           a <a href=\\"https://www.lmc.eu/cs/zasady-ochrany-soukromi\\" target=\\"_blank\\">Zásady ochrany soukromí</a>.",
+        "title": "",
       },
       Object {
         "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
@@ -171,6 +187,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Přijmout nezbytné",
     "save_settings_btn": "Uložit nastavení",
     "title": "Přizpůsobit nastavení Cookies",
@@ -208,6 +238,7 @@ Object {
           finden Sie in unseren Richtlinien
           zur <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>
           und zum <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Datenschutz</a>.",
+        "title": "",
       },
       Object {
         "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
@@ -253,6 +284,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Das Notwendigste akzeptieren",
@@ -292,6 +337,7 @@ Object {
           finden Sie in unseren Richtlinien
           zur <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Verwendung von Cookies</a>
           und zum <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Datenschutz</a>.",
+        "title": "",
       },
       Object {
         "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
@@ -339,6 +385,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Das Notwendigste akzeptieren",
     "save_settings_btn": "Einstellungen speichern",
     "title": "Benutzerdefinierte Cookie-Einstellungen",
@@ -375,6 +435,7 @@ Object {
           You can find more information about what cookies are and how we work with them via the links
           to <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">The use of cookies</a>
           and <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Privacy policy</a>.",
+        "title": "",
       },
       Object {
         "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
@@ -420,6 +481,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Accept necessary",
@@ -458,6 +533,7 @@ Object {
           You can find more information about what cookies are and how we work with them via the links
           to <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">The use of cookies</a>
           and <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Privacy policy</a>.",
+        "title": "",
       },
       Object {
         "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
@@ -505,6 +581,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Accept necessary",
     "save_settings_btn": "Save settings",
     "title": "Custom Cookie settings",
@@ -541,6 +631,7 @@ Object {
           cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
           a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Cookie-k használata</a>
           és az <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Adatvédelmi szabályzat honlapjain talál</a>.",
+        "title": "",
       },
       Object {
         "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
@@ -588,6 +679,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "A legszükségesebbek elfogadása",
     "save_settings_btn": "Beállítások mentése",
     "title": "Egyedi cookie-fájl beállítások",
@@ -624,6 +729,7 @@ Object {
           cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
           a <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Cookie-k használata</a>
           és az <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Adatvédelmi szabályzat honlapjain talál</a>.",
+        "title": "",
       },
       Object {
         "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
@@ -669,6 +775,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "A legszükségesebbek elfogadása",
@@ -709,6 +829,7 @@ Object {
           i jak z nimi pracujemy, odwiedź na naszej stronie
           <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Korzystanie z plików cookies</a>
           i <a href=\\"https://www.lmc.eu/pl/polityka-prywatnosci\\" target=\\"_blank\\">Politykę prywatności</a>.",
+        "title": "",
       },
       Object {
         "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
@@ -754,6 +875,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Akceptuj niezbędne",
@@ -794,6 +929,7 @@ Object {
           i jak z nimi pracujemy, odwiedź na naszej stronie
           <a href=\\"https://www.lmc.eu/pl/cookies\\" target=\\"_blank\\">Korzystanie z plików cookies</a>
           i <a href=\\"https://www.lmc.eu/pl/polityka-prywatnosci\\" target=\\"_blank\\">Politykę prywatności</a>.",
+        "title": "",
       },
       Object {
         "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
@@ -841,6 +977,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Akceptuj niezbędne",
     "save_settings_btn": "Zapisz ustawienia",
     "title": "Własne ustawienia plików cookies",
@@ -879,6 +1029,7 @@ Object {
           Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
           на страницах <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Использование файлов cookie</a>
           и <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Политика конфиденциальности персональных данных</a>.",
+        "title": "",
       },
       Object {
         "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
@@ -924,6 +1075,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Принятие необходимо",
@@ -964,6 +1129,7 @@ Object {
           Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
           на страницах <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Использование файлов cookie</a>
           и <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Политика конфиденциальности персональных данных</a>.",
+        "title": "",
       },
       Object {
         "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
@@ -1011,6 +1177,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Принятие необходимо",
     "save_settings_btn": "Сохранить настройки",
     "title": "Индивидуальные настройки файлов cookies",
@@ -1048,6 +1228,7 @@ Object {
           Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránkach
           <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Používania cookies</a>
           a v <a href=\\"https://www.lmc.eu/sk/zasady-ochrany-sukromia\\" target=\\"_blank\\">Zásadách ochrany súkromia</a>.",
+        "title": "",
       },
       Object {
         "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
@@ -1093,6 +1274,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Prijať nevyhnutné",
@@ -1132,6 +1327,7 @@ Object {
           Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránkach
           <a href=\\"https://www.lmc.eu/sk/cookies\\" target=\\"_blank\\">Používania cookies</a>
           a v <a href=\\"https://www.lmc.eu/sk/zasady-ochrany-sukromia\\" target=\\"_blank\\">Zásadách ochrany súkromia</a>.",
+        "title": "",
       },
       Object {
         "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
@@ -1179,6 +1375,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Prijať nevyhnutné",
     "save_settings_btn": "Uložiť nastavenia",
     "title": "Prispôsobiť nastavenia cookies",
@@ -1216,6 +1426,7 @@ Object {
           Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
           <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання Cookies</a>
           і <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Політика конфіденційності</a>.",
+        "title": "",
       },
       Object {
         "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
@@ -1263,6 +1474,20 @@ Object {
         },
       },
     ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
+      },
+    ],
     "reject_all_btn": "Прийняття необхідно",
     "save_settings_btn": "Зберегти налаштування",
     "title": "Користувацькі налаштування файлів Cookies",
@@ -1300,6 +1525,7 @@ Object {
           Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
           <a href=\\"https://www.lmc.eu/en/cookies/\\" target=\\"_blank\\">Використання Cookies</a>
           і <a href=\\"https://www.lmc.eu/en/privacy-policy/\\" target=\\"_blank\\">Політика конфіденційності</a>.",
+        "title": "",
       },
       Object {
         "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
@@ -1345,6 +1571,20 @@ Object {
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": Array [
+      Object {
+        "col1": "Name",
+      },
+      Object {
+        "col2": "Domain",
+      },
+      Object {
+        "col3": "Expiration",
+      },
+      Object {
+        "col4": "Description",
       },
     ],
     "reject_all_btn": "Прийняття необхідно",
