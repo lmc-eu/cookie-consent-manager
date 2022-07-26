@@ -176,15 +176,19 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
+/**
+ *
+ * @param cookie
+ */
 function pushToDataLayer(cookie: SavedCookieContent) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'CookieConsent-update',
-    'CookieConsent.necessary': cookie.level.includes(CookieConsentCategory.NECESSARY),
-    'CookieConsent.analytics': cookie.level.includes(CookieConsentCategory.ANALYTICS),
-    'CookieConsent.ad': cookie.level.includes(CookieConsentCategory.AD),
-    'CookieConsent.functionality': cookie.level.includes(CookieConsentCategory.FUNCTIONALITY),
-    'CookieConsent.personalization': cookie.level.includes(CookieConsentCategory.PERSONALIZATION),
+    'CookieConsent.necessary': cookie.categories.includes(CookieConsentCategory.NECESSARY),
+    'CookieConsent.analytics': cookie.categories.includes(CookieConsentCategory.ANALYTICS),
+    'CookieConsent.ad': cookie.categories.includes(CookieConsentCategory.AD),
+    'CookieConsent.functionality': cookie.categories.includes(CookieConsentCategory.FUNCTIONALITY),
+    'CookieConsent.personalization': cookie.categories.includes(CookieConsentCategory.PERSONALIZATION),
     'CookieConsent.revision': cookie.revision,
   });
 }
