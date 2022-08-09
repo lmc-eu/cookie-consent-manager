@@ -44,7 +44,7 @@
     {
       "groupName": "CookieConsent frozen to 2.8.0 or major version",
       "matchPackageNames": ["vanilla-cookieconsent"],
-      "allowedVersions": "<=2.8.0 | >=3.0.0"
+      "allowedVersions": "<=2.8.0 || >=3.0.0"
     }
   ]
 }
