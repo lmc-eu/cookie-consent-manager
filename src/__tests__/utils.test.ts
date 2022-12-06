@@ -6,7 +6,7 @@ import {
   legalizeLmc,
   pluralize,
 } from '../utils';
-import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
+import { SecondaryButtonMode } from '../constants';
 
 describe('utils', () => {
   describe('addSeparators', () => {
