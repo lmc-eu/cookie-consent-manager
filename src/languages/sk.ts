@@ -36,7 +36,7 @@ export const config = (
         lang.descriptionIntro,
       )}
       <p>
-        Kliknutím na tlačidlo „Prijať všetky“, čím dáte
+        Kliknutím na tlačidlo „Prijať všetky“ dáte
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(lang.companyNames, lang.and)}
         súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
