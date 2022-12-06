@@ -4,6 +4,7 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   pluralize,
+  legalizeLmc,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
@@ -14,6 +15,7 @@ const extra = {
   and: 'a',
   company: 'společnosti',
   companies: 'společnostem',
+  legalName: 'LMC a společnostem z její obchodní skupiny',
 };
 
 /**
@@ -38,7 +40,7 @@ export const config = (
       <p>
         Kliknutím na tlačítko „Přijmout všechny“ dáte
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

@@ -3,6 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
+  legalizeLmc,
   pluralize,
 } from '../utils';
 import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
@@ -35,6 +36,16 @@ describe('utils', () => {
 
     it('should return plural', () => {
       expect(pluralize(2, 'test', 'tests')).toBe('tests');
+    });
+  });
+
+  describe('legalize', () => {
+    it('should replace old default name with the new legal name', () => {
+      expect(legalizeLmc(['Foo', 'LMC', 'Bar'], 'LMC et. al.')).toEqual(['Foo', 'LMC et. al.', 'Bar']);
+    });
+
+    it('should not change values if old name is not present', () => {
+      expect(legalizeLmc(['Foobar'], 'LMC et. al.')).toEqual(['Foobar']);
     });
   });
 

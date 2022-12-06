@@ -1,4 +1,10 @@
-import { addSeparators, assembleDescriptionIntro, assembleSecondaryButton, isSettingsButtonNotShown } from '../utils';
+import {
+  addSeparators,
+  assembleDescriptionIntro,
+  assembleSecondaryButton,
+  isSettingsButtonNotShown,
+  legalizeLmc,
+} from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
@@ -6,6 +12,7 @@ import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'és',
+  legalName: 'LMC és a csoporthoz tartozó vállalatok',
 };
 
 /**
@@ -29,7 +36,7 @@ export const config = (
       )}
       <p>
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
-        ${addSeparators(lang.companyNames, extra.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra.and)}
         süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

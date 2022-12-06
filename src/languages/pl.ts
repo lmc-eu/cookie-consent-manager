@@ -3,6 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
+  legalizeLmc,
   pluralize,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
@@ -14,6 +15,7 @@ const extra = {
   and: 'i',
   company: 'firmę',
   companies: 'firmy',
+  legalName: 'LMC i firmy z jej grupy biznesowej',
 };
 
 /**
@@ -38,7 +40,7 @@ export const config = (
       <p>
         Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, extra.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra.and)}
         do personalizacji, analizy i ukierunkowanego marketingu.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
