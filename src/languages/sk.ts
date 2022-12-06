@@ -7,9 +7,8 @@ import {
   pluralize,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
-import { CookieConsentCategory } from '../constants';
+import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
-import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'a',

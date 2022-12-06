@@ -1,5 +1,5 @@
 import { Values } from './types';
-import { SecondaryButtonMode } from './constants/SecondaryButtonMode';
+import { SecondaryButtonMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 export const addSeparators = (strings: string[], and: string = ''): string =>
