@@ -1,4 +1,10 @@
-import { addSeparators, assembleDescriptionIntro, assembleSecondaryButton, isSettingsButtonNotShown } from '../utils';
+import {
+  addSeparators,
+  assembleDescriptionIntro,
+  assembleSecondaryButton,
+  isSettingsButtonNotShown,
+  legalizeLmc,
+} from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory } from '../constants';
 import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
@@ -6,6 +12,7 @@ import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 const extra = {
   and: 'and',
+  legalName: 'LMC and other companies from its business group',
 };
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
@@ -28,7 +35,7 @@ export const config = (
       )}
       <p>
         By clicking the "Accept all" button, you give
-        ${addSeparators(lang.companyNames, extra.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra.and)}
         your consent to use cookies for personalisation, analytics and targeted marketing.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

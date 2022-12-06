@@ -3,6 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
+  legalizeLmc,
   pluralize,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
@@ -14,6 +15,7 @@ const extra = {
   and: 'a',
   company: 'spoločnosti',
   companies: 'spoločnostiam',
+  legalName: 'LMC a spoločnostiam z jej obchodné skupiny',
 };
 
 /**
@@ -38,7 +40,7 @@ export const config = (
       <p>
         Kliknutím na tlačidlo „Prijať všetky“ dáte
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
