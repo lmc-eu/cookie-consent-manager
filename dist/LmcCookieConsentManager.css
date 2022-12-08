@@ -1125,9 +1125,9 @@ html.force--consent.show--consent body {
 /* end positions */
 @media screen and (max-width: 688px) {
   #cm,
-#cm.cloud,
-#cm.left,
-#cm.right {
+  #cm.cloud,
+  #cm.left,
+  #cm.right {
     width: auto;
     max-width: 100%;
     margin: 0;
@@ -1138,7 +1138,7 @@ html.force--consent.show--consent body {
     display: block;
   }
   .force--consent #cm,
-.force--consent #cm.cloud {
+  .force--consent #cm.cloud {
     width: auto;
     max-width: 100vw;
   }
@@ -1157,7 +1157,7 @@ html.force--consent.show--consent body {
     font-size: 0.85em;
   }
   #s-bns,
-.cc_div .bar #s-bns {
+  .cc_div .bar #s-bns {
     padding: 1em 1.3em;
   }
   .cc_div .bar #s-inr {
@@ -1190,11 +1190,11 @@ html.force--consent.show--consent body {
     height: 7.9em;
   }
   #s-bl,
-.cc_div .bar #s-bl {
+  .cc_div .bar #s-bl {
     padding: 1.3em;
   }
   #s-hdr,
-.cc_div .bar #s-hdr {
+  .cc_div .bar #s-hdr {
     padding: 0 1.3em;
   }
   /** dynamic table layout **/
@@ -1217,12 +1217,12 @@ html.force--consent.show--consent body {
   }
   /* Force table to not be like tables anymore */
   #s-bl table,
-#s-bl thead,
-#s-bl tbody,
-#s-bl th,
-#s-bl td,
-#s-bl tr,
-#s-cnt {
+  #s-bl thead,
+  #s-bl tbody,
+  #s-bl th,
+  #s-bl td,
+  #s-bl tr,
+  #s-cnt {
     display: block;
   }
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -1253,7 +1253,7 @@ html.force--consent.show--consent body {
     text-overflow: ellipsis;
   }
   #cm .c-bn,
-.cc_div .c-bn {
+  .cc_div .c-bn {
     width: 100%;
     margin-right: 0;
   }
@@ -1264,24 +1264,24 @@ html.force--consent.show--consent body {
     flex-direction: column;
   }
   #c-bns button + button,
-#s-cnt button + button {
+  #s-cnt button + button {
     margin-top: 0.625em;
     margin-left: 0;
     float: unset;
   }
   #cm.cloud,
-#cm.box {
+  #cm.box {
     left: 1em;
     right: 1em;
     width: auto;
   }
   #cm.cloud.right,
-#cm.cloud.left {
+  #cm.cloud.left {
     margin: 0;
   }
   .cc_div .cloud #c-bns,
-.cc_div .cloud #c-inr,
-.cc_div .cloud #c-inr-i {
+  .cc_div .cloud #c-inr,
+  .cc_div .cloud #c-inr-i {
     display: block;
     width: auto;
     min-width: unset;
@@ -1487,13 +1487,13 @@ html.force--consent.show--consent body {
 }
 @media screen and (max-width: 1023px) {
   #c-ttl,
-#s-ttl {
+  #s-ttl {
     font-size: 1.5em;
   }
 }
 @media screen and (max-width: 688px) {
   #c-ttl,
-#s-ttl {
+  #s-ttl {
     font-size: 1.125em;
   }
 }
@@ -1598,7 +1598,7 @@ html.force--consent.show--consent body {
 }
 @media screen and (max-width: 688px) {
   #c-bns .c-bn + .c-bn,
-#s-bns .c-bn + .c-bn {
+  #s-bns .c-bn + .c-bn {
     margin-top: 1em;
     margin-left: 0;
   }
@@ -1695,9 +1695,9 @@ html.force--consent.show--consent body {
 }
 @media screen and (max-width: 688px) {
   #cm,
-#cm.cloud,
-#cm.left,
-#cm.right {
+  #cm.cloud,
+  #cm.left,
+  #cm.right {
     padding: 1.5em !important;
   }
   .cc_div #c-bns {
@@ -1710,8 +1710,8 @@ html.force--consent.show--consent body {
     align-self: stretch;
   }
   .cc_div .c-bn,
-#cm .c-bn,
-#cm.bar #c-bns .c-bn {
+  #cm .c-bn,
+  #cm.bar #c-bns .c-bn {
     width: 100%;
   }
 }
@@ -1729,8 +1729,8 @@ html.force--consent.show--consent body {
 }
 @media screen and (max-width: 688px) {
   #cs,
-#s-bl,
-#s-bns {
+  #s-bl,
+  #s-bns {
     padding: 1em;
   }
 }

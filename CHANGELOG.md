@@ -1,3 +1,43 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.2.1...2.3.0) (2022-12-08)
+
+### Bug Fixes
+
+- Fix typo in Slovak translation ([6d52c18](https://github.com/lmc-eu/cookie-consent-manager/commit/6d52c18))
+
+### Dependencies
+
+- Pin dependencies ([055cd4b](https://github.com/lmc-eu/cookie-consent-manager/commit/055cd4b))
+- Update all dev dependencies ([68327b9](https://github.com/lmc-eu/cookie-consent-manager/commit/68327b9))
+- Update safe dependencies ([04a98da](https://github.com/lmc-eu/cookie-consent-manager/commit/04a98da))
+
+### Documentation
+
+- Fix typo in changelog message ([eca903b](https://github.com/lmc-eu/cookie-consent-manager/commit/eca903b))
+- Remove integrity attributes because of integrity fails ([19fce10](https://github.com/lmc-eu/cookie-consent-manager/commit/19fce10))
+
+### Features
+
+- Replace LMC company name with new and translated legal name [#CCM-65](https://jira.int.lmc.cz/browse/CCM-65) ([ca8f15c](https://github.com/lmc-eu/cookie-consent-manager/commit/ca8f15c))
+
+### Chores
+
+- Add missing peer dependencies ([b4ddc72](https://github.com/lmc-eu/cookie-consent-manager/commit/b4ddc72))
+- Fix typo in semver range (refs [#260](https://jira.int.lmc.cz/browse/260)) ([4aacfd9](https://github.com/lmc-eu/cookie-consent-manager/commit/4aacfd9))
+- Freeze `vanilla-cookieconsent` to 2.8.0 or allow major release ([2388b8a](https://github.com/lmc-eu/cookie-consent-manager/commit/2388b8a))
+- Set target branch for additional updates ([258723f](https://github.com/lmc-eu/cookie-consent-manager/commit/258723f))
+- Test build on multiple node versions ([80782a2](https://github.com/lmc-eu/cookie-consent-manager/commit/80782a2))
+- Update `nanoid` package to v3 branch only ([d13a836](https://github.com/lmc-eu/cookie-consent-manager/commit/d13a836))
+
+### Styles
+
+- Simplify constants imports ([0c8f45e](https://github.com/lmc-eu/cookie-consent-manager/commit/0c8f45e))
+
+### Tests
+
+- Fix haste module collision on local machine by ignoring ([70d42c8](https://github.com/lmc-eu/cookie-consent-manager/commit/70d42c8))
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.2.0...2.2.1) (2022-06-29)
 

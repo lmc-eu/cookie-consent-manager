@@ -1,4 +1,3 @@
-"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -56,7 +55,7 @@ var __spreadValues = (a, b) => {
         var f = false, l = false;
         try {
           for (var q = c.querySelectorAll(b.join(':not([tabindex="-1"]), ')), h, n = q.length, p = 0; p < n; )
-            h = q[p].getAttribute("data-focus"), l || h !== "1" ? h === "0" && (f = q[p], l || q[p + 1].getAttribute("data-focus") === "0" || (l = q[p + 1])) : l = q[p], p++;
+            h = q[p].getAttribute("data-focus"), l || "1" !== h ? "0" === h && (f = q[p], l || "0" === q[p + 1].getAttribute("data-focus") || (l = q[p + 1])) : l = q[p], p++;
         } catch (F) {
           return c.querySelectorAll(b.join(", "));
         }
@@ -69,7 +68,7 @@ var __spreadValues = (a, b) => {
       a(M, ja);
       Q && a(x, Ka);
     }, La = function(a) {
-      g.force_consent === true && J(ra, "force--consent");
+      true === g.force_consent && J(ra, "force--consent");
       if (!x) {
         x = k("div");
         var b = k("div"), c = k("div");
@@ -78,7 +77,10 @@ var __spreadValues = (a, b) => {
         c.id = "cm-ov";
         x.setAttribute("role", "dialog");
         x.setAttribute("aria-modal", "true");
-        x.setAttribute("aria-hidden", "false");
+        x.setAttribute(
+          "aria-hidden",
+          "false"
+        );
         x.setAttribute("aria-labelledby", "c-ttl");
         x.setAttribute("aria-describedby", "c-txt");
         sa.appendChild(x);
@@ -100,7 +102,7 @@ var __spreadValues = (a, b) => {
           W.id = "c-p-bn";
           W.className = "c-bn";
           var f;
-          c.role === "accept_all" && (f = "all");
+          "accept_all" === c.role && (f = "all");
           z(W, "click", function() {
             m.hide();
             m.accept(f);
@@ -108,7 +110,7 @@ var __spreadValues = (a, b) => {
         }
         W.textContent = g.languages[a].consent_modal.primary_btn.text;
       }
-      d && (S || (S = k("button"), S.id = "c-s-bn", S.className = "c-bn c_link", d.role === "accept_necessary" ? z(S, "click", function() {
+      d && (S || (S = k("button"), S.id = "c-s-bn", S.className = "c-bn c_link", "accept_necessary" === d.role ? z(S, "click", function() {
         m.hide();
         m.accept([]);
       }) : z(S, "click", function() {
@@ -116,7 +118,7 @@ var __spreadValues = (a, b) => {
       })), S.textContent = g.languages[a].consent_modal.secondary_btn.text);
       a = g.gui_options;
       ba || (ba = k("div"), ba.id = "c-inr", ba.appendChild(b));
-      T || (T = k("div"), T.id = "c-bns", a && a.consent_modal && a.consent_modal.swap_buttons === true ? (d && T.appendChild(S), c && T.appendChild(W), T.className = "swap") : (c && T.appendChild(W), d && T.appendChild(S)), (c || d) && ba.appendChild(T), x.appendChild(ba));
+      T || (T = k("div"), T.id = "c-bns", a && a.consent_modal && true === a.consent_modal.swap_buttons ? (d && T.appendChild(S), c && T.appendChild(W), T.className = "swap") : (c && T.appendChild(W), d && T.appendChild(S)), (c || d) && ba.appendChild(T), x.appendChild(ba));
       Q = true;
     }, ab = function(a) {
       if (E)
@@ -153,7 +155,7 @@ var __spreadValues = (a, b) => {
         l.appendChild(ka);
         z(b, "keydown", function(ma) {
           ma = ma || window.event;
-          ma.keyCode === 27 && m.hideSettings(0);
+          27 === ma.keyCode && m.hideSettings(0);
         }, true);
         z(ka, "click", function() {
           m.hideSettings(0);
@@ -165,7 +167,7 @@ var __spreadValues = (a, b) => {
       var h = U.length;
       ua.innerHTML = g.languages[a].settings_modal.title;
       for (var n = 0; n < h; ++n) {
-        var p = U[n].title, F = U[n].description, w = U[n].toggle, A = U[n].cookie_table, u = g.remove_cookie_tables === true, r = F && "truthy" || !u && A && "truthy", B = k("div"), X = k("div");
+        var p = U[n].title, F = U[n].description, w = U[n].toggle, A = U[n].cookie_table, u = true === g.remove_cookie_tables, r = F && "truthy" || !u && A && "truthy", B = k("div"), X = k("div");
         if (F) {
           var Ma = k("div");
           Ma.className = "p";
@@ -175,7 +177,7 @@ var __spreadValues = (a, b) => {
         D.className = "title";
         B.className = "c-bl";
         X.className = "desc";
-        if (typeof w !== "undefined") {
+        if ("undefined" !== typeof w) {
           var N = "c-ac-" + n, ha = r ? k("button") : k("div"), G = k("label"), O = k("input"), P = k("span"), ia = k("span"), Xa = k("span"), Ya = k("span");
           ha.className = r ? "b-tl exp" : "b-tl";
           G.className = "b-tg";
@@ -197,7 +199,10 @@ var __spreadValues = (a, b) => {
           K ? -1 < H(t.level, Aa) ? (O.checked = true, !y && R.push(true)) : !y && R.push(false) : w.enabled ? (O.checked = true, !y && R.push(true), w.enabled && !y && Ia.push(Aa)) : !y && R.push(false);
           !y && I.push(Aa);
           w.readonly ? (O.disabled = true, J(P, "c-ro"), !y && ya.push(true)) : !y && ya.push(false);
-          J(X, "b-acc");
+          J(
+            X,
+            "b-acc"
+          );
           J(D, "b-bn");
           J(B, "b-ex");
           X.id = N;
@@ -212,10 +217,13 @@ var __spreadValues = (a, b) => {
             }, false);
           }(X, B, ha);
         } else
-          p && (r = k("div"), r.className = "b-tl", r.setAttribute("role", "heading"), r.setAttribute("aria-level", "3"), r.insertAdjacentHTML("beforeend", p), D.appendChild(r));
+          p && (r = k("div"), r.className = "b-tl", r.setAttribute("role", "heading"), r.setAttribute(
+            "aria-level",
+            "3"
+          ), r.insertAdjacentHTML("beforeend", p), D.appendChild(r));
         p && B.appendChild(D);
         F && X.appendChild(Ma);
-        if (!u && typeof A !== "undefined") {
+        if (!u && "undefined" !== typeof A) {
           r = document.createDocumentFragment();
           for (N = 0; N < Y.length; ++N)
             G = k("th"), u = Y[N], G.setAttribute("scope", "col"), u && (D = u && va(u)[0], G.textContent = Y[N][D], r.appendChild(G));
@@ -274,14 +282,14 @@ var __spreadValues = (a, b) => {
       (eb || document.body).appendChild(L);
     };
     m.updateLanguage = function(a, b) {
-      if (typeof a === "string")
-        return a = za(a, g.languages), a !== e.current_lang || b === true ? (e.current_lang = a, Q && (La(a), Va(ba)), ab(a), true) : false;
+      if ("string" === typeof a)
+        return a = za(a, g.languages), a !== e.current_lang || true === b ? (e.current_lang = a, Q && (La(a), Va(ba)), ab(a), true) : false;
     };
     var cb = function(a) {
       var b = U.length, c = -1;
       xa = false;
       var d = wa("", "all"), f = [e.cookie_domain, "." + e.cookie_domain];
-      if (e.cookie_domain.slice(0, 4) === "www.") {
+      if ("www." === e.cookie_domain.slice(0, 4)) {
         var l = e.cookie_domain.substr(4);
         f.push(l);
         f.push("." + l);
@@ -292,7 +300,7 @@ var __spreadValues = (a, b) => {
           var h = -1 < H(V, q.toggle.value);
           if (!R[++c] && Object.prototype.hasOwnProperty.call(q, "cookie_table") && (a || h)) {
             var n = q.cookie_table, p = va(Y[0])[0], F = n.length;
-            q.toggle.reload === "on_disable" && h && (xa = true);
+            "on_disable" === q.toggle.reload && h && (xa = true);
             for (h = 0; h < F; h++) {
               var w = n[h], A = [], u = w[p], r = w.is_regex || false, B = w.domain || null;
               w = w.path || false;
@@ -302,7 +310,7 @@ var __spreadValues = (a, b) => {
                   d[r].match(u) && A.push(d[r]);
               else
                 u = H(d, u), -1 < u && A.push(d[u]);
-              0 < A.length && (bb(A, w, f), q.toggle.reload === "on_clear" && (xa = true));
+              0 < A.length && (bb(A, w, f), "on_clear" === q.toggle.reload && (xa = true));
             }
           }
         }
@@ -312,24 +320,24 @@ var __spreadValues = (a, b) => {
       var b = document.querySelectorAll(".c-tgl") || [];
       if (0 < b.length)
         for (var c = 0; c < b.length; c++)
-          H(a, I[c]) !== -1 ? (b[c].checked = true, R[c] || (V.push(I[c]), R[c] = true)) : (b[c].checked = false, R[c] && (V.push(I[c]), R[c] = false));
+          -1 !== H(a, I[c]) ? (b[c].checked = true, R[c] || (V.push(I[c]), R[c] = true)) : (b[c].checked = false, R[c] && (V.push(I[c]), R[c] = false));
       K && e.autoclear_cookies && 0 < V.length && cb();
       t = { level: a, revision: e.revision, data: C, rfc_cookie: e.use_rfc_cookie };
       if (!K || 0 < V.length || !Z)
         Z = true, Ga = Pa(Qa()), Ra(e.cookie_name, JSON.stringify(t)), Ba();
-      if (!K && (e.autoclear_cookies && cb(true), typeof Ea === "function" && Ea(m.getUserPreferences(), t), typeof pa === "function" && pa(t), K = true, e.mode === "opt-in"))
+      if (!K && (e.autoclear_cookies && cb(true), "function" === typeof Ea && Ea(m.getUserPreferences(), t), "function" === typeof pa && pa(t), K = true, "opt-in" === e.mode))
         return;
-      typeof Da === "function" && 0 < V.length && Da(t, V);
+      "function" === typeof Da && 0 < V.length && Da(t, V);
       xa && window.location.reload();
     }, hb = function(a, b) {
-      if (typeof a !== "string" || a === "" || document.getElementById("cc--style"))
+      if ("string" !== typeof a || "" === a || document.getElementById("cc--style"))
         b();
       else {
         var c = k("style");
         c.id = "cc--style";
         var d = new XMLHttpRequest();
         d.onreadystatechange = function() {
-          this.readyState === 4 && this.status === 200 && (c.setAttribute("type", "text/css"), c.styleSheet ? c.styleSheet.cssText = this.responseText : c.appendChild(document.createTextNode(this.responseText)), document.getElementsByTagName("head")[0].appendChild(c), b());
+          4 === this.readyState && 200 === this.status && (c.setAttribute("type", "text/css"), c.styleSheet ? c.styleSheet.cssText = this.responseText : c.appendChild(document.createTextNode(this.responseText)), document.getElementsByTagName("head")[0].appendChild(c), b());
         };
         d.open("GET", a);
         d.send();
@@ -341,15 +349,15 @@ var __spreadValues = (a, b) => {
       return -1;
     }, k = function(a) {
       var b = document.createElement(a);
-      a === "button" && b.setAttribute("type", a);
+      "button" === a && b.setAttribute("type", a);
       return b;
     }, ib = function(a, b) {
-      return e.auto_language === "browser" ? (b = navigator.language || navigator.browserLanguage, 2 < b.length && (b = b[0] + b[1]), b = b.toLowerCase(), za(b, a)) : e.auto_language === "document" ? za(document.documentElement.lang, a) : typeof b === "string" ? e.current_lang = za(b, a) : e.current_lang;
+      return "browser" === e.auto_language ? (b = navigator.language || navigator.browserLanguage, 2 < b.length && (b = b[0] + b[1]), b = b.toLowerCase(), za(b, a)) : "document" === e.auto_language ? za(document.documentElement.lang, a) : "string" === typeof b ? e.current_lang = za(b, a) : e.current_lang;
     }, jb = function() {
       var a = false, b = false;
       z(document, "keydown", function(c) {
         c = c || window.event;
-        c.key === "Tab" && (v && (c.shiftKey ? document.activeElement === v[0] && (v[1].focus(), c.preventDefault()) : document.activeElement === v[1] && (v[0].focus(), c.preventDefault()), b || oa || (b = true, !a && c.preventDefault(), c.shiftKey ? v[3] ? v[2] ? v[2].focus() : v[0].focus() : v[1].focus() : v[3] ? v[3].focus() : v[0].focus())), !b && (a = true));
+        "Tab" === c.key && (v && (c.shiftKey ? document.activeElement === v[0] && (v[1].focus(), c.preventDefault()) : document.activeElement === v[1] && (v[0].focus(), c.preventDefault()), b || oa || (b = true, !a && c.preventDefault(), c.shiftKey ? v[3] ? v[2] ? v[2].focus() : v[0].focus() : v[1].focus() : v[3] ? v[3].focus() : v[0].focus())), !b && (a = true));
       });
       document.contains && z(L, "click", function(c) {
         c = c || window.event;
@@ -358,12 +366,12 @@ var __spreadValues = (a, b) => {
     }, db = function(a, b) {
       function c(f, l, q, h, n, p, F) {
         p = p && p.split(" ") || [];
-        if (-1 < H(l, n) && (J(f, n), (n !== "bar" || p[0] !== "middle") && -1 < H(q, p[0])))
+        if (-1 < H(l, n) && (J(f, n), ("bar" !== n || "middle" !== p[0]) && -1 < H(q, p[0])))
           for (l = 0; l < p.length; l++)
             J(f, p[l]);
         -1 < H(h, F) && J(f, F);
       }
-      if (typeof a === "object") {
+      if ("object" === typeof a) {
         var d = a.consent_modal;
         a = a.settings_modal;
         Q && d && c(x, ["box", "bar", "cloud"], ["top", "middle", "bottom"], ["zoom", "slide"], d.layout, d.position, d.transition);
@@ -371,12 +379,12 @@ var __spreadValues = (a, b) => {
       }
     };
     m.allowedCategory = function(a) {
-      var b = K || e.mode === "opt-in" ? JSON.parse(wa(e.cookie_name, "one", true) || "{}").level || [] : Ia;
+      var b = K || "opt-in" === e.mode ? JSON.parse(wa(e.cookie_name, "one", true) || "{}").level || [] : Ia;
       return -1 < H(b, a);
     };
     m.run = function(a) {
-      if (!document.getElementById("cc_div") && (g = a, typeof g.cookie_expiration === "number" && (e.cookie_expiration = g.cookie_expiration), typeof g.cookie_necessary_only_expiration === "number" && (e.cookie_necessary_only_expiration = g.cookie_necessary_only_expiration), typeof g.autorun === "boolean" && (e.autorun = g.autorun), typeof g.cookie_domain === "string" && (e.cookie_domain = g.cookie_domain), typeof g.cookie_same_site === "string" && (e.cookie_same_site = g.cookie_same_site), typeof g.cookie_path === "string" && (e.cookie_path = g.cookie_path), typeof g.cookie_name === "string" && (e.cookie_name = g.cookie_name), typeof g.onAccept === "function" && (pa = g.onAccept), typeof g.onFirstAction === "function" && (Ea = g.onFirstAction), typeof g.onChange === "function" && (Da = g.onChange), g.mode === "opt-out" && (e.mode = "opt-out"), typeof g.revision === "number" && (-1 < g.revision && (e.revision = g.revision), Fa = true), typeof g.autoclear_cookies === "boolean" && (e.autoclear_cookies = g.autoclear_cookies), g.use_rfc_cookie === true && (e.use_rfc_cookie = true), g.hide_from_bots === true && (Ua = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver)), e.page_scripts = g.page_scripts === true, e.page_scripts_order = g.page_scripts_order !== false, g.auto_language === "browser" || g.auto_language === true ? e.auto_language = "browser" : g.auto_language === "document" && (e.auto_language = "document"), e.current_lang = ib(g.languages, g.current_lang), !Ua))
-        if (t = JSON.parse(wa(e.cookie_name, "one", true) || "{}"), K = t.level !== void 0, C = t.data !== void 0 ? t.data : null, Z = typeof a.revision === "number" ? K ? -1 < a.revision ? t.revision === e.revision : true : true : true, Q = !K || !Z, fb(), hb(a.theme_css, function() {
+      if (!document.getElementById("cc_div") && (g = a, "number" === typeof g.cookie_expiration && (e.cookie_expiration = g.cookie_expiration), "number" === typeof g.cookie_necessary_only_expiration && (e.cookie_necessary_only_expiration = g.cookie_necessary_only_expiration), "boolean" === typeof g.autorun && (e.autorun = g.autorun), "string" === typeof g.cookie_domain && (e.cookie_domain = g.cookie_domain), "string" === typeof g.cookie_same_site && (e.cookie_same_site = g.cookie_same_site), "string" === typeof g.cookie_path && (e.cookie_path = g.cookie_path), "string" === typeof g.cookie_name && (e.cookie_name = g.cookie_name), "function" === typeof g.onAccept && (pa = g.onAccept), "function" === typeof g.onFirstAction && (Ea = g.onFirstAction), "function" === typeof g.onChange && (Da = g.onChange), "opt-out" === g.mode && (e.mode = "opt-out"), "number" === typeof g.revision && (-1 < g.revision && (e.revision = g.revision), Fa = true), "boolean" === typeof g.autoclear_cookies && (e.autoclear_cookies = g.autoclear_cookies), true === g.use_rfc_cookie && (e.use_rfc_cookie = true), true === g.hide_from_bots && (Ua = navigator && (navigator.userAgent && /bot|crawl|spider|slurp|teoma/i.test(navigator.userAgent) || navigator.webdriver)), e.page_scripts = true === g.page_scripts, e.page_scripts_order = false !== g.page_scripts_order, "browser" === g.auto_language || true === g.auto_language ? e.auto_language = "browser" : "document" === g.auto_language && (e.auto_language = "document"), e.current_lang = ib(g.languages, g.current_lang), !Ua))
+        if (t = JSON.parse(wa(e.cookie_name, "one", true) || "{}"), K = void 0 !== t.level, C = void 0 !== t.data ? t.data : null, Z = "number" === typeof a.revision ? K ? -1 < a.revision ? t.revision === e.revision : true : true : true, Q = !K || !Z, fb(), hb(a.theme_css, function() {
           Wa();
           db(a.gui_options);
           Va();
@@ -388,14 +396,14 @@ var __spreadValues = (a, b) => {
             jb();
           }, 100);
         }), K && Z) {
-          var b = typeof t.rfc_cookie === "boolean";
+          var b = "boolean" === typeof t.rfc_cookie;
           if (!b || b && t.rfc_cookie !== e.use_rfc_cookie)
             t.rfc_cookie = e.use_rfc_cookie, Ra(e.cookie_name, JSON.stringify(t));
           Ga = Pa(Qa());
           Ba();
-          typeof pa === "function" && pa(t);
+          "function" === typeof pa && pa(t);
         } else
-          e.mode === "opt-out" && Ba(Ia);
+          "opt-out" === e.mode && Ba(Ia);
     };
     m.showSettings = function(a) {
       setTimeout(function() {
@@ -404,7 +412,7 @@ var __spreadValues = (a, b) => {
         Ca = true;
         setTimeout(function() {
           na ? Ja = document.activeElement : qa = document.activeElement;
-          ja.length !== 0 && (ja[3] ? ja[3].focus() : ja[0].focus(), v = ja);
+          0 !== ja.length && (ja[3] ? ja[3].focus() : ja[0].focus(), v = ja);
         }, 200);
       }, 0 < a ? a : 0);
     };
@@ -427,7 +435,7 @@ var __spreadValues = (a, b) => {
               })(p, h);
               n ? p.src = n : n = h.src;
               n && (c ? p.readyState ? p.onreadystatechange = function() {
-                if (p.readyState === "loaded" || p.readyState === "complete")
+                if ("loaded" === p.readyState || "complete" === p.readyState)
                   p.onreadystatechange = null, f(l, ++q);
               } : p.onload = function() {
                 p.onload = null;
@@ -448,8 +456,8 @@ var __spreadValues = (a, b) => {
         case "data":
           a = b.value;
           var c = false;
-          if (b.mode === "update")
-            if (C = m.get("data"), (b = typeof C === typeof a) && typeof C === "object") {
+          if ("update" === b.mode)
+            if (C = m.get("data"), (b = typeof C === typeof a) && "object" === typeof C) {
               !C && (C = {});
               for (var d in a)
                 C[d] !== a[d] && (C[d] = a[d], c = true);
@@ -460,13 +468,17 @@ var __spreadValues = (a, b) => {
           c && (t.data = C, Ra(e.cookie_name, JSON.stringify(t)));
           return c;
         case "revision":
-          return d = b.value, a = b.prompt_consent, b = b.message, L && typeof d === "number" && t.revision !== d ? (Fa = true, Sa = b, Z = false, e.revision = d, a === true ? (La(g), db(g.gui_options, true), Wa(), m.show()) : m.accept(), b = true) : b = false, b;
+          return d = b.value, a = b.prompt_consent, b = b.message, L && "number" === typeof d && t.revision !== d ? (Fa = true, Sa = b, Z = false, e.revision = d, true === a ? (La(g), db(g.gui_options, true), Wa(), m.show()) : m.accept(), b = true) : b = false, b;
         default:
           return false;
       }
     };
     m.get = function(a, b) {
-      return JSON.parse(wa(b || e.cookie_name, "one", true) || "{}")[a];
+      return JSON.parse(wa(
+        b || e.cookie_name,
+        "one",
+        true
+      ) || "{}")[a];
     };
     m.getConfig = function(a) {
       return e[a] || g[a];
@@ -474,12 +486,12 @@ var __spreadValues = (a, b) => {
     var Qa = function() {
       Ha = t.level || [];
       Ta = I.filter(function(a) {
-        return H(Ha, a) === -1;
+        return -1 === H(Ha, a);
       });
       return { accepted: Ha, rejected: Ta };
     }, Pa = function(a) {
       var b = "custom", c = ya.filter(function(d) {
-        return d === true;
+        return true === d;
       }).length;
       a.accepted.length === I.length ? b = "all" : a.accepted.length === c && (b = "necessary");
       return b;
@@ -489,7 +501,7 @@ var __spreadValues = (a, b) => {
       return { accept_type: Pa(a), accepted_categories: a.accepted, rejected_categories: a.rejected };
     };
     m.loadScript = function(a, b, c) {
-      var d = typeof b === "function";
+      var d = "function" === typeof b;
       if (document.querySelector('script[src="' + a + '"]'))
         d && b();
       else {
@@ -498,7 +510,7 @@ var __spreadValues = (a, b) => {
           for (var l = 0; l < c.length; ++l)
             c[l] && f.setAttribute(c[l].name, c[l].value);
         d && (f.readyState ? f.onreadystatechange = function() {
-          if (f.readyState === "loaded" || f.readyState === "complete")
+          if ("loaded" === f.readyState || "complete" === f.readyState)
             f.onreadystatechange = null, b();
         } : f.onload = b);
         f.src = a;
@@ -510,7 +522,10 @@ var __spreadValues = (a, b) => {
     };
     m.show = function(a) {
       Q && setTimeout(function() {
-        J(ra, "show--consent");
+        J(
+          ra,
+          "show--consent"
+        );
         x.setAttribute("aria-hidden", "false");
         na = true;
         setTimeout(function() {
@@ -544,11 +559,11 @@ var __spreadValues = (a, b) => {
         return q;
       };
       if (a)
-        if (typeof a === "object" && typeof a.length === "number")
+        if ("object" === typeof a && "number" === typeof a.length)
           for (var f = 0; f < a.length; f++)
-            H(I, a[f]) !== -1 && b.push(a[f]);
+            -1 !== H(I, a[f]) && b.push(a[f]);
         else
-          typeof a === "string" && (a === "all" ? b = I.slice() : H(I, a) !== -1 && b.push(a));
+          "string" === typeof a && ("all" === a ? b = I.slice() : -1 !== H(I, a) && b.push(a));
       else
         b = d();
       if (1 <= c.length)
@@ -557,13 +572,13 @@ var __spreadValues = (a, b) => {
             return l !== c[f];
           });
       for (f = 0; f < I.length; f++)
-        ya[f] === true && H(b, I[f]) === -1 && b.push(I[f]);
+        true === ya[f] && -1 === H(b, I[f]) && b.push(I[f]);
       gb(b);
     };
     m.eraseCookies = function(a, b, c) {
       var d = [];
       c = c ? [c, "." + c] : [e.cookie_domain, "." + e.cookie_domain];
-      if (typeof a === "object" && 0 < a.length)
+      if ("object" === typeof a && 0 < a.length)
         for (var f = 0; f < a.length; f++)
           this.validCookie(a[f]) && d.push(a[f]);
       else
@@ -572,7 +587,7 @@ var __spreadValues = (a, b) => {
     };
     var Ra = function(a, b) {
       var c = e.cookie_expiration;
-      typeof e.cookie_necessary_only_expiration === "number" && Ga === "necessary" && (c = e.cookie_necessary_only_expiration);
+      "number" === typeof e.cookie_necessary_only_expiration && "necessary" === Ga && (c = e.cookie_necessary_only_expiration);
       b = e.use_rfc_cookie ? encodeURIComponent(b) : b;
       var d = new Date();
       d.setTime(d.getTime() + 864e5 * c);
@@ -580,11 +595,11 @@ var __spreadValues = (a, b) => {
       a = a + "=" + (b || "") + c + "; Path=" + e.cookie_path + ";";
       a += " SameSite=" + e.cookie_same_site + ";";
       -1 < window.location.hostname.indexOf(".") && (a += " Domain=" + e.cookie_domain + ";");
-      window.location.protocol === "https:" && (a += " Secure;");
+      "https:" === window.location.protocol && (a += " Secure;");
       document.cookie = a;
     }, wa = function(a, b, c) {
       var d;
-      if (b === "one") {
+      if ("one" === b) {
         if ((d = (d = document.cookie.match("(^|;)\\s*" + a + "\\s*=\\s*([^;]+)")) ? c ? d.pop() : a : "") && a === e.cookie_name) {
           try {
             d = JSON.parse(d);
@@ -597,7 +612,7 @@ var __spreadValues = (a, b) => {
           }
           d = JSON.stringify(d);
         }
-      } else if (b === "all")
+      } else if ("all" === b)
         for (a = document.cookie.split(/;\s*/), d = [], b = 0; b < a.length; b++)
           d.push(a[b].split("=")[0]);
       return d;
@@ -608,12 +623,12 @@ var __spreadValues = (a, b) => {
           document.cookie = a[d] + "=; path=" + b + (-1 < c[f].indexOf(".") ? "; domain=" + c[f] : "") + "; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     };
     m.validCookie = function(a) {
-      return wa(a, "one", true) !== "";
+      return "" !== wa(a, "one", true);
     };
     var z = function(a, b, c, d) {
-      a.addEventListener ? d === true ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
+      a.addEventListener ? true === d ? a.addEventListener(b, c, { passive: true }) : a.addEventListener(b, c, false) : a.attachEvent("on" + b, c);
     }, va = function(a) {
-      if (typeof a === "object") {
+      if ("object" === typeof a) {
         var b = [], c = 0;
         for (b[c++] in a)
           ;
@@ -628,19 +643,25 @@ var __spreadValues = (a, b) => {
     };
     return m;
   };
-  typeof window.initCookieConsent !== "function" && (window.initCookieConsent = kb);
+  "function" !== typeof window.initCookieConsent && (window.initCookieConsent = kb);
 })();
 
 // node_modules/nanoid/index.prod.js
 if (false) {
   if (typeof navigator !== "undefined" && navigator.product === "ReactNative" && typeof crypto === "undefined") {
-    throw new Error("React Native does not have a built-in secure random generator. If you don\u2019t need unpredictable IDs use `nanoid/non-secure`. For secure IDs, import `react-native-get-random-values` before Nano ID.");
+    throw new Error(
+      "React Native does not have a built-in secure random generator. If you don\u2019t need unpredictable IDs use `nanoid/non-secure`. For secure IDs, import `react-native-get-random-values` before Nano ID."
+    );
   }
   if (typeof msCrypto !== "undefined" && typeof crypto === "undefined") {
-    throw new Error("Import file with `if (!window.crypto) window.crypto = window.msCrypto` before importing Nano ID to fix IE 11 support");
+    throw new Error(
+      "Import file with `if (!window.crypto) window.crypto = window.msCrypto` before importing Nano ID to fix IE 11 support"
+    );
   }
   if (typeof crypto === "undefined") {
-    throw new Error("Your browser does not have secure random generator. If you don\u2019t need unpredictable IDs, you can use nanoid/non-secure.");
+    throw new Error(
+      "Your browser does not have secure random generator. If you don\u2019t need unpredictable IDs, you can use nanoid/non-secure."
+    );
   }
 }
 var nanoid = (size = 21) => {
@@ -659,6 +680,21 @@ var nanoid = (size = 21) => {
     }
   }
   return id;
+};
+
+// src/constants/CookieConsentCategory.ts
+var CookieConsentCategory = {
+  NECESSARY: "necessary",
+  AD: "ad",
+  ANALYTICS: "analytics",
+  FUNCTIONALITY: "functionality",
+  PERSONALIZATION: "personalization"
+};
+
+// src/constants/DisplayMode.ts
+var DisplayMode = {
+  FORCE: "force",
+  SOFT: "soft"
 };
 
 // src/constants/SecondaryButtonMode.ts
@@ -732,6 +768,7 @@ var addSeparators = (strings, and = "") => strings.reduce((accumulator, string, 
   return `${accumulator}, ${string}`;
 });
 var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
+var legalizeLmc = (companyNames, legalName) => companyNames.map((value) => value === "LMC" ? legalName : value);
 var assembleDescriptionIntro = (defaultValue, overrideValue) => {
   const descriptionIntro = overrideValue != null ? overrideValue : defaultValue;
   return descriptionIntro !== "" ? `<p>${descriptionIntro}</p>` : "";
@@ -746,26 +783,12 @@ var isSettingsButtonNotShown = (secondaryButtonMode) => {
   return secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
 };
 
-// src/constants/CookieConsentCategory.ts
-var CookieConsentCategory = {
-  NECESSARY: "necessary",
-  AD: "ad",
-  ANALYTICS: "analytics",
-  FUNCTIONALITY: "functionality",
-  PERSONALIZATION: "personalization"
-};
-
-// src/constants/DisplayMode.ts
-var DisplayMode = {
-  FORCE: "force",
-  SOFT: "soft"
-};
-
 // src/languages/cs.ts
 var extra = {
   and: "a",
   company: "spole\u010Dnosti",
-  companies: "spole\u010Dnostem"
+  companies: "spole\u010Dnostem",
+  legalName: "LMC a\xA0spole\u010Dnostem z\xA0jej\xED obchodn\xED skupiny"
 };
 var config = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -774,11 +797,14 @@ var config = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "D\xEDky Cookies budou na\u0161e str\xE1nky je\u0161t\u011B lep\u0161\xED",
       description: `
-      ${assembleDescriptionIntro("Kdy\u017E l\xE9pe pochop\xEDme, co v\xE1s zaj\xEDm\xE1, budeme v\xE1m zobrazovat p\u0159esn\u011Bj\u0161\xED obsah na\xA0m\xEDru.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "Kdy\u017E l\xE9pe pochop\xEDme, co v\xE1s zaj\xEDm\xE1, budeme v\xE1m zobrazovat p\u0159esn\u011Bj\u0161\xED obsah na\xA0m\xEDru.",
+        lang.descriptionIntro
+      )}
       <p>
         Kliknut\xEDm na\xA0tla\u010D\xEDtko \u201EP\u0159ijmout v\u0161echny\u201C d\xE1te
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         souhlas s\xA0vyu\u017E\xEDv\xE1n\xEDm soubor\u016F Cookies na\xA0\xFA\u010Dely personalizace, anal\xFDzy a\xA0c\xEDlen\xE9ho marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Dal\u0161\xED informace o\xA0Cookies a\xA0\xFApravu jejich pou\u017E\xEDv\xE1n\xED naleznete ve\xA0<strong><a href="" data-cc="c-settings">vlastn\xEDm nastaven\xED</a></strong>.` : ""}
       </p>`,
@@ -857,7 +883,8 @@ var config = (extraMessages, secondaryButtonMode) => {
 
 // src/languages/de.ts
 var extra2 = {
-  and: "und"
+  and: "und",
+  legalName: "LMC und seine Gruppenunternehmen"
 };
 var config2 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -866,10 +893,13 @@ var config2 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Diese Website verwendet Cookies",
       description: `
-      ${assembleDescriptionIntro("Wenn wir genau wissen, wof\xFCr Sie sich interessieren, k\xF6nnen wir Ihnen ma\xDFgeschneiderte Inhalte anbieten.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "Wenn wir genau wissen, wof\xFCr Sie sich interessieren, k\xF6nnen wir Ihnen ma\xDFgeschneiderte Inhalte anbieten.",
+        lang.descriptionIntro
+      )}
       <p>
         Indem Sie auf \u201EAlles\xA0akzeptieren\u201C klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Ger\xE4t durch
-        ${addSeparators(lang.companyNames, extra2.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra2.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Sie\xA0k\xF6nnen die\xA0Verwendung von\xA0Cookies in\xA0Ihren <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.` : ""}
       </p>`,
@@ -877,7 +907,11 @@ var config2 = (extraMessages, secondaryButtonMode) => {
         text: "Alles akzeptieren",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Das Notwendigste akzeptieren", "Eigene Einstellungen")
+      secondary_btn: assembleSecondaryButton(
+        secondaryButtonMode,
+        "Das Notwendigste akzeptieren",
+        "Eigene Einstellungen"
+      )
     },
     settings_modal: {
       title: "Benutzerdefinierte Cookie-Einstellungen",
@@ -944,7 +978,8 @@ var config2 = (extraMessages, secondaryButtonMode) => {
 
 // src/languages/en.ts
 var extra3 = {
-  and: "and"
+  and: "and",
+  legalName: "LMC and other companies from its business group"
 };
 var config3 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -953,10 +988,13 @@ var config3 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Cookies make our site even better",
       description: `
-      ${assembleDescriptionIntro("By better understanding what you're interested\xA0in, we'll show you more relevant content.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "By better understanding what you're interested\xA0in, we'll show you more relevant content.",
+        lang.descriptionIntro
+      )}
       <p>
         By clicking the "Accept all" button, you give
-        ${addSeparators(lang.companyNames, extra3.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra3.and)}
         your consent to\xA0use cookies for\xA0personalisation, analytics and\xA0targeted marketing.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `You can customize use of cookies in your <strong><a href="" data-cc="c-settings">custom settings</a></strong>.` : ""}
       </p>`,
@@ -1030,7 +1068,8 @@ var config3 = (extraMessages, secondaryButtonMode) => {
 
 // src/languages/hu.ts
 var extra4 = {
-  and: "\xE9s"
+  and: "\xE9s",
+  legalName: "LMC csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
 };
 var config4 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -1039,10 +1078,13 @@ var config4 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Az oldalak s\xFCti f\xE1jlokat haszn\xE1lnak",
       description: `
-      ${assembleDescriptionIntro("Ha jobban meg\xE9rtj\xFCk, mi \xE9rdekli \xD6nt, akkor pontosabban szem\xE9lyre szabott tartalmat tudunk \xD6nnek megjelen\xEDteni.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "Ha jobban meg\xE9rtj\xFCk, mi \xE9rdekli \xD6nt, akkor pontosabban szem\xE9lyre szabott tartalmat tudunk \xD6nnek megjelen\xEDteni.",
+        lang.descriptionIntro
+      )}
       <p>
         A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az
-        ${addSeparators(lang.companyNames, extra4.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra4.and)}
         s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.` : ""}
       </p>`,
@@ -1050,7 +1092,11 @@ var config4 = (extraMessages, secondaryButtonMode) => {
         text: "Minden elfogad\xE1sa",
         role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
       },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa", "Egy\xE9ni be\xE1ll\xEDt\xE1sok")
+      secondary_btn: assembleSecondaryButton(
+        secondaryButtonMode,
+        "A\xA0legsz\xFCks\xE9gesebbek elfogad\xE1sa",
+        "Egy\xE9ni be\xE1ll\xEDt\xE1sok"
+      )
     },
     settings_modal: {
       title: "Egyedi cookie-f\xE1jl be\xE1ll\xEDt\xE1sok",
@@ -1118,7 +1164,8 @@ var config4 = (extraMessages, secondaryButtonMode) => {
 var extra5 = {
   and: "i",
   company: "firm\u0119",
-  companies: "firmy"
+  companies: "firmy",
+  legalName: "LMC i\xA0firmy z\xA0jej grupy biznesowej"
 };
 var config5 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -1127,11 +1174,14 @@ var config5 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Dzi\u0119ki plikom Cookies nasza strona b\u0119dzie jeszcze lepsza",
       description: `
-      ${assembleDescriptionIntro("Gdy lepiej zrozumiemy, co\xA0Ci\u0119 interesuje, poka\u017Cemy dok\u0142adniejsze tre\u015Bci dopasowane do\xA0Twoich preferencji.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "Gdy lepiej zrozumiemy, co\xA0Ci\u0119 interesuje, poka\u017Cemy dok\u0142adniejsze tre\u015Bci dopasowane do\xA0Twoich preferencji.",
+        lang.descriptionIntro
+      )}
       <p>
         Kliknij w\xA0przycisk \u201EAkceptuj wszystkie\u201D, aby wyrazi\u0107 zgod\u0119 na\xA0wykorzystanie plik\xF3w cookie przez
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, extra5.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra5.and)}
         do personalizacji, analizy i\xA0ukierunkowanego marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107 we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.` : ""}
       </p>`,
@@ -1208,7 +1258,8 @@ var config5 = (extraMessages, secondaryButtonMode) => {
 var extra6 = {
   and: "\u0438",
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
-  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C"
+  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
+  legalName: "LMC \u0438\xA0\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0435 \u0433\u0440\u0443\u043F\u043F\u044B"
 };
 var config6 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -1217,11 +1268,14 @@ var config6 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "\u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442 \u0444\u0430\u0439\u043B\u044B cookie",
       description: `
-      ${assembleDescriptionIntro("\u041A\u043E\u0433\u0434\u0430 \u043C\u044B \u043B\u0443\u0447\u0448\u0435 \u043F\u043E\u0439\u043C\u0435\u043C, \u0447\u0442\u043E \u0432\u0430\u0441 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442, \u043C\u044B \u043F\u043E\u043A\u0430\u0436\u0435\u043C \u0432\u0430\u043C \u043B\u0443\u0447\u0448\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "\u041A\u043E\u0433\u0434\u0430 \u043C\u044B \u043B\u0443\u0447\u0448\u0435 \u043F\u043E\u0439\u043C\u0435\u043C, \u0447\u0442\u043E \u0432\u0430\u0441 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442, \u043C\u044B \u043F\u043E\u043A\u0430\u0436\u0435\u043C \u0432\u0430\u043C \u043B\u0443\u0447\u0448\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.",
+        lang.descriptionIntro
+      )}
       <p>
         \u041D\u0430\u0436\u0430\u0432 \xAB\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435\xBB, \u0412\u044B \u0434\u0430\u0435\u0442\u0435 \u0441\u0432\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043D\u0430 \u0412\u0430\u0448\u0435\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043E\u0431\u043B\u0435\u0433\u0447\u0438\u0442 \u043D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430, \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0438\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432 \u0438\xA0\u0443\u0441\u043B\u0443\u0433.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0432\xA0<strong><a href="" data-cc="c-settings">\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445</a></strong>.` : ""}
       </p>`,
@@ -1298,7 +1352,8 @@ var config6 = (extraMessages, secondaryButtonMode) => {
 var extra7 = {
   and: "a",
   company: "spolo\u010Dnosti",
-  companies: "spolo\u010Dnostiam"
+  companies: "spolo\u010Dnostiam",
+  legalName: "LMC a\xA0spolo\u010Dnostiam z\xA0jej obchodn\xE9 skupiny"
 };
 var config7 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -1307,11 +1362,14 @@ var config7 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "V\u010Faka Cookies bud\xFA na\u0161e str\xE1nky e\u0161te lep\u0161ie",
       description: `
-      ${assembleDescriptionIntro("Presnej\u0161\xED obsah\xA0na\xA0mieru v\xE1m budeme zobrazova\u0165, ke\u010F\xA0lep\u0161ie pochop\xEDme, \u010Do\xA0v\xE1s\xA0zauj\xEDma.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "Presnej\u0161\xED obsah\xA0na\xA0mieru v\xE1m budeme zobrazova\u0165, ke\u010F\xA0lep\u0161ie pochop\xEDme, \u010Do\xA0v\xE1s\xA0zauj\xEDma.",
+        lang.descriptionIntro
+      )}
       <p>
-        Kliknut\xEDm na\xA0tla\u010Didlo \u201EPrija\u0165 v\u0161etky\u201C, \u010D\xEDm d\xE1te
+        Kliknut\xEDm na\xA0tla\u010Didlo \u201EPrija\u0165 v\u0161etky\u201C d\xE1te
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         s\xFAhlas s\xA0vyu\u017E\xEDvan\xEDm s\xFAborov Cookies za\xA0\xFA\u010Delom personaliz\xE1cie, anal\xFDzy a\xA0cielen\xE9ho marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Viac inform\xE1ci\xED o\xA0Cookies a\xA0\xFApravu ich pou\u017E\xEDvania n\xE1jdete vo\xA0<strong><a href="" data-cc="c-settings">vlastnom nastaven\xED</a></strong>.` : ""}
       </p>`,
@@ -1387,7 +1445,8 @@ var config7 = (extraMessages, secondaryButtonMode) => {
 var extra8 = {
   and: "i",
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
-  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C"
+  companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
+  legalName: "LMC \u0442\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C \u0437\xA0\u0457\u0457 \u0433\u0440\u0443\u043F\u0438"
 };
 var config8 = (extraMessages, secondaryButtonMode) => {
   var _a;
@@ -1396,11 +1455,14 @@ var config8 = (extraMessages, secondaryButtonMode) => {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "\u0426\u0435\u0439 \u0441\u0430\u0439\u0442 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454 \u0444\u0430\u0439\u043B\u0438 cookie",
       description: `
-      ${assembleDescriptionIntro("\u042F\u043A\u0449\u043E \u043C\u0438 \u043A\u0440\u0430\u0449\u0435 \u0437\u0440\u043E\u0437\u0443\u043C\u0456\u0454\u043C\u043E, \u0449\u043E \u0432\u0430\u0441 \u0446\u0456\u043A\u0430\u0432\u0438\u0442\u044C, \u043C\u0438 \u043F\u043E\u043A\u0430\u0436\u0435\u043C\u043E \u0432\u0430\u043C \u0442\u043E\u0447\u043D\u0456\u0448\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.", lang.descriptionIntro)}
+      ${assembleDescriptionIntro(
+        "\u042F\u043A\u0449\u043E \u043C\u0438 \u043A\u0440\u0430\u0449\u0435 \u0437\u0440\u043E\u0437\u0443\u043C\u0456\u0454\u043C\u043E, \u0449\u043E \u0432\u0430\u0441 \u0446\u0456\u043A\u0430\u0432\u0438\u0442\u044C, \u043C\u0438 \u043F\u043E\u043A\u0430\u0436\u0435\u043C\u043E \u0432\u0430\u043C \u0442\u043E\u0447\u043D\u0456\u0448\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442.",
+        lang.descriptionIntro
+      )}
       <p>
         \u041D\u0430\u0442\u0438\u0441\u043D\u0443\u0432\u0448\u0438 \xAB\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435\xBB, \u0412\u0438 \u0434\u0430\u0454\u0442\u0435 \u0441\u0432\u043E\u044E \u0437\u0433\u043E\u0434\u0443
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(lang.companyNames, lang.and)}
+        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
         \u043D\u0430 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043D\u0430 \u0412\u0430\u0448\u043E\u043C\u0443 \u043F\u0440\u0438\u0441\u0442\u0440\u043E\u0457. \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043F\u043E\u043B\u0435\u0433\u0448\u0438\u0442\u044C \u043D\u0430\u0432\u0456\u0433\u0430\u0446\u0456\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0446\u0456\u043B\u044C\u043E\u0432\u0438\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0456\u0437 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0456\u0432 \u0456\xA0\u043F\u043E\u0441\u043B\u0443\u0433.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u0437\u043C\u0456\u043D\u0438\u0442\u0438 \u0432\xA0\u0441\u0432\u043E\u0457\u0445 <strong><a href="" data-cc="c-settings">\u0432\u043B\u0430\u0441\u043D\u0438\u0445 \u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u0445</a></strong>.` : ""}
       </p>`,

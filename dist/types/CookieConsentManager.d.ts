@@ -1,21 +1,21 @@
 import { CookieConsentCategory, DisplayMode } from '../constants';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
 import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
-export declare type Values<T> = T[keyof T];
-export declare type CookieConsentCategoryValues = Values<typeof CookieConsentCategory>;
-export declare type CategoriesChangeset = {
+export type Values<T> = T[keyof T];
+export type CookieConsentCategoryValues = Values<typeof CookieConsentCategory>;
+export type CategoriesChangeset = {
     accepted: CookieConsentCategoryValues[];
     rejected: CookieConsentCategoryValues[];
     changed: CookieConsentCategoryValues[];
 };
-export declare type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export declare type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export declare type OnChangeCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>, categories: CategoriesChangeset) => void;
-export declare type TranslationOverride = {
+export type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
+export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
+export type OnChangeCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>, categories: CategoriesChangeset) => void;
+export type TranslationOverride = {
     consentTitle?: string;
     descriptionIntro?: string;
 };
-export declare type CookieConsentManagerOptions = {
+export type CookieConsentManagerOptions = {
     defaultLang: string;
     autodetectLang: boolean;
     consentCollectorApiUrl: string;
@@ -28,4 +28,4 @@ export declare type CookieConsentManagerOptions = {
     translationOverrides: Record<string, TranslationOverride>;
     config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
 };
-export declare type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
+export type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
