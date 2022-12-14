@@ -35,7 +35,7 @@
     // Buttons
     --lmcccm-p-btn-font-weight: var(
         --lmcccm-btn-font-weight,
-        #{map.get(tokens.$body-medium-button, 'mobile', 'font-weight')}
+        #{map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight')}
     );
     --lmcccm-p-btn-text-transform: var(--lmcccm-btn-text-transform, initial);
     --lmcccm-p-btn-border-width: var(--lmcccm-btn-border-width, #{tokens.$border-width-100});
