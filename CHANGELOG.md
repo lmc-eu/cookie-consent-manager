@@ -1,3 +1,15 @@
+<a name="2.3.1"></a>
+## [2.3.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.0...2.3.1) (2022-12-15)
+
+### Bug Fixes
+
+- Change design token linked to button typography ([ca8a2ab](https://github.com/lmc-eu/cookie-consent-manager/commit/ca8a2ab))
+
+### Dependencies
+
+- Update Can-I-Use DB used by Browserslist ([ad07300](https://github.com/lmc-eu/cookie-consent-manager/commit/ad07300))
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.2.1...2.3.0) (2022-12-08)
 
