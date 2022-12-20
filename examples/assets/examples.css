@@ -12,6 +12,13 @@
     --spirit-action-primary-default: #29616f;
     --spirit-action-primary-hover: #1b5260;
     --spirit-action-primary-active: #0b3a46;
+    --spirit-action-secondary-default: #a0a0a0;
+    --spirit-action-secondary-hover: #737373;
+    --spirit-action-secondary-active: #c4c4c4;
+    --spirit-background-interactive-default: transparent;
+    --spirit-background-interactive-hover: rgba(15, 56, 62, 0.2);
+    --spirit-background-interactive-active: rgba(15, 52, 60, 0.3);
+    --spirit-radius-100: 0.25em;
     --spirit-emotion-success-background: #f2f5e7;
 
     /* Bootstrap */
@@ -84,6 +91,7 @@ a:active,
     padding-inline: 1.5rem;
     padding-block: 0.4375rem;
     font-weight: 600;
+    border-radius: var(--spirit-radius-100);
 }
 
 .btn-primary,
@@ -102,6 +110,9 @@ a:active,
 }
 
 .btn-primary:active,
+.btn-primary.active,
+.btn-primary:first-child:active,
+:not(.btn-check) + .btn-primary:active,
 .nav-pills .nav-link.active:active {
     color: var(--spirit-text-primary-inverted-default);
     background-color: var(--spirit-action-primary-active);
@@ -109,20 +120,25 @@ a:active,
 }
 
 .btn-outline-primary {
-    color: var(--spirit-action-primary-default);
-    border-color: var(--spirit-action-primary-default);
+    color: var(--spirit-text-primary-default);
+    background-color: var(--spirit-background-interactive-default);
+    border-color: var(--spirit-action-secondary-default);
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
-    color: var(--spirit-action-primary-hover);
-    background-color: transparent;
-    border-color: var(--spirit-action-primary-hover);
+    color: var(--spirit-text-primary-default);
+    background-color: var(--spirit-background-interactive-hover);
+    border-color: var(--spirit-action-secondary-hover);
 }
 
-.btn-outline-primary:active {
-    color: var(--spirit-action-primary-active);
-    border-color: var(--spirit-action-primary-active);
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary:first-child:active,
+:not(.btn-check) + .btn-outline-primary:active {
+    color: var(--spirit-text-primary-default);
+    background-color: var(--spirit-background-interactive-active);
+    border-color: var(--spirit-action-secondary-active);
 }
 
 .form-switch .form-check-input:checked {

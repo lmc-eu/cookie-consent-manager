@@ -50,15 +50,18 @@
     --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #{tokens.$action-primary-active});
     --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #{tokens.$text-primary-inverted-default});
-    --lmcccm-p-btn-secondary-border: var(--lmcccm-btn-secondary-border, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-    --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$action-primary-default});
-    --lmcccm-p-btn-secondary-hover-border: var(--lmcccm-btn-secondary-hover-border, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-    --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$action-primary-hover});
-    --lmcccm-p-btn-secondary-active-border: var(--lmcccm-btn-secondary-active-border, #{tokens.$action-primary-active});
-    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-    --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$action-primary-active});
+    --lmcccm-p-btn-secondary-border: var(--lmcccm-btn-secondary-border, #{tokens.$action-secondary-default});
+    --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, #{tokens.$background-interactive-default});
+    --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #{tokens.$text-primary-default});
+    --lmcccm-p-btn-secondary-hover-border: var(--lmcccm-btn-secondary-hover-border, #{tokens.$action-secondary-hover});
+    --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, #{tokens.$background-interactive-hover});
+    --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #{tokens.$text-primary-default});
+    --lmcccm-p-btn-secondary-active-border: var(
+        --lmcccm-btn-secondary-active-border,
+        #{tokens.$action-secondary-active}
+    );
+    --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, #{tokens.$background-interactive-active});
+    --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #{tokens.$text-primary-default});
 
     // Toggle
     --lmcccm-p-toggle-bg-off: var(--lmcccm-toggle-bg-off, #{tokens.$action-unselected-default});
