@@ -3,6 +3,8 @@
 //
 // Assignment below is applied through `.cc_div` instead of `:root`, so it works for both light and
 // dark theme.
+//
+// 1. We don't want to style scrollbars at this moment, but let's keep the options here to know they are still available.
 
 .cc_div {
     --cc-bg: var(--lmcccm-p-bg);
@@ -24,6 +26,6 @@
     --cc-section-border: var(--lmcccm-p-modal-section-border);
     --cc-cookie-table-border: var(--lmcccm-p-cookie-table-border);
     --cc-overlay-bg: var(--lmcccm-p-backdrop-color);
-    //--cc-webkit-scrollbar-bg: #cfd5db;
-    //--cc-webkit-scrollbar-bg-hover: #9199a0;
+    // --cc-webkit-scrollbar-bg: #cfd5db; // 1.
+    // --cc-webkit-scrollbar-bg-hover: #9199a0; // 1.
 }
