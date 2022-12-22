@@ -1408,15 +1408,18 @@ html.force--consent.show--consent body {
   --lmcccm-p-btn-primary-active-border: var(--lmcccm-btn-primary-active-border, #0b3a46);
   --lmcccm-p-btn-primary-active-bg: var(--lmcccm-btn-primary-active-bg, #0b3a46);
   --lmcccm-p-btn-primary-active-text: var(--lmcccm-btn-primary-active-text, #fff);
-  --lmcccm-p-btn-secondary-border: var(--lmcccm-btn-secondary-border, #29616f);
-  --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, transparent);
-  --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #29616f);
-  --lmcccm-p-btn-secondary-hover-border: var(--lmcccm-btn-secondary-hover-border, #1b5260);
-  --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, transparent);
-  --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #1b5260);
-  --lmcccm-p-btn-secondary-active-border: var(--lmcccm-btn-secondary-active-border, #0b3a46);
-  --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, transparent);
-  --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #0b3a46);
+  --lmcccm-p-btn-secondary-border: var(--lmcccm-btn-secondary-border, #a0a0a0);
+  --lmcccm-p-btn-secondary-bg: var(--lmcccm-btn-secondary-bg, rgba(255, 255, 255, 0));
+  --lmcccm-p-btn-secondary-text: var(--lmcccm-btn-secondary-text, #132930);
+  --lmcccm-p-btn-secondary-hover-border: var(--lmcccm-btn-secondary-hover-border, #737373);
+  --lmcccm-p-btn-secondary-hover-bg: var(--lmcccm-btn-secondary-hover-bg, rgba(15, 56, 62, 0.2));
+  --lmcccm-p-btn-secondary-hover-text: var(--lmcccm-btn-secondary-hover-text, #132930);
+  --lmcccm-p-btn-secondary-active-border: var(
+      --lmcccm-btn-secondary-active-border,
+      #c4c4c4
+  );
+  --lmcccm-p-btn-secondary-active-bg: var(--lmcccm-btn-secondary-active-bg, rgba(15, 52, 60, 0.3019607843));
+  --lmcccm-p-btn-secondary-active-text: var(--lmcccm-btn-secondary-active-text, #132930);
   --lmcccm-p-toggle-bg-off: var(--lmcccm-toggle-bg-off, #132930);
   --lmcccm-p-toggle-bg-on: var(--lmcccm-toggle-bg-on, #29616f);
   --lmcccm-p-toggle-bg-readonly: var(--lmcccm-toggle-bg-readonly, #c4c4c4);

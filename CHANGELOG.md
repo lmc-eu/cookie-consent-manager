@@ -1,3 +1,15 @@
+<a name="2.3.2"></a>
+## [2.3.2](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.1...2.3.2) (2022-12-22)
+
+### Bug Fixes
+
+- Update button design tokens according to the latest design ([e23431a](https://github.com/lmc-eu/cookie-consent-manager/commit/e23431a))
+
+### Chores
+
+- Improve file name of the CSS theme map ([ed30742](https://github.com/lmc-eu/cookie-consent-manager/commit/ed30742))
+
+
 <a name="2.3.1"></a>
 ## [2.3.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.0...2.3.1) (2022-12-15)
 
