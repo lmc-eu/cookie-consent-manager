@@ -99,7 +99,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
   ) => {
     const cookieData = cookieConsent.get('data');
-    if (cookieData === null || !('uid' in cookieData)) {
+    if (cookieData == null || !('uid' in cookieData)) {
       cookieConsent.set('data', {
         value: { serviceName, uid: nanoid() },
         mode: 'update',
