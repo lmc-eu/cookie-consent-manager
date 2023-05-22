@@ -1,3 +1,16 @@
+<a name="2.3.3"></a>
+## [2.3.3](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.2...2.3.3) (2023-05-22)
+
+### Bug Fixes
+
+- Cannot use 'in' operator to search for 'uid' in undefined ([1deb32e](https://github.com/lmc-eu/cookie-consent-manager/commit/1deb32e))
+
+### Chores
+
+- **deps:** Bump json5 from 1.0.1 to 1.0.2 ([2548df7](https://github.com/lmc-eu/cookie-consent-manager/commit/2548df7))
+- Disable update of stylelint-config ([eeaa415](https://github.com/lmc-eu/cookie-consent-manager/commit/eeaa415))
+
+
 <a name="2.3.2"></a>
 ## [2.3.2](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.1...2.3.2) (2022-12-22)
 

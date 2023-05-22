@@ -1671,7 +1671,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
   };
   const onFirstAcceptHandler = (userPreferences, cookie) => {
     const cookieData = cookieConsent.get("data");
-    if (cookieData === null || !("uid" in cookieData)) {
+    if (cookieData == null || !("uid" in cookieData)) {
       cookieConsent.set("data", {
         value: { serviceName, uid: nanoid() },
         mode: "update"
