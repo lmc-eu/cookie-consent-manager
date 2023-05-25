@@ -1,6 +1,5 @@
-import { CookieConsentCategory, DisplayMode } from '../constants';
+import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from '../constants';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
-import { SecondaryButtonMode } from '../constants/SecondaryButtonMode';
 
 export type Values<T> = T[keyof T];
 
@@ -24,6 +23,7 @@ export type OnChangeCallback = (
 export type TranslationOverride = {
   consentTitle?: string;
   descriptionIntro?: string;
+  settingsModalMoreInfo?: string;
 };
 
 export type CookieConsentManagerOptions = {
