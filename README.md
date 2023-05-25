@@ -265,7 +265,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 | `displayMode`            | DisplayMode (string)                | `DisplayMode.FORCE` (`force`)                               | `force` (default) to show consent in a centered modal box and to block page until user action. `soft` to show consent banner on the bottom of the page and do not block the page before user action.     |
 | `secondaryButtonMode`    | SecondaryButtonMode (string)        | `SecondaryButtonMode. ACCEPT_NECESSARY` (`acceptNecessary`) | Which button should be shown next to "Accept all". `acceptNecessary` (default) or `showSettings` (this option also hides link to show settings in consent text).                                         |
 | `on*` callbacks          | function                            | `(cookieConsent) => {}`                                     | See below for configurable callbacks.                                                                                                                                                                    |
-| `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle` and/or `descriptionIntro` could be overridden.<br>[See example][examples-configuration]                                             |
+| `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle`, `descriptionIntro` and `settingsModalMoreInfo` could be overridden.<br>[See example][examples-configuration]                       |
 
 ### Supported languages
 

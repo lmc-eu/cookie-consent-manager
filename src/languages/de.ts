@@ -60,11 +60,13 @@ export const config = (
       save_settings_btn: 'Einstellungen speichern',
       blocks: [
         {
-          description: `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
-          Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
-          finden Sie in unseren Richtlinien
-          zur <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
-          und zum <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`,
+          description:
+            `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.\n` +
+            (lang.settingsModalMoreInfo ??
+              `Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
+              finden Sie in unseren Richtlinien
+              zur <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
+              und zum <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`),
         },
         {
           title: 'Technisch notwendige Cookies',

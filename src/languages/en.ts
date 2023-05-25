@@ -55,10 +55,12 @@ export const config = (
       save_settings_btn: 'Save settings',
       blocks: [
         {
-          description: `If you want to get the most out of our website it is best to allow all types of cookies.
-          You can find more information about what cookies are and how we work with them via the links
-          to <a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
-          and <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`,
+          description:
+            `If you want to get the most out of our website it is best to allow all types of cookies.\n` +
+            (lang.settingsModalMoreInfo ??
+              `You can find more information about what cookies are and how we work with them via the links
+              to <a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
+              and <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`),
         },
         {
           title: 'Technically necessary cookies',

@@ -60,10 +60,12 @@ export const config = (
       save_settings_btn: 'Beállítások mentése',
       blocks: [
         {
-          description: `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes
-          cookie típust. További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
-          a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k használata</a>
-          és az <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatvédelmi szabályzat honlapjain talál</a>.`,
+          description:
+            `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.\n` +
+            (lang.settingsModalMoreInfo ??
+              `További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
+              a <a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k használata</a>
+              és az <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatvédelmi szabályzat honlapjain talál</a>.`),
         },
         {
           title: 'Technikailag szükséges cookie-k',
