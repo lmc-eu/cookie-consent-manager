@@ -1,3 +1,19 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.3...2.4.0) (2023-06-13)
+
+### Bug Fixes
+
+- Fix imports not being properly recognized by IDEs ([18bfb83](https://github.com/lmc-eu/cookie-consent-manager/commit/18bfb83))
+
+### Features
+
+- Make part of settings modal text overridable ([7eccc48](https://github.com/lmc-eu/cookie-consent-manager/commit/7eccc48))
+
+### Chores
+
+- Remove @adamkudrna and @crispeen from codeowners ([7f8b9bc](https://github.com/lmc-eu/cookie-consent-manager/commit/7f8b9bc))
+
+
 <a name="2.3.3"></a>
 ## [2.3.3](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.2...2.3.3) (2023-05-22)
 

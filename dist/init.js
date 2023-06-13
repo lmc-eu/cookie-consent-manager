@@ -793,7 +793,7 @@
     legalName: "LMC a\xA0spole\u010Dnostem z\xA0jej\xED obchodn\xED skupiny"
   };
   var config = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra), extraMessages);
     return {
       consent_modal: {
@@ -824,9 +824,9 @@
         blocks: [
           {
             description: `Abyste z na\u0161ich str\xE1nek z\xEDskali maximum, je nejlep\u0161\xED povolit v\u0161echny typy Cookies.
-          Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nk\xE1ch
-          <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Pou\u017E\xEDv\xE1n\xED Cookies</a>
-          a\xA0<a href="https://www.lmc.eu/cs/zasady-ochrany-soukromi" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nk\xE1ch
+              <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Pou\u017E\xEDv\xE1n\xED Cookies</a>
+              a\xA0<a href="https://www.lmc.eu/cs/zasady-ochrany-soukromi" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`)
           },
           {
             title: "Technicky nezbytn\xE9 Cookies",
@@ -889,7 +889,7 @@
     legalName: "LMC und seine Gruppenunternehmen"
   };
   var config2 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra2), extraMessages);
     return {
       consent_modal: {
@@ -923,10 +923,10 @@
         blocks: [
           {
             description: `Um unsere Website optimal nutzen zu k\xF6nnen, sollten Sie alle Arten von Cookies aktivieren.
-          Weitere Informationen dar\xFCber, was Cookies sind und wie wir mit ihnen arbeiten,
-          finden Sie in unseren Richtlinien
-          zur\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
-          und\xA0zum\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Weitere Informationen dar\xFCber, was Cookies sind und wie wir mit ihnen arbeiten,
+              finden Sie in unseren Richtlinien
+              zur\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
+              und\xA0zum\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`)
           },
           {
             title: "Technisch notwendige Cookies",
@@ -984,7 +984,7 @@
     legalName: "LMC and other companies from its business group"
   };
   var config3 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra3), extraMessages);
     return {
       consent_modal: {
@@ -1014,9 +1014,9 @@
         blocks: [
           {
             description: `If you want to get the most out of our website it is best to allow all types of cookies.
-          You can find more information about what cookies are and how we work with them via the links
-          to\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
-          and\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `You can find more information about what cookies are and how we work with them via the links
+              to\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
+              and\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`)
           },
           {
             title: "Technically necessary cookies",
@@ -1074,7 +1074,7 @@
     legalName: "LMC csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
   };
   var config4 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra4), extraMessages);
     return {
       consent_modal: {
@@ -1107,10 +1107,10 @@
         save_settings_btn: "Be\xE1ll\xEDt\xE1sok ment\xE9se",
         blocks: [
           {
-            description: `Ahhoz, hogy a maximumot hozhassa ki webhely\xFCnkb\u0151l, a\xA0legjobb, ha\xA0enged\xE9lyezi az \xF6sszes
-          cookie t\xEDpust. Tov\xE1bbi inform\xE1ci\xF3kat arr\xF3l, hogy mik azok a cookie-k \xE9s hogyan dolgozunk vel\xFCk
-          a\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k haszn\xE1lata</a>
-          \xE9s\xA0az\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatv\xE9delmi szab\xE1lyzat honlapjain tal\xE1l</a>.`
+            description: `Ahhoz, hogy a maximumot hozhassa ki webhely\xFCnkb\u0151l, a\xA0legjobb, ha\xA0enged\xE9lyezi az \xF6sszes cookie t\xEDpust.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Tov\xE1bbi inform\xE1ci\xF3kat arr\xF3l, hogy mik azok a cookie-k \xE9s hogyan dolgozunk vel\xFCk
+              a\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k haszn\xE1lata</a>
+              \xE9s\xA0az\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatv\xE9delmi szab\xE1lyzat honlapjain tal\xE1l</a>.`)
           },
           {
             title: "Technikailag sz\xFCks\xE9ges cookie-k",
@@ -1170,7 +1170,7 @@
     legalName: "LMC i\xA0firmy z\xA0jej grupy biznesowej"
   };
   var config5 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra5), extraMessages);
     return {
       consent_modal: {
@@ -1200,11 +1200,10 @@
         save_settings_btn: "Zapisz ustawienia",
         blocks: [
           {
-            description: `Aby w\xA0pe\u0142ni wykorzysta\u0107 mo\u017Cliwo\u015Bci naszej strony, najlepiej jest zezwoli\u0107 na\xA0wszystkie
-          rodzaje plik\xF3w cookies. Aby uzyska\u0107 wi\u0119cej informacji na\xA0temat tego, czym s\u0105 pliki cookies
-          i\xA0jak z\xA0nimi pracujemy, odwied\u017A na naszej stronie
-          <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w cookies</a>
-          i\xA0<a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Polityk\u0119 prywatno\u015Bci</a>.`
+            description: `Aby w\xA0pe\u0142ni wykorzysta\u0107 mo\u017Cliwo\u015Bci naszej strony, najlepiej jest zezwoli\u0107 na\xA0wszystkie rodzaje plik\xF3w cookies.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Aby uzyska\u0107 wi\u0119cej informacji na\xA0temat tego, czym s\u0105 pliki cookies i\xA0jak z\xA0nimi pracujemy, odwied\u017A na naszej stronie
+              <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w cookies</a>
+              i\xA0<a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Polityk\u0119 prywatno\u015Bci</a>.`)
           },
           {
             title: "Technicznie niezb\u0119dne pliki cookies",
@@ -1264,7 +1263,7 @@
     legalName: "LMC \u0438\xA0\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0435 \u0433\u0440\u0443\u043F\u043F\u044B"
   };
   var config6 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra6), extraMessages);
     return {
       consent_modal: {
@@ -1295,10 +1294,10 @@
         blocks: [
           {
             description: `\u0427\u0442\u043E\u0431\u044B \u0412\u044B \u043C\u043E\u0433\u043B\u0438 \u0432 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0439 \u043C\u0435\u0440\u0435 \u0438 \u0431\u0435\u0437 \u043F\u0440\u043E\u0431\u043B\u0435\u043C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F \u043D\u0430\u0448\u0438\u043C \u0441\u0430\u0439\u0442\u043E\u043C, \u043C\u044B \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C
-          \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C \u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0442\u044C \u0432\u0441\u0435 \u0442\u0438\u043F\u044B \u0444\u0430\u0439\u043B\u043E\u0432 cookie.
-          \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0439\u0442\u0438 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u043C, \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0444\u0430\u0439\u043B\u044B cookies, \u0438 \u043A\u0430\u043A \u043C\u044B \u0441 \u043D\u0438\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u043C,
-          \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445 <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>
-          \u0438\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a>.`
+            \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C \u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0442\u044C \u0432\u0441\u0435 \u0442\u0438\u043F\u044B \u0444\u0430\u0439\u043B\u043E\u0432 cookie.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0439\u0442\u0438 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u043C, \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0444\u0430\u0439\u043B\u044B cookies, \u0438 \u043A\u0430\u043A \u043C\u044B \u0441 \u043D\u0438\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u043C,
+              \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445 <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>
+              \u0438\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a>.`)
           },
           {
             title: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
@@ -1358,7 +1357,7 @@
     legalName: "LMC a\xA0spolo\u010Dnostiam z\xA0jej obchodn\xE9 skupiny"
   };
   var config7 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra7), extraMessages);
     return {
       consent_modal: {
@@ -1389,9 +1388,9 @@
         blocks: [
           {
             description: `Aby ste z na\u0161ich str\xE1nok z\xEDskali maximum, je najlep\u0161ie povoli\u0165 v\u0161etky typy cookies.
-          \u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nkach
-          <a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvania cookies</a>
-          a\xA0v\xA0<a href="https://www.lmc.eu/sk/zasady-ochrany-sukromia" target="_blank">Z\xE1sad\xE1ch ochrany s\xFAkromia</a>.`
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nkach
+              <a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvania cookies</a>
+              a\xA0v\xA0<a href="https://www.lmc.eu/sk/zasady-ochrany-sukromia" target="_blank">Z\xE1sad\xE1ch ochrany s\xFAkromia</a>.`)
           },
           {
             title: "Technicky nevyhnutn\xE9 cookies",
@@ -1451,7 +1450,7 @@
     legalName: "LMC \u0442\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C \u0437\xA0\u0457\u0457 \u0433\u0440\u0443\u043F\u0438"
   };
   var config8 = (extraMessages, secondaryButtonMode) => {
-    var _a;
+    var _a, _b;
     const lang = __spreadValues(__spreadValues({}, extra8), extraMessages);
     return {
       consent_modal: {
@@ -1482,9 +1481,9 @@
         blocks: [
           {
             description: `\u0429\u043E\u0431 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0443 \u0432\u0456\u0434\u0434\u0430\u0447\u0443 \u0432\u0456\u0434 \u043D\u0430\u0448\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0443, \u043D\u0430\u0439\u043A\u0440\u0430\u0449\u0435 \u0434\u043E\u0437\u0432\u043E\u043B\u0438\u0442\u0438 \u0432\u0441\u0456 \u0442\u0438\u043F\u0438 \u0444\u0430\u0439\u043B\u0456\u0432 Cookies.
-          \u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044E \u043F\u0440\u043E \u0442\u0435, \u0449\u043E \u0442\u0430\u043A\u0435 \u0444\u0430\u0439\u043B\u0438 Cookies \u0456 \u044F\u043A \u043C\u0438 \u0437 \u043D\u0438\u043C\u0438 \u043F\u0440\u0430\u0446\u044E\u0454\u043C\u043E, \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430 \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u0445
-          <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F Cookies</a>
-          \u0456\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456</a>.`
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044E \u043F\u0440\u043E \u0442\u0435, \u0449\u043E \u0442\u0430\u043A\u0435 \u0444\u0430\u0439\u043B\u0438 Cookies \u0456 \u044F\u043A \u043C\u0438 \u0437 \u043D\u0438\u043C\u0438 \u043F\u0440\u0430\u0446\u044E\u0454\u043C\u043E, \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430 \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u0445
+              <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F Cookies</a>
+              \u0456\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456</a>.`)
           },
           {
             title: "\u0422\u0435\u0445\u043D\u0456\u0447\u043D\u043E \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",

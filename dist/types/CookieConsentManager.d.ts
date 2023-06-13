@@ -13,6 +13,7 @@ export type OnChangeCallback = (cookieConsent: VanillaCookieConsent.CookieConsen
 export type TranslationOverride = {
     consentTitle?: string;
     descriptionIntro?: string;
+    settingsModalMoreInfo?: string;
 };
 export type CookieConsentManagerOptions = {
     defaultLang: string;
