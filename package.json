@@ -85,7 +85,7 @@
     "@lmc-eu/browserslist-config": "1.0.3",
     "@lmc-eu/commitlint-config": "1.0.16",
     "@lmc-eu/conventional-changelog-lmc-github": "2.3.0",
-    "@lmc-eu/eslint-config-base": "1.1.5",
+    "@lmc-eu/eslint-config-base": "3.0.1",
     "@lmc-eu/prettier-config": "1.2.3",
     "@lmc-eu/stylelint-config": "4.0.1",
     "@types/jest": "28.1.8",
