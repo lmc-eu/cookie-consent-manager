@@ -5,9 +5,8 @@ import {
   isSettingsButtonNotShown,
   legalizeLmc,
 } from '../utils';
-import { ExtraMessages, Values } from '../types';
+import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
-import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
   and: 'és',
