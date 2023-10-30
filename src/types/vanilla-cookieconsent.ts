@@ -59,10 +59,18 @@ export namespace VanillaCookieConsent {
     readonly?: boolean;
   }
 
+  interface CookieTableItem {
+    domain?: string;
+    path?: string;
+    is_regex?: boolean;
+    [key: string]: string | boolean | undefined;
+  }
+
   interface ModalBlock {
     title?: string;
     description?: string;
     toggle?: ModalBlockToggle;
+    cookie_table?: CookieTableItem[];
   }
 
   interface ConsentModal {
@@ -77,6 +85,7 @@ export namespace VanillaCookieConsent {
     accept_all_btn?: string;
     reject_all_btn?: string;
     save_settings_btn?: string;
+    cookie_table_headers?: Record<string, string>[];
     blocks?: ModalBlock[];
   }
 
