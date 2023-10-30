@@ -3,7 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
-  legalizeLmc,
+  legalizeAlmaCareer,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -11,7 +11,7 @@ import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
   and: 'und',
-  legalName: 'LMC und seine Gruppenunternehmen',
+  legalName: 'Alma Career und seine Gruppenunternehmen',
 };
 
 /**
@@ -35,7 +35,7 @@ export const config = (
       )}
       <p>
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

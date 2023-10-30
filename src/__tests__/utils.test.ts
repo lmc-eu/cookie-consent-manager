@@ -3,7 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
-  legalizeLmc,
+  legalizeAlmaCareer,
   pluralize,
 } from '../utils';
 import { SecondaryButtonMode } from '../constants';
@@ -40,12 +40,16 @@ describe('utils', () => {
   });
 
   describe('legalize', () => {
-    it('should replace old default name with the new legal name', () => {
-      expect(legalizeLmc(['Foo', 'LMC', 'Bar'], 'LMC et. al.')).toEqual(['Foo', 'LMC et. al.', 'Bar']);
+    it('should replace short name "Alma Career" with the full legal name', () => {
+      expect(legalizeAlmaCareer(['Foo', 'Alma Career', 'Bar'], 'Alma Career et. al.')).toEqual([
+        'Foo',
+        'Alma Career et. al.',
+        'Bar',
+      ]);
     });
 
-    it('should not change values if old name is not present', () => {
-      expect(legalizeLmc(['Foobar'], 'LMC et. al.')).toEqual(['Foobar']);
+    it('should not change values if short name is not present', () => {
+      expect(legalizeAlmaCareer(['Foobar'], 'Alma Career et. al.')).toEqual(['Foobar']);
     });
   });
 
