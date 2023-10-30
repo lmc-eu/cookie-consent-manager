@@ -3,7 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
-  legalizeLmc,
+  legalizeAlmaCareer,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -11,7 +11,7 @@ import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 
 const extra = {
   and: 'és',
-  legalName: 'LMC csoport és a hozzá tartozó vállalatok',
+  legalName: 'Alma Career csoport és a hozzá tartozó vállalatok',
 };
 
 /**
@@ -35,7 +35,7 @@ export const config = (
       )}
       <p>
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

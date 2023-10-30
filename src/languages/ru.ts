@@ -3,7 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
-  legalizeLmc,
+  legalizeAlmaCareer,
   pluralize,
 } from '../utils';
 import { ExtraMessages, Values } from '../types';
@@ -14,7 +14,7 @@ const extra = {
   and: 'и',
   company: 'компаниям',
   companies: 'компаниям',
-  legalName: 'LMC и компании ее группы',
+  legalName: 'Alma Career и компании ее группы',
 };
 
 /**
@@ -39,7 +39,7 @@ export const config = (
       <p>
         Нажав «Принять все», Вы даете свое согласие
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)

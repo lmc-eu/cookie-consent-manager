@@ -18,10 +18,10 @@ export const addSeparators = (strings: string[], and: string = ''): string =>
 export const pluralize = (count: number, singular: string, plural: string): string => (count === 1 ? singular : plural);
 
 /**
- * Replace "LMC" with provided full legal name
+ * Replace "Alma Career" with provided full legal name
  */
-export const legalizeLmc = (companyNames: string[], legalName: string): string[] =>
-  companyNames.map((value) => (value === 'LMC' ? legalName : value));
+export const legalizeAlmaCareer = (companyNames: string[], legalName: string): string[] =>
+  companyNames.map((value) => (value === 'Alma Career' ? legalName : value));
 
 /**
  * Assemble description intro based on default value and optional override value.

@@ -31,7 +31,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   onFirstAccept: noopAcceptCallback,
   onAccept: noopAcceptCallback,
   onChange: noopChangeCallback,
-  companyNames: ['LMC'],
+  companyNames: ['Alma Career'],
   displayMode: DisplayMode.FORCE,
   secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
   translationOverrides: {},
