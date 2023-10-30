@@ -474,7 +474,7 @@ yarn format:fix
 #### Publishing package
 
 Prepare release using `yarn release` on a local machine. Check the generated changelog and the bumped `package.json`.
-Then push to origin. Github [publish action](./.github/workflows/publish.yaml) is then taking care of publishing
+Then push to origin. GitHub [publish action](./.github/workflows/publish.yaml) is then taking care of publishing
 package to [npmjs.com](https://npmjs.com/).
 
 ## License
