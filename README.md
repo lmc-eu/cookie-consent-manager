@@ -160,6 +160,9 @@ For "necessary" cookies it is not needed to check whether a user has given any c
 However, for all other purposes, it must be explicitly checked whether user has given the appropriate
 consent category. This must be done *before* the respective cookie is set.
 
+In case user rejects some (or all) optional consent categories, **you must implement logic to remove current cookies
+(as well as localStorage) in your product yourself**`, this library does not manipulate with the cookies by default.
+
 ### Consent categories
 
 | Category          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -172,10 +175,10 @@ consent category. This must be done *before* the respective cookie is set.
 
 ### GTM (Google Tag Manager) scripts
 
-GTM scripts are managed centrally in LMC, so after implementing this library, you don't need to worry about conditions
-when to run them. The library sets all the required data to GTM dataLayer.
+GTM scripts are managed centrally in LMC, so if GTM of the product is managed by LMC, after implementing this library,
+you don't need to worry about conditions when to run them. The library sets all the required data to GTM dataLayer.
 
-However, keep in mind you still need to **take care of already existing cookies**, even of those created by GTM scripts.
+However, keep in mind you still need to **take care (i.e. delete) of already existing cookies**, even of those created by GTM scripts.
 
 ### Custom methods
 
