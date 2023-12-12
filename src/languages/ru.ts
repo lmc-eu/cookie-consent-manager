@@ -65,8 +65,7 @@ export const config = (
             разрешить просматривать и сохранять все типы файлов cookie.\n` +
             (lang.settingsModalMoreInfo ??
               `Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
-              на страницах <a href="https://www.lmc.eu/en/cookies/" target="_blank">Использование файлов cookie</a>
-              и <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Политика конфиденциальности персональных данных</a>.`),
+              на странице <a href="https://www.almacareer.com/gdpr" target="_blank">Политика конфиденциальности персональных данных</a>.`),
         },
         {
           title: 'Технически необходимые файлы cookie',

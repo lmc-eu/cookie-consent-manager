@@ -63,9 +63,8 @@ export const config = (
           description:
             `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránkách
-              <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Používání Cookies</a>
-              a <a href="https://www.lmc.eu/cs/zasady-ochrany-soukromi" target="_blank">Zásady ochrany soukromí</a>.`),
+              `Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránce
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany soukromí</a>.`),
         },
         {
           title: 'Technicky nezbytné Cookies',

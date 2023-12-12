@@ -63,9 +63,8 @@ export const config = (
           description:
             `Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `Додаткову інформацію про те, що таке файли Cookies і як ми з ними працюємо, можна отримати на сторінках
-              <a href="https://www.lmc.eu/en/cookies/" target="_blank">Використання Cookies</a>
-              і <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Політика конфіденційності</a>.`),
+              `Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.`),
         },
         {
           title: 'Технічно необхідні файли Cookies',
