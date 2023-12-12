@@ -63,9 +63,8 @@ export const config = (
           description:
             `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `Aby uzyskać więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, odwiedź na naszej stronie
-              <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z plików cookies</a>
-              i <a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Politykę prywatności</a>.`),
+              `Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy znajdziesz na naszej stronie
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityka prywatności</a>.`),
         },
         {
           title: 'Technicznie niezbędne pliki cookies',

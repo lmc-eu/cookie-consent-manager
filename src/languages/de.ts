@@ -64,9 +64,8 @@ export const config = (
             `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.\n` +
             (lang.settingsModalMoreInfo ??
               `Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
-              finden Sie in unseren Richtlinien
-              zur <a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
-              und zum <a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`),
+              finden Sie in unsere
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.`),
         },
         {
           title: 'Technisch notwendige Cookies',
