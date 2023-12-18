@@ -64,7 +64,7 @@ export const config = (
             `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.\n` +
             (lang.settingsModalMoreInfo ??
               `További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
-              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> honlapjain talál.`),
+              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.`),
         },
         {
           title: 'Technikailag szükséges cookie-k',
