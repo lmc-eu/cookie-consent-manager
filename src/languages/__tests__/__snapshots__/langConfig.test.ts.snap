@@ -533,7 +533,7 @@ exports[`config hu should return localization object for acceptNecessary button 
       {
         "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.
 További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
-              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> honlapjain talál.",
+              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.",
       },
       {
         "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
@@ -615,7 +615,7 @@ exports[`config hu should return localization object for showSettings button mod
       {
         "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.
 További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
-              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> honlapjain talál.",
+              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.",
       },
       {
         "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
