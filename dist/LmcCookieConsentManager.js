@@ -648,41 +648,20 @@
     "function" !== typeof window.initCookieConsent && (window.initCookieConsent = kb);
   })();
 
-  // node_modules/nanoid/index.prod.js
-  if (false) {
-    if (typeof navigator !== "undefined" && navigator.product === "ReactNative" && typeof crypto === "undefined") {
-      throw new Error(
-        "React Native does not have a built-in secure random generator. If you don\u2019t need unpredictable IDs use `nanoid/non-secure`. For secure IDs, import `react-native-get-random-values` before Nano ID."
-      );
-    }
-    if (typeof msCrypto !== "undefined" && typeof crypto === "undefined") {
-      throw new Error(
-        "Import file with `if (!window.crypto) window.crypto = window.msCrypto` before importing Nano ID to fix IE 11 support"
-      );
-    }
-    if (typeof crypto === "undefined") {
-      throw new Error(
-        "Your browser does not have secure random generator. If you don\u2019t need unpredictable IDs, you can use nanoid/non-secure."
-      );
-    }
-  }
-  var nanoid = (size = 21) => {
-    let id = "";
-    let bytes = crypto.getRandomValues(new Uint8Array(size));
-    while (size--) {
-      let byte = bytes[size] & 63;
-      if (byte < 36) {
-        id += byte.toString(36);
-      } else if (byte < 62) {
-        id += (byte - 26).toString(36).toUpperCase();
-      } else if (byte < 63) {
-        id += "_";
-      } else {
-        id += "-";
-      }
+  // node_modules/nanoid/index.browser.js
+  var nanoid = (size = 21) => crypto.getRandomValues(new Uint8Array(size)).reduce((id, byte) => {
+    byte &= 63;
+    if (byte < 36) {
+      id += byte.toString(36);
+    } else if (byte < 62) {
+      id += (byte - 26).toString(36).toUpperCase();
+    } else if (byte > 62) {
+      id += "-";
+    } else {
+      id += "_";
     }
     return id;
-  };
+  }, "");
 
   // src/constants/CookieConsentCategory.ts
   var CookieConsentCategory = {
@@ -770,7 +749,7 @@
     return `${accumulator}, ${string}`;
   });
   var pluralize = (count, singular, plural) => count === 1 ? singular : plural;
-  var legalizeLmc = (companyNames, legalName) => companyNames.map((value) => value === "LMC" ? legalName : value);
+  var legalizeAlmaCareer = (companyNames, legalName) => companyNames.map((value) => value === "Alma Career" ? legalName : value);
   var assembleDescriptionIntro = (defaultValue, overrideValue) => {
     const descriptionIntro = overrideValue != null ? overrideValue : defaultValue;
     return descriptionIntro !== "" ? `<p>${descriptionIntro}</p>` : "";
@@ -790,7 +769,7 @@
     and: "a",
     company: "spole\u010Dnosti",
     companies: "spole\u010Dnostem",
-    legalName: "LMC a\xA0spole\u010Dnostem z\xA0jej\xED obchodn\xED skupiny"
+    legalName: "Alma Career a\xA0spole\u010Dnostem z\xA0jej\xED obchodn\xED skupiny"
   };
   var config = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -806,7 +785,7 @@
       <p>
         Kliknut\xEDm na\xA0tla\u010D\xEDtko \u201EP\u0159ijmout v\u0161echny\u201C d\xE1te
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         souhlas s\xA0vyu\u017E\xEDv\xE1n\xEDm soubor\u016F Cookies na\xA0\xFA\u010Dely personalizace, anal\xFDzy a\xA0c\xEDlen\xE9ho marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Dal\u0161\xED informace o\xA0Cookies a\xA0\xFApravu jejich pou\u017E\xEDv\xE1n\xED naleznete ve\xA0<strong><a href="" data-cc="c-settings">vlastn\xEDm nastaven\xED</a></strong>.` : ""}
       </p>`,
@@ -824,9 +803,8 @@
         blocks: [
           {
             description: `Abyste z na\u0161ich str\xE1nek z\xEDskali maximum, je nejlep\u0161\xED povolit v\u0161echny typy Cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nk\xE1ch
-              <a href="https://www.lmc.eu/cs/cookies/" target="_blank">Pou\u017E\xEDv\xE1n\xED Cookies</a>
-              a\xA0<a href="https://www.lmc.eu/cs/zasady-ochrany-soukromi" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nce
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`)
           },
           {
             title: "Technicky nezbytn\xE9 Cookies",
@@ -886,7 +864,7 @@
   // src/languages/de.ts
   var extra2 = {
     and: "und",
-    legalName: "LMC und seine Gruppenunternehmen"
+    legalName: "Alma Career und seine Gruppenunternehmen"
   };
   var config2 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -901,7 +879,7 @@
         )}
       <p>
         Indem Sie auf \u201EAlles\xA0akzeptieren\u201C klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Ger\xE4t durch
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra2.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra2.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Sie\xA0k\xF6nnen die\xA0Verwendung von\xA0Cookies in\xA0Ihren <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.` : ""}
       </p>`,
@@ -924,9 +902,8 @@
           {
             description: `Um unsere Website optimal nutzen zu k\xF6nnen, sollten Sie alle Arten von Cookies aktivieren.
 ` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Weitere Informationen dar\xFCber, was Cookies sind und wie wir mit ihnen arbeiten,
-              finden Sie in unseren Richtlinien
-              zur\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Verwendung von Cookies</a>
-              und\xA0zum\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Datenschutz</a>.`)
+              finden Sie in unsere
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.`)
           },
           {
             title: "Technisch notwendige Cookies",
@@ -981,7 +958,7 @@
   // src/languages/en.ts
   var extra3 = {
     and: "and",
-    legalName: "LMC and other companies from its business group"
+    legalName: "Alma Career and other companies from its business group"
   };
   var config3 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -996,7 +973,7 @@
         )}
       <p>
         By clicking the "Accept all" button, you give
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra3.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra3.and)}
         your consent to\xA0use cookies for\xA0personalisation, analytics and\xA0targeted marketing.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `You can customize use of cookies in your <strong><a href="" data-cc="c-settings">custom settings</a></strong>.` : ""}
       </p>`,
@@ -1014,9 +991,8 @@
         blocks: [
           {
             description: `If you want to get the most out of our website it is best to allow all types of cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `You can find more information about what cookies are and how we work with them via the links
-              to\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">The use of cookies</a>
-              and\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Privacy policy</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `You can find more information about what cookies are and how we work with them on the page
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privacy policy</a>.`)
           },
           {
             title: "Technically necessary cookies",
@@ -1071,7 +1047,7 @@
   // src/languages/hu.ts
   var extra4 = {
     and: "\xE9s",
-    legalName: "LMC csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
+    legalName: "Alma Career csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
   };
   var config4 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -1086,7 +1062,7 @@
         )}
       <p>
         A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra4.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra4.and)}
         s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.` : ""}
       </p>`,
@@ -1109,8 +1085,7 @@
           {
             description: `Ahhoz, hogy a maximumot hozhassa ki webhely\xFCnkb\u0151l, a\xA0legjobb, ha\xA0enged\xE9lyezi az \xF6sszes cookie t\xEDpust.
 ` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Tov\xE1bbi inform\xE1ci\xF3kat arr\xF3l, hogy mik azok a cookie-k \xE9s hogyan dolgozunk vel\xFCk
-              a\xA0<a href="https://www.lmc.eu/en/cookies/" target="_blank">Cookie-k haszn\xE1lata</a>
-              \xE9s\xA0az\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">Adatv\xE9delmi szab\xE1lyzat honlapjain tal\xE1l</a>.`)
+              az\xA0<a href="https://www.almacareer.com/gdpr" target="_blank">Adatv\xE9delmi szab\xE1lyzat</a> oldal\xE1n tal\xE1lsz.`)
           },
           {
             title: "Technikailag sz\xFCks\xE9ges cookie-k",
@@ -1167,7 +1142,7 @@
     and: "i",
     company: "firm\u0119",
     companies: "firmy",
-    legalName: "LMC i\xA0firmy z\xA0jej grupy biznesowej"
+    legalName: "Alma Career i\xA0firmy z\xA0jej grupy biznesowej"
   };
   var config5 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -1183,7 +1158,7 @@
       <p>
         Kliknij w\xA0przycisk \u201EAkceptuj wszystkie\u201D, aby wyrazi\u0107 zgod\u0119 na\xA0wykorzystanie plik\xF3w cookie przez
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), extra5.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra5.and)}
         do personalizacji, analizy i\xA0ukierunkowanego marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107 we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.` : ""}
       </p>`,
@@ -1201,9 +1176,8 @@
         blocks: [
           {
             description: `Aby w\xA0pe\u0142ni wykorzysta\u0107 mo\u017Cliwo\u015Bci naszej strony, najlepiej jest zezwoli\u0107 na\xA0wszystkie rodzaje plik\xF3w cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Aby uzyska\u0107 wi\u0119cej informacji na\xA0temat tego, czym s\u0105 pliki cookies i\xA0jak z\xA0nimi pracujemy, odwied\u017A na naszej stronie
-              <a href="https://www.lmc.eu/pl/cookies" target="_blank">Korzystanie z\xA0plik\xF3w cookies</a>
-              i\xA0<a href="https://www.lmc.eu/pl/polityka-prywatnosci" target="_blank">Polityk\u0119 prywatno\u015Bci</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Wi\u0119cej informacji na temat tego, czym s\u0105 pliki cookies i jak z nimi pracujemy znajdziesz na naszej stronie
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityka prywatno\u015Bci</a>.`)
           },
           {
             title: "Technicznie niezb\u0119dne pliki cookies",
@@ -1260,7 +1234,7 @@
     and: "\u0438",
     company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
     companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
-    legalName: "LMC \u0438\xA0\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0435 \u0433\u0440\u0443\u043F\u043F\u044B"
+    legalName: "Alma Career \u0438\xA0\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0435 \u0433\u0440\u0443\u043F\u043F\u044B"
   };
   var config6 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -1276,7 +1250,7 @@
       <p>
         \u041D\u0430\u0436\u0430\u0432 \xAB\u041F\u0440\u0438\u043D\u044F\u0442\u044C\xA0\u0432\u0441\u0435\xBB, \u0412\u044B \u0434\u0430\u0435\u0442\u0435 \u0441\u0432\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043D\u0430 \u0412\u0430\u0448\u0435\u043C \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0435. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0438\xA0\u0434\u0440\u0443\u0433\u0438\u0445 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u043E\u0432 \u043E\u0431\u043B\u0435\u0433\u0447\u0438\u0442 \u043D\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430, \u0446\u0435\u043B\u0435\u0432\u043E\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0438\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432 \u0438\xA0\u0443\u0441\u043B\u0443\u0433.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie \u0432\xA0<strong><a href="" data-cc="c-settings">\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445</a></strong>.` : ""}
       </p>`,
@@ -1296,8 +1270,7 @@
             description: `\u0427\u0442\u043E\u0431\u044B \u0412\u044B \u043C\u043E\u0433\u043B\u0438 \u0432 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0439 \u043C\u0435\u0440\u0435 \u0438 \u0431\u0435\u0437 \u043F\u0440\u043E\u0431\u043B\u0435\u043C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F \u043D\u0430\u0448\u0438\u043C \u0441\u0430\u0439\u0442\u043E\u043C, \u043C\u044B \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u043C
             \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C \u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0442\u044C \u0432\u0441\u0435 \u0442\u0438\u043F\u044B \u0444\u0430\u0439\u043B\u043E\u0432 cookie.
 ` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0439\u0442\u0438 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u043C, \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0444\u0430\u0439\u043B\u044B cookies, \u0438 \u043A\u0430\u043A \u043C\u044B \u0441 \u043D\u0438\u043C\u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u043C,
-              \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445 <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u043E\u0432 cookie</a>
-              \u0438\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a>.`)
+              \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0435 <a href="https://www.almacareer.com/gdpr" target="_blank">\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a>.`)
           },
           {
             title: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435 \u0444\u0430\u0439\u043B\u044B cookie",
@@ -1354,7 +1327,7 @@
     and: "a",
     company: "spolo\u010Dnosti",
     companies: "spolo\u010Dnostiam",
-    legalName: "LMC a\xA0spolo\u010Dnostiam z\xA0jej obchodn\xE9 skupiny"
+    legalName: "Alma Career a\xA0spolo\u010Dnostiam z\xA0jej obchodn\xE9 skupiny"
   };
   var config7 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -1370,7 +1343,7 @@
       <p>
         Kliknut\xEDm na\xA0tla\u010Didlo \u201EPrija\u0165 v\u0161etky\u201C d\xE1te
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         s\xFAhlas s\xA0vyu\u017E\xEDvan\xEDm s\xFAborov Cookies za\xA0\xFA\u010Delom personaliz\xE1cie, anal\xFDzy a\xA0cielen\xE9ho marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Viac inform\xE1ci\xED o\xA0Cookies a\xA0\xFApravu ich pou\u017E\xEDvania n\xE1jdete vo\xA0<strong><a href="" data-cc="c-settings">vlastnom nastaven\xED</a></strong>.` : ""}
       </p>`,
@@ -1388,9 +1361,8 @@
         blocks: [
           {
             description: `Aby ste z na\u0161ich str\xE1nok z\xEDskali maximum, je najlep\u0161ie povoli\u0165 v\u0161etky typy cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nkach
-              <a href="https://www.lmc.eu/sk/cookies" target="_blank">Pou\u017E\xEDvania cookies</a>
-              a\xA0v\xA0<a href="https://www.lmc.eu/sk/zasady-ochrany-sukromia" target="_blank">Z\xE1sad\xE1ch ochrany s\xFAkromia</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nke
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sady ochrany s\xFAkromia</a>.`)
           },
           {
             title: "Technicky nevyhnutn\xE9 cookies",
@@ -1447,7 +1419,7 @@
     and: "i",
     company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
     companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
-    legalName: "LMC \u0442\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C \u0437\xA0\u0457\u0457 \u0433\u0440\u0443\u043F\u0438"
+    legalName: "Alma Career \u0442\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C \u0437\xA0\u0457\u0457 \u0433\u0440\u0443\u043F\u0438"
   };
   var config8 = (extraMessages, secondaryButtonMode) => {
     var _a, _b;
@@ -1463,7 +1435,7 @@
       <p>
         \u041D\u0430\u0442\u0438\u0441\u043D\u0443\u0432\u0448\u0438 \xAB\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438\xA0\u0432\u0441\u0435\xBB, \u0412\u0438 \u0434\u0430\u0454\u0442\u0435 \u0441\u0432\u043E\u044E \u0437\u0433\u043E\u0434\u0443
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeLmc(lang.companyNames, lang.legalName), lang.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         \u043D\u0430 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043D\u0430 \u0412\u0430\u0448\u043E\u043C\u0443 \u043F\u0440\u0438\u0441\u0442\u0440\u043E\u0457. \u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0446\u0438\u0445 \u0444\u0430\u0439\u043B\u0456\u0432 cookie \u0442\u0430 \u0456\u043D\u0448\u0438\u0445 \u0456\u0434\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0442\u043E\u0440\u0456\u0432 \u043F\u043E\u043B\u0435\u0433\u0448\u0438\u0442\u044C \u043D\u0430\u0432\u0456\u0433\u0430\u0446\u0456\u044E \u043F\u043E \u0441\u0430\u0439\u0442\u0443, \u0432\u0456\u0434\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u043E\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0443, \u0446\u0456\u043B\u044C\u043E\u0432\u0438\u0439 \u043C\u0430\u0440\u043A\u0435\u0442\u0438\u043D\u0433, \u0430\u043D\u0430\u043B\u0456\u0437 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u043D\u0430\u0448\u0438\u0445 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0456\u0432 \u0456\xA0\u043F\u043E\u0441\u043B\u0443\u0433.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F \u0444\u0430\u0439\u043B\u0456\u0432 Cookies \u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u0437\u043C\u0456\u043D\u0438\u0442\u0438 \u0432\xA0\u0441\u0432\u043E\u0457\u0445 <strong><a href="" data-cc="c-settings">\u0432\u043B\u0430\u0441\u043D\u0438\u0445 \u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u0445</a></strong>.` : ""}
       </p>`,
@@ -1481,9 +1453,8 @@
         blocks: [
           {
             description: `\u0429\u043E\u0431 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0443 \u0432\u0456\u0434\u0434\u0430\u0447\u0443 \u0432\u0456\u0434 \u043D\u0430\u0448\u043E\u0433\u043E \u0441\u0430\u0439\u0442\u0443, \u043D\u0430\u0439\u043A\u0440\u0430\u0449\u0435 \u0434\u043E\u0437\u0432\u043E\u043B\u0438\u0442\u0438 \u0432\u0441\u0456 \u0442\u0438\u043F\u0438 \u0444\u0430\u0439\u043B\u0456\u0432 Cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044E \u043F\u0440\u043E \u0442\u0435, \u0449\u043E \u0442\u0430\u043A\u0435 \u0444\u0430\u0439\u043B\u0438 Cookies \u0456 \u044F\u043A \u043C\u0438 \u0437 \u043D\u0438\u043C\u0438 \u043F\u0440\u0430\u0446\u044E\u0454\u043C\u043E, \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430 \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u0445
-              <a href="https://www.lmc.eu/en/cookies/" target="_blank">\u0412\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u044F Cookies</a>
-              \u0456\xA0<a href="https://www.lmc.eu/en/privacy-policy/" target="_blank">\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443 \u0456\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044E \u043F\u0440\u043E \u0442\u0435, \u0449\u043E \u0442\u0430\u043A\u0435 \u0444\u0430\u0439\u043B\u0438 Cookies, \u0456 \u044F\u043A \u043C\u0438 \u0437 \u043D\u0438\u043C\u0438 \u043F\u0440\u0430\u0446\u044E\u0454\u043C\u043E, \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430 \u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0430\u0445
+              <a href="https://www.almacareer.com/gdpr" target="_blank">\u041F\u043E\u043B\u0456\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0456\u0434\u0435\u043D\u0446\u0456\u0439\u043D\u043E\u0441\u0442\u0456</a>.`)
           },
           {
             title: "\u0422\u0435\u0445\u043D\u0456\u0447\u043D\u043E \u043D\u0435\u043E\u0431\u0445\u0456\u0434\u043D\u0456 \u0444\u0430\u0439\u043B\u0438 Cookies",
@@ -1585,7 +1556,7 @@
     onFirstAccept: noopAcceptCallback,
     onAccept: noopAcceptCallback,
     onChange: noopChangeCallback,
-    companyNames: ["LMC"],
+    companyNames: ["Alma Career"],
     displayMode: DisplayMode.FORCE,
     secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
     translationOverrides: {},

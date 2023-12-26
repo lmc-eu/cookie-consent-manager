@@ -1,3 +1,27 @@
+<a name="2.4.1"></a>
+# [2.4.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.4.0...2.4.1) (2023-12-27)
+
+### Documentation
+
+- Add notice about necessity to implement cookie deletion by each product itself ([45feb44](https://github.com/lmc-eu/cookie-consent-manager/commit/45feb44))
+
+### Features
+
+- Replace LMC company name with Alma Career ([9c2788a](https://github.com/lmc-eu/cookie-consent-manager/commit/9c2788a))
+- Update hu translation ([2ede16e](https://github.com/lmc-eu/cookie-consent-manager/commit/2ede16e))
+- Update links to privacy policy ([88b634e](https://github.com/lmc-eu/cookie-consent-manager/commit/88b634e))
+
+### Chores
+
+- Upgrade @lmc-eu/eslint-config-base to 3.0.1 ([0d6de3b](https://github.com/lmc-eu/cookie-consent-manager/commit/0d6de3b))
+- **deps-dev:** Bump postcss from 8.4.19 to 8.4.31 ([1fdc8c9](https://github.com/lmc-eu/cookie-consent-manager/commit/1fdc8c9))
+- **deps:** Bump @babel/traverse from 7.16.0 to 7.23.2 ([059ee92](https://github.com/lmc-eu/cookie-consent-manager/commit/059ee92))
+- **deps:** Bump semver from 5.7.1 to 5.7.2 ([0189bab](https://github.com/lmc-eu/cookie-consent-manager/commit/0189bab))
+- **deps:** Bump word-wrap from 1.2.3 to 1.2.5 ([5a94e5f](https://github.com/lmc-eu/cookie-consent-manager/commit/5a94e5f))
+- **deps:** Update to Jest 29 ([5acdade](https://github.com/lmc-eu/cookie-consent-manager/commit/5acdade))
+- Try to build this package also on Node.js v20 ([706ab9a](https://github.com/lmc-eu/cookie-consent-manager/commit/706ab9a))
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.3.3...2.4.0) (2023-06-13)
 
