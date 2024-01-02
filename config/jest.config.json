@@ -1,16 +1,16 @@
 {
   "rootDir": "../",
   "transform": {
-    "\\.[j|t]s?$": "ts-jest"
+    "\\.[j|t]s?$": [
+      "ts-jest",
+      {
+        "isolatedModules": true
+      }
+    ]
   },
   "testPathIgnorePatterns": [
     "/node_modules/",
     "/dist/"
   ],
-  "modulePathIgnorePatterns": ["<rootDir>/dist"],
-  "globals": {
-    "ts-jest": {
-      "isolatedModules": true
-    }
-  }
+  "modulePathIgnorePatterns": ["<rootDir>/dist"]
 }
