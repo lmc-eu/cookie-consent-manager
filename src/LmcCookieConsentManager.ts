@@ -8,6 +8,7 @@ import { config as configHu } from './languages/hu';
 import { config as configPl } from './languages/pl';
 import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
+import { config as configSl } from './languages/sl';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
 import {
@@ -93,6 +94,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode),
     ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode),
     sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode),
+    sl: configSl({ companyNames, ...translationOverrides.sl }, secondaryButtonMode),
     uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode),
   };
 
