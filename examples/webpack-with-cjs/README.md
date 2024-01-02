@@ -1,6 +1,6 @@
 # Webpack with CommonJS module
 
-This example shows how to integrate LMC Cookie Consent Manager with Webpack via CommonJS module.
+This example shows how to integrate Alma Career Cookie Consent Manager with Webpack via CommonJS module.
 
 ## How to use
 

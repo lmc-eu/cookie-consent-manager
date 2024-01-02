@@ -1,6 +1,6 @@
 # Webpack with EcmaScript module
 
-This example shows how to integrate LMC Cookie Consent Manager with Webpack via ESM module.
+This example shows how to integrate Alma Career Cookie Consent Manager with Webpack via ESM module.
 
 ## How to use
 
