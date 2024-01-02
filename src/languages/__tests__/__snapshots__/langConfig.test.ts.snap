@@ -506,6 +506,180 @@ You can find more information about what cookies are and how we work with them o
 }
 `;
 
+exports[`config hr should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Boljim razumijevanjem onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
+      <p>
+        Klikom na gumb „Prihvati sve“, dajete
+        test1, test2 i test3
+        privolu za upotrebu kolačića za personalizaciju, analitiku i ciljani marketing..
+        Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="c-settings">prilagođenim postavkama</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Prihvati sve",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Prihvati nužno",
+    },
+    "title": "Kolačići čine našu stranicu još boljom",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Prihvati sve",
+    "blocks": [
+      {
+        "description": "Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.
+Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
+      },
+      {
+        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti.
+          Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
+        "title": "Tehnički nužni kolačići",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste.
+          Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
+        "title": "Analitički kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima.
+          Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
+        "title": "Funkcionalni kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga.
+          Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
+        "title": "Marketing kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima.
+          Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
+        "title": "Personalizacijski kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Prihvati nužno",
+    "save_settings_btn": "Spremi postavke",
+    "title": "Prilagođene postavke kolačića",
+  },
+}
+`;
+
+exports[`config hr should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Boljim razumijevanjem onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
+      <p>
+        Klikom na gumb „Prihvati sve“, dajete
+        test1, test2 i test3
+        privolu za upotrebu kolačića za personalizaciju, analitiku i ciljani marketing..
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Prihvati sve",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Prilagođene postavke",
+    },
+    "title": "Kolačići čine našu stranicu još boljom",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Prihvati sve",
+    "blocks": [
+      {
+        "description": "Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.
+Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
+      },
+      {
+        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti.
+          Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
+        "title": "Tehnički nužni kolačići",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste.
+          Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
+        "title": "Analitički kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima.
+          Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
+        "title": "Funkcionalni kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga.
+          Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
+        "title": "Marketing kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima.
+          Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
+        "title": "Personalizacijski kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Prihvati nužno",
+    "save_settings_btn": "Spremi postavke",
+    "title": "Prilagođene postavke kolačića",
+  },
+}
+`;
+
 exports[`config hu should return localization object for acceptNecessary button mode 1`] = `
 {
   "consent_modal": {
