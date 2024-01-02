@@ -74,7 +74,7 @@
     "types": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.23.0",
+    "@lmc-eu/spirit-design-tokens": "^1.1.2",
     "nanoid": "^3.1.30",
     "vanilla-cookieconsent": "2.8.0"
   },
