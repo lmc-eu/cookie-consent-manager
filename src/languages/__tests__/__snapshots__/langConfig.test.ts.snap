@@ -1344,6 +1344,180 @@ exports[`config sk should return localization object for showSettings button mod
 }
 `;
 
+exports[`config sl should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Z boljšim razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno vsebino.</p>
+      <p>
+        S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
+        test1, test2 in test3
+        za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
+        Uporabo piškotkov lahko prilagodite v <strong><a href="" data-cc="c-settings">svojih nastavitvah</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Sprejmi vse",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Sprejmi samo nujne",
+    },
+    "title": "Piškotki izboljšujejo našo spletno stran",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Sprejmi vse",
+    "blocks": [
+      {
+        "description": "Če želite najbolje izkoristiti našo spletno stran, je najbolje, da dovolite vse vrste piškotkov.
+Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
+      },
+      {
+        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti.
+          Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
+        "title": "Tehnično nujni piškotki",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo.
+          Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
+        "title": "Analitični piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov.
+          Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
+        "title": "Funkcionalni piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev.
+          Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
+        "title": "Trženjski piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom.
+          Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
+        "title": "Piškotki za prilagajanje",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Sprejmi samo nujne",
+    "save_settings_btn": "Shrani nastavitve",
+    "title": "Prilagojene nastavitve piškotkov",
+  },
+}
+`;
+
+exports[`config sl should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Z boljšim razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno vsebino.</p>
+      <p>
+        S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
+        test1, test2 in test3
+        za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Sprejmi vse",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Shrani nastavitve",
+    },
+    "title": "Piškotki izboljšujejo našo spletno stran",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Sprejmi vse",
+    "blocks": [
+      {
+        "description": "Če želite najbolje izkoristiti našo spletno stran, je najbolje, da dovolite vse vrste piškotkov.
+Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
+      },
+      {
+        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti.
+          Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
+        "title": "Tehnično nujni piškotki",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo.
+          Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
+        "title": "Analitični piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov.
+          Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
+        "title": "Funkcionalni piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev.
+          Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
+        "title": "Trženjski piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom.
+          Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
+        "title": "Piškotki za prilagajanje",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "reject_all_btn": "Sprejmi samo nujne",
+    "save_settings_btn": "Shrani nastavitve",
+    "title": "Prilagojene nastavitve piškotkov",
+  },
+}
+`;
+
 exports[`config uk should return localization object for acceptNecessary button mode 1`] = `
 {
   "consent_modal": {

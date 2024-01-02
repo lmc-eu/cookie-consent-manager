@@ -6,6 +6,7 @@ import { config as configHu } from '../hu';
 import { config as configPl } from '../pl';
 import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
+import { config as configSl } from '../sl';
 import { config as configUk } from '../uk';
 import { SecondaryButtonMode } from '../../constants/SecondaryButtonMode';
 
@@ -18,6 +19,7 @@ describe.each([
   ['pl', configPl],
   ['ru', configRu],
   ['sk', configSk],
+  ['sl', configSl],
   ['uk', configUk],
 ])('config %s', (name, config) => {
   it('should return localization object for acceptNecessary button mode', () => {
