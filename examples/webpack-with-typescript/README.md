@@ -1,6 +1,6 @@
 # Webpack with Typescript module
 
-This example shows how to integrate LMC Cookie Consent Manager with Webpack via ESM module using Typescript.
+This example shows how to integrate Alma Career Cookie Consent Manager with Webpack via ESM module using Typescript.
 
 ## How to use
 
