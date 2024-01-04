@@ -29,7 +29,7 @@ export const config = (
 
   return {
     consent_modal: {
-      title: lang.consentTitle ?? 'Vďaka Cookies budú naše stránky ešte lepšie',
+      title: lang.consentTitle ?? 'S cookies vám vieme lepšie prispôsobiť stránku',
       description: `
       ${assembleDescriptionIntro(
         'Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.',
@@ -60,10 +60,10 @@ export const config = (
       blocks: [
         {
           description:
-            `Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.\n` +
+            `Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránke
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany súkromia</a>.`),
+              `Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`),
         },
         {
           title: 'Technicky nevyhnutné cookies',

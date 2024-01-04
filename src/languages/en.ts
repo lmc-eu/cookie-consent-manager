@@ -57,12 +57,12 @@ export const config = (
           description:
             `If you want to get the most out of our website it is best to allow all types of cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `You can find more information about what cookies are and how we work with them on the page
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privacy policy</a>.`),
+              `For more information about what cookies are and how we work with them, see our
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.`),
         },
         {
           title: 'Technically necessary cookies',
-          description: `These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.`,
+          description: `These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
