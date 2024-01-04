@@ -60,10 +60,10 @@ export const config = (
       blocks: [
         {
           description:
-            `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.\n` +
+            `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.\n` +
             (lang.settingsModalMoreInfo ??
-              `Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránce
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany soukromí</a>.`),
+              `Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`),
         },
         {
           title: 'Technicky nezbytné Cookies',

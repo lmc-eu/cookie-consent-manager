@@ -26,9 +26,9 @@ exports[`config cs should return localization object for acceptNecessary button 
     "accept_all_btn": "Přijmout všechny",
     "blocks": [
       {
-        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.
-Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránce
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany soukromí</a>.",
+        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
+Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
         "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
@@ -114,9 +114,9 @@ exports[`config cs should return localization object for showSettings button mod
     "accept_all_btn": "Přijmout všechny",
     "blocks": [
       {
-        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy Cookies.
-Další informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na stránce
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany soukromí</a>.",
+        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
+Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
         "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
@@ -368,11 +368,11 @@ exports[`config en should return localization object for acceptNecessary button 
     "blocks": [
       {
         "description": "If you want to get the most out of our website it is best to allow all types of cookies.
-You can find more information about what cookies are and how we work with them on the page
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privacy policy</a>.",
+For more information about what cookies are and how we work with them, see our
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.",
       },
       {
-        "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
+        "description": "These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
         "title": "Technically necessary cookies",
         "toggle": {
           "enabled": true,
@@ -450,11 +450,11 @@ exports[`config en should return localization object for showSettings button mod
     "blocks": [
       {
         "description": "If you want to get the most out of our website it is best to allow all types of cookies.
-You can find more information about what cookies are and how we work with them on the page
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privacy policy</a>.",
+For more information about what cookies are and how we work with them, see our
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.",
       },
       {
-        "description": "These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
+        "description": "These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
         "title": "Technically necessary cookies",
         "toggle": {
           "enabled": true,
@@ -871,8 +871,8 @@ exports[`config pl should return localization object for acceptNecessary button 
     "blocks": [
       {
         "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
-Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy znajdziesz na naszej stronie
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityka prywatności</a>.",
+Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.",
       },
       {
         "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
@@ -954,8 +954,8 @@ exports[`config pl should return localization object for showSettings button mod
     "blocks": [
       {
         "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
-Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy znajdziesz na naszej stronie
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityka prywatności</a>.",
+Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.",
       },
       {
         "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
@@ -1198,15 +1198,15 @@ exports[`config sk should return localization object for acceptNecessary button 
       "role": "accept_necessary",
       "text": "Prijať nevyhnutné",
     },
-    "title": "Vďaka Cookies budú naše stránky ešte lepšie",
+    "title": "S cookies vám vieme lepšie prispôsobiť stránku",
   },
   "settings_modal": {
     "accept_all_btn": "Prijať všetky",
     "blocks": [
       {
-        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
-Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránke
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany súkromia</a>.",
+        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
         "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
@@ -1281,15 +1281,15 @@ exports[`config sk should return localization object for showSettings button mod
       "role": "settings",
       "text": "Vlastné nastavenia",
     },
-    "title": "Vďaka Cookies budú naše stránky ešte lepšie",
+    "title": "S cookies vám vieme lepšie prispôsobiť stránku",
   },
   "settings_modal": {
     "accept_all_btn": "Prijať všetky",
     "blocks": [
       {
-        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
-Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete na stránke
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Zásady ochrany súkromia</a>.",
+        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
         "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
