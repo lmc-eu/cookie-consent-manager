@@ -1,3 +1,23 @@
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.4.1...2.5.0) (2024-01-11)
+
+### Documentation
+
+- Rebrand to Alma Career also in documentation and meta information ([a9f9a1c](https://github.com/lmc-eu/cookie-consent-manager/commit/a9f9a1c))
+
+### Features
+
+- Add Croatian (hr) translation ([2ee50f3](https://github.com/lmc-eu/cookie-consent-manager/commit/2ee50f3))
+- Add Slovenian (sl) translation ([aee08f7](https://github.com/lmc-eu/cookie-consent-manager/commit/aee08f7))
+- Extend types to allow cookie tables settings ([33313ac](https://github.com/lmc-eu/cookie-consent-manager/commit/33313ac))
+- Update translations and unify Cookie policy document naming ([0ef63d0](https://github.com/lmc-eu/cookie-consent-manager/commit/0ef63d0))
+
+### Chores
+
+- **deps:** Update dependency @lmc-eu/spirit-design-tokens to v1 ([8ab4715](https://github.com/lmc-eu/cookie-consent-manager/commit/8ab4715))
+- Fix ts-jest config deprecations ([135288d](https://github.com/lmc-eu/cookie-consent-manager/commit/135288d))
+
+
 <a name="2.4.1"></a>
 # [2.4.1](https://github.com/lmc-eu/cookie-consent-manager/compare/2.4.0...2.4.1) (2023-12-27)
 

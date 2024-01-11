@@ -847,9 +847,9 @@ var config = (extraMessages, secondaryButtonMode) => {
       save_settings_btn: "Ulo\u017Eit nastaven\xED",
       blocks: [
         {
-          description: `Abyste z na\u0161ich str\xE1nek z\xEDskali maximum, je nejlep\u0161\xED povolit v\u0161echny typy Cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Dal\u0161\xED informace o tom, co jsou Cookies a jak s nimi pracujeme, najdete na str\xE1nce
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sady ochrany soukrom\xED</a>.`)
+          description: `Abyste z\xA0na\u0161ich str\xE1nek z\xEDskali maximum, je nejlep\u0161\xED povolit v\u0161echny typy cookies.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Dal\u0161\xED informace o\xA0tom, co jsou cookies a\xA0jak s\xA0nimi pracujeme, najdete
+              v\xA0<a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sad\xE1ch\xA0cookies</a>.`)
         },
         {
           title: "Technicky nezbytn\xE9 Cookies",
@@ -1036,12 +1036,12 @@ var config3 = (extraMessages, secondaryButtonMode) => {
       blocks: [
         {
           description: `If you want to get the most out of our website it is best to allow all types of cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `You can find more information about what cookies are and how we work with them on the page
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privacy policy</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `For more information about what cookies are and how we work with them, see our
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.`)
         },
         {
           title: "Technically necessary cookies",
-          description: `These cookies are essential for the proper functioning of our website and so they cannot be disabled. Without them, it would not be possible e.g.\xA0to display any content or to\xA0log\xA0in on our website.`,
+          description: `These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g.\xA0to display any content or to\xA0log\xA0in on our website.`,
           toggle: {
             value: CookieConsentCategory.NECESSARY,
             enabled: true,
@@ -1089,14 +1089,108 @@ var config3 = (extraMessages, secondaryButtonMode) => {
   };
 };
 
-// src/languages/hu.ts
+// src/languages/hr.ts
 var extra4 = {
-  and: "\xE9s",
-  legalName: "Alma Career csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
+  and: "i",
+  legalName: "tvrtkama iz poslovne grupacije Alma Career"
 };
 var config4 = (extraMessages, secondaryButtonMode) => {
   var _a, _b;
   const lang = __spreadValues(__spreadValues({}, extra4), extraMessages);
+  return {
+    consent_modal: {
+      title: (_a = lang.consentTitle) != null ? _a : "Kola\u010Di\u0107i \u010Dine na\u0161u stranicu jo\u0161 boljom",
+      description: `
+      ${assembleDescriptionIntro(
+        "Boljim razumijevanjem onoga \u0161to vas zanima, pokazat \u0107emo vam relevantniji\xA0sadr\u017Eaj.",
+        lang.descriptionIntro
+      )}
+      <p>
+        Klikom na\xA0gumb \u201EPrihvati sve\u201C, dajete
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
+        privolu za\xA0upotrebu kola\u010Di\u0107a za personalizaciju, analitiku i ciljani marketing..
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Mo\u017Eete prilagoditi upotrebu kola\u010Di\u0107a u\xA0svojim <strong><a href="" data-cc="c-settings">prilago\u0111enim postavkama</a></strong>.` : ""}
+      </p>`,
+      primary_btn: {
+        text: "Prihvati sve",
+        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
+      },
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Prihvati nu\u017Eno", "Prilago\u0111ene postavke")
+    },
+    settings_modal: {
+      title: "Prilago\u0111ene postavke kola\u010Di\u0107a",
+      accept_all_btn: "Prihvati sve",
+      reject_all_btn: "Prihvati nu\u017Eno",
+      save_settings_btn: "Spremi postavke",
+      blocks: [
+        {
+          description: `Ako \u017Eelite maksimalno iskoristiti na\u0161u web stranicu, najbolje je dopustiti sve vrste kola\u010Di\u0107a.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Vi\u0161e informacija o tome \u0161to su kola\u010Di\u0107i i\xA0kako s\xA0njima radimo mo\u017Eete prona\u0107i na stranici
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.`)
+        },
+        {
+          title: "Tehni\u010Dki nu\u017Eni kola\u010Di\u0107i",
+          description: `Ovi kola\u010Di\u0107i su klju\u010Dni za pravilno funkcioniranje na\u0161e web stranice i\xA0stoga ih nije mogu\u0107e onemogu\u0107iti.
+          Bez njih nije mogu\u0107e prikazati sadr\u017Eaj ili se\xA0prijaviti na\xA0na\u0161u web stranicu.`,
+          toggle: {
+            value: CookieConsentCategory.NECESSARY,
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          title: "Analiti\u010Dki kola\u010Di\u0107i",
+          description: `Ovi nam poma\u017Eu pratiti koliko ljudi posje\u0107uje na\u0161u web stranicu i\xA0kako je koriste.
+          Te\xA0informacije nam omogu\u0107uju kontinuirano pobolj\u0161avanje web stranice i\xA0drugih usluga.`,
+          toggle: {
+            value: CookieConsentCategory.ANALYTICS,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Funkcionalni kola\u010Di\u0107i",
+          description: `Na\u0161a web stranica djeluje jo\u0161 u\u010Dinkovitije i\xA0bolje zahvaljuju\u0107i ovim kola\u010Di\u0107ima.
+          Na\xA0primjer, omogu\u0107uju nam kori\u0161tenje usluge razgovora i\xA0brzo i\xA0jednostavno odgovaranje na\xA0va\u0161a pitanja.`,
+          toggle: {
+            value: CookieConsentCategory.FUNCTIONALITY,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Marketing kola\u010Di\u0107i",
+          description: `Ovi kola\u010Di\u0107i nam poma\u017Eu mjeriti u\u010Dinkovitost na\u0161eg ogla\u0161avanja i\xA0ciljanih ponuda usluga.
+          Marketing kola\u010Di\u0107i omogu\u0107uju nam dono\u0161enje vijesti koje bi vas mogle zanimati na\xA0internetu.`,
+          toggle: {
+            value: CookieConsentCategory.AD,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Personalizacijski kola\u010Di\u0107i",
+          description: `Na\u0161e usluge bolje funkcioniraju ako ih mo\u017Eemo prilagoditi odre\u0111enim korisnicima.
+          Dopu\u0161tanjem personalizacijskih kola\u010Di\u0107a pove\u0107avate \u0161anse da\xA0prona\u0111ete sadr\u017Eaj koji \u017Eelite.`,
+          toggle: {
+            value: CookieConsentCategory.PERSONALIZATION,
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
+// src/languages/hu.ts
+var extra5 = {
+  and: "\xE9s",
+  legalName: "Alma Career csoport \xE9s a hozz\xE1 tartoz\xF3 v\xE1llalatok"
+};
+var config5 = (extraMessages, secondaryButtonMode) => {
+  var _a, _b;
+  const lang = __spreadValues(__spreadValues({}, extra5), extraMessages);
   return {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Az oldalak s\xFCti f\xE1jlokat haszn\xE1lnak",
@@ -1107,7 +1201,7 @@ var config4 = (extraMessages, secondaryButtonMode) => {
       )}
       <p>
         A\xA0\u201EMindent\xA0elfogadok\u201D gombra kattintva a\xA0hozz\xE1j\xE1rul\xE1s\xE1t adja ahhoz, hogy az
-        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra4.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra5.and)}
         s\xFCti f\xE1jlokat \xE9s egy\xE9b azonos\xEDt\xF3kat haszn\xE1ljon az \xD6n eszk\xF6z\xE9n. E\xA0s\xFCti f\xE1jlok \xE9s egy\xE9b azonos\xEDt\xF3k haszn\xE1lata megk\xF6nny\xEDti a\xA0weboldalon bel\xFCli navig\xE1ci\xF3t, a\xA0szem\xE9lyre szabott tartalom megjelen\xEDt\xE9s\xE9t, a\xA0c\xE9lzott marketinget, valamint term\xE9keink \xE9s szolg\xE1ltat\xE1saink haszn\xE1lat\xE1nak elemz\xE9s\xE9t.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `A\xA0cookie-k haszn\xE1lat\xE1t testre szabhatja <strong><a href="" data-cc="c-settings">saj\xE1t be\xE1ll\xEDt\xE1saiban</a></strong>.` : ""}
       </p>`,
@@ -1183,15 +1277,15 @@ var config4 = (extraMessages, secondaryButtonMode) => {
 };
 
 // src/languages/pl.ts
-var extra5 = {
+var extra6 = {
   and: "i",
   company: "firm\u0119",
   companies: "firmy",
   legalName: "Alma Career i\xA0firmy z\xA0jej grupy biznesowej"
 };
-var config5 = (extraMessages, secondaryButtonMode) => {
+var config6 = (extraMessages, secondaryButtonMode) => {
   var _a, _b;
-  const lang = __spreadValues(__spreadValues({}, extra5), extraMessages);
+  const lang = __spreadValues(__spreadValues({}, extra6), extraMessages);
   return {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "Dzi\u0119ki plikom Cookies nasza strona b\u0119dzie jeszcze lepsza",
@@ -1203,7 +1297,7 @@ var config5 = (extraMessages, secondaryButtonMode) => {
       <p>
         Kliknij w\xA0przycisk \u201EAkceptuj wszystkie\u201D, aby wyrazi\u0107 zgod\u0119 na\xA0wykorzystanie plik\xF3w cookie przez
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
-        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra5.and)}
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra6.and)}
         do personalizacji, analizy i\xA0ukierunkowanego marketingu.
         ${isSettingsButtonNotShown(secondaryButtonMode) ? `Korzystanie z\xA0plik\xF3w cookies mo\u017Cesz dostosowa\u0107 we\xA0<strong><a href="" data-cc="c-settings">w\u0142asnych ustawieniach</a></strong>.` : ""}
       </p>`,
@@ -1221,8 +1315,8 @@ var config5 = (extraMessages, secondaryButtonMode) => {
       blocks: [
         {
           description: `Aby w\xA0pe\u0142ni wykorzysta\u0107 mo\u017Cliwo\u015Bci naszej strony, najlepiej jest zezwoli\u0107 na\xA0wszystkie rodzaje plik\xF3w cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Wi\u0119cej informacji na temat tego, czym s\u0105 pliki cookies i jak z nimi pracujemy znajdziesz na naszej stronie
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityka prywatno\u015Bci</a>.`)
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Wi\u0119cej informacji na temat tego, czym s\u0105 pliki cookies i\xA0jak z nimi pracujemy, znajdziesz w\xA0naszej
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plik\xF3w\xA0cookie</a>.`)
         },
         {
           title: "Technicznie niezb\u0119dne pliki cookies",
@@ -1275,15 +1369,15 @@ var config5 = (extraMessages, secondaryButtonMode) => {
 };
 
 // src/languages/ru.ts
-var extra6 = {
+var extra7 = {
   and: "\u0438",
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
   companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F\u043C",
   legalName: "Alma Career \u0438\xA0\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u0435\u0435 \u0433\u0440\u0443\u043F\u043F\u044B"
 };
-var config6 = (extraMessages, secondaryButtonMode) => {
+var config7 = (extraMessages, secondaryButtonMode) => {
   var _a, _b;
-  const lang = __spreadValues(__spreadValues({}, extra6), extraMessages);
+  const lang = __spreadValues(__spreadValues({}, extra7), extraMessages);
   return {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "\u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442 \u0444\u0430\u0439\u043B\u044B cookie",
@@ -1368,18 +1462,18 @@ var config6 = (extraMessages, secondaryButtonMode) => {
 };
 
 // src/languages/sk.ts
-var extra7 = {
+var extra8 = {
   and: "a",
   company: "spolo\u010Dnosti",
   companies: "spolo\u010Dnostiam",
   legalName: "Alma Career a\xA0spolo\u010Dnostiam z\xA0jej obchodn\xE9 skupiny"
 };
-var config7 = (extraMessages, secondaryButtonMode) => {
+var config8 = (extraMessages, secondaryButtonMode) => {
   var _a, _b;
-  const lang = __spreadValues(__spreadValues({}, extra7), extraMessages);
+  const lang = __spreadValues(__spreadValues({}, extra8), extraMessages);
   return {
     consent_modal: {
-      title: (_a = lang.consentTitle) != null ? _a : "V\u010Faka Cookies bud\xFA na\u0161e str\xE1nky e\u0161te lep\u0161ie",
+      title: (_a = lang.consentTitle) != null ? _a : "S cookies v\xE1m vieme lep\u0161ie prisp\xF4sobi\u0165 str\xE1nku",
       description: `
       ${assembleDescriptionIntro(
         "Presnej\u0161\xED obsah\xA0na\xA0mieru v\xE1m budeme zobrazova\u0165, ke\u010F\xA0lep\u0161ie pochop\xEDme, \u010Do\xA0v\xE1s\xA0zauj\xEDma.",
@@ -1405,9 +1499,9 @@ var config7 = (extraMessages, secondaryButtonMode) => {
       save_settings_btn: "Ulo\u017Ei\u0165 nastavenia",
       blocks: [
         {
-          description: `Aby ste z na\u0161ich str\xE1nok z\xEDskali maximum, je najlep\u0161ie povoli\u0165 v\u0161etky typy cookies.
-` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a ako s nimi pracujeme, n\xE1jdete na str\xE1nke
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sady ochrany s\xFAkromia</a>.`)
+          description: `Aby ste z\xA0na\u0161ich str\xE1nok z\xEDskali maximum, je najlep\u0161ie povoli\u0165 v\u0161etky typy cookies.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `\u010Eal\u0161ie inform\xE1cie o\xA0tom, \u010Do s\xFA cookies a\xA0ako s\xA0nimi pracujeme, n\xE1jdete
+              v\xA0<a href="https://www.almacareer.com/gdpr" target="_blank">Z\xE1sad\xE1ch\xA0cookies</a>.`)
         },
         {
           title: "Technicky nevyhnutn\xE9 cookies",
@@ -1459,16 +1553,110 @@ var config7 = (extraMessages, secondaryButtonMode) => {
   };
 };
 
+// src/languages/sl.ts
+var extra9 = {
+  and: "in",
+  legalName: "iz poslovne skupine Alma Career"
+};
+var config9 = (extraMessages, secondaryButtonMode) => {
+  var _a, _b;
+  const lang = __spreadValues(__spreadValues({}, extra9), extraMessages);
+  return {
+    consent_modal: {
+      title: (_a = lang.consentTitle) != null ? _a : "Pi\u0161kotki izbolj\u0161ujejo na\u0161o spletno stran",
+      description: `
+      ${assembleDescriptionIntro(
+        "Z bolj\u0161im razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno\xA0vsebino.",
+        lang.descriptionIntro
+      )}
+      <p>
+        S\xA0klikom na\xA0gumb \u201ESprejmi vse\u201C dajete soglasje podjetjem
+        ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
+        za\xA0uporabo pi\u0161kotkov za\xA0personalizacijo, analitiko in ciljno ogla\u0161evanje.
+        ${isSettingsButtonNotShown(secondaryButtonMode) ? `Uporabo pi\u0161kotkov lahko prilagodite v\xA0<strong><a href="" data-cc="c-settings">svojih nastavitvah</a></strong>.` : ""}
+      </p>`,
+      primary_btn: {
+        text: "Sprejmi vse",
+        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL
+      },
+      secondary_btn: assembleSecondaryButton(secondaryButtonMode, "Sprejmi samo nujne", "Shrani nastavitve")
+    },
+    settings_modal: {
+      title: "Prilagojene nastavitve pi\u0161kotkov",
+      accept_all_btn: "Sprejmi vse",
+      reject_all_btn: "Sprejmi samo nujne",
+      save_settings_btn: "Shrani nastavitve",
+      blocks: [
+        {
+          description: `\u010Ce \u017Eelite najbolje izkoristiti na\u0161o spletno stran, je najbolje, da dovolite vse vrste pi\u0161kotkov.
+` + ((_b = lang.settingsModalMoreInfo) != null ? _b : `Ve\u010D informacij o\xA0tem, kaj so pi\u0161kotki in\xA0kako z\xA0njimi upravljamo, najdete na\xA0strani
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.`)
+        },
+        {
+          title: "Tehni\u010Dno nujni pi\u0161kotki",
+          description: `Ti pi\u0161kotki so bistveni za pravilno delovanje na\u0161e spletne strani in\xA0jih ni\xA0mogo\u010De izklopiti.
+          Brez njih ne\xA0bi\xA0bilo mogo\u010De prikazati vsebine ali se\xA0prijaviti na\xA0na\u0161o spletno stran.`,
+          toggle: {
+            value: CookieConsentCategory.NECESSARY,
+            enabled: true,
+            readonly: true
+          }
+        },
+        {
+          title: "Analiti\u010Dni pi\u0161kotki",
+          description: `Ti nam pomagajo spremljati, koliko ljudi obi\u0161\u010De na\u0161o spletno stran in\xA0kako jo uporabljajo.
+          Te informacije nam omogo\u010Dajo nenehno izbolj\u0161evanje spletne strani in\xA0drugih storitev.`,
+          toggle: {
+            value: CookieConsentCategory.ANALYTICS,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Funkcionalni pi\u0161kotki",
+          description: `Na\u0161a spletna stran je \u0161e u\u010Dinkovitej\u0161a in\xA0bolje deluje zaradi teh pi\u0161kotkov.
+          Na primer, omogo\u010Dajo nam uporabo klepetalne storitve in\xA0hitro ter enostavno odgovarjanje na\xA0va\u0161a vpra\u0161anja.`,
+          toggle: {
+            value: CookieConsentCategory.FUNCTIONALITY,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Tr\u017Eenjski pi\u0161kotki",
+          description: `Ti pi\u0161kotki nam pomagajo meriti u\u010Dinkovitost na\u0161ega ogla\u0161evanja in\xA0ciljnih ponudb storitev.
+          Tr\u017Eenjski pi\u0161kotki nam omogo\u010Dajo, da vam na\xA0internetu prina\u0161amo novice, ki vas morda zanimajo.`,
+          toggle: {
+            value: CookieConsentCategory.AD,
+            enabled: false,
+            readonly: false
+          }
+        },
+        {
+          title: "Pi\u0161kotki za prilagajanje",
+          description: `Na\u0161e storitve bolje delujejo, \u010De jih lahko prilagodimo dolo\u010Denim uporabnikom.
+          Z\xA0dovoljenjem pi\u0161kotkov za prilagajanje pove\u010Date mo\u017Enosti, da najdete vsebino, ki jo\xA0\u017Eelite.`,
+          toggle: {
+            value: CookieConsentCategory.PERSONALIZATION,
+            enabled: false,
+            readonly: false
+          }
+        }
+      ]
+    }
+  };
+};
+
 // src/languages/uk.ts
-var extra8 = {
+var extra10 = {
   and: "i",
   company: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
   companies: "\u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C",
   legalName: "Alma Career \u0442\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u044F\u043C \u0437\xA0\u0457\u0457 \u0433\u0440\u0443\u043F\u0438"
 };
-var config8 = (extraMessages, secondaryButtonMode) => {
+var config10 = (extraMessages, secondaryButtonMode) => {
   var _a, _b;
-  const lang = __spreadValues(__spreadValues({}, extra8), extraMessages);
+  const lang = __spreadValues(__spreadValues({}, extra10), extraMessages);
   return {
     consent_modal: {
       title: (_a = lang.consentTitle) != null ? _a : "\u0426\u0435\u0439 \u0441\u0430\u0439\u0442 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454 \u0444\u0430\u0439\u043B\u0438 cookie",
@@ -1625,7 +1813,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
     displayMode,
     secondaryButtonMode,
     translationOverrides,
-    config: config9
+    config: config11
   } = options;
   const cookieName = "lmc_ccm";
   const cookieConsent = window.initCookieConsent();
@@ -1633,11 +1821,13 @@ var LmcCookieConsentManager = (serviceName, args) => {
     cs: config(__spreadValues({ companyNames }, translationOverrides.cs), secondaryButtonMode),
     de: config2(__spreadValues({ companyNames }, translationOverrides.de), secondaryButtonMode),
     en: config3(__spreadValues({ companyNames }, translationOverrides.en), secondaryButtonMode),
-    hu: config4(__spreadValues({ companyNames }, translationOverrides.hu), secondaryButtonMode),
-    pl: config5(__spreadValues({ companyNames }, translationOverrides.pl), secondaryButtonMode),
-    ru: config6(__spreadValues({ companyNames }, translationOverrides.ru), secondaryButtonMode),
-    sk: config7(__spreadValues({ companyNames }, translationOverrides.sk), secondaryButtonMode),
-    uk: config8(__spreadValues({ companyNames }, translationOverrides.uk), secondaryButtonMode)
+    hr: config4(__spreadValues({ companyNames }, translationOverrides.hr), secondaryButtonMode),
+    hu: config5(__spreadValues({ companyNames }, translationOverrides.hu), secondaryButtonMode),
+    pl: config6(__spreadValues({ companyNames }, translationOverrides.pl), secondaryButtonMode),
+    ru: config7(__spreadValues({ companyNames }, translationOverrides.ru), secondaryButtonMode),
+    sk: config8(__spreadValues({ companyNames }, translationOverrides.sk), secondaryButtonMode),
+    sl: config9(__spreadValues({ companyNames }, translationOverrides.sl), secondaryButtonMode),
+    uk: config10(__spreadValues({ companyNames }, translationOverrides.uk), secondaryButtonMode)
   };
   const onFirstAcceptHandler = (userPreferences, cookie) => {
     const cookieData = cookieConsent.get("data");
@@ -1697,7 +1887,7 @@ var LmcCookieConsentManager = (serviceName, args) => {
     onFirstAction: onFirstAcceptHandler,
     onChange: onChangeHandler,
     languages
-  }, config9);
+  }, config11);
   cookieConsent.run(cookieConsentConfig);
   return cookieConsent;
 };

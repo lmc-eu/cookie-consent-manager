@@ -1,6 +1,5 @@
-import { ExtraMessages, Values } from '../types';
+import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { SecondaryButtonMode } from '../constants';
-import { VanillaCookieConsent } from '../types/vanilla-cookieconsent';
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
