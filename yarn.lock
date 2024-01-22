@@ -7005,10 +7005,10 @@ validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.4:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-cookieconsent@2.8.5:
-  version "2.8.5"
-  resolved "https://registry.yarnpkg.com/vanilla-cookieconsent/-/vanilla-cookieconsent-2.8.5.tgz#adb2f5764a44d3b07d4eeb4a4f6718141b99d4ea"
-  integrity sha512-GZeAjOnvpQXTXQ99F/4lmB+DZkwSQU7aSRazcwlVPx8GZHG/ieKc+hh8nbBoWQYq+SCz5LkbXdB3IUWKgHZBqA==
+vanilla-cookieconsent@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/vanilla-cookieconsent/-/vanilla-cookieconsent-3.0.0.tgz#2f5ff996a5cc256c6296f89746da7e0ce2bf6af5"
+  integrity sha512-oeK7FivRDb424mt3/UT8DG98Pu5m6Uuye7JsdzO6HnYkstW5QHXhkslXyUpE3phtKz3NEeIo7hzLUtfRNRMfbQ==
 
 walker@^1.0.8:
   version "1.0.8"
