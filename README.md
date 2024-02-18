@@ -486,9 +486,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cooki
 for more information.
 
 [cookie consent]: https://github.com/orestbida/cookieconsent
-[cookie consent api]: https://github.com/orestbida/cookieconsent#api-methods
-[cookie consent third party]: https://github.com/orestbida/cookieconsent#how-to-blockmanage-scripts
-[cookie consent options]: https://github.com/orestbida/cookieconsent#all-configuration-options
+[cookie consent api]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#api
+[cookie consent third party]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#how-to-blockmanage-scripts
+[cookie consent options]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
 [spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
