@@ -11,7 +11,7 @@ import {
   assembleCategoryAd,
   assembleCategoryPersonalization,
 } from '../utils';
-import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 
 const extra = {
@@ -24,11 +24,13 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
+ * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+  cookieTable: CookieTableCategories,
 ): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
@@ -62,6 +64,7 @@ export const config = (
       accept_all_btn: 'Принять все',
       reject_all_btn: 'Принятие необходимо',
       save_settings_btn: 'Сохранить настройки',
+      cookie_table_headers: [{ name: 'Название' }, { description: 'Описание' }, { expiration: 'Срок Действия' }],
       blocks: [
         {
           description:
@@ -74,22 +77,27 @@ export const config = (
         assembleCategoryNecessary(
           'Технически необходимые файлы cookie',
           'Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.',
+          cookieTable,
         ),
         assembleCategoryAnalytics(
           'Аналитические файлы cookie',
           'Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.',
+          cookieTable,
         ),
         assembleCategoryFunctionality(
           'Функциональные файлы cookie',
           'Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.',
+          cookieTable,
         ),
         assembleCategoryAd(
           'Маркетинговые файлы cookie',
           'С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.',
+          cookieTable,
         ),
         assembleCategoryPersonalization(
           'Файлы cookie для персонализации',
           'Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.',
+          cookieTable,
         ),
       ],
     },

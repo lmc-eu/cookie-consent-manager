@@ -76,6 +76,17 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Název",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnost",
+      },
+    ],
     "reject_all_btn": "Přijmout nezbytné",
     "save_settings_btn": "Uložit nastavení",
     "title": "Přizpůsobit nastavení Cookies",
@@ -157,6 +168,131 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Název",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnost",
+      },
+    ],
+    "reject_all_btn": "Přijmout nezbytné",
+    "save_settings_btn": "Uložit nastavení",
+    "title": "Přizpůsobit nastavení Cookies",
+  },
+}
+`;
+
+exports[`config cs should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
+      <p>
+        Kliknutím na tlačítko „Přijmout všechny“ dáte
+        společnosti
+        Alma Career a společnostem z její obchodní skupiny
+        souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Přijmout všechny",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Vlastní nastavení",
+    },
+    "title": "Díky Cookies budou naše stránky ještě lepší",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Přijmout všechny",
+    "blocks": [
+      {
+        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
+Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
+        "title": "Technicky nezbytné Cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.",
+        "title": "Analytické Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
+        "title": "Funkční Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
+        "title": "Marketingové Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
+        "title": "Personalizační Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Název",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnost",
       },
     ],
     "reject_all_btn": "Přijmout nezbytné",
@@ -242,6 +378,17 @@ Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Unternehmensbezeichnung",
+      },
+      {
+        "description": "Beschreibung",
+      },
+      {
+        "expiration": "Verfallsdatum",
+      },
+    ],
     "reject_all_btn": "Das Notwendigste akzeptieren",
     "save_settings_btn": "Einstellungen speichern",
     "title": "Benutzerdefinierte Cookie-Einstellungen",
@@ -323,6 +470,131 @@ Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Unternehmensbezeichnung",
+      },
+      {
+        "description": "Beschreibung",
+      },
+      {
+        "expiration": "Verfallsdatum",
+      },
+    ],
+    "reject_all_btn": "Das Notwendigste akzeptieren",
+    "save_settings_btn": "Einstellungen speichern",
+    "title": "Benutzerdefinierte Cookie-Einstellungen",
+  },
+}
+`;
+
+exports[`config de should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
+      <p>
+        Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
+        Alma Career und seine Gruppenunternehmen
+        zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Alles akzeptieren",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Eigene Einstellungen",
+    },
+    "title": "Diese Website verwendet Cookies",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Alles akzeptieren",
+    "blocks": [
+      {
+        "description": "Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
+Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
+              finden Sie in unsere
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
+        "title": "Technisch notwendige Cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.",
+        "title": "Analytische Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.",
+        "title": "Funktionale Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.",
+        "title": "Marketing Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.",
+        "title": "Personalisierung Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Unternehmensbezeichnung",
+      },
+      {
+        "description": "Beschreibung",
+      },
+      {
+        "expiration": "Verfallsdatum",
       },
     ],
     "reject_all_btn": "Das Notwendigste akzeptieren",
@@ -407,6 +679,17 @@ For more information about what cookies are and how we work with them, see our
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Name",
+      },
+      {
+        "description": "Description",
+      },
+      {
+        "expiration": "Expiration",
+      },
+    ],
     "reject_all_btn": "Accept necessary",
     "save_settings_btn": "Save settings",
     "title": "Custom Cookie settings",
@@ -487,6 +770,130 @@ For more information about what cookies are and how we work with them, see our
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Name",
+      },
+      {
+        "description": "Description",
+      },
+      {
+        "expiration": "Expiration",
+      },
+    ],
+    "reject_all_btn": "Accept necessary",
+    "save_settings_btn": "Save settings",
+    "title": "Custom Cookie settings",
+  },
+}
+`;
+
+exports[`config en should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
+      <p>
+        By clicking the "Accept all" button, you give
+        Alma Career and other companies from its business group
+        your consent to use cookies for personalisation, analytics and targeted marketing.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Accept all",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Custom settings",
+    },
+    "title": "Cookies make our site even better",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Accept all",
+    "blocks": [
+      {
+        "description": "If you want to get the most out of our website it is best to allow all types of cookies.
+For more information about what cookies are and how we work with them, see our
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
+        "title": "Technically necessary cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.",
+        "title": "Analytical cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.",
+        "title": "Functional cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.",
+        "title": "Marketing cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.",
+        "title": "Personalisation cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Name",
+      },
+      {
+        "description": "Description",
+      },
+      {
+        "expiration": "Expiration",
       },
     ],
     "reject_all_btn": "Accept necessary",
@@ -571,6 +978,17 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Valjanost",
+      },
+    ],
     "reject_all_btn": "Prihvati nužno",
     "save_settings_btn": "Spremi postavke",
     "title": "Prilagođene postavke kolačića",
@@ -651,6 +1069,130 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Valjanost",
+      },
+    ],
+    "reject_all_btn": "Prihvati nužno",
+    "save_settings_btn": "Spremi postavke",
+    "title": "Prilagođene postavke kolačića",
+  },
+}
+`;
+
+exports[`config hr should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Boljim razumijevanjem onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
+      <p>
+        Klikom na gumb „Prihvati sve“, dajete
+        tvrtkama iz poslovne grupacije Alma Career
+        privolu za upotrebu kolačića za personalizaciju, analitiku i ciljani marketing..
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Prihvati sve",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Prilagođene postavke",
+    },
+    "title": "Kolačići čine našu stranicu još boljom",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Prihvati sve",
+    "blocks": [
+      {
+        "description": "Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.
+Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti. Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
+        "title": "Tehnički nužni kolačići",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste. Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
+        "title": "Analitički kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima. Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
+        "title": "Funkcionalni kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
+        "title": "Marketing kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
+        "title": "Personalizacijski kolačići",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Valjanost",
       },
     ],
     "reject_all_btn": "Prihvati nužno",
@@ -735,6 +1277,17 @@ További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk v
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Név",
+      },
+      {
+        "description": "Leírás",
+      },
+      {
+        "expiration": "Érvényesség",
+      },
+    ],
     "reject_all_btn": "A legszükségesebbek elfogadása",
     "save_settings_btn": "Beállítások mentése",
     "title": "Egyedi cookie-fájl beállítások",
@@ -815,6 +1368,130 @@ További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk v
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Név",
+      },
+      {
+        "description": "Leírás",
+      },
+      {
+        "expiration": "Érvényesség",
+      },
+    ],
+    "reject_all_btn": "A legszükségesebbek elfogadása",
+    "save_settings_btn": "Beállítások mentése",
+    "title": "Egyedi cookie-fájl beállítások",
+  },
+}
+`;
+
+exports[`config hu should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
+      <p>
+        A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
+        Alma Career csoport és a hozzá tartozó vállalatok
+        süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Minden elfogadása",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Egyéni beállítások",
+    },
+    "title": "Az oldalak süti fájlokat használnak",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Minden elfogadása",
+    "blocks": [
+      {
+        "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.
+További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
+              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
+        "title": "Technikailag szükséges cookie-k",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.",
+        "title": "Analitikai cookie-k",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.",
+        "title": "Funkcionális cookie-k",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m",
+        "title": "Marketing cookie-k",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.",
+        "title": "Személyre szabott cookie-k",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Név",
+      },
+      {
+        "description": "Leírás",
+      },
+      {
+        "expiration": "Érvényesség",
       },
     ],
     "reject_all_btn": "A legszükségesebbek elfogadása",
@@ -900,6 +1577,17 @@ Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Nazwa",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Ważność (Do)",
+      },
+    ],
     "reject_all_btn": "Akceptuj niezbędne",
     "save_settings_btn": "Zapisz ustawienia",
     "title": "Własne ustawienia plików cookies",
@@ -981,6 +1669,131 @@ Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nazwa",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Ważność (Do)",
+      },
+    ],
+    "reject_all_btn": "Akceptuj niezbędne",
+    "save_settings_btn": "Zapisz ustawienia",
+    "title": "Własne ustawienia plików cookies",
+  },
+}
+`;
+
+exports[`config pl should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
+      <p>
+        Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
+        firmę
+        Alma Career i firmy z jej grupy biznesowej
+        do personalizacji, analizy i ukierunkowanego marketingu.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Akceptuj wszystkie",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Własne ustawienia",
+    },
+    "title": "Dzięki plikom Cookies nasza strona będzie jeszcze lepsza",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Akceptuj wszystkie",
+    "blocks": [
+      {
+        "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
+Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
+        "title": "Technicznie niezbędne pliki cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.",
+        "title": "Analityczne pliki cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.",
+        "title": "Funkcjonalne pliki cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.",
+        "title": "Marketingowe pliki cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.",
+        "title": "Personalizacyjne pliki cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nazwa",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Ważność (Do)",
       },
     ],
     "reject_all_btn": "Akceptuj niezbędne",
@@ -1067,6 +1880,17 @@ exports[`config ru should return localization object for acceptNecessary button 
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Название",
+      },
+      {
+        "description": "Описание",
+      },
+      {
+        "expiration": "Срок Действия",
+      },
+    ],
     "reject_all_btn": "Принятие необходимо",
     "save_settings_btn": "Сохранить настройки",
     "title": "Индивидуальные настройки файлов cookies",
@@ -1149,6 +1973,132 @@ exports[`config ru should return localization object for showSettings button mod
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Название",
+      },
+      {
+        "description": "Описание",
+      },
+      {
+        "expiration": "Срок Действия",
+      },
+    ],
+    "reject_all_btn": "Принятие необходимо",
+    "save_settings_btn": "Сохранить настройки",
+    "title": "Индивидуальные настройки файлов cookies",
+  },
+}
+`;
+
+exports[`config ru should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
+      <p>
+        Нажав «Принять все», Вы даете свое согласие
+        компаниям
+        Alma Career и компании ее группы
+        на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Принять все",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Cобственные настройкй",
+    },
+    "title": "Этот сайт использует файлы cookie",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Принять все",
+    "blocks": [
+      {
+        "description": "Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
+            разрешить просматривать и сохранять все типы файлов cookie.
+Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
+              на странице <a href="https://www.almacareer.com/gdpr" target="_blank">Политика конфиденциальности персональных данных</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
+        "title": "Технически необходимые файлы cookie",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.",
+        "title": "Аналитические файлы cookie",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.",
+        "title": "Функциональные файлы cookie",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.",
+        "title": "Маркетинговые файлы cookie",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.",
+        "title": "Файлы cookie для персонализации",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Название",
+      },
+      {
+        "description": "Описание",
+      },
+      {
+        "expiration": "Срок Действия",
       },
     ],
     "reject_all_btn": "Принятие необходимо",
@@ -1234,6 +2184,17 @@ exports[`config sk should return localization object for acceptNecessary button 
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Názov",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnosť",
+      },
+    ],
     "reject_all_btn": "Prijať nevyhnutné",
     "save_settings_btn": "Uložiť nastavenia",
     "title": "Prispôsobiť nastavenia cookies",
@@ -1315,6 +2276,131 @@ exports[`config sk should return localization object for showSettings button mod
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Názov",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnosť",
+      },
+    ],
+    "reject_all_btn": "Prijať nevyhnutné",
+    "save_settings_btn": "Uložiť nastavenia",
+    "title": "Prispôsobiť nastavenia cookies",
+  },
+}
+`;
+
+exports[`config sk should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.</p>
+      <p>
+        Kliknutím na tlačidlo „Prijať všetky“ dáte
+        spoločnosti
+        Alma Career a spoločnostiam z jej obchodné skupiny
+        súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Prijať všetky",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Vlastné nastavenia",
+    },
+    "title": "S cookies vám vieme lepšie prispôsobiť stránku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Prijať všetky",
+    "blocks": [
+      {
+        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
+Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete
+              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
+        "title": "Technicky nevyhnutné cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.",
+        "title": "Analytické cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.",
+        "title": "Funkčné cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.",
+        "title": "Marketingové cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.",
+        "title": "Personalizačné cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Názov",
+      },
+      {
+        "description": "Popis",
+      },
+      {
+        "expiration": "Platnosť",
       },
     ],
     "reject_all_btn": "Prijať nevyhnutné",
@@ -1399,6 +2485,17 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Potek",
+      },
+    ],
     "reject_all_btn": "Sprejmi samo nujne",
     "save_settings_btn": "Shrani nastavitve",
     "title": "Prilagojene nastavitve piškotkov",
@@ -1479,6 +2576,130 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Potek",
+      },
+    ],
+    "reject_all_btn": "Sprejmi samo nujne",
+    "save_settings_btn": "Shrani nastavitve",
+    "title": "Prilagojene nastavitve piškotkov",
+  },
+}
+`;
+
+exports[`config sl should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Z boljšim razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno vsebino.</p>
+      <p>
+        S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
+        iz poslovne skupine Alma Career
+        za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Sprejmi vse",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Shrani nastavitve",
+    },
+    "title": "Piškotki izboljšujejo našo spletno stran",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Sprejmi vse",
+    "blocks": [
+      {
+        "description": "Če želite najbolje izkoristiti našo spletno stran, je najbolje, da dovolite vse vrste piškotkov.
+Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
+        "title": "Tehnično nujni piškotki",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
+        "title": "Analitični piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
+        "title": "Funkcionalni piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
+        "title": "Trženjski piškotki",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
+        "title": "Piškotki za prilagajanje",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Naziv",
+      },
+      {
+        "description": "Opis",
+      },
+      {
+        "expiration": "Potek",
       },
     ],
     "reject_all_btn": "Sprejmi samo nujne",
@@ -1564,6 +2785,17 @@ exports[`config uk should return localization object for acceptNecessary button 
         },
       },
     ],
+    "cookie_table_headers": [
+      {
+        "name": "Назва",
+      },
+      {
+        "description": "Опис",
+      },
+      {
+        "expiration": "Термін Дії",
+      },
+    ],
     "reject_all_btn": "Прийняття необхідно",
     "save_settings_btn": "Зберегти налаштування",
     "title": "Користувацькі налаштування файлів Cookies",
@@ -1645,6 +2877,131 @@ exports[`config uk should return localization object for showSettings button mod
           "readonly": false,
           "value": "personalization",
         },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Назва",
+      },
+      {
+        "description": "Опис",
+      },
+      {
+        "expiration": "Термін Дії",
+      },
+    ],
+    "reject_all_btn": "Прийняття необхідно",
+    "save_settings_btn": "Зберегти налаштування",
+    "title": "Користувацькі налаштування файлів Cookies",
+  },
+}
+`;
+
+exports[`config uk should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
+      <p>
+        Натиснувши «Прийняти все», Ви даєте свою згоду
+        компаніям
+        Alma Career та компаніям з її групи
+        на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Прийняти все",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Власнйe налаштуваннйe",
+    },
+    "title": "Цей сайт використовує файли cookie",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Прийняти все",
+    "blocks": [
+      {
+        "description": "Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
+Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
+        "title": "Технічно необхідні файли Cookies",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Ми використовуємо їх для відстеження того, скільки людей відвідують наш веб-сайт і як вони ним користуються. Завдяки цьому ми можемо постійно покращувати сайт та інші сервіси.",
+        "title": "Аналітичні файли Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Ці файли Cookies роблять наш сайт ще більш ефективним і покращують його роботу. Наприклад, вони дозволяють нам використовувати чат, щоб швидко і легко відповідати на ваші запитання.",
+        "title": "Функціональні файли Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "За допомогою цих файлів Cookies ми можемо оцінити, наскільки ефективна наша реклама і цільові пропозиції наших послуг. Маркетингові файли Cookies дозволяють нам інформувати Вас в Інтернеті про новини, які можуть вас зацікавити.",
+        "title": "Маркетингові файли Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Наші сервіси працюють краще, коли ми можемо адаптувати їх до конкретного користувача. Дозволивши персоналізовані файли Cookies, ви збільшуєте ймовірність того, що знайдете потрібний контент.",
+        "title": "Персоналізовані файли Cookies",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Назва",
+      },
+      {
+        "description": "Опис",
+      },
+      {
+        "expiration": "Термін Дії",
       },
     ],
     "reject_all_btn": "Прийняття необхідно",

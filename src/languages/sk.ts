@@ -11,7 +11,7 @@ import {
   assembleCategoryAd,
   assembleCategoryPersonalization,
 } from '../utils';
-import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 
 const extra = {
@@ -24,11 +24,13 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
+ * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+  cookieTable: CookieTableCategories,
 ): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
@@ -62,6 +64,7 @@ export const config = (
       accept_all_btn: 'Prijať všetky',
       reject_all_btn: 'Prijať nevyhnutné',
       save_settings_btn: 'Uložiť nastavenia',
+      cookie_table_headers: [{ name: 'Názov' }, { description: 'Popis' }, { expiration: 'Platnosť' }],
       blocks: [
         {
           description:
@@ -73,22 +76,27 @@ export const config = (
         assembleCategoryNecessary(
           'Technicky nevyhnutné cookies',
           'Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.',
+          cookieTable,
         ),
         assembleCategoryAnalytics(
           'Analytické cookies',
           'Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.',
+          cookieTable,
         ),
         assembleCategoryFunctionality(
           'Funkčné cookies',
           'Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.',
+          cookieTable,
         ),
         assembleCategoryAd(
           'Marketingové cookies',
           'S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.',
+          cookieTable,
         ),
         assembleCategoryPersonalization(
           'Personalizačné cookies',
           'Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.',
+          cookieTable,
         ),
       ],
     },
