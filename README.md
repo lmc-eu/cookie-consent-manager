@@ -248,7 +248,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
       en: { consentTitle: 'Custom title' },
     },
     config: {
-      // overrides of the default config, see https://github.com/orestbida/cookieconsent#all-configuration-options
+      // overrides of the default config, see https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
     },
   }
 );
