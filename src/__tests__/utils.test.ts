@@ -12,6 +12,7 @@ import {
   assembleCategoryAd,
 } from '../utils';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
+import { CookieTableCategories } from '../types';
 
 describe('utils', () => {
   describe('addSeparators', () => {
@@ -100,52 +101,43 @@ describe('utils', () => {
     });
   });
 
-  describe('assembleCategoryNecessary', () => {
-    it('should assemble modal category block', () => {
-      expect(assembleCategoryNecessary('title', 'description')).toEqual({
+  describe.each([
+    ['assembleCategoryNecessary', assembleCategoryNecessary, CookieConsentCategory.NECESSARY, true],
+    ['assembleCategoryAd', assembleCategoryAd, CookieConsentCategory.AD, false],
+    ['assembleCategoryAnalytics', assembleCategoryAnalytics, CookieConsentCategory.ANALYTICS, false],
+    ['assembleCategoryFunctionality', assembleCategoryFunctionality, CookieConsentCategory.FUNCTIONALITY, false],
+    ['assembleCategoryPersonalization', assembleCategoryPersonalization, CookieConsentCategory.PERSONALIZATION, false],
+  ])('%s', (category, assembleCategoryFunction, categoryValue, readonly) => {
+    it('should assemble modal category block without cookieTable', () => {
+      expect(assembleCategoryFunction('title', 'description', {})).toEqual({
         title: 'title',
         description: 'description',
-        toggle: { value: CookieConsentCategory.NECESSARY, enabled: true, readonly: true },
+        toggle: { value: categoryValue, enabled: readonly, readonly: readonly },
       });
     });
-  });
 
-  describe('assembleCategoryAd', () => {
-    it('should assemble modal category block', () => {
-      expect(assembleCategoryAd('title', 'description')).toEqual({
+    it('should assemble modal category block with cookieTable', () => {
+      const cookieTable: CookieTableCategories = {
+        [categoryValue]: [
+          {
+            name: 'cookie1',
+            description: 'Description',
+            expiration: 'duration',
+          },
+        ],
+      };
+
+      expect(assembleCategoryFunction('title', 'description', cookieTable)).toEqual({
         title: 'title',
         description: 'description',
-        toggle: { value: CookieConsentCategory.AD, enabled: false, readonly: false },
-      });
-    });
-  });
-
-  describe('assembleCategoryAnalytics', () => {
-    it('should assemble modal category block', () => {
-      expect(assembleCategoryAnalytics('title', 'description')).toEqual({
-        title: 'title',
-        description: 'description',
-        toggle: { value: CookieConsentCategory.ANALYTICS, enabled: false, readonly: false },
-      });
-    });
-  });
-
-  describe('assembleCategoryFunctionality', () => {
-    it('should assemble modal category block', () => {
-      expect(assembleCategoryFunctionality('title', 'description')).toEqual({
-        title: 'title',
-        description: 'description',
-        toggle: { value: CookieConsentCategory.FUNCTIONALITY, enabled: false, readonly: false },
-      });
-    });
-  });
-
-  describe('assembleCategoryPersonalization', () => {
-    it('should assemble modal category block', () => {
-      expect(assembleCategoryPersonalization('title', 'description')).toEqual({
-        title: 'title',
-        description: 'description',
-        toggle: { value: CookieConsentCategory.PERSONALIZATION, enabled: false, readonly: false },
+        toggle: { value: categoryValue, enabled: readonly, readonly: readonly },
+        cookie_table: [
+          {
+            name: 'cookie1',
+            description: 'Description',
+            expiration: 'duration',
+          },
+        ],
       });
     });
   });

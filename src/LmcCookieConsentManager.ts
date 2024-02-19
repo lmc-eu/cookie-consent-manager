@@ -37,6 +37,7 @@ const defaultOptions: CookieConsentManagerOptions = {
   displayMode: DisplayMode.FORCE,
   secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
   translationOverrides: {},
+  cookieTable: {},
   config: {},
 };
 
@@ -58,6 +59,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {SecondaryButtonMode} [args.secondaryButtonMode] - `force` (default) to show consent in a centered modal box
  *    and to block page until user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
+ * @param {CookieTable} [args.cookieTable] - Cookie table for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>} Instance of the underlying CookieConsent component.
@@ -80,22 +82,23 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     displayMode,
     secondaryButtonMode,
     translationOverrides,
+    cookieTable,
     config,
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
 
   const languages = {
-    cs: configCs({ companyNames, ...translationOverrides.cs }, secondaryButtonMode),
-    de: configDe({ companyNames, ...translationOverrides.de }, secondaryButtonMode),
-    en: configEn({ companyNames, ...translationOverrides.en }, secondaryButtonMode),
-    hr: configHr({ companyNames, ...translationOverrides.hr }, secondaryButtonMode),
-    hu: configHu({ companyNames, ...translationOverrides.hu }, secondaryButtonMode),
-    pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode),
-    ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode),
-    sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode),
-    sl: configSl({ companyNames, ...translationOverrides.sl }, secondaryButtonMode),
-    uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode),
+    cs: configCs({ companyNames, ...translationOverrides.cs }, secondaryButtonMode, cookieTable.cs || {}),
+    de: configDe({ companyNames, ...translationOverrides.de }, secondaryButtonMode, cookieTable.de || {}),
+    en: configEn({ companyNames, ...translationOverrides.en }, secondaryButtonMode, cookieTable.en || {}),
+    hr: configHr({ companyNames, ...translationOverrides.hr }, secondaryButtonMode, cookieTable.hr || {}),
+    hu: configHu({ companyNames, ...translationOverrides.hu }, secondaryButtonMode, cookieTable.hu || {}),
+    pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode, cookieTable.pl || {}),
+    ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode, cookieTable.ru || {}),
+    sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode, cookieTable.sk || {}),
+    sl: configSl({ companyNames, ...translationOverrides.sl }, secondaryButtonMode, cookieTable.sl || {}),
+    uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode, cookieTable.uk || {}),
   };
 
   const onFirstAcceptHandler = (

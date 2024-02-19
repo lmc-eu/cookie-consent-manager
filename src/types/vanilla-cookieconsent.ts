@@ -59,7 +59,7 @@ export namespace VanillaCookieConsent {
     readonly?: boolean;
   }
 
-  interface CookieTableItem {
+  export interface CookieTableItem {
     domain?: string;
     path?: string;
     is_regex?: boolean;

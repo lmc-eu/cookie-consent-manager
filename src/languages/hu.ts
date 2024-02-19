@@ -10,7 +10,7 @@ import {
   assembleCategoryAd,
   assembleCategoryPersonalization,
 } from '../utils';
-import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 
 const extra = {
@@ -21,11 +21,13 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
+ * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+  cookieTable: CookieTableCategories,
 ): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
@@ -62,6 +64,7 @@ export const config = (
       accept_all_btn: 'Minden elfogadása',
       reject_all_btn: 'A legszükségesebbek elfogadása',
       save_settings_btn: 'Beállítások mentése',
+      cookie_table_headers: [{ name: 'Név' }, { description: 'Leírás' }, { expiration: 'Érvényesség' }],
       blocks: [
         {
           description:
@@ -73,22 +76,27 @@ export const config = (
         assembleCategoryNecessary(
           'Technikailag szükséges cookie-k',
           'Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.',
+          cookieTable,
         ),
         assembleCategoryAnalytics(
           'Analitikai cookie-k',
           'Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.',
+          cookieTable,
         ),
         assembleCategoryFunctionality(
           'Funkcionális cookie-k',
           'Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.',
+          cookieTable,
         ),
         assembleCategoryAd(
           'Marketing cookie-k',
           'Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m',
+          cookieTable,
         ),
         assembleCategoryPersonalization(
           'Személyre szabott cookie-k',
           'Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.',
+          cookieTable,
         ),
       ],
     },

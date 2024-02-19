@@ -10,7 +10,7 @@ import {
   assembleCategoryAd,
   assembleCategoryPersonalization,
 } from '../utils';
-import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 
 const extra = {
@@ -21,11 +21,13 @@ const extra = {
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
+ * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {VanillaCookieConsent.Languages} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
+  cookieTable: CookieTableCategories,
 ): VanillaCookieConsent.Languages => {
   const lang = { ...extra, ...extraMessages };
 
@@ -58,6 +60,7 @@ export const config = (
       accept_all_btn: 'Sprejmi vse',
       reject_all_btn: 'Sprejmi samo nujne',
       save_settings_btn: 'Shrani nastavitve',
+      cookie_table_headers: [{ name: 'Naziv' }, { description: 'Opis' }, { expiration: 'Potek' }],
       blocks: [
         {
           description:
@@ -69,22 +72,27 @@ export const config = (
         assembleCategoryNecessary(
           'Tehnično nujni piškotki',
           'Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.',
+          cookieTable,
         ),
         assembleCategoryAnalytics(
           'Analitični piškotki',
           'Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.',
+          cookieTable,
         ),
         assembleCategoryFunctionality(
           'Funkcionalni piškotki',
           'Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.',
+          cookieTable,
         ),
         assembleCategoryAd(
           'Trženjski piškotki',
           'Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.',
+          cookieTable,
         ),
         assembleCategoryPersonalization(
           'Piškotki za prilagajanje',
           'Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.',
+          cookieTable,
         ),
       ],
     },

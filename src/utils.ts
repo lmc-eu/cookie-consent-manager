@@ -1,4 +1,4 @@
-import { CookieConsentCategoryValues, Values, VanillaCookieConsent } from './types';
+import { CookieConsentCategoryValues, CookieTableCategories, Values, VanillaCookieConsent } from './types';
 import { CookieConsentCategory, SecondaryButtonMode } from './constants';
 
 export const addSeparators = (strings: string[], and: string = ''): string =>
@@ -52,27 +52,74 @@ export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof Seco
   return secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
 };
 
-export const assembleCategoryNecessary = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
-  return assembleCategoryBlock(CookieConsentCategory.NECESSARY, title, description, true);
+export const assembleCategoryNecessary = (
+  title: string,
+  description: string,
+  cookieTable: CookieTableCategories,
+): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(
+    CookieConsentCategory.NECESSARY,
+    title,
+    description,
+    true,
+    cookieTable[CookieConsentCategory.NECESSARY],
+  );
 };
 
-export const assembleCategoryAd = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
-  return assembleCategoryBlock(CookieConsentCategory.AD, title, description, false);
+export const assembleCategoryAd = (
+  title: string,
+  description: string,
+  cookieTable: CookieTableCategories,
+): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(
+    CookieConsentCategory.AD,
+    title,
+    description,
+    false,
+    cookieTable[CookieConsentCategory.AD],
+  );
 };
 
-export const assembleCategoryAnalytics = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
-  return assembleCategoryBlock(CookieConsentCategory.ANALYTICS, title, description, false);
+export const assembleCategoryAnalytics = (
+  title: string,
+  description: string,
+  cookieTable: CookieTableCategories,
+): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(
+    CookieConsentCategory.ANALYTICS,
+    title,
+    description,
+    false,
+    cookieTable[CookieConsentCategory.ANALYTICS],
+  );
 };
 
-export const assembleCategoryFunctionality = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
-  return assembleCategoryBlock(CookieConsentCategory.FUNCTIONALITY, title, description, false);
+export const assembleCategoryFunctionality = (
+  title: string,
+  description: string,
+  cookieTable: CookieTableCategories,
+): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(
+    CookieConsentCategory.FUNCTIONALITY,
+    title,
+    description,
+    false,
+    cookieTable[CookieConsentCategory.FUNCTIONALITY],
+  );
 };
 
 export const assembleCategoryPersonalization = (
   title: string,
   description: string,
+  cookieTable: CookieTableCategories,
 ): VanillaCookieConsent.ModalBlock => {
-  return assembleCategoryBlock(CookieConsentCategory.PERSONALIZATION, title, description, false);
+  return assembleCategoryBlock(
+    CookieConsentCategory.PERSONALIZATION,
+    title,
+    description,
+    false,
+    cookieTable[CookieConsentCategory.PERSONALIZATION],
+  );
 };
 
 const assembleCategoryBlock = (
@@ -80,10 +127,12 @@ const assembleCategoryBlock = (
   title: string,
   description: string,
   readonly: boolean,
+  cookieTableItems: VanillaCookieConsent.CookieTableItem[] | undefined,
 ): VanillaCookieConsent.ModalBlock => {
   return {
     title,
     description,
     toggle: { value: category, enabled: readonly, readonly },
+    ...(cookieTableItems !== undefined && { cookie_table: cookieTableItems }),
   };
 };

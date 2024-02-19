@@ -111,6 +111,7 @@
                     </li>
                     <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstAccept</code>)</li>
                     <li>Clearing localStorage when user updates consent and rejects some consent category (<code>onChange</code>)</li>
+                    <li>Using <code>cookieTable</code> configuration to list cookies in the settings modal</li>
                     <li>Overriding default translation (<code>translationOverrides</code>) for consent modal title</li>
                     <li>Etc.</li>
                 </ul>
@@ -183,6 +184,41 @@
                 <a href="https://www.almacareer.com/gdpr/sk/cookie-policy" target="_blank">druhý</a>
                  a <a href="https://www.almacareer.com/sk" target="_blank">tretí</a> vlastný odkaz</a>.`,
           },
+        },
+        cookieTable: {
+          sk: {
+            necessary: [
+              {
+                name: 'lmc_ccm',
+                description: `Cookie je nevyhnutná na uloženie vašich preferencií týkajúcich sa povolených kategórií cookies.`,
+                expiration: '1 rok',
+              },
+            ],
+            // ad: [ ... ],
+          analytics: [
+              {
+                name: '_ga',
+                description: `Používame Google Analytics, aby sme zistili, koľko ľudí navštevuje našu webovú stránku a ako ju používajú`,
+                expiration: '2 roky'
+              },
+              {
+                name: '^_utm',
+                description: `Používame Google Analytics, aby sme zistili, koľko ľudí navštevuje našu webovú stránku a ako ju používajú`,
+                expiration: '2 roky',
+                is_regex: true
+              },
+            ],
+            // functionality: [ ... ],
+            personalization: [
+              {
+                name: 'sessionLog_id',
+                description: `Identifikátor používateľa za účelom prispôsobovania obsahu webu.
+                    Lorem ipsum dolor sitamet, consectetur adipiscing elit. Ut elit tellus,
+                    luctus nec ullamcorper mattis, pulvinar dapibus leo.`,
+                expiration: '30 dní',
+              },
+            ],
+          }
         }
       }
     );
