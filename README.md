@@ -247,8 +247,29 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
       cs: { consentTitle: 'Vlastní nadpis', descriptionIntro: 'Vlastní úvodní text popisu souhlasu' },
       en: { consentTitle: 'Custom title' },
     },
+    cookieTable: { // cookie table for specified languages, shown in settings modal
+      cs: {
+        necessary: [
+          { name: 'lmc_ccm', description: 'Cookie je nezbytná k uložení vašich preference týkající se povolených kategorií cookies', expiration: '1 rok' },
+          { name: 'PHPSESSID', description: 'Cookie nezbytná ke správnému fungování webu', expiration: 'do konce relace' },
+        ],
+        // ad: [ ... ],
+        analytics: [
+          { name: '_ga', description: 'Nástrojem Google Analytics zjišťujeme, kolik lidí náš web navštěvuje a jak ho používá', expiration: '2 roky' },
+          { name: '^_utm', description: 'Nástrojem Google Analytics zjišťujeme, kolik lidí náš web navštěvuje a jak ho používá', expiration: '2 roky', is_regex: true },
+        ],
+        // functionality: [ ... ],
+        // personalization: [ ... ]
+      },
+      en: {
+        analytics: [
+          { name: '_ga', description: 'With Google Analytics we determine how many people visit our website and how they use it', expiration: '2 years' },
+          // ...
+        ],
+      }
+    },
     config: {
-      // overrides of the default config, see https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
+      // overrides of the internal config of the underlying library, see https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
     },
   }
 );
@@ -264,11 +285,12 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 | `defaultLang`            | string                              | `'cs'`                                                      | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                                                             |
 | `companyNames`           | array                               | `['Alma Career']`                                           | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. Value "Alma Career" is replaced with translated legal name. [See example][examples-configuration]. |
 | `consentCollectorApiUrl` | ?string                             | `'https://ccm.lmc.cz/(...)'`                                | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                               |
-| `config`                 | Object                              | `{}`                                                        | Override default config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                         |
+| `config`                 | Object                              | `{}`                                                        | Override internal config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                        |
 | `displayMode`            | DisplayMode (string)                | `DisplayMode.FORCE` (`force`)                               | `force` (default) to show consent in a centered modal box and to block page until user action. `soft` to show consent banner on the bottom of the page and do not block the page before user action.          |
 | `secondaryButtonMode`    | SecondaryButtonMode (string)        | `SecondaryButtonMode. ACCEPT_NECESSARY` (`acceptNecessary`) | Which button should be shown next to "Accept all". `acceptNecessary` (default) or `showSettings` (this option also hides link to show settings in consent text).                                              |
 | `on*` callbacks          | function                            | `(cookieConsent) => {}`                                     | See below for configurable callbacks.                                                                                                                                                                         |
 | `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle`, `descriptionIntro` and `settingsModalMoreInfo` could be overridden.<br>[See example][examples-configuration]                            |
+| `cookieTable`            | CookieTable                         | `{}`                                                        | Define cookie table for specified languages and specified categories<br>[See above for example configuration](#configuration)                                                                                 |
 
 ### Supported languages
 
