@@ -43,7 +43,7 @@ export namespace VanillaCookieConsent {
     SETTINGS = 'settings',
   }
 
-  interface ModalPrimaryButton {
+  export interface ModalPrimaryButton {
     text?: string;
     role?: PrimaryButtonRole;
   }
@@ -53,7 +53,7 @@ export namespace VanillaCookieConsent {
     role?: SecondaryButtonRole;
   }
 
-  interface ModalBlockToggle {
+  export interface ModalBlockToggle {
     value?: string;
     enabled?: boolean;
     readonly?: boolean;
@@ -66,21 +66,21 @@ export namespace VanillaCookieConsent {
     [key: string]: string | boolean | undefined;
   }
 
-  interface ModalBlock {
+  export interface ModalBlock {
     title?: string;
     description?: string;
     toggle?: ModalBlockToggle;
     cookie_table?: CookieTableItem[];
   }
 
-  interface ConsentModal {
+  export interface ConsentModal {
     title?: string;
     description?: string;
     primary_btn?: ModalPrimaryButton;
     secondary_btn?: ModalSecondaryButton;
   }
 
-  interface SettingsModal {
+  export interface SettingsModal {
     title?: string;
     accept_all_btn?: string;
     reject_all_btn?: string;
@@ -127,20 +127,20 @@ export namespace VanillaCookieConsent {
     ZOOM = 'zoom',
   }
 
-  interface GuiConsentModal {
+  export interface GuiConsentModal {
     layout: GuiConsentLayout;
     position: GuiConsentPosition;
     transition?: Transition;
     swap_buttons: boolean;
   }
 
-  interface GuiSettingsModal {
+  export interface GuiSettingsModal {
     layout: GuiSettingsLayout;
     position?: GuiSettingsPosition;
     transition?: Transition;
   }
 
-  interface GuiOptions {
+  export interface GuiOptions {
     consent_modal?: GuiConsentModal;
     settings_modal?: GuiSettingsModal;
   }
