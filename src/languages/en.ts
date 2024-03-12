@@ -4,6 +4,11 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -60,51 +65,26 @@ export const config = (
               `For more information about what cookies are and how we work with them, see our
               <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.`),
         },
-        {
-          title: 'Technically necessary cookies',
-          description: `These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analytical cookies',
-          description: `These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Functional cookies',
-          description: `Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Marketing cookies',
-          description: `These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Personalisation cookies',
-          description: `Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Technically necessary cookies',
+          'These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.',
+        ),
+        assembleCategoryAnalytics(
+          'Analytical cookies',
+          'These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.',
+        ),
+        assembleCategoryFunctionality(
+          'Functional cookies',
+          'Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.',
+        ),
+        assembleCategoryAd(
+          'Marketing cookies',
+          'These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.',
+        ),
+        assembleCategoryPersonalization(
+          'Personalisation cookies',
+          'Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.',
+        ),
       ],
     },
   };

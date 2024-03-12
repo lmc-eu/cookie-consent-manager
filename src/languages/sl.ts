@@ -5,6 +5,11 @@ import {
   isSettingsButtonNotShown,
   pluralize,
   legalizeAlmaCareer,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -62,56 +67,26 @@ export const config = (
               `Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.`),
         },
-        {
-          title: 'Tehnično nujni piškotki',
-          description: `Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti.
-          Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analitični piškotki',
-          description: `Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo.
-          Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Funkcionalni piškotki',
-          description: `Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov.
-          Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Trženjski piškotki',
-          description: `Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev.
-          Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Piškotki za prilagajanje',
-          description: `Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom.
-          Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Tehnično nujni piškotki',
+          'Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.',
+        ),
+        assembleCategoryAnalytics(
+          'Analitični piškotki',
+          'Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.',
+        ),
+        assembleCategoryFunctionality(
+          'Funkcionalni piškotki',
+          'Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.',
+        ),
+        assembleCategoryAd(
+          'Trženjski piškotki',
+          'Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.',
+        ),
+        assembleCategoryPersonalization(
+          'Piškotki za prilagajanje',
+          'Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.',
+        ),
       ],
     },
   };

@@ -5,8 +5,13 @@ import {
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
+  assembleCategoryNecessary,
+  assembleCategoryPersonalization,
+  assembleCategoryFunctionality,
+  assembleCategoryAnalytics,
+  assembleCategoryAd,
 } from '../utils';
-import { SecondaryButtonMode } from '../constants';
+import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 
 describe('utils', () => {
   describe('addSeparators', () => {
@@ -92,6 +97,56 @@ describe('utils', () => {
 
     it('should be false for SHOW_SETTINGS mode', () => {
       expect(isSettingsButtonNotShown(SecondaryButtonMode.SHOW_SETTINGS)).toBe(false);
+    });
+  });
+
+  describe('assembleCategoryNecessary', () => {
+    it('should assemble modal category block', () => {
+      expect(assembleCategoryNecessary('title', 'description')).toEqual({
+        title: 'title',
+        description: 'description',
+        toggle: { value: CookieConsentCategory.NECESSARY, enabled: true, readonly: true },
+      });
+    });
+  });
+
+  describe('assembleCategoryAd', () => {
+    it('should assemble modal category block', () => {
+      expect(assembleCategoryAd('title', 'description')).toEqual({
+        title: 'title',
+        description: 'description',
+        toggle: { value: CookieConsentCategory.AD, enabled: false, readonly: false },
+      });
+    });
+  });
+
+  describe('assembleCategoryAnalytics', () => {
+    it('should assemble modal category block', () => {
+      expect(assembleCategoryAnalytics('title', 'description')).toEqual({
+        title: 'title',
+        description: 'description',
+        toggle: { value: CookieConsentCategory.ANALYTICS, enabled: false, readonly: false },
+      });
+    });
+  });
+
+  describe('assembleCategoryFunctionality', () => {
+    it('should assemble modal category block', () => {
+      expect(assembleCategoryFunctionality('title', 'description')).toEqual({
+        title: 'title',
+        description: 'description',
+        toggle: { value: CookieConsentCategory.FUNCTIONALITY, enabled: false, readonly: false },
+      });
+    });
+  });
+
+  describe('assembleCategoryPersonalization', () => {
+    it('should assemble modal category block', () => {
+      expect(assembleCategoryPersonalization('title', 'description')).toEqual({
+        title: 'title',
+        description: 'description',
+        toggle: { value: CookieConsentCategory.PERSONALIZATION, enabled: false, readonly: false },
+      });
     });
   });
 });

@@ -5,6 +5,11 @@ import {
   isSettingsButtonNotShown,
   pluralize,
   legalizeAlmaCareer,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -65,56 +70,26 @@ export const config = (
               `Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
               v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`),
         },
-        {
-          title: 'Technicky nezbytné Cookies',
-          description: `Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
-          Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analytické Cookies',
-          description: `Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají.
-          Díky tomu můžeme stránky a další služby neustále vylepšovat.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Funkční Cookies',
-          description: `Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe.
-          Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Marketingové Cookies',
-          description: `S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb.
-          Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Personalizační Cookies',
-          description: `Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli.
-          Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Technicky nezbytné Cookies',
+          'Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.',
+        ),
+        assembleCategoryAnalytics(
+          'Analytické Cookies',
+          'Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.',
+        ),
+        assembleCategoryFunctionality(
+          'Funkční Cookies',
+          'Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.',
+        ),
+        assembleCategoryAd(
+          'Marketingové Cookies',
+          'S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.',
+        ),
+        assembleCategoryPersonalization(
+          'Personalizační Cookies',
+          'Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.',
+        ),
       ],
     },
   };
