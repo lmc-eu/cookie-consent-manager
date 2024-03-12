@@ -1,5 +1,5 @@
-import { Values } from './types';
-import { SecondaryButtonMode } from './constants';
+import { CookieConsentCategoryValues, Values } from './types';
+import { CookieConsentCategory, SecondaryButtonMode } from './constants';
 import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 export const addSeparators = (strings: string[], and: string = ''): string =>
@@ -51,4 +51,40 @@ export const assembleSecondaryButton = (
 
 export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof SecondaryButtonMode>): boolean => {
   return secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
+};
+
+export const assembleCategoryNecessary = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(CookieConsentCategory.NECESSARY, title, description, true);
+};
+
+export const assembleCategoryAd = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(CookieConsentCategory.AD, title, description, false);
+};
+
+export const assembleCategoryAnalytics = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(CookieConsentCategory.ANALYTICS, title, description, false);
+};
+
+export const assembleCategoryFunctionality = (title: string, description: string): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(CookieConsentCategory.FUNCTIONALITY, title, description, false);
+};
+
+export const assembleCategoryPersonalization = (
+  title: string,
+  description: string,
+): VanillaCookieConsent.ModalBlock => {
+  return assembleCategoryBlock(CookieConsentCategory.PERSONALIZATION, title, description, false);
+};
+
+const assembleCategoryBlock = (
+  category: CookieConsentCategoryValues,
+  title: string,
+  description: string,
+  readonly: boolean,
+): VanillaCookieConsent.ModalBlock => {
+  return {
+    title,
+    description,
+    toggle: { value: category, enabled: readonly, readonly },
+  };
 };

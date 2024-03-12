@@ -5,6 +5,11 @@ import {
   isSettingsButtonNotShown,
   pluralize,
   legalizeAlmaCareer,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -62,56 +67,26 @@ export const config = (
               `Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.`),
         },
-        {
-          title: 'Tehnički nužni kolačići',
-          description: `Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti.
-          Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analitički kolačići',
-          description: `Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste.
-          Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Funkcionalni kolačići',
-          description: `Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima.
-          Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Marketing kolačići',
-          description: `Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga.
-          Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Personalizacijski kolačići',
-          description: `Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima.
-          Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Tehnički nužni kolačići',
+          'Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti. Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.',
+        ),
+        assembleCategoryAnalytics(
+          'Analitički kolačići',
+          'Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste. Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.',
+        ),
+        assembleCategoryFunctionality(
+          'Funkcionalni kolačići',
+          'Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima. Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.',
+        ),
+        assembleCategoryAd(
+          'Marketing kolačići',
+          'Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.',
+        ),
+        assembleCategoryPersonalization(
+          'Personalizacijski kolačići',
+          'Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.',
+        ),
       ],
     },
   };

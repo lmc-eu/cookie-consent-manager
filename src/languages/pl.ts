@@ -5,6 +5,11 @@ import {
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -65,51 +70,26 @@ export const config = (
               `Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej
               <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.`),
         },
-        {
-          title: 'Technicznie niezbędne pliki cookies',
-          description: `Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analityczne pliki cookies',
-          description: `Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Funkcjonalne pliki cookies',
-          description: `Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Marketingowe pliki cookies',
-          description: `Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Personalizacyjne pliki cookies',
-          description: `Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Technicznie niezbędne pliki cookies',
+          'Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.',
+        ),
+        assembleCategoryAnalytics(
+          'Analityczne pliki cookies',
+          'Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.',
+        ),
+        assembleCategoryFunctionality(
+          'Funkcjonalne pliki cookies',
+          'Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.',
+        ),
+        assembleCategoryAd(
+          'Marketingowe pliki cookies',
+          'Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.',
+        ),
+        assembleCategoryPersonalization(
+          'Personalizacyjne pliki cookies',
+          'Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.',
+        ),
       ],
     },
   };

@@ -4,6 +4,11 @@ import {
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -65,51 +70,26 @@ export const config = (
               `További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
               az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.`),
         },
-        {
-          title: 'Technikailag szükséges cookie-k',
-          description: `Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Analitikai cookie-k',
-          description: `Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Funkcionális cookie-k',
-          description: `Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Marketing cookie-k',
-          description: `Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Személyre szabott cookie-k',
-          description: `Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Technikailag szükséges cookie-k',
+          'Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.',
+        ),
+        assembleCategoryAnalytics(
+          'Analitikai cookie-k',
+          'Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.',
+        ),
+        assembleCategoryFunctionality(
+          'Funkcionális cookie-k',
+          'Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.',
+        ),
+        assembleCategoryAd(
+          'Marketing cookie-k',
+          'Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m',
+        ),
+        assembleCategoryPersonalization(
+          'Személyre szabott cookie-k',
+          'Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.',
+        ),
       ],
     },
   };

@@ -31,8 +31,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
               v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
-        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
-          Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
+        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
         "title": "Technicky nezbytné Cookies",
         "toggle": {
           "enabled": true,
@@ -41,8 +40,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají.
-          Díky tomu můžeme stránky a další služby neustále vylepšovat.",
+        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.",
         "title": "Analytické Cookies",
         "toggle": {
           "enabled": false,
@@ -51,8 +49,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe.
-          Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
+        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
         "title": "Funkční Cookies",
         "toggle": {
           "enabled": false,
@@ -61,8 +58,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb.
-          Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
+        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
         "title": "Marketingové Cookies",
         "toggle": {
           "enabled": false,
@@ -71,8 +67,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli.
-          Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
+        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
         "title": "Personalizační Cookies",
         "toggle": {
           "enabled": false,
@@ -119,8 +114,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
               v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
       },
       {
-        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
-          Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
+        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
         "title": "Technicky nezbytné Cookies",
         "toggle": {
           "enabled": true,
@@ -129,8 +123,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají.
-          Díky tomu můžeme stránky a další služby neustále vylepšovat.",
+        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.",
         "title": "Analytické Cookies",
         "toggle": {
           "enabled": false,
@@ -139,8 +132,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe.
-          Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
+        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
         "title": "Funkční Cookies",
         "toggle": {
           "enabled": false,
@@ -149,8 +141,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb.
-          Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
+        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
         "title": "Marketingové Cookies",
         "toggle": {
           "enabled": false,
@@ -159,8 +150,7 @@ Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
         },
       },
       {
-        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli.
-          Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
+        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
         "title": "Personalizační Cookies",
         "toggle": {
           "enabled": false,
@@ -536,8 +526,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
       },
       {
-        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti.
-          Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
+        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti. Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
         "title": "Tehnički nužni kolačići",
         "toggle": {
           "enabled": true,
@@ -546,8 +535,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste.
-          Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
+        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste. Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
         "title": "Analitički kolačići",
         "toggle": {
           "enabled": false,
@@ -556,8 +544,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima.
-          Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
+        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima. Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
         "title": "Funkcionalni kolačići",
         "toggle": {
           "enabled": false,
@@ -566,8 +553,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga.
-          Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
+        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
         "title": "Marketing kolačići",
         "toggle": {
           "enabled": false,
@@ -576,8 +562,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima.
-          Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
+        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
         "title": "Personalizacijski kolačići",
         "toggle": {
           "enabled": false,
@@ -623,8 +608,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
       },
       {
-        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti.
-          Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
+        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti. Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
         "title": "Tehnički nužni kolačići",
         "toggle": {
           "enabled": true,
@@ -633,8 +617,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste.
-          Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
+        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste. Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
         "title": "Analitički kolačići",
         "toggle": {
           "enabled": false,
@@ -643,8 +626,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima.
-          Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
+        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima. Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
         "title": "Funkcionalni kolačići",
         "toggle": {
           "enabled": false,
@@ -653,8 +635,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga.
-          Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
+        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
         "title": "Marketing kolačići",
         "toggle": {
           "enabled": false,
@@ -663,8 +644,7 @@ Više informacija o tome što su kolačići i kako s njima radimo možete pron
         },
       },
       {
-        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima.
-          Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
+        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
         "title": "Personalizacijski kolačići",
         "toggle": {
           "enabled": false,
@@ -1374,8 +1354,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
       },
       {
-        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti.
-          Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
+        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
         "title": "Tehnično nujni piškotki",
         "toggle": {
           "enabled": true,
@@ -1384,8 +1363,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo.
-          Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
+        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
         "title": "Analitični piškotki",
         "toggle": {
           "enabled": false,
@@ -1394,8 +1372,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov.
-          Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
+        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
         "title": "Funkcionalni piškotki",
         "toggle": {
           "enabled": false,
@@ -1404,8 +1381,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev.
-          Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
+        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
         "title": "Trženjski piškotki",
         "toggle": {
           "enabled": false,
@@ -1414,8 +1390,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom.
-          Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
+        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
         "title": "Piškotki za prilagajanje",
         "toggle": {
           "enabled": false,
@@ -1461,8 +1436,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
               <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
       },
       {
-        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti.
-          Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
+        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
         "title": "Tehnično nujni piškotki",
         "toggle": {
           "enabled": true,
@@ -1471,8 +1445,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo.
-          Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
+        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
         "title": "Analitični piškotki",
         "toggle": {
           "enabled": false,
@@ -1481,8 +1454,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov.
-          Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
+        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
         "title": "Funkcionalni piškotki",
         "toggle": {
           "enabled": false,
@@ -1491,8 +1463,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev.
-          Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
+        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
         "title": "Trženjski piškotki",
         "toggle": {
           "enabled": false,
@@ -1501,8 +1472,7 @@ Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete n
         },
       },
       {
-        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom.
-          Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
+        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
         "title": "Piškotki za prilagajanje",
         "toggle": {
           "enabled": false,

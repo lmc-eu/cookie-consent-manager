@@ -5,6 +5,11 @@ import {
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
+  assembleCategoryNecessary,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryAd,
+  assembleCategoryPersonalization,
 } from '../utils';
 import { ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
@@ -66,51 +71,26 @@ export const config = (
               `Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем,
               на странице <a href="https://www.almacareer.com/gdpr" target="_blank">Политика конфиденциальности персональных данных</a>.`),
         },
-        {
-          title: 'Технически необходимые файлы cookie',
-          description: `Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.`,
-          toggle: {
-            value: CookieConsentCategory.NECESSARY,
-            enabled: true,
-            readonly: true,
-          },
-        },
-        {
-          title: 'Аналитические файлы cookie',
-          description: `Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.`,
-          toggle: {
-            value: CookieConsentCategory.ANALYTICS,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Функциональные файлы cookie',
-          description: `Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.`,
-          toggle: {
-            value: CookieConsentCategory.FUNCTIONALITY,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Маркетинговые файлы cookie',
-          description: `С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.`,
-          toggle: {
-            value: CookieConsentCategory.AD,
-            enabled: false,
-            readonly: false,
-          },
-        },
-        {
-          title: 'Файлы cookie для персонализации',
-          description: `Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.`,
-          toggle: {
-            value: CookieConsentCategory.PERSONALIZATION,
-            enabled: false,
-            readonly: false,
-          },
-        },
+        assembleCategoryNecessary(
+          'Технически необходимые файлы cookie',
+          'Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.',
+        ),
+        assembleCategoryAnalytics(
+          'Аналитические файлы cookie',
+          'Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.',
+        ),
+        assembleCategoryFunctionality(
+          'Функциональные файлы cookie',
+          'Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.',
+        ),
+        assembleCategoryAd(
+          'Маркетинговые файлы cookie',
+          'С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.',
+        ),
+        assembleCategoryPersonalization(
+          'Файлы cookie для персонализации',
+          'Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.',
+        ),
       ],
     },
   };
