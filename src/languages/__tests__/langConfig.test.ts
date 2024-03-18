@@ -8,7 +8,7 @@ import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
 import { config as configSl } from '../sl';
 import { config as configUk } from '../uk';
-import { SecondaryButtonMode } from '../../constants/SecondaryButtonMode';
+import { SecondaryButtonMode } from '../../constants';
 
 describe.each([
   ['cs', configCs],

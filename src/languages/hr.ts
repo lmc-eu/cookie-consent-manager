@@ -3,7 +3,6 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
-  pluralize,
   legalizeAlmaCareer,
   assembleCategoryNecessary,
   assembleCategoryAnalytics,
