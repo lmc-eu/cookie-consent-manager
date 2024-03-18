@@ -17,9 +17,9 @@ import {
   OnAcceptCallback,
   OnChangeCallback,
   CookieConsentCategoryValues,
+  VanillaCookieConsent,
 } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
-import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
