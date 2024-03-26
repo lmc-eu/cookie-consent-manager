@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { config as configCs } from './languages/cs';
 import { config as configDe } from './languages/de';
 import { config as configEn } from './languages/en';
+import { config as configEt } from './languages/et';
 import { config as configHr } from './languages/hr';
 import { config as configHu } from './languages/hu';
 import { config as configPl } from './languages/pl';
@@ -91,6 +92,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cs: configCs,
     de: configDe,
     en: configEn,
+    et: configEt,
     hr: configHr,
     hu: configHu,
     pl: configPl,
