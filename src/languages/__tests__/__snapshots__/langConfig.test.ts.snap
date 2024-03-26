@@ -2102,6 +2102,305 @@ Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite 
 }
 `;
 
+exports[`config lv should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        test1, test2 un test3
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        Jūs varat pielāgot sīkdatņu izmantošanu <strong><a href="" data-cc="c-settings">savos iestatījumos</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Pieņemt nepieciešamās",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
+  },
+}
+`;
+
+exports[`config lv should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        test1, test2 un test3
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pielāgoti iestatījumi",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
+  },
+}
+`;
+
+exports[`config lv should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        Alma Career un citiem tā biznesa grupas uzņēmumiem
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pielāgoti iestatījumi",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
+  },
+}
+`;
+
 exports[`config pl should return localization object for acceptNecessary button mode 1`] = `
 {
   "consent_modal": {
