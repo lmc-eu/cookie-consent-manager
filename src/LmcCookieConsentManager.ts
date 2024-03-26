@@ -87,19 +87,26 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
-
-  const languages = {
-    cs: configCs({ companyNames, ...translationOverrides.cs }, secondaryButtonMode, cookieTable.cs || {}),
-    de: configDe({ companyNames, ...translationOverrides.de }, secondaryButtonMode, cookieTable.de || {}),
-    en: configEn({ companyNames, ...translationOverrides.en }, secondaryButtonMode, cookieTable.en || {}),
-    hr: configHr({ companyNames, ...translationOverrides.hr }, secondaryButtonMode, cookieTable.hr || {}),
-    hu: configHu({ companyNames, ...translationOverrides.hu }, secondaryButtonMode, cookieTable.hu || {}),
-    pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode, cookieTable.pl || {}),
-    ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode, cookieTable.ru || {}),
-    sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode, cookieTable.sk || {}),
-    sl: configSl({ companyNames, ...translationOverrides.sl }, secondaryButtonMode, cookieTable.sl || {}),
-    uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode, cookieTable.uk || {}),
+  const languageConfigs = {
+    cs: configCs,
+    de: configDe,
+    en: configEn,
+    hr: configHr,
+    hu: configHu,
+    pl: configPl,
+    ru: configRu,
+    sk: configSk,
+    sl: configSl,
+    uk: configUk,
   };
+  const languages = Object.entries(languageConfigs).reduce((acc, [code, configFunction]) => {
+    acc[code] = configFunction(
+      { companyNames, ...translationOverrides[code] },
+      secondaryButtonMode,
+      cookieTable[code] || {},
+    );
+    return acc;
+  }, {} as Record<string, VanillaCookieConsent.Languages>);
 
   const onFirstAcceptHandler = (
     userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategoryValues>,
