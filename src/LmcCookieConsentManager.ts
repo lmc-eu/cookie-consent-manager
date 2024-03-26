@@ -6,6 +6,7 @@ import { config as configEn } from './languages/en';
 import { config as configEt } from './languages/et';
 import { config as configHr } from './languages/hr';
 import { config as configHu } from './languages/hu';
+import { config as configLt } from './languages/lt';
 import { config as configPl } from './languages/pl';
 import { config as configRu } from './languages/ru';
 import { config as configSk } from './languages/sk';
@@ -95,6 +96,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     et: configEt,
     hr: configHr,
     hu: configHu,
+    lt: configLt,
     pl: configPl,
     ru: configRu,
     sk: configSk,
