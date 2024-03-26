@@ -12,11 +12,11 @@ import { config as configSl } from './languages/sl';
 import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
 import {
+  CookieConsentCategoryValues,
   CookieConsentManager,
   CookieConsentManagerOptions,
   OnAcceptCallback,
   OnChangeCallback,
-  CookieConsentCategoryValues,
   VanillaCookieConsent,
 } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
@@ -87,18 +87,17 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
-
-  const languages = {
-    cs: configCs({ companyNames, ...translationOverrides.cs }, secondaryButtonMode, cookieTable.cs || {}),
-    de: configDe({ companyNames, ...translationOverrides.de }, secondaryButtonMode, cookieTable.de || {}),
-    en: configEn({ companyNames, ...translationOverrides.en }, secondaryButtonMode, cookieTable.en || {}),
-    hr: configHr({ companyNames, ...translationOverrides.hr }, secondaryButtonMode, cookieTable.hr || {}),
-    hu: configHu({ companyNames, ...translationOverrides.hu }, secondaryButtonMode, cookieTable.hu || {}),
-    pl: configPl({ companyNames, ...translationOverrides.pl }, secondaryButtonMode, cookieTable.pl || {}),
-    ru: configRu({ companyNames, ...translationOverrides.ru }, secondaryButtonMode, cookieTable.ru || {}),
-    sk: configSk({ companyNames, ...translationOverrides.sk }, secondaryButtonMode, cookieTable.sk || {}),
-    sl: configSl({ companyNames, ...translationOverrides.sl }, secondaryButtonMode, cookieTable.sl || {}),
-    uk: configUk({ companyNames, ...translationOverrides.uk }, secondaryButtonMode, cookieTable.uk || {}),
+  const languagesMap = {
+    cs: configCs,
+    de: configDe,
+    en: configEn,
+    hr: configHr,
+    hu: configHu,
+    pl: configPl,
+    ru: configRu,
+    sk: configSk,
+    sl: configSl,
+    uk: configUk,
   };
 
   const onFirstAcceptHandler = (
@@ -146,6 +145,17 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange(cookieConsent, categories);
   };
 
+  const assembleLanguagesConfig = () =>
+    Object.entries(languagesMap).reduce((languagesConfig, [code, configFunction]) => {
+      languagesConfig[code] = configFunction(
+        { companyNames, ...translationOverrides[code] },
+        secondaryButtonMode,
+        cookieTable[code] || {},
+      );
+
+      return languagesConfig;
+    }, {} as Record<string, VanillaCookieConsent.Languages>);
+
   const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategoryValues> = {
     auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
@@ -179,7 +189,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onAccept: onAcceptHandler,
     onFirstAction: onFirstAcceptHandler,
     onChange: onChangeHandler,
-    languages,
+    languages: assembleLanguagesConfig(),
     // override default config if necessary
     ...config,
   };
