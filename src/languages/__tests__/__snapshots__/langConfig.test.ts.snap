@@ -903,6 +903,308 @@ For more information about what cookies are and how we work with them, see our
 }
 `;
 
+exports[`config et should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="c-settings">kohandatud seadetes</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Nõustun tarvilikega",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
+exports[`config et should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Kohandatud seaded",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
+exports[`config et should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõttele
+        Alma Career ja teistele selle ärigrupi ettevõtetele
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Kohandatud seaded",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
 exports[`config hr should return localization object for acceptNecessary button mode 1`] = `
 {
   "consent_modal": {
