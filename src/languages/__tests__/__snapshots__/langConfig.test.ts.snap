@@ -909,8 +909,9 @@ exports[`config et should return localization object for acceptNecessary button 
     "description": "
       <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
       <p>
-        Klõpsates nuppu „Nõustun kõigiga“, annad
-        test1, test2 ja test3
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
         Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="c-settings">kohandatud seadetes</a></strong>.
       </p>",
@@ -1002,8 +1003,9 @@ exports[`config et should return localization object for showSettings button mod
     "description": "
       <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
       <p>
-        Klõpsates nuppu „Nõustun kõigiga“, annad
-        test1, test2 ja test3
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
         
       </p>",
@@ -1095,8 +1097,9 @@ exports[`config et should return localization object with cookie table 1`] = `
     "description": "
       <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
       <p>
-        Klõpsates nuppu „Nõustun kõigiga“, annad
-        Alma Career ja selle ärigrupi ettevõtetele
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõttele
+        Alma Career ja teistele selle ärigrupi ettevõtetele
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
         
       </p>",

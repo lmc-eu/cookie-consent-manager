@@ -3,6 +3,7 @@ import {
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
+  pluralize,
   legalizeAlmaCareer,
   assembleCategoryNecessary,
   assembleCategoryAnalytics,
@@ -14,8 +15,10 @@ import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } fr
 import { SecondaryButtonMode } from '../constants';
 
 const extra = {
-  and: 'ja',
-  legalName: 'Alma Career ja selle ärigrupi ettevõtetele',
+  and: 'ning',
+  company: 'ettevõttele',
+  companies: 'ettevõtetele',
+  legalName: 'Alma Career ja teistele selle ärigrupi ettevõtetele',
 };
 
 /**
@@ -40,7 +43,8 @@ export const config = (
         lang.descriptionIntro,
       )}
       <p>
-        Klõpsates nuppu „Nõustun kõigiga“, annad
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
         ${
