@@ -15,7 +15,7 @@ import { SecondaryButtonMode } from '../constants';
 
 const extra = {
   and: 'un',
-  legalName: 'Alma Career un tās biznesa grupas uzņēmumi',
+  legalName: 'Alma Career un citiem tā biznesa grupas uzņēmumiem',
 };
 
 /**
@@ -56,7 +56,7 @@ export const config = (
       secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Pieņemt nepieciešamās', 'Pielāgoti iestatījumi'),
     },
     settings_modal: {
-      title: 'Pielāgotās sīkdatņu iestatījumi',
+      title: 'Pielāgoti sīkdatņu iestatījumi',
       accept_all_btn: 'Pieņemt visas',
       reject_all_btn: 'Pieņemt nepieciešamās',
       save_settings_btn: 'Saglabāt iestatījumus',
