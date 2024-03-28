@@ -1,8 +1,11 @@
 import { config as configCs } from '../cs';
 import { config as configDe } from '../de';
 import { config as configEn } from '../en';
+import { config as configEt } from '../et';
 import { config as configHr } from '../hr';
 import { config as configHu } from '../hu';
+import { config as configLt } from '../lt';
+import { config as configLv } from '../lv';
 import { config as configPl } from '../pl';
 import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
@@ -14,8 +17,11 @@ describe.each([
   ['cs', configCs],
   ['de', configDe],
   ['en', configEn],
-  ['hu', configHu],
+  ['et', configEt],
   ['hr', configHr],
+  ['hu', configHu],
+  ['lt', configLt],
+  ['lv', configLv],
   ['pl', configPl],
   ['ru', configRu],
   ['sk', configSk],

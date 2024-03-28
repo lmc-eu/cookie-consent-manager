@@ -903,6 +903,308 @@ For more information about what cookies are and how we work with them, see our
 }
 `;
 
+exports[`config et should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="c-settings">kohandatud seadetes</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Nõustun tarvilikega",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
+exports[`config et should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõtetele
+        test1, test2 ning test3
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Kohandatud seaded",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
+exports[`config et should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
+      <p>
+        Klõpsates nuppu „Nõustun kõigiga“, annate
+        ettevõttele
+        Alma Career ja teistele selle ärigrupi ettevõtetele
+        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Nõustun kõigiga",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Kohandatud seaded",
+    },
+    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Nõustun kõigiga",
+    "blocks": [
+      {
+        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
+        "title": "Tehniliselt vajalikud küpsised",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
+        "title": "Analüütilised küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
+        "title": "Funktsionaalsed küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
+        "title": "Turundusküpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
+        "title": "Isikupärastamise küpsised",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nimetus",
+      },
+      {
+        "description": "Kirjeldus",
+      },
+      {
+        "expiration": "Aegumine",
+      },
+    ],
+    "reject_all_btn": "Nõustun tarvilikega",
+    "save_settings_btn": "Salvesta sätted",
+    "title": "Kohandatud küpsiste seaded",
+  },
+}
+`;
+
 exports[`config hr should return localization object for acceptNecessary button mode 1`] = `
 {
   "consent_modal": {
@@ -1497,6 +1799,604 @@ További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk v
     "reject_all_btn": "A legszükségesebbek elfogadása",
     "save_settings_btn": "Beállítások mentése",
     "title": "Egyedi cookie-fájl beállítások",
+  },
+}
+`;
+
+exports[`config lt should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
+      <p>
+        Spustelėję mygtuką „Priimti viską“, duodate
+        test1, test2 bei test3
+        sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
+        Slapukų naudojimą galite pritaikyti <strong><a href="" data-cc="c-settings">pasirinktinuose nustatymuose</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Priimti viską",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Priimti būtinus",
+    },
+    "title": "Slapukai mūsų svetainę daro dar geresnę",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Priimti viską",
+    "blocks": [
+      {
+        "description": "Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
+Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje
+               <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.",
+      },
+      {
+        "description": "Šie slapukai yra būtini tinkamam mūsų svetainės veikimui, todėl jų negalima išjungti. Be jų nebūtų įmanoma pvz. rodyti bet kokį turinį ar prisijungti mūsų svetainėje.",
+        "title": "Techniškai būtini slapukai",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Tai padeda mums stebėti, kiek žmonių lankosi mūsų svetainėje ir kaip jie ja naudojasi. Ši informacija leidžia mums nuolat tobulinti svetainę ir kitas paslaugas.",
+        "title": "Analitiniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsų svetainė yra dar efektyvesnė ir veikia geriau dėl šių slapukų.",
+        "title": "Funkciniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šie slapukai padeda mums įvertinti reklamos ir tikslinių paslaugų pasiūlymų efektyvumą. Rinkodaros slapukai leidžia mums pateikti jums naujienas, kurios gali jus sudominti.",
+        "title": "Rinkodaros slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsų paslaugos veikia geriau, jei galime jas pritaikyti konkretiems vartotojams. Leidžiant personalizuoti slapukus, padidinsite savo galimybes rasti norimą turinį.",
+        "title": "Personalizavimo slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Pavadinimas",
+      },
+      {
+        "description": "Aprašymas",
+      },
+      {
+        "expiration": "Aprašymas",
+      },
+    ],
+    "reject_all_btn": "Priimti būtinus",
+    "save_settings_btn": "Išsaugoti nustatymus",
+    "title": "Individualūs slapukų nustatymai",
+  },
+}
+`;
+
+exports[`config lt should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
+      <p>
+        Spustelėję mygtuką „Priimti viską“, duodate
+        test1, test2 bei test3
+        sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Priimti viską",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pasirinktiniai nustatymai",
+    },
+    "title": "Slapukai mūsų svetainę daro dar geresnę",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Priimti viską",
+    "blocks": [
+      {
+        "description": "Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
+Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje
+               <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.",
+      },
+      {
+        "description": "Šie slapukai yra būtini tinkamam mūsų svetainės veikimui, todėl jų negalima išjungti. Be jų nebūtų įmanoma pvz. rodyti bet kokį turinį ar prisijungti mūsų svetainėje.",
+        "title": "Techniškai būtini slapukai",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Tai padeda mums stebėti, kiek žmonių lankosi mūsų svetainėje ir kaip jie ja naudojasi. Ši informacija leidžia mums nuolat tobulinti svetainę ir kitas paslaugas.",
+        "title": "Analitiniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsų svetainė yra dar efektyvesnė ir veikia geriau dėl šių slapukų.",
+        "title": "Funkciniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šie slapukai padeda mums įvertinti reklamos ir tikslinių paslaugų pasiūlymų efektyvumą. Rinkodaros slapukai leidžia mums pateikti jums naujienas, kurios gali jus sudominti.",
+        "title": "Rinkodaros slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsų paslaugos veikia geriau, jei galime jas pritaikyti konkretiems vartotojams. Leidžiant personalizuoti slapukus, padidinsite savo galimybes rasti norimą turinį.",
+        "title": "Personalizavimo slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Pavadinimas",
+      },
+      {
+        "description": "Aprašymas",
+      },
+      {
+        "expiration": "Aprašymas",
+      },
+    ],
+    "reject_all_btn": "Priimti būtinus",
+    "save_settings_btn": "Išsaugoti nustatymus",
+    "title": "Individualūs slapukų nustatymai",
+  },
+}
+`;
+
+exports[`config lt should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
+      <p>
+        Spustelėję mygtuką „Priimti viską“, duodate
+        Alma Career ir kitoms jos verslo grupės įmonėms
+        sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Priimti viską",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pasirinktiniai nustatymai",
+    },
+    "title": "Slapukai mūsų svetainę daro dar geresnę",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Priimti viską",
+    "blocks": [
+      {
+        "description": "Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
+Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje
+               <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Šie slapukai yra būtini tinkamam mūsų svetainės veikimui, todėl jų negalima išjungti. Be jų nebūtų įmanoma pvz. rodyti bet kokį turinį ar prisijungti mūsų svetainėje.",
+        "title": "Techniškai būtini slapukai",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Tai padeda mums stebėti, kiek žmonių lankosi mūsų svetainėje ir kaip jie ja naudojasi. Ši informacija leidžia mums nuolat tobulinti svetainę ir kitas paslaugas.",
+        "title": "Analitiniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsų svetainė yra dar efektyvesnė ir veikia geriau dėl šių slapukų.",
+        "title": "Funkciniai slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šie slapukai padeda mums įvertinti reklamos ir tikslinių paslaugų pasiūlymų efektyvumą. Rinkodaros slapukai leidžia mums pateikti jums naujienas, kurios gali jus sudominti.",
+        "title": "Rinkodaros slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Mūsų paslaugos veikia geriau, jei galime jas pritaikyti konkretiems vartotojams. Leidžiant personalizuoti slapukus, padidinsite savo galimybes rasti norimą turinį.",
+        "title": "Personalizavimo slapukai",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Pavadinimas",
+      },
+      {
+        "description": "Aprašymas",
+      },
+      {
+        "expiration": "Aprašymas",
+      },
+    ],
+    "reject_all_btn": "Priimti būtinus",
+    "save_settings_btn": "Išsaugoti nustatymus",
+    "title": "Individualūs slapukų nustatymai",
+  },
+}
+`;
+
+exports[`config lv should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        test1, test2 un test3
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        Jūs varat pielāgot sīkdatņu izmantošanu <strong><a href="" data-cc="c-settings">savos iestatījumos</a></strong>.
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "accept_necessary",
+      "text": "Pieņemt nepieciešamās",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
+  },
+}
+`;
+
+exports[`config lv should return localization object for showSettings button mode 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        test1, test2 un test3
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pielāgoti iestatījumi",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
+  },
+}
+`;
+
+exports[`config lv should return localization object with cookie table 1`] = `
+{
+  "consent_modal": {
+    "description": "
+      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
+      <p>
+        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
+        Alma Career un citiem tā biznesa grupas uzņēmumiem
+        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
+        
+      </p>",
+    "primary_btn": {
+      "role": "accept_all",
+      "text": "Pieņemt visas",
+    },
+    "secondary_btn": {
+      "role": "settings",
+      "text": "Pielāgoti iestatījumi",
+    },
+    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
+  },
+  "settings_modal": {
+    "accept_all_btn": "Pieņemt visas",
+    "blocks": [
+      {
+        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
+              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Google Analytics description ...",
+            "expiration": "1 year",
+            "is_regex": true,
+            "name": "^_ga",
+          },
+          {
+            "description": "Foo description",
+            "expiration": "end of session",
+            "name": "foo",
+          },
+        ],
+        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
+        "title": "Nepieciešamās tehniskās sīkdatnes",
+        "toggle": {
+          "enabled": true,
+          "readonly": true,
+          "value": "necessary",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
+        "title": "Analītiskās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "analytics",
+        },
+      },
+      {
+        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
+        "title": "Funkcionālās sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "functionality",
+        },
+      },
+      {
+        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
+        "title": "Mārketinga sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "ad",
+        },
+      },
+      {
+        "cookie_table": [
+          {
+            "description": "Session log description ...",
+            "expiration": "1 year",
+            "name": "sessionLog_id",
+          },
+        ],
+        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
+        "title": "Personalizācijas sīkdatnes",
+        "toggle": {
+          "enabled": false,
+          "readonly": false,
+          "value": "personalization",
+        },
+      },
+    ],
+    "cookie_table_headers": [
+      {
+        "name": "Nosaukums",
+      },
+      {
+        "description": "Apraksts",
+      },
+      {
+        "expiration": "Apraksts",
+      },
+    ],
+    "reject_all_btn": "Pieņemt nepieciešamās",
+    "save_settings_btn": "Saglabāt iestatījumus",
+    "title": "Pielāgoti sīkdatņu iestatījumi",
   },
 }
 `;

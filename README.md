@@ -290,13 +290,12 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 | `secondaryButtonMode`    | SecondaryButtonMode (string)        | `SecondaryButtonMode. ACCEPT_NECESSARY` (`acceptNecessary`) | Which button should be shown next to "Accept all". `acceptNecessary` (default) or `showSettings` (this option also hides link to show settings in consent text).                                              |
 | `on*` callbacks          | function                            | `(cookieConsent) => {}`                                     | See below for configurable callbacks.                                                                                                                                                                         |
 | `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle`, `descriptionIntro` and `settingsModalMoreInfo` could be overridden.<br>[See example][examples-configuration]                            |
-| `cookieTable`            | CookieTable                         | `{}`                                                        | Define cookie table for specified languages and specified categories<br>[See above for example configuration](#configuration)                                                                                 |
+| `cookieTable`            | CookieTable                         | `{}`                                                        | Define cookie table (which is shown in settings modal) for specified languages and specified categories.<br>[See above for example configuration](#configuration)                                             |
 
 ### Supported languages
 
 Translation of the user interface is provided in the following languages:
-Czech (`cs`), German (`de`), English (`en`), Croatian (`hr`), Hungarian (`hu`), Polish (`pl`), Russian (`ru`),
-Slovak (`sk`), Slovenian (`sl`) and Ukrainian (`uk`).
+Czech (`cs`), German (`de`), English (`en`), Estonian (`et`), Croatian (`hr`), Hungarian (`hu`), Lithuanian (`lt`), Latvian (`lv`), Polish (`pl`), Russian (`ru`), Slovak (`sk`), Slovenian (`sl`) and Ukrainian (`uk`).
 
 [👀 See example of each language version][examples-languages]
 
