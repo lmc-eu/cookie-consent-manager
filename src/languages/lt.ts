@@ -14,8 +14,8 @@ import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } fr
 import { SecondaryButtonMode } from '../constants';
 
 const extra = {
-  and: 'ir',
-  legalName: 'Alma Career ir jos verslo grupės įmonės',
+  and: 'bei',
+  legalName: 'Alma Career ir kitoms jos verslo grupės įmonėms',
 };
 
 /**
@@ -56,7 +56,7 @@ export const config = (
       secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Priimti būtinus', 'Pasirinktiniai nustatymai'),
     },
     settings_modal: {
-      title: 'Pasirinktiniai slapukų nustatymai',
+      title: 'Individualūs slapukų nustatymai',
       accept_all_btn: 'Priimti viską',
       reject_all_btn: 'Priimti būtinus',
       save_settings_btn: 'Išsaugoti nustatymus',

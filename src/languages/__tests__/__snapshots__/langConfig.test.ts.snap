@@ -1810,7 +1810,7 @@ exports[`config lt should return localization object for acceptNecessary button 
       <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
       <p>
         Spustelėję mygtuką „Priimti viską“, duodate
-        test1, test2 ir test3
+        test1, test2 bei test3
         sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
         Slapukų naudojimą galite pritaikyti <strong><a href="" data-cc="c-settings">pasirinktinuose nustatymuose</a></strong>.
       </p>",
@@ -1891,7 +1891,7 @@ Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite 
     ],
     "reject_all_btn": "Priimti būtinus",
     "save_settings_btn": "Išsaugoti nustatymus",
-    "title": "Pasirinktiniai slapukų nustatymai",
+    "title": "Individualūs slapukų nustatymai",
   },
 }
 `;
@@ -1903,7 +1903,7 @@ exports[`config lt should return localization object for showSettings button mod
       <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
       <p>
         Spustelėję mygtuką „Priimti viską“, duodate
-        test1, test2 ir test3
+        test1, test2 bei test3
         sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
         
       </p>",
@@ -1984,7 +1984,7 @@ Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite 
     ],
     "reject_all_btn": "Priimti būtinus",
     "save_settings_btn": "Išsaugoti nustatymus",
-    "title": "Pasirinktiniai slapukų nustatymai",
+    "title": "Individualūs slapukų nustatymai",
   },
 }
 `;
@@ -1996,7 +1996,7 @@ exports[`config lt should return localization object with cookie table 1`] = `
       <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
       <p>
         Spustelėję mygtuką „Priimti viską“, duodate
-        Alma Career ir jos verslo grupės įmonės
+        Alma Career ir kitoms jos verslo grupės įmonėms
         sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
         
       </p>",
@@ -2097,7 +2097,7 @@ Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite 
     ],
     "reject_all_btn": "Priimti būtinus",
     "save_settings_btn": "Išsaugoti nustatymus",
-    "title": "Pasirinktiniai slapukų nustatymai",
+    "title": "Individualūs slapukų nustatymai",
   },
 }
 `;
