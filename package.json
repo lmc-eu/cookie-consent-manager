@@ -76,7 +76,7 @@
   "dependencies": {
     "@lmc-eu/spirit-design-tokens": "^0.25.0",
     "nanoid": "^3.1.30",
-    "vanilla-cookieconsent": "2.8.5"
+    "vanilla-cookieconsent": "3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
