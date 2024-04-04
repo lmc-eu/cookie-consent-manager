@@ -295,6 +295,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 ### Supported languages
 
 Translation of the user interface is provided in the following languages:
+- Bosnian (`bs`)
 - Czech (`cs`)
 - German (`de`)
 - English (`en`)
