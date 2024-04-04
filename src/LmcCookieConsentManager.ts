@@ -1,18 +1,5 @@
 import 'vanilla-cookieconsent';
 import { nanoid } from 'nanoid';
-import { config as configCs } from './languages/cs';
-import { config as configDe } from './languages/de';
-import { config as configEn } from './languages/en';
-import { config as configEt } from './languages/et';
-import { config as configHr } from './languages/hr';
-import { config as configHu } from './languages/hu';
-import { config as configLt } from './languages/lt';
-import { config as configLv } from './languages/lv';
-import { config as configPl } from './languages/pl';
-import { config as configRu } from './languages/ru';
-import { config as configSk } from './languages/sk';
-import { config as configSl } from './languages/sl';
-import { config as configUk } from './languages/uk';
 import submitConsent from './consentCollector';
 import {
   CookieConsentCategoryValues,
@@ -23,6 +10,7 @@ import {
   VanillaCookieConsent,
 } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
+import { assembleLanguagesConfig } from './languages/loader';
 
 /* eslint-disable-next-line no-unused-vars */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
@@ -90,21 +78,6 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   } = options;
   const cookieName = 'lmc_ccm';
   const cookieConsent = window.initCookieConsent();
-  const languagesMap = {
-    cs: configCs,
-    de: configDe,
-    en: configEn,
-    et: configEt,
-    hr: configHr,
-    hu: configHu,
-    lt: configLt,
-    lv: configLv,
-    pl: configPl,
-    ru: configRu,
-    sk: configSk,
-    sl: configSl,
-    uk: configUk,
-  };
 
   const onFirstAcceptHandler = (
     userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategoryValues>,
@@ -151,17 +124,6 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange(cookieConsent, categories);
   };
 
-  const assembleLanguagesConfig = () =>
-    Object.entries(languagesMap).reduce((languagesConfig, [code, configFunction]) => {
-      languagesConfig[code] = configFunction(
-        { companyNames, ...translationOverrides[code] },
-        secondaryButtonMode,
-        cookieTable[code] || {},
-      );
-
-      return languagesConfig;
-    }, {} as Record<string, VanillaCookieConsent.Languages>);
-
   const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategoryValues> = {
     auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
     autorun: true, // Show the cookie consent banner as soon as possible
@@ -195,7 +157,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onAccept: onAcceptHandler,
     onFirstAction: onFirstAcceptHandler,
     onChange: onChangeHandler,
-    languages: assembleLanguagesConfig(),
+    languages: assembleLanguagesConfig(companyNames, translationOverrides, secondaryButtonMode, cookieTable),
     // override default config if necessary
     ...config,
   };
