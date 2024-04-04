@@ -295,7 +295,20 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
 ### Supported languages
 
 Translation of the user interface is provided in the following languages:
-Czech (`cs`), German (`de`), English (`en`), Estonian (`et`), Croatian (`hr`), Hungarian (`hu`), Lithuanian (`lt`), Latvian (`lv`), Polish (`pl`), Russian (`ru`), Slovak (`sk`), Slovenian (`sl`) and Ukrainian (`uk`).
+- Czech (`cs`)
+- German (`de`)
+- English (`en`)
+- Estonian (`et`)
+- Croatian (`hr`)
+- Hungarian (`hu`)
+- Lithuanian (`lt`)
+- Latvian (`lv`)
+- Macedonian (`mk`)
+- Polish (`pl`)
+- Russian (`ru`)
+- Slovak (`sk`)
+- Slovenian (`sl`)
+- Ukrainian (`uk`)
 
 [👀 See example of each language version][examples-languages]
 
