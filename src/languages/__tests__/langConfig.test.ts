@@ -1,3 +1,4 @@
+import { config as configBs } from '../bs';
 import { config as configCs } from '../cs';
 import { config as configDe } from '../de';
 import { config as configEn } from '../en';
@@ -15,6 +16,7 @@ import { config as configUk } from '../uk';
 import { SecondaryButtonMode } from '../../constants';
 
 describe.each([
+  ['bs', configBs],
   ['cs', configCs],
   ['de', configDe],
   ['en', configEn],
