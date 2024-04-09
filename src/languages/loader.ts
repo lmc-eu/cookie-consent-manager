@@ -29,6 +29,7 @@ const languagesMap = {
   uk: configUk,
 };
 
+/* eslint-disable no-param-reassign */
 export const assembleLanguagesConfig = (
   companyNames: string[],
   translationOverrides: Record<string, TranslationOverride>,
@@ -44,3 +45,4 @@ export const assembleLanguagesConfig = (
 
     return languagesConfig;
   }, {} as Record<string, VanillaCookieConsent.Languages>);
+/* eslint-enable no-param-reassign */

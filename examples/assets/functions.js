@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /**
  * Global function to reset cookie for the examples only
+ *
  * @returns {void}
  */
 function removeCookieAndReload() {

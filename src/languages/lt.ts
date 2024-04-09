@@ -1,14 +1,14 @@
 import {
   addSeparators,
+  assembleCategoryAd,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryNecessary,
+  assembleCategoryPersonalization,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
-  assembleCategoryNecessary,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryAd,
-  assembleCategoryPersonalization,
 } from '../utils';
 import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
 import { SecondaryButtonMode } from '../constants';
