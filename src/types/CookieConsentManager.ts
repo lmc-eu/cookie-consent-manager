@@ -1,6 +1,7 @@
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from '../constants';
 import { VanillaCookieConsent } from './vanilla-cookieconsent';
 
+/* eslint-disable no-unused-vars */
 export type Values<T> = T[keyof T];
 
 export type CookieConsentCategoryValues = Values<typeof CookieConsentCategory>;
@@ -26,12 +27,12 @@ export type TranslationOverride = {
   settingsModalMoreInfo?: string;
 };
 
-export type CookieTable = {
-  [language: string]: CookieTableCategories;
-};
-
 export type CookieTableCategories = {
   [category in CookieConsentCategoryValues]: VanillaCookieConsent.CookieTableItem[];
+};
+
+export type CookieTable = {
+  [language: string]: CookieTableCategories;
 };
 
 export type CookieConsentManagerOptions = {
@@ -53,3 +54,4 @@ export type CookieConsentManager = (
   serviceName: string,
   args?: Partial<CookieConsentManagerOptions>,
 ) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
+/* eslint-enable no-unused-vars */
