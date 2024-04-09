@@ -1,18 +1,18 @@
 import {
   addSeparators,
+  assembleCategoryAd,
+  assembleCategoryAnalytics,
+  assembleCategoryFunctionality,
+  assembleCategoryNecessary,
+  assembleCategoryPersonalization,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
-  assembleCategoryNecessary,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryAd,
-  assembleCategoryPersonalization,
 } from '../utils';
 import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
-import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
+import { SecondaryButtonMode } from '../constants';
 
 const extra = {
   and: 'i',
