@@ -71,12 +71,11 @@ export const config = (
       ],
       blocks: [
         {
-          description:
-            `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten,
-              finden Sie in unsere
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.`),
+          description: `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten, finden Sie in unsere <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Technisch notwendige Cookies',

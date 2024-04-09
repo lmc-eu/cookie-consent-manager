@@ -67,11 +67,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Název' }, { description: 'Popis' }, { expiration: 'Platnost' }],
       blocks: [
         {
-          description:
-            `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete
-              v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`),
+          description: `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Technicky nezbytné Cookies',

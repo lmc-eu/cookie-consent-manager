@@ -62,11 +62,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Name' }, { description: 'Description' }, { expiration: 'Expiration' }],
       blocks: [
         {
-          description:
-            `If you want to get the most out of our website it is best to allow all types of cookies.\n` +
-            (lang.settingsModalMoreInfo ??
-              `For more information about what cookies are and how we work with them, see our
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.`),
+          description: `If you want to get the most out of our website it is best to allow all types of cookies.
+            ${
+              lang.settingsModalMoreInfo ??
+              `For more information about what cookies are and how we work with them, see our <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Technically necessary cookies',

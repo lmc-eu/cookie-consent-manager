@@ -63,11 +63,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Nosaukums' }, { description: 'Apraksts' }, { expiration: 'Apraksts' }],
       blocks: [
         {
-          description:
-            `Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.`),
+          description: `Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Nepieciešamās tehniskās sīkdatnes',

@@ -67,11 +67,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Nazwa' }, { description: 'Opis' }, { expiration: 'Ważność (Do)' }],
       blocks: [
         {
-          description:
-            `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.`),
+          description: `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Technicznie niezbędne pliki cookies',

@@ -67,11 +67,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Nimetus' }, { description: 'Kirjeldus' }, { expiration: 'Aegumine' }],
       blocks: [
         {
-          description:
-            `Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.`),
+          description: `Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Tehniliselt vajalikud küpsised',
