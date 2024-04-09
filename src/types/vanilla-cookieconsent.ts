@@ -1,9 +1,22 @@
+/* eslint-disable no-unused-vars */
 export namespace VanillaCookieConsent {
   export interface Cookie<Category> {
     data: any;
     level: Array<Category>;
     revision: number;
     rfc_cookie: boolean;
+  }
+
+  export enum AcceptType {
+    ALL = 'all',
+    NECESSARY = 'necessary',
+    CUSTOM = 'custom',
+  }
+
+  export interface UserPreferences<Category> {
+    accept_type: AcceptType;
+    accepted_categories: Array<Category>;
+    rejected_categories: Array<Category>;
   }
 
   /**
@@ -20,18 +33,6 @@ export namespace VanillaCookieConsent {
     eraseCookies: (cookies: string | string[], path?: string, domain?: string) => void;
     getUserPreferences: () => UserPreferences<Category>;
   };
-
-  export interface UserPreferences<Category> {
-    accept_type: AcceptType;
-    accepted_categories: Array<Category>;
-    rejected_categories: Array<Category>;
-  }
-
-  export enum AcceptType {
-    ALL = 'all',
-    NECESSARY = 'necessary',
-    CUSTOM = 'custom',
-  }
 
   export enum PrimaryButtonRole {
     ACCEPT_ALL = 'accept_all',
@@ -171,3 +172,4 @@ export namespace VanillaCookieConsent {
     languages?: Record<string, Languages>;
   }
 }
+/* eslint-enable no-unused-vars */
