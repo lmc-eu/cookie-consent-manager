@@ -28,9 +28,9 @@ export namespace VanillaCookieConsent {
   }
 
   export enum AcceptType {
-    'ALL' = 'all',
-    'NECESSARY' = 'necessary',
-    'CUSTOM' = 'custom',
+    ALL = 'all',
+    NECESSARY = 'necessary',
+    CUSTOM = 'custom',
   }
 
   export enum PrimaryButtonRole {
