@@ -112,7 +112,7 @@ describe('utils', () => {
       expect(assembleCategoryFunction('title', 'description', {})).toEqual({
         title: 'title',
         description: 'description',
-        toggle: { value: categoryValue, enabled: readonly, readonly: readonly },
+        toggle: { value: categoryValue, enabled: readonly, readonly },
       });
     });
 
@@ -130,7 +130,7 @@ describe('utils', () => {
       expect(assembleCategoryFunction('title', 'description', cookieTable)).toEqual({
         title: 'title',
         description: 'description',
-        toggle: { value: categoryValue, enabled: readonly, readonly: readonly },
+        toggle: { value: categoryValue, enabled: readonly, readonly },
         cookie_table: [
           {
             name: 'cookie1',
