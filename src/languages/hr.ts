@@ -63,11 +63,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Naziv' }, { description: 'Opis' }, { expiration: 'Valjanost' }],
       blocks: [
         {
-          description:
-            `Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.`),
+          description: `Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Tehnički nužni kolačići',

@@ -67,11 +67,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Név' }, { description: 'Leírás' }, { expiration: 'Érvényesség' }],
       blocks: [
         {
-          description:
-            `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.\n` +
-            (lang.settingsModalMoreInfo ??
-              `További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük
-              az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.`),
+          description: `Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.
+            ${
+              lang.settingsModalMoreInfo ??
+              `További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.`
+            }`,
         },
         assembleCategoryNecessary(
           'Technikailag szükséges cookie-k',

@@ -67,11 +67,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Назва' }, { description: 'Опис' }, { expiration: 'Термін Дії' }],
       blocks: [
         {
-          description:
-            `Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках
-              <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.`),
+          description: `Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Технічно необхідні файли Cookies',

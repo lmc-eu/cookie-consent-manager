@@ -63,11 +63,11 @@ export const config = (
       cookie_table_headers: [{ name: 'Pavadinimas' }, { description: 'Aprašymas' }, { expiration: 'Aprašymas' }],
       blocks: [
         {
-          description:
-            `Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.\n` +
-            (lang.settingsModalMoreInfo ??
-              `Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje
-               <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.`),
+          description: `Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
+            ${
+              lang.settingsModalMoreInfo ??
+              `Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.`
+            }`,
         },
         assembleCategoryNecessary(
           'Techniškai būtini slapukai',
