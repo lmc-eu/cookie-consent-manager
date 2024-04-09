@@ -132,18 +132,18 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cookie_name: cookieName, // Predefined cookie name. Do not override.
     current_lang: defaultLang, // Default language used when auto_language is false (or when autodetect failed)
     delay: 0, // Show the modal immediately after init
-    force_consent: displayMode == DisplayMode.FORCE,
+    force_consent: displayMode === DisplayMode.FORCE,
     hide_from_bots: true, // To be hidden also from Selenium
     page_scripts: true, // Manage third-party scripts loaded using <script>
     use_rfc_cookie: true, // Store cookie content in RFC compatible format.
     gui_options: {
       consent_modal: {
         layout:
-          displayMode == DisplayMode.FORCE
+          displayMode === DisplayMode.FORCE
             ? VanillaCookieConsent.GuiConsentLayout.BOX
             : VanillaCookieConsent.GuiConsentLayout.BAR,
         position:
-          displayMode == DisplayMode.FORCE
+          displayMode === DisplayMode.FORCE
             ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER
             : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
         transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
