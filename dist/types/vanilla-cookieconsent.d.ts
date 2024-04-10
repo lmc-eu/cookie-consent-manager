@@ -1,15 +1,25 @@
 export declare namespace VanillaCookieConsent {
-    export interface Cookie<Category> {
+    interface Cookie<Category> {
         data: any;
         level: Array<Category>;
         revision: number;
         rfc_cookie: boolean;
     }
+    enum AcceptType {
+        ALL = "all",
+        NECESSARY = "necessary",
+        CUSTOM = "custom"
+    }
+    interface UserPreferences<Category> {
+        accept_type: AcceptType;
+        accepted_categories: Array<Category>;
+        rejected_categories: Array<Category>;
+    }
     /**
      * Instance of the underlying CookieConsent component.
      *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
      */
-    export type CookieConsent<Category> = {
+    type CookieConsent<Category> = {
         get: (name: string) => any;
         set: (name: string, value: any) => void;
         run: (config: any) => void;
@@ -19,21 +29,11 @@ export declare namespace VanillaCookieConsent {
         eraseCookies: (cookies: string | string[], path?: string, domain?: string) => void;
         getUserPreferences: () => UserPreferences<Category>;
     };
-    export interface UserPreferences<Category> {
-        accept_type: AcceptType;
-        accepted_categories: Array<Category>;
-        rejected_categories: Array<Category>;
-    }
-    export enum AcceptType {
-        'ALL' = "all",
-        'NECESSARY' = "necessary",
-        'CUSTOM' = "custom"
-    }
-    export enum PrimaryButtonRole {
+    enum PrimaryButtonRole {
         ACCEPT_ALL = "accept_all",
         ACCEPT_SELECTED = "accept_selected"
     }
-    export enum SecondaryButtonRole {
+    enum SecondaryButtonRole {
         ACCEPT_NECESSARY = "accept_necessary",
         SETTINGS = "settings"
     }
@@ -41,7 +41,7 @@ export declare namespace VanillaCookieConsent {
         text?: string;
         role?: PrimaryButtonRole;
     }
-    export interface ModalSecondaryButton {
+    interface ModalSecondaryButton {
         text?: string;
         role?: SecondaryButtonRole;
     }
@@ -76,16 +76,16 @@ export declare namespace VanillaCookieConsent {
         cookie_table_headers?: Record<string, string>[];
         blocks?: ModalBlock[];
     }
-    export interface Languages {
+    interface Languages {
         consent_modal?: ConsentModal;
         settings_modal?: SettingsModal;
     }
-    export enum GuiConsentLayout {
+    enum GuiConsentLayout {
         BAR = "bar",
         BOX = "box",
         CLOUD = "cloud"
     }
-    export enum GuiConsentPosition {
+    enum GuiConsentPosition {
         BOTTOM_LEFT = "bottom left",
         BOTTOM_RIGHT = "bottom right",
         BOTTOM_CENTER = "bottom center",
@@ -96,15 +96,15 @@ export declare namespace VanillaCookieConsent {
         TOP_RIGHT = "top right",
         TOP_CENTER = "top center"
     }
-    export enum GuiSettingsLayout {
+    enum GuiSettingsLayout {
         BAR = "bar",
         BOX = "box"
     }
-    export enum GuiSettingsPosition {
+    enum GuiSettingsPosition {
         LEFT = "left",
         RIGHT = "right"
     }
-    export enum Transition {
+    enum Transition {
         SLIDE = "slide",
         ZOOM = "zoom"
     }
@@ -123,7 +123,7 @@ export declare namespace VanillaCookieConsent {
         consent_modal?: GuiConsentModal;
         settings_modal?: GuiSettingsModal;
     }
-    export interface Options<Category> {
+    interface Options<Category> {
         autorun?: boolean;
         delay?: number;
         cookie_expiration?: number;
@@ -148,5 +148,4 @@ export declare namespace VanillaCookieConsent {
         onFirstAction?: (user_preferences: UserPreferences<Category>, cookie: Cookie<Category>) => void;
         languages?: Record<string, Languages>;
     }
-    export {};
 }

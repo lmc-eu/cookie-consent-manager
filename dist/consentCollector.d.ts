@@ -1,5 +1,4 @@
-import { CookieConsentCategoryValues } from './types';
-import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
+import { CookieConsentCategoryValues, VanillaCookieConsent } from './types';
 /**
  * Submit information about consent level given by the user.
  */

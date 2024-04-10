@@ -1,7 +1,6 @@
 import 'vanilla-cookieconsent';
-import { CookieConsentManager } from './types';
+import { CookieConsentManager, VanillaCookieConsent } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
-import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 /**
  * @param {string} serviceName - Identifier of the source service (website/application). Must be provided.
  * @param {CookieConsentManagerOptions} [args] - Options for cookie consent manager
@@ -20,6 +19,7 @@ import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
  * @param {SecondaryButtonMode} [args.secondaryButtonMode] - `force` (default) to show consent in a centered modal box
  *    and to block page until user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
+ * @param {CookieTable} [args.cookieTable] - Cookie table for specified languages
  * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
  *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
  * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>} Instance of the underlying CookieConsent component.

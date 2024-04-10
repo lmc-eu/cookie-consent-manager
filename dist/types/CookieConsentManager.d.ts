@@ -15,6 +15,12 @@ export type TranslationOverride = {
     descriptionIntro?: string;
     settingsModalMoreInfo?: string;
 };
+export type CookieTableCategories = {
+    [category in CookieConsentCategoryValues]: VanillaCookieConsent.CookieTableItem[];
+};
+export type CookieTable = {
+    [language: string]: CookieTableCategories;
+};
 export type CookieConsentManagerOptions = {
     defaultLang: string;
     autodetectLang: boolean;
@@ -26,6 +32,7 @@ export type CookieConsentManagerOptions = {
     displayMode: Values<typeof DisplayMode>;
     secondaryButtonMode: Values<typeof SecondaryButtonMode>;
     translationOverrides: Record<string, TranslationOverride>;
+    cookieTable: CookieTable;
     config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
 };
 export type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;

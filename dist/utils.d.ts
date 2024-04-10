@@ -1,6 +1,5 @@
-import { Values } from './types';
+import { CookieTableCategories, Values, VanillaCookieConsent } from './types';
 import { SecondaryButtonMode } from './constants';
-import { VanillaCookieConsent } from './types/vanilla-cookieconsent';
 export declare const addSeparators: (strings: string[], and?: string) => string;
 export declare const pluralize: (count: number, singular: string, plural: string) => string;
 /**
@@ -16,3 +15,8 @@ export declare const assembleDescriptionIntro: (defaultValue: string, overrideVa
  */
 export declare const assembleSecondaryButton: (secondaryButtonMode: Values<typeof SecondaryButtonMode>, textAcceptNecessary: string, textShowSettings: string) => VanillaCookieConsent.ModalSecondaryButton;
 export declare const isSettingsButtonNotShown: (secondaryButtonMode: Values<typeof SecondaryButtonMode>) => boolean;
+export declare const assembleCategoryNecessary: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
+export declare const assembleCategoryAd: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
+export declare const assembleCategoryAnalytics: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
+export declare const assembleCategoryFunctionality: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
+export declare const assembleCategoryPersonalization: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;

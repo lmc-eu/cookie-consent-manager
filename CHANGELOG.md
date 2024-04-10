@@ -1,3 +1,45 @@
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.5.0...2.6.0) (2024-04-10)
+
+### Dependencies
+
+- Update bugfix versions of dependencies ([6e58251](https://github.com/lmc-eu/cookie-consent-manager/commit/6e58251))
+
+### Documentation
+
+- Extend README to contain cookieTable example configuration ([a416a4a](https://github.com/lmc-eu/cookie-consent-manager/commit/a416a4a))
+- Minor readme clarifications ([0ebb3ec](https://github.com/lmc-eu/cookie-consent-manager/commit/0ebb3ec))
+- Update another link to orestbida library documentation to point to its branch v2.9 ([452d7ae](https://github.com/lmc-eu/cookie-consent-manager/commit/452d7ae))
+- Update links to orestbida library documentation to point to its branch v2.9 ([17084ae](https://github.com/lmc-eu/cookie-consent-manager/commit/17084ae))
+
+### Features
+
+- Add ability to set cookie table ([b7b2b4d](https://github.com/lmc-eu/cookie-consent-manager/commit/b7b2b4d))
+- Add Bosnian (bs) language ([096b6bd](https://github.com/lmc-eu/cookie-consent-manager/commit/096b6bd))
+- Add Estonian (et) translation ([06eba57](https://github.com/lmc-eu/cookie-consent-manager/commit/06eba57))
+- Add Latvian (lv) translation ([e389ed6](https://github.com/lmc-eu/cookie-consent-manager/commit/e389ed6))
+- Add Lithuanian (lt) translation ([112b232](https://github.com/lmc-eu/cookie-consent-manager/commit/112b232))
+- Add Macedonian (mk) translation ([b3c8990](https://github.com/lmc-eu/cookie-consent-manager/commit/b3c8990))
+- Export all types of vanilla cookie consent ([7bb36d2](https://github.com/lmc-eu/cookie-consent-manager/commit/7bb36d2))
+
+### Chores
+
+- DRY when importing language configs ([a49d8f9](https://github.com/lmc-eu/cookie-consent-manager/commit/a49d8f9))
+- Extract language loading to separate function ([6e6e21c](https://github.com/lmc-eu/cookie-consent-manager/commit/6e6e21c))
+- Optimize imports ([25a636e](https://github.com/lmc-eu/cookie-consent-manager/commit/25a636e))
+- Refactor block assembly ([6bd7ac4](https://github.com/lmc-eu/cookie-consent-manager/commit/6bd7ac4))
+
+### Styles
+
+- Always define types before use and do not warn for unused vars in exported types ([05d7ce6](https://github.com/lmc-eu/cookie-consent-manager/commit/05d7ce6))
+- Fix enum definition which breaks eslint ([8842da9](https://github.com/lmc-eu/cookie-consent-manager/commit/8842da9)), closes [#issuecomment-1599432772](https://jira.int.lmc.cz/browse/issuecomment-1599432772)
+- Fix errors detected by @lmc-eu/eslint-config-typescript rules ([cb4da09](https://github.com/lmc-eu/cookie-consent-manager/commit/cb4da09))
+- Fix various eslint warnings and errors ([0082e41](https://github.com/lmc-eu/cookie-consent-manager/commit/0082e41))
+- Optimize imports and minor codestyle improvements ([b467d03](https://github.com/lmc-eu/cookie-consent-manager/commit/b467d03))
+- Replace concatenation with string templates ([27a87ed](https://github.com/lmc-eu/cookie-consent-manager/commit/27a87ed))
+- Use object property shorthand ([c3de7fd](https://github.com/lmc-eu/cookie-consent-manager/commit/c3de7fd))
+
+
 <a name="2.5.0"></a>
 # [2.5.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.4.1...2.5.0) (2024-01-11)
 
