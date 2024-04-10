@@ -12,9 +12,9 @@ import {
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
 import { assembleLanguagesConfig } from './languages/loader';
 
-/* eslint-disable-next-line no-unused-vars */
+/* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
-/* eslint-disable-next-line no-unused-vars */
+/* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
 const noopChangeCallback: OnChangeCallback = (cookieConsent, categories) => {};
 
 const defaultOptions: CookieConsentManagerOptions = {
