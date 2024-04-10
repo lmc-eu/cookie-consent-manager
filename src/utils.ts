@@ -1,7 +1,7 @@
 import { CookieConsentCategoryValues, CookieTableCategories, Values, VanillaCookieConsent } from './types';
 import { CookieConsentCategory, SecondaryButtonMode } from './constants';
 
-export const addSeparators = (strings: string[], and: string = ''): string =>
+export const addSeparators = (strings: string[], and = ''): string =>
   strings.reduce((accumulator: string, string: string, i: number) => {
     if (i === 0) {
       return `${accumulator}${string}`;
