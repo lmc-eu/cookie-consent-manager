@@ -1,7 +1,8 @@
 {
   "extends": [
     "config:base",
-    ":pinOnlyDevDependencies"
+    ":pinOnlyDevDependencies",
+    "helpers:pinGitHubActionDigests"
   ],
   "ignorePresets": [
     "group:monorepos",
@@ -9,7 +10,7 @@
     ":prHourlyLimit2"
   ],
   "baseBranches": ["release/v3"],
-  "enabledManagers": ["npm"],
+  "enabledManagers": ["npm", "github-actions"],
   "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
   "labels": ["dependencies"],
@@ -18,6 +19,7 @@
     {
       "groupName": "major prod dependencies",
       "groupSlug": "major-prod",
+      "matchManagers": ["npm"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["major"],
       "matchDepTypes": ["dependencies"]
@@ -25,6 +27,7 @@
     {
       "groupName": "non-major prod dependencies",
       "groupSlug": "non-major-prod",
+      "matchManagers": ["npm"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "matchDepTypes": ["dependencies"]
@@ -33,11 +36,13 @@
       "groupName": "all dev dependencies",
       "groupSlug": "all-dev",
       "separateMajorMinor": false,
+      "matchManagers": ["npm"],
       "matchPackagePatterns": ["*"],
       "matchDepTypes": ["devDependencies"]
     },
     {
       "groupName": "NanoID with CJS support",
+      "matchManagers": ["npm"],
       "matchPackageNames": ["nanoid"],
       "allowedVersions": "<4"
     },
@@ -48,6 +53,7 @@
     },
     {
       "groupName": "CookieConsent frozen to 2.8.0 or major version",
+      "matchManagers": ["npm"],
       "matchPackageNames": ["vanilla-cookieconsent"],
       "allowedVersions": "<=2.8.0 || >=3.0.0"
     }
