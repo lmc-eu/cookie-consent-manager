@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         example: [webpack-with-cjs, webpack-with-esm, webpack-with-typescript]
-        node-version: [16, 18, 20]
+        node-version: [18, 20]
 
     steps:
       - name: Checkout
