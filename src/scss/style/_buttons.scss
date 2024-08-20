@@ -29,9 +29,9 @@ $_consent-modal-button-selector: '#cm .c-bn' !default;
 #s-bns .c-bn {
     overflow: hidden;
     font-weight: var(--lmcccm-p-btn-font-weight);
-    white-space: nowrap;
     text-overflow: ellipsis;
     text-transform: var(--lmcccm-p-btn-text-transform);
+    white-space: nowrap;
     border-style: var(--lmcccm-p-btn-border-style);
 }
 
@@ -41,19 +41,19 @@ $_consent-modal-button-selector: '#cm .c-bn' !default;
 #c-bns:not(.swap) .c-bn:last-child,
 #s-bns .c-bn {
     color: var(--lmcccm-p-btn-secondary-text);
-    background-color: var(--lmcccm-p-btn-secondary-bg);
     border-color: var(--lmcccm-p-btn-secondary-border);
+    background-color: var(--lmcccm-p-btn-secondary-bg);
 
     &:hover {
         color: var(--lmcccm-p-btn-secondary-hover-text);
-        background-color: var(--lmcccm-p-btn-secondary-hover-bg);
         border-color: var(--lmcccm-p-btn-secondary-hover-border);
+        background-color: var(--lmcccm-p-btn-secondary-hover-bg);
     }
 
     &:active {
         color: var(--lmcccm-p-btn-secondary-active-text);
-        background-color: var(--lmcccm-p-btn-secondary-active-bg);
         border-color: var(--lmcccm-p-btn-secondary-active-border);
+        background-color: var(--lmcccm-p-btn-secondary-active-bg);
     }
 }
 
@@ -62,19 +62,19 @@ $_consent-modal-button-selector: '#cm .c-bn' !default;
 #c-bns:not(.swap) .c-bn:first-child,
 #s-bns .c-bn:first-child {
     color: var(--lmcccm-p-btn-primary-text);
-    background: var(--lmcccm-p-btn-primary-bg);
     border-color: var(--lmcccm-p-btn-primary-border);
+    background: var(--lmcccm-p-btn-primary-bg);
 
     &:hover {
         color: var(--lmcccm-p-btn-primary-hover-text);
-        background: var(--lmcccm-p-btn-primary-hover-bg);
         border-color: var(--lmcccm-p-btn-primary-hover-border);
+        background: var(--lmcccm-p-btn-primary-hover-bg);
     }
 
     &:active {
         color: var(--lmcccm-p-btn-primary-active-text);
-        background: var(--lmcccm-p-btn-primary-active-bg);
         border-color: var(--lmcccm-p-btn-primary-active-border);
+        background: var(--lmcccm-p-btn-primary-active-bg);
     }
 }
 

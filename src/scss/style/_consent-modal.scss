@@ -3,12 +3,12 @@
 @use '../tools/units';
 
 #cm {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     max-width: settings.$consent-box-max-width;
     max-height: calc(100vh - #{units.convert2em(tokens.$space-800)});
     padding: units.convert2em(tokens.$space-800);
+    overflow-y: auto;
     box-shadow: tokens.$shadow-100;
+    -webkit-overflow-scrolling: touch;
 }
 
 #cm.box,
@@ -44,14 +44,14 @@
 
 #cm.box #c-bns .c-bn,
 #cm.bar #c-bns .c-bn {
-    width: auto;
     flex: none;
+    width: auto;
 }
 
 #cm.cloud {
-    overflow-y: auto;
     max-width: settings.$consent-cloud-max-width;
     padding: units.convert2em(tokens.$space-900) units.convert2em(tokens.$space-1000);
+    overflow-y: auto;
 }
 
 .cc_div #c-bns {
