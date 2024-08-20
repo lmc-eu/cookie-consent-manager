@@ -47,11 +47,6 @@
       "allowedVersions": "<4"
     },
     {
-      "groupName": "Stylelint Config before reordering",
-      "matchPackageNames": ["@lmc-eu/stylelint-config"],
-      "allowedVersions": "<5"
-    },
-    {
       "groupName": "CookieConsent frozen to 2.8.0 or major version",
       "matchManagers": ["npm"],
       "matchPackageNames": ["vanilla-cookieconsent"],
