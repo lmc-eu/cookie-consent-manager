@@ -1,6 +1,7 @@
 {
   "extends": [
-    "@almacareer/stylelint-config"
+    "@almacareer/stylelint-config",
+    "stylelint-prettier/recommended"
   ],
   "rules": {
     "no-descending-specificity": null,

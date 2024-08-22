@@ -40,13 +40,16 @@ export const assembleLanguagesConfig = (
   secondaryButtonMode: string,
   cookieTable: CookieTable,
 ): Record<string, VanillaCookieConsent.Languages> =>
-  Object.entries(languagesMap).reduce((languagesConfig, [code, configFunction]) => {
-    languagesConfig[code] = configFunction(
-      { companyNames, ...translationOverrides[code] },
-      secondaryButtonMode,
-      cookieTable[code] || {},
-    );
+  Object.entries(languagesMap).reduce(
+    (languagesConfig, [code, configFunction]) => {
+      languagesConfig[code] = configFunction(
+        { companyNames, ...translationOverrides[code] },
+        secondaryButtonMode,
+        cookieTable[code] || {},
+      );
 
-    return languagesConfig;
-  }, {} as Record<string, VanillaCookieConsent.Languages>);
+      return languagesConfig;
+    },
+    {} as Record<string, VanillaCookieConsent.Languages>,
+  );
 /* eslint-enable no-param-reassign */
