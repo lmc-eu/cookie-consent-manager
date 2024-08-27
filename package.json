@@ -90,7 +90,7 @@
     "@lmc-eu/eslint-config-base": "3.1.2",
     "@lmc-eu/prettier-config": "2.0.1",
     "@types/jest": "29.5.12",
-    "@types/node": "18.11.11",
+    "@types/node": "20.16.1",
     "@typescript-eslint/eslint-plugin": "8.3.0",
     "@typescript-eslint/parser": "8.3.0",
     "autoprefixer": "10.4.20",
