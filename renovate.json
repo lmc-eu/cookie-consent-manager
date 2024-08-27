@@ -41,6 +41,13 @@
       "matchDepTypes": ["devDependencies"]
     },
     {
+      "groupName": "Froze eslint on ^8",
+      "description": "Lock eslint on ^8 until @lmc-eu/eslint-config-base is compatible with eslint 9",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["eslint"],
+      "allowedVersions": "^8"
+    },
+    {
       "groupName": "NanoID with CJS support",
       "matchManagers": ["npm"],
       "matchPackageNames": ["nanoid"],
