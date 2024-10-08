@@ -13,12 +13,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "LmcCookieConsentManager.cjs",
-  "module": "LmcCookieConsentManager.mjs",
-  "browser": {
-    "./LmcCookieConsentManager.js": "./LmcCookieConsentManager.js",
-    "./LmcCookieConsentManager.cjs": "./LmcCookieConsentManager.cjs",
-    "./LmcCookieConsentManager.mjs": "./LmcCookieConsentManager.mjs"
+  "exports": {
+    ".": {
+      "import": "./LmcCookieConsentManager.mjs",
+      "default": "./LmcCookieConsentManager.js"
+    }
   },
   "types": "./LmcCookieConsentManager.d.ts",
   "repository": {
