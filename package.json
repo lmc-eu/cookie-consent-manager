@@ -54,7 +54,7 @@
     "build:clean": "rm -rf dist && mkdir -p dist/scss",
     "build:copy": "cp package.json README.md src/LmcCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
     "build": "npm-run-all --serial js css",
-    "serve": "ts-node scripts/serve.ts",
+    "serve": "vite --config ./config/vite.config.init.ts",
     "start": "npm-run-all --parallel serve css:watch",
     "format": "yarn format:check",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,scss}' 'scripts/*'",
