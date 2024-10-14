@@ -48,6 +48,13 @@
       "allowedVersions": "^8"
     },
     {
+      "groupName": "Froze esbuild on ^0.16",
+      "description": "Temporarily lock esbuild on ^0.16 to keep old serve() API",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["esbuild"],
+      "allowedVersions": "^16"
+    },
+    {
       "groupName": "NanoID with CJS support",
       "matchManagers": ["npm"],
       "matchPackageNames": ["nanoid"],
