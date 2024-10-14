@@ -180,5 +180,4 @@ function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCatego
   });
 }
 
-export default LmcCookieConsentManager;
-export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent };
+export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent, LmcCookieConsentManager };
