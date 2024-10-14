@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*!
+ * Alma Career Cookie Consent Manager
+ * Copyright 2021–2024 Alma Career Czechia s.r.o.
+ * Licensed under MIT (https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md)
+ */
 /** Light color-scheme **/
 :root {
   --cc-bg: #fff;
@@ -109,7 +114,6 @@
 .cc_div input,
 .cc_div button,
 .cc_div a {
-  -webkit-appearance: none;
   appearance: none;
 }
 
@@ -1466,9 +1470,10 @@ html.force--consent.show--consent body {
 }
 
 .cc_div {
-  font-family: var(--lmcccm-p-font-family);
   font-size: var(--lmcccm-p-base-font-size);
   line-height: 1.5;
+  font-family: var(--lmcccm-p-font-family);
+  /* stylelint-disable selector-max-universal, selector-nested-pattern */
 }
 .cc_div *, .cc_div::after, .cc_div::before {
   line-height: 1.5;
@@ -1542,9 +1547,9 @@ html.force--consent.show--consent body {
 #s-bns .c-bn {
   overflow: hidden;
   font-weight: var(--lmcccm-p-btn-font-weight);
-  white-space: nowrap;
   text-overflow: ellipsis;
   text-transform: var(--lmcccm-p-btn-text-transform);
+  white-space: nowrap;
   border-style: var(--lmcccm-p-btn-border-style);
 }
 
@@ -1553,46 +1558,46 @@ html.force--consent.show--consent body {
 #c-bns:not(.swap) .c-bn:last-child,
 #s-bns .c-bn {
   color: var(--lmcccm-p-btn-secondary-text);
-  background-color: var(--lmcccm-p-btn-secondary-bg);
   border-color: var(--lmcccm-p-btn-secondary-border);
+  background-color: var(--lmcccm-p-btn-secondary-bg);
 }
 #cm .c-bn:hover,
 #c-bns.swap .c-bn:first-child:hover,
 #c-bns:not(.swap) .c-bn:last-child:hover,
 #s-bns .c-bn:hover {
   color: var(--lmcccm-p-btn-secondary-hover-text);
-  background-color: var(--lmcccm-p-btn-secondary-hover-bg);
   border-color: var(--lmcccm-p-btn-secondary-hover-border);
+  background-color: var(--lmcccm-p-btn-secondary-hover-bg);
 }
 #cm .c-bn:active,
 #c-bns.swap .c-bn:first-child:active,
 #c-bns:not(.swap) .c-bn:last-child:active,
 #s-bns .c-bn:active {
   color: var(--lmcccm-p-btn-secondary-active-text);
-  background-color: var(--lmcccm-p-btn-secondary-active-bg);
   border-color: var(--lmcccm-p-btn-secondary-active-border);
+  background-color: var(--lmcccm-p-btn-secondary-active-bg);
 }
 
 #c-bns.swap .c-bn:last-child,
 #c-bns:not(.swap) .c-bn:first-child,
 #s-bns .c-bn:first-child {
   color: var(--lmcccm-p-btn-primary-text);
-  background: var(--lmcccm-p-btn-primary-bg);
   border-color: var(--lmcccm-p-btn-primary-border);
+  background: var(--lmcccm-p-btn-primary-bg);
 }
 #c-bns.swap .c-bn:last-child:hover,
 #c-bns:not(.swap) .c-bn:first-child:hover,
 #s-bns .c-bn:first-child:hover {
   color: var(--lmcccm-p-btn-primary-hover-text);
-  background: var(--lmcccm-p-btn-primary-hover-bg);
   border-color: var(--lmcccm-p-btn-primary-hover-border);
+  background: var(--lmcccm-p-btn-primary-hover-bg);
 }
 #c-bns.swap .c-bn:last-child:active,
 #c-bns:not(.swap) .c-bn:first-child:active,
 #s-bns .c-bn:first-child:active {
   color: var(--lmcccm-p-btn-primary-active-text);
-  background: var(--lmcccm-p-btn-primary-active-bg);
   border-color: var(--lmcccm-p-btn-primary-active-border);
+  background: var(--lmcccm-p-btn-primary-active-bg);
 }
 
 #c-bns .c-bn + .c-bn,
@@ -1612,6 +1617,7 @@ html.force--consent.show--consent body {
   margin-left: 0;
 }
 
+/* stylelint-disable selector-no-qualifying-type */
 .cc_div .b-tg,
 .cc_div .b-tg .c-tg,
 .cc_div .b-tg .c-tgl,
@@ -1623,17 +1629,18 @@ html.force--consent.show--consent body {
   transform: translateX(1.5em);
 }
 
+/* stylelint-disable selector-id-pattern */
 #cc--main {
   z-index: 2147483647 !important;
 }
 
 #cm {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   max-width: 40em;
   max-height: calc(100vh - 2em);
   padding: 2em;
+  overflow-y: auto;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1490196078);
+  -webkit-overflow-scrolling: touch;
 }
 
 #cm.box,
@@ -1669,14 +1676,14 @@ html.force--consent.show--consent body {
 
 #cm.box #c-bns .c-bn,
 #cm.bar #c-bns .c-bn {
-  width: auto;
   flex: none;
+  width: auto;
 }
 
 #cm.cloud {
-  overflow-y: auto;
   max-width: 68em;
   padding: 2.5em 3em;
+  overflow-y: auto;
 }
 
 .cc_div #c-bns {
@@ -1822,9 +1829,9 @@ html.force--consent.show--consent body {
   margin-right: -0.4em;
   font-size: 1.8em;
   color: inherit;
-  background-color: transparent;
   border: none;
   border-radius: 0;
+  background-color: transparent;
 }
 #s-c-bn::before, #s-c-bn::after {
   width: 2.5px;
@@ -1862,8 +1869,8 @@ html.force--consent.show--consent body {
 
 #s-cnt .b-bn .b-tl {
   padding: 1em 5em 1em 3.25em;
-  font-size: 1em;
   font-weight: 400;
+  font-size: 1em;
   line-height: 1.5;
 }
 
@@ -1872,11 +1879,5 @@ html.force--consent.show--consent body {
   top: 48%;
   border-color: inherit;
 }
-
-/*!
- * Alma Career Cookie Consent Manager
- * Copyright 2021–2024 Alma Career Czechia s.r.o.
- * Licensed under MIT (https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md)
- */
 
 /*# sourceMappingURL=LmcCookieConsentManager.css.map */
