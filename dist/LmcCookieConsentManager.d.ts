@@ -26,5 +26,4 @@ import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './const
  *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
  */
 declare const LmcCookieConsentManager: CookieConsentManager;
-export default LmcCookieConsentManager;
-export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent };
+export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent, LmcCookieConsentManager };
