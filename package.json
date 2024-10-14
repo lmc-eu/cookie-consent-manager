@@ -16,7 +16,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./LmcCookieConsentManager.mjs",
+      "import": "./LmcCookieConsentManager.js",
       "default": "./LmcCookieConsentManager.js"
     }
   },
@@ -45,7 +45,7 @@
     "js": "npm-run-all --serial js:compile js:compile:types",
     "js:lint": "eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
-    "js:compile": "ts-node scripts/build.ts",
+    "js:compile": "vite build --config ./config/vite.config.lib.ts && vite build --config ./config/vite.config.init.ts",
     "js:compile:types": "tsc -p ./tsconfig.build.json --outDir ./dist",
     "lint": "npm-run-all --serial js:lint css:lint lint:commit",
     "lint:commit": "yarn commitlint --from $(git describe --always --first-parent) --verbose",
@@ -115,7 +115,9 @@
     "stylelint-prettier": "5.0.2",
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
-    "typescript": "5.6.2"
+    "typescript": "5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4"
   },
   "prettier": "@lmc-eu/prettier-config"
 }
