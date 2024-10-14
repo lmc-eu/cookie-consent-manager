@@ -1,4 +1,4 @@
-import LmcCookieConsentManager from './LmcCookieConsentManager';
+import { LmcCookieConsentManager } from './LmcCookieConsentManager';
 
 (function initialize() {
   const init = 'initLmcCookieConsentManager';

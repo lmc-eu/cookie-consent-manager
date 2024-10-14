@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import LmcCookieConsentManager, { DisplayMode, SecondaryButtonMode } from '@lmc-eu/cookie-consent-manager';
+import { LmcCookieConsentManager, DisplayMode, SecondaryButtonMode } from '@lmc-eu/cookie-consent-manager';
 
 const ccmArgs = {
   displayMode: DisplayMode.SOFT,
