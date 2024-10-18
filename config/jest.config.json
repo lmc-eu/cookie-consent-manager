@@ -12,5 +12,6 @@
     "/node_modules/",
     "/dist/"
   ],
+  "testEnvironment": "jsdom",
   "modulePathIgnorePatterns": ["<rootDir>/dist"]
 }
