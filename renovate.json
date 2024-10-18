@@ -48,12 +48,6 @@
       "allowedVersions": "^8"
     },
     {
-      "groupName": "NanoID with CJS support",
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["nanoid"],
-      "allowedVersions": "<4"
-    },
-    {
       "groupName": "CookieConsent frozen to 2.8.0 or major version",
       "matchManagers": ["npm"],
       "matchPackageNames": ["vanilla-cookieconsent"],
