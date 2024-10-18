@@ -11,6 +11,7 @@ import {
 } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
 import { assembleLanguagesConfig } from './languages/loader';
+import { pushToDataLayer } from './dataLayer';
 
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
 const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
@@ -166,18 +167,5 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
 
   return cookieConsent;
 };
-
-function pushToDataLayer(cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>) {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'CookieConsent-update',
-    'CookieConsent.necessary': cookie.level.includes(CookieConsentCategory.NECESSARY),
-    'CookieConsent.analytics': cookie.level.includes(CookieConsentCategory.ANALYTICS),
-    'CookieConsent.ad': cookie.level.includes(CookieConsentCategory.AD),
-    'CookieConsent.functionality': cookie.level.includes(CookieConsentCategory.FUNCTIONALITY),
-    'CookieConsent.personalization': cookie.level.includes(CookieConsentCategory.PERSONALIZATION),
-    'CookieConsent.revision': cookie.revision,
-  });
-}
 
 export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent, LmcCookieConsentManager };
