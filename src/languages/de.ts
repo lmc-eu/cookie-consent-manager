@@ -1,17 +1,14 @@
 import {
   addSeparators,
-  assembleCategoryAd,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values } from '../types';
 import { SecondaryButtonMode } from '../constants';
+import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
   and: 'und',
@@ -22,17 +19,22 @@ const extra = {
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {Translation} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   cookieTable: CookieTableCategories,
-): VanillaCookieConsent.Languages => {
+): Translation => {
   const lang = { ...extra, ...extraMessages };
+  const cookieTableHeaders = {
+    name: 'Unternehmensbezeichnung',
+    description: 'Beschreibung',
+    expiration: 'Verfallsdatum',
+  };
 
   return {
-    consent_modal: {
+    consentModal: {
       title: lang.consentTitle ?? 'Diese Website verwendet Cookies',
       description: `
       ${assembleDescriptionIntro(
@@ -45,31 +47,19 @@ export const config = (
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="c-settings">eigenen Einstellungen</a></strong> anpassen.`
+            ? `Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="show-preferencesModal">eigenen Einstellungen</a></strong> anpassen.`
             : ''
         }
       </p>`,
-      primary_btn: {
-        text: 'Alles akzeptieren',
-        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-      },
-      secondary_btn: assembleSecondaryButton(
-        secondaryButtonMode,
-        'Das Notwendigste akzeptieren',
-        'Eigene Einstellungen',
-      ),
+      acceptAllBtn: 'Alles akzeptieren',
+      ...assembleSecondaryButton(secondaryButtonMode, 'Das Notwendigste akzeptieren', 'Eigene Einstellungen'),
     },
-    settings_modal: {
+    preferencesModal: {
       title: 'Benutzerdefinierte Cookie-Einstellungen',
-      accept_all_btn: 'Alles akzeptieren',
-      reject_all_btn: 'Das Notwendigste akzeptieren',
-      save_settings_btn: 'Einstellungen speichern',
-      cookie_table_headers: [
-        { name: 'Unternehmensbezeichnung' },
-        { description: 'Beschreibung' },
-        { expiration: 'Verfallsdatum' },
-      ],
-      blocks: [
+      acceptAllBtn: 'Alles akzeptieren',
+      acceptNecessaryBtn: 'Das Notwendigste akzeptieren',
+      savePreferencesBtn: 'Einstellungen speichern',
+      sections: [
         {
           description: `Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
             ${
@@ -77,29 +67,35 @@ export const config = (
               `Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten, finden Sie in unsere <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.`
             }`,
         },
-        assembleCategoryNecessary(
-          'Technisch notwendige Cookies',
-          'Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.',
-          cookieTable,
-        ),
-        assembleCategoryAnalytics(
-          'Analytische Cookies',
-          'Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.',
-          cookieTable,
-        ),
-        assembleCategoryFunctionality(
-          'Funktionale Cookies',
-          'Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.',
-          cookieTable,
-        ),
-        assembleCategoryAd(
-          'Marketing Cookies',
-          'Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.',
-          cookieTable,
-        ),
-        assembleCategoryPersonalization(
-          'Personalisierung Cookies',
-          'Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.',
+        ...assembleCookieTableSections(
+          cookieTableHeaders,
+          {
+            necessary: {
+              title: 'Technisch notwendige Cookies',
+              description:
+                'Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.',
+            },
+            analytics: {
+              title: 'Analytische Cookies',
+              description:
+                'Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.',
+            },
+            functionality: {
+              title: 'Funktionale Cookies',
+              description:
+                'Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.',
+            },
+            ad: {
+              title: 'Marketing Cookies',
+              description:
+                'Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.',
+            },
+            personalization: {
+              title: 'Personalisierung Cookies',
+              description:
+                'Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.',
+            },
+          },
           cookieTable,
         ),
       ],

@@ -1,18 +1,15 @@
 import {
   addSeparators,
-  assembleCategoryAd,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values } from '../types';
 import { SecondaryButtonMode } from '../constants';
+import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
   and: 'i',
@@ -25,17 +22,18 @@ const extra = {
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {Translation} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   cookieTable: CookieTableCategories,
-): VanillaCookieConsent.Languages => {
+): Translation => {
   const lang = { ...extra, ...extraMessages };
+  const cookieTableHeaders = { name: 'Nazwa', description: 'Opis', expiration: 'Ważność (Do)' };
 
   return {
-    consent_modal: {
+    consentModal: {
       title: lang.consentTitle ?? 'Dzięki plikom Cookies nasza strona będzie jeszcze lepsza',
       description: `
       ${assembleDescriptionIntro(
@@ -49,23 +47,19 @@ export const config = (
         do personalizacji, analizy i ukierunkowanego marketingu.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Korzystanie z plików cookies możesz dostosować we <strong><a href="" data-cc="c-settings">własnych ustawieniach</a></strong>.`
+            ? `Korzystanie z plików cookies możesz dostosować we <strong><a href="" data-cc="show-preferencesModal">własnych ustawieniach</a></strong>.`
             : ''
         }
       </p>`,
-      primary_btn: {
-        text: 'Akceptuj wszystkie',
-        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-      },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Akceptuj niezbędne', 'Własne ustawienia'),
+      acceptAllBtn: 'Akceptuj wszystkie',
+      ...assembleSecondaryButton(secondaryButtonMode, 'Akceptuj niezbędne', 'Własne ustawienia'),
     },
-    settings_modal: {
+    preferencesModal: {
       title: 'Własne ustawienia plików cookies',
-      accept_all_btn: 'Akceptuj wszystkie',
-      reject_all_btn: 'Akceptuj niezbędne',
-      save_settings_btn: 'Zapisz ustawienia',
-      cookie_table_headers: [{ name: 'Nazwa' }, { description: 'Opis' }, { expiration: 'Ważność (Do)' }],
-      blocks: [
+      acceptAllBtn: 'Akceptuj wszystkie',
+      acceptNecessaryBtn: 'Akceptuj niezbędne',
+      savePreferencesBtn: 'Zapisz ustawienia',
+      sections: [
         {
           description: `Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
             ${
@@ -73,29 +67,35 @@ export const config = (
               `Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.`
             }`,
         },
-        assembleCategoryNecessary(
-          'Technicznie niezbędne pliki cookies',
-          'Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.',
-          cookieTable,
-        ),
-        assembleCategoryAnalytics(
-          'Analityczne pliki cookies',
-          'Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.',
-          cookieTable,
-        ),
-        assembleCategoryFunctionality(
-          'Funkcjonalne pliki cookies',
-          'Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.',
-          cookieTable,
-        ),
-        assembleCategoryAd(
-          'Marketingowe pliki cookies',
-          'Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.',
-          cookieTable,
-        ),
-        assembleCategoryPersonalization(
-          'Personalizacyjne pliki cookies',
-          'Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.',
+        ...assembleCookieTableSections(
+          cookieTableHeaders,
+          {
+            necessary: {
+              title: 'Technicznie niezbędne pliki cookies',
+              description:
+                'Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.',
+            },
+            analytics: {
+              title: 'Analityczne pliki cookies',
+              description:
+                'Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.',
+            },
+            functionality: {
+              title: 'Funkcjonalne pliki cookies',
+              description:
+                'Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.',
+            },
+            ad: {
+              title: 'Marketingowe pliki cookies',
+              description:
+                'Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.',
+            },
+            personalization: {
+              title: 'Personalizacyjne pliki cookies',
+              description:
+                'Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.',
+            },
+          },
           cookieTable,
         ),
       ],

@@ -13,7 +13,8 @@ import { config as configRu } from './ru';
 import { config as configSk } from './sk';
 import { config as configSl } from './sl';
 import { config as configUk } from './uk';
-import { CookieTable, TranslationOverride, VanillaCookieConsent } from '../types';
+import { CookieTable, TranslationOverride } from '../types';
+import { Translation } from 'vanilla-cookieconsent';
 
 const languagesMap = {
   bs: configBs,
@@ -34,12 +35,12 @@ const languagesMap = {
 };
 
 /* eslint-disable no-param-reassign */
-export const assembleLanguagesConfig = (
+export const assembleTranslationsConfig = (
   companyNames: string[],
   translationOverrides: Record<string, TranslationOverride>,
   secondaryButtonMode: string,
   cookieTable: CookieTable,
-): Record<string, VanillaCookieConsent.Languages> =>
+): Record<string, Translation> =>
   Object.entries(languagesMap).reduce(
     (languagesConfig, [code, configFunction]) => {
       languagesConfig[code] = configFunction(
@@ -50,6 +51,6 @@ export const assembleLanguagesConfig = (
 
       return languagesConfig;
     },
-    {} as Record<string, VanillaCookieConsent.Languages>,
+    {} as Record<string, Translation>,
   );
 /* eslint-enable no-param-reassign */
