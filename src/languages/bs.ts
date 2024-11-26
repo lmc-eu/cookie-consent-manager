@@ -1,18 +1,15 @@
 import {
   addSeparators,
-  assembleCategoryAd,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values } from '../types';
 import { SecondaryButtonMode } from '../constants';
+import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
   and: 'i',
@@ -25,17 +22,18 @@ const extra = {
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {Translation} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   cookieTable: CookieTableCategories,
-): VanillaCookieConsent.Languages => {
+): Translation => {
   const lang = { ...extra, ...extraMessages };
+  const cookieTableHeaders = { name: 'Naziv', description: 'Opis', expiration: 'Isticanje' };
 
   return {
-    consent_modal: {
+    consentModal: {
       title: lang.consentTitle ?? 'Kolačići čine našu stranicu još boljom',
       description: `
       ${assembleDescriptionIntro(
@@ -49,23 +47,19 @@ export const config = (
         svoju saglasnost za korištenje kolačića za personalizaciju, analitiku i ciljani marketing.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="c-settings">prilagođenim postavkama</a></strong>.`
+            ? `Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="show-preferencesModal">prilagođenim postavkama</a></strong>.`
             : ''
         }
       </p>`,
-      primary_btn: {
-        text: 'Prihvati sve',
-        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-      },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Prihvatiti neophodno', 'Prilagođenim postavkama'),
+      acceptAllBtn: 'Prihvati sve',
+      ...assembleSecondaryButton(secondaryButtonMode, 'Prihvatiti neophodno', 'Prilagođenim postavkama'),
     },
-    settings_modal: {
+    preferencesModal: {
       title: 'Prilagođenim postavkama kolačića',
-      accept_all_btn: 'Prihvati sve',
-      reject_all_btn: 'Prihvatiti neophodno',
-      save_settings_btn: 'Sačuvaj postavke',
-      cookie_table_headers: [{ name: 'Naziv' }, { description: 'Opis' }, { expiration: 'Isticanje' }],
-      blocks: [
+      acceptAllBtn: 'Prihvati sve',
+      acceptNecessaryBtn: 'Prihvatiti neophodno',
+      savePreferencesBtn: 'Sačuvaj postavke',
+      sections: [
         {
           description: `Ako želite da izvučete maksimum iz naše web stranice, najbolje je dozvoliti sve vrste kolačića.
             ${
@@ -73,29 +67,35 @@ export const config = (
               `Više informacija o tome šta su kolačići i kako radimo s njima možete pronaći na stranici <a href="https://www.almacareer.com/gdpr" target="_blank">Politika privatnosti</a>.`
             }`,
         },
-        assembleCategoryNecessary(
-          'Tehnički potrebni kolačići',
-          'Ovi kolačići su neophodni za pravilno funkcioniranje naše web stranice i stoga se ne mogu onemogućiti. Bez njih ne bi bilo moguće npr. za prikaz bilo kojeg sadržaja ili za prijavu na našu web stranicu.',
-          cookieTable,
-        ),
-        assembleCategoryAnalytics(
-          'Analitički kolačići',
-          'To nam pomaže da pratimo koliko ljudi posjeti našu web stranicu i kako je koriste. Ove informacije nam zatim omogućavaju da kontinuirano poboljšavamo web stranicu i druge usluge.',
-          cookieTable,
-        ),
-        assembleCategoryFunctionality(
-          'Funkcionalni kolačići',
-          'Naša web stranica je još efikasnija i radi bolje zahvaljujući ovim kolačićima. Na primjer, omogućavaju nam korištenje usluge chata i brzo i jednostavno odgovaranje na vaša pitanja.',
-          cookieTable,
-        ),
-        assembleCategoryAd(
-          'Marketinški kolačići',
-          'Ovi kolačići nam pomažu da izmjerimo učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketinški kolačići nam omogućavaju da vam donesemo vijesti koje bi vas mogle zanimati na Internetu.',
-          cookieTable,
-        ),
-        assembleCategoryPersonalization(
-          'Kolačići za personalizaciju',
-          'Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem kolačića za personalizaciju povećavate svoje šanse da pronađete sadržaj koji želite.',
+        ...assembleCookieTableSections(
+          cookieTableHeaders,
+          {
+            necessary: {
+              title: 'Tehnički potrebni kolačići',
+              description:
+                'Ovi kolačići su neophodni za pravilno funkcioniranje naše web stranice i stoga se ne mogu onemogućiti. Bez njih ne bi bilo moguće npr. za prikaz bilo kojeg sadržaja ili za prijavu na našu web stranicu.',
+            },
+            analytics: {
+              title: 'Analitički kolačići',
+              description:
+                'To nam pomaže da pratimo koliko ljudi posjeti našu web stranicu i kako je koriste. Ove informacije nam zatim omogućavaju da kontinuirano poboljšavamo web stranicu i druge usluge.',
+            },
+            functionality: {
+              title: 'Funkcionalni kolačići',
+              description:
+                'Naša web stranica je još efikasnija i radi bolje zahvaljujući ovim kolačićima. Na primjer, omogućavaju nam korištenje usluge chata i brzo i jednostavno odgovaranje na vaša pitanja.',
+            },
+            ad: {
+              title: 'Marketinški kolačići',
+              description:
+                'Ovi kolačići nam pomažu da izmjerimo učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketinški kolačići nam omogućavaju da vam donesemo vijesti koje bi vas mogle zanimati na Internetu.',
+            },
+            personalization: {
+              title: 'Kolačići za personalizaciju',
+              description:
+                'Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem kolačića za personalizaciju povećavate svoje šanse da pronađete sadržaj koji želite.',
+            },
+          },
           cookieTable,
         ),
       ],

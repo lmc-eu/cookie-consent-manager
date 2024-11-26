@@ -1,18 +1,15 @@
 import {
   addSeparators,
-  assembleCategoryAd,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values } from '../types';
 import { SecondaryButtonMode } from '../constants';
+import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
   and: 'a',
@@ -25,17 +22,18 @@ const extra = {
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {Translation} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   cookieTable: CookieTableCategories,
-): VanillaCookieConsent.Languages => {
+): Translation => {
   const lang = { ...extra, ...extraMessages };
+  const cookieTableHeaders = { name: 'Název', description: 'Popis', expiration: 'Platnost' };
 
   return {
-    consent_modal: {
+    consentModal: {
       title: lang.consentTitle ?? 'Díky Cookies budou naše stránky ještě lepší',
       description: `
       ${assembleDescriptionIntro(
@@ -49,23 +47,19 @@ export const config = (
         souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Další informace o Cookies a úpravu jejich používání naleznete ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.`
+            ? `Další informace o Cookies a úpravu jejich používání naleznete ve <strong><a href="" data-cc="show-preferencesModal">vlastním nastavení</a></strong>.`
             : ''
         }
       </p>`,
-      primary_btn: {
-        text: 'Přijmout všechny',
-        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-      },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Přijmout nezbytné', 'Vlastní nastavení'),
+      acceptAllBtn: 'Přijmout všechny',
+      ...assembleSecondaryButton(secondaryButtonMode, 'Přijmout nezbytné', 'Vlastní nastavení'),
     },
-    settings_modal: {
+    preferencesModal: {
       title: 'Přizpůsobit nastavení Cookies',
-      accept_all_btn: 'Přijmout všechny',
-      reject_all_btn: 'Přijmout nezbytné',
-      save_settings_btn: 'Uložit nastavení',
-      cookie_table_headers: [{ name: 'Název' }, { description: 'Popis' }, { expiration: 'Platnost' }],
-      blocks: [
+      acceptAllBtn: 'Přijmout všechny',
+      acceptNecessaryBtn: 'Přijmout nezbytné',
+      savePreferencesBtn: 'Uložit nastavení',
+      sections: [
         {
           description: `Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
             ${
@@ -73,29 +67,35 @@ export const config = (
               `Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`
             }`,
         },
-        assembleCategoryNecessary(
-          'Technicky nezbytné Cookies',
-          'Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.',
-          cookieTable,
-        ),
-        assembleCategoryAnalytics(
-          'Analytické Cookies',
-          'Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.',
-          cookieTable,
-        ),
-        assembleCategoryFunctionality(
-          'Funkční Cookies',
-          'Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.',
-          cookieTable,
-        ),
-        assembleCategoryAd(
-          'Marketingové Cookies',
-          'S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.',
-          cookieTable,
-        ),
-        assembleCategoryPersonalization(
-          'Personalizační Cookies',
-          'Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.',
+        ...assembleCookieTableSections(
+          cookieTableHeaders,
+          {
+            necessary: {
+              title: 'Technicky nezbytné Cookies',
+              description:
+                'Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.',
+            },
+            analytics: {
+              title: 'Analytické Cookies',
+              description:
+                'Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.',
+            },
+            functionality: {
+              title: 'Funkční Cookies',
+              description:
+                'Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.',
+            },
+            ad: {
+              title: 'Marketingové Cookies',
+              description:
+                'S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.',
+            },
+            personalization: {
+              title: 'Personalizační Cookies',
+              description:
+                'Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.',
+            },
+          },
           cookieTable,
         ),
       ],

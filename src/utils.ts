@@ -1,5 +1,13 @@
-import { CookieConsentCategoryValues, CookieTableCategories, Values, VanillaCookieConsent } from './types';
+import { CookieConsentCategoryValues, CookieTableCategories, Values } from './types';
 import { CookieConsentCategory, SecondaryButtonMode } from './constants';
+
+type categoryTranslations = {
+  necessary: { title: string; description: string };
+  ad: { title: string; description: string };
+  analytics: { title: string; description: string };
+  functionality: { title: string; description: string };
+  personalization: { title: string; description: string };
+};
 
 export const addSeparators = (strings: string[], and = ''): string =>
   strings.reduce((accumulator: string, string: string, i: number) => {
@@ -38,85 +46,74 @@ export const assembleSecondaryButton = (
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   textAcceptNecessary: string,
   textShowSettings: string,
-): VanillaCookieConsent.ModalSecondaryButton => ({
-  text: secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY ? textAcceptNecessary : textShowSettings,
-  role:
-    secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY
-      ? VanillaCookieConsent.SecondaryButtonRole.ACCEPT_NECESSARY
-      : VanillaCookieConsent.SecondaryButtonRole.SETTINGS,
-});
+): { [key: string]: string } => {
+  if (secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY) {
+    return { acceptNecessaryBtn: textAcceptNecessary };
+  }
+  return { showPreferencesBtn: textShowSettings };
+};
 
 export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof SecondaryButtonMode>): boolean =>
   secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
 
+export const assembleCookieTableSections = (
+  headers: { [key: string]: string },
+  categoryTranslations: categoryTranslations,
+  cookieTable: CookieTableCategories,
+): CookieConsent.Section[] => {
+  return [
+    assembleCategoryBlock(
+      headers,
+      CookieConsentCategory.NECESSARY,
+      categoryTranslations.necessary.title,
+      categoryTranslations.necessary.description,
+      cookieTable[CookieConsentCategory.NECESSARY],
+    ),
+    assembleCategoryBlock(
+      headers,
+      CookieConsentCategory.AD,
+      categoryTranslations.ad.title,
+      categoryTranslations.ad.description,
+      cookieTable[CookieConsentCategory.AD],
+    ),
+    assembleCategoryBlock(
+      headers,
+      CookieConsentCategory.ANALYTICS,
+      categoryTranslations.analytics.title,
+      categoryTranslations.analytics.description,
+      cookieTable[CookieConsentCategory.ANALYTICS],
+    ),
+    assembleCategoryBlock(
+      headers,
+      CookieConsentCategory.FUNCTIONALITY,
+      categoryTranslations.functionality.title,
+      categoryTranslations.functionality.description,
+      cookieTable[CookieConsentCategory.FUNCTIONALITY],
+    ),
+    assembleCategoryBlock(
+      headers,
+      CookieConsentCategory.PERSONALIZATION,
+      categoryTranslations.personalization.title,
+      categoryTranslations.personalization.description,
+      cookieTable[CookieConsentCategory.PERSONALIZATION],
+    ),
+  ];
+};
+
 const assembleCategoryBlock = (
-  category: CookieConsentCategoryValues,
+  headers: { [key: string]: string },
+  linkedCategory: CookieConsentCategoryValues,
   title: string,
   description: string,
-  readonly: boolean,
-  cookieTableItems: VanillaCookieConsent.CookieTableItem[] | undefined,
-): VanillaCookieConsent.ModalBlock => ({
+  cookieTableItems: { [p: string]: string }[] | undefined,
+): CookieConsent.Section => ({
   title,
   description,
-  toggle: { value: category, enabled: readonly, readonly },
-  ...(typeof cookieTableItems !== 'undefined' && { cookie_table: cookieTableItems }),
+  linkedCategory,
+  ...(typeof cookieTableItems !== 'undefined' && {
+    cookieTable: {
+      headers: headers,
+      body: cookieTableItems,
+    },
+  }),
 });
-
-export const assembleCategoryNecessary = (
-  title: string,
-  description: string,
-  cookieTable: CookieTableCategories,
-): VanillaCookieConsent.ModalBlock =>
-  assembleCategoryBlock(
-    CookieConsentCategory.NECESSARY,
-    title,
-    description,
-    true,
-    cookieTable[CookieConsentCategory.NECESSARY],
-  );
-
-export const assembleCategoryAd = (
-  title: string,
-  description: string,
-  cookieTable: CookieTableCategories,
-): VanillaCookieConsent.ModalBlock =>
-  assembleCategoryBlock(CookieConsentCategory.AD, title, description, false, cookieTable[CookieConsentCategory.AD]);
-
-export const assembleCategoryAnalytics = (
-  title: string,
-  description: string,
-  cookieTable: CookieTableCategories,
-): VanillaCookieConsent.ModalBlock =>
-  assembleCategoryBlock(
-    CookieConsentCategory.ANALYTICS,
-    title,
-    description,
-    false,
-    cookieTable[CookieConsentCategory.ANALYTICS],
-  );
-
-export const assembleCategoryFunctionality = (
-  title: string,
-  description: string,
-  cookieTable: CookieTableCategories,
-): VanillaCookieConsent.ModalBlock =>
-  assembleCategoryBlock(
-    CookieConsentCategory.FUNCTIONALITY,
-    title,
-    description,
-    false,
-    cookieTable[CookieConsentCategory.FUNCTIONALITY],
-  );
-
-export const assembleCategoryPersonalization = (
-  title: string,
-  description: string,
-  cookieTable: CookieTableCategories,
-): VanillaCookieConsent.ModalBlock =>
-  assembleCategoryBlock(
-    CookieConsentCategory.PERSONALIZATION,
-    title,
-    description,
-    false,
-    cookieTable[CookieConsentCategory.PERSONALIZATION],
-  );
