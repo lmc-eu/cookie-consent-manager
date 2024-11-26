@@ -5,11 +5,7 @@ import {
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
-  assembleCategoryFunctionality,
-  assembleCategoryAnalytics,
-  assembleCategoryAd,
+  assembleCookieTableSections,
 } from '../utils';
 import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
 import { CookieTableCategories } from '../types';
@@ -77,16 +73,12 @@ describe('utils', () => {
     it('should assemble button values for acceptNecessary mode', () => {
       expect(
         assembleSecondaryButton(SecondaryButtonMode.ACCEPT_NECESSARY, 'accept necessary', 'show settings'),
-      ).toEqual({
-        role: 'accept_necessary',
-        text: 'accept necessary',
-      });
+      ).toEqual({ acceptNecessaryBtn: 'accept necessary' });
     });
 
     it('should assemble button values for showSettings mode', () => {
       expect(assembleSecondaryButton(SecondaryButtonMode.SHOW_SETTINGS, 'accept necessary', 'show settings')).toEqual({
-        role: 'settings',
-        text: 'show settings',
+        showPreferencesBtn: 'show settings',
       });
     });
   });
@@ -101,44 +93,115 @@ describe('utils', () => {
     });
   });
 
-  describe.each([
-    ['assembleCategoryNecessary', assembleCategoryNecessary, CookieConsentCategory.NECESSARY, true],
-    ['assembleCategoryAd', assembleCategoryAd, CookieConsentCategory.AD, false],
-    ['assembleCategoryAnalytics', assembleCategoryAnalytics, CookieConsentCategory.ANALYTICS, false],
-    ['assembleCategoryFunctionality', assembleCategoryFunctionality, CookieConsentCategory.FUNCTIONALITY, false],
-    ['assembleCategoryPersonalization', assembleCategoryPersonalization, CookieConsentCategory.PERSONALIZATION, false],
-  ])('%s', (category, assembleCategoryFunction, categoryValue, readonly) => {
-    it('should assemble modal category block without cookieTable', () => {
-      expect(assembleCategoryFunction('title', 'description', {})).toEqual({
-        title: 'title',
-        description: 'description',
-        toggle: { value: categoryValue, enabled: readonly, readonly },
-      });
+  describe('assembleCookieTableSections', () => {
+    it('should assemble cookie table sections with empty cookieTable', () => {
+      expect(
+        assembleCookieTableSections(
+          { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+          {
+            necessary: { title: 'necessary title', description: 'necessary description' },
+            ad: { title: 'ad title', description: 'ad description' },
+            analytics: { title: 'analytics title', description: 'analytics description' },
+            functionality: { title: 'functionality title', description: 'functionality description' },
+            personalization: { title: 'personalization title', description: 'personalization description' },
+          },
+          {},
+        ),
+      ).toEqual([
+        {
+          linkedCategory: CookieConsentCategory.NECESSARY,
+          title: 'necessary title',
+          description: 'necessary description',
+        },
+        {
+          linkedCategory: CookieConsentCategory.AD,
+          title: 'ad title',
+          description: 'ad description',
+        },
+        {
+          linkedCategory: CookieConsentCategory.ANALYTICS,
+          title: 'analytics title',
+          description: 'analytics description',
+        },
+        {
+          linkedCategory: CookieConsentCategory.FUNCTIONALITY,
+          title: 'functionality title',
+          description: 'functionality description',
+        },
+        {
+          linkedCategory: CookieConsentCategory.PERSONALIZATION,
+          title: 'personalization title',
+          description: 'personalization description',
+        },
+      ]);
     });
 
-    it('should assemble modal category block with cookieTable', () => {
-      const cookieTable: CookieTableCategories = {
-        [categoryValue]: [
+    it('should assemble cookie table sections with cookieTable', () => {
+      expect(
+        assembleCookieTableSections(
+          { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
           {
-            name: 'cookie1',
-            description: 'Description',
-            expiration: 'duration',
+            necessary: { title: 'necessary title', description: 'necessary description' },
+            ad: { title: 'ad title', description: 'ad description' },
+            analytics: { title: 'analytics title', description: 'analytics description' },
+            functionality: { title: 'functionality title', description: 'functionality description' },
+            personalization: { title: 'personalization title', description: 'personalization description' },
           },
-        ],
-      };
-
-      expect(assembleCategoryFunction('title', 'description', cookieTable)).toEqual({
-        title: 'title',
-        description: 'description',
-        toggle: { value: categoryValue, enabled: readonly, readonly },
-        cookie_table: [
           {
-            name: 'cookie1',
-            description: 'Description',
-            expiration: 'duration',
+            necessary: [{ name: 'cookie_necessary', description: `Necessary cookie.`, expiration: '1 year' }],
+            ad: [{ name: 'cookie_ad', description: `Ad cookie.`, expiration: '2 years' }],
+            analytics: [{ name: 'cookie_analytics', description: `Analytics cookie.`, expiration: '3 years' }],
+            functionality: [{ name: 'cookie_func', description: `Functionality cookie.`, expiration: '4 years' }],
+            personalization: [{ name: 'cookie_pers', description: `Personalization cookie.`, expiration: '5 years' }],
           },
-        ],
-      });
+        ),
+      ).toEqual([
+        {
+          linkedCategory: CookieConsentCategory.NECESSARY,
+          title: 'necessary title',
+          description: 'necessary description',
+          cookieTable: {
+            headers: { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+            body: [{ name: 'cookie_necessary', description: 'Necessary cookie.', expiration: '1 year' }],
+          },
+        },
+        {
+          linkedCategory: CookieConsentCategory.AD,
+          title: 'ad title',
+          description: 'ad description',
+          cookieTable: {
+            headers: { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+            body: [{ name: 'cookie_ad', description: 'Ad cookie.', expiration: '2 years' }],
+          },
+        },
+        {
+          linkedCategory: CookieConsentCategory.ANALYTICS,
+          title: 'analytics title',
+          description: 'analytics description',
+          cookieTable: {
+            headers: { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+            body: [{ name: 'cookie_analytics', description: 'Analytics cookie.', expiration: '3 years' }],
+          },
+        },
+        {
+          linkedCategory: CookieConsentCategory.FUNCTIONALITY,
+          title: 'functionality title',
+          description: 'functionality description',
+          cookieTable: {
+            headers: { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+            body: [{ name: 'cookie_func', description: 'Functionality cookie.', expiration: '4 years' }],
+          },
+        },
+        {
+          linkedCategory: CookieConsentCategory.PERSONALIZATION,
+          title: 'personalization title',
+          description: 'personalization description',
+          cookieTable: {
+            headers: { name: 'Foo Name', description: 'Bar Description', expiration: 'Baz Expiration' },
+            body: [{ name: 'cookie_pers', description: 'Personalization cookie.', expiration: '5 years' }],
+          },
+        },
+      ]);
     });
   });
 });

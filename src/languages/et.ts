@@ -1,18 +1,15 @@
 import {
   addSeparators,
-  assembleCategoryAd,
-  assembleCategoryAnalytics,
-  assembleCategoryFunctionality,
-  assembleCategoryNecessary,
-  assembleCategoryPersonalization,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
   assembleSecondaryButton,
   isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values, VanillaCookieConsent } from '../types';
+import { CookieTableCategories, ExtraMessages, Values } from '../types';
 import { SecondaryButtonMode } from '../constants';
+import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
   and: 'ning',
@@ -25,17 +22,18 @@ const extra = {
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
  * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
- * @returns {VanillaCookieConsent.Languages} Object with translated messages
+ * @returns {Translation} Object with translated messages
  */
 export const config = (
   extraMessages: ExtraMessages,
   secondaryButtonMode: Values<typeof SecondaryButtonMode>,
   cookieTable: CookieTableCategories,
-): VanillaCookieConsent.Languages => {
+): Translation => {
   const lang = { ...extra, ...extraMessages };
+  const cookieTableHeaders = { name: 'Nimetus', description: 'Kirjeldus', expiration: 'Aegumine' };
 
   return {
-    consent_modal: {
+    consentModal: {
       title: lang.consentTitle ?? 'Küpsised muudavad meie veebilehe kasutamise veelgi paremaks',
       description: `
       ${assembleDescriptionIntro(
@@ -49,23 +47,19 @@ export const config = (
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
         ${
           isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="c-settings">kohandatud seadetes</a></strong>.`
+            ? `Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="show-preferencesModal">kohandatud seadetes</a></strong>.`
             : ''
         }
       </p>`,
-      primary_btn: {
-        text: 'Nõustun kõigiga',
-        role: VanillaCookieConsent.PrimaryButtonRole.ACCEPT_ALL,
-      },
-      secondary_btn: assembleSecondaryButton(secondaryButtonMode, 'Nõustun tarvilikega', 'Kohandatud seaded'),
+      acceptAllBtn: 'Nõustun kõigiga',
+      ...assembleSecondaryButton(secondaryButtonMode, 'Nõustun tarvilikega', 'Kohandatud seaded'),
     },
-    settings_modal: {
+    preferencesModal: {
       title: 'Kohandatud küpsiste seaded',
-      accept_all_btn: 'Nõustun kõigiga',
-      reject_all_btn: 'Nõustun tarvilikega',
-      save_settings_btn: 'Salvesta sätted',
-      cookie_table_headers: [{ name: 'Nimetus' }, { description: 'Kirjeldus' }, { expiration: 'Aegumine' }],
-      blocks: [
+      acceptAllBtn: 'Nõustun kõigiga',
+      acceptNecessaryBtn: 'Nõustun tarvilikega',
+      savePreferencesBtn: 'Salvesta sätted',
+      sections: [
         {
           description: `Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
             ${
@@ -73,29 +67,34 @@ export const config = (
               `Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.`
             }`,
         },
-        assembleCategoryNecessary(
-          'Tehniliselt vajalikud küpsised',
-          'Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.',
-          cookieTable,
-        ),
-        assembleCategoryAnalytics(
-          'Analüütilised küpsised',
-          'Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.',
-          cookieTable,
-        ),
-        assembleCategoryFunctionality(
-          'Funktsionaalsed küpsised',
-          'Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.',
-          cookieTable,
-        ),
-        assembleCategoryAd(
-          'Turundusküpsised',
-          'Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.',
-          cookieTable,
-        ),
-        assembleCategoryPersonalization(
-          'Isikupärastamise küpsised',
-          'Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.',
+        ...assembleCookieTableSections(
+          cookieTableHeaders,
+          {
+            necessary: {
+              title: 'Tehniliselt vajalikud küpsised',
+              description:
+                'Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.',
+            },
+            analytics: {
+              title: 'Analüütilised küpsised',
+              description:
+                'Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.',
+            },
+            functionality: {
+              title: 'Funktsionaalsed küpsised',
+              description: 'Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.',
+            },
+            ad: {
+              title: 'Turundusküpsised',
+              description:
+                'Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.',
+            },
+            personalization: {
+              title: 'Isikupärastamise küpsised',
+              description:
+                'Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.',
+            },
+          },
           cookieTable,
         ),
       ],

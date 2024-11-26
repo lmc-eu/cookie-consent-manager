@@ -47,25 +47,10 @@ describe.each([
   it('should return localization object with cookie table', () => {
     const cookieTable = {
       necessary: [
-        {
-          name: '^_ga',
-          description: 'Google Analytics description ...',
-          expiration: '1 year',
-          is_regex: true,
-        },
-        {
-          name: 'foo',
-          description: 'Foo description',
-          expiration: 'end of session',
-        },
+        { name: '_ga*', description: 'Google Analytics description ...', expiration: '1 year' },
+        { name: 'foo', description: 'Foo description', expiration: 'end of session' },
       ],
-      personalization: [
-        {
-          name: 'sessionLog_id',
-          description: 'Session log description ...',
-          expiration: '1 year',
-        },
-      ],
+      personalization: [{ name: 'sessionLog_id', description: 'Session log description ...', expiration: '1 year' }],
     };
 
     expect(config({ companyNames: ['Alma Career'] }, SecondaryButtonMode.SHOW_SETTINGS, cookieTable)).toMatchSnapshot();
