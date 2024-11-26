@@ -46,12 +46,6 @@
       "matchManagers": ["npm"],
       "matchPackageNames": ["eslint"],
       "allowedVersions": "^8"
-    },
-    {
-      "groupName": "CookieConsent frozen to 2.8.0 or major version",
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["vanilla-cookieconsent"],
-      "allowedVersions": "<=2.8.0 || >=3.0.0"
     }
   ]
 }
