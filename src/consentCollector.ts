@@ -1,40 +1,36 @@
-import { CookieConsentCategoryValues, VanillaCookieConsent } from './types';
+import { CookieValue, UserPreferences } from 'vanilla-cookieconsent';
 
 /**
  * Submit information about consent level given by the user.
  */
-function submitConsent(
-  consentCollectorApiUrl: string,
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-): void {
-  const payload = buildPayload(cookieConsent);
+function submitConsent(consentCollectorApiUrl: string, cookie: CookieValue, userPreferences: UserPreferences): void {
+  const payload = buildPayload(userPreferences, cookie);
 
   postDataToApi(consentCollectorApiUrl, payload);
 }
 
-function buildPayload(cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>): Object {
-  const cookieData = cookieConsent.get('data');
-  const userPreferences = cookieConsent.getUserPreferences();
-  const daysOfAcceptation =
-    userPreferences.accept_type === VanillaCookieConsent.AcceptType.NECESSARY
-      ? cookieConsent.getConfig('cookie_necessary_only_expiration')
-      : cookieConsent.getConfig('cookie_expiration');
+function buildPayload(userPreferences: UserPreferences, cookie: CookieValue): Object {
+  const cookieData = cookie.data;
 
   return {
     data: {
       type: 'localDataAcceptationDataEntries',
       attributes: {
         acceptation_id: cookieData.uid,
-        accept_type: `accept_${userPreferences.accept_type}`,
-        accepted_categories: userPreferences.accepted_categories,
-        rejected_categories: userPreferences.rejected_categories,
-        revision: cookieConsent.get('revision'),
+        accept_type: `accept_${userPreferences.acceptType}`,
+        accepted_categories: userPreferences.acceptedCategories,
+        rejected_categories: userPreferences.rejectedCategories,
+        revision: cookie.revision,
         source: cookieData.serviceName,
-        language: cookieConsent.getConfig('current_lang'),
-        days_of_acceptation: daysOfAcceptation,
+        language: 'N/A', // TODO: change to cookie.languageCode, see https://github.com/orestbida/cookieconsent/pull/761
+        days_of_acceptation: calculateDaysOfAcceptation(cookie),
       },
     },
   };
+}
+
+function calculateDaysOfAcceptation(cookie: CookieValue): number {
+  return Math.ceil((cookie.expirationTime - Date.now()) / 1000 / 60 / 60 / 24);
 }
 
 async function postDataToApi(apiUrl: string, payload: any): Promise<any> {
