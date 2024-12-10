@@ -2,13 +2,10 @@ import {
   addSeparators,
   assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -20,15 +17,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Назва', description: 'Опис', expiration: 'Термін Дії' };
 
@@ -45,14 +37,10 @@ export const config = (
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Використання файлів Cookies Ви можете змінити в своїх <strong><a href="" data-cc="show-preferencesModal">власних Налаштуваннях</a></strong>.`
-            : ''
-        }
+        Використання файлів Cookies Ви можете змінити в своїх <strong><a href="" data-cc="show-preferencesModal">власних Налаштуваннях</a></strong>.
       </p>`,
       acceptAllBtn: 'Прийняти все',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Прийняття необхідно', 'Власнйe налаштуваннйe'),
+      acceptNecessaryBtn: 'Прийняття необхідно',
     },
     preferencesModal: {
       title: 'Користувацькі налаштування файлів Cookies',

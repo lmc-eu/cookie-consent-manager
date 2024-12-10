@@ -1,5 +1,5 @@
 import { CookieConsentCategoryValues, CookieTableCategories, Values } from './types';
-import { CookieConsentCategory, SecondaryButtonMode } from './constants';
+import { CookieConsentCategory } from './constants';
 
 type categoryTranslations = {
   necessary: { title: string; description: string };
@@ -38,23 +38,6 @@ export const assembleDescriptionIntro = (defaultValue: string, overrideValue?: s
 
   return descriptionIntro !== '' ? `<p>${descriptionIntro}</p>` : '';
 };
-
-/**
- * Assemble secondary button based on secondary button mode
- */
-export const assembleSecondaryButton = (
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  textAcceptNecessary: string,
-  textShowSettings: string,
-): { [key: string]: string } => {
-  if (secondaryButtonMode === SecondaryButtonMode.ACCEPT_NECESSARY) {
-    return { acceptNecessaryBtn: textAcceptNecessary };
-  }
-  return { showPreferencesBtn: textShowSettings };
-};
-
-export const isSettingsButtonNotShown = (secondaryButtonMode: Values<typeof SecondaryButtonMode>): boolean =>
-  secondaryButtonMode !== SecondaryButtonMode.SHOW_SETTINGS;
 
 export const assembleCookieTableSections = (
   headers: { [key: string]: string },

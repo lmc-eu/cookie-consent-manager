@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -17,15 +9,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Nosaukums', description: 'Apraksts', expiration: 'Galiojimo laikas' };
 
@@ -41,14 +28,10 @@ export const config = (
         Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Jūs varat pielāgot sīkdatņu izmantošanu <strong><a href="" data-cc="show-preferencesModal">savos iestatījumos</a></strong>.`
-            : ''
-        }
+        Jūs varat pielāgot sīkdatņu izmantošanu <strong><a href="" data-cc="show-preferencesModal">savos iestatījumos</a></strong>.
       </p>`,
       acceptAllBtn: 'Pieņemt visas',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Pieņemt nepieciešamās', 'Pielāgoti iestatījumi'),
+      acceptNecessaryBtn: 'Pieņemt nepieciešamās',
     },
     preferencesModal: {
       title: 'Pielāgoti sīkdatņu iestatījumi',

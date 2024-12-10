@@ -8,7 +8,7 @@ import {
   OnAcceptCallback,
   OnChangeCallback,
 } from './types';
-import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
+import { CookieConsentCategory, DisplayMode } from './constants';
 import { assembleTranslationsConfig } from './languages/loader';
 import { pushToDataLayer } from './dataLayer';
 import * as CookieConsent from 'vanilla-cookieconsent';
@@ -28,7 +28,6 @@ const defaultOptions: CookieConsentManagerOptions = {
   onChange: noopChangeCallback,
   companyNames: ['Alma Career'],
   displayMode: DisplayMode.FORCE,
-  secondaryButtonMode: SecondaryButtonMode.ACCEPT_NECESSARY,
   translationOverrides: {},
   cookieTable: {},
   config: {},
@@ -47,9 +46,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {OnChangeCallback} [args.onChange] - Callback to be executed right after user change his/her preferences
  * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
- * @param {DisplayMode} [args.displayMode] - Which button should be displayed next to "Accept all" button. Either
- *   `acceptNecessary` (default) or `showSettings`.
- * @param {SecondaryButtonMode} [args.secondaryButtonMode] - `force` (default) to show consent in a centered modal box
+ * @param {DisplayMode} [args.displayMode] - `force` (default) to show consent in a centered modal box
  *    and to block page until user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {CookieTable} [args.cookieTable] - Cookie table for specified languages
@@ -73,7 +70,6 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange,
     companyNames,
     displayMode,
-    secondaryButtonMode,
     translationOverrides,
     cookieTable,
     config,
@@ -140,7 +136,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     language: {
       default: defaultLang, // Default language used when auto_language is null (or when autodetect failed)
       autoDetect: autodetectLang ? 'document' : undefined, // Autodetect language based on `<html lang="...">` value (with "document" value)
-      translations: assembleTranslationsConfig(companyNames, translationOverrides, secondaryButtonMode, cookieTable),
+      translations: assembleTranslationsConfig(companyNames, translationOverrides, cookieTable),
     },
     disablePageInteraction: displayMode === DisplayMode.FORCE,
     hideFromBots: true, // To be hidden also from Selenium
@@ -179,4 +175,4 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, CookieConsent, LmcCookieConsentManager };
+export { CookieConsentCategory, DisplayMode, CookieConsent, LmcCookieConsentManager };

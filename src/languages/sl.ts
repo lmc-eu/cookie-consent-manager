@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -17,15 +9,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Naziv', description: 'Opis', expiration: 'Potek' };
 
@@ -41,14 +28,10 @@ export const config = (
         S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Uporabo piškotkov lahko prilagodite v <strong><a href="" data-cc="show-preferencesModal">svojih nastavitvah</a></strong>.`
-            : ''
-        }
+        Uporabo piškotkov lahko prilagodite v <strong><a href="" data-cc="show-preferencesModal">svojih nastavitvah</a></strong>.
       </p>`,
       acceptAllBtn: 'Sprejmi vse',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Sprejmi samo nujne', 'Shrani nastavitve'),
+      acceptNecessaryBtn: 'Sprejmi samo nujne',
     },
     preferencesModal: {
       title: 'Prilagojene nastavitve piškotkov',

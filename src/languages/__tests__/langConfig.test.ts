@@ -13,7 +13,6 @@ import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
 import { config as configSl } from '../sl';
 import { config as configUk } from '../uk';
-import { SecondaryButtonMode } from '../../constants';
 
 describe.each([
   ['bs', configBs],
@@ -33,15 +32,7 @@ describe.each([
   ['uk', configUk],
 ])('config %s', (name, config) => {
   it('should return localization object for acceptNecessary button mode', () => {
-    expect(
-      config({ companyNames: ['test1', 'test2', 'test3'] }, SecondaryButtonMode.ACCEPT_NECESSARY, {}),
-    ).toMatchSnapshot();
-  });
-
-  it('should return localization object for showSettings button mode', () => {
-    expect(
-      config({ companyNames: ['test1', 'test2', 'test3'] }, SecondaryButtonMode.SHOW_SETTINGS, {}),
-    ).toMatchSnapshot();
+    expect(config({ companyNames: ['test1', 'test2', 'test3'] }, {})).toMatchSnapshot();
   });
 
   it('should return localization object with cookie table', () => {
@@ -53,6 +44,6 @@ describe.each([
       personalization: [{ name: 'sessionLog_id', description: 'Session log description ...', expiration: '1 year' }],
     };
 
-    expect(config({ companyNames: ['Alma Career'] }, SecondaryButtonMode.SHOW_SETTINGS, cookieTable)).toMatchSnapshot();
+    expect(config({ companyNames: ['Alma Career'] }, cookieTable)).toMatchSnapshot();
   });
 });

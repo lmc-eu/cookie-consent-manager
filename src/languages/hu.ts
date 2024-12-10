@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -17,15 +9,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Név', description: 'Leírás', expiration: 'Érvényesség' };
 
@@ -41,14 +28,10 @@ export const config = (
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `A cookie-k használatát testre szabhatja <strong><a href="" data-cc="show-preferencesModal">saját beállításaiban</a></strong>.`
-            : ''
-        }
+        A cookie-k használatát testre szabhatja <strong><a href="" data-cc="show-preferencesModal">saját beállításaiban</a></strong>.
       </p>`,
       acceptAllBtn: 'Minden elfogadása',
-      ...assembleSecondaryButton(secondaryButtonMode, 'A legszükségesebbek elfogadása', 'Egyéni beállítások'),
+      acceptNecessaryBtn: 'A legszükségesebbek elfogadása',
     },
     preferencesModal: {
       title: 'Egyedi cookie-fájl beállítások',

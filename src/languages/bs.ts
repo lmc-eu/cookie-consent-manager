@@ -2,13 +2,10 @@ import {
   addSeparators,
   assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -20,15 +17,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Naziv', description: 'Opis', expiration: 'Isticanje' };
 
@@ -45,14 +37,10 @@ export const config = (
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         svoju saglasnost za korištenje kolačića za personalizaciju, analitiku i ciljani marketing.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="show-preferencesModal">prilagođenim postavkama</a></strong>.`
-            : ''
-        }
+        Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="show-preferencesModal">prilagođenim postavkama</a></strong>.
       </p>`,
       acceptAllBtn: 'Prihvati sve',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Prihvatiti neophodno', 'Prilagođenim postavkama'),
+      acceptNecessaryBtn: 'Prihvatiti neophodno',
     },
     preferencesModal: {
       title: 'Prilagođenim postavkama kolačića',
