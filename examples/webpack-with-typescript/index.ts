@@ -5,9 +5,11 @@ const ccmArgs = {
   displayMode: DisplayMode.SOFT,
   secondaryButtonMode: SecondaryButtonMode.SHOW_SETTINGS,
   config: {
-      cookie_name: 'lmc_ccm_example',
-      cookie_domain: 'example.com',
-      cookie_necessary_only_expiration: 30,
+      cookie: {
+        name:  'lmc_ccm_example',
+        domain: 'example.com',
+        expiresAfterDays: 365,
+      }
   }
 };
 
