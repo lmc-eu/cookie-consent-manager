@@ -1,14 +1,11 @@
 import {
   addSeparators,
+  assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
-  assembleCookieTableSections,
 } from '../utils';
-import { CookieConsentCategory, SecondaryButtonMode } from '../constants';
-import { CookieTableCategories } from '../types';
+import { CookieConsentCategory } from '../constants';
 
 describe('utils', () => {
   describe('addSeparators', () => {
@@ -66,30 +63,6 @@ describe('utils', () => {
 
     it('should return empty string when empty override value given', () => {
       expect(assembleDescriptionIntro('Default value', '')).toBe('');
-    });
-  });
-
-  describe('assembleSecondaryButton', () => {
-    it('should assemble button values for acceptNecessary mode', () => {
-      expect(
-        assembleSecondaryButton(SecondaryButtonMode.ACCEPT_NECESSARY, 'accept necessary', 'show settings'),
-      ).toEqual({ acceptNecessaryBtn: 'accept necessary' });
-    });
-
-    it('should assemble button values for showSettings mode', () => {
-      expect(assembleSecondaryButton(SecondaryButtonMode.SHOW_SETTINGS, 'accept necessary', 'show settings')).toEqual({
-        showPreferencesBtn: 'show settings',
-      });
-    });
-  });
-
-  describe('isSettingsButtonNotShown', () => {
-    it('should be true for ACCEPT_NECESSARY mode', () => {
-      expect(isSettingsButtonNotShown(SecondaryButtonMode.ACCEPT_NECESSARY)).toBe(true);
-    });
-
-    it('should be false for SHOW_SETTINGS mode', () => {
-      expect(isSettingsButtonNotShown(SecondaryButtonMode.SHOW_SETTINGS)).toBe(false);
     });
   });
 

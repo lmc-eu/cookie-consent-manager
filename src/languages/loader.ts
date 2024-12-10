@@ -38,16 +38,11 @@ const languagesMap = {
 export const assembleTranslationsConfig = (
   companyNames: string[],
   translationOverrides: Record<string, TranslationOverride>,
-  secondaryButtonMode: string,
   cookieTable: CookieTable,
 ): Record<string, Translation> =>
   Object.entries(languagesMap).reduce(
     (languagesConfig, [code, configFunction]) => {
-      languagesConfig[code] = configFunction(
-        { companyNames, ...translationOverrides[code] },
-        secondaryButtonMode,
-        cookieTable[code] || {},
-      );
+      languagesConfig[code] = configFunction({ companyNames, ...translationOverrides[code] }, cookieTable[code] || {});
 
       return languagesConfig;
     },

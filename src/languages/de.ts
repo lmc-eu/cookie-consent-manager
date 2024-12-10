@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -17,15 +9,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = {
     name: 'Unternehmensbezeichnung',
@@ -45,14 +32,10 @@ export const config = (
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="show-preferencesModal">eigenen Einstellungen</a></strong> anpassen.`
-            : ''
-        }
+        Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="show-preferencesModal">eigenen Einstellungen</a></strong> anpassen.
       </p>`,
       acceptAllBtn: 'Alles akzeptieren',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Das Notwendigste akzeptieren', 'Eigene Einstellungen'),
+      acceptNecessaryBtn: 'Das Notwendigste akzeptieren',
     },
     preferencesModal: {
       title: 'Benutzerdefinierte Cookie-Einstellungen',

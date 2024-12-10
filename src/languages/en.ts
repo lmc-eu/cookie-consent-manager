@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -16,15 +8,10 @@ const extra = {
 };
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Name', description: 'Description', expiration: 'Expiration' };
 
@@ -40,14 +27,10 @@ export const config = (
         By clicking the "Accept all" button, you give
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         your consent to use cookies for personalisation, analytics and targeted marketing.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `You can customize use of cookies in your <strong><a href="" data-cc="show-preferencesModal">custom settings</a></strong>.`
-            : ''
-        }
+        You can customize use of cookies in your <strong><a href="" data-cc="show-preferencesModal">custom settings</a></strong>.
       </p>`,
       acceptAllBtn: 'Accept all',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Accept necessary', 'Custom settings'),
+      acceptNecessaryBtn: 'Accept necessary',
     },
     preferencesModal: {
       title: 'Custom Cookie settings',

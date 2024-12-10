@@ -1,4 +1,4 @@
-import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from '../constants';
+import { CookieConsentCategory, DisplayMode } from '../constants';
 import CookieConsent, { CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 
 /* eslint-disable no-unused-vars */
@@ -43,7 +43,6 @@ export type CookieConsentManagerOptions = {
   onChange: OnChangeCallback;
   companyNames: string[];
   displayMode: Values<typeof DisplayMode>;
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>;
   translationOverrides: Record<string, TranslationOverride>;
   cookieTable: CookieTable;
   config?: Partial<CookieConsentConfig>;

@@ -1,13 +1,5 @@
-import {
-  addSeparators,
-  assembleCookieTableSections,
-  assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
-  legalizeAlmaCareer,
-} from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { addSeparators, assembleCookieTableSections, assembleDescriptionIntro, legalizeAlmaCareer } from '../utils';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -17,15 +9,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Pavadinimas', description: 'Aprašymas', expiration: 'Galiojimo pabaiga' };
 
@@ -41,14 +28,10 @@ export const config = (
         Spustelėję mygtuką „Priimti viską“, duodate
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Slapukų naudojimą galite pritaikyti <strong><a href="" data-cc="show-preferencesModal">pasirinktinuose nustatymuose</a></strong>.`
-            : ''
-        }
+        Slapukų naudojimą galite pritaikyti <strong><a href="" data-cc="show-preferencesModal">pasirinktinuose nustatymuose</a></strong>.
       </p>`,
       acceptAllBtn: 'Priimti viską',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Priimti būtinus', 'Pasirinktiniai nustatymai'),
+      acceptNecessaryBtn: 'Priimti būtinus',
     },
     preferencesModal: {
       title: 'Individualūs slapukų nustatymai',

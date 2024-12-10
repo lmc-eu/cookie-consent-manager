@@ -56,66 +56,11 @@ exports[`config bs should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config bs should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Prihvati sve",
-    "description": "
-      <p>Bolje razumijevanje onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
-      <p>
-        Klikom na dugme „Prihvati sve“, dajete
-        kompanijama
-        test1, test2 i test3
-        svoju saglasnost za korištenje kolačića za personalizaciju, analitiku i ciljani marketing.
-        
-      </p>",
-    "showPreferencesBtn": "Prilagođenim postavkama",
-    "title": "Kolačići čine našu stranicu još boljom",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Prihvati sve",
-    "acceptNecessaryBtn": "Prihvatiti neophodno",
-    "savePreferencesBtn": "Sačuvaj postavke",
-    "sections": [
-      {
-        "description": "Ako želite da izvučete maksimum iz naše web stranice, najbolje je dozvoliti sve vrste kolačića.
-            Više informacija o tome šta su kolačići i kako radimo s njima možete pronaći na stranici <a href="https://www.almacareer.com/gdpr" target="_blank">Politika privatnosti</a>.",
-      },
-      {
-        "description": "Ovi kolačići su neophodni za pravilno funkcioniranje naše web stranice i stoga se ne mogu onemogućiti. Bez njih ne bi bilo moguće npr. za prikaz bilo kojeg sadržaja ili za prijavu na našu web stranicu.",
-        "linkedCategory": "necessary",
-        "title": "Tehnički potrebni kolačići",
-      },
-      {
-        "description": "Ovi kolačići nam pomažu da izmjerimo učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketinški kolačići nam omogućavaju da vam donesemo vijesti koje bi vas mogle zanimati na Internetu.",
-        "linkedCategory": "ad",
-        "title": "Marketinški kolačići",
-      },
-      {
-        "description": "To nam pomaže da pratimo koliko ljudi posjeti našu web stranicu i kako je koriste. Ove informacije nam zatim omogućavaju da kontinuirano poboljšavamo web stranicu i druge usluge.",
-        "linkedCategory": "analytics",
-        "title": "Analitički kolačići",
-      },
-      {
-        "description": "Naša web stranica je još efikasnija i radi bolje zahvaljujući ovim kolačićima. Na primjer, omogućavaju nam korištenje usluge chata i brzo i jednostavno odgovaranje na vaša pitanja.",
-        "linkedCategory": "functionality",
-        "title": "Funkcionalni kolačići",
-      },
-      {
-        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem kolačića za personalizaciju povećavate svoje šanse da pronađete sadržaj koji želite.",
-        "linkedCategory": "personalization",
-        "title": "Kolačići za personalizaciju",
-      },
-    ],
-    "title": "Prilagođenim postavkama kolačića",
-  },
-}
-`;
-
 exports[`config bs should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvatiti neophodno",
     "description": "
       <p>Bolje razumijevanje onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
       <p>
@@ -123,9 +68,8 @@ exports[`config bs should return localization object with cookie table 1`] = `
         kompaniji
         Alma Career i drugim kompanijama iz njene poslovne grupe
         svoju saglasnost za korištenje kolačića za personalizaciju, analitiku i ciljani marketing.
-        
+        Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="show-preferencesModal">prilagođenim postavkama</a></strong>.
       </p>",
-    "showPreferencesBtn": "Prilagođenim postavkama",
     "title": "Kolačići čine našu stranicu još boljom",
   },
   "preferencesModal": {
@@ -257,66 +201,11 @@ exports[`config cs should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config cs should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Přijmout všechny",
-    "description": "
-      <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
-      <p>
-        Kliknutím na tlačítko „Přijmout všechny“ dáte
-        společnostem
-        test1, test2 a test3
-        souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-        
-      </p>",
-    "showPreferencesBtn": "Vlastní nastavení",
-    "title": "Díky Cookies budou naše stránky ještě lepší",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Přijmout všechny",
-    "acceptNecessaryBtn": "Přijmout nezbytné",
-    "savePreferencesBtn": "Uložit nastavení",
-    "sections": [
-      {
-        "description": "Abyste z našich stránek získali maximum, je nejlepší povolit všechny typy cookies.
-            Další informace o tom, co jsou cookies a jak s nimi pracujeme, najdete v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
-      },
-      {
-        "description": "Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout. Bez nich by na našich stránkách např. nešel zobrazit žádný obsah nebo by nefungovalo přihlášení.",
-        "linkedCategory": "necessary",
-        "title": "Technicky nezbytné Cookies",
-      },
-      {
-        "description": "S těmito Cookies můžeme měřit, jak efektivní je naše reklama a cílené nabídky našich služeb. Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.",
-        "linkedCategory": "ad",
-        "title": "Marketingové Cookies",
-      },
-      {
-        "description": "Pomocí nich sledujeme, kolik lidí náš web navštěvuje a jak ho používají. Díky tomu můžeme stránky a další služby neustále vylepšovat.",
-        "linkedCategory": "analytics",
-        "title": "Analytické Cookies",
-      },
-      {
-        "description": "Díky těmto Cookies jsou naše stránky ještě výkonnější a fungují lépe. Například nám umožňují používat chat, abychom na vaše otázky mohli odpovídat rychle a jednoduše.",
-        "linkedCategory": "functionality",
-        "title": "Funkční Cookies",
-      },
-      {
-        "description": "Naše služby fungují lépe, když je můžeme přizpůsobit na míru konkrétnímu uživateli. Povolením Personalizačních cookies zvýšíte šanci, že najdete právě takový obsah, jaký hledáte.",
-        "linkedCategory": "personalization",
-        "title": "Personalizační Cookies",
-      },
-    ],
-    "title": "Přizpůsobit nastavení Cookies",
-  },
-}
-`;
-
 exports[`config cs should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Přijmout všechny",
+    "acceptNecessaryBtn": "Přijmout nezbytné",
     "description": "
       <p>Když lépe pochopíme, co vás zajímá, budeme vám zobrazovat přesnější obsah na míru.</p>
       <p>
@@ -324,9 +213,8 @@ exports[`config cs should return localization object with cookie table 1`] = `
         společnosti
         Alma Career a společnostem z její obchodní skupiny
         souhlas s využíváním souborů Cookies na účely personalizace, analýzy a cíleného marketingu.
-        
+        Další informace o Cookies a úpravu jejich používání naleznete ve <strong><a href="" data-cc="show-preferencesModal">vlastním nastavení</a></strong>.
       </p>",
-    "showPreferencesBtn": "Vlastní nastavení",
     "title": "Díky Cookies budou naše stránky ještě lepší",
   },
   "preferencesModal": {
@@ -457,74 +345,19 @@ exports[`config de should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config de should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Alles akzeptieren",
-    "description": "
-      <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
-      <p>
-        Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
-        test1, test2 und test3
-        zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        
-      </p>",
-    "showPreferencesBtn": "Eigene Einstellungen",
-    "title": "Diese Website verwendet Cookies",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Alles akzeptieren",
-    "acceptNecessaryBtn": "Das Notwendigste akzeptieren",
-    "savePreferencesBtn": "Einstellungen speichern",
-    "sections": [
-      {
-        "description": "Um unsere Website optimal nutzen zu können, sollten Sie alle Arten von Cookies aktivieren.
-            Weitere Informationen darüber, was Cookies sind und wie wir mit ihnen arbeiten, finden Sie in unsere <a href="https://www.almacareer.com/gdpr" target="_blank">Datenschutzrichtlinien</a>.",
-      },
-      {
-        "description": "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich und können daher nicht deaktiviert werden. Ohne sie könnten z. B. keine Inhalte auf unserer Seite angezeigt werden oder das Login würde nicht funktionieren.",
-        "linkedCategory": "necessary",
-        "title": "Technisch notwendige Cookies",
-      },
-      {
-        "description": "Mit diesen Cookies können wir messen, wie effektiv unsere Werbung und gezielte Angebote unserer Dienste sind. Marketing Cookies ermöglichen es uns, Sie online auf Nachrichten hinzuweisen, die für Sie von Interesse sein könnten.",
-        "linkedCategory": "ad",
-        "title": "Marketing Cookies",
-      },
-      {
-        "description": "Wir verwenden diese Cookies, um zu verfolgen, wie viele Personen unsere Website besuchen und wie sie sie nutzen. Auf diese Weise können wir die Website und andere Dienste kontinuierlich verbessern.",
-        "linkedCategory": "analytics",
-        "title": "Analytische Cookies",
-      },
-      {
-        "description": "Diese Cookies machen unsere Website leistungsfähiger und funktionieren besser. Sie ermöglichen uns zum Beispiel die Nutzung des Chats, damit wir Ihre Fragen schnell und einfach beantworten können.",
-        "linkedCategory": "functionality",
-        "title": "Funktionale Cookies",
-      },
-      {
-        "description": "Unsere Dienste funktionieren besser, wenn wir sie auf den einzelnen Nutzer zuschneiden können. Durch die Aktivierung von Personalisierungs-Cookies erhöhen Sie die Wahrscheinlichkeit, dass Sie genau die Inhalte finden, nach denen Sie suchen.",
-        "linkedCategory": "personalization",
-        "title": "Personalisierung Cookies",
-      },
-    ],
-    "title": "Benutzerdefinierte Cookie-Einstellungen",
-  },
-}
-`;
-
 exports[`config de should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Alles akzeptieren",
+    "acceptNecessaryBtn": "Das Notwendigste akzeptieren",
     "description": "
       <p>Wenn wir genau wissen, wofür Sie sich interessieren, können wir Ihnen maßgeschneiderte Inhalte anbieten.</p>
       <p>
         Indem Sie auf „Alles akzeptieren“ klicken, stimmen Sie der Verwendung von Cookies und anderen Identifikatoren auf Ihrem Gerät durch
         Alma Career und seine Gruppenunternehmen
         zu. Die Verwendung dieser Cookies und anderer Identifikatoren erleichtert die Navigation auf der Website, die Anzeige personalisierter Inhalte, gezieltes Marketing und die Analyse der Nutzung unserer Produkte und Dienstleistungen.
-        
+        Sie können die Verwendung von Cookies in Ihren <strong><a href="" data-cc="show-preferencesModal">eigenen Einstellungen</a></strong> anpassen.
       </p>",
-    "showPreferencesBtn": "Eigene Einstellungen",
     "title": "Diese Website verwendet Cookies",
   },
   "preferencesModal": {
@@ -655,74 +488,19 @@ exports[`config en should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config en should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Accept all",
-    "description": "
-      <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
-      <p>
-        By clicking the "Accept all" button, you give
-        test1, test2 and test3
-        your consent to use cookies for personalisation, analytics and targeted marketing.
-        
-      </p>",
-    "showPreferencesBtn": "Custom settings",
-    "title": "Cookies make our site even better",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Accept all",
-    "acceptNecessaryBtn": "Accept necessary",
-    "savePreferencesBtn": "Save settings",
-    "sections": [
-      {
-        "description": "If you want to get the most out of our website it is best to allow all types of cookies.
-            For more information about what cookies are and how we work with them, see our <a href="https://www.almacareer.com/gdpr" target="_blank">Cookie Policy</a>.",
-      },
-      {
-        "description": "These cookies are essential for the proper functioning of our website, and so they cannot be disabled. Without them, it would not be possible e.g. to display any content or to log in on our website.",
-        "linkedCategory": "necessary",
-        "title": "Technically necessary cookies",
-      },
-      {
-        "description": "These cookies help us to measure the effectiveness of our advertising and targeted service offers. Marketing cookies enable us to bring you news that may be of interest to you on the Internet.",
-        "linkedCategory": "ad",
-        "title": "Marketing cookies",
-      },
-      {
-        "description": "These help us monitor how many people visit our website and how they use it. This information then enables us to continuously improve the website and other services.",
-        "linkedCategory": "analytics",
-        "title": "Analytical cookies",
-      },
-      {
-        "description": "Our website is even more efficient and works better thanks to these cookies. For example, they enable us to use the chat service and answer your questions quickly and easily.",
-        "linkedCategory": "functionality",
-        "title": "Functional cookies",
-      },
-      {
-        "description": "Our services work better if we can tailor them to specific users. By allowing personalisation cookies you increase your chances of finding the content you want.",
-        "linkedCategory": "personalization",
-        "title": "Personalisation cookies",
-      },
-    ],
-    "title": "Custom Cookie settings",
-  },
-}
-`;
-
 exports[`config en should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Accept necessary",
     "description": "
       <p>By better understanding what you're interested in, we'll show you more relevant content.</p>
       <p>
         By clicking the "Accept all" button, you give
         Alma Career and other companies from its business group
         your consent to use cookies for personalisation, analytics and targeted marketing.
-        
+        You can customize use of cookies in your <strong><a href="" data-cc="show-preferencesModal">custom settings</a></strong>.
       </p>",
-    "showPreferencesBtn": "Custom settings",
     "title": "Cookies make our site even better",
   },
   "preferencesModal": {
@@ -854,66 +632,11 @@ exports[`config et should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config et should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Nõustun kõigiga",
-    "description": "
-      <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
-      <p>
-        Klõpsates nuppu „Nõustun kõigiga“, annate
-        ettevõtetele
-        test1, test2 ning test3
-        nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
-        
-      </p>",
-    "showPreferencesBtn": "Kohandatud seaded",
-    "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Nõustun kõigiga",
-    "acceptNecessaryBtn": "Nõustun tarvilikega",
-    "savePreferencesBtn": "Salvesta sätted",
-    "sections": [
-      {
-        "description": "Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
-            Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.",
-      },
-      {
-        "description": "Need küpsised on meie veebilehe nõuetekohaseks toimimiseks hädavajalikud ja seetõttu ei saa neid keelata. Ilma nendeta poleks võimalik näiteks teatud sisu kuvamine või meie veebilehele sisse logimine.",
-        "linkedCategory": "necessary",
-        "title": "Tehniliselt vajalikud küpsised",
-      },
-      {
-        "description": "Need küpsised aitavad meil mõõta meie reklaamide ja suunatud teenusepakkumiste tõhusust. Turundusküpsised võimaldavad ka meil sulle internetist informatsiooni leida, mis võib sinu jaoks asjakohane ja huvipakkuv olla.",
-        "linkedCategory": "ad",
-        "title": "Turundusküpsised",
-      },
-      {
-        "description": "Need aitavad meil jälgida kui palju inimesi meie veebilehte külastab ja kuidas nad seda kasutavad. See teave võimaldab meil veebilehte ja muid teenuseid pidevalt täiustada.",
-        "linkedCategory": "analytics",
-        "title": "Analüütilised küpsised",
-      },
-      {
-        "description": "Meie veebileht on veelgi tõhusam ja töötab paremini tänu nendele küpsistele.",
-        "linkedCategory": "functionality",
-        "title": "Funktsionaalsed küpsised",
-      },
-      {
-        "description": "Meie teenused toimivad paremini, kui suudame neid konkreetsetele kasutajatele kohandada. Isikupärastamise küpsiste lubamisega suurendad oma võimalusi soovitud sisu leida.",
-        "linkedCategory": "personalization",
-        "title": "Isikupärastamise küpsised",
-      },
-    ],
-    "title": "Kohandatud küpsiste seaded",
-  },
-}
-`;
-
 exports[`config et should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Nõustun kõigiga",
+    "acceptNecessaryBtn": "Nõustun tarvilikega",
     "description": "
       <p>Kui mõistame paremini, mis sind huvitab, näitame sulle asjakohasemat sisu.</p>
       <p>
@@ -921,9 +644,8 @@ exports[`config et should return localization object with cookie table 1`] = `
         ettevõttele
         Alma Career ja teistele selle ärigrupi ettevõtetele
         nõusoleku kasutada küpsiseid isikupärastamiseks, analüüsiks ja sihitud turunduseks.
-        
+        Küpsiste kasutamist saad kohandada oma <strong><a href="" data-cc="show-preferencesModal">kohandatud seadetes</a></strong>.
       </p>",
-    "showPreferencesBtn": "Kohandatud seaded",
     "title": "Küpsised muudavad meie veebilehe kasutamise veelgi paremaks",
   },
   "preferencesModal": {
@@ -1054,74 +776,19 @@ exports[`config hr should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config hr should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Prihvati sve",
-    "description": "
-      <p>Boljim razumijevanjem onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
-      <p>
-        Klikom na gumb „Prihvati sve“, dajete
-        test1, test2 i test3
-        privolu za upotrebu kolačića za personalizaciju, analitiku i ciljani marketing.
-        
-      </p>",
-    "showPreferencesBtn": "Prilagođene postavke",
-    "title": "Kolačići čine našu stranicu još boljom",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Prihvati sve",
-    "acceptNecessaryBtn": "Prihvati nužno",
-    "savePreferencesBtn": "Spremi postavke",
-    "sections": [
-      {
-        "description": "Ako želite maksimalno iskoristiti našu web stranicu, najbolje je dopustiti sve vrste kolačića.
-            Više informacija o tome što su kolačići i kako s njima radimo možete pronaći na stranici <a href="https://www.almacareer.com/gdpr" target="_blank">Pravila privatnosti</a>.",
-      },
-      {
-        "description": "Ovi kolačići su ključni za pravilno funkcioniranje naše web stranice i stoga ih nije moguće onemogućiti. Bez njih nije moguće prikazati sadržaj ili se prijaviti na našu web stranicu.",
-        "linkedCategory": "necessary",
-        "title": "Tehnički nužni kolačići",
-      },
-      {
-        "description": "Ovi kolačići nam pomažu mjeriti učinkovitost našeg oglašavanja i ciljanih ponuda usluga. Marketing kolačići omogućuju nam donošenje vijesti koje bi vas mogle zanimati na internetu.",
-        "linkedCategory": "ad",
-        "title": "Marketing kolačići",
-      },
-      {
-        "description": "Ovi nam pomažu pratiti koliko ljudi posjećuje našu web stranicu i kako je koriste. Te informacije nam omogućuju kontinuirano poboljšavanje web stranice i drugih usluga.",
-        "linkedCategory": "analytics",
-        "title": "Analitički kolačići",
-      },
-      {
-        "description": "Naša web stranica djeluje još učinkovitije i bolje zahvaljujući ovim kolačićima. Na primjer, omogućuju nam korištenje usluge razgovora i brzo i jednostavno odgovaranje na vaša pitanja.",
-        "linkedCategory": "functionality",
-        "title": "Funkcionalni kolačići",
-      },
-      {
-        "description": "Naše usluge bolje funkcioniraju ako ih možemo prilagoditi određenim korisnicima. Dopuštanjem personalizacijskih kolačića povećavate šanse da pronađete sadržaj koji želite.",
-        "linkedCategory": "personalization",
-        "title": "Personalizacijski kolačići",
-      },
-    ],
-    "title": "Prilagođene postavke kolačića",
-  },
-}
-`;
-
 exports[`config hr should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvati nužno",
     "description": "
       <p>Boljim razumijevanjem onoga što vas zanima, pokazat ćemo vam relevantniji sadržaj.</p>
       <p>
         Klikom na gumb „Prihvati sve“, dajete
         tvrtkama iz poslovne grupacije Alma Career
         privolu za upotrebu kolačića za personalizaciju, analitiku i ciljani marketing.
-        
+        Možete prilagoditi upotrebu kolačića u svojim <strong><a href="" data-cc="show-preferencesModal">prilagođenim postavkama</a></strong>.
       </p>",
-    "showPreferencesBtn": "Prilagođene postavke",
     "title": "Kolačići čine našu stranicu još boljom",
   },
   "preferencesModal": {
@@ -1252,74 +919,19 @@ exports[`config hu should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config hu should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Minden elfogadása",
-    "description": "
-      <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
-      <p>
-        A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
-        test1, test2 és test3
-        süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-        
-      </p>",
-    "showPreferencesBtn": "Egyéni beállítások",
-    "title": "Az oldalak süti fájlokat használnak",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Minden elfogadása",
-    "acceptNecessaryBtn": "A legszükségesebbek elfogadása",
-    "savePreferencesBtn": "Beállítások mentése",
-    "sections": [
-      {
-        "description": "Ahhoz, hogy a maximumot hozhassa ki webhelyünkből, a legjobb, ha engedélyezi az összes cookie típust.
-            További információkat arról, hogy mik azok a cookie-k és hogyan dolgozunk velük az <a href="https://www.almacareer.com/gdpr" target="_blank">Adatvédelmi szabályzat</a> oldalán találsz.",
-      },
-      {
-        "description": "Ezek a cookie-k weboldalunk megfelelő működéséhez szükségesek, ezért kikapcsolásuk nem lehetséges. Nélkülük például semmilyen tartalom nem jelenhetne meg weboldalunkon, vagy nem működne a bejelentkezés.",
-        "linkedCategory": "necessary",
-        "title": "Technikailag szükséges cookie-k",
-      },
-      {
-        "description": "Ezekkel a cookie-kkel mérhetjük le, mennyire hatékonyak a hirdetéseink és szolgáltatásaink célzott ajánlatai. A marketing cookie-k lehetővé teszik, hogy figyelmeztessük az interneten megjelenő olyan hírekre, amelyek érdekesek lehetnek az Ön számára.m",
-        "linkedCategory": "ad",
-        "title": "Marketing cookie-k",
-      },
-      {
-        "description": "Segítségükkel nyomon követjük, hogy hányan látogatják oldalunkat, és hogyan használják. Ennek köszönhetően tehetjük meg webhelyünk és egyéb szolgáltatásaink folyamatos fejlesztését.",
-        "linkedCategory": "analytics",
-        "title": "Analitikai cookie-k",
-      },
-      {
-        "description": "Ezeknek a cookie-knak köszönhetően weboldalunk még hatékonyabban és jobban működik. Például lehetővé teszik számunkra a chat használatát, hogy gyorsan és egyszerűen válaszolhassunk kérdéseire.",
-        "linkedCategory": "functionality",
-        "title": "Funkcionális cookie-k",
-      },
-      {
-        "description": "Szolgáltatásaink jobban működnek, ha egy adott felhasználóra tudjuk szabni őket. A személyre szabott cookie-k engedélyezésével növeli annak esélyét, hogy éppen a keresett tartalmat találja meg.",
-        "linkedCategory": "personalization",
-        "title": "Személyre szabott cookie-k",
-      },
-    ],
-    "title": "Egyedi cookie-fájl beállítások",
-  },
-}
-`;
-
 exports[`config hu should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Minden elfogadása",
+    "acceptNecessaryBtn": "A legszükségesebbek elfogadása",
     "description": "
       <p>Ha jobban megértjük, mi érdekli Önt, akkor pontosabban személyre szabott tartalmat tudunk Önnek megjeleníteni.</p>
       <p>
         A „Mindent elfogadok” gombra kattintva a hozzájárulását adja ahhoz, hogy az
         Alma Career csoport és a hozzá tartozó vállalatok
         süti fájlokat és egyéb azonosítókat használjon az Ön eszközén. E süti fájlok és egyéb azonosítók használata megkönnyíti a weboldalon belüli navigációt, a személyre szabott tartalom megjelenítését, a célzott marketinget, valamint termékeink és szolgáltatásaink használatának elemzését.
-        
+        A cookie-k használatát testre szabhatja <strong><a href="" data-cc="show-preferencesModal">saját beállításaiban</a></strong>.
       </p>",
-    "showPreferencesBtn": "Egyéni beállítások",
     "title": "Az oldalak süti fájlokat használnak",
   },
   "preferencesModal": {
@@ -1450,74 +1062,19 @@ exports[`config lt should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config lt should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Priimti viską",
-    "description": "
-      <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
-      <p>
-        Spustelėję mygtuką „Priimti viską“, duodate
-        test1, test2 bei test3
-        sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
-        
-      </p>",
-    "showPreferencesBtn": "Pasirinktiniai nustatymai",
-    "title": "Slapukai mūsų svetainę daro dar geresnę",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Priimti viską",
-    "acceptNecessaryBtn": "Priimti būtinus",
-    "savePreferencesBtn": "Išsaugoti nustatymus",
-    "sections": [
-      {
-        "description": "Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
-            Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.",
-      },
-      {
-        "description": "Šie slapukai yra būtini tinkamam mūsų svetainės veikimui, todėl jų negalima išjungti. Be jų nebūtų įmanoma pvz. rodyti bet kokį turinį ar prisijungti mūsų svetainėje.",
-        "linkedCategory": "necessary",
-        "title": "Techniškai būtini slapukai",
-      },
-      {
-        "description": "Šie slapukai padeda mums įvertinti reklamos ir tikslinių paslaugų pasiūlymų efektyvumą. Rinkodaros slapukai leidžia mums pateikti jums naujienas, kurios gali jus sudominti.",
-        "linkedCategory": "ad",
-        "title": "Rinkodaros slapukai",
-      },
-      {
-        "description": "Tai padeda mums stebėti, kiek žmonių lankosi mūsų svetainėje ir kaip jie ja naudojasi. Ši informacija leidžia mums nuolat tobulinti svetainę ir kitas paslaugas.",
-        "linkedCategory": "analytics",
-        "title": "Analitiniai slapukai",
-      },
-      {
-        "description": "Mūsų svetainė yra dar efektyvesnė ir veikia geriau dėl šių slapukų.",
-        "linkedCategory": "functionality",
-        "title": "Funkciniai slapukai",
-      },
-      {
-        "description": "Mūsų paslaugos veikia geriau, jei galime jas pritaikyti konkretiems vartotojams. Leidžiant personalizuoti slapukus, padidinsite savo galimybes rasti norimą turinį.",
-        "linkedCategory": "personalization",
-        "title": "Personalizavimo slapukai",
-      },
-    ],
-    "title": "Individualūs slapukų nustatymai",
-  },
-}
-`;
-
 exports[`config lt should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Priimti viską",
+    "acceptNecessaryBtn": "Priimti būtinus",
     "description": "
       <p>Geriau suprasdami, kas jus domina, mes rodysime jums aktualų turinį.</p>
       <p>
         Spustelėję mygtuką „Priimti viską“, duodate
         Alma Career ir kitoms jos verslo grupės įmonėms
         sutikimą naudoti slapukus personalizavimui, analizei ir tikslinei rinkodarai.
-        
+        Slapukų naudojimą galite pritaikyti <strong><a href="" data-cc="show-preferencesModal">pasirinktinuose nustatymuose</a></strong>.
       </p>",
-    "showPreferencesBtn": "Pasirinktiniai nustatymai",
     "title": "Slapukai mūsų svetainę daro dar geresnę",
   },
   "preferencesModal": {
@@ -1648,74 +1205,19 @@ exports[`config lv should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config lv should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Pieņemt visas",
-    "description": "
-      <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
-      <p>
-        Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
-        test1, test2 un test3
-        piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
-        
-      </p>",
-    "showPreferencesBtn": "Pielāgoti iestatījumi",
-    "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Pieņemt visas",
-    "acceptNecessaryBtn": "Pieņemt nepieciešamās",
-    "savePreferencesBtn": "Saglabāt iestatījumus",
-    "sections": [
-      {
-        "description": "Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
-            Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.",
-      },
-      {
-        "description": "Šīs sīkdatnes ir būtiskas pilnvērtīgai mūsu vietnes darbībai, tāpēc tās nevar atspējot. Bez tām nebūtu iespējams, piemēram, rādīt jebkuru saturu vai pierakstīties mūsu vietnē.",
-        "linkedCategory": "necessary",
-        "title": "Nepieciešamās tehniskās sīkdatnes",
-      },
-      {
-        "description": "Šīs sīkdatnes palīdz mums mērīt mūsu reklāmas un mērķēto pakalpojumu piedāvājumu efektivitāti. Mārketinga sīkdatnes ļauj mums internetā jums piedāvāt jaunumus, kas varētu jūs interesēt.",
-        "linkedCategory": "ad",
-        "title": "Mārketinga sīkdatnes",
-      },
-      {
-        "description": "Šīs sīkdatnes palīdz mums uzraudzīt, cik daudz cilvēku apmeklē mūsu vietni un kā viņi to izmanto. Šī informācija ļauj mums nepārtraukti uzlabot vietni un pakalpojumus.",
-        "linkedCategory": "analytics",
-        "title": "Analītiskās sīkdatnes",
-      },
-      {
-        "description": "Mūsu vietne ir vēl efektīvāka un labāk darbojas, pateicoties šīm sīkdatnēm.",
-        "linkedCategory": "functionality",
-        "title": "Funkcionālās sīkdatnes",
-      },
-      {
-        "description": "Mūsu pakalpojumi darbojas labāk, ja mēs varam tos pielāgot konkrētiem lietotājiem. Atļaujot personalizācijas sīkdatnes, jūs palielināt iespējas atrast jums interesējošu saturu.",
-        "linkedCategory": "personalization",
-        "title": "Personalizācijas sīkdatnes",
-      },
-    ],
-    "title": "Pielāgoti sīkdatņu iestatījumi",
-  },
-}
-`;
-
 exports[`config lv should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Pieņemt visas",
+    "acceptNecessaryBtn": "Pieņemt nepieciešamās",
     "description": "
       <p>Labāk saprastu, kas jums interesē, mēs parādīsim atbilstošāko saturu.</p>
       <p>
         Noklikšķinot uz pogas „Pieņemt visas“, jūs dodat
         Alma Career un citiem tā biznesa grupas uzņēmumiem
         piekrišanu izmantot sīkdatnes personalizācijai, analītikai un mērķētam mārketingam.
-        
+        Jūs varat pielāgot sīkdatņu izmantošanu <strong><a href="" data-cc="show-preferencesModal">savos iestatījumos</a></strong>.
       </p>",
-    "showPreferencesBtn": "Pielāgoti iestatījumi",
     "title": "Sīkdatnes padara mūsu vietnes lietošanu vēl labāku",
   },
   "preferencesModal": {
@@ -1847,66 +1349,11 @@ exports[`config mk should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config mk should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Прифатете ги сите",
-    "description": "
-      <p>Доколку подобро разбереме што она што ве интересира, ќе ви покажеме порелевантна содржина.</p>
-      <p>
-        Со кликнување на копчето „Прифати ги сите“, им давате согласност на
-        компании
-        test1, test2 и test3
-        да користат колачиња за персонализација, аналитика и таргетиран маркетинг.
-        
-      </p>",
-    "showPreferencesBtn": "сопствени поставки",
-    "title": "Колачињата служат за подобро корисничко искуство.",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Прифатете ги сите",
-    "acceptNecessaryBtn": "Прифатете ги неопходните",
-    "savePreferencesBtn": "Зачувајте ги поставките",
-    "sections": [
-      {
-        "description": "Ако сакате да го извлечете максимумот од нашата веб-страна, најдобро е да ги прифатите сите колачиња.
-            Можете да најдете повеќе информации за тоа што се колачиња и како работиме со нив во делот <a href="https://www.almacareer.com/gdpr" target="_blank">Политика за приватност</a>.",
-      },
-      {
-        "description": "Овие колачи7ња се од суштинско значење за правилното функционирање на нашата веб-страна и затоа не можат да се оневозможат. Без нив не би било можно прикажување на која било содржина или најавување на нашата веб-страна.",
-        "linkedCategory": "necessary",
-        "title": "Технички неопходни колачи7ња",
-      },
-      {
-        "description": "Овие колачиња ни помагаат да ја измериме ефективноста на нашите маркетинг активности. Маркетинг колачињата ни овозможуваат да ви пласираме новости што може да ве интересираат.",
-        "linkedCategory": "ad",
-        "title": "Маркетинг колачиња",
-      },
-      {
-        "description": "Овие колачињ7а ни помагаат да следиме колку луѓе ја посетуваат нашата веб-страна и како ја користат. Овие информации потоа ни овозможуваат постојано да ја подобруваме веб-страницата и другите услуги.",
-        "linkedCategory": "analytics",
-        "title": "Аналитичк7и колачиња",
-      },
-      {
-        "description": "Нашата веб7-страна е уште поефикасна и работи подобро благодарение на овие колачиња. На пример, тие ни овозможуваат да ја користиме опцијата за чет и да одговориме на вашите прашања брзо и лесно.",
-        "linkedCategory": "functionality",
-        "title": "Функционал7ни колачиња",
-      },
-      {
-        "description": "Ги унапредуваме нашите услуги доколку можеме да ги прилагодиме на одредени корисници. Дозволувајќи колачиња за персонализација, ги зголемувате вашите шанси да ја пронајдете содржината што ја сакате.",
-        "linkedCategory": "personalization",
-        "title": "Колачиња за персонализација",
-      },
-    ],
-    "title": "сопствени поставки Колачињата",
-  },
-}
-`;
-
 exports[`config mk should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Прифатете ги сите",
+    "acceptNecessaryBtn": "Прифатете ги неопходните",
     "description": "
       <p>Доколку подобро разбереме што она што ве интересира, ќе ви покажеме порелевантна содржина.</p>
       <p>
@@ -1914,9 +1361,8 @@ exports[`config mk should return localization object with cookie table 1`] = `
         компаниите
         Alma Career и на другите компании кои се дел од Alma Career групацијата
         да користат колачиња за персонализација, аналитика и таргетиран маркетинг.
-        
+        Можете да ја прилагодите употребата на колачиња во вашите <strong><a href="" data-cc="show-preferencesModal">сопствени поставки</a></strong>.
       </p>",
-    "showPreferencesBtn": "сопствени поставки",
     "title": "Колачињата служат за подобро корисничко искуство.",
   },
   "preferencesModal": {
@@ -2048,66 +1494,11 @@ exports[`config pl should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config pl should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Akceptuj wszystkie",
-    "description": "
-      <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
-      <p>
-        Kliknij w przycisk „Akceptuj wszystkie”, aby wyrazić zgodę na wykorzystanie plików cookie przez
-        firmy
-        test1, test2 i test3
-        do personalizacji, analizy i ukierunkowanego marketingu.
-        
-      </p>",
-    "showPreferencesBtn": "Własne ustawienia",
-    "title": "Dzięki plikom Cookies nasza strona będzie jeszcze lepsza",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Akceptuj wszystkie",
-    "acceptNecessaryBtn": "Akceptuj niezbędne",
-    "savePreferencesBtn": "Zapisz ustawienia",
-    "sections": [
-      {
-        "description": "Aby w pełni wykorzystać możliwości naszej strony, najlepiej jest zezwolić na wszystkie rodzaje plików cookies.
-            Więcej informacji na temat tego, czym są pliki cookies i jak z nimi pracujemy, znajdziesz w naszej <a href="https://www.almacareer.com/gdpr" target="_blank">Polityce plików cookie</a>.",
-      },
-      {
-        "description": "Te pliki cookies są niezbędne do prawidłowego funkcjonowania naszej strony internetowej, dlatego nie ma możliwości ich wyłączenia. Bez nich na naszej stronie na przykład nie można byłoby wyświetlić żadnej treści lub nie działałoby logowanie.",
-        "linkedCategory": "necessary",
-        "title": "Technicznie niezbędne pliki cookies",
-      },
-      {
-        "description": "Za pomocą tych plików cookies możemy mierzyć, jak skuteczne są nasze reklamy i ukierunkowane oferty naszych usług. Marketingowe pliki cookies pozwalają nam powiadamiać Cię w Internecie o nowościach, które mogą Cię zainteresować.",
-        "linkedCategory": "ad",
-        "title": "Marketingowe pliki cookies",
-      },
-      {
-        "description": "Używamy ich do śledzenia, ile osób odwiedza naszą stronę internetową i jak z niej korzysta. Dzięki temu możemy stale ulepszać stronę i inne usługi.",
-        "linkedCategory": "analytics",
-        "title": "Analityczne pliki cookies",
-      },
-      {
-        "description": "Te pliki cookies sprawiają, że nasza strona internetowa jest jeszcze bardziej wydajna i działa lepiej. Pozwalają nam na przykład korzystać z czatu, dzięki temu możemy szybko i łatwo odpowiadać na Twoje pytania.",
-        "linkedCategory": "functionality",
-        "title": "Funkcjonalne pliki cookies",
-      },
-      {
-        "description": "Nasze usługi działają lepiej, gdy możemy je dostosować do konkretnego użytkownika. Włączeniem personalizacyjnych plików cookies zwiększasz szansę na znalezienie właśnie tych treści, których poszukujesz.",
-        "linkedCategory": "personalization",
-        "title": "Personalizacyjne pliki cookies",
-      },
-    ],
-    "title": "Własne ustawienia plików cookies",
-  },
-}
-`;
-
 exports[`config pl should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Akceptuj wszystkie",
+    "acceptNecessaryBtn": "Akceptuj niezbędne",
     "description": "
       <p>Gdy lepiej zrozumiemy, co Cię interesuje, pokażemy dokładniejsze treści dopasowane do Twoich preferencji.</p>
       <p>
@@ -2115,9 +1506,8 @@ exports[`config pl should return localization object with cookie table 1`] = `
         firmę
         Alma Career i firmy z jej grupy biznesowej
         do personalizacji, analizy i ukierunkowanego marketingu.
-        
+        Korzystanie z plików cookies możesz dostosować we <strong><a href="" data-cc="show-preferencesModal">własnych ustawieniach</a></strong>.
       </p>",
-    "showPreferencesBtn": "Własne ustawienia",
     "title": "Dzięki plikom Cookies nasza strona będzie jeszcze lepsza",
   },
   "preferencesModal": {
@@ -2250,67 +1640,11 @@ exports[`config ru should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config ru should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Принять все",
-    "description": "
-      <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
-      <p>
-        Нажав «Принять все», Вы даете свое согласие
-        компаниям
-        test1, test2 и test3
-        на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-        
-      </p>",
-    "showPreferencesBtn": "Cобственные настройкй",
-    "title": "Этот сайт использует файлы cookie",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Принять все",
-    "acceptNecessaryBtn": "Принятие необходимо",
-    "savePreferencesBtn": "Сохранить настройки",
-    "sections": [
-      {
-        "description": "Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
-            разрешить просматривать и сохранять все типы файлов cookie.
-            Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем, на странице <a href="https://www.almacareer.com/gdpr" target="_blank">Политика конфиденциальности персональных данных</a>.",
-      },
-      {
-        "description": "Эти файлы cookie необходимы для правильной работы нашего веб-сайта, поэтому их невозможно отключить. Без них, например, на нашем веб-сайте невозможно было бы изобразить какое-либо содержание или было бы невозможно войти в систему.",
-        "linkedCategory": "necessary",
-        "title": "Технически необходимые файлы cookie",
-      },
-      {
-        "description": "С помощью этих файлов cookie мы можем измерить, насколько эффективны наша реклама и целевые предложения наших услуг. Маркетинговые файлы cookie позволяют нам по Интернету информировать Вас о новостях, которые могут вас заинтересовать.",
-        "linkedCategory": "ad",
-        "title": "Маркетинговые файлы cookie",
-      },
-      {
-        "description": "Мы используем их, чтобы отслеживать, сколько людей посещают наш веб-сайт и как они его используют. Это позволяет нам постоянно улучшать наш веб-сайт и другие услуги.",
-        "linkedCategory": "analytics",
-        "title": "Аналитические файлы cookie",
-      },
-      {
-        "description": "Благодаря этим файлам cookie наш веб-сайт стал еще продуктивнее и улучшил работу. Например, они позволяют нам использовать чат, чтобы мы могли быстро и просто ответить на вопросы.",
-        "linkedCategory": "functionality",
-        "title": "Функциональные файлы cookie",
-      },
-      {
-        "description": "Наши услуги работают лучше, когда мы можем приспособить их к конкретному пользователю. Включив файлы cookie для персонализации, вы повысите вероятность того, что найдете именно то содержание, которое ищете.",
-        "linkedCategory": "personalization",
-        "title": "Файлы cookie для персонализации",
-      },
-    ],
-    "title": "Индивидуальные настройки файлов cookies",
-  },
-}
-`;
-
 exports[`config ru should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Принять все",
+    "acceptNecessaryBtn": "Принятие необходимо",
     "description": "
       <p>Когда мы лучше поймем, что вас интересует, мы покажем вам лучший контент.</p>
       <p>
@@ -2318,9 +1652,8 @@ exports[`config ru should return localization object with cookie table 1`] = `
         компаниям
         Alma Career и компании ее группы
         на использование файлов cookie и других идентификаторов на Вашем устройстве. Использование файлов cookie и других идентификаторов облегчит навигацию по сайту, отображения персонализированного контента, целевой маркетинг, анализ использования наших продуктов и услуг.
-        
+        Вы можете настроить использование файлов cookie в <strong><a href="" data-cc="show-preferencesModal">собственных настройках</a></strong>.
       </p>",
-    "showPreferencesBtn": "Cобственные настройкй",
     "title": "Этот сайт использует файлы cookie",
   },
   "preferencesModal": {
@@ -2453,66 +1786,11 @@ exports[`config sk should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config sk should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Prijať všetky",
-    "description": "
-      <p>Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.</p>
-      <p>
-        Kliknutím na tlačidlo „Prijať všetky“ dáte
-        spoločnostiam
-        test1, test2 a test3
-        súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-        
-      </p>",
-    "showPreferencesBtn": "Vlastné nastavenia",
-    "title": "S cookies vám vieme lepšie prispôsobiť stránku",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Prijať všetky",
-    "acceptNecessaryBtn": "Prijať nevyhnutné",
-    "savePreferencesBtn": "Uložiť nastavenia",
-    "sections": [
-      {
-        "description": "Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
-            Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.",
-      },
-      {
-        "description": "Tieto cookies sú pre správne fungovanie nášho webu nevyhnutné, preto nie je možné ich vypnúť. Bez nich by sa na našich stránkach napr. nedal zobraziť žiadny obsah alebo by nefungovalo prihlásenie.",
-        "linkedCategory": "necessary",
-        "title": "Technicky nevyhnutné cookies",
-      },
-      {
-        "description": "S týmito cookies môžeme merať, aká efektívna je naša reklama a cielené ponuky našich služieb. Marketingové cookies nám umožnia vás na internete upozorniť na novinky, ktoré vás môžu zaujímať.",
-        "linkedCategory": "ad",
-        "title": "Marketingové cookies",
-      },
-      {
-        "description": "Pomocou nich sledujeme, koľko ľudí náš web navštevuje a ako ho používajú. Vďaka tomu môžeme stránky a ďalšie služby neustále vylepšovať.",
-        "linkedCategory": "analytics",
-        "title": "Analytické cookies",
-      },
-      {
-        "description": "Vďaka týmto cookies sú naše stránky ešte výkonnejšie a fungujú lepšie. Napríklad nám umožňujú používať chat, aby sme na vaše otázky mohli odpovedať rýchlo a jednoducho.",
-        "linkedCategory": "functionality",
-        "title": "Funkčné cookies",
-      },
-      {
-        "description": "Naše služby fungujú lepšie, keď ich môžeme prispôsobiť na mieru konkrétnemu používateľovi. Povolením personalizačných cookies zvýšite šancu, že nájdete práve taký obsah, aký hľadáte.",
-        "linkedCategory": "personalization",
-        "title": "Personalizačné cookies",
-      },
-    ],
-    "title": "Prispôsobiť nastavenia cookies",
-  },
-}
-`;
-
 exports[`config sk should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Prijať všetky",
+    "acceptNecessaryBtn": "Prijať nevyhnutné",
     "description": "
       <p>Presnejší obsah na mieru vám budeme zobrazovať, keď lepšie pochopíme, čo vás zaujíma.</p>
       <p>
@@ -2520,9 +1798,8 @@ exports[`config sk should return localization object with cookie table 1`] = `
         spoločnosti
         Alma Career a spoločnostiam z jej obchodné skupiny
         súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-        
+        Viac informácií o Cookies a úpravu ich používania nájdete vo <strong><a href="" data-cc="show-preferencesModal">vlastnom nastavení</a></strong>.
       </p>",
-    "showPreferencesBtn": "Vlastné nastavenia",
     "title": "S cookies vám vieme lepšie prispôsobiť stránku",
   },
   "preferencesModal": {
@@ -2653,74 +1930,19 @@ exports[`config sl should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config sl should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Sprejmi vse",
-    "description": "
-      <p>Z boljšim razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno vsebino.</p>
-      <p>
-        S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
-        test1, test2 in test3
-        za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
-        
-      </p>",
-    "showPreferencesBtn": "Shrani nastavitve",
-    "title": "Piškotki izboljšujejo našo spletno stran",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Sprejmi vse",
-    "acceptNecessaryBtn": "Sprejmi samo nujne",
-    "savePreferencesBtn": "Shrani nastavitve",
-    "sections": [
-      {
-        "description": "Če želite najbolje izkoristiti našo spletno stran, je najbolje, da dovolite vse vrste piškotkov.
-            Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.",
-      },
-      {
-        "description": "Ti piškotki so bistveni za pravilno delovanje naše spletne strani in jih ni mogoče izklopiti. Brez njih ne bi bilo mogoče prikazati vsebine ali se prijaviti na našo spletno stran.",
-        "linkedCategory": "necessary",
-        "title": "Tehnično nujni piškotki",
-      },
-      {
-        "description": "Ti piškotki nam pomagajo meriti učinkovitost našega oglaševanja in ciljnih ponudb storitev. Trženjski piškotki nam omogočajo, da vam na internetu prinašamo novice, ki vas morda zanimajo.",
-        "linkedCategory": "ad",
-        "title": "Trženjski piškotki",
-      },
-      {
-        "description": "Ti nam pomagajo spremljati, koliko ljudi obišče našo spletno stran in kako jo uporabljajo. Te informacije nam omogočajo nenehno izboljševanje spletne strani in drugih storitev.",
-        "linkedCategory": "analytics",
-        "title": "Analitični piškotki",
-      },
-      {
-        "description": "Naša spletna stran je še učinkovitejša in bolje deluje zaradi teh piškotkov. Na primer, omogočajo nam uporabo klepetalne storitve in hitro ter enostavno odgovarjanje na vaša vprašanja.",
-        "linkedCategory": "functionality",
-        "title": "Funkcionalni piškotki",
-      },
-      {
-        "description": "Naše storitve bolje delujejo, če jih lahko prilagodimo določenim uporabnikom. Z dovoljenjem piškotkov za prilagajanje povečate možnosti, da najdete vsebino, ki jo želite.",
-        "linkedCategory": "personalization",
-        "title": "Piškotki za prilagajanje",
-      },
-    ],
-    "title": "Prilagojene nastavitve piškotkov",
-  },
-}
-`;
-
 exports[`config sl should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Sprejmi vse",
+    "acceptNecessaryBtn": "Sprejmi samo nujne",
     "description": "
       <p>Z boljšim razumevanjem, kaj vas zanima, vam bomo prikazali bolj relevantno vsebino.</p>
       <p>
         S klikom na gumb „Sprejmi vse“ dajete soglasje podjetjem
         iz poslovne skupine Alma Career
         za uporabo piškotkov za personalizacijo, analitiko in ciljno oglaševanje.
-        
+        Uporabo piškotkov lahko prilagodite v <strong><a href="" data-cc="show-preferencesModal">svojih nastavitvah</a></strong>.
       </p>",
-    "showPreferencesBtn": "Shrani nastavitve",
     "title": "Piškotki izboljšujejo našo spletno stran",
   },
   "preferencesModal": {
@@ -2852,66 +2074,11 @@ exports[`config uk should return localization object for acceptNecessary button 
 }
 `;
 
-exports[`config uk should return localization object for showSettings button mode 1`] = `
-{
-  "consentModal": {
-    "acceptAllBtn": "Прийняти все",
-    "description": "
-      <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
-      <p>
-        Натиснувши «Прийняти все», Ви даєте свою згоду
-        компаніям
-        test1, test2 i test3
-        на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-        
-      </p>",
-    "showPreferencesBtn": "Власнйe налаштуваннйe",
-    "title": "Цей сайт використовує файли cookie",
-  },
-  "preferencesModal": {
-    "acceptAllBtn": "Прийняти все",
-    "acceptNecessaryBtn": "Прийняття необхідно",
-    "savePreferencesBtn": "Зберегти налаштування",
-    "sections": [
-      {
-        "description": "Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
-            Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.",
-      },
-      {
-        "description": "Ці файли Cookies необхідні для правильного функціонування нашого сайту, тому вимкнути їх неможливо. Без них було б неможливо відображати на нашому сайті його контент, або не працював би вхід на сайт.",
-        "linkedCategory": "necessary",
-        "title": "Технічно необхідні файли Cookies",
-      },
-      {
-        "description": "За допомогою цих файлів Cookies ми можемо оцінити, наскільки ефективна наша реклама і цільові пропозиції наших послуг. Маркетингові файли Cookies дозволяють нам інформувати Вас в Інтернеті про новини, які можуть вас зацікавити.",
-        "linkedCategory": "ad",
-        "title": "Маркетингові файли Cookies",
-      },
-      {
-        "description": "Ми використовуємо їх для відстеження того, скільки людей відвідують наш веб-сайт і як вони ним користуються. Завдяки цьому ми можемо постійно покращувати сайт та інші сервіси.",
-        "linkedCategory": "analytics",
-        "title": "Аналітичні файли Cookies",
-      },
-      {
-        "description": "Ці файли Cookies роблять наш сайт ще більш ефективним і покращують його роботу. Наприклад, вони дозволяють нам використовувати чат, щоб швидко і легко відповідати на ваші запитання.",
-        "linkedCategory": "functionality",
-        "title": "Функціональні файли Cookies",
-      },
-      {
-        "description": "Наші сервіси працюють краще, коли ми можемо адаптувати їх до конкретного користувача. Дозволивши персоналізовані файли Cookies, ви збільшуєте ймовірність того, що знайдете потрібний контент.",
-        "linkedCategory": "personalization",
-        "title": "Персоналізовані файли Cookies",
-      },
-    ],
-    "title": "Користувацькі налаштування файлів Cookies",
-  },
-}
-`;
-
 exports[`config uk should return localization object with cookie table 1`] = `
 {
   "consentModal": {
     "acceptAllBtn": "Прийняти все",
+    "acceptNecessaryBtn": "Прийняття необхідно",
     "description": "
       <p>Якщо ми краще зрозуміємо, що вас цікавить, ми покажемо вам точніший контент.</p>
       <p>
@@ -2919,9 +2086,8 @@ exports[`config uk should return localization object with cookie table 1`] = `
         компаніям
         Alma Career та компаніям з її групи
         на використання файлів cookie та інших ідентифікаторів на Вашому пристрої. Використання цих файлів cookie та інших ідентифікаторів полегшить навігацію по сайту, відображення персоналізованого контенту, цільовий маркетинг, аналіз використання наших продуктів і послуг.
-        
+        Використання файлів Cookies Ви можете змінити в своїх <strong><a href="" data-cc="show-preferencesModal">власних Налаштуваннях</a></strong>.
       </p>",
-    "showPreferencesBtn": "Власнйe налаштуваннйe",
     "title": "Цей сайт використовує файли cookie",
   },
   "preferencesModal": {
