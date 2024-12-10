@@ -2,13 +2,10 @@ import {
   addSeparators,
   assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -20,15 +17,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Назив', description: 'Опис', expiration: 'Истекување' };
 
@@ -45,14 +37,10 @@ export const config = (
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         да користат колачиња за персонализација, аналитика и таргетиран маркетинг.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Можете да ја прилагодите употребата на колачиња во вашите <strong><a href="" data-cc="show-preferencesModal">сопствени поставки</a></strong>.`
-            : ''
-        }
+        Можете да ја прилагодите употребата на колачиња во вашите <strong><a href="" data-cc="show-preferencesModal">сопствени поставки</a></strong>.
       </p>`,
       acceptAllBtn: 'Прифатете ги сите',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Прифатете ги неопходните', 'сопствени поставки'),
+      acceptNecessaryBtn: 'Прифатете ги неопходните',
     },
     preferencesModal: {
       title: 'сопствени поставки Колачињата',

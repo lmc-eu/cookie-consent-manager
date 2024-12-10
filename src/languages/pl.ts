@@ -2,13 +2,10 @@ import {
   addSeparators,
   assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -20,15 +17,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Nazwa', description: 'Opis', expiration: 'Ważność (Do)' };
 
@@ -45,14 +37,10 @@ export const config = (
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), extra.and)}
         do personalizacji, analizy i ukierunkowanego marketingu.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Korzystanie z plików cookies możesz dostosować we <strong><a href="" data-cc="show-preferencesModal">własnych ustawieniach</a></strong>.`
-            : ''
-        }
+        Korzystanie z plików cookies możesz dostosować we <strong><a href="" data-cc="show-preferencesModal">własnych ustawieniach</a></strong>.
       </p>`,
       acceptAllBtn: 'Akceptuj wszystkie',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Akceptuj niezbędne', 'Własne ustawienia'),
+      acceptNecessaryBtn: 'Akceptuj niezbędne',
     },
     preferencesModal: {
       title: 'Własne ustawienia plików cookies',

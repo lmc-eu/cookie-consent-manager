@@ -2,13 +2,10 @@ import {
   addSeparators,
   assembleCookieTableSections,
   assembleDescriptionIntro,
-  assembleSecondaryButton,
-  isSettingsButtonNotShown,
   legalizeAlmaCareer,
   pluralize,
 } from '../utils';
-import { CookieTableCategories, ExtraMessages, Values } from '../types';
-import { SecondaryButtonMode } from '../constants';
+import { CookieTableCategories, ExtraMessages } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
 
 const extra = {
@@ -20,15 +17,10 @@ const extra = {
 
 /**
  * @param {ExtraMessages} [extraMessages] - Object with extra messages
- * @param {SecondaryButtonMode} [secondaryButtonMode] - Which secondary button should be shown
  * @param {CookieTableCategories} [cookieTable] - Cookie table items defined by category
  * @returns {Translation} Object with translated messages
  */
-export const config = (
-  extraMessages: ExtraMessages,
-  secondaryButtonMode: Values<typeof SecondaryButtonMode>,
-  cookieTable: CookieTableCategories,
-): Translation => {
+export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCategories): Translation => {
   const lang = { ...extra, ...extraMessages };
   const cookieTableHeaders = { name: 'Názov', description: 'Popis', expiration: 'Platnosť' };
 
@@ -45,14 +37,10 @@ export const config = (
         ${pluralize(lang.companyNames.length, lang.company, lang.companies)}
         ${addSeparators(legalizeAlmaCareer(lang.companyNames, lang.legalName), lang.and)}
         súhlas s využívaním súborov Cookies za účelom personalizácie, analýzy a cieleného marketingu.
-        ${
-          isSettingsButtonNotShown(secondaryButtonMode)
-            ? `Viac informácií o Cookies a úpravu ich používania nájdete vo <strong><a href="" data-cc="show-preferencesModal">vlastnom nastavení</a></strong>.`
-            : ''
-        }
+        Viac informácií o Cookies a úpravu ich používania nájdete vo <strong><a href="" data-cc="show-preferencesModal">vlastnom nastavení</a></strong>.
       </p>`,
       acceptAllBtn: 'Prijať všetky',
-      ...assembleSecondaryButton(secondaryButtonMode, 'Prijať nevyhnutné', 'Vlastné nastavenia'),
+      acceptNecessaryBtn: 'Prijať nevyhnutné',
     },
     preferencesModal: {
       title: 'Prispôsobiť nastavenia cookies',
