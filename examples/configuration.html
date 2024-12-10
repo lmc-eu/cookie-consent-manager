@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
 </head>
 <body>
+<script type="module" src="/src/init.ts"></script>
 
 <header class="container">
     <div class="d-flex flex-column align-items-center flex-md-row py-3">
@@ -85,7 +86,7 @@
         </div>
     </div>
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
-        <a href="" data-cc="c-settings" class="btn btn-primary shadow-lg">
+        <a href="" data-cc="show-preferencesModal" class="btn btn-primary shadow-lg">
             <i class="bi bi-gear me-1"></i>
             Cookie settings
         </a>
@@ -104,7 +105,6 @@
                     <li>Forcing specific language – Slovak (using <code>defaultLang</code>), ie. disabling auto-detection (<code>autodetectLang</code>)</li>
                     <li>Setting multiple company names in the consent text (<code>companyNames</code>)</li>
                     <li>Using <code>force</code> as a <code>displayMode</code> instead of <code>soft</code> (which is used in other examples)</li>
-                    <li>Using <code>showSettings</code> as a <code>secondaryButtonMode</code> instead of default <code>acceptNecessary</code></li>
                     <li>
                         Overwriting raw configuration of the underlying cookie-consent component (via <code>config</code> option),
                         to modify some advanced features.
@@ -129,7 +129,7 @@
                 </p>
 
                 <p>
-                    <a href="#" onclick="ccm.allowedCategory('analytics') ? console.log('Execute some analytics feature') : console.log('Do not execute analytics'); return false;">
+                    <a href="#" onclick="ccm.acceptedCategory('analytics') ? console.log('Execute some analytics feature') : console.log('Do not execute analytics'); return false;">
                         Example link with conditional logic activated <code>onclick</code></a>
                     (see browser console – note difference with and without accepted consent)
                 </p>
@@ -157,22 +157,24 @@
         autodetectLang: false, // do not detect language from the `<html lang="...">` value
         defaultLang: 'sk', // force use of 'sk' language instead
         displayMode: 'force', // show consent in a blocking modal window (this is also default)
-        secondaryButtonMode: 'showSettings', // use "Show settings" as the secondary button instead of default "Accept only necessary"
         companyNames: ['Alma Career', 'Some Other Company', 'ACME'], // define custom company names to be shown in the consent text
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
-        config: { // override default config of the underlying library, see https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
-          delay: 500, // show cookie consent banner after 500ms
-          page_scripts: false, // disable third-party script management, see https://github.com/lmc-eu/cookie-consent-manager#third-party-scripts-loaded-via-script
-          cookie_necessary_only_expiration: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
+        config: { // override default config of the underlying library, see https://cookieconsent.orestbida.com/reference/configuration-reference.html
+          manageScriptTags: false, // disable management of <script> attributes, see https://github.com/lmc-eu/cookie-consent-manager#third-party-scripts-loaded-via-script
+          // TODO: this will work properly once the values are merged instead of overridden on the first level
+          // https://github.com/lmc-eu/cookie-consent-manager/issues/385
+          // cookie: {
+          //     expiresAfterDays: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
+          // },
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
-        onFirstAccept: (cookieConsent) => { // user just clicked and gave consent to selected or all categories
-            if (!cookieConsent.allowedCategory('functionality')) {
+        onFirstAccept: ({ cookieConsent }) => { // user just clicked and gave consent to selected or all categories
+            if (!cookieConsent.acceptedCategory('functionality')) {
               window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
             }
         },
-        onChange: (cookieConsent, categories) => { // when user changes settings while on page, the now-rejected categories must be respected
-          if (categories.changed.includes('functionality') && !cookieConsent.allowedCategory('functionality')) {
+        onChange: ({ cookieConsent, categories }) => { // when user changes settings while on page, the now-rejected categories must be respected
+          if (categories.changed.includes('functionality') && !cookieConsent.acceptedCategory('functionality')) {
             window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
           }
         },
@@ -202,10 +204,9 @@
                 expiration: '2 roky'
               },
               {
-                name: '^_utm',
+                name: '_utm*',
                 description: `Používame Google Analytics, aby sme zistili, koľko ľudí navštevuje našu webovú stránku a ako ju používajú`,
                 expiration: '2 roky',
-                is_regex: true
               },
             ],
             // functionality: [ ... ],
