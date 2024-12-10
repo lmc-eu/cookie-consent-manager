@@ -1,5 +1,5 @@
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from '../constants';
-import { VanillaCookieConsent } from './vanilla-cookieconsent';
+import CookieConsent, { CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 
 /* eslint-disable no-unused-vars */
 export type Values<T> = T[keyof T];
@@ -12,14 +12,13 @@ export type CategoriesChangeset = {
   changed: CookieConsentCategoryValues[];
 };
 
-export type OnFirstAcceptCallback = (
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-) => void;
-export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export type OnChangeCallback = (
-  cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>,
-  categories: CategoriesChangeset,
-) => void;
+export type OnFirstAcceptCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
+export type OnAcceptCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
+export type OnChangeCallback = (param: {
+  cookieConsent: typeof CookieConsent;
+  cookie: CookieValue;
+  categories: CategoriesChangeset;
+}) => void;
 
 export type TranslationOverride = {
   consentTitle?: string;
@@ -28,7 +27,7 @@ export type TranslationOverride = {
 };
 
 export type CookieTableCategories = {
-  [category in CookieConsentCategoryValues]: VanillaCookieConsent.CookieTableItem[];
+  [category in CookieConsentCategoryValues]: { [p: string]: string }[];
 };
 
 export type CookieTable = {
@@ -47,11 +46,11 @@ export type CookieConsentManagerOptions = {
   secondaryButtonMode: Values<typeof SecondaryButtonMode>;
   translationOverrides: Record<string, TranslationOverride>;
   cookieTable: CookieTable;
-  config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
+  config?: Partial<CookieConsentConfig>;
 };
 
 export type CookieConsentManager = (
   serviceName: string,
   args?: Partial<CookieConsentManagerOptions>,
-) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
+) => typeof CookieConsent;
 /* eslint-enable no-unused-vars */
