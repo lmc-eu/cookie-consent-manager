@@ -2,21 +2,22 @@ import 'vanilla-cookieconsent';
 import { nanoid } from 'nanoid';
 import submitConsent from './consentCollector';
 import {
-  CookieConsentCategoryValues,
+  CategoriesChangeset,
   CookieConsentManager,
   CookieConsentManagerOptions,
   OnAcceptCallback,
   OnChangeCallback,
-  VanillaCookieConsent,
 } from './types';
 import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from './constants';
-import { assembleLanguagesConfig } from './languages/loader';
+import { assembleTranslationsConfig } from './languages/loader';
 import { pushToDataLayer } from './dataLayer';
+import * as CookieConsent from 'vanilla-cookieconsent';
+import { CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
-const noopAcceptCallback: OnAcceptCallback = (cookieConsent) => {};
+const noopAcceptCallback: OnAcceptCallback = () => {};
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
-const noopChangeCallback: OnChangeCallback = (cookieConsent, categories) => {};
+const noopChangeCallback: OnChangeCallback = () => {};
 
 const defaultOptions: CookieConsentManagerOptions = {
   defaultLang: 'cs',
@@ -52,10 +53,10 @@ const defaultOptions: CookieConsentManagerOptions = {
  *    and to block page until user action. `soft` to show consent in a banner on the bottom of the page.
  * @param {Record<string, TranslationOverride>} [args.translationOverrides] - Translation overrides for specified languages
  * @param {CookieTable} [args.cookieTable] - Cookie table for specified languages
- * @param {VanillaCookieConsent.Options} [args.config] - Override default config.
- *   See https://github.com/orestbida/cookieconsent/blob/master/Readme.md#all-available-options
- * @returns {VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>} Instance of the underlying CookieConsent component.
- *   For available API, see https://github.com/orestbida/cookieconsent#apis--configuration-parameters
+ * @param {CookieConsentConfig} [args.config] - Override default config.
+ *   See https://cookieconsent.orestbida.com/reference/configuration-reference.html
+ * @returns {CookieConsent} Instance of the underlying CookieConsent component.
+ *   See https://cookieconsent.orestbida.com/reference/api-reference.html
  */
 const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   if (!serviceName || serviceName === '' || typeof serviceName !== 'string') {
@@ -77,90 +78,100 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cookieTable,
     config,
   } = options;
-  const cookieName = 'lmc_ccm';
-  const cookieConsent = window.initCookieConsent();
+  const cookieName = 'lmc_ccm'; // TODO: alma_ccm?
+  const cookieConsent = CookieConsent;
 
-  const onFirstAcceptHandler = (
-    userPreferences: VanillaCookieConsent.UserPreferences<CookieConsentCategoryValues>,
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
-  ) => {
-    const cookieData = cookieConsent.get('data');
+  // TODO: rename to onFirstConsentHandler?
+  const onFirstAcceptHandler = ({ cookie }: { cookie: CookieValue }) => {
+    const cookieData = cookieConsent.getCookie('data');
     if (cookieData == null || !('uid' in cookieData)) {
-      cookieConsent.set('data', {
+      cookieConsent.setCookieData({
         value: { serviceName, uid: nanoid() },
         mode: 'update',
       });
     }
 
-    pushToDataLayer(cookie);
+    pushToDataLayer(cookieConsent.getCookie());
 
     if (consentCollectorApiUrl !== null) {
-      submitConsent(consentCollectorApiUrl, cookieConsent);
+      submitConsent(consentCollectorApiUrl, cookieConsent.getCookie(), cookieConsent.getUserPreferences());
     }
 
-    onFirstAccept(cookieConsent);
+    onFirstAccept({ cookieConsent, cookie: cookieConsent.getCookie() });
   };
 
-  const onAcceptHandler = () => {
-    onAccept(cookieConsent);
+  const onAcceptHandler = ({ cookie }: { cookie: CookieValue }) => {
+    onAccept({ cookieConsent, cookie });
   };
 
-  const onChangeHandler = (
-    cookie: VanillaCookieConsent.Cookie<CookieConsentCategoryValues>,
-    changedCategories: Array<CookieConsentCategoryValues>,
-  ) => {
+  const onChangeHandler = ({
+    cookie,
+    changedCategories,
+    changedServices,
+  }: {
+    cookie: CookieValue;
+    changedCategories: string[];
+    changedServices: { [key: string]: string[] };
+  }) => {
     const userPreferences = cookieConsent.getUserPreferences();
-    const categories = {
-      accepted: userPreferences.accepted_categories,
-      rejected: userPreferences.rejected_categories,
+    const categories: CategoriesChangeset = {
+      accepted: userPreferences.acceptedCategories,
+      rejected: userPreferences.rejectedCategories,
       changed: changedCategories,
     };
 
     pushToDataLayer(cookie);
 
     if (consentCollectorApiUrl !== null) {
-      submitConsent(consentCollectorApiUrl, cookieConsent);
+      submitConsent(consentCollectorApiUrl, cookie, userPreferences);
     }
 
-    onChange(cookieConsent, categories);
+    onChange({ cookieConsent, cookie, categories });
   };
 
-  const cookieConsentConfig: VanillaCookieConsent.Options<CookieConsentCategoryValues> = {
-    auto_language: autodetectLang ? 'document' : null, // Autodetect language based on `<html lang="...">` value
-    autorun: true, // Show the cookie consent banner as soon as possible
-    cookie_expiration: 365, // 1 year
-    cookie_necessary_only_expiration: 60, // 2 months
-    cookie_name: cookieName, // Predefined cookie name. Do not override.
-    current_lang: defaultLang, // Default language used when auto_language is false (or when autodetect failed)
-    delay: 0, // Show the modal immediately after init
-    force_consent: displayMode === DisplayMode.FORCE,
-    hide_from_bots: true, // To be hidden also from Selenium
-    page_scripts: true, // Manage third-party scripts loaded using <script>
-    use_rfc_cookie: true, // Store cookie content in RFC compatible format.
-    gui_options: {
-      consent_modal: {
-        layout:
-          displayMode === DisplayMode.FORCE
-            ? VanillaCookieConsent.GuiConsentLayout.BOX
-            : VanillaCookieConsent.GuiConsentLayout.BAR,
-        position:
-          displayMode === DisplayMode.FORCE
-            ? VanillaCookieConsent.GuiConsentPosition.MIDDLE_CENTER
-            : VanillaCookieConsent.GuiConsentPosition.BOTTOM_CENTER,
-        transition: VanillaCookieConsent.Transition.SLIDE, // zoom/slide
-        swap_buttons: true,
-      },
-      settings_modal: {
-        layout: VanillaCookieConsent.GuiSettingsLayout.BOX,
-        transition: VanillaCookieConsent.Transition.SLIDE,
+  const cookieConsentConfig: CookieConsentConfig = {
+    autoShow: true, // Show the cookie consent banner as soon as possible
+    cookie: {
+      name: cookieName, // Predefined cookie name. Do not override.
+      expiresAfterDays: (acceptType) => {
+        return acceptType === 'necessary' ? 60 : 365; // 2 months or 1 year
       },
     },
-    onAccept: onAcceptHandler,
-    onFirstAction: onFirstAcceptHandler,
+    language: {
+      default: defaultLang, // Default language used when auto_language is null (or when autodetect failed)
+      autoDetect: autodetectLang ? 'document' : undefined, // Autodetect language based on `<html lang="...">` value (with "document" value)
+      translations: assembleTranslationsConfig(companyNames, translationOverrides, secondaryButtonMode, cookieTable),
+    },
+    disablePageInteraction: displayMode === DisplayMode.FORCE,
+    hideFromBots: true, // To be hidden also from Selenium
+    manageScriptTags: true, // Manage third-party scripts loaded using <script>
+    guiOptions: {
+      consentModal: {
+        layout: displayMode === DisplayMode.FORCE ? 'box' : 'bar',
+        position: displayMode === DisplayMode.FORCE ? 'middle center' : 'bottom',
+        flipButtons: true,
+        equalWeightButtons: false,
+      },
+      preferencesModal: {
+        layout: 'box',
+        equalWeightButtons: false,
+      },
+    },
+    onConsent: onAcceptHandler,
+    onFirstConsent: onFirstAcceptHandler,
     onChange: onChangeHandler,
-    languages: assembleLanguagesConfig(companyNames, translationOverrides, secondaryButtonMode, cookieTable),
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true,
+      },
+      ad: {},
+      analytics: {},
+      functionality: {},
+      personalization: {},
+    },
     // override default config if necessary
-    ...config,
+    ...config, // TODO: deep merge, https://github.com/lmc-eu/cookie-consent-manager/issues/385
   };
 
   cookieConsent.run(cookieConsentConfig);
@@ -168,4 +179,4 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, VanillaCookieConsent, LmcCookieConsentManager };
+export { CookieConsentCategory, DisplayMode, SecondaryButtonMode, CookieConsent, LmcCookieConsentManager };
