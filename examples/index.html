@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
 
     <!-- Following script will be loaded only after "personalization" consent is detected -->
-    <script type="text/plain" data-cookiecategory="personalization" src="./assets/personalization.js" defer></script>
+    <script type="text/plain" data-category="personalization" src="./assets/personalization.js" defer></script>
 
     <!-- This is only for purposes of this example page -->
     <style>
@@ -30,6 +30,7 @@
 </head>
 <body>
 <script type="module" src="/src/init.ts"></script>
+
 <header class="container">
     <div class="d-flex flex-column align-items-center flex-md-row py-3">
         <a href="." class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -96,11 +97,11 @@
         </div>
     </div>
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
-        <a href="" data-cc="c-settings" class="btn btn-primary shadow-lg">
+        <a href="" data-cc="show-preferencesModal" class="btn btn-primary shadow-lg">
             <i class="bi bi-gear me-1"></i>
             Cookie settings
         </a>
-        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
+        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>almacareer_ccm</code> cookie and reload">
             <i class="bi bi-arrow-clockwise me-1"></i>
             Reset cookie
         </a>
@@ -133,8 +134,8 @@
                     (empty)
                 </p>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Content set using inline <code>&lt;script&gt;</code></h2>
-                <script type="text/plain" data-cookiecategory="functionality">
+                <h2 class="mt-4 mt-md-5 mb-3">Content set using inline <code>&lt;script&gt;</code> when <code>functionality</code> consent detected</h2>
+                <script type="text/plain" data-category="functionality">
                     document.getElementById('functionality-content').innerText = 'Consent for functionality category was given';
                 </script>
                 <p id="functionality-content">
@@ -163,23 +164,22 @@
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
-        onAccept: (cookieConsent) => { // any type of consent detected (including only necessary, custom selection or all categories)
-          if (cookieConsent.allowedCategory('ad')) {
+        onAccept: ({ cookieConsent }) => { // any type of consent detected (including only necessary, custom selection or all categories)
+          if (cookieConsent.acceptedCategory('ad')) {
             document.getElementById('ad-content').innerHTML = 'Ad consent allowed';
           }
-          updateAllowedCategories(cookieConsent);
+          updateAcceptedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
-        onFirstAccept: (cookieConsent) => {  // user just clicked and gave consent to selected or all categories
+        onFirstAccept: () => {  // user just clicked and gave consent to selected or all categories
           document.getElementById('onFirstAccept-content').innerHTML = '<code>onFirstAccept()</code> called';
         },
-        onChange: (cookieConsent, categories) => { // user previously gave consent but now change its preferences
-          console.log(categories);
+        onChange: ({ cookieConsent, categories }) => { // user previously gave consent but now change its preferences
           if (categories.changed.includes('ad')) {
-            document.getElementById('ad-content').innerHTML = cookieConsent.allowedCategory('ad') ? 'Ad consent was just changed and allowed' : 'Ad consent was just changed and rejected';
+            document.getElementById('ad-content').innerHTML = cookieConsent.acceptedCategory('ad') ? 'Ad consent was just changed and allowed' : 'Ad consent was just changed and rejected';
           }
 
-          updateAllowedCategories(cookieConsent);
+          updateAcceptedCategories(cookieConsent);
         }
       }
     );

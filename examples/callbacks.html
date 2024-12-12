@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+<script type="module" src="/src/init.ts"></script>
 
 <header class="container">
     <div class="d-flex flex-column align-items-center flex-md-row py-3">
@@ -96,11 +97,11 @@
         </div>
     </div>
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
-        <a href="" data-cc="c-settings" class="btn btn-primary shadow-lg">
+        <a href="" data-cc="show-preferencesModal" class="btn btn-primary shadow-lg">
             <i class="bi bi-gear me-1"></i>
             Cookie settings
         </a>
-        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>lmc_ccm</code> cookie and reload">
+        <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>almacareer_ccm</code> cookie and reload">
             <i class="bi bi-arrow-clockwise me-1"></i>
             Reset cookie
         </a>
@@ -151,22 +152,22 @@
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
-        onAccept: (cookieConsent) => { // any type of consent detected (including only necessary, custom selection or all categories)
+        onAccept: ({cookieConsent}) => { // any type of consent detected (including only necessary, custom selection or all categories)
           markCallbackCalled('onAccept');
-          updateAllowedCategories(cookieConsent);
+          updateAcceptedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
-        onFirstAccept: (cookieConsent) => { // user just clicked and gave consent to selected or all categories
+        onFirstAccept: ({cookieConsent}) => { // user just clicked and gave consent to selected or all categories
           markCallbackCalled('onFirstAccept');
 
-          if (cookieConsent.allowedCategory('functionality')) { // check for specific consent category
+          if (cookieConsent.acceptedCategory('functionality')) { // check for specific consent category
             console.log('Consent for extended functionality given');
           }
         },
-        onChange: (cookieConsent, categories) => { // user previously gave consent but now change its preferences
+        onChange: ({cookieConsent, categories}) => { // user previously gave consent but now change its preferences
           resetCallbackMarks();
           markCallbackCalled('onChange');
-          updateAllowedCategories(cookieConsent);
+          updateAcceptedCategories(cookieConsent);
 
           document.getElementById('onchange-content').innerHTML = `<pre><code class="language-json">${JSON.stringify(categories)}</code></pre>`;
           window.Prism.highlightAll(); // highlight previous piece of code with Prism.js
