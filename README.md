@@ -236,7 +236,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
     cookieTable: { // cookie table for specified languages, shown in settings modal
       cs: {
         necessary: [
-          { name: 'lmc_ccm', description: 'Cookie je nezbytná k uložení vašich preference týkající se povolených kategorií cookies', expiration: '1 rok' },
+          { name: 'almacareer_ccm', description: 'Cookie je nezbytná k uložení vašich preference týkající se povolených kategorií cookies', expiration: '1 rok' },
           { name: 'PHPSESSID', description: 'Cookie nezbytná ke správnému fungování webu', expiration: 'do konce relace' },
         ],
         // ad: [ ... ],

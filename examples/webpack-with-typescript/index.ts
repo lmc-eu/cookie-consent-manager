@@ -5,7 +5,7 @@ const ccmArgs = {
   displayMode: DisplayMode.SOFT,
   config: {
       cookie: {
-        name:  'lmc_ccm_example',
+        name:  'almacareer_ccm_example',
         domain: 'example.com',
         expiresAfterDays: 365,
       }

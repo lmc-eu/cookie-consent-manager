@@ -5,7 +5,7 @@
  * @returns {void}
  */
 function removeCookieAndReload() {
-  document.cookie = `lmc_ccm=; Max-Age=0; path=/; domain=${window.location.hostname}`;
+  document.cookie = `almacareer_ccm=; Max-Age=0; path=/; domain=${window.location.hostname}`;
 }
 
 /**
