@@ -78,7 +78,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     cookieTable,
     config,
   } = options;
-  const cookieName = 'lmc_ccm'; // TODO: alma_ccm?
+  const cookieName = 'almacareer_ccm';
   const cookieConsent = CookieConsent;
 
   // TODO: rename to onFirstConsentHandler?
