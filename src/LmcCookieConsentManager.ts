@@ -1,5 +1,6 @@
 import 'vanilla-cookieconsent';
 import { nanoid } from 'nanoid';
+import { mergician } from 'mergician';
 import submitConsent from './consentCollector';
 import {
   CategoriesChangeset,
@@ -12,7 +13,7 @@ import { CookieConsentCategory, DisplayMode } from './constants';
 import { assembleTranslationsConfig } from './languages/loader';
 import { pushToDataLayer } from './dataLayer';
 import * as CookieConsent from 'vanilla-cookieconsent';
-import { CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
+import { AcceptType, CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
 const noopAcceptCallback: OnAcceptCallback = () => {};
@@ -125,50 +126,51 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     onChange({ cookieConsent, cookie, categories });
   };
 
-  const cookieConsentConfig: CookieConsentConfig = {
-    autoShow: true, // Show the cookie consent banner as soon as possible
-    cookie: {
-      name: cookieName, // Predefined cookie name. Do not override.
-      expiresAfterDays: (acceptType) => {
-        return acceptType === 'necessary' ? 60 : 365; // 2 months or 1 year
+  const cookieConsentConfig: CookieConsentConfig = mergician({})(
+    {
+      autoShow: true, // Show the cookie consent banner as soon as possible
+      cookie: {
+        name: cookieName, // Predefined cookie name. Do not override.
+        expiresAfterDays: (acceptType: AcceptType) => {
+          return acceptType === 'necessary' ? 60 : 365; // 2 months or 1 year
+        },
+      },
+      language: {
+        default: defaultLang, // Default language used when auto_language is null (or when autodetect failed)
+        autoDetect: autodetectLang ? 'document' : undefined, // Autodetect language based on `<html lang="...">` value (with "document" value)
+        translations: assembleTranslationsConfig(companyNames, translationOverrides, cookieTable),
+      },
+      disablePageInteraction: displayMode === DisplayMode.FORCE,
+      hideFromBots: true, // To be hidden also from Selenium
+      manageScriptTags: true, // Manage third-party scripts loaded using <script>
+      guiOptions: {
+        consentModal: {
+          layout: displayMode === DisplayMode.FORCE ? 'box' : 'bar',
+          position: displayMode === DisplayMode.FORCE ? 'middle center' : 'bottom',
+          flipButtons: true,
+          equalWeightButtons: false,
+        },
+        preferencesModal: {
+          layout: 'box',
+          equalWeightButtons: false,
+        },
+      },
+      onConsent: onAcceptHandler,
+      onFirstConsent: onFirstAcceptHandler,
+      onChange: onChangeHandler,
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        ad: {},
+        analytics: {},
+        functionality: {},
+        personalization: {},
       },
     },
-    language: {
-      default: defaultLang, // Default language used when auto_language is null (or when autodetect failed)
-      autoDetect: autodetectLang ? 'document' : undefined, // Autodetect language based on `<html lang="...">` value (with "document" value)
-      translations: assembleTranslationsConfig(companyNames, translationOverrides, cookieTable),
-    },
-    disablePageInteraction: displayMode === DisplayMode.FORCE,
-    hideFromBots: true, // To be hidden also from Selenium
-    manageScriptTags: true, // Manage third-party scripts loaded using <script>
-    guiOptions: {
-      consentModal: {
-        layout: displayMode === DisplayMode.FORCE ? 'box' : 'bar',
-        position: displayMode === DisplayMode.FORCE ? 'middle center' : 'bottom',
-        flipButtons: true,
-        equalWeightButtons: false,
-      },
-      preferencesModal: {
-        layout: 'box',
-        equalWeightButtons: false,
-      },
-    },
-    onConsent: onAcceptHandler,
-    onFirstConsent: onFirstAcceptHandler,
-    onChange: onChangeHandler,
-    categories: {
-      necessary: {
-        enabled: true,
-        readOnly: true,
-      },
-      ad: {},
-      analytics: {},
-      functionality: {},
-      personalization: {},
-    },
-    // override default config if necessary
-    ...config, // TODO: deep merge, https://github.com/lmc-eu/cookie-consent-manager/issues/385
-  };
+    config,
+  );
 
   cookieConsent.run(cookieConsentConfig);
 
