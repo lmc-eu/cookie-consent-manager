@@ -161,11 +161,9 @@
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         config: { // override default config of the underlying library, see https://cookieconsent.orestbida.com/reference/configuration-reference.html
           manageScriptTags: false, // disable management of <script> attributes, see https://github.com/lmc-eu/cookie-consent-manager#third-party-scripts-loaded-via-script
-          // TODO: this will work properly once the values are merged instead of overridden on the first level
-          // https://github.com/lmc-eu/cookie-consent-manager/issues/385
-          // cookie: {
-          //     expiresAfterDays: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
-          // },
+          cookie: {
+              expiresAfterDays: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
+          },
         },
         onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
         onFirstAccept: ({ cookieConsent }) => { // user just clicked and gave consent to selected or all categories
