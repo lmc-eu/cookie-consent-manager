@@ -10,7 +10,7 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 
 ## Table of contents
 
-1. [Upgrade from version 1.x](#upgrade-from-version-1x)
+1. [Upgrade to version 3.x](#upgrade-to-version-30)
 1. [Basic usage](#basic-usage)
 1. [Loading the plugin](#loading-the-plugin)
 1. [Manage features depending on the given consent](#manage-features-depending-on-the-given-consent)
@@ -19,9 +19,9 @@ The package is a wrapper around [Cookie Consent] by [Orest Bida].
 1. [Theming](#theming)
 1. [Development and contributing](#development-and-contributing)
 
-## Upgrade from version 1.x
+## Upgrade to version 3.0
 
-See [upgrade guide](UPGRADE-2.0.md) for upgrade guidance to version 2.0.
+See [upgrade guide](UPGRADE-3.0.md) for upgrade guidance from version 2.x to version 3.0.
 For complete list of changes see [changelog](CHANGELOG.md).
 
 ## Basic usage
@@ -38,13 +38,13 @@ Load default CSS along with your styles in `<head>`:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/CookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/CookieConsentManager.min.css">
 ```
 
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/init.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
   initCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
@@ -54,11 +54,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
 This will load the plugin from CDN and initialize the plugin with default settings.
 
-As a next step, add a link to open cookie settings after the consent was previously given. This link should be placed
+As a next step, add a link to open cookie preferences after the consent was previously given. This link should be placed
 somewhere in the page footer, usually near "Terms of use" and "Privacy policy" links.
 
 ```html
-<a href="" data-cc="c-settings">Open cookie settings</a>
+<a href="" data-cc="c-preferencesModal">Open cookie preferences</a>
 ```
 
 [👀 See demo page with example][examples].
@@ -72,8 +72,8 @@ You can load the plugin from a CDN, as in the basic example above.
 ```html
 <!-- Note we use version "cookie-consent-manager@2", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/CookieConsentManager.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/CookieConsentManager.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/init.js"></script>
 ```
 
 Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).
@@ -141,13 +141,14 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 ## Manage features depending on the given consent
 
-For "necessary" cookies it is not needed to check whether a user has given any consent.
+For cookies within "necessary" category it is not needed to check whether a user has given any consent.
 
 However, for all other purposes, it must be explicitly checked whether user has given the appropriate
 consent category. This must be done *before* the respective cookie is set.
 
 In case user rejects some (or all) optional consent categories, **you must implement logic to remove current cookies
 (as well as localStorage) in your product yourself**`, this library does not manipulate with the cookies by default.
+(However you can use `autoClearCookies` config option.)
 
 ### Consent categories
 
@@ -161,8 +162,9 @@ In case user rejects some (or all) optional consent categories, **you must imple
 
 ### GTM (Google Tag Manager) scripts
 
-GTM scripts are managed centrally in LMC, so if GTM of the product is managed by LMC, after implementing this library,
-you don't need to worry about conditions when to run them. The library sets all the required data to GTM dataLayer.
+GTM scripts are managed centrally in Alma Career, so if GTM of the product is managed by Alma Career, after implementing
+this library, you don't need to worry about conditions when to run them. The library sets all the required data
+to GTM dataLayer.
 
 However, keep in mind you still need to **take care (i.e. delete) of already existing cookies**, even of those created by GTM scripts.
 
@@ -175,8 +177,8 @@ To execute custom code which depends on cookie consent use callbacks:
 initCookieConsentManager(
   'demo.example',
   {
-    onConsent: (cookieConsent) => {
-      if (cookieConsent.allowedCategory('functionality')) {
+    onConsent: ({ cookieConsent, cookie }) => {
+      if (cookieConsent.acceptedCategory('functionality')) {
         startOptionalFeature();
       }
     },
@@ -188,20 +190,20 @@ initCookieConsentManager(
 ### Third party scripts loaded via `<script>`
 
 To automatically load external scripts after a specific consent category is given by the user, modify the `<script>` tag:
-set `type` to `type="text/plain"` and add `data-cookiecategory` attribute with required consent category.
+set `type` to `type="text/plain"` and add `data-category` attribute with required consent category.
 
 ```html
-<script src="personalization.js" type="text/plain" data-cookiecategory="personalization" defer></script>
+<script src="personalization.js" type="text/plain" data-category="personalization" defer></script>
 
-<script type="text/plain" data-cookiecategory="functionality">
+<script type="text/plain" data-category="functionality">
    console.log('functionality consent given');
 </script>
 ```
 
-[👀 This feature is shown in examples][examples].
+[👀 This feature is also shown in examples][examples].
 See also [full documentation][cookie consent third party] for this feature.
 
-This feature is enabled by default. If you'd like to disable it, you can do so by overriding `page_scripts` value in
+This feature is enabled by default. If you'd like to disable it, you can do so by overriding `manageScriptTags` value in
 `config` option:
 
 ```js
@@ -209,7 +211,7 @@ initCookieConsentManager(
   'demo.example',
   {
     config: {
-      page_scripts: false
+      manageScriptTags: false
     }
   }
 );
@@ -226,14 +228,14 @@ initCookieConsentManager( // when loaded as a module, these options are passed t
   {
     defaultLang: 'cs',
     autodetectLang: false,
-    onConsent: (cookieConsent) => {
+    onConsent: ({ cookieConsent, cookie }) => {
       // custom code
     },
     translationOverrides: { // overrides of the default translation for specified languages
       cs: { consentTitle: 'Vlastní nadpis', descriptionIntro: 'Vlastní úvodní text popisu souhlasu' },
       en: { consentTitle: 'Custom title' },
     },
-    cookieTable: { // cookie table for specified languages, shown in settings modal
+    cookieTable: { // cookie table for specified languages, shown in preferences modal
       cs: {
         necessary: [
           { name: 'almacareer_ccm', description: 'Cookie je nezbytná k uložení vašich preference týkající se povolených kategorií cookies', expiration: '1 rok' },
@@ -242,7 +244,7 @@ initCookieConsentManager( // when loaded as a module, these options are passed t
         // ad: [ ... ],
         analytics: [
           { name: '_ga', description: 'Nástrojem Google Analytics zjišťujeme, kolik lidí náš web navštěvuje a jak ho používá', expiration: '2 roky' },
-          { name: '^_utm', description: 'Nástrojem Google Analytics zjišťujeme, kolik lidí náš web navštěvuje a jak ho používá', expiration: '2 roky', is_regex: true },
+          { name: '_utm', description: 'Nástrojem Google Analytics zjišťujeme, kolik lidí náš web navštěvuje a jak ho používá', expiration: '2 roky' },
         ],
         // functionality: [ ... ],
         // personalization: [ ... ]
@@ -255,7 +257,7 @@ initCookieConsentManager( // when loaded as a module, these options are passed t
       }
     },
     config: {
-      // overrides of the internal config of the underlying library, see https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
+      // overrides of the internal config of the underlying library, see https://cookieconsent.orestbida.com/reference/configuration-reference.html
     },
   }
 );
@@ -271,11 +273,11 @@ initCookieConsentManager( // when loaded as a module, these options are passed t
 | `defaultLang`            | string                              | `'cs'`                                                      | Default language. One of `cs`, `de`, `en`, `hu`, `pl`, `ru`, `sk`, `uk`. This language will be used when autodetect is disabled or when it fails.                                                             |
 | `companyNames`           | array                               | `['Alma Career']`                                           | Array of strings with company names. Adjust only when the consent needs to be given to multiple companies. Value "Alma Career" is replaced with translated legal name. [See example][examples-configuration]. |
 | `consentCollectorApiUrl` | ?string                             | `'https://ccm.lmc.cz/(...)'`                                | URL of the API where user consent information is sent. Null to disable sending data to the API.                                                                                                               |
-| `config`                 | Object                              | `{}`                                                        | Override internal config of the underlying library. For all parameters see [original library][cookie consent options].                                                                                        |
+| `config`                 | Object                              | `{}`                                                        | Override internal config of the underlying library. For all parameters see [config reference of the original library][cookie consent options].                                                                |
 | `displayMode`            | DisplayMode (string)                | `DisplayMode.FORCE` (`force`)                               | `force` (default) to show consent in a centered modal box and to block page until user action. `soft` to show consent banner on the bottom of the page and do not block the page before user action.          |
 | `on*` callbacks          | function                            | `(cookieConsent) => {}`                                     | See below for configurable callbacks.                                                                                                                                                                         |
-| `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle`, `descriptionIntro` and `preferencesModalMoreInfo` could be overridden.<br>[See example][examples-configuration]                            |
-| `cookieTable`            | CookieTable                         | `{}`                                                        | Define a cookie table (shown in the settings modal) for specified languages and specified categories.<br>[See above for example configuration](#configuration)                                                |
+| `translationOverrides`   | Record<string, TranslationOverride> | `{}`                                                        | Override default translation for specified languages. `consentTitle`, `descriptionIntro` and `preferencesModalMoreInfo` could be overridden.<br>[See example][examples-configuration]                         |
+| `cookieTable`            | CookieTable                         | `{}`                                                        | Define a cookie table (shown in the preferences modal) for specified languages and specified categories.<br>[See above for example configuration](#configuration)                                             |
 
 ### Supported languages
 
@@ -303,14 +305,15 @@ Translation of the user interface is provided in the following languages:
 The library can trigger configured callbacks in various events. They can be used to execute custom functionality,
 for example, to enable some feature after user has given consent.
 
-Each configured callback receives `cookieConsent` parameter - instance of the underlying [cookie consent] library,
-which can be used to call [its methods][cookie consent api] or retrieve data from the cookie.
+Each configured callback receives `cookieConsent` as part of the options object. This is instance of the underlying [cookie consent] library,
+that can be used to call [its methods][cookie consent api] or retrieve data from the cookie. `cookie` parameter contains value of the consent cookie.
+`onChange()` callback also receiver `categories` object, containing array of `accepted`, `rejected`, and `changed` consent categories.
 
-| Callback                              | Trigger event                                                                                                                                                       |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onFirstConsent(cookieConsent)`       | This function will be executed only once, when the user takes the first action (accept all/only selected/only necessary categories).                                |
-| `onConsent(cookieConsent)`            | Any consent is detected (either given now or after page load if it was already saved previously)                                                                    |
-| `onChange(cookieConsent, categories)` | Right after the user changes cookie settings. The callback receives also `categories` object containing arrays of `accepted`, `rejected`, and `changed` categories. |
+| Callback                                          | Trigger event                                                                                                                                                          |
+|---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onFirstConsent({ cookieConsent, cookie })`       | This function will be executed only once, when the user takes the first action (accept all/only selected/only necessary categories).                                   |
+| `onConsent({ cookieConsent, cookie })`            | Any consent is detected (either given now or after page load if it was already saved previously)                                                                       |
+| `onChange({ cookieConsent, cookie, categories })` | Right after the user changes cookie preferences. The callback receives also `categories` object containing arrays of `accepted`, `rejected`, and `changed` categories. |
 
 [👀 See callbacks example][examples-callbacks]
 
@@ -385,56 +388,56 @@ anywhere in your stylesheet (the order of which is not important):
 <details>
 <summary>Full list of available CSS custom properties:</summary>
 
-| Category | CSS custom property                      | Description                                                     |
-|----------|------------------------------------------|-----------------------------------------------------------------|
-| Common   | `--lmcccm-font-family`                   | Base font family                                                |
-|          | `--lmcccm-base-font-size`                | Base font size                                                  |
-|          | `--lmcccm-bg`                            | Common background color                                         |
-|          | `--lmcccm-text`                          | Common text color                                               |
-|          | `--lmcccm-backdrop-color`                | Backdrop color                                                  |
-| Links    | `--lmcccm-link-text`                     | Link text color                                                 |
-|          | `--lmcccm-link-text-decoration`          | Link text decoration                                            |
-|          | `--lmcccm-link-hover-text`               | Link text color on hover                                        |
-|          | `--lmcccm-link-hover-text-decoration`    | Link text decoration on hover                                   |
-|          | `--lmcccm-link-active-text`              | Link text color in active state                                 |
-| Buttons  | `--lmcccm-btn-font-weight`               | Button font weight                                              |
-|          | `--lmcccm-btn-text-transform`            | Button text transform                                           |
-|          | `--lmcccm-btn-border-width`              | Button border width                                             |
-|          | `--lmcccm-btn-border-style`              | Button border style                                             |
-|          | `--lmcccm-btn-border-radius`             | Button border radius                                            |
-|          | `--lmcccm-btn-primary-border`            | Primary button border color                                     |
-|          | `--lmcccm-btn-primary-bg`                | Primary button background color                                 |
-|          | `--lmcccm-btn-primary-text`              | Primary button text color                                       |
-|          | `--lmcccm-btn-primary-hover-border`      | Primary button border color on hover                            |
-|          | `--lmcccm-btn-primary-hover-bg`          | Primary button background color on hover                        |
-|          | `--lmcccm-btn-primary-hover-text`        | Primary button text color on hover                              |
-|          | `--lmcccm-btn-primary-active-border`     | Primary button border color in active state                     |
-|          | `--lmcccm-btn-primary-active-bg`         | Primary button background color in active state                 |
-|          | `--lmcccm-btn-primary-active-text`       | Primary button text color in active state                       |
-|          | `--lmcccm-btn-secondary-border`          | Secondary button border color                                   |
-|          | `--lmcccm-btn-secondary-bg`              | Secondary button background color                               |
-|          | `--lmcccm-btn-secondary-text`            | Secondary button text color                                     |
-|          | `--lmcccm-btn-secondary-hover-border`    | Secondary button border color on hover                          |
-|          | `--lmcccm-btn-secondary-hover-bg`        | Secondary button background color on hover                      |
-|          | `--lmcccm-btn-secondary-hover-text`      | Secondary button text color on hover                            |
-|          | `--lmcccm-btn-secondary-active-border`   | Secondary button border color in active state                   |
-|          | `--lmcccm-btn-secondary-active-bg`       | Secondary button background color in active state               |
-|          | `--lmcccm-btn-secondary-active-text`     | Secondary button text color in active state                     |
-| Toggle   | `--lmcccm-toggle-bg-off`                 | Toggle background in unselected state                           |
-|          | `--lmcccm-toggle-bg-on`                  | Toggle background in selected state                             |
-|          | `--lmcccm-toggle-bg-readonly`            | Toggle background in readonly state                             |
-|          | `--lmcccm-toggle-knob-bg`                | Toggle knob color                                               |
-|          | `--lmcccm-toggle-knob-icon-color`        | Toggle knob icon color                                          |
-| Modal    | `--lmcccm-modal-max-width`               | Maximum width of settings modal                                 |
-|          | `--lmcccm-modal-max-height`              | Maximum height of settings modal (box mode only)                |
-|          | `--lmcccm-modal-border-radius`           | Settings modal border radius (box mode only)                    |
-|          | `--lmcccm-modal-bg`                      | Settings modal background color (defaults to common background) |
-|          | `--lmcccm-modal-text`                    | Settings modal text color (defaults to common text color)       |
-|          | `--lmcccm-modal-section-border`          | Border color of settings modal sections                         |
-| Cookies  | `--lmcccm-cookie-category-border-radius` | Cookie category block border radius                             |
-|          | `--lmcccm-cookie-category-bg`            | Cookie category block background color                          |
-|          | `--lmcccm-cookie-category-hover-bg`      | Cookie category block background color on hover                 |
-|          | `--lmcccm-cookie-table-border`           | Cookie table border color                                       |
+| Category | CSS custom property                      | Description                                                        |
+|----------|------------------------------------------|--------------------------------------------------------------------|
+| Common   | `--lmcccm-font-family`                   | Base font family                                                   |
+|          | `--lmcccm-base-font-size`                | Base font size                                                     |
+|          | `--lmcccm-bg`                            | Common background color                                            |
+|          | `--lmcccm-text`                          | Common text color                                                  |
+|          | `--lmcccm-backdrop-color`                | Backdrop color                                                     |
+| Links    | `--lmcccm-link-text`                     | Link text color                                                    |
+|          | `--lmcccm-link-text-decoration`          | Link text decoration                                               |
+|          | `--lmcccm-link-hover-text`               | Link text color on hover                                           |
+|          | `--lmcccm-link-hover-text-decoration`    | Link text decoration on hover                                      |
+|          | `--lmcccm-link-active-text`              | Link text color in active state                                    |
+| Buttons  | `--lmcccm-btn-font-weight`               | Button font weight                                                 |
+|          | `--lmcccm-btn-text-transform`            | Button text transform                                              |
+|          | `--lmcccm-btn-border-width`              | Button border width                                                |
+|          | `--lmcccm-btn-border-style`              | Button border style                                                |
+|          | `--lmcccm-btn-border-radius`             | Button border radius                                               |
+|          | `--lmcccm-btn-primary-border`            | Primary button border color                                        |
+|          | `--lmcccm-btn-primary-bg`                | Primary button background color                                    |
+|          | `--lmcccm-btn-primary-text`              | Primary button text color                                          |
+|          | `--lmcccm-btn-primary-hover-border`      | Primary button border color on hover                               |
+|          | `--lmcccm-btn-primary-hover-bg`          | Primary button background color on hover                           |
+|          | `--lmcccm-btn-primary-hover-text`        | Primary button text color on hover                                 |
+|          | `--lmcccm-btn-primary-active-border`     | Primary button border color in active state                        |
+|          | `--lmcccm-btn-primary-active-bg`         | Primary button background color in active state                    |
+|          | `--lmcccm-btn-primary-active-text`       | Primary button text color in active state                          |
+|          | `--lmcccm-btn-secondary-border`          | Secondary button border color                                      |
+|          | `--lmcccm-btn-secondary-bg`              | Secondary button background color                                  |
+|          | `--lmcccm-btn-secondary-text`            | Secondary button text color                                        |
+|          | `--lmcccm-btn-secondary-hover-border`    | Secondary button border color on hover                             |
+|          | `--lmcccm-btn-secondary-hover-bg`        | Secondary button background color on hover                         |
+|          | `--lmcccm-btn-secondary-hover-text`      | Secondary button text color on hover                               |
+|          | `--lmcccm-btn-secondary-active-border`   | Secondary button border color in active state                      |
+|          | `--lmcccm-btn-secondary-active-bg`       | Secondary button background color in active state                  |
+|          | `--lmcccm-btn-secondary-active-text`     | Secondary button text color in active state                        |
+| Toggle   | `--lmcccm-toggle-bg-off`                 | Toggle background in unselected state                              |
+|          | `--lmcccm-toggle-bg-on`                  | Toggle background in selected state                                |
+|          | `--lmcccm-toggle-bg-readonly`            | Toggle background in readonly state                                |
+|          | `--lmcccm-toggle-knob-bg`                | Toggle knob color                                                  |
+|          | `--lmcccm-toggle-knob-icon-color`        | Toggle knob icon color                                             |
+| Modal    | `--lmcccm-modal-max-width`               | Maximum width of preferences modal                                 |
+|          | `--lmcccm-modal-max-height`              | Maximum height of preferences modal (box mode only)                |
+|          | `--lmcccm-modal-border-radius`           | Preferences modal border radius (box mode only)                    |
+|          | `--lmcccm-modal-bg`                      | Preferences modal background color (defaults to common background) |
+|          | `--lmcccm-modal-text`                    | Preferences modal text color (defaults to common text color)       |
+|          | `--lmcccm-modal-section-border`          | Border color of preferences modal sections                         |
+| Cookies  | `--lmcccm-cookie-category-border-radius` | Cookie category block border radius                                |
+|          | `--lmcccm-cookie-category-bg`            | Cookie category block background color                             |
+|          | `--lmcccm-cookie-category-hover-bg`      | Cookie category block background color on hover                    |
+|          | `--lmcccm-cookie-table-border`           | Cookie table border color                                          |
 
 </details>
 
@@ -479,7 +482,7 @@ This will make the development server accessible http://localhost:3000/ .
 ### Contributing
 
 For commit messages follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification with
-[LMC rules](https://github.com/lmc-eu/code-quality-tools/blob/main/packages/commitlint-config/index.js).
+[Alma Career rules](https://github.com/lmc-eu/code-quality-tools/blob/main/packages/commitlint-config/index.js).
 The commit message will also be automatically checked as pre-commit hook.
 
 To ensure the code passes linting and code style test run:
@@ -502,13 +505,12 @@ package to [npmjs.com](https://npmjs.com/).
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/lmc-eu/cookie-consent-manager/blob/main/LICENSE.md)
-for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE.md) for more information.
 
 [cookie consent]: https://github.com/orestbida/cookieconsent
-[cookie consent api]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#api
-[cookie consent third party]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#how-to-blockmanage-scripts
-[cookie consent options]: https://github.com/orestbida/cookieconsent/tree/v2.9?tab=readme-ov-file#configuration-options
+[cookie consent api]: https://cookieconsent.orestbida.com/reference/api-reference.html
+[cookie consent third party]: https://cookieconsent.orestbida.com/advanced/manage-scripts.html
+[cookie consent options]: https://cookieconsent.orestbida.com/reference/configuration-reference.html
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
 [spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
