@@ -119,8 +119,8 @@
                     <li class="list-group-item" id="consent-personalization">personalization</li>
                 </ul>
 
-                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onFirstAccept()</code> callback</h2>
-                <p id="onFirstAccept-content">
+                <h2 class="mt-4 mt-md-5 mb-3">Content set from <code>onFirstConsent()</code> callback</h2>
+                <p id="onFirstConsent-content">
                     (empty)
                 </p>
 
@@ -164,15 +164,15 @@
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
-        onAccept: ({ cookieConsent }) => { // any type of consent detected (including only necessary, custom selection or all categories)
+        onConsent: ({ cookieConsent }) => { // any type of consent detected (including only necessary, custom selection or all categories)
           if (cookieConsent.acceptedCategory('ad')) {
             document.getElementById('ad-content').innerHTML = 'Ad consent allowed';
           }
           updateAcceptedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
-        onFirstAccept: () => {  // user just clicked and gave consent to selected or all categories
-          document.getElementById('onFirstAccept-content').innerHTML = '<code>onFirstAccept()</code> called';
+        onFirstConsent: () => {  // user just clicked and gave consent to selected or all categories
+          document.getElementById('onFirstConsent-content').innerHTML = '<code>onFirstConsent()</code> called';
         },
         onChange: ({ cookieConsent, categories }) => { // user previously gave consent but now change its preferences
           if (categories.changed.includes('ad')) {

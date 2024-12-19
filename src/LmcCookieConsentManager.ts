@@ -6,7 +6,7 @@ import {
   CategoriesChangeset,
   CookieConsentManager,
   CookieConsentManagerOptions,
-  OnAcceptCallback,
+  OnConsentCallback,
   OnChangeCallback,
 } from './types';
 import { CookieConsentCategory, DisplayMode } from './constants';
@@ -16,7 +16,7 @@ import * as CookieConsent from 'vanilla-cookieconsent';
 import { AcceptType, CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
-const noopAcceptCallback: OnAcceptCallback = () => {};
+const noopConsentCallback: OnConsentCallback = () => {};
 /* eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function */
 const noopChangeCallback: OnChangeCallback = () => {};
 
@@ -24,8 +24,8 @@ const defaultOptions: CookieConsentManagerOptions = {
   defaultLang: 'cs',
   autodetectLang: true,
   consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries',
-  onFirstAccept: noopAcceptCallback,
-  onAccept: noopAcceptCallback,
+  onFirstConsent: noopConsentCallback,
+  onConsent: noopConsentCallback,
   onChange: noopChangeCallback,
   companyNames: ['Alma Career'],
   displayMode: DisplayMode.FORCE,
@@ -41,9 +41,9 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @param {boolean} [args.autodetectLang] - Autodetect language from the browser
  * @param {?string} [args.consentCollectorApiUrl] - URL of the API where user consent information should be sent.
  *   Null to disable.
- * @param {OnFirstAcceptCallback} [args.onFirstAccept] - Callback to be executed right after any consent is just accepted
- * @param {OnAcceptCallback} [args.onAccept] - Callback to be executed when any consent is detected (either given right now
- *   or already saved previously)
+ * @param {OnFirstConsentCallback} [args.onFirstConsent] - Callback to be executed right after any consent is just accepted
+ * @param {OnConsentCallback} [args.onConsent] - Callback to be executed when any consent is detected (either given
+ *   right now or already saved previously)
  * @param {OnChangeCallback} [args.onChange] - Callback to be executed right after user change his/her preferences
  * @param {Array} [args.companyNames] - Array of strings with company names. Adjust only when the consent needs
  *   to be given to multiple companies.
@@ -66,8 +66,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
     defaultLang,
     autodetectLang,
     consentCollectorApiUrl,
-    onFirstAccept,
-    onAccept,
+    onFirstConsent,
+    onConsent,
     onChange,
     companyNames,
     displayMode,
@@ -78,8 +78,7 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   const cookieName = 'almacareer_ccm';
   const cookieConsent = CookieConsent;
 
-  // TODO: rename to onFirstConsentHandler?
-  const onFirstAcceptHandler = ({ cookie }: { cookie: CookieValue }) => {
+  const onFirstConsentHandler = ({ cookie }: { cookie: CookieValue }) => {
     const cookieData = cookieConsent.getCookie('data');
     if (cookieData == null || !('uid' in cookieData)) {
       cookieConsent.setCookieData({
@@ -94,11 +93,11 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
       submitConsent(consentCollectorApiUrl, cookieConsent.getCookie(), cookieConsent.getUserPreferences());
     }
 
-    onFirstAccept({ cookieConsent, cookie: cookieConsent.getCookie() });
+    onFirstConsent({ cookieConsent, cookie: cookieConsent.getCookie() });
   };
 
-  const onAcceptHandler = ({ cookie }: { cookie: CookieValue }) => {
-    onAccept({ cookieConsent, cookie });
+  const onConsentHandler = ({ cookie }: { cookie: CookieValue }) => {
+    onConsent({ cookieConsent, cookie });
   };
 
   const onChangeHandler = ({
@@ -155,8 +154,8 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
           equalWeightButtons: false,
         },
       },
-      onConsent: onAcceptHandler,
-      onFirstConsent: onFirstAcceptHandler,
+      onConsent: onConsentHandler,
+      onFirstConsent: onFirstConsentHandler,
       onChange: onChangeHandler,
       categories: {
         necessary: {

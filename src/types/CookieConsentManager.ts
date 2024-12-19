@@ -12,8 +12,8 @@ export type CategoriesChangeset = {
   changed: CookieConsentCategoryValues[];
 };
 
-export type OnFirstAcceptCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
-export type OnAcceptCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
+export type OnFirstConsentCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
+export type OnConsentCallback = (param: { cookieConsent: typeof CookieConsent; cookie: CookieValue }) => void;
 export type OnChangeCallback = (param: {
   cookieConsent: typeof CookieConsent;
   cookie: CookieValue;
@@ -38,8 +38,8 @@ export type CookieConsentManagerOptions = {
   defaultLang: string;
   autodetectLang: boolean;
   consentCollectorApiUrl: string;
-  onFirstAccept: OnFirstAcceptCallback;
-  onAccept: OnAcceptCallback;
+  onFirstConsent: OnFirstConsentCallback;
+  onConsent: OnConsentCallback;
   onChange: OnChangeCallback;
   companyNames: string[];
   displayMode: Values<typeof DisplayMode>;

@@ -109,7 +109,7 @@
                         Overwriting raw configuration of the underlying cookie-consent component (via <code>config</code> option),
                         to modify some advanced features.
                     </li>
-                    <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstAccept</code>)</li>
+                    <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstConsent</code>)</li>
                     <li>Clearing localStorage when user updates consent and rejects some consent category (<code>onChange</code>)</li>
                     <li>Using <code>cookieTable</code> configuration to list cookies in the settings modal</li>
                     <li>Overriding default translation (<code>translationOverrides</code>) for consent modal title</li>
@@ -165,8 +165,8 @@
               expiresAfterDays: 30, // expire consent after 30 days instead of default 60 (when only necessary accepted)
           },
         },
-        onAccept: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
-        onFirstAccept: ({ cookieConsent }) => { // user just clicked and gave consent to selected or all categories
+        onConsent: () => document.getElementById('reset').removeAttribute('hidden'), // reveal Reset cookie button
+        onFirstConsent: ({ cookieConsent }) => { // user just clicked and gave consent to selected or all categories
             if (!cookieConsent.acceptedCategory('functionality')) {
               window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
             }
