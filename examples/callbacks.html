@@ -112,8 +112,8 @@
 
                 <h2 class="mt-md-3 mb-3">Callbacks</h2>
                 <ul class="list-group list-callbacks">
-                    <li class="list-group-item" id="callback-onFirstAccept">onFirstAccept</li>
-                    <li class="list-group-item" id="callback-onAccept">onAccept</li>
+                    <li class="list-group-item" id="callback-onFirstConsent">onFirstConsent</li>
+                    <li class="list-group-item" id="callback-onConsent">onConsent</li>
                     <li class="list-group-item" id="callback-onChange">onChange</li>
                 </ul>
 
@@ -152,13 +152,13 @@
       {
         consentCollectorApiUrl: 'https://ccm.lmc.cz/local-data-acceptation-data-entries?Spot=(public,demo)', // override default URL for demo purposes; do not set custom consentCollectorApiUrl unless you have been explicitly guided to do so!
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
-        onAccept: ({cookieConsent}) => { // any type of consent detected (including only necessary, custom selection or all categories)
-          markCallbackCalled('onAccept');
+        onConsent: ({cookieConsent}) => { // any type of consent detected (including only necessary, custom selection or all categories)
+          markCallbackCalled('onConsent');
           updateAcceptedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
-        onFirstAccept: ({cookieConsent}) => { // user just clicked and gave consent to selected or all categories
-          markCallbackCalled('onFirstAccept');
+        onFirstConsent: ({cookieConsent}) => { // user just clicked and gave consent to selected or all categories
+          markCallbackCalled('onFirstConsent');
 
           if (cookieConsent.acceptedCategory('functionality')) { // check for specific consent category
             console.log('Consent for extended functionality given');

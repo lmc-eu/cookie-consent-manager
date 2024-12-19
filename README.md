@@ -175,7 +175,7 @@ To execute custom code which depends on cookie consent use callbacks:
 initLmcCookieConsentManager(
   'demo.example',
   {
-    onAccept: (cookieConsent) => {
+    onConsent: (cookieConsent) => {
       if (cookieConsent.allowedCategory('functionality')) {
         startOptionalFeature();
       }
@@ -226,7 +226,7 @@ initLmcCookieConsentManager( // when loaded as a module, these options are passe
   {
     defaultLang: 'cs',
     autodetectLang: false,
-    onAccept: (cookieConsent) => {
+    onConsent: (cookieConsent) => {
       // custom code
     },
     translationOverrides: { // overrides of the default translation for specified languages
@@ -308,8 +308,8 @@ which can be used to call [its methods][cookie consent api] or retrieve data fro
 
 | Callback                              | Trigger event                                                                                                                                                       |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onFirstAccept(cookieConsent)`        | This function will be executed only once, when the user takes the first action (accept all/only selected/only necessary categories).                                |
-| `onAccept(cookieConsent)`             | Any consent is detected (either given now or after page load if it was already saved previously)                                                                    |
+| `onFirstConsent(cookieConsent)`       | This function will be executed only once, when the user takes the first action (accept all/only selected/only necessary categories).                                |
+| `onConsent(cookieConsent)`            | Any consent is detected (either given now or after page load if it was already saved previously)                                                                    |
 | `onChange(cookieConsent, categories)` | Right after the user changes cookie settings. The callback receives also `categories` object containing arrays of `accepted`, `rejected`, and `changed` categories. |
 
 [👀 See callbacks example][examples-callbacks]
