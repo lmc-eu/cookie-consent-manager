@@ -26,12 +26,12 @@
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
   },
   "bugs": {
-    "url": "https://jira.int.lmc.cz/browse"
+    "url": "https://github.com/lmc-eu/cookie-consent-manager/issues"
   },
   "contributors": [
-    "Ondřej Machulda <ondrej.machulda@lmc.eu>",
-    "Tomáš Litera <tomas.litera@lmc.eu>",
-    "Adam Kudrna <adam.kudrna@lmc.eu>"
+    "Ondřej Machulda <ondrej.machulda@almacareer.com>",
+    "Tomáš Litera <tomas.litera@almacareer.com>",
+    "Adam Kudrna <adam.kudrna@almacareer.com>"
   ],
   "scripts": {
     "precss": "yarn css:lint",
