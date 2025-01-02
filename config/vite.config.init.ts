@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       output: [
         {
-          name: 'LmcCookieConsentManagerInit',
+          name: 'AlmaCareerCookieConsentManagerInit',
           format: 'iife',
           entryFileNames: '[name].js',
         },

@@ -14,7 +14,7 @@ export default defineConfig({
     minify: true,
     outDir: resolve(__dirname, '../dist'),
     lib: {
-      entry: resolve(__dirname, '../src/LmcCookieConsentManager.ts'),
+      entry: resolve(__dirname, '../src/AlmaCareerCookieConsentManager.ts'),
     },
     rollupOptions: {
       output: [
@@ -23,7 +23,7 @@ export default defineConfig({
           entryFileNames: '[name].js',
         },
         {
-          name: 'LmcCookieConsentManager',
+          name: 'AlmaCareerCookieConsentManager',
           format: 'iife',
           entryFileNames: '[name].js',
         },

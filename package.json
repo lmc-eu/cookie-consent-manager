@@ -16,11 +16,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./LmcCookieConsentManager.js",
-      "default": "./LmcCookieConsentManager.js"
+      "import": "./AlmaCareerCookieConsentManager.js",
+      "default": "./AlmaCareerCookieConsentManager.js"
     }
   },
-  "types": "./LmcCookieConsentManager.d.ts",
+  "types": "./AlmaCareerCookieConsentManager.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
@@ -36,7 +36,7 @@
   "scripts": {
     "precss": "yarn css:lint",
     "css": "npm-run-all --serial css:compile css:prefix css:minify",
-    "css:compile": "sass --load-path=node_modules --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss src/LmcCookieConsentManager.scss dist/LmcCookieConsentManager.css",
+    "css:compile": "sass --load-path=node_modules --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss src/AlmaCareerCookieConsentManager.scss dist/AlmaCareerCookieConsentManager.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
     "css:lint": "stylelint --config .stylelintrc \"src/**/*.scss\" \"examples/assets/*.css\" --cache --cache-location .cache/.stylelintcache",
@@ -52,7 +52,7 @@
     "lint:commit:last": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
     "prebuild": "npm-run-all --serial build:clean build:copy",
     "build:clean": "rm -rf dist && mkdir -p dist/scss",
-    "build:copy": "cp package.json README.md src/LmcCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
+    "build:copy": "cp package.json README.md src/AlmaCareerCookieConsentManager.scss dist/ && cp -r src/scss/* dist/scss/",
     "build": "npm-run-all --serial js css",
     "serve": "vite --config ./config/vite.config.init.ts",
     "start": "npm-run-all --parallel serve css:watch",

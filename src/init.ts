@@ -1,12 +1,12 @@
-import { LmcCookieConsentManager } from './LmcCookieConsentManager';
+import { AlmaCareerCookieConsentManager } from './AlmaCareerCookieConsentManager';
 
 (function initialize() {
-  const init = 'initLmcCookieConsentManager';
+  const init = 'initAlmaCareerCookieConsentManager';
   /**
-   * Make LmcCookieConsent object accessible globally
+   * Make AlmaCareerCookieConsentManager object accessible globally
    */
   if (typeof window[init] !== 'function') {
     /** @inheritdoc */
-    window[init] = LmcCookieConsentManager;
+    window[init] = AlmaCareerCookieConsentManager;
   }
 })();
