@@ -1,10 +1,10 @@
 import { CookieConsentCategoryValues, VanillaCookieConsent } from './types';
-import LmcCookieConsentManager from './LmcCookieConsentManager';
+import CookieConsentManager from './CookieConsentManager';
 
 declare global {
   interface Window {
     dataLayer: any[];
     initCookieConsent: () => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
-    initLmcCookieConsentManager: typeof LmcCookieConsentManager;
+    initCookieConsentManager: typeof CookieConsentManager;
   }
 }

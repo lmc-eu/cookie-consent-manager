@@ -4,7 +4,7 @@ import { mergician } from 'mergician';
 import submitConsent from './consentCollector';
 import {
   CategoriesChangeset,
-  CookieConsentManager,
+  type CookieConsentManager,
   CookieConsentManagerOptions,
   OnConsentCallback,
   OnChangeCallback,
@@ -56,7 +56,7 @@ const defaultOptions: CookieConsentManagerOptions = {
  * @returns {CookieConsent} Instance of the underlying CookieConsent component.
  *   See https://cookieconsent.orestbida.com/reference/api-reference.html
  */
-const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
+const CookieConsentManager: CookieConsentManager = (serviceName, args) => {
   if (!serviceName || serviceName === '' || typeof serviceName !== 'string') {
     throw new Error('serviceName is a required parameter and must be a string');
   }
@@ -176,4 +176,4 @@ const LmcCookieConsentManager: CookieConsentManager = (serviceName, args) => {
   return cookieConsent;
 };
 
-export { CookieConsentCategory, DisplayMode, CookieConsent, LmcCookieConsentManager };
+export { CookieConsentCategory, DisplayMode, CookieConsent, CookieConsentManager };
