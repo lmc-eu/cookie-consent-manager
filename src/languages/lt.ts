@@ -42,7 +42,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Jei norite kuo geriau išnaudoti mūsų svetainę, geriausia leisti visų tipų slapukus.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Daugiau informacijos apie tai, kas yra slapukai ir kaip su jais dirbame, galite rasti puslapyje <a href="https://www.almacareer.com/gdpr" target="_blank">Privatumo politika</a>.`
             }`,
         },

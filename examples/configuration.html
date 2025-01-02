@@ -88,7 +88,7 @@
     <div id="reset" class="position-fixed bottom-0 end-0 me-5 mb-5" style="z-index: 1;" hidden>
         <a href="" data-cc="show-preferencesModal" class="btn btn-primary shadow-lg">
             <i class="bi bi-gear me-1"></i>
-            Cookie settings
+            Cookie preferences
         </a>
         <a href="" class="btn btn-primary shadow-lg" onclick="removeCookieAndReload();" data-bs-toggle="tooltip" data-bs-html="true" title="Remove <code>almacareer_ccm</code> cookie and reload">
             <i class="bi bi-arrow-clockwise me-1"></i>
@@ -111,7 +111,7 @@
                     </li>
                     <li>Clearing localStorage when user gives consent to only necessary data (<code>onFirstConsent</code>)</li>
                     <li>Clearing localStorage when user updates consent and rejects some consent category (<code>onChange</code>)</li>
-                    <li>Using <code>cookieTable</code> configuration to list cookies in the settings modal</li>
+                    <li>Using <code>cookieTable</code> configuration to list cookies in the preferences modal</li>
                     <li>Overriding default translation (<code>translationOverrides</code>) for consent modal title</li>
                     <li>Etc.</li>
                 </ul>
@@ -171,7 +171,7 @@
               window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
             }
         },
-        onChange: ({ cookieConsent, categories }) => { // when user changes settings while on page, the now-rejected categories must be respected
+        onChange: ({ cookieConsent, categories }) => { // when user changes preferences while on page, the now-rejected categories must be respected
           if (categories.changed.includes('functionality') && !cookieConsent.acceptedCategory('functionality')) {
             window.localStorage.clear(); // if we use localStorage only for some extended "functionality", remove its contents if we don't have consent
           }
@@ -180,7 +180,7 @@
           sk: {
             consentTitle: 'Prispôsobený titulok',
             descriptionIntro: 'Prispôsobený úvodný text.',
-            settingsModalMoreInfo: `Viz <a href="https://www.almacareer.com/gdpr/sk/privacy-policy" target="_blank">vlastný odkaz</a> a tiež
+            preferencesModalMoreInfo: `Viz <a href="https://www.almacareer.com/gdpr/sk/privacy-policy" target="_blank">vlastný odkaz</a> a tiež
                 <a href="https://www.almacareer.com/gdpr/sk/cookie-policy" target="_blank">druhý</a>
                  a <a href="https://www.almacareer.com/sk" target="_blank">tretí</a> vlastný odkaz</a>.`,
           },

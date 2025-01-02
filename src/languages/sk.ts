@@ -51,7 +51,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Aby ste z našich stránok získali maximum, je najlepšie povoliť všetky typy cookies.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Ďalšie informácie o tom, čo sú cookies a ako s nimi pracujeme, nájdete v <a href="https://www.almacareer.com/gdpr" target="_blank">Zásadách cookies</a>.`
             }`,
         },

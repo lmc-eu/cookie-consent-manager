@@ -42,7 +42,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Ja vēlaties izmantot mūsu vietni maksimāli efektīvi, ieteicams atļaut visu veidu sīkdatnes.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Vairāk informācijas par to, kas ir sīkdatnes un kā mēs ar tām strādājam, Jūs varat atrast sadaļā <a href="https://www.almacareer.com/gdpr" target="_blank">Privātuma politika</a>.`
             }`,
         },

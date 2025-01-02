@@ -51,7 +51,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Kui soovid meie veebilehest maksimumi võtta, on kõige parem nõustuda kõigi küpsistega.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Lisateavet selle kohta, mis on küpsised ja kuidas me nendega töötame, leiate lehelt <a href="https://www.almacareer.com/gdpr" target="_blank">Privaatsuspoliitika</a>.`
             }`,
         },

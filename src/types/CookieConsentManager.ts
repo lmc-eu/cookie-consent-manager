@@ -23,7 +23,7 @@ export type OnChangeCallback = (param: {
 export type TranslationOverride = {
   consentTitle?: string;
   descriptionIntro?: string;
-  settingsModalMoreInfo?: string;
+  preferencesModalMoreInfo?: string;
 };
 
 export type CookieTableCategories = {

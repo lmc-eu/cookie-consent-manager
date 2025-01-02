@@ -51,7 +51,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Щоб отримати максимальну віддачу від нашого сайту, найкраще дозволити всі типи файлів Cookies.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Додаткову інформацію про те, що таке файли Cookies, і як ми з ними працюємо, можна отримати на сторінках <a href="https://www.almacareer.com/gdpr" target="_blank">Політика конфіденційності</a>.`
             }`,
         },
