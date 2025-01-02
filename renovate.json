@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     ":pinOnlyDevDependencies",
     "helpers:pinGitHubActionDigests"
   ],
@@ -20,25 +20,25 @@
       "groupName": "major prod dependencies",
       "groupSlug": "major-prod",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["major"],
-      "matchDepTypes": ["dependencies"]
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["*"]
     },
     {
       "groupName": "non-major prod dependencies",
       "groupSlug": "non-major-prod",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
-      "matchDepTypes": ["dependencies"]
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["*"]
     },
     {
       "groupName": "all dev dependencies",
       "groupSlug": "all-dev",
       "separateMajorMinor": false,
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["*"],
-      "matchDepTypes": ["devDependencies"]
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["*"]
     },
     {
       "groupName": "Froze eslint on ^8",
