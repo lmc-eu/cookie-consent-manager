@@ -38,7 +38,7 @@ Load default CSS along with your styles in `<head>`:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/LmcCookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/CookieConsentManager.min.css">
 ```
 
 Load the script and initialize the plugin right before ending `</body>` tag:
@@ -47,7 +47,7 @@ Load the script and initialize the plugin right before ending `</body>` tag:
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
-  initLmcCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
+  initCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
 });
 </script>
 ```
@@ -72,7 +72,7 @@ You can load the plugin from a CDN, as in the basic example above.
 ```html
 <!-- Note we use version "cookie-consent-manager@2", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/LmcCookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/CookieConsentManager.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
 ```
 
@@ -80,7 +80,7 @@ Alternatively, you can also download the latest version from the [Releases page]
 
 Loading the plugin from CDN or static file is recommended mostly **for static sites without their own build process**.
 
-Once the plugin is loaded, you need to initialize it using `initLmcCookieConsentManager()` method, optionally providing
+Once the plugin is loaded, you need to initialize it using `initCookieConsentManager()` method, optionally providing
 [configuration parameters](#configuration).
 
 ### Via npm
@@ -99,10 +99,10 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 2. Import the module in your javascript:
     ```js
-    import LmcCookieConsentManager from '@lmc-eu/cookie-consent-manager';
+    import CookieConsentManager from '@lmc-eu/cookie-consent-manager';
 
     window.addEventListener('DOMContentLoaded', function () {
-      LmcCookieConsentManager('demo.example'/* , optional plugin configuration */);
+      CookieConsentManager('demo.example'/* , optional plugin configuration */);
     });
     ```
 
@@ -112,11 +112,11 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 3. Include default CSS in your HTML:
    ```html
-   <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.min.css">
+   <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/CookieConsentManager.min.css">
    ```
    or in your Sass stylesheet:
    ```scss
-   @use "node_modules/@lmc-eu/cookie-consent-manager/LmcCookieConsentManager.css";
+   @use "node_modules/@lmc-eu/cookie-consent-manager/CookieConsentManager.css";
    ```
 
    Please mind the `.css` extension used in the Sass example. Using the provided `.scss` stylesheet is
@@ -172,7 +172,7 @@ To execute custom code which depends on cookie consent use callbacks:
 
 ```js
 // ...
-initLmcCookieConsentManager(
+initCookieConsentManager(
   'demo.example',
   {
     onConsent: (cookieConsent) => {
@@ -205,7 +205,7 @@ This feature is enabled by default. If you'd like to disable it, you can do so b
 `config` option:
 
 ```js
-initLmcCookieConsentManager(
+initCookieConsentManager(
   'demo.example',
   {
     config: {
@@ -221,7 +221,7 @@ Optional config parameters could be provided on plugin initialization as the sec
 encapsulated in the configuration object.
 
 ```js
-initLmcCookieConsentManager( // when loaded as a module, these options are passed to `LmcCookieConsentManager()` instead
+initCookieConsentManager( // when loaded as a module, these options are passed to `CookieConsentManager()` instead
   'demo.example', // provide the name of your service, like jobs.cz, seduo.pl etc.
   {
     defaultLang: 'cs',
@@ -327,7 +327,7 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline and use it
 
 // Add this line anywhere you import other third-party CSS, possibly somewhere close
 // to the end of your stylesheet as it contains CSS selectors with high specificity.
-@use '@lmc-eu/cookie-consent-manager/LmcCookieConsentManager';
+@use '@lmc-eu/cookie-consent-manager/CookieConsentManager';
 ```
 
 <details>
@@ -473,8 +473,8 @@ yarn start
 This will make the development server accessible http://localhost:3000/ .
 
 * The library with init function is served on: http://localhost:3000/dist/init.js
-* Javascript module: http://localhost:3000/dist/LmcCookieConsentManager.js
-* CSS: http://localhost:3000/dist/LmcCookieConsentManager.css
+* Javascript module: http://localhost:3000/dist/CookieConsentManager.js
+* CSS: http://localhost:3000/dist/CookieConsentManager.css
 
 ### Contributing
 

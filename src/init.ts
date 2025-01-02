@@ -1,12 +1,12 @@
-import { LmcCookieConsentManager } from './LmcCookieConsentManager';
+import { CookieConsentManager } from './CookieConsentManager';
 
 (function initialize() {
-  const init = 'initLmcCookieConsentManager';
+  const init = 'initCookieConsentManager';
   /**
-   * Make LmcCookieConsent object accessible globally
+   * Make CookieConsentManager object accessible globally
    */
   if (typeof window[init] !== 'function') {
     /** @inheritdoc */
-    window[init] = LmcCookieConsentManager;
+    window[init] = CookieConsentManager;
   }
 })();

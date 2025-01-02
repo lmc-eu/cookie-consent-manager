@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./assets/examples.css"><!-- This CSS is here for the purpose of this demo only, don't add it to your project -->
     <script src="./assets/functions.js" defer></script>
 
-    <link rel="stylesheet" href="../dist/LmcCookieConsentManager.min.css"><!-- You will load this from CDN instead -->
+    <link rel="stylesheet" href="../dist/CookieConsentManager.min.css"><!-- You will load this from CDN instead -->
 </head>
 <body>
 <script type="module" src="/src/init.ts"></script>
@@ -151,7 +151,7 @@
 <script defer src="../dist/init.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', function () {
-    window.ccm = initLmcCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
+    window.ccm = initCookieConsentManager( // note we store cookieConsent instance in global window.ccm variable
       'github.example',
       {
         autodetectLang: false, // do not detect language from the `<html lang="...">` value
