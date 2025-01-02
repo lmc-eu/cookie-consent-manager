@@ -52,7 +52,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
           description: `Чтобы Вы могли в максимальной мере и без проблем пользоваться нашим сайтом, мы рекомендуем
             разрешить просматривать и сохранять все типы файлов cookie.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Вы можете найти дополнительную информацию о том, что такое файлы cookies, и как мы с ними работаем, на странице <a href="https://www.almacareer.com/gdpr" target="_blank">Политика конфиденциальности персональных данных</a>.`
             }`,
         },

@@ -51,7 +51,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Ако сакате да го извлечете максимумот од нашата веб-страна, најдобро е да ги прифатите сите колачиња.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Можете да најдете повеќе информации за тоа што се колачиња и како работиме со нив во делот <a href="https://www.almacareer.com/gdpr" target="_blank">Политика за приватност</a>.`
             }`,
         },

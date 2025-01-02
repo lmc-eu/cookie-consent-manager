@@ -42,7 +42,7 @@ export const config = (extraMessages: ExtraMessages, cookieTable: CookieTableCat
         {
           description: `Če želite najbolje izkoristiti našo spletno stran, je najbolje, da dovolite vse vrste piškotkov.
             ${
-              lang.settingsModalMoreInfo ??
+              lang.preferencesModalMoreInfo ??
               `Več informacij o tem, kaj so piškotki in kako z njimi upravljamo, najdete na strani <a href="https://www.almacareer.com/gdpr" target="_blank">Pravilnik o zasebnosti</a>.`
             }`,
         },
