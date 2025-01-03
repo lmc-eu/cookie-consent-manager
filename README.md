@@ -162,11 +162,9 @@ In case user rejects some (or all) optional consent categories, **you must imple
 
 ### GTM (Google Tag Manager) scripts
 
-GTM scripts are managed centrally in Alma Career, so if GTM of the product is managed by Alma Career, after implementing
-this library, you don't need to worry about conditions when to run them. The library sets all the required data
-to GTM dataLayer.
+If you manage GTM script outside of Alma Career Central, you must set proper GTM consent mode properties to dataLayer. See this [example][cookie consent gtm example] (or you can use `onFirstConsent()` and `onChange()` callbacks).
 
-However, keep in mind you still need to **take care (i.e. delete) of already existing cookies**, even of those created by GTM scripts.
+If GTM of the product is managed by Alma Career Central, after implementing this library, you don't need to worry about conditions when to run them. However, keep in mind you still need to **take care (i.e. delete) of already existing cookies**, even of those created by GTM scripts.
 
 ### Custom methods
 
@@ -511,6 +509,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE.md) for more informatio
 [cookie consent api]: https://cookieconsent.orestbida.com/reference/api-reference.html
 [cookie consent third party]: https://cookieconsent.orestbida.com/advanced/manage-scripts.html
 [cookie consent options]: https://cookieconsent.orestbida.com/reference/configuration-reference.html
+[cookie consent gtm example]: https://github.com/orestbida/cookieconsent/blob/master/demo/demo_gtm/index.html
 [orest bida]: https://github.com/orestbida
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
 [spirit design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
