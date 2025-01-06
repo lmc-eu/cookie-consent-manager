@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { DisplayMode, CookieConsentManager } from '@lmc-eu/cookie-consent-manager';
+import { DisplayMode, CookieConsentManager } from '@almacareer/cookie-consent-manager';
 
 const ccmArgs = {
   displayMode: DisplayMode.SOFT,

@@ -1,5 +1,5 @@
 {
-  "name": "@lmc-eu/cookie-consent-manager-example-typescript",
+  "name": "@almacareer/cookie-consent-manager-example-typescript",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
@@ -9,7 +9,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "@lmc-eu/cookie-consent-manager": "../../dist"
+    "@almacareer/cookie-consent-manager": "../../dist"
   },
   "scripts": {
     "build": "webpack build --config ./webpack.config.js",

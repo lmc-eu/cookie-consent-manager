@@ -1,4 +1,4 @@
-[![npm version](https://img.shields.io/npm/v/@lmc-eu/cookie-consent-manager.svg)](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager)
+[![npm version](https://img.shields.io/npm/v/@almacareer/cookie-consent-manager.svg)](https://www.npmjs.com/package/@almacareer/cookie-consent-manager)
 [![CI](https://github.com/lmc-eu/cookie-consent-manager/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/lmc-eu/cookie-consent-manager/actions)
 
 # Cookie Consent Manager
@@ -38,13 +38,13 @@ Load default CSS along with your styles in `<head>`:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/CookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManager.min.css">
 ```
 
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/init.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/init.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
   initCookieConsentManager('demo.example'); // use the name of your service, like jobs.cz, seduo.pl etc.
@@ -72,8 +72,8 @@ You can load the plugin from a CDN, as in the basic example above.
 ```html
 <!-- Note we use version "cookie-consent-manager@2", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/CookieConsentManager.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@3/init.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManager.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/init.js"></script>
 ```
 
 Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).
@@ -86,20 +86,20 @@ Once the plugin is loaded, you need to initialize it using `initCookieConsentMan
 ### Via npm
 
 For projects with their own build process for JavaScript, it is recommended to use the plugin
-via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@lmc-eu/cookie-consent-manager).
+via npm package [@almacareer/cookie-consent-manager](https://www.npmjs.com/package/@almacareer/cookie-consent-manager).
 
 1. Add the plugin to your dependencies:
     ```sh
-    yarn add @lmc-eu/cookie-consent-manager
+    yarn add @almacareer/cookie-consent-manager
     ```
     or
     ```sh
-    npm install --save @lmc-eu/cookie-consent-manager
+    npm install --save @almacareer/cookie-consent-manager
     ```
 
 2. Import the module in your javascript:
     ```js
-    import CookieConsentManager from '@lmc-eu/cookie-consent-manager';
+    import CookieConsentManager from '@almacareer/cookie-consent-manager';
 
     window.addEventListener('DOMContentLoaded', function () {
       CookieConsentManager('demo.example'/* , optional plugin configuration */);
@@ -112,11 +112,11 @@ via npm package [@lmc-eu/cookie-consent-manager](https://www.npmjs.com/package/@
 
 3. Include default CSS in your HTML:
    ```html
-   <link rel="stylesheet" href="node_modules/@lmc-eu/cookie-consent-manager/CookieConsentManager.min.css">
+   <link rel="stylesheet" href="node_modules/@almacareer/cookie-consent-manager/CookieConsentManager.min.css">
    ```
    or in your Sass stylesheet:
    ```scss
-   @use "node_modules/@lmc-eu/cookie-consent-manager/CookieConsentManager.css";
+   @use "node_modules/@almacareer/cookie-consent-manager/CookieConsentManager.css";
    ```
 
    Please mind the `.css` extension used in the Sass example. Using the provided `.scss` stylesheet is
@@ -328,7 +328,7 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline and use it
 
 // Add this line anywhere you import other third-party CSS, possibly somewhere close
 // to the end of your stylesheet as it contains CSS selectors with high specificity.
-@use '@lmc-eu/cookie-consent-manager/CookieConsentManager';
+@use '@almacareer/cookie-consent-manager/CookieConsentManager';
 ```
 
 <details>
