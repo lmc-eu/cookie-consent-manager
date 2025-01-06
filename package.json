@@ -1,9 +1,10 @@
 {
-  "name": "@lmc-eu/cookie-consent-manager",
+  "name": "@almacareer/cookie-consent-manager",
   "version": "2.6.0",
   "description": "Cookie Consent Manager mainly for Alma Career products",
   "keywords": [
     "alma-career",
+    "almacareer",
     "lmc-eu",
     "cookie",
     "consent",
