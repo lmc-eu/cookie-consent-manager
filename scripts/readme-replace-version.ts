@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-const replace = require('replace-in-file');
-const packageJson = require('../package.json');
+import { replaceInFile } from 'replace-in-file';
+import packageJson from '../package.json' with { type: 'json' };
 
-const newVersion = packageJson.version.match(/([0-9])\.[0-9]\.[0-9]/)[1];
+const newVersion = packageJson.version.match(/([0-9])\.[0-9]\.[0-9]/)?.[1];
 
 const options = {
   files: 'README.md',
@@ -10,11 +10,11 @@ const options = {
   to: `cookie-consent-manager@${newVersion}`,
 };
 
-replace(options)
-  .then((results: unknown) => {
+replaceInFile(options)
+  .then((results) => {
     console.log('Replacement results:', results);
   })
-  .catch((error: unknown) => {
+  .catch((error) => {
     console.error('Error occurred:', error);
   });
 

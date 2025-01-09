@@ -72,7 +72,7 @@
     "version": "yarn changelog && yarn replace-version && git status && git add CHANGELOG.md README.md package.json ./dist && git status",
     "postversion": "echo 'Check and push: `git push --set-upstream origin main && git push --tags`'",
     "release": "yarn version --`./bin/ci/semver.sh`",
-    "replace-version": "ts-node scripts/readme-replace-version.ts",
+    "replace-version": "tsx scripts/readme-replace-version.ts",
     "types": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
@@ -117,7 +117,7 @@
     "stylelint": "16.12.0",
     "stylelint-prettier": "5.0.2",
     "ts-jest": "29.2.5",
-    "ts-node": "10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "5.7.2",
     "vite": "6.0.6",
     "vite-plugin-dts": "4.4.0"
