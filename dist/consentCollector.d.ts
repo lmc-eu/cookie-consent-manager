@@ -1,6 +1,6 @@
-import { CookieConsentCategoryValues, VanillaCookieConsent } from './types';
+import { CookieValue, UserPreferences } from 'vanilla-cookieconsent';
 /**
  * Submit information about consent level given by the user.
  */
-declare function submitConsent(consentCollectorApiUrl: string, cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>): void;
+declare function submitConsent(consentCollectorApiUrl: string, cookie: CookieValue, userPreferences: UserPreferences): void;
 export default submitConsent;

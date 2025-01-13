@@ -1,5 +1,26 @@
-import { CookieTableCategories, Values, VanillaCookieConsent } from './types';
-import { SecondaryButtonMode } from './constants';
+import { CookieTableCategories } from './types';
+type categoryTranslations = {
+    necessary: {
+        title: string;
+        description: string;
+    };
+    ad: {
+        title: string;
+        description: string;
+    };
+    analytics: {
+        title: string;
+        description: string;
+    };
+    functionality: {
+        title: string;
+        description: string;
+    };
+    personalization: {
+        title: string;
+        description: string;
+    };
+};
 export declare const addSeparators: (strings: string[], and?: string) => string;
 export declare const pluralize: (count: number, singular: string, plural: string) => string;
 /**
@@ -10,13 +31,7 @@ export declare const legalizeAlmaCareer: (companyNames: string[], legalName: str
  * Assemble description intro based on default value and optional override value.
  */
 export declare const assembleDescriptionIntro: (defaultValue: string, overrideValue?: string) => string;
-/**
- * Assemble secondary button based on secondary button mode
- */
-export declare const assembleSecondaryButton: (secondaryButtonMode: Values<typeof SecondaryButtonMode>, textAcceptNecessary: string, textShowSettings: string) => VanillaCookieConsent.ModalSecondaryButton;
-export declare const isSettingsButtonNotShown: (secondaryButtonMode: Values<typeof SecondaryButtonMode>) => boolean;
-export declare const assembleCategoryNecessary: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
-export declare const assembleCategoryAd: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
-export declare const assembleCategoryAnalytics: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
-export declare const assembleCategoryFunctionality: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
-export declare const assembleCategoryPersonalization: (title: string, description: string, cookieTable: CookieTableCategories) => VanillaCookieConsent.ModalBlock;
+export declare const assembleCookieTableSections: (headers: {
+    [key: string]: string;
+}, categoryTranslations: categoryTranslations, cookieTable: CookieTableCategories) => CookieConsent.Section[];
+export {};

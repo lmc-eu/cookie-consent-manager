@@ -1,5 +1,5 @@
-import { CookieConsentCategory, DisplayMode, SecondaryButtonMode } from '../constants';
-import { VanillaCookieConsent } from './vanilla-cookieconsent';
+import { CookieConsentCategory, DisplayMode } from '../constants';
+import CookieConsent, { CookieConsentConfig, CookieValue } from 'vanilla-cookieconsent';
 export type Values<T> = T[keyof T];
 export type CookieConsentCategoryValues = Values<typeof CookieConsentCategory>;
 export type CategoriesChangeset = {
@@ -7,16 +7,28 @@ export type CategoriesChangeset = {
     rejected: CookieConsentCategoryValues[];
     changed: CookieConsentCategoryValues[];
 };
-export type OnFirstAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export type OnAcceptCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>) => void;
-export type OnChangeCallback = (cookieConsent: VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>, categories: CategoriesChangeset) => void;
+export type OnFirstConsentCallback = (param: {
+    cookieConsent: typeof CookieConsent;
+    cookie: CookieValue;
+}) => void;
+export type OnConsentCallback = (param: {
+    cookieConsent: typeof CookieConsent;
+    cookie: CookieValue;
+}) => void;
+export type OnChangeCallback = (param: {
+    cookieConsent: typeof CookieConsent;
+    cookie: CookieValue;
+    categories: CategoriesChangeset;
+}) => void;
 export type TranslationOverride = {
     consentTitle?: string;
     descriptionIntro?: string;
-    settingsModalMoreInfo?: string;
+    preferencesModalMoreInfo?: string;
 };
 export type CookieTableCategories = {
-    [category in CookieConsentCategoryValues]: VanillaCookieConsent.CookieTableItem[];
+    [category in CookieConsentCategoryValues]: {
+        [p: string]: string;
+    }[];
 };
 export type CookieTable = {
     [language: string]: CookieTableCategories;
@@ -25,14 +37,13 @@ export type CookieConsentManagerOptions = {
     defaultLang: string;
     autodetectLang: boolean;
     consentCollectorApiUrl: string;
-    onFirstAccept: OnFirstAcceptCallback;
-    onAccept: OnAcceptCallback;
+    onFirstConsent: OnFirstConsentCallback;
+    onConsent: OnConsentCallback;
     onChange: OnChangeCallback;
     companyNames: string[];
     displayMode: Values<typeof DisplayMode>;
-    secondaryButtonMode: Values<typeof SecondaryButtonMode>;
     translationOverrides: Record<string, TranslationOverride>;
     cookieTable: CookieTable;
-    config: VanillaCookieConsent.Options<CookieConsentCategoryValues>;
+    config?: Partial<CookieConsentConfig>;
 };
-export type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => VanillaCookieConsent.CookieConsent<CookieConsentCategoryValues>;
+export type CookieConsentManager = (serviceName: string, args?: Partial<CookieConsentManagerOptions>) => typeof CookieConsent;
