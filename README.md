@@ -70,7 +70,7 @@ somewhere in the page footer, usually near "Terms of use" and "Privacy policy" l
 You can load the plugin from a CDN, as in the basic example above.
 
 ```html
-<!-- Note we use version "cookie-consent-manager@2", which points to the latest version of this series (including feature and bugfix releases) -->
+<!-- Note we use version "cookie-consent-manager@3", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManager.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/init.js"></script>
