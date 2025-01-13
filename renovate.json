@@ -9,7 +9,7 @@
     "group:recommended",
     ":prHourlyLimit2"
   ],
-  "baseBranches": ["release/v3"],
+  "baseBranches": ["main"],
   "enabledManagers": ["npm", "github-actions"],
   "branchPrefix": "dependencies/",
   "commitMessagePrefix": "Deps: ",
