@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: consents-cookieManager
+  description:  Alma Career Cookie Consent Manager
+  annotations:
+    github.com/project-slug: alma-oss/cookie-consent-manager
+spec:
+  owner: user:default/ondrej.machulda
+  type: library
+  lifecycle: production
+  dependsOn:
+    - technology:default/typescript
+    - technology:default/github
+    - technology:default/netlify
