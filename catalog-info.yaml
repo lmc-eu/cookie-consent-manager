@@ -13,3 +13,5 @@ spec:
     - technology:default/typescript
     - technology:default/github
     - technology:default/netlify
+  consumesApis:
+    - consents-aclLDAInteractionEntry_rest
