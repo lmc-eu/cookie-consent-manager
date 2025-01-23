@@ -1,60 +1,60 @@
 <a name="3.0.0-alpha.0"></a>
-# [3.0.0-alpha.0](https://github.com/lmc-eu/cookie-consent-manager/compare/2.6.0...3.0.0-alpha.0) (2025-01-13)
+# [3.0.0-alpha.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0-alpha.0) (2025-01-13)
 
 ### BREAKING CHANGES
 
-- Change default cookie name from `lmc_ccm` to `almacareer_ccm` ([bd12817](https://github.com/lmc-eu/cookie-consent-manager/commit/bd12817))
-- Change library npm organization to almacareer (fixes [#391](https://github.com/lmc-eu/cookie-consent-manager/issues/391)) ([7698504](https://github.com/lmc-eu/cookie-consent-manager/commit/7698504))
-- Remove CommonJS suppport ([65b015e](https://github.com/lmc-eu/cookie-consent-manager/commit/65b015e))
-- Remove secondary button mode ([78e3e69](https://github.com/lmc-eu/cookie-consent-manager/commit/78e3e69))
-- Rename callbacks to match names from the vanilla-cookieconsent ([77160a2](https://github.com/lmc-eu/cookie-consent-manager/commit/77160a2))
-- Rename LmcCookieConsentManager to CookieConsentManager (part of [#392](https://github.com/lmc-eu/cookie-consent-manager/issues/392)) ([bfc1ddf](https://github.com/lmc-eu/cookie-consent-manager/commit/bfc1ddf))
-- Rename settingsModalMoreInfo to preferencesModalMoreInfo ([8f88088](https://github.com/lmc-eu/cookie-consent-manager/commit/8f88088))
-- Use named exports only ([23b9a1d](https://github.com/lmc-eu/cookie-consent-manager/commit/23b9a1d))
+- Change default cookie name from `lmc_ccm` to `almacareer_ccm` ([bd12817](https://github.com/alma-oss/cookie-consent-manager/commit/bd12817))
+- Change library npm organization to almacareer (fixes [#391](https://github.com/alma-oss/cookie-consent-manager/issues/391)) ([7698504](https://github.com/alma-oss/cookie-consent-manager/commit/7698504))
+- Remove CommonJS suppport ([65b015e](https://github.com/alma-oss/cookie-consent-manager/commit/65b015e))
+- Remove secondary button mode ([78e3e69](https://github.com/alma-oss/cookie-consent-manager/commit/78e3e69))
+- Rename callbacks to match names from the vanilla-cookieconsent ([77160a2](https://github.com/alma-oss/cookie-consent-manager/commit/77160a2))
+- Rename LmcCookieConsentManager to CookieConsentManager (part of [#392](https://github.com/alma-oss/cookie-consent-manager/issues/392)) ([bfc1ddf](https://github.com/alma-oss/cookie-consent-manager/commit/bfc1ddf))
+- Rename settingsModalMoreInfo to preferencesModalMoreInfo ([8f88088](https://github.com/alma-oss/cookie-consent-manager/commit/8f88088))
+- Use named exports only ([23b9a1d](https://github.com/alma-oss/cookie-consent-manager/commit/23b9a1d))
 
 ### Code Refactoring
 
-- Build package using Vite ([d3e6fc9](https://github.com/lmc-eu/cookie-consent-manager/commit/d3e6fc9))
-- Clean up ESBuild after migration to Vite ([766e444](https://github.com/lmc-eu/cookie-consent-manager/commit/766e444))
-- Decouple and test consentCollector ([22cf710](https://github.com/lmc-eu/cookie-consent-manager/commit/22cf710))
-- Extract pushToDataLayer to standalone and tested module ([4b6ef02](https://github.com/lmc-eu/cookie-consent-manager/commit/4b6ef02))
-- Rebuild distribuition ([bfe60da](https://github.com/lmc-eu/cookie-consent-manager/commit/bfe60da))
-- Rename settings-modal scss file to preferences-modal be consistent with the source code ([3ed682d](https://github.com/lmc-eu/cookie-consent-manager/commit/3ed682d))
-- Serve app using Vite ([18d4d89](https://github.com/lmc-eu/cookie-consent-manager/commit/18d4d89))
-- Switch package to be ESM only ([f770495](https://github.com/lmc-eu/cookie-consent-manager/commit/f770495))
-- Update CookieConsentManager to use API of vanilla-cookieconsent v3 ([f9d98e8](https://github.com/lmc-eu/cookie-consent-manager/commit/f9d98e8))
-- Update pushToDataLayer to new internal cookie value structure ([3c7ad75](https://github.com/lmc-eu/cookie-consent-manager/commit/3c7ad75))
-- Update translations to use new config structure ([e3cc92e](https://github.com/lmc-eu/cookie-consent-manager/commit/e3cc92e))
+- Build package using Vite ([d3e6fc9](https://github.com/alma-oss/cookie-consent-manager/commit/d3e6fc9))
+- Clean up ESBuild after migration to Vite ([766e444](https://github.com/alma-oss/cookie-consent-manager/commit/766e444))
+- Decouple and test consentCollector ([22cf710](https://github.com/alma-oss/cookie-consent-manager/commit/22cf710))
+- Extract pushToDataLayer to standalone and tested module ([4b6ef02](https://github.com/alma-oss/cookie-consent-manager/commit/4b6ef02))
+- Rebuild distribuition ([bfe60da](https://github.com/alma-oss/cookie-consent-manager/commit/bfe60da))
+- Rename settings-modal scss file to preferences-modal be consistent with the source code ([3ed682d](https://github.com/alma-oss/cookie-consent-manager/commit/3ed682d))
+- Serve app using Vite ([18d4d89](https://github.com/alma-oss/cookie-consent-manager/commit/18d4d89))
+- Switch package to be ESM only ([f770495](https://github.com/alma-oss/cookie-consent-manager/commit/f770495))
+- Update CookieConsentManager to use API of vanilla-cookieconsent v3 ([f9d98e8](https://github.com/alma-oss/cookie-consent-manager/commit/f9d98e8))
+- Update pushToDataLayer to new internal cookie value structure ([3c7ad75](https://github.com/alma-oss/cookie-consent-manager/commit/3c7ad75))
+- Update translations to use new config structure ([e3cc92e](https://github.com/alma-oss/cookie-consent-manager/commit/e3cc92e))
 
 ### Dependencies
 
 - Update all dependencies and subdependencies
-- Downgrade and lock conventional-changelog-cli on v3 ([66c82d7](https://github.com/lmc-eu/cookie-consent-manager/commit/66c82d7))
-- Replace unmaintained npm-run-all ([13a9899](https://github.com/lmc-eu/cookie-consent-manager/commit/13a9899))
-- Update dependency vanilla-cookieconsent to v3 ([32aa081](https://github.com/lmc-eu/cookie-consent-manager/commit/32aa081))
-- Update nanoid to version 5 ([0f8a131](https://github.com/lmc-eu/cookie-consent-manager/commit/0f8a131))
-- Update stylelint and switch to the latest @almacareer/stylelint-config rules ([227ae39](https://github.com/lmc-eu/cookie-consent-manager/commit/227ae39))
+- Downgrade and lock conventional-changelog-cli on v3 ([66c82d7](https://github.com/alma-oss/cookie-consent-manager/commit/66c82d7))
+- Replace unmaintained npm-run-all ([13a9899](https://github.com/alma-oss/cookie-consent-manager/commit/13a9899))
+- Update dependency vanilla-cookieconsent to v3 ([32aa081](https://github.com/alma-oss/cookie-consent-manager/commit/32aa081))
+- Update nanoid to version 5 ([0f8a131](https://github.com/alma-oss/cookie-consent-manager/commit/0f8a131))
+- Update stylelint and switch to the latest @almacareer/stylelint-config rules ([227ae39](https://github.com/alma-oss/cookie-consent-manager/commit/227ae39))
 
 ### Documentation
 
-- Add upgrade guide placeholder ([8056d04](https://github.com/lmc-eu/cookie-consent-manager/commit/8056d04))
-- Clarify GTM management by Alma Career Central ([c863589](https://github.com/lmc-eu/cookie-consent-manager/commit/c863589))
-- Update contacts in package.json ([dca097a](https://github.com/lmc-eu/cookie-consent-manager/commit/dca097a))
-- Update example builds to match vanilla-cookieconsent v3 ([cf95e7e](https://github.com/lmc-eu/cookie-consent-manager/commit/cf95e7e))
-- Update examples to new API ([99e6af4](https://github.com/lmc-eu/cookie-consent-manager/commit/99e6af4))
-- Update README to version 3 changes ([1951362](https://github.com/lmc-eu/cookie-consent-manager/commit/1951362))
+- Add upgrade guide placeholder ([8056d04](https://github.com/alma-oss/cookie-consent-manager/commit/8056d04))
+- Clarify GTM management by Alma Career Central ([c863589](https://github.com/alma-oss/cookie-consent-manager/commit/c863589))
+- Update contacts in package.json ([dca097a](https://github.com/alma-oss/cookie-consent-manager/commit/dca097a))
+- Update example builds to match vanilla-cookieconsent v3 ([cf95e7e](https://github.com/alma-oss/cookie-consent-manager/commit/cf95e7e))
+- Update examples to new API ([99e6af4](https://github.com/alma-oss/cookie-consent-manager/commit/99e6af4))
+- Update README to version 3 changes ([1951362](https://github.com/alma-oss/cookie-consent-manager/commit/1951362))
 
 ### Features
 
-- Use deep merge for config overwrites (fixes [#385](https://github.com/lmc-eu/cookie-consent-manager/issues/385)) ([c0b8bba](https://github.com/lmc-eu/cookie-consent-manager/commit/c0b8bba))
+- Use deep merge for config overwrites (fixes [#385](https://github.com/alma-oss/cookie-consent-manager/issues/385)) ([c0b8bba](https://github.com/alma-oss/cookie-consent-manager/commit/c0b8bba))
 
 ### Chores
 
-- Lock eslint ^8 for renovate bot ([5b94ff6](https://github.com/lmc-eu/cookie-consent-manager/commit/5b94ff6))
-- Replace node 16 with node 18 in gh actions builds ([6daf9ba](https://github.com/lmc-eu/cookie-consent-manager/commit/6daf9ba))
-- Setup github-actions packages updates using renovate bot ([718ada8](https://github.com/lmc-eu/cookie-consent-manager/commit/718ada8))
-- Switch from `sass` to `sass-embedded` ([09d9f8b](https://github.com/lmc-eu/cookie-consent-manager/commit/09d9f8b))
-- Update version replace script to ESM ([970d6ac](https://github.com/lmc-eu/cookie-consent-manager/commit/970d6ac))
+- Lock eslint ^8 for renovate bot ([5b94ff6](https://github.com/alma-oss/cookie-consent-manager/commit/5b94ff6))
+- Replace node 16 with node 18 in gh actions builds ([6daf9ba](https://github.com/alma-oss/cookie-consent-manager/commit/6daf9ba))
+- Setup github-actions packages updates using renovate bot ([718ada8](https://github.com/alma-oss/cookie-consent-manager/commit/718ada8))
+- Switch from `sass` to `sass-embedded` ([09d9f8b](https://github.com/alma-oss/cookie-consent-manager/commit/09d9f8b))
+- Update version replace script to ESM ([970d6ac](https://github.com/alma-oss/cookie-consent-manager/commit/970d6ac))
 
 
 <a name="2.6.0"></a>

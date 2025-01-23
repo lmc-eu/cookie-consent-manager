@@ -161,7 +161,7 @@ to match your design through some new CSS custom properties:
 - `--lmcccm-cookie-table-border`
 
 Please also refer to README to get
-[the full list of theming options](https://github.com/lmc-eu/cookie-consent-manager#without-spirit-design-system).
+[the full list of theming options](https://github.com/alma-oss/cookie-consent-manager#without-spirit-design-system).
 
 ## Use new CSS properties of Secondary button
 
@@ -181,5 +181,5 @@ for secondary buttons using new `--lmcccm-btn-secondary-*` custom properties:
 
 ## Dark mode dropped
 
-Default dark theme has been dropped. Please refer to [README](https://github.com/lmc-eu/cookie-consent-manager)
+Default dark theme has been dropped. Please refer to [README](https://github.com/alma-oss/cookie-consent-manager)
 to learn how to configure a theme or even support the real dark mode.
