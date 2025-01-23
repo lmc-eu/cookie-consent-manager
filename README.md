@@ -1,7 +1,7 @@
 [![npm version](https://img.shields.io/npm/v/@almacareer/cookie-consent-manager.svg)](https://www.npmjs.com/package/@almacareer/cookie-consent-manager)
 [![CI](https://github.com/alma-oss/cookie-consent-manager/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/alma-oss/cookie-consent-manager/actions)
 
-# Cookie Consent Manager
+# Alma Career Cookie Consent Manager
 
 Provide configurable cookie consent plugin for Alma Career (formerly LMC) products.
 The package contains predefined Alma Career settings, translations and UI based on [Spirit Design System].
