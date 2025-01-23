@@ -1,3 +1,30 @@
+<a name="3.0.0-alpha.1"></a>
+# [3.0.0-alpha.1](https://github.com/alma-oss/cookie-consent-manager/compare/3.0.0-alpha.0...3.0.0-alpha.1) (2025-01-23)
+
+### Dependencies
+
+- Update all dev dependencies ([5852b50](https://github.com/alma-oss/cookie-consent-manager/commit/5852b50))
+- Update dependency vite to v6.0.9 [SECURITY] ([f3d9b4a](https://github.com/alma-oss/cookie-consent-manager/commit/f3d9b4a))
+
+### Documentation
+
+- Add catalog info for Backstage ([69f9bdd](https://github.com/alma-oss/cookie-consent-manager/commit/69f9bdd))
+- Add link to consumed API into catalog-info ([2c3d5f1](https://github.com/alma-oss/cookie-consent-manager/commit/2c3d5f1))
+- Add UPGRADE guide for version 3 ([c45b2fa](https://github.com/alma-oss/cookie-consent-manager/commit/c45b2fa))
+- Update version reference in readme ([8666483](https://github.com/alma-oss/cookie-consent-manager/commit/8666483))
+
+### Features
+
+- Use new default consentCollectorApiUrl with a new resource type ([99a9b2e](https://github.com/alma-oss/cookie-consent-manager/commit/99a9b2e))
+
+### Chores
+
+- Change base branch for Renovate updates back to `main` ([c5f5455](https://github.com/alma-oss/cookie-consent-manager/commit/c5f5455))
+- Move repository from lmc-eu to alma-oss ([0beb8e0](https://github.com/alma-oss/cookie-consent-manager/commit/0beb8e0))
+- Replace auto-assign github action ([a43aa6d](https://github.com/alma-oss/cookie-consent-manager/commit/a43aa6d))
+- Update codeowners ([6d3a1c2](https://github.com/alma-oss/cookie-consent-manager/commit/6d3a1c2))
+
+
 <a name="3.0.0-alpha.0"></a>
 # [3.0.0-alpha.0](https://github.com/alma-oss/cookie-consent-manager/compare/2.6.0...3.0.0-alpha.0) (2025-01-13)
 
