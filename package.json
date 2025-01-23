@@ -24,10 +24,10 @@
   "types": "./CookieConsentManager.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lmc-eu/cookie-consent-manager.git"
+    "url": "https://github.com/alma-oss/cookie-consent-manager.git"
   },
   "bugs": {
-    "url": "https://github.com/lmc-eu/cookie-consent-manager/issues"
+    "url": "https://github.com/alma-oss/cookie-consent-manager/issues"
   },
   "contributors": [
     "Ondřej Machulda <ondrej.machulda@almacareer.com>",

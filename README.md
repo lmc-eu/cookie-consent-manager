@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/@almacareer/cookie-consent-manager.svg)](https://www.npmjs.com/package/@almacareer/cookie-consent-manager)
-[![CI](https://github.com/lmc-eu/cookie-consent-manager/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/lmc-eu/cookie-consent-manager/actions)
+[![CI](https://github.com/alma-oss/cookie-consent-manager/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/alma-oss/cookie-consent-manager/actions)
 
 # Cookie Consent Manager
 
@@ -77,7 +77,7 @@ You can load the plugin from a CDN, as in the basic example above.
 <script defer src="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/init.js"></script>
 ```
 
-Alternatively, you can also download the latest version from the [Releases page](https://github.com/lmc-eu/cookie-consent-manager/releases).
+Alternatively, you can also download the latest version from the [Releases page](https://github.com/alma-oss/cookie-consent-manager/releases).
 
 Loading the plugin from CDN or static file is recommended mostly **for static sites without their own build process**.
 
@@ -518,9 +518,9 @@ Distributed under the MIT License. See [LICENSE](LICENSE.md) for more informatio
 [sass]: https://www.npmjs.com/package/sass
 [sass load path]: https://sass-lang.com/documentation/cli/dart-sass#load-path
 [sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
-[examples]: https://lmc-eu.github.io/cookie-consent-manager/examples/
-[examples-callbacks]: https://lmc-eu.github.io/cookie-consent-manager/examples/callbacks.html
-[examples-configuration]: https://lmc-eu.github.io/cookie-consent-manager/examples/configuration.html
-[examples-theming]: https://lmc-eu.github.io/cookie-consent-manager/examples/theming.html
-[examples-languages]: https://lmc-eu.github.io/cookie-consent-manager/examples/languages.html
-[examples-integration-esm]: https://github.com/lmc-eu/cookie-consent-manager/tree/main/examples/webpack-with-esm/
+[examples]: https://alma-oss.github.io/cookie-consent-manager/examples/
+[examples-callbacks]: https://alma-oss.github.io/cookie-consent-manager/examples/callbacks.html
+[examples-configuration]: https://alma-oss.github.io/cookie-consent-manager/examples/configuration.html
+[examples-theming]: https://alma-oss.github.io/cookie-consent-manager/examples/theming.html
+[examples-languages]: https://alma-oss.github.io/cookie-consent-manager/examples/languages.html
+[examples-integration-esm]: https://github.com/alma-oss/cookie-consent-manager/tree/main/examples/webpack-with-esm/
