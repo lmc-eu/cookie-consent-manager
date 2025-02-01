@@ -19,55 +19,51 @@
     <script src="./assets/functions.js" defer></script>
 
     <link rel="stylesheet" href="../dist/CookieConsentManager.min.css"><!-- You will load this from CDN instead -->
+    <link rel="stylesheet" href="../dist/CookieConsentManagerThemes.min.css"><!-- You will load this from CDN instead. Only use when your project is NOT built with Spirit Design System. -->
 
     <style>
         .custom-theme {
             /* Common */
-            --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
-            --lmcccm-base-font-size: 14px;
-            --lmcccm-bg: rgb(255, 255, 255);
-            --lmcccm-text: rgb(72, 72, 72);
-            --lmcccm-backdrop-color: rgba(0, 0, 0, 0.5);
+            --cc-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+            --cc-bg: rgb(255, 255, 255);
+            --cc-primary-color: rgb(72, 72, 72);
 
             /* Links */
-            --lmcccm-link-text: var(--lmcccm-text);
-            --lmcccm-link-hover-text: rgb(17, 17, 17);
-            --lmcccm-link-active-text: var(--lmcccm-link-hover-text);
+            --cc-link-color: var(--cc-primary-color);
 
             /* Buttons */
-            --lmcccm-btn-font-weight: 700;
-            --lmcccm-btn-border-radius: 1.25em;
-            --lmcccm-btn-primary-border: transparent;
-            --lmcccm-btn-primary-bg: rgb(17, 17, 17);
-            --lmcccm-btn-primary-text: rgb(255, 255, 255);
-            --lmcccm-btn-primary-hover-border: transparent;
-            --lmcccm-btn-primary-hover-bg: rgb(51, 51, 51);
-            --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
-            --lmcccm-btn-primary-active-border: transparent;
-            --lmcccm-btn-primary-active-bg: rgb(0, 0, 0);
-            --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
-            --lmcccm-btn-secondary-border: rgb(223, 223, 223);
-            --lmcccm-btn-secondary-bg: transparent;
-            --lmcccm-btn-secondary-text: rgb(17, 17, 17);
-            --lmcccm-btn-secondary-hover-border: rgb(146, 146, 146);
-            --lmcccm-btn-secondary-hover-bg: transparent;
-            --lmcccm-btn-secondary-hover-text: var(--lmcccm-btn-secondary-text);
-            --lmcccm-btn-secondary-active-border: rgb(17, 17, 17);
-            --lmcccm-btn-secondary-active-bg: transparent;
-            --lmcccm-btn-secondary-active-text: var(--lmcccm-btn-secondary-text);
+            --cc-btn-border-radius: 1.25em;
+            --cc-btn-primary-bg: rgb(17, 17, 17);
+            --cc-btn-primary-color: rgb(255, 255, 255);
+            --cc-btn-primary-border-color: transparent;
+            --cc-btn-primary-hover-bg: rgb(51, 51, 51);
+            --cc-btn-primary-hover-color: var(--cc-btn-primary-color);
+            --cc-btn-primary-hover-border-color: transparent;
+            --cc-btn-secondary-bg: transparent;
+            --cc-btn-secondary-color: rgb(17, 17, 17);
+            --cc-btn-secondary-border-color: rgb(223, 223, 223);
+            --cc-btn-secondary-hover-bg: transparent;
+            --cc-btn-secondary-hover-color: var(--cc-btn-secondary-color);
+            --cc-btn-secondary-hover-border-color: rgb(146, 146, 146);
 
-            /* Toggle */
-            --lmcccm-toggle-bg-off: rgb(146, 146, 146);
-            --lmcccm-toggle-bg-on: rgb(0, 88, 163);
+            /* Toggles */
+            --cc-toggle-on-bg: rgb(0, 88, 163);
+            --cc-toggle-off-bg: rgb(146, 146, 146);
+            --cc-toggle-on-knob-bg: rgb(255, 255, 255);
+            --cc-toggle-off-knob-bg: rgb(255, 255, 255);
+
+            /* Cookie categories */
+            --cc-cookie-category-block-bg: rgb(245, 245, 245);
+            --cc-cookie-category-block-hover-bg: rgb(223, 223, 223);
+
+            /* Separators */
+            --cc-separator-border-color: rgb(216, 216, 216);
+
+            /* Backdrop */
+            --cc-overlay-bg: rgba(0, 0, 0, 0.5);
 
             /* Modal */
-            --lmcccm-modal-border-radius: 1.4em;
-            --lmcccm-modal-section-border: rgb(216, 216, 216);
-
-            /* Cookies */
-            --lmcccm-cookie-category-border-radius: 1.4em;
-            --lmcccm-cookie-category-bg: rgb(245, 245, 245);
-            --lmcccm-cookie-category-hover-bg: rgb(223, 223, 223);
+            --cc-modal-border-radius: 1.4em;
         }
     </style>
 </head>
@@ -179,48 +175,46 @@
                     <summary class="link-primary">Show source</summary>
                     <pre class="mt-4"><code class="language-css">:root {
     /* Common */
-    --lmcccm-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
-    --lmcccm-base-font-size: 14px;
-    --lmcccm-bg: rgb(255, 255, 255);
-    --lmcccm-text: rgb(72, 72, 72);
-    --lmcccm-backdrop-color: rgba(0, 0, 0, 0.5);
+    --cc-font-family: 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif;
+    --cc-bg: rgb(255, 255, 255);
+    --cc-primary-color: rgb(72, 72, 72);
 
     /* Links */
-    --lmcccm-link-text: var(--lmcccm-text);
-    --lmcccm-link-hover-text: rgb(17, 17, 17);
-    --lmcccm-link-active-text: var(--lmcccm-link-hover-text);
+    --cc-link-color: var(--cc-primary-color);
 
     /* Buttons */
-    --lmcccm-btn-font-weight: 700;
-    --lmcccm-btn-border-radius: 1.25em;
-    --lmcccm-btn-primary-border: transparent;
-    --lmcccm-btn-primary-bg: rgb(17, 17, 17);
-    --lmcccm-btn-primary-text: rgb(255, 255, 255);
-    --lmcccm-btn-primary-hover-border: transparent;
-    --lmcccm-btn-primary-hover-bg: rgb(51, 51, 51);
-    --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
-    --lmcccm-btn-primary-active-border: transparent;
-    --lmcccm-btn-primary-active-bg: rgb(0, 0, 0);
-    --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
-    --lmcccm-btn-secondary-border: rgb(223, 223, 223);
-    --lmcccm-btn-secondary-text: rgb(17, 17, 17);
-    --lmcccm-btn-secondary-hover-border: rgb(146, 146, 146);
-    --lmcccm-btn-secondary-hover-text: var(--lmcccm-btn-secondary-text);
-    --lmcccm-btn-secondary-active-border: rgb(17, 17, 17);
-    --lmcccm-btn-secondary-active-text: var(--lmcccm-btn-secondary-text);
+    --cc-btn-border-radius: 1.25em;
+    --cc-btn-primary-bg: rgb(17, 17, 17);
+    --cc-btn-primary-color: rgb(255, 255, 255);
+    --cc-btn-primary-border-color: transparent;
+    --cc-btn-primary-hover-bg: rgb(51, 51, 51);
+    --cc-btn-primary-hover-color: var(--cc-btn-primary-color);
+    --cc-btn-primary-hover-border-color: transparent;
+    --cc-btn-secondary-bg: transparent;
+    --cc-btn-secondary-color: rgb(17, 17, 17);
+    --cc-btn-secondary-border-color: rgb(223, 223, 223);
+    --cc-btn-secondary-hover-bg: transparent;
+    --cc-btn-secondary-hover-color: var(--cc-btn-secondary-color);
+    --cc-btn-secondary-hover-border-color: rgb(146, 146, 146);
 
-    /* Toggle */
-    --lmcccm-toggle-bg-off: rgb(146, 146, 146);
-    --lmcccm-toggle-bg-on: rgb(0, 88, 163);
+    /* Toggles */
+    --cc-toggle-on-bg: rgb(0, 88, 163);
+    --cc-toggle-off-bg: rgb(146, 146, 146);
+    --cc-toggle-on-knob-bg: rgb(255, 255, 255);
+    --cc-toggle-off-knob-bg: rgb(255, 255, 255);
+
+    /* Cookie categories */
+    --cc-cookie-category-block-bg: rgb(245, 245, 245);
+    --cc-cookie-category-block-hover-bg: rgb(223, 223, 223);
+
+    /* Separators */
+    --cc-separator-border-color: rgb(216, 216, 216);
+
+    /* Backdrop */
+    --cc-overlay-bg: rgba(0, 0, 0, 0.5);
 
     /* Modal */
-    --lmcccm-modal-border-radius: 1.4em;
-    --lmcccm-modal-section-border: rgb(216, 216, 216);
-
-    /* Cookies */
-    --lmcccm-cookie-category-border-radius: 1.4em;
-    --lmcccm-cookie-category-bg: rgb(245, 245, 245);
-    --lmcccm-cookie-category-hover-bg: rgb(223, 223, 223);
+    --cc-modal-border-radius: 1.4em;
 }</code></pre>
                 </details>
 

@@ -155,9 +155,97 @@ with no option to reconfigure this.
 
 See readme for [callbacks documentation](README.md#callbacks).
 
-## Theming changes and Spirit Design System upgrade
+## Spirit Design System upgrade and color themes
 
-...
+The library now uses the Spirit Design System color themes.
+
+For users of Spirit Design System version 3 and newer, the color themes are already included in the CSS. No action is needed.
+
+If you use an older version of Spirit Design System, or you do not use Spirit Design System at all, you need to include the color themes in your CSS:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManagerThemes.min.css">
+```
+
+See readme for [basic usage documentation](README.md#basic-usage).
+
+## Theming changes
+
+Starting from version 3, the Cookie Consent Manager uses only the CSS custom properties provided by the
+underlying vanilla-cookieconsent library and does not introduce any own custom properties.
+
+Not all CSS custom properties have their equivalent in the new version of the library (and vice versa).
+The table below lists all custom properties used in the previous version and their new names, paired as close as possible.
+
+| Category          | CSS custom property – old name           | CSS custom property – new name                 |
+|-------------------|------------------------------------------|------------------------------------------------|
+| Common            | `--lmcccm-font-family`                   | `--cc-font-family`                             |
+|                   | `--lmcccm-base-font-size`                | N/A                                            |
+|                   | `--lmcccm-bg`                            | `--cc-bg`                                      |
+|                   | `--lmcccm-text`                          | `--cc-primary-color`                           |
+|                   | N/A                                      | `--cc-secondary-color`                         |
+| Links             | `--lmcccm-link-text`                     | `--cc-link-color`                              |
+|                   | `--lmcccm-link-text-decoration`          | N/A                                            |
+|                   | `--lmcccm-link-hover-text`               | N/A                                            |
+|                   | `--lmcccm-link-hover-text-decoration`    | N/A                                            |
+|                   | `--lmcccm-link-active-text`              | N/A                                            |
+| Buttons           | `--lmcccm-btn-font-weight`               | N/A                                            |
+|                   | `--lmcccm-btn-text-transform`            | N/A                                            |
+|                   | `--lmcccm-btn-border-width`              | N/A                                            |
+|                   | `--lmcccm-btn-border-style`              | N/A                                            |
+|                   | `--lmcccm-btn-border-radius`             | `--cc-btn-border-radius`                       |
+|                   | `--lmcccm-btn-primary-bg`                | `--cc-btn-primary-bg`                          |
+|                   | `--lmcccm-btn-primary-text`              | `--cc-btn-primary-color`                       |
+|                   | `--lmcccm-btn-primary-border`            | `--cc-btn-primary-border-color`                |
+|                   | `--lmcccm-btn-primary-hover-bg`          | `--cc-btn-primary-hover-bg`                    |
+|                   | `--lmcccm-btn-primary-hover-text`        | `--cc-btn-primary-hover-color`                 |
+|                   | `--lmcccm-btn-primary-hover-border`      | `--cc-btn-primary-hover-border-color`          |
+|                   | `--lmcccm-btn-primary-active-bg`         | N/A \*                                         |
+|                   | `--lmcccm-btn-primary-active-text`       | N/A \*                                         |
+|                   | `--lmcccm-btn-primary-active-border`     | N/A \*                                         |
+|                   | `--lmcccm-btn-secondary-bg`              | `--cc-btn-secondary-bg`                        |
+|                   | `--lmcccm-btn-secondary-text`            | `--cc-btn-secondary-color`                     |
+|                   | `--lmcccm-btn-secondary-border`          | `--cc-btn-secondary-border-color`              |
+|                   | `--lmcccm-btn-secondary-hover-bg`        | `--cc-btn-secondary-hover-bg`                  |
+|                   | `--lmcccm-btn-secondary-hover-text`      | `--cc-btn-secondary-hover-color`               |
+|                   | `--lmcccm-btn-secondary-hover-border`    | `--cc-btn-secondary-hover-border-color`        |
+|                   | `--lmcccm-btn-secondary-active-bg`       | N/A \*                                         |
+|                   | `--lmcccm-btn-secondary-active-text`     | N/A \*                                         |
+|                   | `--lmcccm-btn-secondary-active-border`   | N/A \*                                         |
+| Toggles           | N/A                                      | `--cc-pm-toggle-border-radius`                 |
+|                   | `--lmcccm-toggle-bg-on`                  | `--cc-toggle-on-bg`                            |
+|                   | `--lmcccm-toggle-bg-off`                 | `--cc-toggle-off-bg`                           |
+|                   | `--lmcccm-toggle-knob-bg` \**            | `--cc-toggle-on-knob-bg` \**                   |
+|                   | `--lmcccm-toggle-knob-bg` \**            | `--cc-toggle-off-knob-bg` \**                  |
+|                   | `--lmcccm-toggle-knob-icon-color`        | N/A \***                                       |
+|                   | `--lmcccm-toggle-bg-readonly`            | `--cc-toggle-readonly-bg`                      |
+|                   | N/A                                      | `--cc-toggle-readonly-knob-bg`                 |
+|                   | N/A                                      | `--cc-toggle-readonly-knob-icon-color`         |
+| Cookie categories | `--lmcccm-cookie-category-border-radius` | N/A                                            |
+|                   | `--lmcccm-cookie-category-bg`            | `--cc-cookie-category-block-bg`                |
+|                   | N/A                                      | `--cc-cookie-category-block-border`            |
+|                   | `--lmcccm-cookie-category-hover-bg`      | `--cc-cookie-category-block-hover-bg`          |
+|                   | N/A                                      | `--cc-cookie-category-block-hover-border`      |
+|                   | N/A                                      | `--cc-cookie-category-expanded-block-bg`       |
+|                   | N/A                                      | `--cc-cookie-category-expanded-block-hover-bg` |
+|                   | `--lmcccm-cookie-table-border`           | N/A                                            |
+| Separators        | `--lmcccm-modal-section-border`          | `--cc-separator-border-color`                  |
+| Backdrop          | `--lmcccm-backdrop-color`                | `--cc-overlay-bg`                              |
+| Modal             | `--lmcccm-modal-max-width`               | N/A                                            |
+|                   | `--lmcccm-modal-max-height`              | N/A                                            |
+|                   | N/A                                      | `--cc-modal-margin`                            |
+|                   | `--lmcccm-modal-border-radius`           | `--cc-modal-border-radius`                     |
+|                   | `--lmcccm-modal-bg`                      | N/A \****                                      |
+|                   | `--lmcccm-modal-text`                    | N/A \****                                      |
+|                   | N/A                                      | `--cc-modal-transition-duration`               |
+| Footer            | N/A                                      | `--cc-footer-bg`                               |
+|                   | N/A                                      | `--cc-footer-color`                            |
+|                   | N/A                                      | `--cc-footer-border-color`                     |
+
+\* Active state is generally not styled in the vanilla-cookieconsent library.
+\** Knob background color is now set separately for on and off states.
+\*** Knob icon color is now inherited from the toggle background color.
+\**** Modal background and text color now use the common `--cc-bg` and `--cc-primary-color` custom properties.
 
 See readme for [full theming documentation](README.md#theming).
 
