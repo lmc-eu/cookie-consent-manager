@@ -41,6 +41,12 @@ Load default CSS along with your styles in `<head>`:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManager.min.css">
 ```
 
+If you use an older version of Alma Career's [Spirit Design System] (version 2 or lower) or if you don't use the Spirit Design System at all, you need to load the themes CSS file:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManagerThemes.min.css">
+```
+
 Load the script and initialize the plugin right before ending `</body>` tag:
 
 ```html
@@ -74,6 +80,7 @@ You can load the plugin from a CDN, as in the basic example above.
 <!-- Note we use version "cookie-consent-manager@3", which points to the latest version of this series (including feature and bugfix releases) -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManager.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManagerThemes.min.css"><!-- Only if you do NOT use Spirit Design System (or you use Spirit Design System version 2 or lower) -->
 <script defer src="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/init.js"></script>
 ```
 
@@ -114,18 +121,24 @@ via npm package [@almacareer/cookie-consent-manager](https://www.npmjs.com/packa
 3. Include default CSS in your HTML:
    ```html
    <link rel="stylesheet" href="node_modules/@almacareer/cookie-consent-manager/CookieConsentManager.min.css">
+   <link rel="stylesheet" href="node_modules/@almacareer/cookie-consent-manager/CookieConsentManagerThemes.min.css"><!-- Only if you do NOT use Spirit Design System (or you use Spirit Design System version 2 or lower) -->
    ```
    or in your Sass stylesheet:
    ```scss
    @use "node_modules/@almacareer/cookie-consent-manager/CookieConsentManager.css";
+   @use "node_modules/@almacareer/cookie-consent-manager/CookieConsentManagerThemes.css"; // Only if you do NOT use Spirit Design System (or you use Spirit Design System version 2 or lower)
    ```
 
    Please mind the `.css` extension used in the Sass example. Using the provided `.scss` stylesheet is
-   recommended only for projects that are built [with Spirit Design System](#with-spirit-design-system).
+   recommended only for projects that are built
+   [with Alma Career's Spirit Design System](#with-spirit-design-system).
+
+   Also, the themes CSS is optional and should be included only if you do **NOT** use Alma Career's [Spirit Design System] (or you use Spirit Design System version 2 or lower).
+   For projects built with Spirit Design System version 3 and newer, the themes are already included in the CSS.
 
    See below for [theme customization options](#theming).
 
-4. For projects that are **NOT** built with [Spirit Design System]:
+4. For projects that are **NOT** built with Alma Career's [Spirit Design System] or use Spirit Design System version 2 or lower:
 
    1. Include default font in your HTML:
       ```html
@@ -148,7 +161,7 @@ However, for all other purposes, it must be explicitly checked whether user has 
 consent category. This must be done *before* the respective cookie is set.
 
 In case user rejects some (or all) optional consent categories, **you must implement logic to remove current cookies
-(as well as localStorage) in your product yourself**`, this library does not manipulate with the cookies by default.
+(as well as localStorage) in your product yourself**, this library does not manipulate with the cookies by default.
 (However you can use `autoClearCookies` config option.)
 
 ### Consent categories
@@ -325,7 +338,7 @@ that can be used to call [its methods][cookie consent api] or retrieve data from
 
 ### With Spirit Design System
 
-If your project uses [Spirit Design System], you are almost done!
+If your project uses [Spirit Design System] version 3 and newer, you are almost done!
 
 All you need to do is to add this plugin's SCSS to your Sass pipeline and use it **instead** of the default CSS:
 
@@ -337,8 +350,10 @@ All you need to do is to add this plugin's SCSS to your Sass pipeline and use it
 @use '@almacareer/cookie-consent-manager/CookieConsentManager';
 ```
 
+That's it!
+
 <details>
-<summary>Make sure you have <code>node_modules</code> and path to your design tokens in your Sass include paths.</summary>
+<summary>Make sure you have <code>node_modules</code> and path to your design tokens in your Sass load paths.</summary>
 
 Set up [Sass load path] so the Sass compiler can find stylesheets located in the `node_modules` directory
 (you will already have a path to your design tokens there, as required by [Spirit Web]):
@@ -358,7 +373,7 @@ Or with webpack:
   loader: 'sass-loader',
   options: {
     sassOptions: {
-      includePaths: [
+      loadPaths: [
         path.resolve(
           __dirname,
           'node_modules',
@@ -375,6 +390,10 @@ Or with webpack:
 **Note:** `sass` v1.23 or higher is required to be able to compile the new Sass modules syntax. You may need to migrate
 to [`sass`][sass] since all other Sass compilers (and the old `@import` rule) are now [deprecated][sass modules].
 
+### With Spirit Design System version 2 or lower
+
+Please follow the steps below for users who do not use Spirit Design System.
+
 ### Without Spirit Design System
 
 A handful of CSS custom properties are available for you to customize the UI to make it match the design of your site.
@@ -383,7 +402,7 @@ anywhere in your stylesheet (the order of which is not important):
 
 ```css
 :root {
-  --lmcccm-text: #333;
+  --cc-primary-color: #333;
 }
 ```
 
@@ -392,58 +411,80 @@ anywhere in your stylesheet (the order of which is not important):
 <details>
 <summary>Full list of available CSS custom properties:</summary>
 
-| Category | CSS custom property                      | Description                                                        |
-|----------|------------------------------------------|--------------------------------------------------------------------|
-| Common   | `--lmcccm-font-family`                   | Base font family                                                   |
-|          | `--lmcccm-base-font-size`                | Base font size                                                     |
-|          | `--lmcccm-bg`                            | Common background color                                            |
-|          | `--lmcccm-text`                          | Common text color                                                  |
-|          | `--lmcccm-backdrop-color`                | Backdrop color                                                     |
-| Links    | `--lmcccm-link-text`                     | Link text color                                                    |
-|          | `--lmcccm-link-text-decoration`          | Link text decoration                                               |
-|          | `--lmcccm-link-hover-text`               | Link text color on hover                                           |
-|          | `--lmcccm-link-hover-text-decoration`    | Link text decoration on hover                                      |
-|          | `--lmcccm-link-active-text`              | Link text color in active state                                    |
-| Buttons  | `--lmcccm-btn-font-weight`               | Button font weight                                                 |
-|          | `--lmcccm-btn-text-transform`            | Button text transform                                              |
-|          | `--lmcccm-btn-border-width`              | Button border width                                                |
-|          | `--lmcccm-btn-border-style`              | Button border style                                                |
-|          | `--lmcccm-btn-border-radius`             | Button border radius                                               |
-|          | `--lmcccm-btn-primary-border`            | Primary button border color                                        |
-|          | `--lmcccm-btn-primary-bg`                | Primary button background color                                    |
-|          | `--lmcccm-btn-primary-text`              | Primary button text color                                          |
-|          | `--lmcccm-btn-primary-hover-border`      | Primary button border color on hover                               |
-|          | `--lmcccm-btn-primary-hover-bg`          | Primary button background color on hover                           |
-|          | `--lmcccm-btn-primary-hover-text`        | Primary button text color on hover                                 |
-|          | `--lmcccm-btn-primary-active-border`     | Primary button border color in active state                        |
-|          | `--lmcccm-btn-primary-active-bg`         | Primary button background color in active state                    |
-|          | `--lmcccm-btn-primary-active-text`       | Primary button text color in active state                          |
-|          | `--lmcccm-btn-secondary-border`          | Secondary button border color                                      |
-|          | `--lmcccm-btn-secondary-bg`              | Secondary button background color                                  |
-|          | `--lmcccm-btn-secondary-text`            | Secondary button text color                                        |
-|          | `--lmcccm-btn-secondary-hover-border`    | Secondary button border color on hover                             |
-|          | `--lmcccm-btn-secondary-hover-bg`        | Secondary button background color on hover                         |
-|          | `--lmcccm-btn-secondary-hover-text`      | Secondary button text color on hover                               |
-|          | `--lmcccm-btn-secondary-active-border`   | Secondary button border color in active state                      |
-|          | `--lmcccm-btn-secondary-active-bg`       | Secondary button background color in active state                  |
-|          | `--lmcccm-btn-secondary-active-text`     | Secondary button text color in active state                        |
-| Toggle   | `--lmcccm-toggle-bg-off`                 | Toggle background in unselected state                              |
-|          | `--lmcccm-toggle-bg-on`                  | Toggle background in selected state                                |
-|          | `--lmcccm-toggle-bg-readonly`            | Toggle background in readonly state                                |
-|          | `--lmcccm-toggle-knob-bg`                | Toggle knob color                                                  |
-|          | `--lmcccm-toggle-knob-icon-color`        | Toggle knob icon color                                             |
-| Modal    | `--lmcccm-modal-max-width`               | Maximum width of preferences modal                                 |
-|          | `--lmcccm-modal-max-height`              | Maximum height of preferences modal (box mode only)                |
-|          | `--lmcccm-modal-border-radius`           | Preferences modal border radius (box mode only)                    |
-|          | `--lmcccm-modal-bg`                      | Preferences modal background color (defaults to common background) |
-|          | `--lmcccm-modal-text`                    | Preferences modal text color (defaults to common text color)       |
-|          | `--lmcccm-modal-section-border`          | Border color of preferences modal sections                         |
-| Cookies  | `--lmcccm-cookie-category-border-radius` | Cookie category block border radius                                |
-|          | `--lmcccm-cookie-category-bg`            | Cookie category block background color                             |
-|          | `--lmcccm-cookie-category-hover-bg`      | Cookie category block background color on hover                    |
-|          | `--lmcccm-cookie-table-border`           | Cookie table border color                                          |
+| Category          | CSS custom property                            | Description                                              |
+|-------------------|------------------------------------------------|----------------------------------------------------------|
+| Common            | `--cc-font-family`                             | Base font family                                         |
+|                   | `--cc-bg`                                      | Common background color                                  |
+|                   | `--cc-primary-color`                           | Common primary text color                                |
+|                   | `--cc-secondary-color`                         | Common secondary text color                              |
+| Links             | `--cc-link-color`                              | Link text color                                          |
+| Buttons           | `--cc-btn-border-radius`                       | Button border radius                                     |
+|                   | `--cc-btn-primary-bg`                          | Primary button background color                          |
+|                   | `--cc-btn-primary-color`                       | Primary button text color                                |
+|                   | `--cc-btn-primary-border-color`                | Primary button border color                              |
+|                   | `--cc-btn-primary-hover-bg`                    | Primary button background color on hover                 |
+|                   | `--cc-btn-primary-hover-color`                 | Primary button text color on hover                       |
+|                   | `--cc-btn-primary-hover-border-color`          | Primary button border color on hover                     |
+|                   | `--cc-btn-secondary-bg`                        | Secondary button background color                        |
+|                   | `--cc-btn-secondary-color`                     | Secondary button text color                              |
+|                   | `--cc-btn-secondary-border-color`              | Secondary button border color                            |
+|                   | `--cc-btn-secondary-hover-bg`                  | Secondary button background color on hover               |
+|                   | `--cc-btn-secondary-hover-color`               | Secondary button text color on hover                     |
+|                   | `--cc-btn-secondary-hover-border-color`        | Secondary button border color on hover                   |
+| Toggles           | `--cc-pm-toggle-border-radius`                 | Toggle border radius                                     |
+|                   | `--cc-toggle-on-bg`                            | Toggle background color in selected state                |
+|                   | `--cc-toggle-off-bg`                           | Toggle background color in unselected state              |
+|                   | `--cc-toggle-on-knob-bg`                       | Toggle knob color in selected state                      |
+|                   | `--cc-toggle-off-knob-bg`                      | Toggle knob color in unselected state                    |
+|                   | `--cc-toggle-readonly-bg`                      | Toggle background color in readonly state                |
+|                   | `--cc-toggle-readonly-knob-bg`                 | Toggle knob color in readonly state                      |
+|                   | `--cc-toggle-readonly-knob-icon-color`         | Toggle knob icon color in readonly state                 |
+| Cookie categories | `--cc-cookie-category-block-bg`                | Cookie category block background color                   |
+|                   | `--cc-cookie-category-block-border`            | Cookie category block border color                       |
+|                   | `--cc-cookie-category-block-hover-bg`          | Cookie category block background color on hover          |
+|                   | `--cc-cookie-category-block-hover-border`      | Cookie category block border color on hover              |
+|                   | `--cc-cookie-category-expanded-block-bg`       | Expanded cookie category block background color          |
+|                   | `--cc-cookie-category-expanded-block-hover-bg` | Expanded cookie category block background color on hover |
+| Separators        | `--cc-separator-border-color`                  | Separator border color                                   |
+| Backdrop          | `--cc-overlay-bg`                              | Backdrop background color                                |
+| Modal             | `--cc-modal-margin`                            | Modal margin                                             |
+|                   | `--cc-modal-border-radius`                     | Modal border radius                                      |
+|                   | `--cc-modal-transition-duration`               | Modal transition duration                                |
+| Footer            | `--cc-footer-bg`                               | Footer background color                                  |
+|                   | `--cc-footer-color`                            | Footer text color                                        |
+|                   | `--cc-footer-border-color`                     | Footer border color                                      |
 
 </details>
+
+### Color themes
+
+Starting from version 3, the Cookie Consent Manager supports color themes.
+
+#### Spirit color themes
+
+The themes are based on the [Spirit Design Tokens][spirit design tokens], version 3.
+
+For Spirit Design System users, the themes are already included in the CSS.
+
+For projects that are **NOT** built with Spirit Design System (or use Spirit Design System version 2 or lower), you need to [load the themes CSS file](#basic-usage) first.
+
+Having the themes loaded, you can switch between the modes by applying the CSS classes like `.theme-light-default ` or `.theme-light-on-brand`
+to any element of your application.
+
+#### Dark mode
+
+While the Spirit Design System does not yet provide a dark mode, you can easily create one by overriding the CSS custom properties:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cc-bg: #333;
+    --cc-primary-color: #fff;
+    --cc-secondary-color: #ccc;
+    /* … */
+  }
+}
+```
 
 ### Custom font
 
@@ -454,7 +495,7 @@ If you are not using cookie consent with the default design, additional steps ma
 - If your project is _not_ built with Spirit Design System, you can switch to any font of your choice:
   ```css
   :root {
-    --lmcccm-font-family: "Open Sans", arial, sans-serif;
+    --cc-font-family: "Open Sans", arial, sans-serif;
   }
   ```
 
@@ -477,11 +518,11 @@ Start local development server:
 yarn start
 ```
 
-This will make the development server accessible http://localhost:3000/ .
+This will make the development server accessible http://localhost:5173/ .
 
-* The library with init function is served on: http://localhost:3000/dist/init.js
-* Javascript module: http://localhost:3000/dist/CookieConsentManager.js
-* CSS: http://localhost:3000/dist/CookieConsentManager.css
+* The library with init function is served on: http://localhost:5173/dist/init.js
+* Javascript module: http://localhost:5173/dist/CookieConsentManager.js
+* CSS: http://localhost:5173/dist/CookieConsentManager.css
 
 ### Contributing
 
