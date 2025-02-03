@@ -11,6 +11,7 @@ import { config as configLt } from './lt';
 import { config as configLv } from './lv';
 import { config as configMk } from './mk';
 import { config as configPl } from './pl';
+import { config as configPt } from './pt';
 import { config as configRu } from './ru';
 import { config as configSk } from './sk';
 import { config as configSl } from './sl';
@@ -32,6 +33,7 @@ const languagesMap = {
   lv: configLv,
   mk: configMk,
   pl: configPl,
+  pt: configPt,
   ru: configRu,
   sk: configSk,
   sl: configSl,

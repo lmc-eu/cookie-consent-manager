@@ -1869,6 +1869,151 @@ exports[`config pl should return localization object with cookie table 1`] = `
 }
 `;
 
+exports[`config pt should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Aceitar os necessários",
+    "description": "
+      <p>Se soubermos claramente o que lhe interessa, exibir-lhe-emos apenas conteúdos à medida.</p>
+      <p>
+        Clicando em «Aceitar todos» dá
+        às empresas
+        test1, test2 e test3
+        consentimento para usarem cookies com o intuito de personalizarem, analisarem e criarem campanhas de marketing mais direcionadas.
+        Há mais informações sobre cookies e como ajustá-los nas <strong><a href="" data-cc="show-preferencesModal">configurações dedicadas a isso</a></strong>.
+      </p>",
+    "title": "Graças aos cookies as nossas páginas serão ainda melhores",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Aceitar os necessários",
+    "savePreferencesBtn": "Guardar configurações",
+    "sections": [
+      {
+        "description": "Para aproveitar ao máximo das nossas páginas, aconselhamos ativar todos os tipos de cookies.
+            Há mais informações sobre o significado dos cookies e como os processamos nas <a href="https://www.almacareer.com/gdpr" target="_blank">Políticas sobre Cookies</a>.",
+      },
+      {
+        "description": "Tais cookies são essenciais para o funcionamento correto das nossas páginas, por conseguinte não é possível desativá-los. Sem eles não seria possível, por exemplo, exibir nenhum conteúdo nas nossas páginas ou não funcionaria o login.",
+        "linkedCategory": "necessary",
+        "title": "Cookies tecnicamente necessários",
+      },
+      {
+        "description": "Com tais cookies podemos mensurar qual o grau de eficácia das nossas publicidades e da amplitude desejada dos nossos serviços. Cookies de marketing permitem-nos informar os utilizadores de novidades que lhes possam interessar.",
+        "linkedCategory": "ad",
+        "title": "Cookies de marketing",
+      },
+      {
+        "description": "Com a sua ajuda acompanhamos quantas pessoas visitam as nossas páginas e como as utilizam. Graças a isso podemos aperfeiçoar cada vez mais as nossas páginas e os serviços que oferecemos.",
+        "linkedCategory": "analytics",
+        "title": "Cookies analíticos",
+      },
+      {
+        "description": "Graças a tais cookies as nossas páginas são ainda mais eficientes e funcionam melhor. Por exemplo, possibilitam que utilizemos o chat para podermos responder rápida e comodamente às perguntas dos utilizadores.",
+        "linkedCategory": "functionality",
+        "title": "Cookies funcionais",
+      },
+      {
+        "description": "Os nossos serviços funcionam melhor se os podemos adaptar à medida a um utilizador concreto. Habilitando os cookies personalizados, aumenta as chances de encontrar os conteúdos dos quais está à procura.",
+        "linkedCategory": "personalization",
+        "title": "Cookies personalizados",
+      },
+    ],
+    "title": "Editar as configurações de cookies",
+  },
+}
+`;
+
+exports[`config pt should return localization object with cookie table 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Aceitar os necessários",
+    "description": "
+      <p>Se soubermos claramente o que lhe interessa, exibir-lhe-emos apenas conteúdos à medida.</p>
+      <p>
+        Clicando em «Aceitar todos» dá
+        à empresa
+        Alma Career e às empresas pertencentes ao seu grupo comercial
+        consentimento para usarem cookies com o intuito de personalizarem, analisarem e criarem campanhas de marketing mais direcionadas.
+        Há mais informações sobre cookies e como ajustá-los nas <strong><a href="" data-cc="show-preferencesModal">configurações dedicadas a isso</a></strong>.
+      </p>",
+    "title": "Graças aos cookies as nossas páginas serão ainda melhores",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Aceitar os necessários",
+    "savePreferencesBtn": "Guardar configurações",
+    "sections": [
+      {
+        "description": "Para aproveitar ao máximo das nossas páginas, aconselhamos ativar todos os tipos de cookies.
+            Há mais informações sobre o significado dos cookies e como os processamos nas <a href="https://www.almacareer.com/gdpr" target="_blank">Políticas sobre Cookies</a>.",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Google Analytics description ...",
+              "expiration": "1 year",
+              "name": "_ga*",
+            },
+            {
+              "description": "Foo description",
+              "expiration": "end of session",
+              "name": "foo",
+            },
+          ],
+          "headers": {
+            "description": "Assinatura",
+            "expiration": "Validade",
+            "name": "Nome",
+          },
+        },
+        "description": "Tais cookies são essenciais para o funcionamento correto das nossas páginas, por conseguinte não é possível desativá-los. Sem eles não seria possível, por exemplo, exibir nenhum conteúdo nas nossas páginas ou não funcionaria o login.",
+        "linkedCategory": "necessary",
+        "title": "Cookies tecnicamente necessários",
+      },
+      {
+        "description": "Com tais cookies podemos mensurar qual o grau de eficácia das nossas publicidades e da amplitude desejada dos nossos serviços. Cookies de marketing permitem-nos informar os utilizadores de novidades que lhes possam interessar.",
+        "linkedCategory": "ad",
+        "title": "Cookies de marketing",
+      },
+      {
+        "description": "Com a sua ajuda acompanhamos quantas pessoas visitam as nossas páginas e como as utilizam. Graças a isso podemos aperfeiçoar cada vez mais as nossas páginas e os serviços que oferecemos.",
+        "linkedCategory": "analytics",
+        "title": "Cookies analíticos",
+      },
+      {
+        "description": "Graças a tais cookies as nossas páginas são ainda mais eficientes e funcionam melhor. Por exemplo, possibilitam que utilizemos o chat para podermos responder rápida e comodamente às perguntas dos utilizadores.",
+        "linkedCategory": "functionality",
+        "title": "Cookies funcionais",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Session log description ...",
+              "expiration": "1 year",
+              "name": "sessionLog_id",
+            },
+          ],
+          "headers": {
+            "description": "Assinatura",
+            "expiration": "Validade",
+            "name": "Nome",
+          },
+        },
+        "description": "Os nossos serviços funcionam melhor se os podemos adaptar à medida a um utilizador concreto. Habilitando os cookies personalizados, aumenta as chances de encontrar os conteúdos dos quais está à procura.",
+        "linkedCategory": "personalization",
+        "title": "Cookies personalizados",
+      },
+    ],
+    "title": "Editar as configurações de cookies",
+  },
+}
+`;
+
 exports[`config ru should return localization object for acceptNecessary button mode 1`] = `
 {
   "consentModal": {

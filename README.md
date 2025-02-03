@@ -293,6 +293,7 @@ Translation of the user interface is provided in the following languages:
 - Latvian (`lv`)
 - Macedonian (`mk`)
 - Polish (`pl`)
+- Portuguese (`pt`)
 - Russian (`ru`)
 - Slovak (`sk`)
 - Slovenian (`sl`)
