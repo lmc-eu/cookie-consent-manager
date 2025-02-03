@@ -15,6 +15,7 @@ import { config as configPt } from './pt';
 import { config as configRu } from './ru';
 import { config as configSk } from './sk';
 import { config as configSl } from './sl';
+import { config as configSr } from './sr';
 import { config as configUk } from './uk';
 import { CookieTable, TranslationOverride } from '../types';
 import { Translation } from 'vanilla-cookieconsent';
@@ -37,6 +38,7 @@ const languagesMap = {
   ru: configRu,
   sk: configSk,
   sl: configSl,
+  sr: configSr,
   uk: configUk,
 };
 
