@@ -576,6 +576,149 @@ exports[`config en should return localization object with cookie table 1`] = `
 }
 `;
 
+exports[`config es should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Aceptar todo",
+    "acceptNecessaryBtn": "Aceptar las necesarias",
+    "description": "
+      <p>Si entendemos mejor lo que le interesa, le ofreceremos contenidos más personalizados.</p>
+      <p>
+        Al pulsar el botón «Aceptar todo», usted presta su consentimiento a
+        test1, test2 y test3
+        para el uso de las cookies con fines de personalización, análisis y publicidad comportamental.
+        Más información sobre las cookies y cómo configurarlas se puede encontrar en la <strong><a href="" data-cc="show-preferencesModal">configuración de cookies</a></strong>.
+      </p>",
+    "title": "Las cookies mejorarán nuestras páginas web aún más",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Aceptar todo",
+    "acceptNecessaryBtn": "Aceptar las necesarias",
+    "savePreferencesBtn": "Guardar configuración",
+    "sections": [
+      {
+        "description": "Para aprovechar nuestras páginas al máximo, es recomendable permitir todos los tipos de cookies.
+            Más información sobre qué son las cookies y cómo trabajamos con ellas se puede encontrar en la <a href="https://www.almacareer.com/gdpr" target="_blank">Política de cookies</a>.",
+      },
+      {
+        "description": "Son aquellas que son necesarias para el funcionamiento correcto de nuestras páginas web, por lo que no es posible desactivarlas. Sin ellas no se podrá mostrar ningún contenido en nuestras páginas o no funcionará el inicio de sesión, entre otras cosas.",
+        "linkedCategory": "necessary",
+        "title": "Cookies técnicas",
+      },
+      {
+        "description": "Son aquellas que nos permiten medir lo efectivo que es nuestra publicidad y las ofertas comportamentales de nuestros servicios. Las cookies de publicidad comportamental nos permiten informarle en la Red sobre las novedades que puedan ser de su interés.",
+        "linkedCategory": "ad",
+        "title": "Cookies de publicidad comportamental",
+      },
+      {
+        "description": "Son aquellas que usamos para seguir cuántas personas visitan nuestras páginas web y cómo las utilizan. Lo que nos permite ir mejorando las páginas así como otros servicios.",
+        "linkedCategory": "analytics",
+        "title": "Cookies de análisis",
+      },
+      {
+        "description": "Son aquellas que hacen nuestras páginas aún más eficientes y mejoran su funcionalidad. Por ejemplo, nos permiten usar el chat para que podamos responder a sus preguntas de manera rápida y sencilla.",
+        "linkedCategory": "functionality",
+        "title": "Cookies de funcionalidad",
+      },
+      {
+        "description": "Nuestros servicios funcionan mejor cuando podemos adaptarlos a las necesidades de cada usuario. Al permitir las cookies de personalización, aumentará la posibilidad de encontrar exactamente el contenido que está buscando.",
+        "linkedCategory": "personalization",
+        "title": "Cookies de personalización",
+      },
+    ],
+    "title": "Personalizar la configuración de cookies",
+  },
+}
+`;
+
+exports[`config es should return localization object with cookie table 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Aceptar todo",
+    "acceptNecessaryBtn": "Aceptar las necesarias",
+    "description": "
+      <p>Si entendemos mejor lo que le interesa, le ofreceremos contenidos más personalizados.</p>
+      <p>
+        Al pulsar el botón «Aceptar todo», usted presta su consentimiento a
+        Alma Career y las empresas del grupo empresarial
+        para el uso de las cookies con fines de personalización, análisis y publicidad comportamental.
+        Más información sobre las cookies y cómo configurarlas se puede encontrar en la <strong><a href="" data-cc="show-preferencesModal">configuración de cookies</a></strong>.
+      </p>",
+    "title": "Las cookies mejorarán nuestras páginas web aún más",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Aceptar todo",
+    "acceptNecessaryBtn": "Aceptar las necesarias",
+    "savePreferencesBtn": "Guardar configuración",
+    "sections": [
+      {
+        "description": "Para aprovechar nuestras páginas al máximo, es recomendable permitir todos los tipos de cookies.
+            Más información sobre qué son las cookies y cómo trabajamos con ellas se puede encontrar en la <a href="https://www.almacareer.com/gdpr" target="_blank">Política de cookies</a>.",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Google Analytics description ...",
+              "expiration": "1 year",
+              "name": "_ga*",
+            },
+            {
+              "description": "Foo description",
+              "expiration": "end of session",
+              "name": "foo",
+            },
+          ],
+          "headers": {
+            "description": "Descripción",
+            "expiration": "Validez",
+            "name": "Título",
+          },
+        },
+        "description": "Son aquellas que son necesarias para el funcionamiento correcto de nuestras páginas web, por lo que no es posible desactivarlas. Sin ellas no se podrá mostrar ningún contenido en nuestras páginas o no funcionará el inicio de sesión, entre otras cosas.",
+        "linkedCategory": "necessary",
+        "title": "Cookies técnicas",
+      },
+      {
+        "description": "Son aquellas que nos permiten medir lo efectivo que es nuestra publicidad y las ofertas comportamentales de nuestros servicios. Las cookies de publicidad comportamental nos permiten informarle en la Red sobre las novedades que puedan ser de su interés.",
+        "linkedCategory": "ad",
+        "title": "Cookies de publicidad comportamental",
+      },
+      {
+        "description": "Son aquellas que usamos para seguir cuántas personas visitan nuestras páginas web y cómo las utilizan. Lo que nos permite ir mejorando las páginas así como otros servicios.",
+        "linkedCategory": "analytics",
+        "title": "Cookies de análisis",
+      },
+      {
+        "description": "Son aquellas que hacen nuestras páginas aún más eficientes y mejoran su funcionalidad. Por ejemplo, nos permiten usar el chat para que podamos responder a sus preguntas de manera rápida y sencilla.",
+        "linkedCategory": "functionality",
+        "title": "Cookies de funcionalidad",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Session log description ...",
+              "expiration": "1 year",
+              "name": "sessionLog_id",
+            },
+          ],
+          "headers": {
+            "description": "Descripción",
+            "expiration": "Validez",
+            "name": "Título",
+          },
+        },
+        "description": "Nuestros servicios funcionan mejor cuando podemos adaptarlos a las necesidades de cada usuario. Al permitir las cookies de personalización, aumentará la posibilidad de encontrar exactamente el contenido que está buscando.",
+        "linkedCategory": "personalization",
+        "title": "Cookies de personalización",
+      },
+    ],
+    "title": "Personalizar la configuración de cookies",
+  },
+}
+`;
+
 exports[`config et should return localization object for acceptNecessary button mode 1`] = `
 {
   "consentModal": {
