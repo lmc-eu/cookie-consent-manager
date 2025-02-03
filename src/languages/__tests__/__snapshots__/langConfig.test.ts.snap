@@ -721,6 +721,149 @@ exports[`config et should return localization object with cookie table 1`] = `
 }
 `;
 
+exports[`config fr should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Tout accepter",
+    "acceptNecessaryBtn": "Accepter le nécessaire",
+    "description": "
+      <p>Si nous comprenons mieux ce qui vous intéresse, nous vous proposerons un contenu plus personnalisé.</p>
+      <p>
+        En cliquant sur le bouton « Tout accepter », vous consentez à ce
+        qu'test1, test2 et test3
+        utilisent des cookies à des fins de personnalisation, d'analyse et de marketing ciblé.
+        Pour plus d'informations sur les cookies et pour modifier leur utilisation, veuillez vous référer <strong><a href="" data-cc="show-preferencesModal">aux paramètres</a></strong>.
+      </p>",
+    "title": "Les cookies permettent d'améliorer notre site encore davantage",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Tout accepter",
+    "acceptNecessaryBtn": "Accepter le nécessaire",
+    "savePreferencesBtn": "Sauvegarder les paramètres",
+    "sections": [
+      {
+        "description": "Pour tirer le meilleur parti de notre site, il est préférable d'autoriser tous les types de cookies.
+            Pour plus d'informations sur ce que sont les cookies et comment nous les utilisons, veuillez consulter notre <a href="https://www.almacareer.com/gdpr" target="_blank">Politique d'utilisation de cookies</a>.",
+      },
+      {
+        "description": "Ces cookies sont essentiels au bon fonctionnement de notre site, il n'est donc pas possible de les désactiver. Sans ces cookies, par exemple, aucun contenu ne serait affiché sur notre site web et l'ouverture de session ne fonctionnerait pas.",
+        "linkedCategory": "necessary",
+        "title": "Cookies techniquement nécessaires",
+      },
+      {
+        "description": "Ces cookies nous permettent de mesurer l'efficacité de notre publicité et des offres ciblées de nos services. Les cookies marketing nous permettent de vous avertir en ligne des nouveautés qui pourraient vous intéresser.",
+        "linkedCategory": "ad",
+        "title": "Cookies marketing",
+      },
+      {
+        "description": "Nous les utilisons pour savoir combien de personnes visitent notre site web et comment elles l'utilisent. Ainsi, nous pouvons continuellement améliorer le site et les autres services.",
+        "linkedCategory": "analytics",
+        "title": "Cookies analytiques",
+      },
+      {
+        "description": "Ces cookies permettent à notre site d'être plus efficace et de mieux fonctionner. Par exemple, ils nous permettent d'utiliser le chat pour répondre rapidement et facilement à vos questions.",
+        "linkedCategory": "functionality",
+        "title": "Cookies fonctionnels",
+      },
+      {
+        "description": "Nos services fonctionnent mieux lorsque nous pouvons les adapter aux besoins spécifiques de chaque utilisateur. En autorisant les cookies de personnalisation, vous augmentez vos chances de trouver le contenu que vous recherchez.",
+        "linkedCategory": "personalization",
+        "title": "Cookies de personnalisation",
+      },
+    ],
+    "title": "Personnaliser les paramètres des cookies",
+  },
+}
+`;
+
+exports[`config fr should return localization object with cookie table 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Tout accepter",
+    "acceptNecessaryBtn": "Accepter le nécessaire",
+    "description": "
+      <p>Si nous comprenons mieux ce qui vous intéresse, nous vous proposerons un contenu plus personnalisé.</p>
+      <p>
+        En cliquant sur le bouton « Tout accepter », vous consentez à ce
+        qu'Alma Career et les sociétés de son groupe d'entreprises
+        utilisent des cookies à des fins de personnalisation, d'analyse et de marketing ciblé.
+        Pour plus d'informations sur les cookies et pour modifier leur utilisation, veuillez vous référer <strong><a href="" data-cc="show-preferencesModal">aux paramètres</a></strong>.
+      </p>",
+    "title": "Les cookies permettent d'améliorer notre site encore davantage",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Tout accepter",
+    "acceptNecessaryBtn": "Accepter le nécessaire",
+    "savePreferencesBtn": "Sauvegarder les paramètres",
+    "sections": [
+      {
+        "description": "Pour tirer le meilleur parti de notre site, il est préférable d'autoriser tous les types de cookies.
+            Pour plus d'informations sur ce que sont les cookies et comment nous les utilisons, veuillez consulter notre <a href="https://www.almacareer.com/gdpr" target="_blank">Politique d'utilisation de cookies</a>.",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Google Analytics description ...",
+              "expiration": "1 year",
+              "name": "_ga*",
+            },
+            {
+              "description": "Foo description",
+              "expiration": "end of session",
+              "name": "foo",
+            },
+          ],
+          "headers": {
+            "description": "Description",
+            "expiration": "Validité",
+            "name": "Titre",
+          },
+        },
+        "description": "Ces cookies sont essentiels au bon fonctionnement de notre site, il n'est donc pas possible de les désactiver. Sans ces cookies, par exemple, aucun contenu ne serait affiché sur notre site web et l'ouverture de session ne fonctionnerait pas.",
+        "linkedCategory": "necessary",
+        "title": "Cookies techniquement nécessaires",
+      },
+      {
+        "description": "Ces cookies nous permettent de mesurer l'efficacité de notre publicité et des offres ciblées de nos services. Les cookies marketing nous permettent de vous avertir en ligne des nouveautés qui pourraient vous intéresser.",
+        "linkedCategory": "ad",
+        "title": "Cookies marketing",
+      },
+      {
+        "description": "Nous les utilisons pour savoir combien de personnes visitent notre site web et comment elles l'utilisent. Ainsi, nous pouvons continuellement améliorer le site et les autres services.",
+        "linkedCategory": "analytics",
+        "title": "Cookies analytiques",
+      },
+      {
+        "description": "Ces cookies permettent à notre site d'être plus efficace et de mieux fonctionner. Par exemple, ils nous permettent d'utiliser le chat pour répondre rapidement et facilement à vos questions.",
+        "linkedCategory": "functionality",
+        "title": "Cookies fonctionnels",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Session log description ...",
+              "expiration": "1 year",
+              "name": "sessionLog_id",
+            },
+          ],
+          "headers": {
+            "description": "Description",
+            "expiration": "Validité",
+            "name": "Titre",
+          },
+        },
+        "description": "Nos services fonctionnent mieux lorsque nous pouvons les adapter aux besoins spécifiques de chaque utilisateur. En autorisant les cookies de personnalisation, vous augmentez vos chances de trouver le contenu que vous recherchez.",
+        "linkedCategory": "personalization",
+        "title": "Cookies de personnalisation",
+      },
+    ],
+    "title": "Personnaliser les paramètres des cookies",
+  },
+}
+`;
+
 exports[`config hr should return localization object for acceptNecessary button mode 1`] = `
 {
   "consentModal": {
