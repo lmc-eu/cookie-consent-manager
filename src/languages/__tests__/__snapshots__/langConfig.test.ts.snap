@@ -2449,6 +2449,151 @@ exports[`config sl should return localization object with cookie table 1`] = `
 }
 `;
 
+exports[`config sr should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvati neophodne",
+    "description": "
+      <p>Ako budemo bolje razumeli ono što vas zanima, prikazivaćemo relevantniji sadržaj.</p>
+      <p>
+        Klikom na dugme „Prihvati sve” dajete
+        kompanijama
+        test1, test2 i test3
+        svoju saglasnost za korišćenje kolačića za personalizaciju, analitiku i ciljani marketing.
+         U prilagođenim podešavanjima možete da <strong><a href="" data-cc="show-preferencesModal">prilagodite korišćenje kolačića</a></strong>.
+      </p>",
+    "title": "Kolačići dodatno unapređuju naš sajt",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvati neophodne",
+    "savePreferencesBtn": "Sačuvaj podešavanja",
+    "sections": [
+      {
+        "description": "Ako želite da maksimalno iskoristite naš veb-sajt, najbolje bi bilo da dozvolite sve vrste kolačića.
+            Više informacija o tome šta su kolačići i kako ih obrađujemo možete da pronađete u našoj <a href="https://www.almacareer.com/gdpr" target="_blank">politici kolačića</a>.",
+      },
+      {
+        "description": "Ovi kolačići su neophodni za pravilno funkcionisanje našeg veb-sajta i zato se ne mogu onemogućiti. Bez njih ne bi bilo moguće npr. prikazati bilo kakav sadržaj ili se prijaviti na naš veb-sajt.",
+        "linkedCategory": "necessary",
+        "title": "Tehnički neophodni kolačići",
+      },
+      {
+        "description": "Ovi kolačići nam pomažu da izmerimo efikasnost oglašavanja i ciljanih ponuda usluga. Marketing kolačići nam omogućavaju da vam pružimo vesti koje bi vas mogle zanimati na internetu.",
+        "linkedCategory": "ad",
+        "title": "Marketing kolačići",
+      },
+      {
+        "description": "Oni nam pomažu da pratimo koliko ljudi posećuje naš veb-sajt i kako ga koriste. Ove informacije nam omogućavaju da kontinuirano poboljšavamo veb-sajt i druge usluge.",
+        "linkedCategory": "analytics",
+        "title": "Analitički kolačići",
+      },
+      {
+        "description": "Naš veb-sajt je još efikasniji i bolje funkcioniše zahvaljujući ovim kolačićima. Na primer, omogućavaju nam da koristimo uslugu četa i brzo i lako odgovorimo na vaša pitanja.",
+        "linkedCategory": "functionality",
+        "title": "Funkcionalni kolačići",
+      },
+      {
+        "description": "Naše usluge rade bolje ako ih možemo prilagoditi konkretnim korisnicima. Ako omogućite kolačiće za personalizaciju, povećavate šanse da pronađete sadržaj koji želite.",
+        "linkedCategory": "personalization",
+        "title": "Kolačići za personalizaciju",
+      },
+    ],
+    "title": "Prilagođena podešavanja kolačića",
+  },
+}
+`;
+
+exports[`config sr should return localization object with cookie table 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvati neophodne",
+    "description": "
+      <p>Ako budemo bolje razumeli ono što vas zanima, prikazivaćemo relevantniji sadržaj.</p>
+      <p>
+        Klikom na dugme „Prihvati sve” dajete
+        kompaniji
+        Alma Career i ostale kompanije iz njene poslovne grupe
+        svoju saglasnost za korišćenje kolačića za personalizaciju, analitiku i ciljani marketing.
+         U prilagođenim podešavanjima možete da <strong><a href="" data-cc="show-preferencesModal">prilagodite korišćenje kolačića</a></strong>.
+      </p>",
+    "title": "Kolačići dodatno unapređuju naš sajt",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Prihvati sve",
+    "acceptNecessaryBtn": "Prihvati neophodne",
+    "savePreferencesBtn": "Sačuvaj podešavanja",
+    "sections": [
+      {
+        "description": "Ako želite da maksimalno iskoristite naš veb-sajt, najbolje bi bilo da dozvolite sve vrste kolačića.
+            Više informacija o tome šta su kolačići i kako ih obrađujemo možete da pronađete u našoj <a href="https://www.almacareer.com/gdpr" target="_blank">politici kolačića</a>.",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Google Analytics description ...",
+              "expiration": "1 year",
+              "name": "_ga*",
+            },
+            {
+              "description": "Foo description",
+              "expiration": "end of session",
+              "name": "foo",
+            },
+          ],
+          "headers": {
+            "description": "Opis",
+            "expiration": "Vreme isteka",
+            "name": "Ime",
+          },
+        },
+        "description": "Ovi kolačići su neophodni za pravilno funkcionisanje našeg veb-sajta i zato se ne mogu onemogućiti. Bez njih ne bi bilo moguće npr. prikazati bilo kakav sadržaj ili se prijaviti na naš veb-sajt.",
+        "linkedCategory": "necessary",
+        "title": "Tehnički neophodni kolačići",
+      },
+      {
+        "description": "Ovi kolačići nam pomažu da izmerimo efikasnost oglašavanja i ciljanih ponuda usluga. Marketing kolačići nam omogućavaju da vam pružimo vesti koje bi vas mogle zanimati na internetu.",
+        "linkedCategory": "ad",
+        "title": "Marketing kolačići",
+      },
+      {
+        "description": "Oni nam pomažu da pratimo koliko ljudi posećuje naš veb-sajt i kako ga koriste. Ove informacije nam omogućavaju da kontinuirano poboljšavamo veb-sajt i druge usluge.",
+        "linkedCategory": "analytics",
+        "title": "Analitički kolačići",
+      },
+      {
+        "description": "Naš veb-sajt je još efikasniji i bolje funkcioniše zahvaljujući ovim kolačićima. Na primer, omogućavaju nam da koristimo uslugu četa i brzo i lako odgovorimo na vaša pitanja.",
+        "linkedCategory": "functionality",
+        "title": "Funkcionalni kolačići",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Session log description ...",
+              "expiration": "1 year",
+              "name": "sessionLog_id",
+            },
+          ],
+          "headers": {
+            "description": "Opis",
+            "expiration": "Vreme isteka",
+            "name": "Ime",
+          },
+        },
+        "description": "Naše usluge rade bolje ako ih možemo prilagoditi konkretnim korisnicima. Ako omogućite kolačiće za personalizaciju, povećavate šanse da pronađete sadržaj koji želite.",
+        "linkedCategory": "personalization",
+        "title": "Kolačići za personalizaciju",
+      },
+    ],
+    "title": "Prilagođena podešavanja kolačića",
+  },
+}
+`;
+
 exports[`config uk should return localization object for acceptNecessary button mode 1`] = `
 {
   "consentModal": {
