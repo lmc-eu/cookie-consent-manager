@@ -296,6 +296,7 @@ Translation of the user interface is provided in the following languages:
 - Russian (`ru`)
 - Slovak (`sk`)
 - Slovenian (`sl`)
+- Spanish (`es`)
 - Ukrainian (`uk`)
 
 [👀 See example of each language version][examples-languages]
