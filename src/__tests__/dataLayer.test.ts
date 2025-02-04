@@ -26,6 +26,7 @@ describe('dataLayer', () => {
           personalization: [],
         },
         lastConsentTimestamp: '2024-12-12T12:12:12.333Z',
+        languageCode: 'en',
         expirationTime: 1764690333666,
       };
 
@@ -62,6 +63,7 @@ describe('dataLayer', () => {
           personalization: [],
         },
         lastConsentTimestamp: '2024-12-12T12:12:12.333Z',
+        languageCode: 'en',
         expirationTime: 1764690333666,
       };
 
