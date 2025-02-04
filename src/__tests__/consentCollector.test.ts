@@ -26,6 +26,7 @@ describe('consentCollector', () => {
         consentId: 'f6152595-45a0-4371-aa68-2fe97137111a',
         services: {},
         lastConsentTimestamp: '2024-12-12T12:12:12.333Z',
+        languageCode: 'en',
         expirationTime: Date.now() + 33 * 24 * 60 * 60 * 1000, // 33 days in the future
       };
 
