@@ -57,7 +57,7 @@ describe('consentCollector', () => {
             revision: 333,
             source: 'demo.example',
             days_of_acceptation: 33,
-            language: 'N/A',
+            language: 'en',
           },
         },
       });

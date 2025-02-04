@@ -22,7 +22,7 @@ function buildPayload(userPreferences: UserPreferences, cookie: CookieValue): Ob
         rejected_categories: userPreferences.rejectedCategories,
         revision: cookie.revision,
         source: cookieData.serviceName,
-        language: 'N/A', // TODO: change to cookie.languageCode, see https://github.com/orestbida/cookieconsent/pull/761
+        language: cookie.languageCode,
         days_of_acceptation: calculateDaysOfAcceptation(cookie),
       },
     },
