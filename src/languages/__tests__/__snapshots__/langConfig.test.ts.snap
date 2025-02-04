@@ -2014,6 +2014,149 @@ exports[`config pt should return localization object with cookie table 1`] = `
 }
 `;
 
+exports[`config ro should return localization object for acceptNecessary button mode 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Permite toate",
+    "acceptNecessaryBtn": "Permite doar esențiale",
+    "description": "
+      <p>În cazul în care vom înțelege mai bine ce vă interesează, vă vom putea afișa conținut adaptat intereselor dumneavoastră.</p>
+      <p>
+        Făcând clic pe butonul „Permite toate”, sunteți de acord ca
+        test1, test2 și test3
+        să utilizeze fișierele cookies în scop de personalizare, analiză și marketing orientat.
+        Mai multe informații despre cookies și despre modificarea setărilor acestora puteți găsi în <strong><a href="" data-cc="show-preferencesModal">setările proprii</a></strong>.
+      </p>",
+    "title": "Datorită cookie-urilor, site-ul nostru va deveni și mai bun",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Permite toate",
+    "acceptNecessaryBtn": "Permite doar esențiale",
+    "savePreferencesBtn": "Salvează setările",
+    "sections": [
+      {
+        "description": "Pentru a profita la maxim de site-ul nostru, este recomandat să permiteți toate tipurile de cookies.
+            Mai multe informații despre ce sunt cookie-urile și despre cum le utilizăm puteți găsi în <a href="https://www.almacareer.com/gdpr" target="_blank">Politica de cookies</a>.",
+      },
+      {
+        "description": "Aceste cookies sunt esențiale pentru funcționarea site-ului nostru, de aceea nu există posibilitatea de a le opri. Fără acestea, nu ar fi, de exemplu, posibil să afișăm conținut pe site și nu ar fi posibilă autentificarea.",
+        "linkedCategory": "necessary",
+        "title": "Cookie-uri tehnice",
+      },
+      {
+        "description": "Aceste cookies ne permit să analizăm eficiența publicității noastre și a ofertei de servicii personalizate. Cu ajutorul cookie-urilor publicitare, putem să vă anunțăm online cu privire la noutăți care v-ar putea fi de interes pentru dumneavoastră.",
+        "linkedCategory": "ad",
+        "title": "Cookie-uri publicitare",
+      },
+      {
+        "description": "Cookie-urile analitice ne ajută să urmărim numărul de vizitatori ai site-ului nostru și modul în care aceștia utilizează site-ul. Datorită acestor cookies, putem să îmbunătățim constant site-ul nostru și serviciile oferite.",
+        "linkedCategory": "analytics",
+        "title": "Cookie-uri analitice",
+      },
+      {
+        "description": "Datorită acestor cookies, site-ul nostru este și mai eficient și funcționează mai bine. Ne permit, de exemplu, să folosim chat-ul, pentru a vă putea răspunde rapid și ușor la toate întrebările.",
+        "linkedCategory": "functionality",
+        "title": "Cookie-uri de funcționalitate",
+      },
+      {
+        "description": "Serviciile noastre funcționează mai bine atunci când le putem personaliza pentru fiecare utilizator. Prin acceptarea Cookie-urilor pentru personalizare, creșteți șansele de a primi exact conținutul dorit.",
+        "linkedCategory": "personalization",
+        "title": "Cookie-uri pentru personalizare",
+      },
+    ],
+    "title": "Personalizează setările cookies",
+  },
+}
+`;
+
+exports[`config ro should return localization object with cookie table 1`] = `
+{
+  "consentModal": {
+    "acceptAllBtn": "Permite toate",
+    "acceptNecessaryBtn": "Permite doar esențiale",
+    "description": "
+      <p>În cazul în care vom înțelege mai bine ce vă interesează, vă vom putea afișa conținut adaptat intereselor dumneavoastră.</p>
+      <p>
+        Făcând clic pe butonul „Permite toate”, sunteți de acord ca
+        Alma Career și companiile din grupul său
+        să utilizeze fișierele cookies în scop de personalizare, analiză și marketing orientat.
+        Mai multe informații despre cookies și despre modificarea setărilor acestora puteți găsi în <strong><a href="" data-cc="show-preferencesModal">setările proprii</a></strong>.
+      </p>",
+    "title": "Datorită cookie-urilor, site-ul nostru va deveni și mai bun",
+  },
+  "preferencesModal": {
+    "acceptAllBtn": "Permite toate",
+    "acceptNecessaryBtn": "Permite doar esențiale",
+    "savePreferencesBtn": "Salvează setările",
+    "sections": [
+      {
+        "description": "Pentru a profita la maxim de site-ul nostru, este recomandat să permiteți toate tipurile de cookies.
+            Mai multe informații despre ce sunt cookie-urile și despre cum le utilizăm puteți găsi în <a href="https://www.almacareer.com/gdpr" target="_blank">Politica de cookies</a>.",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Google Analytics description ...",
+              "expiration": "1 year",
+              "name": "_ga*",
+            },
+            {
+              "description": "Foo description",
+              "expiration": "end of session",
+              "name": "foo",
+            },
+          ],
+          "headers": {
+            "description": "Descriere",
+            "expiration": "Valabilitate",
+            "name": "Denumire",
+          },
+        },
+        "description": "Aceste cookies sunt esențiale pentru funcționarea site-ului nostru, de aceea nu există posibilitatea de a le opri. Fără acestea, nu ar fi, de exemplu, posibil să afișăm conținut pe site și nu ar fi posibilă autentificarea.",
+        "linkedCategory": "necessary",
+        "title": "Cookie-uri tehnice",
+      },
+      {
+        "description": "Aceste cookies ne permit să analizăm eficiența publicității noastre și a ofertei de servicii personalizate. Cu ajutorul cookie-urilor publicitare, putem să vă anunțăm online cu privire la noutăți care v-ar putea fi de interes pentru dumneavoastră.",
+        "linkedCategory": "ad",
+        "title": "Cookie-uri publicitare",
+      },
+      {
+        "description": "Cookie-urile analitice ne ajută să urmărim numărul de vizitatori ai site-ului nostru și modul în care aceștia utilizează site-ul. Datorită acestor cookies, putem să îmbunătățim constant site-ul nostru și serviciile oferite.",
+        "linkedCategory": "analytics",
+        "title": "Cookie-uri analitice",
+      },
+      {
+        "description": "Datorită acestor cookies, site-ul nostru este și mai eficient și funcționează mai bine. Ne permit, de exemplu, să folosim chat-ul, pentru a vă putea răspunde rapid și ușor la toate întrebările.",
+        "linkedCategory": "functionality",
+        "title": "Cookie-uri de funcționalitate",
+      },
+      {
+        "cookieTable": {
+          "body": [
+            {
+              "description": "Session log description ...",
+              "expiration": "1 year",
+              "name": "sessionLog_id",
+            },
+          ],
+          "headers": {
+            "description": "Descriere",
+            "expiration": "Valabilitate",
+            "name": "Denumire",
+          },
+        },
+        "description": "Serviciile noastre funcționează mai bine atunci când le putem personaliza pentru fiecare utilizator. Prin acceptarea Cookie-urilor pentru personalizare, creșteți șansele de a primi exact conținutul dorit.",
+        "linkedCategory": "personalization",
+        "title": "Cookie-uri pentru personalizare",
+      },
+    ],
+    "title": "Personalizează setările cookies",
+  },
+}
+`;
+
 exports[`config ru should return localization object for acceptNecessary button mode 1`] = `
 {
   "consentModal": {

@@ -12,6 +12,7 @@ import { config as configLv } from '../lv';
 import { config as configMk } from '../mk';
 import { config as configPl } from '../pl';
 import { config as configPt } from '../pt';
+import { config as configRo } from '../ro';
 import { config as configRu } from '../ru';
 import { config as configSk } from '../sk';
 import { config as configSl } from '../sl';
@@ -33,6 +34,7 @@ describe.each([
   ['mk', configMk],
   ['pl', configPl],
   ['pt', configPt],
+  ['ro', configRo],
   ['ru', configRu],
   ['sk', configSk],
   ['sl', configSl],

@@ -4,7 +4,7 @@ describe('loader', () => {
   describe('assembleTranslationsConfig', () => {
     it('should assemble configs for all translations', () => {
       const config = assembleTranslationsConfig(['Alma Career'], {}, {});
-      expect(Object.keys(config)).toHaveLength(19);
+      expect(Object.keys(config)).toHaveLength(20);
     });
   });
 });
