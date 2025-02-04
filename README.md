@@ -294,6 +294,7 @@ Translation of the user interface is provided in the following languages:
 - Macedonian (`mk`)
 - Polish (`pl`)
 - Portuguese (`pt`)
+- Romanian (`ro`)
 - Russian (`ru`)
 - Serbian (latin) (`sr`)
 - Slovak (`sk`)
