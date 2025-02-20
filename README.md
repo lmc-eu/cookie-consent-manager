@@ -282,15 +282,15 @@ initCookieConsentManager( // when loaded as a module, these options are passed t
 
 Translation of the user interface is provided in the following languages:
 - Bosnian (`bs`)
+- Croatian (`hr`)
 - Czech (`cs`)
-- German (`de`)
 - English (`en`)
 - Estonian (`et`)
 - French (`fr`)
-- Croatian (`hr`)
+- German (`de`)
 - Hungarian (`hu`)
-- Lithuanian (`lt`)
 - Latvian (`lv`)
+- Lithuanian (`lt`)
 - Macedonian (`mk`)
 - Polish (`pl`)
 - Portuguese (`pt`)
