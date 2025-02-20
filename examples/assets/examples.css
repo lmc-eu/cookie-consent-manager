@@ -41,6 +41,11 @@ code {
 /*
    TODO: Remove styles below once the Navigation component is released.
 */
+:root,
+.theme-light-default {
+    --spirit-color-component-header-item-background-state-selected: #f8f6ff;
+}
+
 .Navigation--horizontal,
 .Navigation--horizontal > ul {
     display: flex;
