@@ -23,7 +23,7 @@ function toggleLanguage() {
  * @returns {void}
  */
 function updateAcceptedCategories(cookieConsent) {
-  for (const element of document.querySelectorAll('.docs-Categories .is-success')) {
+  for (const element of document.querySelectorAll('.docs-Category.is-success')) {
     element.classList.remove('is-success');
   }
 

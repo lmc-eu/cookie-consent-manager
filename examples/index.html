@@ -26,13 +26,6 @@
 
     <!-- Following script will be loaded only after "personalization" consent is detected -->
     <script type="text/plain" data-category="personalization" src="./assets/personalization.js" defer></script>
-
-    <!-- This is only for purposes of this example page -->
-    <style>
-        .docs-Categories > .is-success::after {
-            content: ' – allowed';
-        }
-    </style>
 </head>
 <body class="bg-primary">
 <script type="module" src="/src/init.ts"></script>
@@ -131,11 +124,11 @@
 <main class="pb-1700">
 
     <!-- Hero -->
-    <div class="py-1400 py-desktop-1700 bg-secondary text-center docs-border-bottom-basic">
+    <div class="py-1400 py-desktop-1600 bg-secondary">
         <div class="Container">
 
-            <h2 class="typography-heading-xlarge-semibold">Basic Example</h2>
-            <p class="typography-body-xlarge-regular text-secondary">
+            <h2 class="typography-heading-large-semibold">Basic Example</h2>
+            <p class="typography-body-large-regular text-secondary">
                 This example shows some basic usage of the Alma Career Cookie Consent Manager.
             </p>
 
@@ -146,16 +139,16 @@
     <div id="reset" class="docs-Controls" hidden>
         <a
             href="#"
-            class="Button Button--medium Button--secondary docs-shadow"
+            class="Button Button--medium Button--primary docs-shadow"
             data-cc="show-preferencesModal"
         >
             <i class="bi bi-gear mr-500"></i>
             Cookie preferences
         </a>
-        <div class="Tooltip d-inline-flex" data-spirit-element="tooltip">
+        <div class="Tooltip" data-spirit-element="tooltip">
             <button
                 type="button"
-                class="Button Button--medium Button--secondary docs-shadow"
+                class="Button Button--medium Button--primary docs-shadow"
                 onclick="removeCookieAndReload();"
                 aria-describedby="tooltip-reset-cookie"
                 data-spirit-toggle="tooltip"
@@ -175,38 +168,59 @@
     <div class="Container py-1000 py-tablet-1400">
 
         <h2 class="typography-heading-small-bold">Allowed consent categories</h2>
-        <ul
-            class="Stack Stack--hasSpacing Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider docs-Categories mt-1000 mb-1200"
-            style="--stack-spacing: var(--spirit-space-900)"
-        >
-            <li class="px-900" id="consent-necessary">necessary</li>
-            <li class="px-900" id="consent-ad">ad</li>
-            <li class="px-900" id="consent-analytics">analytics</li>
-            <li class="px-900" id="consent-functionality">functionality</li>
-            <li class="px-900" id="consent-personalization">personalization</li>
+        <ul class="Stack Stack--hasSpacing docs-Categories mt-1000 mb-1200">
+            <li class="docs-Category" id="consent-necessary">
+                <div>necessary</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-ad">
+                <div>ad</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-analytics">
+                <div>analytics</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-functionality">
+                <div>functionality</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
+            <li class="docs-Category" id="consent-personalization">
+                <div>personalization</div>
+                <span class="Tag Tag--small Tag--danger">Not allowed</span>
+                <span class="Tag Tag--small Tag--success">Allowed</span>
+            </li>
         </ul>
 
         <h2 class="typography-heading-small-bold">Content set from <code>onFirstConsent()</code> callback</h2>
-        <div class="Alert Alert--informative mb-1000">
-            <div id="onFirstConsent-content">(empty)</div>
+        <div id="onFirstConsent-content" class="docs-Category is-empty mb-1000">
+            Empty
         </div>
 
         <h2 class="typography-heading-small-bold">Content shown depending on <code>ad</code> ("marketing") consent</h2>
-        <div class="Alert Alert--informative mb-1000">
-            <div id="ad-content">Ad consent not allowed</div>
+        <div id="ad-content" class="docs-Category is-empty mb-1000">
+            Empty
         </div>
 
         <h2 class="typography-heading-small-bold">Content set by external script when <code>personalization</code> consent detected</h2>
-        <div class="Alert Alert--informative mb-1000">
-            <div id="personalization-content">(empty)</div>
+        <div id="personalization-content" class="docs-Category is-empty mb-1000">
+            Empty
         </div>
 
         <h2 class="typography-heading-small-bold">Content set using inline <code>&lt;script&gt;</code> when <code>functionality</code> consent detected</h2>
         <script type="text/plain" data-category="functionality">
-            document.getElementById('functionality-content').innerText = 'Consent for functionality category was given';
+            const functionalityContent = document.getElementById('functionality-content');
+
+            functionalityContent.classList.remove('is-empty');
+            functionalityContent.classList.add('is-informative');
+            functionalityContent.innerText = 'Consent for functionality category was given';
         </script>
-        <div class="Alert Alert--informative mb-1000">
-            <div id="functionality-content">(empty)</div>
+        <div id="functionality-content" class="docs-Category is-empty mb-1000">
+            Empty
         </div>
 
     </div>
@@ -230,15 +244,21 @@
         displayMode: 'soft', // show consent in a bottom banner and do not force user action before page could be used
         onConsent: ({ cookieConsent }) => { // any type of consent detected (including only necessary, custom selection or all categories)
           if (cookieConsent.acceptedCategory('ad')) {
-            document.getElementById('ad-content').innerHTML = 'Ad consent allowed';
+            const adContentElement = document.getElementById('ad-content');
+            adContentElement.classList.remove('is-empty');
+            adContentElement.classList.add('is-informative');
+            adContentElement.innerHTML = 'Ad consent allowed';
           }
           updateAcceptedCategories(cookieConsent);
           document.getElementById('reset').removeAttribute('hidden'); // reveal Reset cookie button
         },
         onFirstConsent: () => {  // user just clicked and gave consent to selected or all categories
-          document.getElementById('onFirstConsent-content').innerHTML = '<code>onFirstConsent()</code> called';
+          const onFirstConsentContentElement = document.getElementById('onFirstConsent-content');
+          onFirstConsentContentElement.classList.remove('is-empty');
+          onFirstConsentContentElement.classList.add('is-informative');
+          onFirstConsentContentElement.innerHTML = '<code>onFirstConsent()</code> called';
         },
-        onChange: ({ cookieConsent, categories }) => { // user previously gave consent but now change its preferences
+        onChange: ({ cookieConsent, categories }) => { // user previously gave consent but now changes his/her preferences
           if (categories.changed.includes('ad')) {
             document.getElementById('ad-content').innerHTML = cookieConsent.acceptedCategory('ad') ? 'Ad consent was just changed and allowed' : 'Ad consent was just changed and rejected';
           }
