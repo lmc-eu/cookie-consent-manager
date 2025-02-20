@@ -52,8 +52,17 @@
 }
 
 // Content
+#cc-main .pm__section-title {
+    border-radius: tokens.$radius-200;
+}
+
 #cc-main .pm__section-desc {
     @include typography.generate(tokens.$body-small-regular);
+}
+
+#cc-main .pm__section,
+#cc-main .pm__section--toggle {
+    border-radius: tokens.$radius-200;
 }
 
 #cc-main .pm__section--toggle {
@@ -69,6 +78,11 @@
     &:hover {
         background-color: var(--cc-cookie-category-expanded-block-hover-bg);
     }
+}
+
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+    border-bottom-right-radius: tokens.$radius-200;
+    border-bottom-left-radius: tokens.$radius-200;
 }
 
 #cc-main .pm__section--expandable .pm__section-arrow {

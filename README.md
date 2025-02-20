@@ -397,9 +397,6 @@ Please follow the steps below for users who do not use Spirit Design System.
 ### Without Spirit Design System
 
 A handful of CSS custom properties are available for you to customize the UI to make it match the design of your site.
-Contrary to the previous versions, the Cookie Consent Manager now uses only the CSS custom properties provided by the
-underlying [cookie consent] library and does not introduce any own custom properties.
-
 For example, to change the text color of cookie consent UI, load the [default CSS](#basic-usage) and add the following code
 anywhere in your stylesheet (the order of which is not important):
 

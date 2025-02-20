@@ -167,7 +167,7 @@ If you use an older version of Spirit Design System, or you do not use Spirit De
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@almacareer/cookie-consent-manager@3/CookieConsentManagerThemes.min.css">
 ```
 
-See readme for [basic usage documentation](README.md#basic-usage).
+See readme for [documentation](README.md#loading-the-plugin).
 
 ## Theming changes
 
@@ -200,24 +200,24 @@ The table below lists all custom properties used in the previous version and the
 |                   | `--lmcccm-btn-primary-hover-bg`          | `--cc-btn-primary-hover-bg`                    |
 |                   | `--lmcccm-btn-primary-hover-text`        | `--cc-btn-primary-hover-color`                 |
 |                   | `--lmcccm-btn-primary-hover-border`      | `--cc-btn-primary-hover-border-color`          |
-|                   | `--lmcccm-btn-primary-active-bg`         | N/A \*                                         |
-|                   | `--lmcccm-btn-primary-active-text`       | N/A \*                                         |
-|                   | `--lmcccm-btn-primary-active-border`     | N/A \*                                         |
+|                   | `--lmcccm-btn-primary-active-bg`         | N/A <sup>\*</sup>                              |
+|                   | `--lmcccm-btn-primary-active-text`       | N/A <sup>\*</sup>                              |
+|                   | `--lmcccm-btn-primary-active-border`     | N/A <sup>\*</sup>                              |
 |                   | `--lmcccm-btn-secondary-bg`              | `--cc-btn-secondary-bg`                        |
 |                   | `--lmcccm-btn-secondary-text`            | `--cc-btn-secondary-color`                     |
 |                   | `--lmcccm-btn-secondary-border`          | `--cc-btn-secondary-border-color`              |
 |                   | `--lmcccm-btn-secondary-hover-bg`        | `--cc-btn-secondary-hover-bg`                  |
 |                   | `--lmcccm-btn-secondary-hover-text`      | `--cc-btn-secondary-hover-color`               |
 |                   | `--lmcccm-btn-secondary-hover-border`    | `--cc-btn-secondary-hover-border-color`        |
-|                   | `--lmcccm-btn-secondary-active-bg`       | N/A \*                                         |
-|                   | `--lmcccm-btn-secondary-active-text`     | N/A \*                                         |
-|                   | `--lmcccm-btn-secondary-active-border`   | N/A \*                                         |
+|                   | `--lmcccm-btn-secondary-active-bg`       | N/A <sup>\*</sup>                              |
+|                   | `--lmcccm-btn-secondary-active-text`     | N/A <sup>\*</sup>                              |
+|                   | `--lmcccm-btn-secondary-active-border`   | N/A <sup>\*</sup>                              |
 | Toggles           | N/A                                      | `--cc-pm-toggle-border-radius`                 |
 |                   | `--lmcccm-toggle-bg-on`                  | `--cc-toggle-on-bg`                            |
 |                   | `--lmcccm-toggle-bg-off`                 | `--cc-toggle-off-bg`                           |
-|                   | `--lmcccm-toggle-knob-bg` \**            | `--cc-toggle-on-knob-bg` \**                   |
-|                   | `--lmcccm-toggle-knob-bg` \**            | `--cc-toggle-off-knob-bg` \**                  |
-|                   | `--lmcccm-toggle-knob-icon-color`        | N/A \***                                       |
+|                   | `--lmcccm-toggle-knob-bg` <sup>\**</sup> | `--cc-toggle-on-knob-bg` <sup>\**</sup>        |
+|                   | `--lmcccm-toggle-knob-bg` <sup>\**</sup> | `--cc-toggle-off-knob-bg` <sup>\**</sup>       |
+|                   | `--lmcccm-toggle-knob-icon-color`        | N/A <sup>\***</sup>                            |
 |                   | `--lmcccm-toggle-bg-readonly`            | `--cc-toggle-readonly-bg`                      |
 |                   | N/A                                      | `--cc-toggle-readonly-knob-bg`                 |
 |                   | N/A                                      | `--cc-toggle-readonly-knob-icon-color`         |
@@ -235,17 +235,17 @@ The table below lists all custom properties used in the previous version and the
 |                   | `--lmcccm-modal-max-height`              | N/A                                            |
 |                   | N/A                                      | `--cc-modal-margin`                            |
 |                   | `--lmcccm-modal-border-radius`           | `--cc-modal-border-radius`                     |
-|                   | `--lmcccm-modal-bg`                      | N/A \****                                      |
-|                   | `--lmcccm-modal-text`                    | N/A \****                                      |
+|                   | `--lmcccm-modal-bg`                      | N/A <sup>\****</sup>                           |
+|                   | `--lmcccm-modal-text`                    | N/A <sup>\****</sup>                           |
 |                   | N/A                                      | `--cc-modal-transition-duration`               |
 | Footer            | N/A                                      | `--cc-footer-bg`                               |
 |                   | N/A                                      | `--cc-footer-color`                            |
 |                   | N/A                                      | `--cc-footer-border-color`                     |
 
-\* Active state is generally not styled in the vanilla-cookieconsent library.
-\** Knob background color is now set separately for on and off states.
-\*** Knob icon color is now inherited from the toggle background color.
-\**** Modal background and text color now use the common `--cc-bg` and `--cc-primary-color` custom properties.
+<sup>\*)</sup> Active state is generally not styled in the vanilla-cookieconsent library.<br />
+<sup>\**)</sup> Knob background color is now set separately for on and off states.<br />
+<sup>\***)</sup> Knob icon color is now inherited from the toggle background color.<br />
+<sup>\****)</sup> Modal background and text color now use the common `--cc-bg` and `--cc-primary-color` custom properties.
 
 See readme for [full theming documentation](README.md#theming).
 

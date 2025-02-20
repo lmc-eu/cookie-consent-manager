@@ -20,7 +20,7 @@
     --cc-link-color: #{tokens.$link-primary-state-default};
 
     // Buttons
-    --cc-btn-border-radius: #{tokens.$radius-200};
+    --cc-btn-border-radius: #{tokens.$radius-full};
 
     --cc-btn-primary-bg: #{tokens.$component-button-primary-state-default};
     --cc-btn-primary-color: #{tokens.$component-button-primary-content};
